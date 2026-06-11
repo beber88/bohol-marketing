@@ -54,17 +54,20 @@ router.get('/daily', (req, res) => {
     ORDER BY count DESC
   `).all(dayStart, dayEnd);
 
-  // Recent activity (last 50 for the day)
+  // Recent activity (last 100 for the day)
   const recentActivity = db.prepare(`
-    SELECT g.name as group_name, g.market, g.members_count,
+    SELECT g.name as group_name, g.market, g.members_count, g.fb_group_id,
       p.name as post_name, pl.status, pl.error, pl.posted_at, pl.post_url
     FROM post_logs pl
     JOIN groups g ON g.id = pl.group_id
     JOIN posts p ON p.id = pl.post_id
     WHERE pl.posted_at >= ? AND pl.posted_at <= ?
     ORDER BY pl.posted_at DESC
-    LIMIT 50
-  `).all(dayStart, dayEnd);
+    LIMIT 100
+  `).all(dayStart, dayEnd).map(a => ({
+    ...a,
+    link: a.post_url || ('https://www.facebook.com/groups/' + a.fb_group_id + '/'),
+  }));
 
   // Available dates (days with activity)
   const activeDates = db.prepare(`

@@ -6,7 +6,7 @@ node_modules/
 .vercel/
 out/
 build/
-client/dist/
+# client/dist/ - keep tracked for production deployment
 
 # Environment files (secrets)
 .env

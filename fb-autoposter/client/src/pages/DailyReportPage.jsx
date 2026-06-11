@@ -164,31 +164,61 @@ export default function DailyReportPage() {
               </div>
             )}
 
-            {/* Recent activity */}
+            {/* Recent activity - full list with links */}
             <div className="bg-white rounded-2xl border border-brand-100 shadow-sm p-5">
-              <h3 className="font-semibold text-brand-800 text-sm mb-3">פעילות אחרונה ({data.recentActivity.length})</h3>
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="font-semibold text-brand-800 text-sm">רשימת פרסומים ({data.recentActivity.filter(a => a.status === 'success').length} מוצלחים מתוך {data.recentActivity.length})</h3>
+              </div>
               {data.recentActivity.length === 0 ? (
                 <p className="text-sm text-brand-300 py-8 text-center">אין פעילות ביום זה</p>
               ) : (
-                <div className="space-y-1 max-h-96 overflow-y-auto">
-                  {data.recentActivity.map((a, i) => {
-                    const mc = MARKET_COLORS[a.market] || { bg: '#f5f5f5', text: '#666', label: '?' };
-                    return (
-                      <div key={i} className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50 transition-colors">
-                        <span className={`w-2 h-2 rounded-full flex-shrink-0 ${a.status === 'success' ? 'bg-green-400' : 'bg-red-400'}`} />
-                        <span className="text-xs font-bold px-1.5 py-0.5 rounded-full flex-shrink-0" style={{ backgroundColor: mc.bg, color: mc.text }}>{mc.label}</span>
-                        <div className="flex-1 min-w-0">
-                          <p className="text-sm text-brand-700 truncate">{a.group_name}</p>
-                          <p className="text-xs text-brand-400">{a.post_name}</p>
-                        </div>
-                        {a.members_count && <span className="text-xs text-brand-300 flex-shrink-0">{a.members_count}</span>}
-                        <span className="text-xs text-brand-400 flex-shrink-0">{formatTime(a.posted_at)}</span>
-                        {a.status === 'error' && a.error && (
-                          <span className="text-xs text-red-400 truncate max-w-[120px] flex-shrink-0" title={a.error}>{a.error.slice(0, 30)}</span>
-                        )}
-                      </div>
-                    );
-                  })}
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm" dir="rtl">
+                    <thead>
+                      <tr className="border-b border-brand-100 text-xs text-brand-400">
+                        <th className="py-2 px-2 text-right font-medium">#</th>
+                        <th className="py-2 px-2 text-right font-medium">סטטוס</th>
+                        <th className="py-2 px-2 text-right font-medium">שוק</th>
+                        <th className="py-2 px-2 text-right font-medium">קבוצה</th>
+                        <th className="py-2 px-2 text-right font-medium">פוסט</th>
+                        <th className="py-2 px-2 text-right font-medium">שעה</th>
+                        <th className="py-2 px-2 text-right font-medium">לינק</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {data.recentActivity.map((a, i) => {
+                        const mc = MARKET_COLORS[a.market] || { bg: '#f5f5f5', text: '#666', label: '?' };
+                        return (
+                          <tr key={i} className="border-b border-brand-50 hover:bg-brand-50 transition-colors">
+                            <td className="py-2 px-2 text-brand-400 text-xs">{data.recentActivity.length - i}</td>
+                            <td className="py-2 px-2">
+                              <span className={`inline-block w-2 h-2 rounded-full ${a.status === 'success' ? 'bg-green-400' : 'bg-red-400'}`} />
+                            </td>
+                            <td className="py-2 px-2">
+                              <span className="text-xs font-bold px-1.5 py-0.5 rounded-full" style={{ backgroundColor: mc.bg, color: mc.text }}>{mc.label}</span>
+                            </td>
+                            <td className="py-2 px-2 max-w-[200px]">
+                              <p className="text-brand-700 truncate text-xs">{a.group_name}</p>
+                            </td>
+                            <td className="py-2 px-2">
+                              <p className="text-brand-500 text-xs truncate max-w-[140px]">{a.post_name}</p>
+                            </td>
+                            <td className="py-2 px-2 text-brand-400 text-xs whitespace-nowrap">{formatTime(a.posted_at)}</td>
+                            <td className="py-2 px-2">
+                              {a.status === 'success' && a.link ? (
+                                <a href={a.link} target="_blank" rel="noopener noreferrer"
+                                  className="text-xs text-blue-600 hover:text-blue-800 hover:underline whitespace-nowrap">
+                                  {a.post_url ? 'פוסט' : 'קבוצה'}
+                                </a>
+                              ) : a.status === 'error' ? (
+                                <span className="text-xs text-red-400 truncate" title={a.error}>{(a.error || '').slice(0, 25)}</span>
+                              ) : null}
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
                 </div>
               )}
             </div>
