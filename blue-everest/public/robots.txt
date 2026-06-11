@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://blue-everest.com/sitemap.xml
+
+# Disallow dashboard and API routes
+Disallow: /dashboard
+Disallow: /api/

@@ -6,6 +6,7 @@ node_modules/
 .vercel/
 out/
 build/
+client/dist/
 
 # Environment files (secrets)
 .env
@@ -15,11 +16,35 @@ build/
 # OS files
 .DS_Store
 Thumbs.db
+__MACOSX/
 
-# Archives (redundant with source)
+# Archives and large media
 *.zip
+*.mp4
+*.MP4
+*.mov
+*.MOV
 
 # IDE
 .idea/
 *.swp
 *.swo
+
+# Large image folders (renders)
+BOHOL Project/EXTERIOR*/
+BOHOL Project/INTERIOR*/
+EXTERIOR*/
+INTERIOR*/
+
+# Autoposter data (browser profiles, DB, uploads)
+fb-autoposter/server/data/
+fb-autoposter/server/uploads/
+fb-autoposter/data/
+
+# Completed tasks / screenshots
+_completed/
+_status/
+_queue/
+
+# Claude internal
+.claude/

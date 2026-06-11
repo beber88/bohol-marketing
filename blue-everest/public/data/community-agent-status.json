@@ -1,0 +1,32 @@
+{
+  "posts": {
+    "1": {
+      "status": "published",
+      "published_at": "2026-05-29T20:00:00+03:00",
+      "fb_post_id": "2193759018092347",
+      "channel": "group",
+      "url": "https://www.facebook.com/groups/investment.ph.il/permalink/2193759018092347/"
+    },
+    "2": {
+      "status": "published",
+      "published_at": "2026-06-03T03:41:21+08:00",
+      "fb_post_id": null,
+      "channel": "group",
+      "url": null,
+      "note": "Manually posted by Bar Gvili; permalink not provided in thread."
+    }
+  },
+  "next_post": {
+    "id": 36,
+    "title": "שאלו אותי כל דבר - נדל\"ן בפיליפינים 🇵🇭",
+    "scheduled": "2026-06-04",
+    "image": "/images/exterior/rear-1.webp"
+  },
+  "stats": {
+    "total": 50,
+    "published": 2,
+    "ready": 1,
+    "draft": 47
+  },
+  "last_updated": "2026-06-04T13:06:00+08:00"
+}
