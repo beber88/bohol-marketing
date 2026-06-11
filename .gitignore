@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.next/
+.vercel/
+out/
+build/
+
+# Environment files (secrets)
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Archives (redundant with source)
+*.zip
+
+# IDE
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,2046 @@
+{
+  "agent": "content_strategist",
+  "agent_display_name": "Content Strategist",
+  "description": "Tests content planning, pillar strategy, audience segmentation, and calendar management",
+  "total_questions": 100,
+  "pass_threshold": 100,
+  "categories": [
+    "content_pillars",
+    "audience_segmentation",
+    "calendar_planning",
+    "brief_creation",
+    "channel_strategy",
+    "seo_content",
+    "engagement_tactics",
+    "brand_voice",
+    "analytics_interpretation",
+    "compliance"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "category": "content_pillars",
+      "difficulty": "basic",
+      "question": "What is the tourism growth rate for Bohol that serves as a core content pillar?",
+      "type": "multiple_choice",
+      "options": [
+        "A) 50% growth",
+        "B) 100% growth",
+        "C) 136.9% growth",
+        "D) 200% growth"
+      ],
+      "correct_answer": "C",
+      "explanation": "Bohol tourism grew by 136.9%, which is one of the 10 content pillars. This figure demonstrates explosive demand growth that supports the Airbnb income thesis and is used across both Israeli and Filipino content.",
+      "keywords": [
+        "136.9%",
+        "tourism growth",
+        "content pillar"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "content_pillars",
+      "difficulty": "basic",
+      "question": "How many passengers does the Bohol Panglao International Airport handle, and why is this a content pillar?",
+      "type": "multiple_choice",
+      "options": [
+        "A) 500,000 - small regional airport",
+        "B) 2.22 million - demonstrates growing accessibility and tourist infrastructure",
+        "C) 5 million - major international hub",
+        "D) 10 million - comparable to Manila"
+      ],
+      "correct_answer": "B",
+      "explanation": "The 2.22M airport passenger figure is a content pillar because it proves infrastructure capacity for tourism growth. More passengers mean more potential Airbnb guests, directly supporting the PHP 395,000 monthly income claim.",
+      "keywords": [
+        "2.22M",
+        "airport",
+        "infrastructure",
+        "content pillar"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "content_pillars",
+      "difficulty": "intermediate",
+      "question": "The third bridge to Panglao is valued at PHP 7.15B. How should this be framed as content?",
+      "type": "multiple_choice",
+      "options": [
+        "A) As a traffic improvement story",
+        "B) As a government commitment indicator: PHP 7.15B in infrastructure investment signals institutional confidence in Panglao's growth trajectory, historically a leading indicator of property value appreciation",
+        "C) As construction news only",
+        "D) As a reason to delay investment until completion"
+      ],
+      "correct_answer": "B",
+      "explanation": "Infrastructure investment is a leading indicator of property appreciation. The PHP 7.15B bridge, when framed alongside the P25B township and JW Marriott entry, builds a narrative of institutional capital flowing into the area - the strongest signal for sophisticated investors.",
+      "keywords": [
+        "PHP 7.15B",
+        "third bridge",
+        "infrastructure investment",
+        "leading indicator"
+      ]
+    },
+    {
+      "id": 4,
+      "category": "content_pillars",
+      "difficulty": "intermediate",
+      "question": "The P25B township development is which type of content pillar?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Lifestyle pillar",
+        "B) Infrastructure and future growth pillar - demonstrates private sector investment alongside government infrastructure, creating a multiplier effect on property values",
+        "C) Price comparison pillar",
+        "D) Tourism statistics pillar"
+      ],
+      "correct_answer": "B",
+      "explanation": "The P25B township is a private sector infrastructure pillar. Combined with the government's PHP 7.15B bridge, it shows both public and private capital converging on Panglao, which is the strongest possible growth signal for real estate investors.",
+      "keywords": [
+        "P25B township",
+        "private sector",
+        "growth pillar",
+        "multiplier effect"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "content_pillars",
+      "difficulty": "advanced",
+      "question": "JW Marriott's entry into Bohol is a content pillar. What specific content angles should be derived from this single data point?",
+      "type": "scenario",
+      "options": [
+        "A) One post mentioning JW Marriott is opening",
+        "B) Multiple angles: 1) 'Global luxury brands validate Bohol' (credibility), 2) 'JW Marriott feasibility studies confirm tourism demand' (institutional due diligence), 3) 'Luxury hotel entry raises area property values' (appreciation thesis), 4) 'JW Marriott guests discover Panglao, become investors' (demand pipeline)",
+        "C) Compare JW Marriott room rates to villa rental rates",
+        "D) Only mention JW Marriott in Filipino content"
+      ],
+      "correct_answer": "B",
+      "explanation": "A single data point like JW Marriott entry can generate multiple content angles. The Content Strategist should extract at least 3-4 distinct narratives from each pillar, ensuring content variety while reinforcing the same underlying thesis. Each angle appeals to different investor concerns.",
+      "keywords": []
+    },
+    {
+      "id": 6,
+      "category": "content_pillars",
+      "difficulty": "basic",
+      "question": "What is the price advantage content pillar comparing Panglao to Boracay?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Panglao is 10% cheaper",
+        "B) Boracay PHP 55-70K/sqm vs Panglao PHP 27-49K/sqm, a 40-60% price advantage",
+        "C) They are the same price",
+        "D) Panglao is more expensive"
+      ],
+      "correct_answer": "B",
+      "explanation": "The Boracay vs Panglao price comparison (PHP 55-70K/sqm vs PHP 27-49K/sqm) is one of the strongest content pillars because it provides concrete, verifiable price anchoring. Every investor understands 'same beach quality, half the price.'",
+      "keywords": [
+        "Boracay comparison",
+        "PHP 55-70K vs 27-49K",
+        "price advantage",
+        "anchoring"
+      ]
+    },
+    {
+      "id": 7,
+      "category": "content_pillars",
+      "difficulty": "advanced",
+      "question": "The STR economics pillar uses 65% occupancy as its baseline. How should content present this number to maximize credibility?",
+      "type": "multiple_choice",
+      "options": [
+        "A) State '65% occupancy' without context",
+        "B) Frame as conservative: '65% occupancy is our baseline, while Airbnb data shows Panglao peak season occupancy exceeds 85%. At 65%, the villa generates PHP 395,000/month verified income. The actual upside is significantly higher.'",
+        "C) Round up to 70% for simplicity",
+        "D) Only mention occupancy if asked"
+      ],
+      "correct_answer": "B",
+      "explanation": "Presenting 65% as a conservative baseline with upside potential builds credibility. Sophisticated investors distrust optimistic projections but respond to conservative estimates with demonstrated upside. The 'verified income at conservative occupancy' frame is more compelling than aggressive projections.",
+      "keywords": [
+        "65% occupancy",
+        "conservative baseline",
+        "credibility",
+        "upside framing"
+      ]
+    },
+    {
+      "id": 8,
+      "category": "content_pillars",
+      "difficulty": "intermediate",
+      "question": "What is the 'fastest economy' content pillar data point?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Philippines GDP growth of 3-4%",
+        "B) Bohol regional economic growth of 6.6-8.8%, positioning it as one of the fastest-growing economies in the Philippines",
+        "C) Global economic growth of 2.5%",
+        "D) Southeast Asian average of 5%"
+      ],
+      "correct_answer": "B",
+      "explanation": "Bohol's 6.6-8.8% economic growth rate significantly outpaces the national average. This pillar reinforces the investment thesis: growing economy means growing demand for tourism, housing, and commercial activity - all of which support property values.",
+      "keywords": [
+        "6.6-8.8%",
+        "fastest economy",
+        "regional growth",
+        "Bohol"
+      ]
+    },
+    {
+      "id": 9,
+      "category": "content_pillars",
+      "difficulty": "expert",
+      "question": "Design a content calendar week using all 10 pillars. How should they be distributed across 7 days for maximum impact?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Weekly pillar rotation: Monday - Tourism growth (136.9%) with fresh angle; Tuesday - Infrastructure (third bridge PHP 7.15B or P25B township, alternate weekly); Wednesday - Price comparison (Boracay vs Panglao with visual); Thursday - STR Economics (PHP 395,000 income, 65% occupancy, ROI calculation); Friday - Lifestyle/UNESCO heritage (emotional, weekend browsing content); Saturday - Airport growth (2.22M) or JW Marriott (institutional validation); Sunday - Economic growth (6.6-8.8%) or comprehensive week-recap carousel. Each day produces content for BOTH markets (Hebrew + English versions). No pillar repeats in the same week without a new angle. Weekday content is data-heavy (investors browse during work breaks), weekend content is lifestyle-emotional (leisure browsing). Every piece includes at least one number per Rule 3.",
+      "explanation": "A content calendar must rotate pillars systematically to prevent audience fatigue while ensuring each thesis point gets regular reinforcement. Data-heavy content on weekdays, lifestyle on weekends matches browsing behavior.",
+      "keywords": [
+        "weekly",
+        "pillar",
+        "rotation",
+        "monday",
+        "tourism",
+        "growth",
+        "with",
+        "fresh",
+        "angle",
+        "tuesday"
+      ]
+    },
+    {
+      "id": 10,
+      "category": "content_pillars",
+      "difficulty": "advanced",
+      "question": "The UNESCO heritage designation for Bohol is a lifestyle content pillar. How does it serve the investment thesis differently for Israeli vs Filipino audiences?",
+      "type": "scenario",
+      "options": [
+        "A) Same messaging for both audiences",
+        "B) Israeli audience: UNESCO designation signals international recognition and tourism protection (government incentive to maintain/improve the area), reducing investment risk. Filipino audience: UNESCO designation signals prestige and national pride, making villa ownership a status symbol. Same data, different emotional frame.",
+        "C) Only use UNESCO for Filipino audience",
+        "D) UNESCO is not relevant to investment"
+      ],
+      "correct_answer": "B",
+      "explanation": "The same data point serves different psychological needs per market. Israeli investors process UNESCO as risk reduction (protected tourism destination = sustainable demand). Filipino investors process it as prestige (own property in a UNESCO-recognized destination). The Content Strategist must craft market-specific angles from the same pillar.",
+      "keywords": []
+    },
+    {
+      "id": 11,
+      "category": "content_pillars",
+      "difficulty": "basic",
+      "question": "Every post must include at least one specific number. Which of the following is NOT an approved number for use in content?",
+      "type": "multiple_choice",
+      "options": [
+        "A) PHP 395,000 monthly income",
+        "B) 17-25% annual ROI",
+        "C) 50% discount for early buyers",
+        "D) 263.78 sqm lot area"
+      ],
+      "correct_answer": "C",
+      "explanation": "Per Rule 3, approved numbers include: 1,420,888, 1,522,380, 9,999, PHP 395,000, 17-25%, 136.9%, 65%, 60 seconds, 263.78 sqm, 4 bedrooms, PHP 32.5M/30M. A '50% discount' is not an approved figure and would be misleading.",
+      "keywords": [
+        "approved numbers",
+        "Rule 3",
+        "specific numbers"
+      ]
+    },
+    {
+      "id": 12,
+      "category": "content_pillars",
+      "difficulty": "expert",
+      "question": "Create a content brief for a carousel post that combines 3 content pillars into a single compelling narrative for the Israeli market.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Carousel brief - 'Why Smart Israeli Money is Moving to Bohol' (Hebrew). Slide 1: Hook with tourism data - '1.43 million tourists, 136.9% growth. Bohol is the fastest-growing destination in Southeast Asia.' Slide 2: Infrastructure validation - 'PHP 7.15B third bridge, P25B township, JW Marriott entering. When institutions invest billions, individual investors pay attention.' Slide 3: The numbers - 'Villa at PHP 35,000,000. Verified income: PHP 395,000/month. Annual ROI: 17-25%. For the price of a Tel Aviv down payment.' Slide 4: Legal solutions - 'Deed of Assignment, Leasehold 25+25, or Domestic Corporation - 3 proven paths to legal ownership.' Slide 5: CTA - 'Reserve at PHP 200,000. WhatsApp: +639542555553 / +639958565865'. Each slide uses one large number as the visual anchor. Hebrew formal-warm register. No forbidden words.",
+      "explanation": "Effective carousels combine multiple pillars into a single narrative arc. Each slide should have one dominant data point, building from attention (tourism) to credibility (infrastructure) to proposition (ROI) to barrier removal (legal) to action (CTA).",
+      "keywords": [
+        "carousel",
+        "brief",
+        "smart",
+        "israeli",
+        "money",
+        "moving",
+        "bohol",
+        "hebrew",
+        "slide",
+        "hook"
+      ]
+    },
+    {
+      "id": 13,
+      "category": "content_pillars",
+      "difficulty": "intermediate",
+      "question": "How many content pillars are defined for the Panglao Prime Villas campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "A) 5 pillars",
+        "B) 7 pillars",
+        "C) 10 pillars",
+        "D) 15 pillars"
+      ],
+      "correct_answer": "C",
+      "explanation": "There are 10 defined content pillars: tourism growth (136.9%), airport (2.22M), third bridge (PHP 7.15B), P25B township, JW Marriott, price advantage vs Boracay, STR economics (65% occupancy), fastest economy (6.6-8.8%), lifestyle/UNESCO, and the overall investment ROI thesis.",
+      "keywords": [
+        "10 pillars",
+        "content pillars",
+        "complete list"
+      ]
+    },
+    {
+      "id": 14,
+      "category": "content_pillars",
+      "difficulty": "advanced",
+      "question": "A Content Strategist notices that price comparison content (Boracay vs Panglao) consistently outperforms tourism growth content in CTR. Should the content mix be adjusted?",
+      "type": "scenario",
+      "options": [
+        "A) Switch entirely to price comparison content",
+        "B) Increase price comparison frequency from 1x/week to 2x/week, but maintain tourism growth at 1x/week. Investigate why: is it the comparison format (carousel? side-by-side?), the anchoring psychology, or the audience's stage in the funnel? Apply the winning format to other pillars.",
+        "C) Remove tourism growth from the calendar",
+        "D) Keep the calendar unchanged - all pillars are equal"
+      ],
+      "correct_answer": "B",
+      "explanation": "Performance data should inform content mix, not dictate it exclusively. The winning pillar gets more frequency, but underperforming pillars may need format improvements rather than elimination. The Content Strategist should analyze WHY price comparison wins (likely the anchoring format) and apply that technique to other pillars.",
+      "keywords": []
+    },
+    {
+      "id": 15,
+      "category": "content_pillars",
+      "difficulty": "basic",
+      "question": "The 4-bedroom specification is one of the approved content numbers. In which context is it most impactful?",
+      "type": "multiple_choice",
+      "options": [
+        "A) As a standalone fact",
+        "B) Combined with 263.78 sqm and the Boracay price comparison: '4 bedrooms, 263.78 sqm luxury villa at PHP 27-49K/sqm vs Boracay's PHP 55-70K/sqm for smaller units'",
+        "C) Only in property listing descriptions",
+        "D) In recruitment content"
+      ],
+      "correct_answer": "B",
+      "explanation": "Numbers gain power when combined and compared. '4 bedrooms, 263.78 sqm' alone is a specification. Combined with the Boracay price comparison, it becomes a value proposition: more space, more rooms, lower price per sqm than the competing destination.",
+      "keywords": [
+        "4 bedrooms",
+        "263.78 sqm",
+        "combined numbers",
+        "value proposition"
+      ]
+    },
+    {
+      "id": 16,
+      "category": "audience_segmentation",
+      "difficulty": "basic",
+      "question": "What is the primary Israeli target audience segment for Panglao Prime Villas?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Israeli tourists aged 18-25",
+        "B) Israeli investors aged 35-62, Hebrew-speaking, interested in real estate, with ILS investment capacity",
+        "C) All Hebrew speakers",
+        "D) Israeli retirees only"
+      ],
+      "correct_answer": "B",
+      "explanation": "The Israeli segment is defined as investors aged 35-62, Hebrew-speaking, with investment capacity in the ILS 1.4-1.6M range. This age range captures established professionals and business owners with both the capital and risk appetite for overseas real estate investment.",
+      "keywords": [
+        "Israeli 35-62",
+        "Hebrew",
+        "investors",
+        "ILS"
+      ]
+    },
+    {
+      "id": 17,
+      "category": "audience_segmentation",
+      "difficulty": "intermediate",
+      "question": "What defines the Filipino target audience, and why is geographic filtering important?",
+      "type": "multiple_choice",
+      "options": [
+        "A) All Filipinos aged 25+",
+        "B) BGC/Makati professionals aged 35-58 with household income PHP 500K+. Geographic filtering to BGC/Makati identifies the highest concentration of qualifying buyers in a compact area, maximizing ad relevance and minimizing wasted impressions.",
+        "C) Only Cebu-based professionals",
+        "D) Filipino diaspora worldwide"
+      ],
+      "correct_answer": "B",
+      "explanation": "Geographic filtering to BGC/Makati concentrates ad delivery on the neighborhoods with the highest density of PHP 500K+ earners in the Philippines. This is more efficient than nationwide targeting because it aligns with where high-income professionals live, work, and browse social media.",
+      "keywords": [
+        "BGC/Makati",
+        "35-58",
+        "PHP 500K+",
+        "geographic filtering"
+      ]
+    },
+    {
+      "id": 18,
+      "category": "audience_segmentation",
+      "difficulty": "advanced",
+      "question": "Korean tourists comprise 42% of Bohol visitors. Should they be a primary or secondary audience segment?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Primary - they're the largest tourist group",
+        "B) Not an audience segment at all within the $900 budget, but a data point used in content targeting Israeli and Filipino audiences. '42% Korean tourists' strengthens the STR income stability argument by demonstrating demand diversification.",
+        "C) Primary for a separate Korean-language campaign",
+        "D) Secondary with dedicated ad spend"
+      ],
+      "correct_answer": "B",
+      "explanation": "Within the $900/15-day budget constraint, Korean investors are not a targeting segment but a content data point. The 42% figure is used in both Israeli and Filipino content to demonstrate that villa rental income is supported by diversified demand, not dependent on a single tourist nationality.",
+      "keywords": [
+        "Korean 42%",
+        "data point not segment",
+        "demand diversification",
+        "budget constraint"
+      ]
+    },
+    {
+      "id": 19,
+      "category": "audience_segmentation",
+      "difficulty": "intermediate",
+      "question": "OFW (Overseas Filipino Worker) audiences are a potential segment. What characteristics define their investment motivation?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Same as domestic Filipino professionals",
+        "B) Distinct: earn tax-free foreign currency (USD/AED), invest remittances in Philippine assets as wealth building, strong emotional connection to 'building something back home,' familiar with BDO overseas remittance, decision timeline aligned with contract renewal cycles",
+        "C) They are not interested in real estate",
+        "D) They only invest in Manila properties"
+      ],
+      "correct_answer": "B",
+      "explanation": "OFWs have distinct psychology: wealth accumulated abroad, emotional drive to invest in homeland, familiarity with cross-border transactions, and decision timing linked to employment contracts. Content for this segment should emphasize the pride/legacy angle alongside BDO financing accessibility from abroad.",
+      "keywords": [
+        "OFW",
+        "remittance",
+        "homeland investment",
+        "distinct motivation"
+      ]
+    },
+    {
+      "id": 20,
+      "category": "audience_segmentation",
+      "difficulty": "expert",
+      "question": "Design a lookalike audience strategy for Meta Ads targeting Israeli investors. What seed audience produces the highest-quality lookalike?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Lookalike seed hierarchy (best to worst): 1) Best: existing buyers/reservations from Blue Everest or similar Philippine RE projects targeting Israelis (if any exist). 2) Second: WhatsApp engagers who asked about pricing or legal ownership (high-intent signals). 3) Third: website visitors who spent >60 seconds on the Hebrew landing page and viewed the ROI section. 4) Fourth: Facebook/Instagram engagers who clicked on investment-related content. Lookalike configuration: 1% lookalike in Israel only, expand to 2% if 1% exhausts quickly. Exclude existing leads and page followers. Layer with interest targeting: real estate investment, passive income, Asia travel, Airbnb hosting. Critical: the seed audience must be at least 100 people for Meta to generate a quality lookalike. If insufficient, start with interest-based targeting and build the seed from initial campaign engagers.",
+      "explanation": "Lookalike quality depends entirely on seed quality. The best seed contains people who have demonstrated the exact behavior we want (purchase/inquiry), not just demographic matches. Building the seed iteratively from campaign engagement is the correct approach when no historical buyer data exists.",
+      "keywords": [
+        "lookalike",
+        "seed",
+        "hierarchy",
+        "best",
+        "worst",
+        "existing",
+        "buyers",
+        "reservations",
+        "from",
+        "blue"
+      ]
+    },
+    {
+      "id": 21,
+      "category": "audience_segmentation",
+      "difficulty": "basic",
+      "question": "What language should be used for Israeli market content?",
+      "type": "multiple_choice",
+      "options": [
+        "A) English - it's universal",
+        "B) Hebrew - Israeli content must be in Hebrew with formal-warm register",
+        "C) Arabic - large Arabic-speaking population in Israel",
+        "D) Russian - many Russian-speaking Israelis"
+      ],
+      "correct_answer": "B",
+      "explanation": "Israeli market content must be in Hebrew. While many Israelis speak English, Hebrew-language ads signal local relevance and cultural understanding. The register should be formal but warm, peer-to-peer professional. No slang.",
+      "keywords": [
+        "Hebrew",
+        "formal-warm",
+        "Israeli content",
+        "language"
+      ]
+    },
+    {
+      "id": 22,
+      "category": "audience_segmentation",
+      "difficulty": "advanced",
+      "question": "The Content Strategist needs to segment the Filipino audience further for different funnel stages. How should audiences be structured?",
+      "type": "scenario",
+      "options": [
+        "A) One audience for all stages",
+        "B) Three tiered audiences: 1) Cold - BGC/Makati professionals, interest-based targeting (real estate, investments, luxury travel), for Awareness. 2) Warm - website visitors, video viewers >50%, post engagers, for Consideration. 3) Hot - form submitters, WhatsApp initiators, pricing page viewers, for Conversion. Each tier gets different content and CTA intensity.",
+        "C) Only retarget existing customers",
+        "D) Target by age group only"
+      ],
+      "correct_answer": "B",
+      "explanation": "Funnel-stage audiences ensure content relevance matches intent level. Cold audiences need educational, non-threatening content. Warm audiences need deeper data and social proof. Hot audiences need urgency and friction reduction (BDO financing details, legal ownership guide, reservation CTA). Mismatching content to funnel stage wastes budget.",
+      "keywords": []
+    },
+    {
+      "id": 23,
+      "category": "audience_segmentation",
+      "difficulty": "intermediate",
+      "question": "What is the expat segment, and how does it differ from the primary Filipino audience?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Same as Filipino professionals",
+        "B) Foreign nationals living in the Philippines (or frequent visitors) who understand the local market, have foreign currency income, and may seek vacation/investment property. They process content in English but require different legal ownership framing (foreigner restrictions apply).",
+        "C) Only American expats",
+        "D) Expats are not a relevant segment"
+      ],
+      "correct_answer": "B",
+      "explanation": "Expats bridge the foreign investor and local buyer profiles. They understand the Philippine market firsthand (reducing perceived risk) but face the same legal ownership considerations as Israeli buyers. Content should emphasize the 3 legal ownership solutions and the convenience of having a managed investment property.",
+      "keywords": [
+        "expat segment",
+        "foreign currency income",
+        "legal ownership",
+        "bridge profile"
+      ]
+    },
+    {
+      "id": 24,
+      "category": "audience_segmentation",
+      "difficulty": "basic",
+      "question": "What currency must appear in Israeli market content?",
+      "type": "true_false",
+      "options": [
+        "True - Only ILS (shekels). No PHP, no USD, no other currencies.",
+        "False - ILS primary with USD secondary"
+      ],
+      "correct_answer": "true",
+      "explanation": "Per Rule 1, Israeli content shows ONLY shekels. Villa D: 1,535,000 shekel. Villa C: 1,650,000 shekel. Reservation: 9,999 shekel. No PHP, no USD, no other currencies. This is a hard rule with no exceptions in published content.",
+      "keywords": [
+        "ILS only",
+        "no PHP",
+        "no USD",
+        "Rule 1"
+      ]
+    },
+    {
+      "id": 25,
+      "category": "audience_segmentation",
+      "difficulty": "expert",
+      "question": "The campaign data shows that Israeli leads aged 45-55 convert to hot leads at 3x the rate of 35-44. How should the Content Strategist adjust audience segmentation and content?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Adjustment strategy: 1) Create a dedicated ad set for 45-55 with higher budget allocation (shift 20-30% from 35-44 ad set). 2) Content for 45-55: emphasize retirement planning angle, passive income for later years, portfolio diversification from TASE concentration, legacy asset for children. 3) Content for 35-44: maintain but shift emphasis to growth/appreciation story rather than income (younger investors prioritize appreciation, older prioritize cash flow). 4) Do NOT eliminate the 35-44 segment entirely - it's the future pipeline and may have longer conversion cycles for higher-value decisions. 5) Test a separate creative set for 45-55 with different imagery (established professionals, family gatherings at the villa) vs 35-44 (modern investor, data-driven decision-making). 6) Monitor whether the higher conversion rate holds as budget increases or was a small-sample artifact.",
+      "explanation": "Age-based performance differences often reflect different investment motivations. Older investors prioritize income and security; younger prioritize growth. Content must adapt to these psychological differences while maintaining both segments for pipeline depth.",
+      "keywords": [
+        "adjustment",
+        "strategy",
+        "create",
+        "dedicated",
+        "with",
+        "higher",
+        "budget",
+        "allocation",
+        "shift",
+        "from"
+      ]
+    },
+    {
+      "id": 26,
+      "category": "audience_segmentation",
+      "difficulty": "intermediate",
+      "question": "What income threshold defines the Filipino target audience, and why?",
+      "type": "multiple_choice",
+      "options": [
+        "A) PHP 100K+ household income",
+        "B) PHP 300K+ household income",
+        "C) PHP 500K+ household income - minimum threshold for BDO mortgage qualification at PHP 28-30M property values",
+        "D) PHP 1M+ household income"
+      ],
+      "correct_answer": "C",
+      "explanation": "PHP 500K+ monthly household income is the minimum threshold that makes a PHP 28-30M property purchase feasible, either through BDO financing or accumulated savings. Below this threshold, the property is unaffordable and impressions are wasted.",
+      "keywords": [
+        "PHP 500K+",
+        "income threshold",
+        "BDO qualification",
+        "affordability"
+      ]
+    },
+    {
+      "id": 27,
+      "category": "audience_segmentation",
+      "difficulty": "advanced",
+      "question": "How should the Content Strategist handle audience overlap between the Israeli campaign and the Facebook group organic strategy?",
+      "type": "multiple_choice",
+      "options": [
+        "A) No overlap management needed",
+        "B) Exclude Facebook group members from paid Israeli campaigns to avoid showing them both paid ads and organic group posts (ad fatigue and spam perception). Track group engagement separately. If a group member engages with organic content, move them to a warm retargeting audience for specialized content rather than cold awareness ads.",
+        "C) Target only group members with paid ads",
+        "D) Stop posting in the group"
+      ],
+      "correct_answer": "B",
+      "explanation": "Audience overlap between paid and organic channels risks ad fatigue and perceived spam. Group members already receive organic content; showing them the same messaging via paid ads is redundant and annoying. Exclude them from cold campaigns but include them in warm retargeting with different, deeper content.",
+      "keywords": [
+        "audience overlap",
+        "exclusion",
+        "organic vs paid",
+        "retargeting"
+      ]
+    },
+    {
+      "id": 28,
+      "category": "calendar_planning",
+      "difficulty": "basic",
+      "question": "What are the optimal posting times for the Israeli market?",
+      "type": "multiple_choice",
+      "options": [
+        "A) 8:00-10:00 Israel time",
+        "B) 12:00-14:00 Israel time",
+        "C) 20:00-23:00 Israel time",
+        "D) 6:00-8:00 Israel time"
+      ],
+      "correct_answer": "C",
+      "explanation": "Israeli market optimal posting is 20:00-23:00 Israel time. This is evening leisure time when professionals browse social media, consider investment opportunities, and have time to engage with longer-form content like investment analyses.",
+      "keywords": [
+        "20:00-23:00",
+        "Israel",
+        "evening",
+        "posting time"
+      ]
+    },
+    {
+      "id": 29,
+      "category": "calendar_planning",
+      "difficulty": "basic",
+      "question": "What are the optimal posting times for the Filipino market?",
+      "type": "multiple_choice",
+      "options": [
+        "A) 6:00-8:00 PHT",
+        "B) 12:00-14:00 PHT",
+        "C) 19:00-23:00 PHT",
+        "D) 3:00-5:00 PHT"
+      ],
+      "correct_answer": "C",
+      "explanation": "Filipino market optimal posting is 19:00-23:00 PHT. Evening prime time for Filipino professionals coincides with post-work browsing and family discussion time, when investment decisions are often discussed.",
+      "keywords": [
+        "19:00-23:00",
+        "PHT",
+        "Filipino",
+        "evening prime"
+      ]
+    },
+    {
+      "id": 30,
+      "category": "calendar_planning",
+      "difficulty": "intermediate",
+      "question": "Given the 5-6 hour time difference between Israel and Philippines, how should the Content Strategist schedule content for both markets?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Post at the same UTC time for both",
+        "B) Schedule separately: Israeli content at 20:00-23:00 Israel time (which is 02:00-05:00 PHT) and Filipino content at 19:00-23:00 PHT (which is 13:00-17:00 Israel time). This means the Content Strategist effectively manages two distinct posting windows.",
+        "C) Only post during overlap hours",
+        "D) Post once and let the algorithm decide"
+      ],
+      "correct_answer": "B",
+      "explanation": "The time zones require completely separate scheduling. Israeli evening content goes out during Philippine early morning (when no Filipino is browsing), and Filipino evening content goes out during Israeli afternoon (when Israelis are at work). The Content Strategist must manage two distinct content calendars with no meaningful overlap.",
+      "keywords": [
+        "timezone scheduling",
+        "separate windows",
+        "no overlap",
+        "dual calendar"
+      ]
+    },
+    {
+      "id": 31,
+      "category": "calendar_planning",
+      "difficulty": "advanced",
+      "question": "The campaign is in Phase 3 (Consideration, Days 9-15). What content mix should dominate the calendar during this phase?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Awareness content - more reach needed",
+        "B) Conversion content with hard CTAs",
+        "C) Data-rich comparison content: ROI breakdowns, Boracay vs Panglao comparisons, legal ownership explainers, virtual tour content, testimonials. This is the phase where interested audiences need detailed information to move from 'aware' to 'seriously considering.'",
+        "D) Only video content"
+      ],
+      "correct_answer": "C",
+      "explanation": "Consideration phase content must satisfy the information-gathering behavior of interested prospects. They know the villas exist (Awareness achieved); now they need data to justify the decision. ROI breakdowns, price comparisons, legal guides, and virtual tours address specific objections and information gaps.",
+      "keywords": [
+        "Consideration phase",
+        "data-rich",
+        "comparison",
+        "information gathering"
+      ]
+    },
+    {
+      "id": 32,
+      "category": "calendar_planning",
+      "difficulty": "intermediate",
+      "question": "How often should content be posted per market per week during the active campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Once per week per market",
+        "B) Daily for both markets",
+        "C) 4-5 times per week per market: enough to maintain visibility and pillar rotation without audience fatigue. Some days may have organic only, some paid + organic, based on phase and budget.",
+        "D) 10 times per week per market"
+      ],
+      "correct_answer": "C",
+      "explanation": "4-5 posts per week per market allows full pillar rotation (10 pillars over 2 weeks, each from a new angle) while preventing content fatigue. Not every post requires paid amplification - organic posts in the Facebook group and page maintain presence on non-paid days.",
+      "keywords": [
+        "4-5 per week",
+        "pillar rotation",
+        "content frequency",
+        "organic mix"
+      ]
+    },
+    {
+      "id": 33,
+      "category": "calendar_planning",
+      "difficulty": "expert",
+      "question": "Create a 7-day content calendar for the Israeli market during the Consideration phase (Week 2). Include pillar, format, platform, and CTA for each day.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Day 8 (Sunday): Pillar - Price comparison. Format - Carousel (Boracay vs Panglao side-by-side with sqm prices). Platform - FB page + group + Meta paid. CTA - 'See the full comparison: WhatsApp +639542555553 / +639958565865'. Day 9 (Monday): Pillar - STR Economics. Format - Infographic (PHP 395,000 income breakdown, 65% occupancy, 17-25% ROI). Platform - FB page + Meta paid. CTA - 'Get the verified income report'. Day 10 (Tuesday): Pillar - Legal ownership. Format - Text post with link to guide. Platform - FB group (organic only, value content). CTA - soft, 'Questions? WhatsApp us'. Day 11 (Wednesday): Pillar - Infrastructure (PHP 7.15B bridge). Format - Video (30s, map animation showing bridge connection). Platform - FB page + Meta paid. CTA - 'See how infrastructure drives value'. Day 12 (Thursday): Pillar - Tel Aviv comparison. Format - Single image (split screen: Tel Aviv apartment price vs Panglao villa). Platform - FB page + group + Meta paid. CTA - 'For the price of a Tel Aviv down payment: WhatsApp'. Day 13 (Friday): Pillar - Lifestyle/UNESCO. Format - Photo gallery (villa interiors, Panglao beach). Platform - FB page (organic, weekend browsing). CTA - 'Virtual tour available'. Day 14 (Saturday): Pillar - Tourism growth. Format - Data card (1.43M visitors, 136.9% growth, Korean 42%). Platform - FB page + Meta paid. CTA - 'Reserve at 9,999 shekel'. All posts in Hebrew, formal-warm, both WhatsApp numbers, at least one number per post.",
+      "explanation": "A consideration-phase calendar prioritizes data and comparison content that helps prospects evaluate the investment. Weekend posts are softer (lifestyle) while weekday posts are data-heavy. Group posts are organic and value-first to avoid spam perception.",
+      "keywords": [
+        "sunday",
+        "pillar",
+        "price",
+        "comparison",
+        "format",
+        "carousel",
+        "boracay",
+        "panglao",
+        "side",
+        "with"
+      ]
+    },
+    {
+      "id": 34,
+      "category": "calendar_planning",
+      "difficulty": "intermediate",
+      "question": "What happens to the content calendar when a campaign transitions from Awareness (Phase 2) to Consideration (Phase 3)?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Same content continues",
+        "B) Content shifts from broad, emotional, high-reach formats (video, lifestyle imagery) to specific, data-rich, comparison-based formats (carousels, infographics, ROI calculators). CTAs shift from 'learn more' to 'get the investment guide' or 'see the numbers.'",
+        "C) All content pauses for recalibration",
+        "D) Only paid content changes; organic stays the same"
+      ],
+      "correct_answer": "B",
+      "explanation": "Phase transitions require explicit content calendar adjustments. Awareness content (emotional, broad) gives way to Consideration content (rational, specific). The CTA intensity increases, the information depth increases, and the targeting narrows to engaged audiences.",
+      "keywords": [
+        "phase transition",
+        "content shift",
+        "Awareness to Consideration",
+        "CTA evolution"
+      ]
+    },
+    {
+      "id": 35,
+      "category": "calendar_planning",
+      "difficulty": "advanced",
+      "question": "The Content Strategist must plan content for a Jewish holiday when Israeli audiences are offline for 25+ hours. How should the calendar adapt?",
+      "type": "scenario",
+      "options": [
+        "A) Post as normal - the algorithm will show it later",
+        "B) Pre-schedule a compelling post for immediately after the holiday ends (Saturday evening Israeli time), when audiences surge back online and check social media. Use the holiday gap as a content reset - the first post-holiday content should be attention-grabbing. Shift the Israeli budget to Filipino campaigns during the holiday period.",
+        "C) Pause all content for the week",
+        "D) Post during the holiday anyway"
+      ],
+      "correct_answer": "B",
+      "explanation": "Jewish holidays (Shabbat weekly, plus major holidays) create offline windows. The Content Strategist should shift Israeli ad budget to Filipino campaigns during these windows and prepare compelling 'return' content for when the audience resurfaces. The post-holiday surge is a high-engagement window.",
+      "keywords": []
+    },
+    {
+      "id": 36,
+      "category": "calendar_planning",
+      "difficulty": "basic",
+      "question": "What is the content posting frequency for the Facebook investment group?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Daily posts",
+        "B) 2-3 times per week with value-first content",
+        "C) Once per month",
+        "D) Only when there is news"
+      ],
+      "correct_answer": "B",
+      "explanation": "The Facebook group posting cadence is 2-3 times per week. Content must be value-first (market data, legal guides, tourism statistics) with soft villa mentions. More frequent posting risks spam perception and group admin action.",
+      "keywords": [
+        "2-3 per week",
+        "Facebook group",
+        "value-first",
+        "organic"
+      ]
+    },
+    {
+      "id": 37,
+      "category": "calendar_planning",
+      "difficulty": "advanced",
+      "question": "How should the content calendar handle the Day 15 checkpoint? What content should precede and follow the analysis?",
+      "type": "multiple_choice",
+      "options": [
+        "A) No content change around Day 15",
+        "B) Days 13-14: increase urgency content (mid-campaign momentum). Day 15: content pause while analysis is conducted. Days 16+: content strategy may pivot based on analysis findings, so the calendar from Day 16 onward should be tentative until analysis is complete.",
+        "C) Stop all content from Day 15 onward",
+        "D) Day 15 only affects paid, not organic"
+      ],
+      "correct_answer": "B",
+      "explanation": "The Day 15 checkpoint is a strategic inflection point. Content before it should build momentum (supporting the case for continued investment). Content after it depends on the analysis results and CEO decision. The Content Strategist should prepare two calendar versions for Day 16+: continuation and pivot.",
+      "keywords": [
+        "Day 15",
+        "content pause",
+        "analysis checkpoint",
+        "two versions"
+      ]
+    },
+    {
+      "id": 38,
+      "category": "calendar_planning",
+      "difficulty": "intermediate",
+      "question": "WhatsApp broadcasts are scheduled for Tuesdays and Thursdays at 10:00 PHT. What content should these broadcasts contain?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Same content as Facebook posts",
+        "B) WhatsApp-specific content: shorter, more personal, conversation-starting. Tuesday: data nugget or market update. Thursday: property highlight or new content piece link. Both must use approved templates, include both WhatsApp numbers, and include opt-out option.",
+        "C) Long-form investment reports",
+        "D) Only promotional messages"
+      ],
+      "correct_answer": "B",
+      "explanation": "WhatsApp content must be platform-appropriate: shorter, more personal, and conversation-starting. It should feel like a knowledgeable friend sharing an interesting data point, not a corporate broadcast. Templates must be pre-approved by Meta and include opt-out.",
+      "keywords": [
+        "WhatsApp broadcast",
+        "platform-appropriate",
+        "conversation-starting",
+        "templates"
+      ]
+    },
+    {
+      "id": 39,
+      "category": "calendar_planning",
+      "difficulty": "expert",
+      "question": "The campaign enters Phase 5 (Close Push, Days 23-27). Design the content calendar for these 5 days across both markets.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Close Push calendar - ISRAELI: Day 23: Urgency carousel - 'Only 2 villas remain. Villa C: 1,650,000 shekel. Villa D: 1,535,000 shekel. Reserve at 9,999 shekel.' Day 24: Social proof post - aggregated engagement data ('X inquiries this month, Y virtual tours completed'). Day 25: Final comparison - 'Tel Aviv down payment vs Panglao villa: you decide.' Day 26: WhatsApp broadcast to warm leads - personal message from sales with exclusive offer. Day 27: Last call - 'Campaign closes in 3 days. Both numbers: +639542555553 / +639958565865.' FILIPINO: Day 23: BDO financing breakdown - 'Own a luxury villa with BDO financing. PHP 32,500,000. Monthly income: PHP 395,000.' Day 24: Infrastructure recap carousel (bridge, township, airport, JW Marriott). Day 25: Lifestyle aspiration post with villa imagery. Day 26: WhatsApp to warm Filipino leads with virtual tour invitation. Day 27: Urgency CTA - 'Limited availability. Contact us now.' All posts: urgency-driven CTAs, scarcity signals (only 2 villas), both WhatsApp numbers, at least one number per post.",
+      "explanation": "Close Push content is pure bottom-funnel: urgency, scarcity, social proof, and direct CTAs. The calendar is aggressive because the audience has been warmed over 22 days. Content should close, not educate.",
+      "keywords": [
+        "Close Push",
+        "urgency",
+        "scarcity",
+        "bottom funnel",
+        "5-day calendar"
+      ]
+    },
+    {
+      "id": 40,
+      "category": "brief_creation",
+      "difficulty": "basic",
+      "question": "What are the essential components of a campaign brief for the Content Strategist to create?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Just the ad copy",
+        "B) Positioning, target persona, primary message, channels, KPIs, creative direction, do's, don'ts, risks, and A/B hypotheses",
+        "C) Only budget and timeline",
+        "D) Only the creative images"
+      ],
+      "correct_answer": "B",
+      "explanation": "A complete campaign brief includes positioning (how the product is framed), target persona (who), primary message (what), channels (where), KPIs (success metrics), creative direction (visual and tonal guidance), do's and don'ts (guardrails), risks (what could go wrong), and A/B hypotheses (what to test).",
+      "keywords": [
+        "brief components",
+        "positioning",
+        "KPIs",
+        "creative direction",
+        "A/B hypotheses"
+      ]
+    },
+    {
+      "id": 41,
+      "category": "brief_creation",
+      "difficulty": "intermediate",
+      "question": "When creating a brief for the Israeli market, what must always be included per Rule 6?",
+      "type": "multiple_choice",
+      "options": [
+        "A) USD pricing",
+        "B) The 3 legal ownership solutions: Deed of Assignment, Leasehold 25+25, and Domestic Corporation",
+        "C) Comparison to Dubai properties",
+        "D) Hebrew slang terms"
+      ],
+      "correct_answer": "B",
+      "explanation": "Per Rule 6, Israeli content must mention the 3 legal ownership solutions either directly or indirectly. This addresses the foreigner ownership concern which is the primary objection for Israeli investors. The brief must explicitly require this inclusion.",
+      "keywords": [
+        "Rule 6",
+        "legal ownership",
+        "Israeli brief",
+        "3 solutions"
+      ]
+    },
+    {
+      "id": 42,
+      "category": "brief_creation",
+      "difficulty": "advanced",
+      "question": "The Content Strategist is creating a brief for a carousel ad targeting warm Filipino audiences in the Consideration phase. What should the brief specify for each slide?",
+      "type": "scenario",
+      "options": [
+        "A) Same message on every slide",
+        "B) Progressive narrative: Slide 1 - hook (attention-grabbing stat like PHP 395,000/month), Slide 2 - context (tourism growth data), Slide 3 - comparison (Boracay vs Panglao pricing), Slide 4 - proposition (villa details with BDO financing mention), Slide 5 - CTA (both WhatsApp numbers). Each slide has one dominant number and one key visual.",
+        "C) Only property photos with no text",
+        "D) All data on slide 1, CTA on slides 2-5"
+      ],
+      "correct_answer": "B",
+      "explanation": "Carousel slides should follow a narrative arc that guides the viewer from attention to action. Each slide has a single focus, one dominant number, and builds on the previous slide. The final slide must have both WhatsApp numbers as the CTA. This progressive structure leverages the carousel format's strength (sequential storytelling).",
+      "keywords": []
+    },
+    {
+      "id": 43,
+      "category": "brief_creation",
+      "difficulty": "basic",
+      "question": "What must every content brief specify regarding numbers, per Rule 3?",
+      "type": "true_false",
+      "options": [
+        "True - Every piece of content must include at least one specific approved number",
+        "False - Numbers are optional in content"
+      ],
+      "correct_answer": "true",
+      "explanation": "Rule 3 mandates that every post includes at least one specific number from the approved list. The brief must specify which number(s) to use and how they should be integrated into the content.",
+      "keywords": [
+        "Rule 3",
+        "specific number",
+        "mandatory",
+        "approved list"
+      ]
+    },
+    {
+      "id": 44,
+      "category": "brief_creation",
+      "difficulty": "intermediate",
+      "question": "A brief calls for video content. What maximum duration and key elements should it specify for a Meta ad video?",
+      "type": "multiple_choice",
+      "options": [
+        "A) 3 minutes with detailed narration",
+        "B) 15-30 seconds for feed, 60 seconds maximum for Stories/Reels. Hook in first 3 seconds (number or question), key value proposition by second 10, CTA with WhatsApp numbers by end. Subtitles required (80%+ view without sound). Hebrew or English depending on market.",
+        "C) 5 minutes documentary style",
+        "D) No duration specification needed"
+      ],
+      "correct_answer": "B",
+      "explanation": "Meta video ads must hook within 3 seconds (before auto-scroll), deliver the value proposition quickly, and end with a clear CTA. 80%+ of social media video is viewed without sound, making subtitles mandatory. The brief must specify these technical requirements alongside creative direction.",
+      "keywords": [
+        "video brief",
+        "15-30 seconds",
+        "hook first 3s",
+        "subtitles",
+        "CTA"
+      ]
+    },
+    {
+      "id": 45,
+      "category": "brief_creation",
+      "difficulty": "expert",
+      "question": "Write a complete content brief for a post-mortem retrospective post that will be published after Day 15. The post should share campaign learnings with the Facebook group audience.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Brief: Title: 'What we learned marketing Philippine villas to Israeli investors: 15-day data.' Objective: Position Blue Everest as transparent and data-driven, build trust in the group. Target: Israeli Facebook group members (warm audience, value knowledge sharing). Format: Long-form text post with data visualizations. Language: Hebrew, formal-warm. Content pillars: STR economics, market data. Key numbers: include actual campaign data (impressions, engagement) plus property data (PHP 395,000, 17-25% ROI). Structure: 1) Opening: what we set out to learn. 2) Data: what the numbers showed. 3) Insights: what surprised us. 4) Implication: what this means for Israeli investors in Philippine RE. 5) CTA: 'Want the full report? WhatsApp: +639542555553 / +639958565865.' Brand voice: transparent, analytical, not salesy. Do's: share real data, acknowledge what didn't work. Don'ts: no forbidden words, no em dashes, no other currencies besides ILS. A/B test: long post vs carousel version. Risk: group may perceive as disguised ad - mitigate with genuine data sharing.",
+      "explanation": "A post-mortem content brief demonstrates the depth of strategic thinking expected. It turns operational data into a content asset that builds authority and trust. The brief must be specific about tone (transparent, not salesy) because the group context requires authenticity.",
+      "keywords": [
+        "brief",
+        "title",
+        "what",
+        "learned",
+        "marketing",
+        "philippine",
+        "villas",
+        "israeli",
+        "investors",
+        "data"
+      ]
+    },
+    {
+      "id": 46,
+      "category": "brief_creation",
+      "difficulty": "advanced",
+      "question": "When creating a brief that will be deliberated by the LLM Council, what special instructions should the Content Strategist include?",
+      "type": "multiple_choice",
+      "options": [
+        "A) No special instructions needed",
+        "B) Include: brand guardrails (loaded from KB), forbidden words list, currency rules per market, Blueprint separation rule, required numbers per Rule 3, both WhatsApp numbers, legal ownership mention for IL content, BDO mention for PH content, target persona details, and the specific task type to ensure proper prompt template selection",
+        "C) Just say 'write good content'",
+        "D) Only include the topic"
+      ],
+      "correct_answer": "B",
+      "explanation": "Council deliberation requires comprehensive guardrails because four different models will generate content independently. Without explicit constraints, one or more models may violate content rules. The brief must include every compliance requirement as a hard constraint for the prompt template.",
+      "keywords": [
+        "Council brief",
+        "guardrails",
+        "prompt template",
+        "compliance constraints"
+      ]
+    },
+    {
+      "id": 47,
+      "category": "brief_creation",
+      "difficulty": "intermediate",
+      "question": "A brief for email content must specify what unique element compared to social media briefs?",
+      "type": "multiple_choice",
+      "options": [
+        "A) No difference",
+        "B) Subject line strategy (5-7 words, number-first for investment content), preview text, email sequence position (which drip email is this?), link tracking UTMs, and mobile rendering requirements since 60%+ of email is read on mobile",
+        "C) Only the body copy",
+        "D) Only the recipient list"
+      ],
+      "correct_answer": "B",
+      "explanation": "Email briefs require additional elements: subject line (the most important copy in email marketing), preview text, sequence positioning, UTM parameters for tracking, and mobile rendering specifications. Social media content doesn't have subject lines or preview text.",
+      "keywords": [
+        "email brief",
+        "subject line",
+        "preview text",
+        "UTM",
+        "mobile rendering"
+      ]
+    },
+    {
+      "id": 48,
+      "category": "brief_creation",
+      "difficulty": "advanced",
+      "question": "The Content Strategist needs to create a brief for A/B testing ad copy. What minimum elements must the A/B test brief include?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Two different images",
+        "B) Hypothesis (what we think will win and why), single variable to test (headline, CTA, image, or body copy - never more than one), success metric (CTR, CPL, or conversion rate), minimum sample size before declaring a winner, and timeline for the test",
+        "C) Just two versions of the ad",
+        "D) Budget split only"
+      ],
+      "correct_answer": "B",
+      "explanation": "A proper A/B test brief requires a hypothesis, single variable isolation, defined success metric, minimum statistical significance threshold, and timeline. Testing multiple variables simultaneously produces uninterpretable results. The Council should deliberate the test design to ensure rigor.",
+      "keywords": [
+        "A/B test brief",
+        "hypothesis",
+        "single variable",
+        "statistical significance"
+      ]
+    },
+    {
+      "id": 49,
+      "category": "brief_creation",
+      "difficulty": "basic",
+      "question": "What must a Filipino market brief always include per Rule 7?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Hebrew translation",
+        "B) BDO Bank financing mention",
+        "C) ILS pricing",
+        "D) Competitor comparison"
+      ],
+      "correct_answer": "B",
+      "explanation": "Per Rule 7, Filipino content must mention BDO Bank financing. This is a mandatory inclusion in every Filipino market brief because BDO financing is the primary mechanism that makes PHP 28-30M properties accessible to the target audience.",
+      "keywords": [
+        "BDO financing",
+        "Rule 7",
+        "Filipino brief",
+        "mandatory"
+      ]
+    },
+    {
+      "id": 50,
+      "category": "brief_creation",
+      "difficulty": "expert",
+      "question": "Create a brief for a WhatsApp nurture flow targeting Israeli leads who clicked on an ad but did not submit the form. What messages should the flow contain?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "WhatsApp Nurture Flow Brief - Target: Israeli ad clickers who did not convert. Trigger: pixel event 'landing page visit' without 'form submission' within 24 hours. Flow: Message 1 (24h after visit): 'Shalom, [name if available]. We noticed you were looking at the Panglao Prime Villas. Have questions? We're here. Villa D: 1,535,000 shekel, Villa C: 1,650,000 shekel. 17-25% verified annual return.' Message 2 (48h, if no reply): 'Here's what Israeli investors ask most about Philippine property: [link to legal ownership guide in Hebrew]. 3 ownership solutions available.' Message 3 (5 days, if no reply): '1.43 million tourists visited Bohol this year, 136.9% growth. The PHP 395,000 monthly income is verified from Airbnb. Virtual tour available.' Message 4 (7 days, final): 'Last message from us unless you'd like to continue. Reserve at 9,999 shekel to secure your position. WhatsApp: +639542555553 / +639958565865.' All messages: Hebrew, formal-warm, no forbidden words, no em dashes, ILS only, include one approved number each. Opt-out in every message. Template pre-approval required.",
+      "explanation": "WhatsApp nurture flows must be personal, value-adding, and respectful of opt-out preferences. Each message addresses a different objection: Message 1 (awareness/interest), Message 2 (legal barrier), Message 3 (demand proof), Message 4 (urgency/close). The flow auto-stops after 4 messages to prevent spam perception.",
+      "keywords": [
+        "whatsapp",
+        "nurture",
+        "flow",
+        "brief",
+        "target",
+        "israeli",
+        "clickers",
+        "convert",
+        "trigger",
+        "pixel"
+      ]
+    },
+    {
+      "id": 51,
+      "category": "brief_creation",
+      "difficulty": "intermediate",
+      "question": "A content brief specifies 'creative direction.' What does this section include?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Only color palette",
+        "B) Visual style (photography vs illustration, color mood, image composition), typography guidelines, imagery do's and don'ts (show villa exteriors/interiors, Panglao beaches, data visualizations; don't show people who could be identified, competitor properties, or stock-feeling imagery), and how numbers should be visually emphasized",
+        "C) Just the image file path",
+        "D) Only the text overlay"
+      ],
+      "correct_answer": "B",
+      "explanation": "Creative direction encompasses all visual elements: style, typography, imagery guidelines, and data visualization approaches. For the villa campaign, authentic property photography is essential - stock imagery undermines the 'verified' positioning. Numbers should be visually dominant (large font, contrasting color).",
+      "keywords": [
+        "creative direction",
+        "visual style",
+        "imagery guidelines",
+        "authentic photography"
+      ]
+    },
+    {
+      "id": 52,
+      "category": "channel_strategy",
+      "difficulty": "basic",
+      "question": "What is the primary paid advertising platform for the Panglao Prime Villas campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "A) LinkedIn",
+        "B) Meta (Facebook + Instagram) for both markets, plus Google Ads for search intent capture",
+        "C) TikTok",
+        "D) Twitter/X"
+      ],
+      "correct_answer": "B",
+      "explanation": "Meta (Facebook + Instagram) is primary for both Israeli and Filipino markets because of targeting capabilities (interests, demographics, lookalikes) and reach. Google Ads captures high-intent search traffic (people actively searching for Philippine real estate investment). Other platforms either lack the targeting precision or have prohibitive CPMs.",
+      "keywords": [
+        "Meta",
+        "Google Ads",
+        "primary platforms",
+        "targeting"
+      ]
+    },
+    {
+      "id": 53,
+      "category": "channel_strategy",
+      "difficulty": "intermediate",
+      "question": "Instagram ads are run through Meta Ads Manager. Does the campaign need a separate Instagram page?",
+      "type": "true_false",
+      "options": [
+        "True - A separate IG account is needed for Instagram ads",
+        "False - No separate IG account needed. Run Instagram ads through Meta Ads Manager linking directly to the sales website."
+      ],
+      "correct_answer": "false",
+      "explanation": "Per the project specification, there is no separate Instagram account. Instagram ads are run through Meta Ads Manager and link directly to the sales website. No Instagram page is needed for the campaign.",
+      "keywords": [
+        "Instagram",
+        "no separate account",
+        "Meta Ads Manager"
+      ]
+    },
+    {
+      "id": 54,
+      "category": "channel_strategy",
+      "difficulty": "advanced",
+      "question": "The Content Strategist must decide between a Meta Reach campaign and a Meta Engagement campaign for Day 5 (Awareness phase). What factors determine the choice?",
+      "type": "scenario",
+      "options": [
+        "A) Always use Reach",
+        "B) Use Reach if the goal is maximum unique impressions within the target audience (building brand awareness breadth). Use Engagement if the goal is building a retargeting audience from engaged users (depth). For Day 5 with limited budget, a Reach objective with engaging creative accomplishes both: maximum impressions where the engaging content naturally generates a retargeting pool.",
+        "C) Always use Engagement",
+        "D) Use Traffic objective instead"
+      ],
+      "correct_answer": "B",
+      "explanation": "The choice depends on the specific goal within the Awareness phase. With limited budget, Reach optimizes for breadth while good creative naturally creates engagement that feeds retargeting audiences. Pure Engagement optimization may narrow delivery to highly engaged but non-converting users.",
+      "keywords": []
+    },
+    {
+      "id": 55,
+      "category": "channel_strategy",
+      "difficulty": "intermediate",
+      "question": "Why is the Facebook group organic strategy important alongside paid campaigns?",
+      "type": "multiple_choice",
+      "options": [
+        "A) It's not important - paid is sufficient",
+        "B) Group organic content builds trust and authority at zero cost, reaches an already self-selected audience of Israeli investors interested in Philippine RE, and provides social proof (comments, questions, discussions) that paid ads cannot replicate. Group posts also have higher organic reach than page posts.",
+        "C) Only for SEO purposes",
+        "D) Only during budget pauses"
+      ],
+      "correct_answer": "B",
+      "explanation": "The Facebook group contains a self-selected audience already interested in Philippine real estate investment. Organic posts here reach highly qualified prospects at zero cost. The community context (peer discussions, Q&A) builds trust in ways that paid ads cannot. This complements paid campaigns by nurturing warm leads in a trusted environment.",
+      "keywords": [
+        "Facebook group",
+        "organic",
+        "trust",
+        "zero cost",
+        "self-selected audience"
+      ]
+    },
+    {
+      "id": 56,
+      "category": "channel_strategy",
+      "difficulty": "basic",
+      "question": "What role does WhatsApp play in the channel strategy?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Secondary support channel",
+        "B) Primary CTA and conversion channel - WhatsApp is where leads convert from interested to qualified, where consultations happen, and where reservations are initiated. It has the highest engagement rates (90%+ open) and is the preferred business communication tool in Israel.",
+        "C) Only for automated messages",
+        "D) Only for Filipino market"
+      ],
+      "correct_answer": "B",
+      "explanation": "WhatsApp is the primary conversion channel, not a support channel. Every ad CTA points to WhatsApp. It's where sales conversations happen, questions are answered, virtual tours are shared, and reservation commitments are made. For the Israeli market especially, WhatsApp is the default business communication medium.",
+      "keywords": [
+        "WhatsApp",
+        "primary CTA",
+        "conversion channel",
+        "90% open rate"
+      ]
+    },
+    {
+      "id": 57,
+      "category": "channel_strategy",
+      "difficulty": "advanced",
+      "question": "How should Google Search ads and Meta ads work together in the channel strategy?",
+      "type": "multiple_choice",
+      "options": [
+        "A) They operate independently",
+        "B) Meta drives awareness and creates demand (push marketing). Google Search captures demand when prospects actively search (pull marketing). Together: Meta shows the villa to prospects who weren't looking, Google catches them when they search 'Bohol investment' or 'Panglao villa' after seeing the Meta ad. Attribution should track the assist path.",
+        "C) Use only whichever has lower CPC",
+        "D) Google for Israeli, Meta for Filipino only"
+      ],
+      "correct_answer": "B",
+      "explanation": "Meta and Google serve complementary functions: Meta creates awareness (push), Google captures resulting search intent (pull). A prospect may see a Meta ad on Monday, search 'Panglao villa investment' on Wednesday, and click a Google ad. Without Google, that high-intent search click goes to a competitor. Multi-touch attribution tracks this assist path.",
+      "keywords": [
+        "push vs pull",
+        "complementary channels",
+        "demand creation vs capture",
+        "multi-touch"
+      ]
+    },
+    {
+      "id": 58,
+      "category": "channel_strategy",
+      "difficulty": "expert",
+      "question": "Design the email nurture strategy. How many sequences, what triggers, and how does email integrate with the broader channel strategy?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Email sequences: 1) Welcome Sequence (trigger: form submission): 5 emails over 12 days (Day 0 welcome + virtual tour, Day 2 ROI breakdown, Day 5 legal guide, Day 8 social proof, Day 12 reservation CTA). 2) Re-engagement Sequence (trigger: no email opens for 7 days): 3 emails (new angle on ROI, urgency CTA, final ask). 3) Hot Lead Sequence (trigger: WhatsApp conversation started or pricing page visited 2+ times): 3 emails with deeper content (detailed financial model, legal ownership step-by-step, reservation process guide). Integration: emails include WhatsApp CTAs (not just links). Email opens/clicks feed Meta Custom Audiences for retargeting. Non-openers are excluded from email but continue to receive Meta ads. Hot lead sequence syncs with WATI (WhatsApp) so sales agents know what emails the lead received. All emails in market-appropriate language with correct currency. BDO mention in Filipino emails, legal ownership in Israeli emails.",
+      "explanation": "Email strategy must complement, not duplicate, other channels. Trigger-based sequences ensure relevance. Integration with Meta retargeting and WhatsApp creates a cohesive multi-channel experience where each channel reinforces the others.",
+      "keywords": [
+        "email",
+        "sequences",
+        "welcome",
+        "sequence",
+        "trigger",
+        "form",
+        "submission",
+        "emails",
+        "over",
+        "days"
+      ]
+    },
+    {
+      "id": 59,
+      "category": "channel_strategy",
+      "difficulty": "intermediate",
+      "question": "Should the campaign use Facebook Marketplace or Shopping features?",
+      "type": "multiple_choice",
+      "options": [
+        "A) No - Marketplace is for consumer goods",
+        "B) Yes for visibility - Marketplace property listings appear in browsing feeds and attract price-sensitive searchers. While not a primary conversion channel, Marketplace listings provide additional free exposure and capture the browsing behavior of property-interested users.",
+        "C) Only for Filipino market",
+        "D) Only if budget runs out"
+      ],
+      "correct_answer": "B",
+      "explanation": "Facebook Marketplace expanded to include real estate listings. While not the primary conversion channel, Marketplace provides additional free visibility and captures users in a browsing/shopping mindset. It's a zero-cost supplement to paid campaigns that can generate incremental leads.",
+      "keywords": [
+        "Marketplace",
+        "free exposure",
+        "property listings",
+        "supplementary"
+      ]
+    },
+    {
+      "id": 60,
+      "category": "channel_strategy",
+      "difficulty": "advanced",
+      "question": "The Content Strategist considers adding TikTok to the channel mix. Is this appropriate for the Panglao Prime Villas campaign?",
+      "type": "scenario",
+      "options": [
+        "A) Yes - TikTok reaches everyone",
+        "B) No for this campaign - the target audience (35-62 Israeli investors, 35-58 Filipino professionals with PHP 500K+) under-indexes on TikTok. The $60/day budget cannot support a fourth paid platform. The content format (data-heavy investment thesis) is poorly suited to TikTok's entertainment-first algorithm. If the audience were younger or the budget larger, reassess.",
+        "C) Use TikTok for organic only",
+        "D) Use TikTok instead of Meta"
+      ],
+      "correct_answer": "B",
+      "explanation": "Channel selection must match audience demographics, content format, and budget constraints. TikTok's user base skews younger than our 35-62 target, the platform favors entertainment over investment content, and the budget cannot sustain a fourth paid platform. Strategic discipline means saying no to channels that don't fit.",
+      "keywords": []
+    },
+    {
+      "id": 61,
+      "category": "channel_strategy",
+      "difficulty": "basic",
+      "question": "What is the role of Brevo in the channel strategy?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Social media management",
+        "B) Email platform for nurture sequences, marketing emails, and transactional communications (form confirmations, appointment reminders)",
+        "C) Ad management",
+        "D) CRM only"
+      ],
+      "correct_answer": "B",
+      "explanation": "Brevo is the email platform handling nurture sequences, marketing campaigns, and transactional emails. It manages templates, automation workflows, and tracks email metrics (opens, clicks, bounces). It integrates with the broader channel strategy by feeding engagement data into Meta Custom Audiences.",
+      "keywords": [
+        "Brevo",
+        "email platform",
+        "nurture",
+        "automation"
+      ]
+    },
+    {
+      "id": 62,
+      "category": "channel_strategy",
+      "difficulty": "intermediate",
+      "question": "WATI is used for WhatsApp management. What specific capabilities does it provide?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Only sending messages",
+        "B) Template message management, flow builder for automated conversations, broadcast messaging to segmented audiences, conversation monitoring, agent assignment for live chat, and analytics on message delivery and engagement",
+        "C) Only receiving messages",
+        "D) Only template approval"
+      ],
+      "correct_answer": "B",
+      "explanation": "WATI provides the full WhatsApp Business API management suite: template management (create, submit for approval), flow builder (automated conversation sequences), broadcast (segmented messaging), live chat (agent routing), and analytics. It's the operational backbone of the WhatsApp channel strategy.",
+      "keywords": [
+        "WATI",
+        "WhatsApp management",
+        "flow builder",
+        "broadcast",
+        "analytics"
+      ]
+    },
+    {
+      "id": 63,
+      "category": "channel_strategy",
+      "difficulty": "expert",
+      "question": "Design the cross-channel retargeting strategy. How should audiences flow between Meta, Google, Email, and WhatsApp?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Cross-channel retargeting flow: Layer 1: Meta website visitors (pixel) who don't convert become Google Display retargeting audience (banner ads on browsing sites). Layer 2: Meta video viewers (>50% watch) get added to email list via lead form + receive Google Search ads for branded terms. Layer 3: Email non-openers (3+ emails, zero opens) get excluded from email but receive increased Meta ad frequency. Layer 4: WhatsApp engagers (replied to template) get removed from cold/warm campaigns and receive only hot-lead content. Layer 5: Google Search clickers who don't convert see Meta carousel retargeting with the specific content they searched for. Exclusions: buyers/reservations excluded from all paid campaigns. Each channel reinforces the others: Meta creates awareness, Google captures search intent, Email nurtures, WhatsApp converts. Audience membership is dynamic: a lead moves from cold to warm to hot across all channels simultaneously. All tracked via UTMs and Supabase lead scoring.",
+      "explanation": "Cross-channel retargeting prevents channel siloing and ensures a cohesive prospect experience. Each channel plays a specific role, and audience movement between channels reflects funnel progression. Exclusions prevent wasted spend on already-converted leads.",
+      "keywords": [
+        "cross-channel retargeting",
+        "audience flow",
+        "dynamic segmentation",
+        "exclusions"
+      ]
+    },
+    {
+      "id": 64,
+      "category": "seo_content",
+      "difficulty": "basic",
+      "question": "What is the primary domain for the villa sales website?",
+      "type": "multiple_choice",
+      "options": [
+        "A) blueeverest.com",
+        "B) primevilla.ph",
+        "C) panglaovillas.com",
+        "D) boholinvest.ph"
+      ],
+      "correct_answer": "B",
+      "explanation": "The website domain is primevilla.ph (not yet deployed). All campaign traffic directs to this domain. The .ph TLD establishes local Philippine presence, which supports the investment legitimacy narrative.",
+      "keywords": [
+        "primevilla.ph",
+        "domain",
+        "sales website"
+      ]
+    },
+    {
+      "id": 65,
+      "category": "seo_content",
+      "difficulty": "intermediate",
+      "question": "What SEO keywords should the primevilla.ph website target for the Filipino market?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Only 'villa for sale'",
+        "B) Investment-intent keywords: 'Bohol property investment,' 'Panglao villa for sale,' 'luxury villa Philippines,' 'Airbnb investment Philippines,' 'beach property Bohol,' 'BDO home loan investment property.' Geographic + intent combinations capture qualified search traffic.",
+        "C) Only brand terms",
+        "D) Generic real estate terms"
+      ],
+      "correct_answer": "B",
+      "explanation": "SEO keywords must combine geographic specificity (Bohol, Panglao) with investment intent (investment, for sale, Airbnb) and financing terms (BDO home loan). This captures searchers who are actively looking for what the campaign offers, providing the highest-quality organic traffic.",
+      "keywords": [
+        "SEO keywords",
+        "investment intent",
+        "geographic",
+        "BDO",
+        "organic traffic"
+      ]
+    },
+    {
+      "id": 66,
+      "category": "seo_content",
+      "difficulty": "advanced",
+      "question": "The Content Strategist should create blog content for primevilla.ph. What topics would rank for investment-intent searches?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Generic travel blog posts",
+        "B) Investment-focused articles: 'Bohol Real Estate Investment Guide 2026,' 'Panglao vs Boracay: Price Per Square Meter Comparison,' 'How to Own Property in the Philippines as a Foreigner,' 'Airbnb Returns in Bohol: Verified Data,' 'BDO Financing for Investment Properties.' These target long-tail search queries with high purchase intent.",
+        "C) Company press releases only",
+        "D) Social media reposts"
+      ],
+      "correct_answer": "B",
+      "explanation": "Investment-focused blog content targets long-tail keywords that indicate purchase intent. A searcher typing 'how to own property Philippines foreigner' is further along the funnel than someone searching 'Bohol beach.' Each article should include relevant property data, link to the villa listings, and capture leads via embedded forms.",
+      "keywords": [
+        "blog content",
+        "long-tail keywords",
+        "purchase intent",
+        "SEO articles"
+      ]
+    },
+    {
+      "id": 67,
+      "category": "seo_content",
+      "difficulty": "basic",
+      "question": "Why should the website have separate Hebrew and English/Tagalog versions from an SEO perspective?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Google doesn't support multiple languages on one site",
+        "B) Separate language versions with proper hreflang tags enable ranking in both Israeli Google search (Hebrew queries) and Philippine Google search (English/Tagalog queries), each optimized for their respective market's keywords, currency, and content emphasis",
+        "C) SEO doesn't matter for real estate",
+        "D) Only one version is needed"
+      ],
+      "correct_answer": "B",
+      "explanation": "Separate language versions with hreflang tags tell Google which version to serve to which market. A Hebrew page optimized for Israeli investment keywords ranks in Israeli search results, while an English page optimized for Filipino investment keywords ranks in Philippine results. This maximizes organic capture in both markets.",
+      "keywords": [
+        "hreflang",
+        "language versions",
+        "SEO per market",
+        "organic capture"
+      ]
+    },
+    {
+      "id": 68,
+      "category": "seo_content",
+      "difficulty": "intermediate",
+      "question": "What schema markup should primevilla.ph implement for SEO?",
+      "type": "multiple_choice",
+      "options": [
+        "A) No schema needed",
+        "B) RealEstateListing schema (property details, price, location), Organization schema (Blue Everest), FAQ schema (common investor questions), and Review/Rating schema if applicable. This enables rich snippets in search results, increasing CTR from organic listings.",
+        "C) Only basic HTML meta tags",
+        "D) Only OpenGraph tags"
+      ],
+      "correct_answer": "B",
+      "explanation": "Structured data markup enables rich search results: property listings with price and location, FAQ dropdowns, and organization details. Rich snippets increase CTR from organic search by 15-30% compared to plain listings. For real estate, the RealEstateListing schema is particularly valuable.",
+      "keywords": [
+        "schema markup",
+        "RealEstateListing",
+        "FAQ",
+        "rich snippets"
+      ]
+    },
+    {
+      "id": 69,
+      "category": "seo_content",
+      "difficulty": "advanced",
+      "question": "How should the Content Strategist optimize the Hebrew landing page for Israeli search engines?",
+      "type": "scenario",
+      "options": [
+        "A) Just translate the English page",
+        "B) Create unique Hebrew content optimized for Israeli search behavior: Hebrew keywords for real estate investment in Philippines, Hebrew meta descriptions, RTL-optimized layout, Hebrew FAQ addressing Israeli-specific concerns (legal ownership, tax implications, currency). Google Israel may differ from Google Philippines in ranking factors.",
+        "C) Hebrew pages don't need SEO",
+        "D) Use machine translation only"
+      ],
+      "correct_answer": "B",
+      "explanation": "Hebrew SEO requires more than translation. Israeli searchers use different query patterns, have different concerns (foreigner ownership, shekel pricing), and Google Israel may weigh different ranking signals. The Hebrew page needs native-quality content addressing Israeli-specific investment questions, not just translated Filipino content.",
+      "keywords": []
+    },
+    {
+      "id": 70,
+      "category": "seo_content",
+      "difficulty": "expert",
+      "question": "Design a content cluster strategy for primevilla.ph that targets high-intent investment searches. Include the pillar page and supporting cluster content.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Pillar page: 'The Complete Guide to Investing in Bohol Real Estate (2026)' - comprehensive 3,000+ word guide covering tourism growth, infrastructure development, property types, legal ownership for foreigners, STR economics, financing options, and investment returns. Supporting cluster pages: 1) 'Boracay vs Panglao: Property Price Comparison' (links to pillar). 2) 'How to Own Property in the Philippines as a Foreigner: 3 Legal Paths' (links to pillar). 3) 'Bohol Tourism Statistics 2026: 1.43 Million Visitors' (links to pillar). 4) 'Airbnb Investment Returns in Panglao: Verified Data' (links to pillar). 5) 'BDO Home Loan for Investment Properties: Complete Guide' (links to pillar). 6) 'PHP 7.15B Third Bridge: Impact on Panglao Property Values' (links to pillar). 7) 'JW Marriott Bohol: What It Means for Property Investors' (links to pillar). Each cluster page targets specific long-tail keywords and links back to the pillar page. The pillar page links to all cluster pages. Internal linking builds topical authority for 'Bohol real estate investment.'",
+      "explanation": "Content cluster strategy builds topical authority through comprehensive coverage. The pillar page targets the primary keyword, cluster pages target long-tail variations, and internal linking signals to Google that this site is the authoritative source on Bohol real estate investment.",
+      "keywords": [
+        "content cluster",
+        "pillar page",
+        "topical authority",
+        "internal linking"
+      ]
+    },
+    {
+      "id": 71,
+      "category": "seo_content",
+      "difficulty": "intermediate",
+      "question": "What role do UTM parameters play in the Content Strategist's SEO and content tracking?",
+      "type": "multiple_choice",
+      "options": [
+        "A) They help with search rankings",
+        "B) UTM parameters track which content pieces drive traffic and conversions: utm_source (meta, google, email, whatsapp, organic), utm_medium (cpc, organic, email, social), utm_campaign (IL-awareness, PH-consideration, etc.), utm_content (specific ad or post ID). This data informs content strategy by revealing which pillars and formats generate the most qualified traffic.",
+        "C) They are only for Google Ads",
+        "D) They slow down page loading"
+      ],
+      "correct_answer": "B",
+      "explanation": "UTM parameters are the Content Strategist's attribution backbone. They reveal which content pillar, format, market, and channel combination produces the most qualified leads. Without UTMs, the Content Strategist cannot optimize the content calendar based on performance data.",
+      "keywords": [
+        "UTM parameters",
+        "attribution",
+        "content tracking",
+        "source medium campaign"
+      ]
+    },
+    {
+      "id": 72,
+      "category": "seo_content",
+      "difficulty": "basic",
+      "question": "What meta description approach works best for investment property pages?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Generic description",
+        "B) Include specific numbers (PHP 395,000 monthly income, 17-25% ROI, location) in 150-160 characters to differentiate from competitor listings and increase CTR from search results",
+        "C) Leave meta descriptions empty",
+        "D) Keyword stuff the description"
+      ],
+      "correct_answer": "B",
+      "explanation": "Meta descriptions with specific numbers stand out in search results because they provide immediate value signals. A searcher sees '17-25% ROI, PHP 395,000/month verified income' and immediately knows whether this listing matches their investment criteria. This increases CTR compared to generic 'beautiful villa in Bohol' descriptions.",
+      "keywords": [
+        "meta description",
+        "specific numbers",
+        "CTR",
+        "search results"
+      ]
+    },
+    {
+      "id": 73,
+      "category": "seo_content",
+      "difficulty": "advanced",
+      "question": "How should the Content Strategist handle Google Business Profile for Blue Everest and the villa listings?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Not applicable for real estate",
+        "B) Create/optimize a Google Business Profile for Blue Everest Asset Group at the villa location. Include property photos, virtual tour link, contact info (both WhatsApp numbers), and regularly post updates (mirroring organic content strategy). This enables appearance in Google Maps searches for 'real estate Panglao' and local pack results.",
+        "C) Only use personal profiles",
+        "D) Google Business Profile is only for restaurants"
+      ],
+      "correct_answer": "B",
+      "explanation": "Google Business Profile provides free local search visibility. Searchers looking for 'real estate near Panglao' or 'property developer Bohol' will see the Business Profile. Regular posts (1-2/week) using content from the calendar maintain freshness and engagement signals for local SEO.",
+      "keywords": [
+        "Google Business Profile",
+        "local SEO",
+        "Maps",
+        "free visibility"
+      ]
+    },
+    {
+      "id": 74,
+      "category": "engagement_tactics",
+      "difficulty": "basic",
+      "question": "Carousel ads get how many more clicks than single-image ads?",
+      "type": "multiple_choice",
+      "options": [
+        "A) 1.5x more clicks",
+        "B) 2x more clicks",
+        "C) 3x more clicks",
+        "D) 5x more clicks"
+      ],
+      "correct_answer": "C",
+      "explanation": "Carousel ads generate 3x more clicks than single-image ads. The swipe interaction increases engagement time and allows progressive storytelling. For the villa campaign, carousels are ideal for comparison data (Boracay vs Panglao), property tours, and multi-number presentations.",
+      "keywords": [
+        "carousel",
+        "3x clicks",
+        "swipe interaction",
+        "engagement"
+      ]
+    },
+    {
+      "id": 75,
+      "category": "engagement_tactics",
+      "difficulty": "basic",
+      "question": "Video content generates how much more engagement than static content?",
+      "type": "multiple_choice",
+      "options": [
+        "A) 10% more",
+        "B) 25% more",
+        "C) 42% more",
+        "D) 80% more"
+      ],
+      "correct_answer": "C",
+      "explanation": "Video generates 42% more engagement than static content. For the villa campaign, video is most effective in the Awareness phase (capturing attention) and for virtual property tours (providing immersive experience that photos cannot match).",
+      "keywords": [
+        "video",
+        "42% more engagement",
+        "Awareness phase",
+        "virtual tour"
+      ]
+    },
+    {
+      "id": 76,
+      "category": "engagement_tactics",
+      "difficulty": "intermediate",
+      "question": "What is 'comparison anchoring' and how should it be used in villa campaign content?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Comparing the villa to a hotel",
+        "B) Placing the villa's data alongside a more expensive or lower-yielding reference point (Boracay sqm price, Tel Aviv apartment price, BGC condo yield, TASE stock returns) so the audience processes the villa's value relative to the anchor rather than in absolute terms",
+        "C) Showing before/after photos",
+        "D) Comparing two villa photos"
+      ],
+      "correct_answer": "B",
+      "explanation": "Comparison anchoring leverages cognitive bias: people evaluate options relative to reference points, not in absolute terms. PHP 32.5M alone feels expensive. PHP 32.5M vs Boracay equivalent at PHP 14.5-18.5M (land only) at PHP 55-70K/sqm makes it feel like a deal. Different anchors for different markets: Boracay for PH, Tel Aviv for IL.",
+      "keywords": [
+        "comparison anchoring",
+        "cognitive bias",
+        "reference point",
+        "relative evaluation"
+      ]
+    },
+    {
+      "id": 77,
+      "category": "engagement_tactics",
+      "difficulty": "intermediate",
+      "question": "Why should each content piece have only a single CTA rather than multiple CTAs?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Multiple CTAs give more options and increase conversion",
+        "B) Single CTA focuses attention and eliminates decision paralysis. Multiple CTAs dilute each other and reduce overall conversion rate. For the villa campaign, the CTA hierarchy is: WhatsApp first (both numbers), landing page second, never both competing equally in the same piece.",
+        "C) Platform limitations only allow one CTA",
+        "D) Multiple CTAs are fine for luxury products"
+      ],
+      "correct_answer": "B",
+      "explanation": "Decision paralysis reduces conversion: when given multiple competing actions, audiences choose none. A single clear CTA (WhatsApp message, with both numbers) focuses the viewer's decision to one binary choice: act or don't. The CTA should be the same throughout a campaign phase for consistency.",
+      "keywords": [
+        "single CTA",
+        "decision paralysis",
+        "focus",
+        "conversion rate"
+      ]
+    },
+    {
+      "id": 78,
+      "category": "engagement_tactics",
+      "difficulty": "advanced",
+      "question": "How should the Content Strategist use social proof in content when there are no existing buyer testimonials?",
+      "type": "scenario",
+      "options": [
+        "A) Create fictional testimonials",
+        "B) Use alternative social proof: 1) Verified Airbnb income data (platform-validated). 2) Tourism statistics from PSA/DOT (government-validated). 3) JW Marriott entry (institutional validation). 4) Engagement metrics ('X inquiries this month'). 5) Infrastructure investment figures (government commitment). NEVER fabricate testimonials or endorsements.",
+        "C) Skip social proof entirely",
+        "D) Use stock photo testimonials"
+      ],
+      "correct_answer": "B",
+      "explanation": "Fabricated testimonials violate both ethical standards and the corrections log (fictional testimonies were explicitly removed as a correction). Alternative forms of social proof include verified platform data, government statistics, institutional actions, and aggregate engagement metrics. These are more credible for sophisticated investors than individual testimonials anyway.",
+      "keywords": []
+    },
+    {
+      "id": 79,
+      "category": "engagement_tactics",
+      "difficulty": "advanced",
+      "question": "The Content Strategist wants to create interactive content. Which format is most effective for the villa campaign within budget constraints?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Custom-built interactive calculator app",
+        "B) Facebook/Instagram polls and question stickers in Stories asking investment-related questions ('Would you invest in a property with 17% or 25% ROI?'), creating engagement while educating about the product. Zero additional cost, builds retargeting audience from engagers.",
+        "C) Virtual reality property tour",
+        "D) Gamified quiz about Philippine real estate"
+      ],
+      "correct_answer": "B",
+      "explanation": "Within the $60/day budget, platform-native interactive features (polls, question stickers) provide engagement at zero additional cost. A poll asking 'Which matters more: rental income or property appreciation?' educates the audience about the product's strengths while generating engagement signals for retargeting.",
+      "keywords": [
+        "interactive content",
+        "polls",
+        "Stories",
+        "zero cost",
+        "engagement"
+      ]
+    },
+    {
+      "id": 80,
+      "category": "engagement_tactics",
+      "difficulty": "expert",
+      "question": "Design a content engagement sequence that moves a cold Israeli audience member through Awareness to Consideration using 5 content touchpoints. Specify format, pillar, and engagement mechanism for each.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "5-touchpoint sequence: Touchpoint 1 (Day 4, paid Meta): 30-second video showing Panglao aerial + text overlay '1.43 million tourists, 136.9% growth, your next investment?' Engagement: video views create retargeting audience. Touchpoint 2 (Day 6, paid Meta retargeting video viewers): Carousel comparing Tel Aviv apartment vs Panglao villa (price, yield, size). Each slide has one number. Engagement: carousel swipes indicate interest depth. Touchpoint 3 (Day 8, FB group organic): Long-form post sharing Bohol infrastructure data (PHP 7.15B bridge, P25B township, JW Marriott). Value-first, soft villa mention. Engagement: comments and discussion build community trust. Touchpoint 4 (Day 10, paid Meta retargeting carousel engagers): Single image with bold number - '17-25% annual ROI, verified' with WhatsApp CTA. Engagement: WhatsApp click = warm lead. Touchpoint 5 (Day 12, email after form fill): ROI breakdown email with legal ownership guide link. Engagement: email click triggers hot lead classification. Each touchpoint builds on the previous, narrowing from broad awareness to specific investment proposition.",
+      "explanation": "A multi-touchpoint sequence mirrors the natural decision-making process: discover, evaluate, compare, inquire, analyze. Each touchpoint uses the format best suited to its position in the sequence (video for discovery, carousel for comparison, email for deep data).",
+      "keywords": [
+        "touchpoint",
+        "sequence",
+        "paid",
+        "meta",
+        "second",
+        "video",
+        "showing",
+        "panglao",
+        "aerial",
+        "text"
+      ]
+    },
+    {
+      "id": 81,
+      "category": "engagement_tactics",
+      "difficulty": "intermediate",
+      "question": "How should the Content Strategist leverage the '60 seconds' approved number in content?",
+      "type": "multiple_choice",
+      "options": [
+        "A) It's a property feature",
+        "B) '60 seconds' as a content hook: '60 seconds to understand why Panglao is the smartest investment in Southeast Asia' - creates urgency and commitment ('just 60 seconds'). It can frame quick-read carousels, short videos, or condensed data presentations that respect the audience's time while delivering the investment thesis.",
+        "C) Only use in video content",
+        "D) It refers to the reservation process time"
+      ],
+      "correct_answer": "B",
+      "explanation": "The '60 seconds' number works as a content format constraint that signals respect for the audience's time. Busy investors appreciate condensed, high-impact content. '60 seconds to the numbers that matter' is both a hook and a promise that aligns with the data-driven brand voice.",
+      "keywords": [
+        "60 seconds",
+        "content hook",
+        "time commitment",
+        "condensed format"
+      ]
+    },
+    {
+      "id": 82,
+      "category": "engagement_tactics",
+      "difficulty": "basic",
+      "question": "What is the most important element in the first 3 seconds of a video ad?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Company logo",
+        "B) A hook - either a compelling number, a provocative question, or a visually striking image that prevents the auto-scroll. For this campaign: '17-25% ROI from a beach villa' or 'What if your investment paid for itself in 4 years?'",
+        "C) Music",
+        "D) Narrator introduction"
+      ],
+      "correct_answer": "B",
+      "explanation": "The first 3 seconds determine whether the viewer scrolls past or watches. The hook must create immediate curiosity or value. Numbers are the most effective hooks for investment content because they signal concrete information rather than vague promises. The company logo can appear later.",
+      "keywords": [
+        "first 3 seconds",
+        "hook",
+        "auto-scroll prevention",
+        "number hook"
+      ]
+    },
+    {
+      "id": 83,
+      "category": "engagement_tactics",
+      "difficulty": "advanced",
+      "question": "The Content Strategist wants to create a 'calculator-style' content piece showing ROI projections. What engagement format works best on social media?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Static infographic with fixed numbers",
+        "B) Multi-slide carousel where each slide shows a different scenario: Slide 1 - 'At 65% occupancy: PHP 395,000/month, 17% ROI.' Slide 2 - 'At 75% occupancy: PHP 455,000/month, 20% ROI.' Slide 3 - 'At 85% occupancy (peak season): PHP 520,000/month, 25% ROI.' This simulates a calculator within the social media format constraints.",
+        "C) Link to an external calculator tool",
+        "D) Text-only post with numbers"
+      ],
+      "correct_answer": "B",
+      "explanation": "A carousel that simulates a calculator by showing different scenarios drives engagement (swipe interaction) while presenting the ROI thesis across multiple data points. Each slide is self-contained with one clear number, but the sequence tells a story of increasing returns. This gets 3x more clicks than a static version.",
+      "keywords": [
+        "calculator carousel",
+        "scenario presentation",
+        "swipe engagement",
+        "ROI projection"
+      ]
+    },
+    {
+      "id": 84,
+      "category": "brand_voice",
+      "difficulty": "basic",
+      "question": "What is the Hebrew brand voice register for Israeli content?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Casual with slang",
+        "B) Formal but warm, peer-to-peer professional. No slang.",
+        "C) Academic and technical",
+        "D) Ultra-formal with honorifics"
+      ],
+      "correct_answer": "B",
+      "explanation": "Per Rule 8, Hebrew register is formal but warm, peer-to-peer professional. No slang. This positions Blue Everest as a knowledgeable peer sharing a smart investment opportunity, not a salesperson pitching or an academic lecturing. The tone is 'smart friend who found a great deal.'",
+      "keywords": [
+        "Hebrew register",
+        "formal-warm",
+        "peer-to-peer",
+        "no slang"
+      ]
+    },
+    {
+      "id": 85,
+      "category": "brand_voice",
+      "difficulty": "intermediate",
+      "question": "How does the English/Filipino brand voice differ from the Hebrew voice?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Identical tone for both markets",
+        "B) English is professional and data-driven with aspirational undertones. Tagalog adds national pride and status elevation angles ('invest in the Philippines' future,' 'own a piece of paradise in Bohol'). Both avoid forbidden words, but the emotional triggers differ: Israeli = shrewd investment, Filipino = prestige and pride.",
+        "C) Filipino is casual, English is formal",
+        "D) Both use the same Hebrew register"
+      ],
+      "correct_answer": "B",
+      "explanation": "The English professional voice serves both expats and Filipino professionals who consume content in English. Tagalog content adds cultural resonance: national pride, status through property ownership, and community aspiration. The investment thesis is the same; the cultural wrapper differs.",
+      "keywords": [
+        "English voice",
+        "Tagalog voice",
+        "professional",
+        "pride",
+        "status"
+      ]
+    },
+    {
+      "id": 86,
+      "category": "brand_voice",
+      "difficulty": "advanced",
+      "question": "A Council member generates copy that uses the word 'incredible' to describe the ROI. What should the Content Strategist do?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Accept - the Council chose it",
+        "B) Reject and request revision - 'incredible' is a forbidden word per Rule 5. Replace with a data-specific alternative: '17-25% verified annual return' says the same thing with credibility instead of hyperbole. Log the override as a training signal.",
+        "C) Change to 'amazing' instead",
+        "D) Keep it but add a disclaimer"
+      ],
+      "correct_answer": "B",
+      "explanation": "Forbidden words (amazing, incredible, dream home, once in a lifetime) are hard rules. The Content Strategist must reject Council output that violates them and provide data-driven alternatives. 'Incredible ROI' is hyperbole; '17-25% verified annual return' is proof. The override is logged to train the Council.",
+      "keywords": [
+        "forbidden word",
+        "incredible",
+        "Rule 5",
+        "data alternative",
+        "override"
+      ]
+    },
+    {
+      "id": 87,
+      "category": "brand_voice",
+      "difficulty": "basic",
+      "question": "Should content describe Blueprint Building Group as a Philippine company or an Israeli company?",
+      "type": "true_false",
+      "options": [
+        "True - Blueprint is described as a Philippine company (blueprint-ph.com). This is a hard rule with no exceptions.",
+        "False - Blueprint can be described as an international company"
+      ],
+      "correct_answer": "true",
+      "explanation": "Blueprint Building Group Inc. is a Philippine company. This is a hard rule baked into every prompt template. Content must never describe Blueprint as Israeli or foreign-origin. This protects local market positioning.",
+      "keywords": [
+        "Blueprint",
+        "Philippine company",
+        "hard rule"
+      ]
+    },
+    {
+      "id": 88,
+      "category": "brand_voice",
+      "difficulty": "intermediate",
+      "question": "What punctuation is forbidden in all content, and what should be used instead?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Exclamation marks are forbidden",
+        "B) Em dashes, en dashes, and Hebrew maqaf are forbidden. Use regular hyphens (-), colons (:), or commas (,) instead.",
+        "C) Periods are forbidden in Hebrew",
+        "D) Semicolons are forbidden"
+      ],
+      "correct_answer": "B",
+      "explanation": "Per Rule 2, em dashes, en dashes, and Hebrew maqaf are forbidden in all content. Regular hyphens (-), colons (:), and commas (,) are the approved alternatives. This is a formatting consistency rule that must be checked in all content before publication.",
+      "keywords": [
+        "em dash",
+        "en dash",
+        "maqaf",
+        "Rule 2",
+        "regular hyphen"
+      ]
+    },
+    {
+      "id": 89,
+      "category": "brand_voice",
+      "difficulty": "expert",
+      "question": "Write a style guide for the Content Strategist covering voice, tone, and language rules for both markets in 5 key principles.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "5 brand voice principles: 1) DATA OVER ADJECTIVES: Replace every subjective claim with a specific number. Not 'great returns' but '17-25% annual ROI.' Not 'growing tourism' but '1.43M visitors, 136.9% growth.' Numbers build credibility; adjectives build skepticism. 2) PEER, NOT SELLER: Address the audience as fellow investors evaluating an opportunity, not customers being sold to. 'Here's what the numbers show' vs 'Don't miss this opportunity.' Formal-warm in Hebrew, professional in English, pride-driven in Tagalog. 3) MARKET-SPECIFIC CURRENCY AND FRAMING: Israeli content: ILS only, legal ownership focus, Tel Aviv comparison anchor. Filipino content: PHP primary, BDO financing, Boracay comparison anchor. Never mix currencies across markets. 4) ONE NUMBER, ONE CTA: Every piece leads with one dominant number and ends with one clear action (WhatsApp, with both numbers). Multiple competing messages dilute impact. 5) VERIFY EVERYTHING: Only use verified data. The word 'verified' applied to the Airbnb income is our most powerful differentiator. Never extrapolate, project, or estimate without labeling it as such. If we can't verify it, we don't claim it.",
+      "explanation": "A brand voice style guide provides guardrails that ensure consistency across all content creators (human and AI). These 5 principles are derived from the campaign rules and encode the fundamental content strategy into actionable guidelines.",
+      "keywords": [
+        "brand",
+        "voice",
+        "principles",
+        "data",
+        "over",
+        "adjectives",
+        "replace",
+        "every",
+        "subjective",
+        "claim"
+      ]
+    },
+    {
+      "id": 90,
+      "category": "brand_voice",
+      "difficulty": "advanced",
+      "question": "How should the brand voice handle the tension between urgency (only 2 villas) and professionalism (no hard-sell)?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Use aggressive urgency tactics",
+        "B) Frame scarcity as factual observation, not pressure: 'Two villas available: Villa C at PHP 35,000,000, Villa D at PHP 32,500,000. When they're reserved, the opportunity closes.' This states the fact without manufactured urgency. The scarcity is real (only 2 units), so it needs no embellishment.",
+        "C) Avoid mentioning scarcity entirely",
+        "D) Use countdown timers and 'LAST CHANCE' messaging"
+      ],
+      "correct_answer": "B",
+      "explanation": "Real scarcity (only 2 villas) doesn't need artificial urgency tactics. Stating the fact ('2 villas, when reserved they're gone') is more credible to sophisticated investors than 'LAST CHANCE' messaging. The professional voice treats the audience as rational decision-makers who understand supply and demand.",
+      "keywords": [
+        "scarcity",
+        "factual urgency",
+        "no hard-sell",
+        "professional",
+        "rational"
+      ]
+    },
+    {
+      "id": 91,
+      "category": "analytics_interpretation",
+      "difficulty": "intermediate",
+      "question": "The Content Strategist sees that carousel posts have 3.2% CTR while single-image posts have 1.1% CTR. What content calendar adjustment should follow?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Switch entirely to carousels",
+        "B) Increase carousel frequency from 2/week to 3-4/week while maintaining 1-2 single-image posts for variety. Investigate which carousel topics perform best and replicate that structure. Single-image posts still serve a purpose (simple CTAs, brand reminders) but should not be the primary format.",
+        "C) Keep the current mix unchanged",
+        "D) Reduce all content frequency"
+      ],
+      "correct_answer": "B",
+      "explanation": "Performance data should shift content mix toward winning formats, but not eliminate alternatives entirely. Carousels win on engagement but single-image posts serve different purposes. The Content Strategist should increase carousels and study WHY they outperform (the comparison format? the swipe interaction?) to apply those insights to other formats.",
+      "keywords": [
+        "carousel vs single-image",
+        "content mix",
+        "performance-driven",
+        "format optimization"
+      ]
+    },
+    {
+      "id": 92,
+      "category": "analytics_interpretation",
+      "difficulty": "advanced",
+      "question": "Israeli content has higher CTR (2.8%) but lower conversion rate (1.2%) compared to Filipino content with lower CTR (1.6%) but higher conversion rate (3.5%). What does this pattern indicate?",
+      "type": "scenario",
+      "options": [
+        "A) Israeli ads are better",
+        "B) Filipino ads are better",
+        "C) Israeli content attracts clicks but the landing page or post-click experience may not match expectations (disconnect between ad promise and landing page delivery). Filipino content attracts fewer but more qualified clicks. The Content Strategist should audit the Israeli landing page for message match, load time, and CTA clarity.",
+        "D) Both are performing equally"
+      ],
+      "correct_answer": "C",
+      "explanation": "High CTR + low conversion indicates an ad-to-landing-page disconnect. The Israeli ad is compelling enough to click but the post-click experience doesn't convert. Possible causes: landing page not in Hebrew, ILS pricing not prominent, legal ownership info buried, WhatsApp CTA not visible. The Content Strategist needs to audit the full click-through experience.",
+      "keywords": []
+    },
+    {
+      "id": 93,
+      "category": "analytics_interpretation",
+      "difficulty": "basic",
+      "question": "What does a CPL of $35 (above the $30 target) signal to the Content Strategist?",
+      "type": "multiple_choice",
+      "options": [
+        "A) The campaign is performing well",
+        "B) The campaign needs optimization: either the targeting is too broad (reaching unqualified audiences), the content is not compelling enough (low conversion from impression to lead), or the landing page has friction. Do not simply increase budget.",
+        "C) Increase budget to get more leads",
+        "D) CPL doesn't matter"
+      ],
+      "correct_answer": "B",
+      "explanation": "CPL above target ($35 > $30) indicates inefficiency somewhere in the funnel. The Content Strategist's role is to diagnose whether the issue is content quality (not compelling), audience fit (not relevant), or funnel friction (landing page issues). Simply increasing budget amplifies inefficiency.",
+      "keywords": [
+        "CPL above target",
+        "optimization needed",
+        "diagnosis",
+        "content quality"
+      ]
+    },
+    {
+      "id": 94,
+      "category": "analytics_interpretation",
+      "difficulty": "expert",
+      "question": "After 10 days, the Content Strategist has the following data: Tourism growth posts (CTR 2.1%, CPL $28), Price comparison posts (CTR 3.8%, CPL $18), ROI calculation posts (CTR 2.5%, CPL $22), Lifestyle posts (CTR 1.9%, CPL $40), Infrastructure posts (CTR 1.4%, CPL $55). What content strategy adjustments should be made?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Analysis: Price comparison is the clear winner (highest CTR, lowest CPL). ROI calculation is second. Tourism growth is solid. Lifestyle and infrastructure underperform significantly. Adjustments: 1) Increase price comparison frequency to 3x/week (from 1x). 2) Maintain ROI calculation at 2x/week. 3) Reduce infrastructure from 1x to bi-weekly. 4) Transform lifestyle posts: instead of standalone lifestyle, combine lifestyle imagery with price comparison data (carousel: beautiful villa photo + price per sqm comparison). 5) Apply the comparison format to infrastructure content ('PHP 7.15B bridge investment vs your local property tax increase'). 6) Hypothesis: comparison anchoring format drives engagement. Test whether tourism growth content performs better when presented as 'Bohol 136.9% growth vs Boracay 15% growth' (comparison format) rather than standalone '136.9% growth.' 7) Never eliminate a pillar entirely - just adjust frequency and format based on data.",
+      "explanation": "Content strategy optimization requires both data analysis and creative problem-solving. The winning element (comparison format) should be applied to underperforming pillars, not just the winning topic. The Content Strategist looks for the format insight behind the metric.",
+      "keywords": [
+        "analysis",
+        "price",
+        "comparison",
+        "clear",
+        "winner",
+        "highest",
+        "lowest",
+        "calculation",
+        "second",
+        "tourism"
+      ]
+    },
+    {
+      "id": 95,
+      "category": "analytics_interpretation",
+      "difficulty": "intermediate",
+      "question": "Email open rate is 35% but click-through rate is only 2%. What does this indicate?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Emails are performing well",
+        "B) Subject lines are effective (35% open) but email body content or CTA is not compelling enough to drive clicks. The Content Strategist should test: different CTA placement, more prominent WhatsApp buttons, stronger body copy with specific numbers, and mobile-optimized layout (most email is read on mobile).",
+        "C) Send more emails to increase clicks",
+        "D) Email is not a viable channel"
+      ],
+      "correct_answer": "B",
+      "explanation": "High open rate + low CTR points to a body content issue. The subject line works (gets opens) but the email content doesn't compel action. Common fixes: move CTA higher, make it a button not a text link, lead with the strongest number (PHP 395,000/month), optimize for mobile screens, and test different CTA copy.",
+      "keywords": [
+        "open rate vs CTR",
+        "body content",
+        "CTA placement",
+        "email optimization"
+      ]
+    },
+    {
+      "id": 96,
+      "category": "compliance",
+      "difficulty": "basic",
+      "question": "A content piece for the Filipino market mentions 'financing available through multiple banks.' Does this comply with Rule 7?",
+      "type": "true_false",
+      "options": [
+        "True - it mentions financing",
+        "False - Rule 7 specifically requires mentioning BDO Bank financing, not generic 'multiple banks'"
+      ],
+      "correct_answer": "false",
+      "explanation": "Rule 7 is specific: Filipino content must mention BDO Bank financing. 'Multiple banks' is generic and does not satisfy the rule. The content must be revised to specifically name BDO.",
+      "keywords": [
+        "BDO",
+        "Rule 7",
+        "specific mention",
+        "not generic"
+      ]
+    },
+    {
+      "id": 97,
+      "category": "compliance",
+      "difficulty": "intermediate",
+      "question": "Israeli content shows Villa D at '1,535,000 shekel' and also mentions 'approximately $400,000 USD.' Is this compliant?",
+      "type": "true_false",
+      "options": [
+        "True - ILS is the primary currency",
+        "False - Rule 1 states Israeli content shows ONLY shekels. No PHP, no USD, no other currencies."
+      ],
+      "correct_answer": "false",
+      "explanation": "Per Rule 1, Israeli content shows ONLY shekels. Adding USD (even as 'approximately') violates the rule. The rationale: multiple currencies create confusion, and ILS-only keeps the audience in their native financial frame, reducing cognitive friction.",
+      "keywords": [
+        "ILS only",
+        "no USD",
+        "Rule 1",
+        "single currency"
+      ]
+    },
+    {
+      "id": 98,
+      "category": "compliance",
+      "difficulty": "advanced",
+      "question": "The Content Strategist discovers that a scheduled post refers to a villa buyer by name as a testimonial. The campaign has no verified buyer testimonials. What should happen?",
+      "type": "scenario",
+      "options": [
+        "A) Publish - any social proof helps",
+        "B) Block immediately - fabricated testimonials violate content integrity rules. Per the corrections log, fictional testimonies were explicitly removed as a critical fix. Replace with verified data points (Airbnb income, tourism statistics, institutional validation) as alternative social proof. Log the incident and investigate how the fabricated content was generated.",
+        "C) Change the name to something generic",
+        "D) Add a disclaimer that it's fictional"
+      ],
+      "correct_answer": "B",
+      "explanation": "Fabricated testimonials were explicitly removed in the corrections log as a critical fix. This is a content integrity violation. The Content Strategist must block publication, replace with verified data-based social proof, and investigate the content generation pipeline to prevent recurrence.",
+      "keywords": []
+    },
+    {
+      "id": 99,
+      "category": "compliance",
+      "difficulty": "basic",
+      "question": "Every post must include both WhatsApp numbers. What are they?",
+      "type": "multiple_choice",
+      "options": [
+        "A) Only the marketing number: +639542555553",
+        "B) Marketing: +639542555553 and Office: +639958565865",
+        "C) Only the office number: +639958565865",
+        "D) A single general inquiry number"
+      ],
+      "correct_answer": "B",
+      "explanation": "Per Rule 4, every post must include BOTH WhatsApp numbers: Marketing (+639542555553) and Office (+639958565865). No exceptions. This provides redundancy and ensures leads can reach the team through multiple channels.",
+      "keywords": [
+        "both WhatsApp numbers",
+        "Rule 4",
+        "+639542555553",
+        "+639958565865"
+      ]
+    },
+    {
+      "id": 100,
+      "category": "compliance",
+      "difficulty": "expert",
+      "question": "The Content Strategist is reviewing a batch of 10 content pieces before publication. Create a compliance checklist of all rules that must be verified for each piece.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Pre-publication compliance checklist: 1) CURRENCY CHECK (Rule 1/1B): Israeli content has ILS ONLY? Filipino content has PHP primary? No currency mixing? 2) PUNCTUATION CHECK (Rule 2): No em dashes, en dashes, or Hebrew maqaf? Only hyphens, colons, commas? 3) NUMBER CHECK (Rule 3): At least one specific approved number present? (1,420,888 / 1,522,380 / 9,999 / PHP 395,000 / 17-25% / 136.9% / 65% / 60 seconds / 263.78 sqm / 4 bedrooms / PHP 32.5M/30M) 4) CTA CHECK (Rule 4): Both WhatsApp numbers present? (+639542555553 AND +639958565865) 5) FORBIDDEN WORDS CHECK (Rule 5): No amazing, incredible, dream home, once in a lifetime (or Hebrew equivalents)? 6) IL LEGAL CHECK (Rule 6): Israeli content mentions 3 ownership solutions? (Deed of Assignment, Leasehold 25+25, Domestic Corporation - directly or indirectly) 7) PH FINANCING CHECK (Rule 7): Filipino content mentions BDO Bank financing? 8) REGISTER CHECK (Rule 8): Hebrew is formal-warm, no slang? 9) BLUEPRINT SEPARATION: No mention of Blueprint Building Group? No cross-posting to Blueprint page? 10) APPROVAL RECORD: Is there an approval row in the system before publishing to any paid channel? 11) SIMULATION CHECK: Is simulation mode active? If yes, screenshot only, do not publish. 12) FABRICATION CHECK: No fictional testimonials, endorsements, or unverified claims?",
+      "explanation": "A comprehensive compliance checklist prevents rule violations that can trigger ad account restrictions, legal issues, or brand damage. Every content piece must pass all 12 checks before publication. The checklist should be automated where possible.",
+      "keywords": [
+        "compliance checklist",
+        "pre-publication",
+        "12 checks",
+        "all rules"
+      ]
+    }
+  ]
+}

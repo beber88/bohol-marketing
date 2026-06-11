@@ -1,0 +1,811 @@
+{
+  "agent": "brand_guard",
+  "timestamp": "2026-06-03T19:32:10.879Z",
+  "total": 100,
+  "correct": 100,
+  "score": 100,
+  "passed": true,
+  "results": [
+    {
+      "id": 1,
+      "question": "Which of the following words is explicitly forbidden in all Panglao Prime Villas marketing content?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 5 explicitly forbids: amazing, incredible, dream home, once in a lifetime (and Hebrew equivalents). 'Premium', 'verified', and 'exclusive' are not on the forbidden list."
+    },
+    {
+      "id": 2,
+      "question": "How many words/phrases are on the explicit forbidden list?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Rule 5 lists exactly 4 forbidden words/phrases: amazing, incredible, dream home, once in a lifetime. Their Hebrew equivalents are also forbidden."
+    },
+    {
+      "id": 3,
+      "question": "Review this headline: 'An Incredible 4-Bedroom Villa with 17-25% ROI'. What is the violation?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "'Incredible' is explicitly listed as a forbidden word in Rule 5. The headline must be rewritten to remove this word, e.g., 'Premium 4-Bedroom Villa with 17-25% ROI'."
+    },
+    {
+      "id": 4,
+      "question": "Which Hebrew word is forbidden because it is the equivalent of 'amazing'?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 5 forbids forbidden words AND their Hebrew equivalents. מדהים is the direct Hebrew translation of 'amazing' and is therefore forbidden. Other positive Hebrew adjectives like מרשים, איכותי, and נהדר are acceptable."
+    },
+    {
+      "id": 5,
+      "question": "Review this text: 'This is a once-in-a-lifetime investment in your dream home - an amazing villa that is truly incredible.' How many Rule 5 violations does it contain?",
+      "agent_answer": "d",
+      "correct_answer": "d",
+      "passed": true,
+      "explanation": "The text contains ALL 4 forbidden words/phrases: 'once-in-a-lifetime', 'dream home', 'amazing', and 'incredible'. Every single forbidden term from Rule 5 is present."
+    },
+    {
+      "id": 6,
+      "question": "True or false: The phrase 'dream investment' is forbidden because it contains the word 'dream'.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Rule 5 forbids the specific phrase 'dream home', not the word 'dream' in all contexts. However, a cautious brand guard might flag 'dream investment' for review since it is semantically close to the forbidden pattern."
+    },
+    {
+      "id": 7,
+      "question": "A copywriter submits: 'בית החלומות שלכם בפנגלאו' (Your dream home in Panglao). Should this be flagged?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 5 explicitly states forbidden words include Hebrew equivalents. 'בית החלומות' directly translates to 'dream home' and must be rejected regardless of language or medium."
+    },
+    {
+      "id": 8,
+      "question": "Which replacement is acceptable for the forbidden phrase 'once in a lifetime opportunity'?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "'Rare opportunity' does not contain any forbidden words. Options b and d are variations of the exact forbidden phrase 'once in a lifetime'. Option c, while dropping 'once in', is semantically too close and should be avoided."
+    },
+    {
+      "id": 9,
+      "question": "A social media post reads: 'Imagine living the dream in your own home, an amazingly designed villa that is incredibly well-located.' How should the brand guard classify this?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "A thorough brand guard should flag all derivatives and near-matches of forbidden words. 'Amazingly' derives from 'amazing', 'incredibly' from 'incredible', and 'living the dream in your own home' is a creative rewrite of 'dream home'. The spirit of Rule 5 forbids these word families, not just exact strings."
+    },
+    {
+      "id": 10,
+      "question": "Which of these words is NOT on the forbidden list?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "'Stunning' is not on the forbidden words list (Rule 5). The forbidden list is: amazing, incredible, dream home, once in a lifetime. However, using overly hyperbolic language may still violate the factual tone requirement even if words are not explicitly forbidden."
+    },
+    {
+      "id": 11,
+      "question": "A Tagalog ad uses the phrase 'kahanga-hangang investment' (amazing investment). Should this be flagged?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "While Rule 5 explicitly mentions Hebrew equivalents, the principle extends to all languages used in the campaign. 'Kahanga-hangang' means 'amazing' in Tagalog and should be flagged to maintain brand consistency across all markets."
+    },
+    {
+      "id": 12,
+      "question": "A copywriter argues: 'The rule says dream HOME, but I wrote dream VILLA. That is technically different.' Is this argument valid?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Brand rules should be interpreted by their intent, not exploited through technicalities. 'Dream villa' carries the same aspirational-emotional connotation as 'dream home' and should be rejected. The rule exists to prevent emotionally manipulative language in favor of factual, data-driven copy."
+    },
+    {
+      "id": 13,
+      "question": "Which sentence passes the forbidden words check?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Option b contains zero forbidden words and uses factual, number-driven language. Options a, c, and d each contain multiple forbidden words (incredible, dream home, amazing, once-in-a-lifetime)."
+    },
+    {
+      "id": 14,
+      "question": "Rate the severity: A headline uses 'incredible' (forbidden), and the body copy uses correct numbers and formatting but ends with 'this is a once in a lifetime chance'. How should the brand guard handle this?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Forbidden words are zero-tolerance. Rule 5 does not have a minimum violation count to trigger rejection. Even one forbidden word in any part of the content (headline, body, CTA) requires the entire piece to be rejected and rewritten."
+    },
+    {
+      "id": 15,
+      "question": "A photo caption reads: 'The villa of your dreams'. Should this be flagged?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "'Villa of your dreams' is semantically equivalent to 'dream home/villa'. The rule's intent is to prevent aspirational-emotional framing in favor of factual copy. A brand guard should flag this and suggest a factual alternative like '263.78 sqm villa with private pool and 17-25% ROI'."
+    },
+    {
+      "id": 16,
+      "question": "What currency must be used EXCLUSIVELY in Israeli market content?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Rule 1 states: Israeli content shows ONLY shekels. No PHP. No USD. No other currencies. The shekel symbol ש\"ח must be used."
+    },
+    {
+      "id": 17,
+      "question": "What is the fixed ILS price for Villa D in the current month?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 1 specifies fixed prices: Villa D is PHP 32,500,000 and Villa C is PHP 35,000,000. These are set for the current month and must not be recalculated from FX rates."
+    },
+    {
+      "id": 18,
+      "question": "Review this Israeli ad: 'וילה D - PHP 32,500,000 (כ-$280,000)'. Is this compliant?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 1 is absolute: Israeli content shows ONLY shekels. No PHP. No USD. No other currencies. Even parenthetical USD references violate this rule. The ad must show only PHP 32,500,000 with no other currency."
+    },
+    {
+      "id": 19,
+      "question": "What is the correct reservation amount for the Israeli market?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Rule 1 specifies the reservation amount for Israeli content as PHP 200,000. This is a fixed amount that should not be converted or rounded."
+    },
+    {
+      "id": 20,
+      "question": "For Filipino market content, how should USD be presented alongside PHP?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 1B states: PHP is primary currency with commas (PHP 32,500,000). USD is secondary with 'approx.' prefix and rate date. No ILS in Filipino content."
+    },
+    {
+      "id": 21,
+      "question": "Review this Filipino ad: 'Villa D - PHP28000000'. What formatting violation exists?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 1B requires PHP formatting with commas: 'PHP 32,500,000'. The submitted 'PHP28000000' lacks the space after PHP and the comma separators, making it harder to read and non-compliant with formatting rules."
+    },
+    {
+      "id": 22,
+      "question": "True or false: Israeli content can mention 'other financial details given at the booking meeting' regarding payment terms.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Rule 1 states: 'Other financial details (payment terms, financing) are given at the booking meeting, not in ads.' This means Israeli ads should show the villa price and reservation in ILS only, saving detailed payment terms for the meeting."
+    },
+    {
+      "id": 23,
+      "question": "A content piece for the Israeli market mentions 'monthly income of PHP 395,000 verified by Airbnb'. What is the correct assessment?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Villa and reservation prices use fixed shekel amounts for Israeli content, but verified rental income must remain PHP 395,000 and must never be converted to shekels."
+    },
+    {
+      "id": 24,
+      "question": "What is the fixed ILS price for Villa C?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 1 fixes Villa C at PHP 35,000,000 for the current month. Villa D is PHP 32,500,000. These prices must not be recalculated from FX rates."
+    },
+    {
+      "id": 25,
+      "question": "A copywriter creates an Israeli ad showing ROI as '17-25%' without specifying the currency of the underlying income. Is this compliant?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Percentages (ROI, occupancy rates, growth rates) are currency-neutral figures and do not violate Rule 1's ILS-only requirement. '17-25% ROI' is compliant for Israeli content without needing to specify underlying currency calculations."
+    },
+    {
+      "id": 26,
+      "question": "Review this Filipino content: 'Reserve for approx. $3,500 (as of May 2026 rates)'. What is the issue?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 1B requires PHP as the primary currency. The reservation should be stated as 'PHP 200,000' first, with USD as optional secondary: 'PHP 200,000 (approx. $3,500, May 2026 rates)'. Leading with USD alone violates the PHP-primary rule."
+    },
+    {
+      "id": 27,
+      "question": "An infographic for the Israeli market shows a breakdown: 'Purchase: PHP 32,500,000, Renovation budget: ₱500,000, Furniture: $5,000'. How many currency violations exist?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Rule 1 requires Israeli content to show ONLY shekels. The PHP renovation budget and USD furniture amount both violate this rule. Both must be converted to ILS. The purchase price in ILS is correct."
+    },
+    {
+      "id": 28,
+      "question": "True or false: The FX rate for ILS to PHP can be recalculated daily for ad pricing.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Rule 1 explicitly states: 'Fixed prices for the current month (do NOT recalculate from FX)'. Villa D: PHP 32,500,000, Villa C: PHP 35,000,000, Reservation: PHP 200,000. These are the definitive prices."
+    },
+    {
+      "id": 29,
+      "question": "A bilingual ad targets both Israeli and Filipino audiences simultaneously with a single creative. It shows: 'Villa D - PHP 32,500,000 / PHP 32,500,000'. Is this acceptable?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 1 requires Israeli content to show ONLY shekels, and Rule 1B requires Filipino content to show PHP primarily. A dual-currency creative violates Rule 1 for Israeli viewers (they see PHP) and is suboptimal for Filipino viewers (they see ILS). Separate market-specific creatives are mandatory."
+    },
+    {
+      "id": 30,
+      "question": "In Filipino content, how should the BDO financing terms be displayed with currency?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "BDO financing details should use PHP context since it is a Philippine bank serving the Filipino market. Percentage-based terms (70% LTV, ~6% interest, 15-year) are currency-neutral. Any absolute amounts should be in PHP per Rule 1B."
+    },
+    {
+      "id": 31,
+      "question": "Rule 4 requires every post to include how many WhatsApp numbers?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 4 requires BOTH WhatsApp numbers: Marketing (+639542555553) and Office (+639958565865). Every post must include both."
+    },
+    {
+      "id": 32,
+      "question": "What are the two WhatsApp numbers that must appear in every post?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Rule 4 specifies: WhatsApp (Marketing): +639542555553 and WhatsApp (Office): +639958565865. Both numbers must appear in every post."
+    },
+    {
+      "id": 33,
+      "question": "Review this CTA: 'Contact us via WhatsApp: +639542555553'. Is this Rule 4 compliant?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 4 requires BOTH WhatsApp numbers in every post. Including only the Marketing number (+639542555553) without the Office number (+639958565865) is a violation."
+    },
+    {
+      "id": 34,
+      "question": "A Google Search ad has limited character space. The copywriter includes only one WhatsApp number in the description and puts the second in a sitelink extension. Is this compliant?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Sitelink extensions are not guaranteed to display. Rule 4 requires both numbers in every post, meaning the core visible content must include both. Relying on optional ad extensions does not satisfy the rule."
+    },
+    {
+      "id": 35,
+      "question": "A WhatsApp template message naturally comes FROM one of the numbers. Does it still need to include BOTH numbers in the message body?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 4 applies to every post without exception. Even if the message is sent from one WhatsApp number, the body should include both numbers so the recipient has an alternative contact and knows there are two lines available."
+    },
+    {
+      "id": 36,
+      "question": "Which label should be used for the WhatsApp number +639542555553?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Per Rule 4: +639542555553 is labeled 'WhatsApp (Marketing)' and +639958565865 is labeled 'WhatsApp (Office)'. Labels must match these designations."
+    },
+    {
+      "id": 37,
+      "question": "An email template includes the WhatsApp numbers but styles them as non-clickable plain text. Is this a CTA issue?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 4 is technically satisfied by the numbers being present. However, for CTA effectiveness, WhatsApp numbers in digital content should be linked as wa.me/639542555553 and wa.me/639958565865 to enable one-tap messaging. This is a best practice recommendation beyond the minimum rule compliance."
+    },
+    {
+      "id": 38,
+      "question": "A Facebook carousel ad has 8 cards. Must both WhatsApp numbers appear on EVERY card?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "A carousel ad is one post. Rule 4 requires both numbers in every post, which is satisfied by including them in the primary text (visible across all cards) or on the final CTA card. Repeating on every card would be excessive and waste card space."
+    },
+    {
+      "id": 39,
+      "question": "Review this CTA block: 'WhatsApp Marketing: +639542555553 | Office: +639958565865'. The copywriter argues this satisfies Rule 4. What is missing?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "For clarity, both numbers should be explicitly labeled with 'WhatsApp' so readers know both are WhatsApp contact points. 'Office: +639958565865' alone could be mistaken for a regular phone number. The canonical format from Rule 4 labels both as WhatsApp numbers."
+    },
+    {
+      "id": 40,
+      "question": "True or false: An ad that includes a website URL but no WhatsApp numbers satisfies the CTA requirements.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Rule 4 requires both WhatsApp numbers in every post. A website URL is supplementary but does not replace the mandatory WhatsApp numbers."
+    },
+    {
+      "id": 41,
+      "question": "Which dash type is ALLOWED in project content?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Rule 2 forbids em dash, en dash, and Hebrew maqaf. Only the regular hyphen (-), colon (:), and comma (,) are permitted separators."
+    },
+    {
+      "id": 42,
+      "question": "Review this headline: 'Panglao Prime Villas — 17-25% ROI — Reserve Now'. How many Rule 2 violations?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "The headline contains 2 em dashes (—), each a separate Rule 2 violation. The hyphen in '17-25%' is a regular hyphen and is compliant. Corrected version: 'Panglao Prime Villas - 17-25% ROI - Reserve Now'."
+    },
+    {
+      "id": 43,
+      "question": "Which of these separators is allowed per Rule 2?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Rule 2 allows: regular hyphen (-), colon (:), and comma (,). Em dashes, en dashes, and Hebrew maqaf are forbidden."
+    },
+    {
+      "id": 44,
+      "question": "A Hebrew text contains: 'וילה D ־ PHP 32,500,000 ־ הזמנה PHP 200,000'. What is the formatting violation?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The Hebrew maqaf (־) appears twice in the text. Rule 2 explicitly forbids the Hebrew maqaf. Both instances must be replaced with regular hyphens (-): 'וילה D - PHP 32,500,000 - הזמנה PHP 200,000'."
+    },
+    {
+      "id": 45,
+      "question": "Rule 3 requires every post to include at least one specific number. Which of these numbers is from the approved project data?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "263.78 sqm is the verified total area from project data. PHP 500,000, 300 sqm, and 30% ROI are not verified project numbers and would be inaccurate if used."
+    },
+    {
+      "id": 46,
+      "question": "True or false: A post with only text and no specific number violates Rule 3.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Rule 3 mandates: 'Every post must include at least one specific number.' A post with only text and no numbers (such as prices, percentages, measurements, or other verified data) violates this rule."
+    },
+    {
+      "id": 47,
+      "question": "Review this post for Rule 3 compliance: 'Panglao Prime Villas offers luxury living in Bohol. Premium design between prestigious hotels. Reserve your unit today.' Does it pass?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The post contains no specific numbers whatsoever. Rule 3 requires at least one from the approved list: 1,535,000/1,650,000, 9,999, PHP 395,000, 17-25%, 136.9%, 65%, 60 seconds, 263.78 sqm, 4 bedrooms, PHP 32.5M/30M, etc."
+    },
+    {
+      "id": 48,
+      "question": "Which of these is a valid approved number per Rule 3?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Rule 3 lists specific approved numbers including 136.9% (tourism growth rate). The other options are not verified project data: 200%, 50 bedrooms, and PHP 1,000,000 are all fabricated."
+    },
+    {
+      "id": 49,
+      "question": "A designer creates a social media graphic with the text 'PHP 32,500,000' but uses an en dash in the tagline: '4 Bedrooms – Private Pool – 60 sec to Beach'. How should the brand guard respond?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The graphic passes Rule 3 (contains PHP 32,500,000, 4 bedrooms, 60 sec) but fails Rule 2 (en dashes used twice). The brand guard should request revision of the en dashes to regular hyphens while confirming the numbers are correct."
+    },
+    {
+      "id": 50,
+      "question": "What are the three allowed separator characters per Rule 2?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 2 specifies: 'Use: regular hyphen (-), colon (:), comma (,)'. These are the only three explicitly approved separators in the formatting rules."
+    },
+    {
+      "id": 51,
+      "question": "What is the absolute rule regarding Blueprint Building Group?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The golden rules state: 'NEVER touch BluePrint Building Group. It is a completely separate business. Do NOT post, comment, message, advertise, or take ANY action on the Blueprint page, its audience, or its followers.' This is permanent and absolute."
+    },
+    {
+      "id": 52,
+      "question": "A marketing team member suggests using Blueprint's 50,000 Facebook followers as a custom audience for villa ads. Is this permitted?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The rule explicitly states: 'Do NOT use Blueprint followers as leads.' This includes using them as custom audiences, lookalike sources, or any form of targeting. The villa campaign operates ONLY through Blue Everest Asset Group."
+    },
+    {
+      "id": 53,
+      "question": "Which Facebook page should ALL villa campaign content be posted from?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "All villa campaign content must be posted from the Blue Everest Asset Group page only. Blueprint Building Group is a completely separate business."
+    },
+    {
+      "id": 54,
+      "question": "An ad creative mentions: 'Brought to you by the team behind Blueprint Building Group, now expanding into luxury villas.' Is this compliant?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Any mention of Blueprint Building Group in villa marketing content violates the separation rule. The developer is Blue Everest Asset Group Holding Inc. Period. No references to Blueprint are permitted, even indirect ones like 'the team behind Blueprint'."
+    },
+    {
+      "id": 55,
+      "question": "A blog post about Bohol real estate investment links to blueprint-ph.com as a reference for Philippine construction quality. Is this acceptable?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Linking to blueprint-ph.com in villa campaign content creates a direct association between Blueprint and the villa campaign. This violates the spirit and letter of the separation rule. Any Blueprint reference, including URLs, is prohibited."
+    },
+    {
+      "id": 56,
+      "question": "During a Facebook live event for villa marketing, a viewer asks 'Is this the same company as Blueprint Building Group?' How should the response handle this?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The response should focus solely on Blue Everest as the developer without confirming, denying, or leveraging any Blueprint connection. The villa campaign operates exclusively through Blue Everest, and all public communications must maintain this separation."
+    },
+    {
+      "id": 57,
+      "question": "Can a Meta ad for the villas be placed in the Blueprint Building Group ad account?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Running villa ads through Blueprint's ad account would create a data and financial link between the two entities. The separation rule requires complete independence, including separate ad accounts, pixels, and billing."
+    },
+    {
+      "id": 58,
+      "question": "A remarketing pixel from the Blueprint website fires on a user who then sees a Panglao villa ad. Is this a violation?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Using Blueprint pixel data to target or remarket villa ads means using Blueprint's audience for the villa campaign, which is explicitly prohibited. The villa campaign must use its own independent tracking pixels and audience data."
+    },
+    {
+      "id": 59,
+      "question": "True or false: It is acceptable to comment on Blueprint Building Group's Facebook posts to promote the villas.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "The golden rules explicitly state: 'Do NOT post, comment, message, advertise, or take ANY action on the Blueprint page.' Commenting on Blueprint posts to promote villas is a clear violation."
+    },
+    {
+      "id": 60,
+      "question": "A PR article about Panglao Prime Villas is drafted by an external writer who mentions: 'The developer, Blue Everest, shares management with Blueprint Building Group Inc., a respected Philippine construction firm.' Should the brand guard approve this?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Even in third-party content that the team can influence or review, references linking Blue Everest to Blueprint must be removed. The separation is absolute. Option d is partially correct but the entire Blueprint reference should be removed, not just the management detail."
+    },
+    {
+      "id": 61,
+      "question": "For Israeli content, what must be mentioned regarding property ownership (Rule 6)?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 6 requires Israeli content to mention 3 legal ownership solutions: Deed of Assignment, Leasehold 25+25, and Domestic Corporation - directly or indirectly."
+    },
+    {
+      "id": 62,
+      "question": "For Filipino content, which financing detail is mandatory per Rule 7?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 7 mandates that Filipino content must mention BDO Bank financing. The specific terms are 70% LTV, 15-year term, approximately 6% interest rate."
+    },
+    {
+      "id": 63,
+      "question": "An Israeli market ad mentions only 2 of the 3 legal ownership solutions: Deed of Assignment and Leasehold 25+25. Is this Rule 6 compliant?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 6 states Israeli content must mention 3 legal ownership solutions (directly or indirectly). Omitting Domestic Corporation means only 2 are covered, which is non-compliant. However, the rule allows 'indirect' mention, so a phrase like '3 legal ownership paths available' could satisfy the rule indirectly."
+    },
+    {
+      "id": 64,
+      "question": "Review this Filipino ad: 'Villa D - PHP 32,500,000 - 4 bedrooms, pool, 263.78 sqm. WhatsApp: +639542555553 / +639958565865'. What Rule 7 element is missing?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 7 requires Filipino content to mention BDO Bank financing. This ad has correct pricing (Rule 1B), numbers (Rule 3), and both WhatsApp numbers (Rule 4), but omits the BDO financing detail."
+    },
+    {
+      "id": 65,
+      "question": "True or false: It is acceptable to guarantee 17-25% ROI in advertising copy.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Guaranteeing investment returns in advertising creates legal liability and may violate advertising standards in both Israel and the Philippines. ROI should be stated as 'projected' or 'estimated' based on verified data."
+    },
+    {
+      "id": 66,
+      "question": "Rule 6 says the 3 legal structures can be mentioned 'directly or indirectly'. Which indirect mention is sufficient?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Option b indirectly satisfies Rule 6 by: (1) stating the number '3' legal structures exist, (2) noting they are for foreign investors (relevant context), and (3) directing to the booking meeting for details. Options a and c are too vague and do not convey that three specific structures exist."
+    },
+    {
+      "id": 67,
+      "question": "A WhatsApp marketing message is sent to Israeli numbers without prior consent. Which laws are potentially violated?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Israeli Privacy Protection Law (Amendment 40) regulates direct marketing including digital messages. WhatsApp Business Policy also requires user opt-in before commercial messaging. Both are violated by sending marketing messages without consent to Israeli numbers."
+    },
+    {
+      "id": 68,
+      "question": "What action must be taken if spending is about to exceed the $900 total budget?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 9 states: 'Do NOT exceed $900 total without explicit approval.' The budget cap is absolute. Spending must stop and approval must be obtained before any additional spend."
+    },
+    {
+      "id": 69,
+      "question": "An ad claims: 'Highest ROI property in the Philippines'. What compliance issue does this create?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Superlative claims ('highest', 'best', 'most') require substantiation in most advertising jurisdictions. Without verified comparative data proving Panglao Prime Villas has the highest ROI of all Philippine properties, this claim is potentially misleading and could face regulatory action."
+    },
+    {
+      "id": 70,
+      "question": "What must happen after the first 15 days of the campaign before continuing?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 9 states: 'After 15 days: full analysis before continuing.' The campaign cannot continue spending beyond Day 15 without a comprehensive performance review and explicit approval."
+    },
+    {
+      "id": 71,
+      "question": "Which sentence matches the required factual, data-driven tone?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Option b uses specific measurements, features, and factual data without emotional language, ALL CAPS, or excessive punctuation. It communicates quality through precision, matching the project's required tone."
+    },
+    {
+      "id": 72,
+      "question": "Review this Hebrew text for tone compliance: 'אחי, תבדוק את הדיל המטורף הזה! וילה סופר-מושלמת!' (Bro, check out this crazy deal! Super-perfect villa!). Is this compliant?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 8 explicitly prohibits slang in Hebrew content. The text uses multiple slang terms: 'אחי' (bro), 'מטורף' (crazy), and 'סופר-מושלמת' (super-perfect). The tone should be professional and warm, not casual street language."
+    },
+    {
+      "id": 73,
+      "question": "A copywriter writes: 'We GUARANTEE this is the BEST investment you will EVER make in your ENTIRE life!!!'. How many tone violations can you identify?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Multiple violations: (1) ALL CAPS on GUARANTEE, BEST, EVER, ENTIRE, (2) triple exclamation marks, (3) unsubstantiated guarantee claim, (4) superlative 'best...ever' without evidence. The required tone is factual, measured, and data-driven."
+    },
+    {
+      "id": 74,
+      "question": "Which word is an acceptable replacement for 'incredible' that maintains professional tone?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "'Verified' is factual and professional. 'Mind-blowing', 'insane', and 'jaw-dropping' are informal/hyperbolic and do not match the required professional, data-driven tone even though they are not on the explicit forbidden list."
+    },
+    {
+      "id": 75,
+      "question": "For Filipino market copy, which tone element is appropriate?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Filipino market copy should be respectful and informative with specific data. It should include BDO financing (Rule 7), use PHP (Rule 1B), and include numbers (Rule 3). Aggressive sales, overly technical, or extremely casual copy does not match the required tone."
+    },
+    {
+      "id": 76,
+      "question": "A piece of copy reads: 'Smart investors are already securing their units. With only 2 villas remaining at these prices, the numbers speak for themselves: 17-25% ROI, PHP 395,000 verified monthly income, 65% occupancy.' Is this tone appropriate?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "This copy successfully balances persuasion with factual rigor. It uses soft social proof, truthful scarcity (there are indeed only 2 villas), and lets verified numbers do the selling. No forbidden words, no hyperbole, no excessive punctuation. This is the target tone."
+    },
+    {
+      "id": 77,
+      "question": "Rate this Hebrew text on tone compliance (1-5, where 5 is fully compliant): 'הנתונים מדברים בעד עצמם: תשואה שנתית של 17-25%, הכנסה חודשית מאומתת, ו-3 מסלולי בעלות משפטיים לבחירתכם. הזמנת יחידה ב-PHP 200,000 בלבד.'",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "This Hebrew text is exemplary: it uses plural professional address, opens with a data-driven hook ('the numbers speak for themselves'), includes ROI percentage (Rule 3), mentions legal structures (Rule 6), shows reservation in ILS (Rule 1), uses no slang (Rule 8), and contains no forbidden words (Rule 5)."
+    },
+    {
+      "id": 78,
+      "question": "Which of these email subject lines matches the project's professional tone?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Option b is professional, specific, and includes three data points. Option a uses two forbidden words and excessive punctuation. Option c is clickbait. Option d uses urgency manipulation, 'dream home' (forbidden), and excessive punctuation."
+    },
+    {
+      "id": 79,
+      "question": "True or false: Using ALL CAPS for emphasis (e.g., 'VERIFIED income') is acceptable in the project's required tone.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "The project's tone is factual and professional. ALL CAPS conveys shouting in digital communication and undermines the credible, data-driven positioning. Emphasis should come from the strength of the data itself, not typographic tricks."
+    },
+    {
+      "id": 80,
+      "question": "A video script narration reads: 'Picture yourself stepping onto the terrace of your own villa, the Bohol Sea stretching to the horizon. This is not a fantasy. This is Panglao Prime Villas, and the numbers prove it: 263.78 square meters, PHP 395,000 monthly income, 60 seconds to the beach.' Is this tone acceptable?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "This script masterfully balances brief emotional engagement with factual grounding. The phrase 'This is not a fantasy' explicitly rejects the dreamy approach, and 'the numbers prove it' pivots to hard data. This is advanced copywriting that respects the tone rules while remaining engaging for video."
+    },
+    {
+      "id": 81,
+      "question": "A content piece states Villa D has 5 bedrooms. Is this accurate?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Verified project data states: 4 bedrooms. Any content claiming 5 bedrooms contains a factual error that must be corrected."
+    },
+    {
+      "id": 82,
+      "question": "Review this claim: 'Monthly income of PHP 500,000 verified by Airbnb'. Is this accurate?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The verified Airbnb monthly income is PHP 395,000. Stating PHP 500,000 inflates the figure by 26.6% and constitutes misrepresentation. All financial figures must match verified project data exactly."
+    },
+    {
+      "id": 83,
+      "question": "A content piece lists the ROI as '20-30%'. The verified range is 17-25%. How should the brand guard handle this?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The verified ROI range is 17-25%. The submitted 20-30% inflates both ends of the range, making the minimum look higher and the maximum significantly higher. This misrepresents the investment return and must be corrected to 17-25%."
+    },
+    {
+      "id": 84,
+      "question": "What is the verified total area of the villas?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The verified total area is 263.78 sqm. This specific number must be used in all content. Rounding to 264 or 265 or using 300 is inaccurate."
+    },
+    {
+      "id": 85,
+      "question": "A post says 'Villa is 2 minutes from the beach'. The verified figure is 60 seconds. Is 2 minutes acceptable?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The verified beach proximity is 60 seconds. While understating (longer time) seems conservative and safe, it misrepresents the product's advantage and does not match verified data. All figures must match exactly: 60 seconds to beach."
+    },
+    {
+      "id": 86,
+      "question": "Review this comprehensive content piece for errors: 'Villa C (PHP 35,000,000) and Villa D (PHP 32,500,000), 263.78 sqm each, 4 bedrooms, pool (15.08 sqm), jacuzzi (6.37 sqm), monthly income PHP 395,000, occupancy 65%, ROI 17-25%, between JW Marriott and Mithi Resort, 60 seconds to beach.' Is it fully accurate?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Every data point checks out: Villa C at PHP 35M, Villa D at PHP 32.5M, 263.78 sqm, 4 bedrooms, 15.08 sqm pool, 6.37 sqm jacuzzi, PHP 395K income, 65% occupancy, 17-25% ROI, JW Marriott and Mithi Resort neighbors, 60 seconds to beach. This is a fully accurate content piece."
+    },
+    {
+      "id": 87,
+      "question": "A content piece states: 'Bohol attracted 2 million tourists last year with 200% growth.' The verified data is 1.43M visitors and +166% growth. What should the brand guard report?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Both figures are inflated: visitors by ~40% (2M vs 1.43M) and growth by 34 percentage points (200% vs 166%). The brand guard must identify and correct both errors with the exact verified figures. Approximate or rounded figures are not acceptable."
+    },
+    {
+      "id": 88,
+      "question": "A social media post mentions 'Skyscanner ranked Bohol #5 globally'. The verified ranking is #8. Is this accurate?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The verified Skyscanner ranking is #8. Claiming #5 inflates the ranking and misrepresents the data. The exact verified figure must be used: Skyscanner #8."
+    },
+    {
+      "id": 89,
+      "question": "What is the verified pool size?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The verified pool size is 15.08 sqm. The jacuzzi is 6.37 sqm. These precise measurements must be used in all content."
+    },
+    {
+      "id": 90,
+      "question": "A landing page states the payment structure as '30/50/20'. The verified structure is '25/55/20'. What is the impact of this error?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The error overstates the down payment (30% vs 25%), which could deter price-sensitive buyers who would find the actual 25% down payment more accessible. It also understates the construction payment (50% vs 55%). The verified 25/55/20 structure is a selling point (lower barrier to entry) and must be stated accurately."
+    },
+    {
+      "id": 91,
+      "question": "Review this complete ad for ALL violations: 'Amazing Villa in Panglao — Your Dream Home Awaits! Villa D at $280,000 (PHP 32.5M). Incredible 30% ROI with PHP 500,000 monthly income. Once in a lifetime opportunity! Contact: +639542555553. Built by the Blueprint Building Group team.' Count all rule violations.",
+      "agent_answer": "d",
+      "correct_answer": "d",
+      "passed": true,
+      "explanation": "Violations: (1) 'Amazing' - Rule 5, (2) em dash (—) - Rule 2, (3) 'Dream Home' - Rule 5, (4) USD as primary with PHP secondary - Rule 1B formatting, (5) 'Incredible' - Rule 5, (6) 30% ROI (should be 17-25%) - factual error, (7) PHP 500,000 income (should be 395,000) - factual error, (8) 'Once in a lifetime' - Rule 5, (9) Only one WhatsApp number - Rule 4, (10) Blueprint Building Group mention - Blueprint separation rule, (11) Missing BDO financing - Rule 7. At least 11 violations."
+    },
+    {
+      "id": 92,
+      "question": "Review this Hebrew ad: 'וילה D - PHP 32,500,000 ($280,000) - תשואה 17-25% - הזמנה PHP 200,000 - וואטסאפ: +639542555553 / +639958565865'. How many violations?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Two violations: (1) USD parenthetical ($280,000) violates Rule 1 requiring ILS ONLY, and (2) no mention of 3 legal ownership solutions violates Rule 6. The rest is compliant: ILS prices correct, hyphens used (not em/en dashes), both WhatsApp numbers present, ROI number included."
+    },
+    {
+      "id": 93,
+      "question": "Rank these violations from most severe to least severe: (A) Using 'dream home' in a headline, (B) Missing one WhatsApp number, (C) Mentioning Blueprint Building Group, (D) Using an em dash.",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Blueprint mention (C) is the most severe as it violates an absolute, permanent rule with legal implications. Forbidden word (A) is next as it damages brand positioning. Missing WhatsApp number (B) reduces conversion. Em dash (D) is a formatting issue. While all must be corrected, severity ordering helps prioritize review and response urgency."
+    },
+    {
+      "id": 94,
+      "question": "A content batch of 10 posts is submitted for review. Post #7 has a single forbidden word violation while all other posts are clean. What is the correct action?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Each post is evaluated independently. The 9 compliant posts should be approved for posting while Post #7 is returned for revision. There is no reason to hold compliant content, and there is no reason to publish non-compliant content. Each piece stands on its own compliance."
+    },
+    {
+      "id": 95,
+      "question": "A Google Search ad passes all copy rules but uses a display URL of 'blueprint-ph.com/panglao-villas'. What violation exists?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Even though the ad copy text is compliant, the display URL 'blueprint-ph.com' directly associates the villa campaign with Blueprint's website. The villa campaign must use 'primevilla.ph' or a Blue Everest URL. The brand guard must review all elements including URLs, not just body copy."
+    },
+    {
+      "id": 96,
+      "question": "A freelance copywriter delivers 5 Facebook posts for the Israeli market. Post 1: compliant. Post 2: uses 'מדהים' (amazing in Hebrew). Post 3: shows prices in both ILS and USD. Post 4: mentions legal structures but only 2 of 3. Post 5: missing both WhatsApp numbers. What is the brand guard's complete action list?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Only Post 1 is fully compliant. Each rejected post needs a specific violation reference so the copywriter knows exactly what to fix. Post 2: Rule 5. Post 3: Rule 1. Post 4: Rule 6 (all 3 structures needed). Post 5: Rule 4 (both numbers needed). This is the most helpful and accurate response."
+    },
+    {
+      "id": 97,
+      "question": "An automated email campaign goes live with a template that says 'Your Dream Villa Awaits - PHP 32,500,000'. The brand guard catches this after 50 emails are sent. What immediate actions are needed?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Immediate pause prevents further violations while already-sent emails cannot be recalled. The systematic response documents, revises, logs, assesses impact, and resumes correctly. A correction email would draw more attention to the error. Deletion loses the campaign setup."
+    },
+    {
+      "id": 98,
+      "question": "A new team member creates a Meta ad that passes all copy rules BUT the ad links to a landing page that mentions Blueprint Building Group in the footer. The brand guard reviews only the ad copy and approves it. What process failure occurred?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Brand guard review must encompass the entire user journey: ad creative, landing page, thank-you page, email follow-ups, and any linked content. A Blueprint reference anywhere in the funnel violates the separation rule. The brand guard should have reviewed the landing page as part of the ad approval process."
+    },
+    {
+      "id": 99,
+      "question": "The campaign is in simulation mode (campaign_state.json shows simulation: true). A task instructs you to publish a Facebook post. What should happen?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "When simulation is true, all actions must be drafted and screenshotted but NOT published. The golden rules state: 'If simulation: true, take screenshots only - do not publish, send, or spend.' The task status should be set to BLOCKED_BY_SIMULATION."
+    },
+    {
+      "id": 100,
+      "question": "End-of-day review reveals: 3 posts published today across Facebook and Instagram. Post A (Facebook, Israeli): all rules pass. Post B (Instagram, Filipino): missing BDO financing mention. Post C (Facebook, Filipino): uses the word 'incredible' in copy. What is the brand guard's end-of-day report?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "A thorough end-of-day report identifies each post's status, the specific violation with rule reference, recommended action, and priority ranking. Post C (forbidden word) is higher priority because it actively violates a rule, while Post B (missing BDO) is an omission that can be addressed with a supplementary comment or edit."
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,90 @@
+=== GOOGLE_PH_COMPOUND_SEARCH_ADS.txt ===
+Platform: Google Ads (Search)
+Market: Philippines
+Campaign: G-PH-P2
+Type: Responsive Search Ads
+Daily Budget: [BUDGET_PLACEHOLDER] (recommend $10/day)
+Bid Strategy: Maximize conversions
+
+---
+
+KEYWORDS (Broad match + Phrase match):
+
+Primary:
+- villa compound for sale bohol
+- luxury villa panglao
+- panglao villa investment
+- buy villa bohol philippines
+- villa compound philippines
+- luxury compound panglao
+- panglao prime villas
+- bohol investment property
+
+Secondary:
+- bohol real estate for sale
+- panglao beach villa for sale
+- airbnb villa bohol
+- luxury property bohol
+- villa for sale near panglao beach
+- BDO financing villa
+
+Negative keywords:
+- rent villa bohol
+- hotel bohol
+- cheap villa
+- free
+- jobs bohol
+- resort booking
+
+---
+
+RESPONSIVE SEARCH AD: PH-P2-RSA-1
+
+HEADLINES (15 - Google will test combinations):
+H1: 8-Villa Luxury Compound in Panglao
+H2: Phase 2 Now Selling - Panglao Bohol
+H3: Private Villa Compound - BDO Financing
+H4: PHP 395K/Month Per Villa - Verified
+H5: 17-25% Annual ROI - Panglao Villas
+H6: Between JW Marriott and Mithi Resort
+H7: Phase 1 Proven - Phase 2 Open
+H8: Reserve Villa with PHP 200,000
+H9: Panglao Prime Villas Compound
+H10: 4 Bedrooms + Private Pool + Jacuzzi
+H11: 60 Seconds to Panglao Beach
+H12: 263.78 sqm Luxury Villas
+H13: BDO Bank Financing Available
+H14: From PHP 32,500,000
+H15: 6 Villas Available Now
+
+DESCRIPTIONS (4):
+D1: Panglao Prime Villas: 8-villa luxury compound between two 5-star resorts. Phase 1 proven with verified Airbnb income. Phase 2 now open. Reserve today.
+D2: PHP 395,000/month verified Airbnb income per villa. Compound management reduces costs. 17-25% annual ROI. BDO Bank financing available.
+D3: Private compound: shared security, landscaping, and property management. Higher resale value than standalone villas. 65% occupancy rate.
+D4: 4 en-suite bedrooms, private pool, rooftop jacuzzi, 263.78 sqm per villa. Full property management by Blue Everest. BDO financing ready.
+
+SITELINKS:
+1. Available Villas | See all 6 luxury villas available in the compound
+2. Investment Calculator | 17-25% ROI, PHP 395,000/month income
+3. BDO Financing | Qualified buyers can finance through BDO Bank
+4. Contact Us | WhatsApp: +639542555553
+
+CALLOUT EXTENSIONS:
+- 65% Verified Occupancy
+- PHP 14,000/Night ADR
+- 60 Seconds to Beach
+- Full Property Management
+
+STRUCTURED SNIPPETS:
+- Amenities: Private Pool, Rooftop Jacuzzi, 4 Bedrooms, Roof Deck, En-Suite Bathrooms
+- Neighborhoods: Near JW Marriott, Near Mithi Resort, Near Panglao Beach, Near Panglao Shores
+
+---
+
+AUDIENCE TARGETING:
+- Geography: Metro Manila (BGC, Makati, Alabang, Ortigas, San Juan), Cebu City, Davao
+- Language: English, Tagalog
+- Demographics: Age 35-60, Household income top 20%
+- In-market audiences: Real estate, Investment properties, Luxury travel
+- Custom intent: "buy villa Bohol", "luxury property Philippines", "Airbnb investment", "BDO housing loan", "villa for sale Panglao"
+- Affinity: Business professionals, Luxury travelers, Property investors

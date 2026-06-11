@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Neutrals (Zinc) — backgrounds, borders, muted text ── */
+  --color-brand-50:  #FAFAFA;   /* page background                */
+  --color-brand-100: #F4F4F5;   /* card borders, subtle panels    */
+  --color-brand-200: #E4E4E7;   /* dividers, disabled states      */
+  --color-brand-300: #A1A1AA;   /* muted text, placeholders       */
+  --color-brand-400: #71717A;   /* secondary / supporting text    */
+
+  /* ── Primary (Indigo) — interactive, brand accent ────── */
+  --color-brand-500: #6366F1;   /* spinners, focus rings          */
+  --color-brand-600: #4F46E5;   /* buttons, active links          */
+  --color-brand-700: #4338CA;   /* hover state                    */
+
+  /* ── Ink (Zinc Dark) — headings & body text ──────────── */
+  --color-brand-800: #18181B;   /* primary text, headings         */
+  --color-brand-900: #09090B;   /* max contrast                   */
+
+  /* ── CTA accent (Amber) — warm contrast action ─────── */
+  --color-cta:      #F59E0B;
+  --color-cta-dark: #D97706;
+
+  /* ── Typography ─────────────────────────────────────── */
+  --font-display: 'Rubik', system-ui, sans-serif;
+  --font-body:    'Rubik', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    direction: rtl;
+    margin: 0;
+    font-family: var(--font-body);
+    background-color: var(--color-brand-50);
+    color: var(--color-brand-800);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  * {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  ::selection {
+    background-color: #EEF2FF;
+    color: #4F46E5;
+  }
+
+  :focus-visible {
+    outline: 2px solid #6366F1;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  input, button, select, textarea {
+    font-family: inherit;
+  }
+}

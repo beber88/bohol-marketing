@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investment Inquiry Form</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); padding: 40px 20px; }
+    .container { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); }
+    h1 { color: #1e3c72; margin-bottom: 10px; font-size: 28px; }
+    .subtitle { color: #999; margin-bottom: 30px; font-size: 14px; }
+    .form-group { margin-bottom: 25px; }
+    label { display: block; margin-bottom: 8px; color: #333; font-weight: 600; font-size: 14px; }
+    input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; font-family: inherit; }
+    textarea { resize: vertical; min-height: 80px; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: #1e3c72; box-shadow: 0 0 5px rgba(30, 60, 114, 0.3); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .score-tracker { background: #f0f8ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #1e3c72; display: none; }
+    .score-tracker.active { display: block; }
+    .score-bar { width: 100%; height: 8px; background: #ddd; border-radius: 4px; overflow: hidden; margin-top: 10px; }
+    .score-fill { height: 100%; background: linear-gradient(90deg, #ffc107, #ff6b6b); transition: width 0.3s; }
+    .button-group { display: flex; gap: 10px; margin-top: 30px; }
+    button { padding: 14px 28px; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 16px; }
+    .btn-submit { background: #1e3c72; color: white; flex: 1; }
+    .btn-reset { background: #ddd; color: #333; }
+    .success-message { display: none; background: #d4edda; color: #155724; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
+    .required { color: #ff6b6b; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Investment Inquiry Form</h1>
+  <p class="subtitle">Tell us about your interest. Takes 2 minutes.</p>
+
+  <div class="success-message" id="successMsg">
+    ✅ Thank you! We'll contact you within 24 hours. Check your email for next steps.
+  </div>
+
+  <form id="qualifyingForm">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="firstName">First Name <span class="required">*</span></label>
+        <input type="text" id="firstName" name="firstName" required />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name <span class="required">*</span></label>
+        <input type="text" id="lastName" name="lastName" required />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone <span class="required">*</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="+1234567890" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="country">Country <span class="required">*</span></label>
+        <select id="country" name="country" required onchange="updateScore()">
+          <option value="">-- Select Country --</option>
+          <option value="Israel">Israel</option>
+          <option value="Palestine">Palestine</option>
+          <option value="India">India</option>
+          <option value="Philippines">Philippines</option>
+          <option value="Malaysia">Malaysia</option>
+          <option value="Singapore">Singapore</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="investmentAmount">Investment Amount <span class="required">*</span></label>
+        <select id="investmentAmount" name="investmentAmount" required onchange="updateScore()">
+          <option value="">-- Select Range --</option>
+          <option value="full">Full (PHP 28M+)</option>
+          <option value="partnership">Partnership (PHP 14M)</option>
+          <option value="exploring">Exploring</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="timeline">Timeline <span class="required">*</span></label>
+        <select id="timeline" name="timeline" required onchange="updateScore()">
+          <option value="">-- Select Timeline --</option>
+          <option value="asap">ASAP (Next 30 days)</option>
+          <option value="q2">Q2 2026 (Next 60-90 days)</option>
+          <option value="q3">Q3 2026 or later</option>
+          <option value="exploring">Just exploring</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="financing">Financing Preference</label>
+        <select id="financing" name="financing">
+          <option value="">-- Select Option --</option>
+          <option value="cash">All Cash</option>
+          <option value="70">70% Financed (BDO)</option>
+          <option value="undecided">Undecided</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="heardAbout">How did you hear about us?</label>
+      <select id="heardAbout" name="heardAbout" onchange="updateScore()">
+        <option value="">-- Select Source --</option>
+        <option value="meta">Meta Ads (Instagram/Facebook)</option>
+        <option value="google">Google Ads</option>
+        <option value="whatsapp">WhatsApp</option>
+        <option value="email">Email</option>
+        <option value="referral">Referral</option>
+        <option value="organic">Organic Search</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="questions">Any Questions or Concerns?</label>
+      <textarea id="questions" name="questions" placeholder="Tell us what you'd like to know..."></textarea>
+    </div>
+
+    <div class="score-tracker" id="scoreTracker">
+      <strong>Qualification Score:</strong>
+      <div class="score-bar">
+        <div class="score-fill" id="scoreFill" style="width: 0%;"></div>
+      </div>
+      <p id="scoreText" style="margin-top: 10px; font-size: 14px; color: #666;"></p>
+    </div>
+
+    <div class="button-group">
+      <button type="submit" class="btn-submit">Send Inquiry</button>
+      <button type="reset" class="btn-reset">Clear Form</button>
+    </div>
+  </form>
+</div>
+
+<script>
+function updateScore() {
+  let score = 0;
+
+  // Country scoring
+  const country = document.getElementById('country').value;
+  if (country === 'Israel' || country === 'Palestine' || country === 'India') score += 20;
+  else if (country === 'Philippines') score += 15;
+  else if (country !== '') score += 10;
+
+  // Investment amount
+  const investment = document.getElementById('investmentAmount').value;
+  if (investment === 'full') score += 30;
+  else if (investment === 'partnership') score += 15;
+
+  // Timeline
+  const timeline = document.getElementById('timeline').value;
+  if (timeline === 'asap') score += 25;
+  else if (timeline === 'q2') score += 15;
+  else if (timeline === 'q3') score += 5;
+
+  // Source
+  const source = document.getElementById('heardAbout').value;
+  if (source === 'whatsapp' || source === 'referral') score += 15;
+  else if (source !== '') score += 5;
+
+  // Display score
+  const tracker = document.getElementById('scoreTracker');
+  const fill = document.getElementById('scoreFill');
+  const text = document.getElementById('scoreText');
+
+  if (score > 0) {
+    tracker.classList.add('active');
+    fill.style.width = Math.min(score, 100) + '%';
+
+    let category = 'Warm Lead';
+    if (score >= 70) category = '🔥 HOT Lead - Priority';
+    else if (score >= 50) category = '🟡 Warm Lead';
+
+    text.textContent = `${score} points - ${category}`;
+  } else {
+    tracker.classList.remove('active');
+  }
+}
+
+document.getElementById('qualifyingForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // In production, would send to backend
+  const formData = {
+    firstName: document.getElementById('firstName').value,
+    lastName: document.getElementById('lastName').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value,
+    country: document.getElementById('country').value,
+    investmentAmount: document.getElementById('investmentAmount').value,
+    timeline: document.getElementById('timeline').value,
+    financing: document.getElementById('financing').value,
+    source: document.getElementById('heardAbout').value,
+    questions: document.getElementById('questions').value
+  };
+
+  console.log('Form submitted:', formData);
+
+  // Show success message
+  document.getElementById('successMsg').style.display = 'block';
+  this.style.display = 'none';
+
+  // Reset after 3 seconds
+  setTimeout(() => {
+    this.reset();
+    this.style.display = 'block';
+    document.getElementById('successMsg').style.display = 'none';
+    updateScore();
+  }, 3000);
+});
+
+// Initial score update
+updateScore();
+</script>
+
+</body>
+</html>

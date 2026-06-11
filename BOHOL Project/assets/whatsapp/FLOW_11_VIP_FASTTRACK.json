@@ -1,0 +1,34 @@
+{
+  "name": "FLOW_11_VIP_FASTTRACK",
+  "description": "For high-net-worth / ready-to-convert leads (accelerated process)",
+  "type": "interactive",
+  "version": "2.0",
+  "trigger": "qualified_high_intent",
+  "created_at": "2026-04-14T11:30:00Z",
+  "nodes": [
+    {
+      "id": "vip_welcome",
+      "type": "text",
+      "content": "🏆 Fast-Track VIP Program\n\nWe see you're a serious investor. Let's move quickly.\n\nWhat's your priority?\n• Speed (close in 2 weeks)?\n• Both villas (buy together)?\n• Finance structuring?\n• Direct CEO conversation?\n\nWe can accommodate VIP investors differently."
+    },
+    {
+      "id": "vip_options",
+      "type": "text",
+      "content": "🎯 VIP Options:\n\n1. FAST-CLOSE: 2-week turnaround\n   • Skip standard review\n   • Direct to legal\n   • Dedicated account manager\n   • White-glove service\n\n2. DUAL VILLA: Better terms\n   • Buy both villas\n   • Combined PHP 56M\n   • Bulk discount: PHP 800K\n   • Shared management savings: PHP 50K/year\n   • PHP 790K combined monthly income\n\n3. CEO CALL: Direct relationship\n   • Founder discussion\n   • Custom terms possible\n   • Strategic advisory included\n   • Beyond standard package\n\nWhich interests you?"
+    },
+    {
+      "id": "dual_villa_details",
+      "type": "text",
+      "content": "💼 Dual Villa Investment:\n\nCombined Investment: PHP 56M\nDiscount: -PHP 800K → PHP 55.2M effective\nCombined Monthly: PHP 790K\nCombined Annual: PHP 9.48M\nROI: Same 17-25%\n\nFinancing:\n• PHP 38.64M (70% dual)\n• Down payment: PHP 16.56M (30%) instead of 16.8M\n• Single loan application (faster)\n• Shared management (one fee)\n\nManagement: PHP 39.5K/month (vs PHP 79K separate)\n\nWant to see the combined prospectus?"
+    },
+    {
+      "id": "vip_call_scheduling",
+      "type": "text",
+      "content": "📞 VIP Call Scheduling:\n\nI'm connecting you with our founder, Alex.\n\nBest time this week?\n• Today after 6pm?\n• Tomorrow 10am or 2pm?\n• Wednesday?\n• Thursday morning?\n\nPrefer video or voice?",
+      "buttons": [],
+      "capture_fields": ["vip_call_time", "call_preference"]
+    }
+  ],
+  "export_format": "WATI",
+  "export_date": "2026-04-14T11:30:00Z"
+}

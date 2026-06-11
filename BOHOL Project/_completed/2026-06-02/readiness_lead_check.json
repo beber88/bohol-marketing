@@ -1,0 +1,127 @@
+{
+  "timestamp": "2026-06-02T13:00:00+08:00",
+  "agent": "LEAD_CHECK",
+  "phase_detected": "PRE_LAUNCH",
+  "simulation_flag": true,
+  "go_live_date": null,
+  "start_date": null,
+  "mode": "PREPARATION",
+  "scheduled_run_pht": "2026-06-02T13:00:00+08:00",
+  "actual_run_pht": "2026-06-02T08:02:42+08:00",
+  "note_on_run_time": "Cron drift unchanged for the sixth consecutive LEAD_CHECK run. Job fires at 08:02 PHT (00:02 UTC) instead of the documented 13:00 PHT slot. Drift observed on 2026-05-27, 2026-05-28, 2026-05-30, 2026-05-31, 2026-06-01, and 2026-06-02. Recommendation unchanged: align scheduled-tasks cron with documented PHT slots, or rewrite the agent prompts to reflect actual fire times.",
+  "state_delta_since_last_run": {
+    "previous_lead_check_run_recorded": "2026-06-01T13:00:00+08:00 (actually 2026-06-01T08:02:52+08:00)",
+    "campaign_state_last_updated": "2026-06-01T21:00:00+08:00",
+    "deltas_observed": [
+      "EVENING_WRAP on 2026-06-01 updated campaign_state.last_updated to 21:00 PHT but did not change phase, simulation, start_date, or any lead-source status field.",
+      "CONTENT_POST ran on schedule at 10:00 PHT today (2026-06-02). Ninth consecutive day without _queue/{date}/tasks_content.json (last produced 2026-04-16). No content_validation issues for today beyond the standing 'no queue' blocker.",
+      "lead_check_state.json.lead_source_sheet still null (sheet_id, tab_name both null, header_row_validated=false). leads_processed_total=0, hot_leads_total=0, unchanged for 6+ days.",
+      "campaign_state.il_fixed_pricing still 1,450,000 / 1,550,000 ILS - does not match CLAUDE.md (1,535,000 / 1,650,000 ILS). Mismatch outstanding 144+ hours.",
+      "Meta ad account ID mismatch still open: campaign_state.json shows 120244375418610326; live Meta Ads MCP this week showed 2015125296073673.",
+      "Brevo, WATI, HubSpot, Google Sheets lead-capture, Google Drive (unattended) all still unprovisioned or unauthorized for scheduled runs.",
+      "Meta Pixel 1599211187973958 and Google Tag AW-18095957436 / GT-PZZMF859 still not installed on primevilla.ph.",
+      "Google Ads advertiser verification still pending on customer 4031838704.",
+      "_queue/2026-06-02/ folder absent. No lead-handling tasks staged for today."
+    ]
+  },
+  "lead_sources": {
+    "google_sheets": {
+      "status": "unverified",
+      "mcp_reachable": false,
+      "sheet_url": null,
+      "sheet_id": null,
+      "sheet_tab_name": null,
+      "blocker": true,
+      "note": "No dedicated Google Sheets MCP in this session. Google Drive MCP exists in the broader tool inventory but heartbeat marks it 'not authorized for unattended scheduled runs'. No lead-capture sheet has been provisioned. lead_check_state.json.lead_source_sheet remains null on all three fields. Suggested action: authorize Drive/Sheets MCP for unattended access, then create and register the lead-form sheet (sheet_id + tab_name) before flipping campaign_state.simulation to false."
+    },
+    "wati": {
+      "status": "needs_account",
+      "mcp_reachable": false,
+      "client_id": null,
+      "blocker": true,
+      "note": "campaign_state.json wati.status='needs_account'. No account, no Client ID, no sales agent identity recorded. Required for (a) inbound WhatsApp lead ingestion via templates, and (b) outbound HOT-lead alert to sales agent. Until account exists, HOT-lead escalation cannot be automated, and the campaign cannot legally trigger WA template messages from the +639542555553 or +639958565865 numbers via API."
+    },
+    "hubspot": {
+      "status": "not_setup",
+      "mcp_reachable": false,
+      "blocker": true,
+      "note": "campaign_state.json hubspot.status='not_setup'. No CRM destination, no deal pipeline, no owner routing. Leads will have no persistent record beyond _completed/{date}/lead_updates.json until provisioned."
+    },
+    "brevo": {
+      "status": "needs_account",
+      "mcp_reachable": false,
+      "blocker": true,
+      "note": "campaign_state.json brevo.status='needs_account'. Required for nurture email sequences after a lead is captured. Lead-check itself does not write to Brevo, but absence of Brevo means lead -> email-nurture path is broken downstream."
+    },
+    "meta_lead_ads": {
+      "status": "not_configured",
+      "mcp_reachable": true,
+      "blocker": true,
+      "note": "Meta Ads MCP is reachable (ad account live and ACTIVE per recent heartbeats) but no Lead Ads forms exist and no lead-form-to-sheet/CRM bridge is configured. If Meta Lead Ads will be a capture channel at launch, the form schema must be designed to match the expected lead schema below and the leadgen webhook or CRM sync must be set up."
+    }
+  },
+  "expected_lead_schema": {
+    "required_fields": [
+      "submitted_at",
+      "name",
+      "email",
+      "phone",
+      "country",
+      "villa_interest",
+      "investment_amount",
+      "timeline"
+    ],
+    "tracking_fields": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content",
+      "landing_page",
+      "referrer"
+    ],
+    "field_constraints": {
+      "villa_interest": "One of: 'C', 'D', 'Both', 'Undecided'",
+      "investment_amount": "Numeric in lead's preferred currency, plus currency code (PHP/ILS/USD)",
+      "timeline": "One of: 'immediately', 'within_30_days', '1-3_months', '3-6_months', '6+_months', 'just_researching'",
+      "country": "ISO-3166 alpha-2 (IL, PH, US, etc.) preferred; free text accepted if country picker not deployed",
+      "phone": "E.164 format; required for WATI HOT-lead alert routing"
+    },
+    "hot_lead_criteria_recorded": [
+      "investment_amount > PHP 20,000,000 (or > 1,200,000 ILS equivalent)",
+      "timeline in ['immediately', 'within_30_days']",
+      "message mentions: reservation, contract, payment, deposit, transfer"
+    ]
+  },
+  "blockers": [
+    "Phase guard active: phase=PRE_LAUNCH, simulation=true, start_date=null - LIVE polling forbidden.",
+    "Google Sheets lead-capture sheet not provisioned (sheet_id, tab_name both null).",
+    "WATI account not created - inbound WA lead ingestion and outbound HOT-lead alerting both blocked.",
+    "HubSpot not set up - no CRM destination for captured leads.",
+    "Brevo not set up - downstream email nurture path broken.",
+    "Google Drive MCP not authorized for unattended scheduled-task access (would be the fallback for Sheets read).",
+    "Meta Lead Ads forms not configured (potential capture channel still unbuilt).",
+    "Meta Pixel 1599211187973958 not installed on primevilla.ph - no website lead-event attribution possible at launch.",
+    "Google Tag AW-18095957436 / GT-PZZMF859 not installed on primevilla.ph - no Google Ads conversion attribution at launch.",
+    "_queue/2026-06-02/ absent - no LEAD_CHECK tasks staged.",
+    "IL fixed pricing mismatch between CLAUDE.md and campaign_state.json - any HOT-lead alert touching price would be ambiguous."
+  ],
+  "suggested_actions": [
+    "1. Create the lead-capture Google Sheet. Use the expected_lead_schema fields above as the header row. Record sheet_id and tab_name in _status/lead_check_state.json.lead_source_sheet and set header_row_validated=true.",
+    "2. Authorize Google Drive (or a dedicated Google Sheets MCP) for unattended scheduled-task access so the 13:00 PHT LEAD_CHECK can read the sheet without human re-auth.",
+    "3. Create WATI account, obtain Client ID, register the sales agent's WA number, and add WATI MCP to the scheduled-task tool inventory. Without WATI, HOT-lead escalation cannot be automated.",
+    "4. Stand up HubSpot (or an equivalent CRM destination) and decide deal-pipeline stages, owner routing, and lead-source UTM mapping before launch.",
+    "5. Stand up Brevo for downstream email nurture once a lead is captured.",
+    "6. Install Meta Pixel 1599211187973958 and Google Tag AW-18095957436 on primevilla.ph (code already staged in _status/tracking_codes_install.html).",
+    "7. Reconcile IL fixed pricing across CLAUDE.md, campaign_state.json, and SKILL rule #4 to a single source of truth before any lead-facing price quote can be sent.",
+    "8. Reconcile Meta ad account ID (campaign_state.json vs live MCP) before any live ad spend.",
+    "9. Align scheduled-tasks cron with documented PHT slots, or rewrite agent prompts to match actual fire times (LEAD_CHECK has fired 08:02 PHT for six consecutive days).",
+    "10. Generate _queue/2026-06-02/ with explicit LEAD_CHECK tasks once at least one lead source is provisioned."
+  ],
+  "live_actions_taken": [],
+  "lead_state_after_run": {
+    "last_check_unchanged": true,
+    "leads_processed_today": 0,
+    "hot_leads_today": 0,
+    "rationale": "PREPARATION mode. No sheet provisioned. No polling performed. last_check intentionally left null until first successful LIVE poll."
+  }
+}

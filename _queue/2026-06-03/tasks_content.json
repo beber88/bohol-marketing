@@ -1,0 +1,43 @@
+[
+  {
+    "id": "2026-06-03-001",
+    "type": "community_agent",
+    "priority": "HIGH",
+    "title": "Publish Community Post #2 to Israeli Facebook Group",
+    "description": "Post #2 was scheduled for June 2 but not published. Publish now.",
+    "action": "GET /api/cron/community-post (or manual publish via /api/marketing/community-agent/publish)",
+    "post_id": 2,
+    "channel": "group",
+    "target": "https://www.facebook.com/groups/investment.ph.il/",
+    "simulation": false,
+    "completed_at": "2026-06-03T03:41:21+08:00",
+    "screenshot_path": null,
+    "completion_note": "Posted manually by Bar Gvili; screenshot/permalink not provided in thread.",
+    "status": "DONE"
+  },
+  {
+    "id": "2026-06-03-002",
+    "type": "meta_check",
+    "priority": "CRITICAL",
+    "status": "PENDING",
+    "title": "Verify Meta Ad Account Billing Status",
+    "description": "Check if Bar has resolved the UNSETTLED billing issue. If resolved, verify campaigns are delivering.",
+    "action": "Check business.facebook.com > Ads Manager > Billing for account 2015125296073673",
+    "expected_result": "Account status changes from UNSETTLED to ACTIVE, campaigns begin delivering",
+    "simulation": false,
+    "completed_at": null,
+    "screenshot_path": null
+  },
+  {
+    "id": "2026-06-03-003",
+    "type": "metrics",
+    "priority": "MEDIUM",
+    "status": "PENDING",
+    "title": "Collect Morning Metrics Snapshot",
+    "description": "Pull metrics from Meta Ads Manager and Google Ads. Expected: all zeros due to billing block.",
+    "action": "Screenshot Meta Ads Manager overview and Google Ads dashboard",
+    "simulation": false,
+    "completed_at": null,
+    "screenshot_path": null
+  }
+]

@@ -1,0 +1,2141 @@
+{
+  "agent": "whatsapp_agent",
+  "agent_display_name": "WhatsApp Agent",
+  "description": "Tests WhatsApp Business API, WATI platform, flow design, and message automation",
+  "total_questions": 100,
+  "pass_threshold": 100,
+  "categories": [
+    "whatsapp_api",
+    "wati_platform",
+    "template_messages",
+    "flow_design",
+    "broadcast",
+    "inbound_routing",
+    "lead_qualification",
+    "language_handling",
+    "automation",
+    "compliance"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "category": "whatsapp_api",
+      "difficulty": "easy",
+      "question": "What is the WhatsApp Business API 24-hour messaging window rule?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Businesses can message users anytime",
+        "B. After a user messages the business, the business has 24 hours to send free-form messages; after 24 hours, only approved template messages can be sent",
+        "C. Messages expire after 24 hours",
+        "D. Businesses can only message during business hours"
+      ],
+      "correct_answer": "B",
+      "explanation": "The 24-hour messaging window starts when a user sends a message. Within this window, the business can send free-form replies. After 24 hours, only pre-approved template messages are allowed.",
+      "keywords": [
+        "24-hour window",
+        "template messages",
+        "free-form",
+        "messaging rules"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "whatsapp_api",
+      "difficulty": "medium",
+      "question": "What are the two WhatsApp numbers used for the Panglao Prime Villas campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +639542555553 (Marketing) and +639958565865 (Office)",
+        "B. +639542555553 only",
+        "C. +639958565865 only",
+        "D. A toll-free number"
+      ],
+      "correct_answer": "A",
+      "explanation": "The campaign uses two WhatsApp numbers: +639542555553 for Marketing and +639958565865 for Office. Both must be included in every piece of content per Rule 4.",
+      "keywords": [
+        "whatsapp numbers",
+        "marketing",
+        "office",
+        "dual numbers"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "whatsapp_api",
+      "difficulty": "medium",
+      "question": "What happens if you send a non-template message to a user outside the 24-hour window?",
+      "type": "multiple_choice",
+      "options": [
+        "A. The message is sent with a warning",
+        "B. The message is queued until the user messages again",
+        "C. The API returns an error and the message is not delivered",
+        "D. The message is delivered but charged at premium rate"
+      ],
+      "correct_answer": "C",
+      "explanation": "WhatsApp Business API rejects non-template messages outside the 24-hour window with an error. Only approved template messages can be sent proactively.",
+      "keywords": [
+        "24-hour window",
+        "error",
+        "API rejection",
+        "template required"
+      ]
+    },
+    {
+      "id": 4,
+      "category": "whatsapp_api",
+      "difficulty": "easy",
+      "question": "What type of messages can be sent to initiate a conversation with a user who has not messaged first?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Any message",
+        "B. Only template messages approved by Meta",
+        "C. Only text messages without media",
+        "D. Only messages under 160 characters"
+      ],
+      "correct_answer": "B",
+      "explanation": "Business-initiated conversations require pre-approved template messages. These must be submitted to Meta for review before they can be used.",
+      "keywords": [
+        "template messages",
+        "business-initiated",
+        "Meta approval"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "whatsapp_api",
+      "difficulty": "hard",
+      "question": "What are the WhatsApp Business API message categories and their pricing implications?",
+      "type": "multiple_choice",
+      "options": [
+        "A. All messages cost the same",
+        "B. Utility, Authentication, Marketing, and Service - each with different per-conversation pricing",
+        "C. Free and Premium only",
+        "D. Text and Media pricing tiers"
+      ],
+      "correct_answer": "B",
+      "explanation": "WhatsApp Business API categorizes conversations into Utility, Authentication, Marketing, and Service. Marketing conversations (relevant to our campaign) have the highest per-conversation cost.",
+      "keywords": [
+        "message categories",
+        "pricing",
+        "marketing",
+        "utility",
+        "service"
+      ]
+    },
+    {
+      "id": 6,
+      "category": "whatsapp_api",
+      "difficulty": "medium",
+      "question": "What is the maximum number of buttons allowed in a WhatsApp interactive message?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 2",
+        "B. 3",
+        "C. 5",
+        "D. 10"
+      ],
+      "correct_answer": "B",
+      "explanation": "WhatsApp interactive messages support a maximum of 3 quick reply buttons. For more options, a list message with up to 10 items can be used instead.",
+      "keywords": [
+        "buttons",
+        "interactive message",
+        "quick reply",
+        "limit"
+      ]
+    },
+    {
+      "id": 7,
+      "category": "whatsapp_api",
+      "difficulty": "hard",
+      "question": "The campaign needs to send a message with a PDF attachment of villa specs. What WhatsApp API message type should be used and what are the size limits?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Text message with link to PDF",
+        "B. Document message type, max 100MB",
+        "C. Document message type, max 16MB for template messages",
+        "D. Media messages cannot include PDFs"
+      ],
+      "correct_answer": "C",
+      "explanation": "Template messages with document attachments have a 16MB limit. For larger files, a link to a hosted PDF is preferred. Within the 24-hour window, the limit is higher (100MB).",
+      "keywords": [
+        "document",
+        "PDF",
+        "attachment",
+        "size limit",
+        "16MB"
+      ]
+    },
+    {
+      "id": 8,
+      "category": "whatsapp_api",
+      "difficulty": "medium",
+      "question": "What webhook event indicates a user has read a WhatsApp message?",
+      "type": "multiple_choice",
+      "options": [
+        "A. message.delivered",
+        "B. message.read",
+        "C. message.seen",
+        "D. Read receipts are not available via the API"
+      ],
+      "correct_answer": "B",
+      "explanation": "The WhatsApp Business API sends a 'message.read' webhook status when the recipient reads the message (blue ticks), provided read receipts are enabled on the user's device.",
+      "keywords": [
+        "webhook",
+        "read receipt",
+        "blue ticks",
+        "message status"
+      ]
+    },
+    {
+      "id": 9,
+      "category": "whatsapp_api",
+      "difficulty": "easy",
+      "question": "What is the WhatsApp Business API webhook verify token used for?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Encrypting messages",
+        "B. Verifying the webhook endpoint during initial setup",
+        "C. Authenticating users",
+        "D. Billing verification"
+      ],
+      "correct_answer": "B",
+      "explanation": "The verify token is a custom string used during webhook URL verification. Meta sends a GET request with this token, and the endpoint must echo it back to confirm ownership.",
+      "keywords": [
+        "webhook",
+        "verify token",
+        "setup",
+        "endpoint verification"
+      ]
+    },
+    {
+      "id": 10,
+      "category": "whatsapp_api",
+      "difficulty": "hard",
+      "question": "How should the system handle WhatsApp API rate limits during a broadcast to 500 leads?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Implement a queuing system with exponential backoff: (1) Send messages in batches of 50-80 per minute (within API tier limits), (2) Monitor for 429/rate-limit responses, (3) On rate limit, wait and retry with exponential backoff, (4) Log all delivery statuses, (5) Track which messages succeeded vs failed for retry, (6) Use Inngest for durable job processing to ensure no messages are lost if the process crashes.",
+      "explanation": "Rate limiting is critical for WhatsApp Business API. Exceeding limits can result in temporary blocks. A robust queuing system ensures reliable delivery.",
+      "keywords": [
+        "rate limit",
+        "queuing",
+        "backoff",
+        "broadcast",
+        "batching"
+      ]
+    },
+    {
+      "id": 11,
+      "category": "whatsapp_api",
+      "difficulty": "medium",
+      "question": "What is the WhatsApp Business API messaging tier system and which tier should the campaign target?",
+      "type": "multiple_choice",
+      "options": [
+        "A. There are no tiers",
+        "B. Tiers 1-4 based on message volume; start at Tier 1 (1,000 unique users/day) and scale up",
+        "C. Tiers based on payment plan",
+        "D. Tiers based on country"
+      ],
+      "correct_answer": "B",
+      "explanation": "WhatsApp has messaging tiers: Tier 1 (1K unique users/day), Tier 2 (10K), Tier 3 (100K), Tier 4 (unlimited). New accounts start at Tier 1 and can scale based on quality and volume.",
+      "keywords": [
+        "messaging tier",
+        "volume",
+        "scaling",
+        "Tier 1"
+      ]
+    },
+    {
+      "id": 12,
+      "category": "whatsapp_api",
+      "difficulty": "medium",
+      "question": "What quality rating does a WhatsApp Business account need to maintain to avoid messaging restrictions?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Any rating is fine",
+        "B. Green (High) quality rating",
+        "C. Yellow (Medium) or higher",
+        "D. Quality ratings don't affect messaging"
+      ],
+      "correct_answer": "B",
+      "explanation": "WhatsApp monitors account quality (Green/Yellow/Red). A Green (High) rating is needed for unrestricted messaging. Yellow triggers warnings and Red can restrict messaging capabilities.",
+      "keywords": [
+        "quality rating",
+        "green",
+        "restrictions",
+        "account health"
+      ]
+    },
+    {
+      "id": 13,
+      "category": "wati_platform",
+      "difficulty": "easy",
+      "question": "What is WATI's role in the Panglao Prime Villas campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Email marketing platform",
+        "B. WhatsApp Business API interface for managing messages, flows, broadcasts, and automation",
+        "C. CRM system",
+        "D. Ad management platform"
+      ],
+      "correct_answer": "B",
+      "explanation": "WATI (WhatsApp Team Inbox) is the platform used to manage WhatsApp Business API operations including conversations, flows, broadcasts, template messages, and automation.",
+      "keywords": [
+        "WATI",
+        "WhatsApp",
+        "platform",
+        "management"
+      ]
+    },
+    {
+      "id": 14,
+      "category": "wati_platform",
+      "difficulty": "easy",
+      "question": "What are the WATI business hours configured for the campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 24/7",
+        "B. Mon-Sat 9:00 AM - 6:00 PM PHT",
+        "C. Mon-Fri 8:00 AM - 5:00 PM PHT",
+        "D. Sun-Thu 9:00 AM - 6:00 PM IST"
+      ],
+      "correct_answer": "B",
+      "explanation": "WATI business hours are Monday through Saturday, 9:00 AM to 6:00 PM PHT. Outside these hours, automated responses handle inbound messages.",
+      "keywords": [
+        "business hours",
+        "Mon-Sat",
+        "9am-6pm",
+        "PHT"
+      ]
+    },
+    {
+      "id": 15,
+      "category": "wati_platform",
+      "difficulty": "medium",
+      "question": "How should WATI's auto-reply be configured for messages received outside business hours?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No auto-reply",
+        "B. Auto-reply acknowledging the message, providing business hours, and offering to connect them with a sales agent during working hours",
+        "C. Forward to personal phone",
+        "D. Auto-reply with full villa details"
+      ],
+      "correct_answer": "B",
+      "explanation": "Outside business hours, an auto-reply should acknowledge receipt, state business hours (Mon-Sat 9am-6pm PHT), and assure the lead they will be contacted during the next business period.",
+      "keywords": [
+        "auto-reply",
+        "outside hours",
+        "acknowledgment",
+        "business hours"
+      ]
+    },
+    {
+      "id": 16,
+      "category": "wati_platform",
+      "difficulty": "medium",
+      "question": "In WATI, what is the difference between a 'Flow' and a 'Template Message'?",
+      "type": "multiple_choice",
+      "options": [
+        "A. They are the same thing",
+        "B. Templates are single pre-approved messages; Flows are multi-step automated conversation sequences triggered by events",
+        "C. Flows are for outbound, Templates for inbound",
+        "D. Templates are free, Flows cost extra"
+      ],
+      "correct_answer": "B",
+      "explanation": "Template messages are single, Meta-approved messages for outbound use. Flows are multi-step conversation automations in WATI that can branch based on user responses, containing multiple message steps.",
+      "keywords": [
+        "flow",
+        "template",
+        "difference",
+        "automation",
+        "multi-step"
+      ]
+    },
+    {
+      "id": 17,
+      "category": "wati_platform",
+      "difficulty": "hard",
+      "question": "How should WATI be configured to handle leads who message in Hebrew vs English vs Tagalog?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Configure WATI with language detection logic: (1) Check the user's phone country code (+972 for Israel, +63 for Philippines), (2) Use keyword detection in the first message (Hebrew characters trigger Hebrew flow, Tagalog keywords trigger Tagalog), (3) Route to the appropriate language flow (Flow 1 has language variants), (4) Tag the contact with their language preference, (5) Assign to language-appropriate sales agent if escalation needed. Default to English if language cannot be determined.",
+      "explanation": "Multi-language routing is critical for the dual-market campaign. Phone country code is the primary signal, with message content as secondary detection.",
+      "keywords": [
+        "language detection",
+        "routing",
+        "hebrew",
+        "english",
+        "tagalog",
+        "country code"
+      ]
+    },
+    {
+      "id": 18,
+      "category": "wati_platform",
+      "difficulty": "medium",
+      "question": "What WATI feature should be used to segment contacts for targeted broadcasts?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Contact lists only",
+        "B. Custom attributes and tags on contacts, combined with segment filters",
+        "C. Manual selection each time",
+        "D. WATI doesn't support segmentation"
+      ],
+      "correct_answer": "B",
+      "explanation": "WATI allows custom attributes (market, villa preference, score tier, language) and tags on contacts. These can be used to create dynamic segments for targeted broadcasts.",
+      "keywords": [
+        "custom attributes",
+        "tags",
+        "segments",
+        "targeting"
+      ]
+    },
+    {
+      "id": 19,
+      "category": "wati_platform",
+      "difficulty": "easy",
+      "question": "Where in WATI do you create and manage template messages for Meta approval?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Settings > General",
+        "B. Template Messages section",
+        "C. Flow Builder",
+        "D. Broadcasts section"
+      ],
+      "correct_answer": "B",
+      "explanation": "Template messages are created and managed in WATI's dedicated Template Messages section, where they can be submitted to Meta for approval.",
+      "keywords": [
+        "template messages",
+        "WATI",
+        "creation",
+        "management"
+      ]
+    },
+    {
+      "id": 20,
+      "category": "wati_platform",
+      "difficulty": "hard",
+      "question": "How should WATI conversation assignment work when a HOT lead (score 71+) sends a message?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Stay in the automated flow",
+        "B. Auto-assign to the first available sales agent with immediate notification and 2-hour response SLA",
+        "C. Add to general queue",
+        "D. Send template message only"
+      ],
+      "correct_answer": "B",
+      "explanation": "HOT leads require the 2-hour contact protocol. WATI should auto-assign to a sales agent with push notification, setting a 2-hour response SLA. The automated flow continues in parallel until the agent takes over.",
+      "keywords": [
+        "HOT lead",
+        "auto-assign",
+        "sales agent",
+        "2-hour",
+        "SLA"
+      ]
+    },
+    {
+      "id": 21,
+      "category": "wati_platform",
+      "difficulty": "medium",
+      "question": "What WATI metric should be monitored daily to assess WhatsApp campaign health?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Total messages sent only",
+        "B. Response rate, average response time, conversation resolution rate, and template message delivery rate",
+        "C. Number of contacts only",
+        "D. Revenue generated"
+      ],
+      "correct_answer": "B",
+      "explanation": "Key WATI metrics include response rate (engagement), average response time (SLA compliance), conversation resolution rate (efficiency), and template delivery rate (quality score health).",
+      "keywords": [
+        "metrics",
+        "response rate",
+        "response time",
+        "resolution",
+        "delivery rate"
+      ]
+    },
+    {
+      "id": 22,
+      "category": "wati_platform",
+      "difficulty": "medium",
+      "question": "How should WATI handle a conversation that has been inactive for 48 hours?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Delete the conversation",
+        "B. Mark as resolved, send a follow-up template message after 72 hours if the lead is WARM or higher",
+        "C. Keep it open indefinitely",
+        "D. Send an automatic reminder every hour"
+      ],
+      "correct_answer": "B",
+      "explanation": "Inactive conversations should be marked resolved to keep the inbox clean. A follow-up template message (approved by Meta) can be sent after 72 hours for WARM+ leads to re-engage.",
+      "keywords": [
+        "inactive",
+        "resolved",
+        "follow-up",
+        "template",
+        "re-engagement"
+      ]
+    },
+    {
+      "id": 23,
+      "category": "wati_platform",
+      "difficulty": "hard",
+      "question": "Describe the ideal WATI webhook integration with the CRM lead scoring system.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "WATI webhooks should push events to the CRM: (1) New conversation started: create/update lead, add +30 for WhatsApp click if from ad, (2) Message received: update last_activity timestamp, check for qualification keywords, (3) Flow completed: update lead tags and score based on flow responses, (4) Message read: update engagement metrics, (5) Conversation assigned to agent: log in CRM, (6) Template message delivered/failed: update campaign metrics. The CRM should also push back to WATI: score changes trigger tag updates, HOT lead status triggers agent assignment.",
+      "explanation": "Bidirectional integration between WATI and CRM ensures lead scores reflect WhatsApp engagement and WhatsApp routing reflects lead priority.",
+      "keywords": [
+        "wati",
+        "webhooks",
+        "should",
+        "push",
+        "events",
+        "conversation",
+        "started",
+        "create",
+        "update",
+        "lead"
+      ]
+    },
+    {
+      "id": 24,
+      "category": "wati_platform",
+      "difficulty": "easy",
+      "question": "What is WATI's Flow Builder used for?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Building websites",
+        "B. Creating automated multi-step WhatsApp conversation sequences with branching logic",
+        "C. Managing team schedules",
+        "D. Email automation"
+      ],
+      "correct_answer": "B",
+      "explanation": "WATI's Flow Builder creates automated conversation sequences that can branch based on user replies, collect data, assign tags, and route conversations to agents.",
+      "keywords": [
+        "Flow Builder",
+        "automation",
+        "branching",
+        "conversation"
+      ]
+    },
+    {
+      "id": 25,
+      "category": "template_messages",
+      "difficulty": "easy",
+      "question": "How long does Meta typically take to review and approve a WhatsApp template message?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Instantly",
+        "B. Up to 24 hours, but often within minutes",
+        "C. 7 business days",
+        "D. 30 days"
+      ],
+      "correct_answer": "B",
+      "explanation": "Meta typically reviews template messages within minutes to hours, but it can take up to 24 hours. Planning template submissions 2-3 days ahead is recommended.",
+      "keywords": [
+        "approval",
+        "review time",
+        "Meta",
+        "24 hours"
+      ]
+    },
+    {
+      "id": 26,
+      "category": "template_messages",
+      "difficulty": "medium",
+      "question": "What are the most common reasons a WhatsApp template message gets rejected by Meta?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Too many emojis",
+        "B. Misleading content, missing opt-out option, incorrect variable formatting, or content that violates WhatsApp Commerce Policy",
+        "C. Using images",
+        "D. Being too short"
+      ],
+      "correct_answer": "B",
+      "explanation": "Common rejection reasons include misleading content, missing unsubscribe option, incorrectly formatted dynamic variables ({{1}}), and violations of WhatsApp's Commerce Policy.",
+      "keywords": [
+        "rejection",
+        "reasons",
+        "commerce policy",
+        "variables",
+        "opt-out"
+      ]
+    },
+    {
+      "id": 27,
+      "category": "template_messages",
+      "difficulty": "medium",
+      "question": "A template message for the Israeli market reads: 'שלום {{1}}, וילה בפנגלאו - PHP 32,500,000. תשואה 17-25%. לפרטים: +639542555553'. What content rule does it violate?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No number included",
+        "B. Missing second WhatsApp number",
+        "C. Uses forbidden words",
+        "D. Uses wrong currency"
+      ],
+      "correct_answer": "B",
+      "explanation": "Per Rule 4, every piece of content must include BOTH WhatsApp numbers: +639542555553 (Marketing) AND +639958565865 (Office).",
+      "keywords": [
+        "dual numbers",
+        "Rule 4",
+        "template",
+        "violation"
+      ]
+    },
+    {
+      "id": 28,
+      "category": "template_messages",
+      "difficulty": "hard",
+      "question": "Design a WhatsApp template message for re-engaging a WARM Israeli lead who has not responded in 7 days. Include all required elements per content rules.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Template: 'שלום {{1}}, עדכון חדש על וילות פנגלאו - 263.78 מ\"ר, 4 חדרי שינה.\n\n3 מסלולי בעלות חוקיים לרכישה בטוחה.\n\nWhatsApp (שיווק): +639542555553\nWhatsApp (משרד): +639958565865\n\nלהפסקת הודעות, השיבו: הסר'\n\nElements: Hebrew language, specific number (263.78 sqm), 4 bedrooms (Rule 3), reference to 3 legal structures (Rule 6), both WhatsApp numbers (Rule 4), regular hyphens only (Rule 2), formal-warm register (Rule 8), shekel-only pricing context, opt-out option for compliance.",
+      "explanation": "A compliant re-engagement template must satisfy all content rules while also meeting WhatsApp template approval requirements including opt-out.",
+      "keywords": [
+        "template",
+        "whatsapp",
+        "639542555553",
+        "639958565865",
+        "elements",
+        "hebrew",
+        "language",
+        "specific",
+        "number",
+        "bedrooms"
+      ]
+    },
+    {
+      "id": 29,
+      "category": "template_messages",
+      "difficulty": "medium",
+      "question": "What is the maximum character limit for a WhatsApp template message body?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 160 characters",
+        "B. 1,024 characters",
+        "C. 4,096 characters",
+        "D. Unlimited"
+      ],
+      "correct_answer": "B",
+      "explanation": "WhatsApp template message bodies are limited to 1,024 characters. This requires concise messaging that still includes all required content elements.",
+      "keywords": [
+        "character limit",
+        "1024",
+        "template body"
+      ]
+    },
+    {
+      "id": 30,
+      "category": "template_messages",
+      "difficulty": "easy",
+      "question": "What format are dynamic variables in WhatsApp template messages?",
+      "type": "multiple_choice",
+      "options": [
+        "A. {name}",
+        "B. {{1}}, {{2}}, etc.",
+        "C. [FIRST_NAME]",
+        "D. %name%"
+      ],
+      "correct_answer": "B",
+      "explanation": "WhatsApp template messages use numbered placeholders: {{1}}, {{2}}, {{3}}, etc. Each variable must be provided when sending the template.",
+      "keywords": [
+        "variables",
+        "placeholders",
+        "{{1}}",
+        "format"
+      ]
+    },
+    {
+      "id": 31,
+      "category": "template_messages",
+      "difficulty": "medium",
+      "question": "Can a WhatsApp template message include an image header?",
+      "type": "true_false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "true",
+      "explanation": "Template messages can include a header component with an image, document, or video. This is useful for sending villa photos alongside the template text.",
+      "keywords": [
+        "image header",
+        "media",
+        "template component"
+      ]
+    },
+    {
+      "id": 32,
+      "category": "template_messages",
+      "difficulty": "hard",
+      "question": "The campaign needs templates in 3 languages (Hebrew, English, Tagalog). Should these be separate templates or one template with language variants?",
+      "type": "multiple_choice",
+      "options": [
+        "A. One template with all 3 languages in the body",
+        "B. Separate templates per language, using WhatsApp's language pack feature",
+        "C. One template in English only",
+        "D. Language doesn't matter for templates"
+      ],
+      "correct_answer": "B",
+      "explanation": "WhatsApp supports language variants within a single template name. Each language version is submitted separately for approval, and the correct version is sent based on the user's language setting or explicit selection.",
+      "keywords": [
+        "language variants",
+        "multi-language",
+        "language pack",
+        "separate approval"
+      ]
+    },
+    {
+      "id": 33,
+      "category": "template_messages",
+      "difficulty": "medium",
+      "question": "What must a WhatsApp marketing template include to comply with opt-out requirements?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Nothing special",
+        "B. A clear opt-out mechanism such as 'Reply STOP to unsubscribe'",
+        "C. A link to a website",
+        "D. The company registration number"
+      ],
+      "correct_answer": "B",
+      "explanation": "Marketing templates must include a clear opt-out option. This can be a quick-reply button or text instruction like 'Reply STOP to unsubscribe' to comply with WhatsApp's commerce policy.",
+      "keywords": [
+        "opt-out",
+        "unsubscribe",
+        "STOP",
+        "compliance"
+      ]
+    },
+    {
+      "id": 34,
+      "category": "template_messages",
+      "difficulty": "hard",
+      "question": "A template message was approved but the quality score dropped to Low after sending. What happened and how should it be addressed?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Too many sends - reduce volume",
+        "B. Users are reporting/blocking the message, indicating content or targeting issues; pause the template, analyze recipient feedback, revise content and targeting",
+        "C. API error - resend",
+        "D. Normal fluctuation - ignore"
+      ],
+      "correct_answer": "B",
+      "explanation": "A Low quality score means users are blocking or reporting the template. This requires immediate action: pause sends, review content relevance, check targeting accuracy, and revise the template before it is disabled by Meta.",
+      "keywords": [
+        "quality score",
+        "blocking",
+        "reporting",
+        "pause",
+        "revise"
+      ]
+    },
+    {
+      "id": 35,
+      "category": "template_messages",
+      "difficulty": "medium",
+      "question": "How many quick reply buttons can a WhatsApp template message have?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 1",
+        "B. 2",
+        "C. 3",
+        "D. 5"
+      ],
+      "correct_answer": "C",
+      "explanation": "WhatsApp template messages support up to 3 quick reply buttons. Each button can have up to 20 characters of text.",
+      "keywords": [
+        "quick reply",
+        "buttons",
+        "3",
+        "template"
+      ]
+    },
+    {
+      "id": 36,
+      "category": "template_messages",
+      "difficulty": "easy",
+      "question": "Can a WhatsApp template message include a call-to-action button that opens a URL?",
+      "type": "true_false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "true",
+      "explanation": "Template messages can include CTA buttons for phone calls or URLs. URL buttons can include a dynamic suffix (e.g., tracking parameters).",
+      "keywords": [
+        "CTA button",
+        "URL",
+        "phone call",
+        "template"
+      ]
+    },
+    {
+      "id": 37,
+      "category": "flow_design",
+      "difficulty": "easy",
+      "question": "What is Flow 1 (Welcome Flow) and what options does it present to the user?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Asks for name and email",
+        "B. Presents 3 options: 1=Details, 2=Specs, 3=Pricing",
+        "C. Sends villa photos only",
+        "D. Asks if they want to buy"
+      ],
+      "correct_answer": "B",
+      "explanation": "Flow 1 is the Welcome Flow that greets the user and presents three quick-reply options: 1=Details (general info), 2=Specs (technical specifications), 3=Pricing (villa prices and payment).",
+      "keywords": [
+        "Flow 1",
+        "welcome",
+        "3 options",
+        "details",
+        "specs",
+        "pricing"
+      ]
+    },
+    {
+      "id": 38,
+      "category": "flow_design",
+      "difficulty": "medium",
+      "question": "How many total flows are defined in the WhatsApp automation system?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 5",
+        "B. 8",
+        "C. 12",
+        "D. 20"
+      ],
+      "correct_answer": "C",
+      "explanation": "There are 12 defined flows: Flow 1 (Welcome), Flows 1.1-1.9 (sub-flows from welcome options), Flow 2 (VIP), and Flow 12 (CRM Handoff).",
+      "keywords": [
+        "12 flows",
+        "total",
+        "Flow 1",
+        "Flow 2",
+        "Flow 12"
+      ]
+    },
+    {
+      "id": 39,
+      "category": "flow_design",
+      "difficulty": "medium",
+      "question": "What is Flow 2 (VIP Flow) and when is it triggered?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Triggered for all new contacts",
+        "B. Triggered for leads scored HOT (71+) or VERY HOT (121+), providing premium personalized experience",
+        "C. Triggered on weekends only",
+        "D. Triggered after purchase"
+      ],
+      "correct_answer": "B",
+      "explanation": "Flow 2 (VIP) is triggered when a lead reaches HOT or VERY HOT status. It provides a premium experience with direct sales agent connection, priority scheduling, and personalized villa presentation.",
+      "keywords": [
+        "Flow 2",
+        "VIP",
+        "HOT",
+        "VERY HOT",
+        "premium"
+      ]
+    },
+    {
+      "id": 40,
+      "category": "flow_design",
+      "difficulty": "hard",
+      "question": "What is Flow 12 (CRM Handoff) and what data does it pass to the CRM?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Flow 12 (CRM Handoff) is triggered when a lead completes qualification or requests human contact. It passes to the CRM: (1) Lead name and phone number, (2) Language preference, (3) Villa interest (C or D), (4) Budget indication, (5) Investment timeline, (6) Country/market segment, (7) All flow responses and tags accumulated during conversation, (8) Current lead score, (9) Conversation transcript summary, (10) Timestamp and source of entry. The CRM then creates/updates the lead record and triggers appropriate follow-up actions.",
+      "explanation": "Flow 12 is the critical handoff point from automated WhatsApp to the CRM and sales team. Complete data transfer ensures no context is lost.",
+      "keywords": [
+        "Flow 12",
+        "CRM handoff",
+        "data transfer",
+        "qualification",
+        "lead record"
+      ]
+    },
+    {
+      "id": 41,
+      "category": "flow_design",
+      "difficulty": "medium",
+      "question": "When a user selects Option 1 (Details) in Flow 1, what sub-flow should trigger?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Flow 1.1 - General villa overview with location, developer info, and key selling points",
+        "B. Flow 2 - VIP",
+        "C. Flow 12 - CRM Handoff",
+        "D. No sub-flow - send a single message"
+      ],
+      "correct_answer": "A",
+      "explanation": "Option 1 triggers Flow 1.1 which provides a general overview including location (Panglao, Bohol), developer (Blue Everest), key features, and leads to further detail options.",
+      "keywords": [
+        "Flow 1.1",
+        "details",
+        "overview",
+        "sub-flow"
+      ]
+    },
+    {
+      "id": 42,
+      "category": "flow_design",
+      "difficulty": "medium",
+      "question": "What should a flow do when a user sends an unexpected response that doesn't match any expected option?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Ignore the message",
+        "B. Repeat the options, acknowledge the free-text input, and offer to connect with a human agent",
+        "C. End the conversation",
+        "D. Send all flows at once"
+      ],
+      "correct_answer": "B",
+      "explanation": "Graceful error handling: acknowledge the user's input, re-present the available options clearly, and always offer human agent escalation as a fallback.",
+      "keywords": [
+        "error handling",
+        "unexpected input",
+        "fallback",
+        "human agent"
+      ]
+    },
+    {
+      "id": 43,
+      "category": "flow_design",
+      "difficulty": "hard",
+      "question": "Design the branching logic for Flow 1 when a user selects Option 3 (Pricing). The user is Israeli. What should the flow present?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Flow 1 Option 3 triggers the Pricing sub-flow for Israeli market: (1) Present Villa D at PHP 32,500,000 and Villa C at PHP 35,000,000 (shekel only, no PHP per Rule 1), (2) Mention reservation of PHP 200,000, (3) State that payment terms and financing details are discussed at the booking meeting, (4) Reference 3 legal ownership structures (Rule 6), (5) Include both WhatsApp numbers (Rule 4), (6) Offer quick-reply buttons: 'Book a Call', 'Villa C Details', 'Villa D Details', (7) If 'Book a Call' selected, trigger Flow 12 CRM handoff with HOT tagging.",
+      "explanation": "The pricing flow must follow all Israeli market content rules while moving the lead toward a booking conversation. Pricing interest is a strong buying signal.",
+      "keywords": [
+        "flow",
+        "option",
+        "triggers",
+        "pricing",
+        "israeli",
+        "market",
+        "present",
+        "villa",
+        "shekel",
+        "only"
+      ]
+    },
+    {
+      "id": 44,
+      "category": "flow_design",
+      "difficulty": "easy",
+      "question": "What is the maximum number of steps recommended in a single WhatsApp flow before offering human handoff?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 2-3 steps",
+        "B. 5-7 steps",
+        "C. 15-20 steps",
+        "D. No limit"
+      ],
+      "correct_answer": "B",
+      "explanation": "5-7 steps is optimal for WhatsApp flows. Longer flows risk drop-off. Every flow should offer human agent handoff by step 5-7 at the latest.",
+      "keywords": [
+        "flow length",
+        "steps",
+        "drop-off",
+        "human handoff"
+      ]
+    },
+    {
+      "id": 45,
+      "category": "flow_design",
+      "difficulty": "medium",
+      "question": "How should flows handle the transition from automated messages to a live sales agent?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Stop the flow immediately without notification",
+        "B. Send a transition message telling the user a real person will continue, assign to agent in WATI, provide estimated response time",
+        "C. Continue the flow alongside the agent",
+        "D. Ask the user to call instead"
+      ],
+      "correct_answer": "B",
+      "explanation": "Smooth handoff requires: (1) informing the user, (2) WATI assignment to an agent, (3) estimated response time based on business hours. The user should never feel abandoned during transition.",
+      "keywords": [
+        "handoff",
+        "transition",
+        "live agent",
+        "notification",
+        "assignment"
+      ]
+    },
+    {
+      "id": 46,
+      "category": "flow_design",
+      "difficulty": "hard",
+      "question": "A flow needs to collect the lead's investment timeline. What is the best way to structure this in WhatsApp?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Ask an open-ended question",
+        "B. Use a list message with predefined timeline options: 'Within 1 month', '1-3 months', '3-6 months', '6-12 months', 'Just researching'",
+        "C. Skip this question",
+        "D. Ask them to fill out a web form"
+      ],
+      "correct_answer": "B",
+      "explanation": "Structured options reduce friction and produce clean data for scoring. A list message with predefined timelines is faster for the user and produces standardized data for the CRM.",
+      "keywords": [
+        "investment timeline",
+        "list message",
+        "structured data",
+        "qualification"
+      ]
+    },
+    {
+      "id": 47,
+      "category": "flow_design",
+      "difficulty": "medium",
+      "question": "What data should each flow step collect and tag on the WATI contact?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Nothing - just send messages",
+        "B. Each response should update contact tags and custom attributes: language, villa preference, budget range, timeline, market segment",
+        "C. Only the name",
+        "D. Only the phone number"
+      ],
+      "correct_answer": "B",
+      "explanation": "Progressive profiling through flows: each user response should update the WATI contact record with tags and custom attributes that feed into lead scoring and segmentation.",
+      "keywords": [
+        "tagging",
+        "custom attributes",
+        "progressive profiling",
+        "data collection"
+      ]
+    },
+    {
+      "id": 48,
+      "category": "flow_design",
+      "difficulty": "hard",
+      "question": "How should flows handle a user who starts Flow 1, completes it, then messages again 3 days later?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Restart Flow 1 from the beginning",
+        "B. Check their contact tags/attributes, skip already-completed flows, present next relevant flow or offer new options based on their profile",
+        "C. Send a generic greeting",
+        "D. Ignore the message until an agent is available"
+      ],
+      "correct_answer": "B",
+      "explanation": "Returning users should not repeat flows. The system should check their WATI profile, acknowledge their return, and present contextually relevant next steps based on what they have already seen.",
+      "keywords": [
+        "returning user",
+        "context",
+        "skip completed",
+        "profile-based"
+      ]
+    },
+    {
+      "id": 49,
+      "category": "flow_design",
+      "difficulty": "medium",
+      "question": "What should Flow 1.9 (the final sub-flow) accomplish?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Say goodbye",
+        "B. Summarize all information shared, present a clear CTA for booking a call/reservation, and trigger CRM handoff",
+        "C. Send more photos",
+        "D. Ask for referrals"
+      ],
+      "correct_answer": "B",
+      "explanation": "The final sub-flow should consolidate the conversation, present the strongest CTA (book a call or reserve), and ensure the lead data is handed off to CRM for sales follow-up.",
+      "keywords": [
+        "final sub-flow",
+        "summary",
+        "CTA",
+        "CRM handoff",
+        "booking"
+      ]
+    },
+    {
+      "id": 50,
+      "category": "flow_design",
+      "difficulty": "hard",
+      "question": "Map out the complete flow tree from Flow 1 entry to Flow 12 CRM Handoff, including all branching paths.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Flow 1 (Welcome) -> User selects: Option 1 -> Flow 1.1 (Details) -> Flow 1.2 (Location) -> Flow 1.3 (Developer). Option 2 -> Flow 1.4 (Specs Villa C) or Flow 1.5 (Specs Villa D) -> Flow 1.6 (Comparison). Option 3 -> Flow 1.7 (Pricing IL) or Flow 1.8 (Pricing PH) based on market segment -> Flow 1.9 (Reservation/CTA). Any path can branch to Flow 2 (VIP) if score crosses HOT threshold during conversation. All terminal nodes and high-intent signals converge to Flow 12 (CRM Handoff). Each flow has a 'Talk to Agent' escape hatch that also routes to Flow 12.",
+      "explanation": "The flow tree ensures every user path eventually leads to either a booking action or CRM handoff, while allowing shortcuts for high-intent users.",
+      "keywords": [
+        "flow",
+        "welcome",
+        "user",
+        "selects",
+        "option",
+        "details",
+        "location",
+        "developer",
+        "specs",
+        "villa"
+      ]
+    },
+    {
+      "id": 51,
+      "category": "flow_design",
+      "difficulty": "medium",
+      "question": "What is the recommended delay between automated messages within a flow to prevent overwhelming the user?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No delay - send instantly",
+        "B. 1-3 seconds typing indicator, then send",
+        "C. 30 seconds between each message",
+        "D. 5 minutes between each message"
+      ],
+      "correct_answer": "B",
+      "explanation": "A 1-3 second typing indicator simulates natural conversation pace. Instant sends feel robotic; long delays lose engagement. The typing indicator creates a more human-like experience.",
+      "keywords": [
+        "delay",
+        "typing indicator",
+        "pacing",
+        "natural"
+      ]
+    },
+    {
+      "id": 52,
+      "category": "broadcast",
+      "difficulty": "easy",
+      "question": "What days and times are WhatsApp broadcasts scheduled for the campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Daily at 9:00 AM",
+        "B. Tuesday and Thursday at 10:00 AM PHT",
+        "C. Monday and Friday at 3:00 PM",
+        "D. Weekends only"
+      ],
+      "correct_answer": "B",
+      "explanation": "WhatsApp broadcasts are scheduled for Tuesday and Thursday at 10:00 AM PHT, as specified in the campaign's scheduled tasks.",
+      "keywords": [
+        "broadcast",
+        "Tuesday",
+        "Thursday",
+        "10:00 AM",
+        "schedule"
+      ]
+    },
+    {
+      "id": 53,
+      "category": "broadcast",
+      "difficulty": "medium",
+      "question": "What type of messages can be used for WhatsApp broadcasts?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Any message format",
+        "B. Only Meta-approved template messages",
+        "C. Only text messages",
+        "D. Only messages under 100 characters"
+      ],
+      "correct_answer": "B",
+      "explanation": "Broadcasts initiate business-to-user conversations, which require approved template messages. Free-form messages cannot be used for broadcasts.",
+      "keywords": [
+        "broadcast",
+        "template only",
+        "approved",
+        "business-initiated"
+      ]
+    },
+    {
+      "id": 54,
+      "category": "broadcast",
+      "difficulty": "medium",
+      "question": "How should broadcast audiences be segmented to maximize relevance and minimize opt-outs?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Send to all contacts",
+        "B. Segment by market (IL/PH), lead score tier, language, and villa interest; only broadcast to WARM+ leads",
+        "C. Random selection",
+        "D. Only send to new leads"
+      ],
+      "correct_answer": "B",
+      "explanation": "Segmented broadcasts to WARM+ leads in their language with relevant content (market-appropriate pricing, villa of interest) maximize engagement and minimize blocks/opt-outs.",
+      "keywords": [
+        "segmentation",
+        "targeting",
+        "WARM+",
+        "relevance",
+        "opt-out prevention"
+      ]
+    },
+    {
+      "id": 55,
+      "category": "broadcast",
+      "difficulty": "hard",
+      "question": "A Tuesday broadcast to Israeli leads needs to comply with all content rules. What time should it be sent in IST, and what must the template include?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 10:00 AM PHT (which is 5:00 AM IST) - too early for Israel",
+        "B. 10:00 AM PHT for PH leads; Israeli leads should receive a separate broadcast at 20:00-22:00 IST (03:00-05:00 Wed PHT)",
+        "C. Same time for both markets",
+        "D. Israeli leads should not receive broadcasts"
+      ],
+      "correct_answer": "B",
+      "explanation": "The 10:00 AM PHT broadcast is for PH leads. Israeli leads need a separate broadcast during their optimal window (20:00-22:00 IST on Sunday-Thursday). Tuesday 10 AM PHT = 5 AM IST, which is too early.",
+      "keywords": [
+        "timezone",
+        "broadcast timing",
+        "israel",
+        "separate",
+        "optimal window"
+      ]
+    },
+    {
+      "id": 56,
+      "category": "broadcast",
+      "difficulty": "medium",
+      "question": "What is the maximum recommended broadcast frequency to avoid user fatigue and blocks?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Daily",
+        "B. 2-3 times per week maximum",
+        "C. Once per month",
+        "D. No limit"
+      ],
+      "correct_answer": "B",
+      "explanation": "2-3 times per week is the maximum. The campaign uses Tuesday and Thursday. More frequent broadcasts increase block rates and damage quality score.",
+      "keywords": [
+        "frequency",
+        "fatigue",
+        "blocks",
+        "quality score"
+      ]
+    },
+    {
+      "id": 57,
+      "category": "broadcast",
+      "difficulty": "easy",
+      "question": "What metric indicates a broadcast template should be revised or paused?",
+      "type": "multiple_choice",
+      "options": [
+        "A. High open rate",
+        "B. Block rate exceeding 2% or quality score dropping to Yellow/Red",
+        "C. Fast response time",
+        "D. Low cost per message"
+      ],
+      "correct_answer": "B",
+      "explanation": "Block rates above 2% and quality score degradation signal that the broadcast content or targeting needs revision. Continuing will damage the account's messaging tier.",
+      "keywords": [
+        "block rate",
+        "quality score",
+        "pause",
+        "revise",
+        "threshold"
+      ]
+    },
+    {
+      "id": 58,
+      "category": "broadcast",
+      "difficulty": "hard",
+      "question": "Design a broadcast content calendar for one week that covers both markets without violating any content rules.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Tuesday 10:00 AM PHT - PH Market: Template about BDO financing 70% LTV for Villa D PHP 32,500,000, both WhatsApp numbers, Rule 3 number included. Tuesday 20:00 IST - IL Market: Template about 17-25% ROI with PHP 32,500,000 Villa D, 3 legal structures mentioned, both WhatsApp numbers, Hebrew formal-warm register. Thursday 10:00 AM PHT - PH Market: Template about 4-bedroom 263.78 sqm specs with PHP 395,000 monthly income, BDO mention, both numbers. Thursday 20:00 IST - IL Market: Template about reservation PHP 200,000, Airbnb income, legal structures, both numbers. Each template avoids forbidden words, em/en dashes, and uses appropriate currency per market.",
+      "explanation": "A compliant broadcast calendar requires separate templates per market, each satisfying all relevant content rules, sent at optimal times per timezone.",
+      "keywords": [
+        "tuesday",
+        "market",
+        "template",
+        "about",
+        "financing",
+        "villa",
+        "both",
+        "whatsapp",
+        "numbers",
+        "rule"
+      ]
+    },
+    {
+      "id": 59,
+      "category": "broadcast",
+      "difficulty": "medium",
+      "question": "Should COLD leads (score 0-30) receive WhatsApp broadcasts?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Yes - all leads get broadcasts",
+        "B. No - only WARM and above should receive broadcasts to protect quality score",
+        "C. Only if they opted in separately for WhatsApp",
+        "D. Only on weekends"
+      ],
+      "correct_answer": "B",
+      "explanation": "COLD leads have low engagement signals. Broadcasting to them risks high block rates, which damages the WhatsApp quality score. Focus broadcasts on WARM+ leads who have demonstrated interest.",
+      "keywords": [
+        "COLD leads",
+        "quality score",
+        "targeting",
+        "WARM+"
+      ]
+    },
+    {
+      "id": 60,
+      "category": "broadcast",
+      "difficulty": "medium",
+      "question": "After sending a broadcast, what metrics should be collected within 24 hours?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Send count only",
+        "B. Delivered, read, replied, clicked (if CTA button), blocked, and failed counts",
+        "C. Revenue generated",
+        "D. Social media shares"
+      ],
+      "correct_answer": "B",
+      "explanation": "Key broadcast metrics: delivery rate, read rate, reply rate, CTA click rate, block rate, and failure rate. These inform template quality and targeting effectiveness.",
+      "keywords": [
+        "metrics",
+        "delivered",
+        "read",
+        "replied",
+        "blocked",
+        "failed"
+      ]
+    },
+    {
+      "id": 61,
+      "category": "broadcast",
+      "difficulty": "hard",
+      "question": "A broadcast to 200 Israeli leads has a 5% block rate. What immediate actions should be taken?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Continue broadcasting",
+        "B. Immediately pause all Israeli broadcasts, analyze the template content for rule violations, review audience targeting, revise and resubmit template, test with small segment before full resume",
+        "C. Switch to email only",
+        "D. Remove all Israeli leads"
+      ],
+      "correct_answer": "B",
+      "explanation": "A 5% block rate is critically high (threshold is 2%). Immediate pause prevents further damage. Root cause analysis of content and targeting must be completed before resuming.",
+      "keywords": [
+        "high block rate",
+        "pause",
+        "analysis",
+        "revise",
+        "test"
+      ]
+    },
+    {
+      "id": 62,
+      "category": "inbound_routing",
+      "difficulty": "easy",
+      "question": "When a new message arrives in WATI during business hours, what should happen first?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Ignore until an agent is free",
+        "B. Auto-trigger Flow 1 (Welcome) for new contacts, or check contact profile for returning contacts",
+        "C. Send a template message",
+        "D. Forward to email"
+      ],
+      "correct_answer": "B",
+      "explanation": "New contacts trigger Flow 1 (Welcome) to begin automated qualification. Returning contacts should be routed based on their existing profile, tags, and conversation history.",
+      "keywords": [
+        "inbound",
+        "routing",
+        "new contact",
+        "returning contact",
+        "Flow 1"
+      ]
+    },
+    {
+      "id": 63,
+      "category": "inbound_routing",
+      "difficulty": "medium",
+      "question": "A message comes in Hebrew from a number with +972 country code. How should it be routed?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Default English flow",
+        "B. Israeli market flow with Hebrew language, tag as IL market, trigger Hebrew version of Flow 1",
+        "C. Ignore - not a target market",
+        "D. Forward to translation service"
+      ],
+      "correct_answer": "B",
+      "explanation": "The +972 country code (Israel) combined with Hebrew text should trigger the Israeli market version of flows, tag the contact as IL market, and set language preference to Hebrew.",
+      "keywords": [
+        "+972",
+        "hebrew",
+        "israeli market",
+        "routing",
+        "language tag"
+      ]
+    },
+    {
+      "id": 64,
+      "category": "inbound_routing",
+      "difficulty": "hard",
+      "question": "A lead sends a message saying 'I want to reserve Villa C right now'. How should the inbound routing handle this?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Send them through the standard Flow 1",
+        "B. Detect high-intent keywords ('reserve', 'right now'), skip all flows, immediately add +40 (form submit equivalent), trigger Flow 12 CRM Handoff, alert sales team for 2-hour response",
+        "C. Send pricing information",
+        "D. Ask them to fill out a form"
+      ],
+      "correct_answer": "B",
+      "explanation": "High-intent keywords like 'reserve' combined with urgency words bypass normal flows. This is equivalent to a hot form submission and should trigger immediate CRM handoff and sales alert.",
+      "keywords": [
+        "high-intent",
+        "keyword detection",
+        "reserve",
+        "immediate",
+        "CRM handoff",
+        "sales alert"
+      ]
+    },
+    {
+      "id": 65,
+      "category": "inbound_routing",
+      "difficulty": "medium",
+      "question": "How should spam or irrelevant messages be handled in the WhatsApp inbox?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Reply to every message",
+        "B. Auto-detect spam patterns, tag as spam, do not trigger flows, mark resolved without response",
+        "C. Block the sender immediately",
+        "D. Forward to management"
+      ],
+      "correct_answer": "B",
+      "explanation": "Spam detection should filter obvious spam (generic promotions, unrelated content) without triggering flows or wasting agent time. Tagged for record-keeping but not responded to.",
+      "keywords": [
+        "spam",
+        "detection",
+        "filter",
+        "tag",
+        "no response"
+      ]
+    },
+    {
+      "id": 66,
+      "category": "inbound_routing",
+      "difficulty": "medium",
+      "question": "A lead who completed Flow 1 last week messages: 'Can you send me the floor plan again?'. How should this be routed?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Restart Flow 1 from scratch",
+        "B. Detect the request type, send the relevant document directly, update engagement metrics, do not restart the flow",
+        "C. Ask them to visit the website",
+        "D. Wait for a human agent"
+      ],
+      "correct_answer": "B",
+      "explanation": "Returning users with specific requests should receive direct answers without repeating flows. The system should recognize the request, send the relevant asset, and update the contact's activity log.",
+      "keywords": [
+        "returning user",
+        "specific request",
+        "direct response",
+        "no restart"
+      ]
+    },
+    {
+      "id": 67,
+      "category": "inbound_routing",
+      "difficulty": "hard",
+      "question": "Design the complete inbound routing decision tree for the first message received from a new contact.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Step 1: Check phone country code -> Route to market (IL/PH/International). Step 2: Detect language of message -> Set language preference. Step 3: Scan for high-intent keywords ('buy', 'reserve', 'price', 'book') -> If found: fast-track to pricing flow or CRM handoff. Step 4: Check if message came from an ad click (UTM/ref parameter) -> Tag source, add +30 WhatsApp click score. Step 5: If no special routing, trigger Flow 1 in detected language. Step 6: Set initial tags: market, language, source, timestamp. Step 7: Create/update CRM lead record with initial +30 score for WhatsApp engagement.",
+      "explanation": "The routing decision tree must handle market detection, language, intent, source attribution, and initial scoring in the first seconds of receiving a message.",
+      "keywords": [
+        "step",
+        "check",
+        "phone",
+        "country",
+        "code",
+        "route",
+        "market",
+        "international",
+        "detect",
+        "language"
+      ]
+    },
+    {
+      "id": 68,
+      "category": "inbound_routing",
+      "difficulty": "medium",
+      "question": "A message arrives outside WATI business hours (Mon-Sat 9am-6pm PHT) from a HOT lead. What should happen?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Standard out-of-hours auto-reply only",
+        "B. Out-of-hours auto-reply PLUS immediate alert to on-call sales agent since HOT lead 2-hour protocol applies regardless of business hours",
+        "C. Queue until morning",
+        "D. Trigger the full flow as normal"
+      ],
+      "correct_answer": "B",
+      "explanation": "The HOT lead 2-hour contact protocol overrides business hours. While the auto-reply buys time, the sales team must be alerted immediately for HOT leads even after hours.",
+      "keywords": [
+        "after hours",
+        "HOT lead",
+        "2-hour protocol",
+        "override",
+        "sales alert"
+      ]
+    },
+    {
+      "id": 69,
+      "category": "inbound_routing",
+      "difficulty": "medium",
+      "question": "How should voice messages received on WhatsApp be handled?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Ignore them",
+        "B. Auto-reply asking the user to type their message, flag for human agent review during business hours",
+        "C. Transcribe automatically and route",
+        "D. Delete them"
+      ],
+      "correct_answer": "B",
+      "explanation": "Voice messages cannot be automatically processed by flows. A polite request to type the message keeps the automated flow working, while flagging for human review ensures nothing important is missed.",
+      "keywords": [
+        "voice message",
+        "handling",
+        "type request",
+        "human review"
+      ]
+    },
+    {
+      "id": 70,
+      "category": "inbound_routing",
+      "difficulty": "easy",
+      "question": "What should happen when a lead sends a message containing only an emoji or sticker?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Respond with an emoji",
+        "B. Treat as engagement signal, send a friendly prompt asking how to help, present Flow 1 options if new contact",
+        "C. Ignore",
+        "D. Mark as spam"
+      ],
+      "correct_answer": "B",
+      "explanation": "An emoji/sticker indicates the user is engaged but may not know what to ask. A friendly prompt with clear options helps them continue the conversation.",
+      "keywords": [
+        "emoji",
+        "engagement",
+        "prompt",
+        "options"
+      ]
+    },
+    {
+      "id": 71,
+      "category": "inbound_routing",
+      "difficulty": "hard",
+      "question": "A returning lead messages in a different language than their original conversation (first was English, now Hebrew). What should the routing do?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Ignore the language change",
+        "B. Update language preference to Hebrew, re-route to Hebrew flow version, update market segment tags, adjust email sequence language if applicable",
+        "C. Ask which language they prefer",
+        "D. Continue in English only"
+      ],
+      "correct_answer": "B",
+      "explanation": "A language switch may indicate the lead's true preference or changed circumstances. Update all settings accordingly and continue in the new language. This may also indicate an Israeli expat returning to their native language.",
+      "keywords": [
+        "language switch",
+        "update preference",
+        "re-route",
+        "profile update"
+      ]
+    },
+    {
+      "id": 72,
+      "category": "lead_qualification",
+      "difficulty": "easy",
+      "question": "What lead score is added when a user initiates a WhatsApp conversation?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +5",
+        "B. +10",
+        "C. +30",
+        "D. +50"
+      ],
+      "correct_answer": "C",
+      "explanation": "Per the scoring model, a WhatsApp click/conversation initiation adds +30 points, reflecting the high intent signal of direct messaging.",
+      "keywords": [
+        "+30",
+        "WhatsApp click",
+        "conversation start",
+        "scoring"
+      ]
+    },
+    {
+      "id": 73,
+      "category": "lead_qualification",
+      "difficulty": "medium",
+      "question": "During WhatsApp flow qualification, what three key data points should be collected to determine lead quality?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Name, email, phone",
+        "B. Budget range, investment timeline, and villa preference (C or D)",
+        "C. Social media profiles",
+        "D. Employment history"
+      ],
+      "correct_answer": "B",
+      "explanation": "Budget range (score impact: +25 if confirmed), investment timeline (urgency indicator), and villa preference (C at PHP 35M or D at PHP 32.5M) are the three critical qualification data points.",
+      "keywords": [
+        "qualification",
+        "budget",
+        "timeline",
+        "villa preference"
+      ]
+    },
+    {
+      "id": 74,
+      "category": "lead_qualification",
+      "difficulty": "medium",
+      "question": "A lead completes the WhatsApp flow and has a score of 65 (WARM). They express interest in Villa C but say their timeline is '6-12 months'. What qualification status should they receive?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Disqualified",
+        "B. Marketing Qualified Lead (MQL) - continue nurturing via email and periodic WhatsApp",
+        "C. Sales Qualified Lead (SQL) - immediate sales handoff",
+        "D. Hot Lead - trigger 2-hour protocol"
+      ],
+      "correct_answer": "B",
+      "explanation": "Score 65 (WARM) with a 6-12 month timeline indicates interest but not immediate readiness. They are an MQL who should continue receiving nurture content.",
+      "keywords": [
+        "MQL",
+        "WARM",
+        "nurturing",
+        "long timeline"
+      ]
+    },
+    {
+      "id": 75,
+      "category": "lead_qualification",
+      "difficulty": "hard",
+      "question": "How should the WhatsApp qualification flow handle a lead who says their budget is below PHP 20M (below both villa prices)?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Do not disqualify immediately. Respond with: (1) Acknowledge their budget, (2) Present BDO financing option (70% LTV - they only need 30% down, which is PHP 8.4M for Villa D), (3) If Filipino market, emphasize BDO enables purchase at lower upfront cost, (4) If Israeli market, mention financing discussions at booking meeting, (5) If budget is extremely low (under PHP 8M), gracefully move to long-term nurture with market education content, (6) Tag as 'financing-needed' for segmentation. Never explicitly disqualify - real estate decisions evolve.",
+      "explanation": "Budget constraints don't always mean disqualification in real estate, especially with financing options. BDO 70% LTV means much lower upfront requirements.",
+      "keywords": [
+        "budget below",
+        "financing",
+        "BDO",
+        "70% LTV",
+        "nurture",
+        "never disqualify"
+      ]
+    },
+    {
+      "id": 76,
+      "category": "lead_qualification",
+      "difficulty": "medium",
+      "question": "What WhatsApp engagement signals should feed back into the CRM lead score?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Only message count",
+        "B. Message read rate, response speed, flow completion depth, document downloads, CTA clicks, and conversation duration",
+        "C. Only whether they replied or not",
+        "D. None - WhatsApp data stays in WATI"
+      ],
+      "correct_answer": "B",
+      "explanation": "Rich engagement signals from WhatsApp provide valuable scoring data: read receipts show interest, quick responses show urgency, flow depth shows engagement, and CTA clicks show intent.",
+      "keywords": [
+        "engagement signals",
+        "scoring",
+        "read rate",
+        "response speed",
+        "flow depth"
+      ]
+    },
+    {
+      "id": 77,
+      "category": "lead_qualification",
+      "difficulty": "hard",
+      "question": "A lead from Israel completes Flow 1 selecting Pricing (Option 3), downloads the villa specs PDF, and asks 'How does the Deed of Assignment work?'. What is their likely score and what actions should trigger?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Score ~45, continue normal flow",
+        "B. Score ~75+ (WhatsApp +30, specs view +10, PDF +20, legal interest +15), trigger HOT protocol: CRM handoff, sales alert, 2-hour contact",
+        "C. Score ~30, send more info",
+        "D. Cannot determine score"
+      ],
+      "correct_answer": "B",
+      "explanation": "Accumulated score: WhatsApp click (+30) + specs view (+10) + PDF download (+20) + legal structure inquiry (high-intent signal, ~+15) = 75+. This crosses the HOT threshold (71), triggering the 2-hour contact protocol.",
+      "keywords": [
+        "accumulated score",
+        "HOT threshold",
+        "legal inquiry",
+        "2-hour protocol"
+      ]
+    },
+    {
+      "id": 78,
+      "category": "lead_qualification",
+      "difficulty": "easy",
+      "question": "At what point in the WhatsApp flow should the lead's country of origin be determined?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Never - assume from phone number",
+        "B. First step - use phone country code as initial signal, confirm with direct question if ambiguous",
+        "C. Last step only",
+        "D. Ask three times to be sure"
+      ],
+      "correct_answer": "B",
+      "explanation": "Phone country code provides the initial market signal (+972 = Israel, +63 = Philippines). For ambiguous codes, a brief confirmation question early in the flow ensures correct routing.",
+      "keywords": [
+        "country detection",
+        "phone code",
+        "early detection",
+        "routing"
+      ]
+    },
+    {
+      "id": 79,
+      "category": "lead_qualification",
+      "difficulty": "medium",
+      "question": "What score threshold must be crossed for the HOT lead 2-hour contact protocol to activate?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 31",
+        "B. 50",
+        "C. 71",
+        "D. 121"
+      ],
+      "correct_answer": "C",
+      "explanation": "The HOT lead tier starts at score 71. Any lead reaching 71+ triggers the 2-hour contact protocol requiring immediate sales team notification and rapid response.",
+      "keywords": [
+        "71",
+        "HOT",
+        "2-hour protocol",
+        "threshold"
+      ]
+    },
+    {
+      "id": 80,
+      "category": "language_handling",
+      "difficulty": "easy",
+      "question": "What languages must the WhatsApp flows support?",
+      "type": "multiple_choice",
+      "options": [
+        "A. English only",
+        "B. Hebrew and English",
+        "C. Hebrew, English, and Tagalog",
+        "D. All languages"
+      ],
+      "correct_answer": "C",
+      "explanation": "The campaign targets Israel (Hebrew), Philippines (English and Tagalog). All flows must have versions in these three languages.",
+      "keywords": [
+        "languages",
+        "hebrew",
+        "english",
+        "tagalog",
+        "three"
+      ]
+    },
+    {
+      "id": 81,
+      "category": "language_handling",
+      "difficulty": "medium",
+      "question": "How should Hebrew text be formatted in WhatsApp messages to ensure correct RTL display?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No special formatting needed - WhatsApp handles RTL automatically",
+        "B. Add RTL Unicode markers and ensure Hebrew text blocks are separate from Latin text",
+        "C. Write Hebrew backwards",
+        "D. Use images instead of text"
+      ],
+      "correct_answer": "B",
+      "explanation": "While WhatsApp has some RTL support, mixing Hebrew with Latin characters (phone numbers, URLs) can cause display issues. RTL markers and careful text structuring ensure correct display.",
+      "keywords": [
+        "RTL",
+        "hebrew",
+        "formatting",
+        "unicode markers",
+        "display"
+      ]
+    },
+    {
+      "id": 82,
+      "category": "language_handling",
+      "difficulty": "hard",
+      "question": "A Hebrew WhatsApp message needs to include the price 'PHP 32,500,000' alongside the phone number '+639542555553'. How should this be structured to avoid RTL/LTR display conflicts?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Structure the message with clear line breaks separating Hebrew text from numbers/Latin characters. Place the price on its own line: 'PHP 32,500,000'. Place each phone number on a separate line prefixed with a Hebrew label: 'WhatsApp (שיווק): +639542555553'. Use Unicode LTR marks (U+200E) before phone numbers if inline with Hebrew text. Test on both iOS and Android before sending, as RTL rendering differs between platforms.",
+      "explanation": "Bidirectional text (bidi) in WhatsApp is notoriously tricky. Line separation and Unicode markers are essential for correct display across devices.",
+      "keywords": [
+        "structure",
+        "message",
+        "with",
+        "clear",
+        "line",
+        "breaks",
+        "separating",
+        "hebrew",
+        "text",
+        "from"
+      ]
+    },
+    {
+      "id": 83,
+      "category": "language_handling",
+      "difficulty": "medium",
+      "question": "What Hebrew register should WhatsApp messages use per Rule 8?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Casual slang with emojis",
+        "B. Formal but warm, peer-to-peer professional",
+        "C. Academic/legal Hebrew",
+        "D. Child-friendly simple Hebrew"
+      ],
+      "correct_answer": "B",
+      "explanation": "Per Rule 8, Hebrew content must use a formal but warm, peer-to-peer professional register. No slang. This applies equally to WhatsApp messages.",
+      "keywords": [
+        "hebrew register",
+        "formal warm",
+        "professional",
+        "no slang"
+      ]
+    },
+    {
+      "id": 84,
+      "category": "language_handling",
+      "difficulty": "medium",
+      "question": "A lead messages in Tagalog: 'Magkano po ang villa?'. What should the system do?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Reply in English",
+        "B. Detect Tagalog, trigger Tagalog version of Flow 1, tag as PH market with Tagalog preference",
+        "C. Ask them to write in English",
+        "D. Forward to translation service"
+      ],
+      "correct_answer": "B",
+      "explanation": "Tagalog detection should trigger the Tagalog flow version, tag the contact appropriately, and continue the conversation in their preferred language.",
+      "keywords": [
+        "tagalog",
+        "detection",
+        "language routing",
+        "PH market"
+      ]
+    },
+    {
+      "id": 85,
+      "category": "language_handling",
+      "difficulty": "hard",
+      "question": "What currency and content rule differences apply when sending WhatsApp messages in Hebrew vs English vs Tagalog?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No differences - same content in all languages",
+        "B. Hebrew: shekel prices only, 3 legal structures, formal-warm register. English (PH): PHP prices, BDO financing. Tagalog: PHP prices, BDO financing, localized expressions",
+        "C. Only currency changes between languages",
+        "D. Hebrew gets more detail, others get less"
+      ],
+      "correct_answer": "B",
+      "explanation": "Each language maps to specific content rules: Hebrew (Rule 1 shekels, Rule 6 legal structures, Rule 8 register), English-PH/Tagalog (Rule 1B PHP, Rule 7 BDO). All share Rules 2-5.",
+      "keywords": [
+        "content rules per language",
+        "currency",
+        "legal structures",
+        "BDO",
+        "register"
+      ]
+    },
+    {
+      "id": 86,
+      "category": "automation",
+      "difficulty": "easy",
+      "question": "What should happen automatically when a new contact sends their first WhatsApp message?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Nothing",
+        "B. Create contact in WATI, detect language/market, trigger Flow 1, add +30 to lead score, create CRM record",
+        "C. Send a welcome template only",
+        "D. Wait for human agent"
+      ],
+      "correct_answer": "B",
+      "explanation": "First-message automation chain: create/update WATI contact, detect language and market from phone code and message content, trigger Flow 1, score +30 for WhatsApp engagement, sync to CRM.",
+      "keywords": [
+        "first message",
+        "automation chain",
+        "contact creation",
+        "Flow 1",
+        "+30"
+      ]
+    },
+    {
+      "id": 87,
+      "category": "automation",
+      "difficulty": "medium",
+      "question": "How should the WhatsApp automation handle a lead who stops responding mid-flow?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Resend the last message repeatedly",
+        "B. Wait 4 hours, send a gentle follow-up; if no response in 24 hours, mark flow as incomplete and schedule a template re-engagement in 72 hours",
+        "C. Close the conversation immediately",
+        "D. Call them on the phone"
+      ],
+      "correct_answer": "B",
+      "explanation": "Mid-flow abandonment requires patience: a 4-hour follow-up, then 24-hour timeout, then 72-hour template re-engagement. Respects the user's time while maintaining the relationship.",
+      "keywords": [
+        "mid-flow drop",
+        "follow-up",
+        "timeout",
+        "re-engagement",
+        "patience"
+      ]
+    },
+    {
+      "id": 88,
+      "category": "automation",
+      "difficulty": "hard",
+      "question": "Design the automation workflow when a VERY HOT lead (121+) sends a WhatsApp message at 2:00 AM PHT on a Sunday.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Automation sequence: (1) Immediately trigger Flow 2 (VIP) in the lead's language, (2) Send auto-acknowledgment with 'A senior advisor will contact you very soon', (3) Push urgent notification to on-call sales agent (2-hour protocol applies 24/7 for VERY HOT), (4) If no agent response in 30 minutes, escalate to backup agent, (5) If no agent response in 60 minutes, escalate to management with SMS alert, (6) Log all timestamps for SLA tracking, (7) Even though it's outside WATI business hours, the VERY HOT protocol overrides all scheduling rules, (8) Update CRM with real-time activity log.",
+      "explanation": "VERY HOT leads require the highest priority response. The 2-hour protocol operates 24/7 regardless of business hours, timezone, or cultural considerations.",
+      "keywords": [
+        "VERY HOT",
+        "2AM",
+        "24/7",
+        "escalation",
+        "VIP flow",
+        "SLA"
+      ]
+    },
+    {
+      "id": 89,
+      "category": "automation",
+      "difficulty": "medium",
+      "question": "What automated message should be sent when a WhatsApp conversation is assigned from bot to human agent?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No message needed",
+        "B. 'You are now connected with [Agent Name] from our team. They will continue assisting you.'",
+        "C. 'Please hold'",
+        "D. Restart the flow"
+      ],
+      "correct_answer": "B",
+      "explanation": "A smooth transition message introduces the agent by name, signals that a real person is now handling the conversation, and maintains continuity.",
+      "keywords": [
+        "handoff message",
+        "agent name",
+        "transition",
+        "trust"
+      ]
+    },
+    {
+      "id": 90,
+      "category": "automation",
+      "difficulty": "medium",
+      "question": "How should WhatsApp automation coordinate with email nurture sequences?",
+      "type": "multiple_choice",
+      "options": [
+        "A. They operate independently",
+        "B. WhatsApp engagement events trigger email sequence adjustments (track change, cadence acceleration), and vice versa",
+        "C. Only email controls WhatsApp",
+        "D. Only WhatsApp controls email"
+      ],
+      "correct_answer": "B",
+      "explanation": "Cross-channel coordination: WhatsApp clicks trigger email track changes, WhatsApp flow completion updates email personalization, email engagement signals inform WhatsApp broadcast targeting.",
+      "keywords": [
+        "cross-channel",
+        "coordination",
+        "bidirectional",
+        "email sync"
+      ]
+    },
+    {
+      "id": 91,
+      "category": "automation",
+      "difficulty": "hard",
+      "question": "What automated daily health check should run on the WhatsApp system?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No health check needed",
+        "B. Check: API connectivity, template approval status, quality score, unread message count, SLA breaches, broadcast queue status, and WATI webhook health",
+        "C. Just check if messages are sending",
+        "D. Monthly review is sufficient"
+      ],
+      "correct_answer": "B",
+      "explanation": "Daily automated health checks prevent issues from escalating: API status, template approvals, quality score, SLA compliance, and system connectivity.",
+      "keywords": [
+        "health check",
+        "daily",
+        "API",
+        "quality score",
+        "SLA",
+        "monitoring"
+      ]
+    },
+    {
+      "id": 92,
+      "category": "automation",
+      "difficulty": "medium",
+      "question": "What should trigger an automatic escalation alert to the campaign manager?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Any new message",
+        "B. Quality score drop to Yellow, template rejection, SLA breach on HOT lead, or broadcast block rate above 2%",
+        "C. Daily summary only",
+        "D. Only if the system crashes"
+      ],
+      "correct_answer": "B",
+      "explanation": "Critical events requiring immediate manager attention: quality score degradation, template rejections, HOT lead SLA breaches, and high block rates.",
+      "keywords": [
+        "escalation",
+        "alert",
+        "quality score",
+        "template rejection",
+        "SLA breach"
+      ]
+    },
+    {
+      "id": 93,
+      "category": "automation",
+      "difficulty": "easy",
+      "question": "What is the purpose of the WATI heartbeat check configured at 21:00 PHT daily?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Send a broadcast",
+        "B. Verify WATI system is operational, check unread messages, update heartbeat status file",
+        "C. Close all conversations",
+        "D. Generate reports"
+      ],
+      "correct_answer": "B",
+      "explanation": "The 21:00 PHT evening check verifies system health, identifies any unread messages that need attention, and updates the heartbeat status file for monitoring.",
+      "keywords": [
+        "heartbeat",
+        "21:00 PHT",
+        "system check",
+        "unread",
+        "monitoring"
+      ]
+    },
+    {
+      "id": 94,
+      "category": "compliance",
+      "difficulty": "easy",
+      "question": "What must every WhatsApp marketing message include for compliance?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Company logo",
+        "B. Clear opt-out mechanism (e.g., 'Reply STOP to unsubscribe')",
+        "C. Legal disclaimer",
+        "D. Privacy policy link"
+      ],
+      "correct_answer": "B",
+      "explanation": "WhatsApp marketing messages must include a clear opt-out option. This is both a WhatsApp Commerce Policy requirement and good practice under Philippine Data Privacy Act and Israeli privacy law.",
+      "keywords": [
+        "opt-out",
+        "STOP",
+        "unsubscribe",
+        "compliance"
+      ]
+    },
+    {
+      "id": 95,
+      "category": "compliance",
+      "difficulty": "medium",
+      "question": "Under the Philippine Data Privacy Act of 2012, what consent is required before sending WhatsApp marketing messages?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No consent needed",
+        "B. Explicit opt-in consent for receiving marketing communications via WhatsApp, with clear disclosure of purpose",
+        "C. Implied consent from giving phone number",
+        "D. Verbal consent is sufficient"
+      ],
+      "correct_answer": "B",
+      "explanation": "The Data Privacy Act requires explicit consent for processing personal data for marketing. The lead must actively opt in to WhatsApp marketing communications.",
+      "keywords": [
+        "DPA 2012",
+        "explicit consent",
+        "opt-in",
+        "marketing",
+        "disclosure"
+      ]
+    },
+    {
+      "id": 96,
+      "category": "compliance",
+      "difficulty": "medium",
+      "question": "When a user replies 'STOP' or 'הסר' (Hebrew for remove) to a WhatsApp message, what must happen?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Ignore - they will forget about it",
+        "B. Immediately stop all WhatsApp marketing messages, confirm opt-out, update CRM, suppress from broadcast lists",
+        "C. Wait 10 days to process",
+        "D. Send one more message asking if they are sure"
+      ],
+      "correct_answer": "B",
+      "explanation": "Opt-out must be processed immediately: confirm to the user, suppress from all marketing broadcasts, update WATI tags and CRM.",
+      "keywords": [
+        "STOP",
+        "opt-out",
+        "immediate",
+        "suppress",
+        "confirm"
+      ]
+    },
+    {
+      "id": 97,
+      "category": "compliance",
+      "difficulty": "hard",
+      "question": "The campaign stores WhatsApp conversation data in WATI (cloud-hosted). What data protection considerations apply for Israeli leads' data?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Considerations: (1) Cross-border data transfer - Israeli lead data stored on WATI servers (likely outside Israel) requires compliance with Israel's Privacy Protection Regulations on data export, (2) Data retention policy - define how long conversations are stored and when they are purged, (3) Access controls - only authorized personnel should access Israeli lead conversations, (4) Data processing agreement with WATI as a sub-processor, (5) Right to deletion - Israeli leads can request conversation history deletion, (6) Encryption in transit and at rest, (7) Data breach notification obligations under Israeli law.",
+      "explanation": "Storing Israeli personal data on foreign cloud services requires careful compliance with Israeli data protection regulations.",
+      "keywords": [
+        "cross-border",
+        "Israeli data",
+        "WATI storage",
+        "data protection",
+        "retention",
+        "deletion"
+      ]
+    },
+    {
+      "id": 98,
+      "category": "compliance",
+      "difficulty": "medium",
+      "question": "Can the campaign use WhatsApp to send unsolicited messages to phone numbers scraped from websites or purchased lists?",
+      "type": "true_false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "false",
+      "explanation": "WhatsApp Commerce Policy prohibits unsolicited messaging to scraped/purchased lists. All recipients must have opted in. Violating this can result in account ban.",
+      "keywords": [
+        "unsolicited",
+        "scraped lists",
+        "purchased",
+        "prohibited",
+        "account ban"
+      ]
+    },
+    {
+      "id": 99,
+      "category": "compliance",
+      "difficulty": "hard",
+      "question": "What happens to the WhatsApp Business account if compliance violations are repeated?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Warning only",
+        "B. Quality score drops to Red, messaging capability restricted, then account can be banned permanently",
+        "C. Fine only",
+        "D. Nothing - Meta doesn't enforce"
+      ],
+      "correct_answer": "B",
+      "explanation": "Meta enforces compliance progressively: quality score drops, messaging restrictions, and ultimately permanent ban. Recovery from a ban is extremely difficult.",
+      "keywords": [
+        "enforcement",
+        "progressive",
+        "ban",
+        "quality score",
+        "restrictions"
+      ]
+    },
+    {
+      "id": 100,
+      "category": "compliance",
+      "difficulty": "hard",
+      "question": "The campaign wants to share a lead's WhatsApp conversation data with a third-party analytics tool. What compliance steps are required?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No steps needed - data is the company's property",
+        "B. Obtain lead consent for data sharing, execute DPA with analytics provider, ensure data anonymization where possible, comply with both PH and IL data protection laws",
+        "C. Just anonymize the data",
+        "D. Only share aggregate data"
+      ],
+      "correct_answer": "B",
+      "explanation": "Sharing personal data with third parties requires: explicit consent disclosure, Data Processing Agreement with the third party, compliance with both Philippine DPA and Israeli privacy law, and data minimization principles.",
+      "keywords": [
+        "third-party sharing",
+        "DPA",
+        "consent",
+        "anonymization",
+        "data minimization"
+      ]
+    }
+  ]
+}

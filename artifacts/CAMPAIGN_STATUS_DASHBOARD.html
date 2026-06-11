@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panglao Prime Villas - Campaign Status Dashboard</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#f9f7f3;--gold:#BDA57F;--gold-light:#D5C09C;--gold-dark:#9A8563;
+  --teal:#558EA4;--charcoal:#121212;--text:#2c3e50;--muted:#968E7F;
+  --border:#EEE6D6;--green:#27ae60;--red:#e74c3c;--orange:#f39c12;--blue:#3498db;
+  --shadow:0 2px 12px rgba(0,0,0,0.06);
+}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--cream);color:var(--text);line-height:1.6;direction:ltr}
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600}
+.header{background:var(--charcoal);color:#fff;padding:20px 28px;border-bottom:3px solid var(--gold)}
+.header h1{font-size:1.5rem}.header-sub{color:var(--gold-light);font-size:0.85rem;margin-top:4px}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.section{margin-bottom:28px}
+.section-title{font-size:1.15rem;color:var(--charcoal);padding-left:14px;border-left:4px solid var(--gold);margin-bottom:14px}
+.card{background:#fff;border-radius:10px;border:1px solid var(--border);padding:20px;box-shadow:var(--shadow);margin-bottom:16px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:16px;font-size:0.75rem;font-weight:600}
+.b-green{background:#ECFDF5;color:#059669;border:1px solid #A7F3D0}
+.b-red{background:#FEF2F2;color:#DC2626;border:1px solid #FECACA}
+.b-orange{background:#FFFBEB;color:#D97706;border:1px solid #FDE68A}
+.b-blue{background:#EFF6FF;color:#2563EB;border:1px solid #BFDBFE}
+.b-gray{background:#F3F4F6;color:#6B7280;border:1px solid #D1D5DB}
+.kpi{text-align:center;padding:20px 14px}
+.kpi-val{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--charcoal)}
+.kpi-lbl{font-size:0.8rem;color:var(--muted);margin-top:4px}
+.blocker{background:#FEF2F2;border:1px solid #FECACA;border-radius:10px;padding:16px;margin-bottom:12px}
+.blocker h4{color:#DC2626;font-size:0.9rem;margin-bottom:6px;font-family:'Plus Jakarta Sans',sans-serif}
+.blocker p{font-size:0.85rem;color:#7F1D1D}
+.done{background:#ECFDF5;border:1px solid #A7F3D0;border-radius:10px;padding:16px;margin-bottom:12px}
+.done h4{color:#059669;font-size:0.9rem;margin-bottom:6px;font-family:'Plus Jakarta Sans',sans-serif}
+.done p{font-size:0.85rem;color:#065F46}
+.tbl{width:100%;border-collapse:collapse;font-size:0.85rem}
+.tbl thead{background:var(--charcoal);color:#fff}
+.tbl th{padding:10px 12px;text-align:left;font-weight:600;font-size:0.75rem;text-transform:uppercase}
+.tbl td{padding:10px 12px;border-bottom:1px solid var(--border)}
+.tbl tr:hover td{background:#FEFCE8}
+.copy-box{background:#F8FAFC;border:1px solid var(--border);border-radius:8px;padding:14px;font-size:0.83rem;white-space:pre-wrap;line-height:1.6;max-height:200px;overflow-y:auto;cursor:pointer;position:relative}
+.copy-box:hover{border-color:var(--gold);background:#FFFEF5}
+.copy-box::after{content:'Click to copy';position:absolute;top:8px;right:8px;background:var(--gold);color:#fff;font-size:0.7rem;padding:2px 8px;border-radius:10px;opacity:0;transition:0.2s}
+.copy-box:hover::after{opacity:1}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:0.72rem;font-weight:600;margin:2px}
+.tag-il{background:#DBEAFE;color:#1E40AF}.tag-ph{background:#D1FAE5;color:#065F46}.tag-both{background:#FEF3C7;color:#92400E}
+.progress-bar{background:#E5E7EB;border-radius:10px;height:10px;overflow:hidden;margin-top:8px}
+.progress-fill{height:100%;border-radius:10px;transition:width 0.5s}
+.footer{background:var(--charcoal);color:rgba(255,255,255,0.6);padding:20px;text-align:center;border-radius:10px;margin-top:28px;font-size:0.82rem}
+.tab-row{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tab{padding:8px 18px;border-radius:20px;border:1px solid var(--border);background:#fff;cursor:pointer;font-size:0.82rem;font-weight:600;transition:0.2s}
+.tab.active{background:var(--charcoal);color:#fff;border-color:var(--charcoal)}
+.tab:hover:not(.active){background:var(--cream)}
+.panel{display:none}.panel.active{display:block}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div style="display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;flex-wrap:wrap;gap:12px">
+    <div>
+      <h1>Panglao Prime Villas</h1>
+      <div class="header-sub">Campaign Status Dashboard - Blue Everest Asset Group</div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <span class="badge b-orange" style="font-size:0.8rem">SIMULATION MODE</span>
+      <span style="color:var(--gold-light);font-size:0.85rem">May 23, 2026</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- STATUS OVERVIEW -->
+<div class="section">
+  <h2 class="section-title">Campaign Status</h2>
+  <div class="grid-4">
+    <div class="card kpi">
+      <div class="kpi-val" style="color:var(--orange)">Day 0</div>
+      <div class="kpi-lbl">Campaign Day</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:0%;background:var(--orange)"></div></div>
+    </div>
+    <div class="card kpi">
+      <div class="kpi-val">$0 <span style="font-size:0.9rem;color:var(--muted)">/ $900</span></div>
+      <div class="kpi-lbl">Budget Spent</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:0%;background:var(--green)"></div></div>
+    </div>
+    <div class="card kpi">
+      <div class="kpi-val">0</div>
+      <div class="kpi-lbl">Total Leads</div>
+      <div style="font-size:0.75rem;color:var(--orange);margin-top:4px">Awaiting launch</div>
+    </div>
+    <div class="card kpi">
+      <div class="kpi-val">28</div>
+      <div class="kpi-lbl">Creatives Ready</div>
+      <div style="font-size:0.75rem;color:var(--green);margin-top:4px">16 posts + 9 videos + 3 new</div>
+    </div>
+  </div>
+</div>
+
+<!-- BLOCKERS + COMPLETED -->
+<div class="section">
+  <h2 class="section-title">Action Items</h2>
+  <div class="grid-2">
+    <div>
+      <h3 style="font-size:0.95rem;margin-bottom:12px;color:#DC2626">Blockers (Your Action Needed)</h3>
+      <div class="blocker">
+        <h4>1. Link Facebook Page to Ad Account</h4>
+        <p>Business Settings > Ad Accounts > 2015125296073673 > Add Pages > "Blue Everest Asset Group"</p>
+      </div>
+      <div class="blocker">
+        <h4>2. Install Meta Pixel on primevilla.ph</h4>
+        <p>Send developer_message.md to your web developer. Pixel ID: 1599211187973958</p>
+      </div>
+      <div class="blocker">
+        <h4>3. Install GA4 on primevilla.ph</h4>
+        <p>GA4 ID: G-04NZJT2C4V. Same developer message includes the code.</p>
+      </div>
+      <div class="blocker">
+        <h4>4. Upload Images + Videos to Meta Ads Manager</h4>
+        <p>4 images + 9 videos from project folder. API not available for this account.</p>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:0.95rem;margin-bottom:12px;color:#059669">Completed</h3>
+      <div class="done">
+        <h4>Ad Account Verified</h4>
+        <p>ID: 2015125296073673, Active, Payment connected, Currency: PHP</p>
+      </div>
+      <div class="done">
+        <h4>Facebook Page Found</h4>
+        <p>Blue Everest Asset Group, ID: 1091251924067685</p>
+      </div>
+      <div class="done">
+        <h4>FX Rates Updated (May 22, 2026)</h4>
+        <p>PHP-ILS: 0.047202 | Villa D: ~1,322,000 ILS | Villa C: ~1,416,000 ILS</p>
+      </div>
+      <div class="done">
+        <h4>All 16 Ad Copies Updated</h4>
+        <p>PHP primary, ILS at daily FX rate. Hebrew + English ready.</p>
+      </div>
+      <div class="done">
+        <h4>Organic Content Calendar Created</h4>
+        <p>10 posts for 3 weeks: FB Page + Israeli Group</p>
+      </div>
+      <div class="done">
+        <h4>Website Verified</h4>
+        <p>primevilla.ph loads, form works, both WhatsApp numbers present</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TABS: Campaign Structure / Creatives / Calendar -->
+<div class="section">
+  <div class="tab-row">
+    <div class="tab active" onclick="showTab('campaigns')">Campaign Structure</div>
+    <div class="tab" onclick="showTab('creatives')">Creatives Library</div>
+    <div class="tab" onclick="showTab('calendar')">Content Calendar</div>
+    <div class="tab" onclick="showTab('budget')">Budget</div>
+    <div class="tab" onclick="showTab('ids')">Platform IDs</div>
+  </div>
+
+  <!-- CAMPAIGNS TAB -->
+  <div class="panel active" id="campaigns">
+    <div class="grid-2">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+          <h3 style="font-size:1rem">IL-1: Israel Awareness</h3>
+          <span class="badge b-orange">PLANNED</span>
+        </div>
+        <table class="tbl">
+          <tr><td style="color:var(--muted);width:140px">Objective</td><td>Traffic / Awareness</td></tr>
+          <tr><td style="color:var(--muted)">Special Category</td><td>HOUSING</td></tr>
+          <tr><td style="color:var(--muted)">Daily Budget</td><td>PHP 1,200 (~$20)</td></tr>
+          <tr><td style="color:var(--muted)">Targeting</td><td>Israel, Hebrew, 18-65+</td></tr>
+          <tr><td style="color:var(--muted)">Interests</td><td>Real estate, Investment, Philippines travel</td></tr>
+          <tr><td style="color:var(--muted)">Placements</td><td>FB Feed, IG Feed, IG Reels</td></tr>
+          <tr><td style="color:var(--muted)">Ad Sets</td><td>2 (A/B test hooks)</td></tr>
+          <tr><td style="color:var(--muted)">Ads per Set</td><td>2-3 (image + video)</td></tr>
+          <tr><td style="color:var(--muted)">Schedule</td><td>Sun-Thu, 20:00-23:00 Israel</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+          <h3 style="font-size:1rem">PH-1: Philippines Awareness</h3>
+          <span class="badge b-orange">PLANNED</span>
+        </div>
+        <table class="tbl">
+          <tr><td style="color:var(--muted);width:140px">Objective</td><td>Traffic / Awareness</td></tr>
+          <tr><td style="color:var(--muted)">Special Category</td><td>HOUSING</td></tr>
+          <tr><td style="color:var(--muted)">Daily Budget</td><td>PHP 850 (~$15)</td></tr>
+          <tr><td style="color:var(--muted)">Targeting</td><td>Philippines (Manila, Cebu, Davao), English, 18-65+</td></tr>
+          <tr><td style="color:var(--muted)">Interests</td><td>Real estate PH, Bohol travel, Investment properties</td></tr>
+          <tr><td style="color:var(--muted)">Placements</td><td>FB Feed, IG Feed, IG Reels</td></tr>
+          <tr><td style="color:var(--muted)">Ad Sets</td><td>2 (A/B test hooks)</td></tr>
+          <tr><td style="color:var(--muted)">Ads per Set</td><td>2-3 (image + video)</td></tr>
+          <tr><td style="color:var(--muted)">Schedule</td><td>Tue-Thu priority, 19:00-23:00 PHT</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px;background:#FFFBEB;border-color:#FDE68A">
+      <h4 style="font-size:0.9rem;color:#92400E;margin-bottom:8px">Phase 2 Campaigns (Day 8+, after pixel data)</h4>
+      <div class="grid-2" style="font-size:0.85rem">
+        <div><strong>IL-2 Consideration:</strong> $15/day, retarget website visitors</div>
+        <div><strong>PH-2 Consideration:</strong> $10/day, retarget website visitors</div>
+        <div><strong>IL-3 Conversion:</strong> $10/day, WhatsApp CTA, HOT retarget</div>
+        <div><strong>PH-3 Conversion:</strong> $8/day, urgency + scarcity</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CREATIVES TAB -->
+  <div class="panel" id="creatives">
+    <h3 style="font-size:1rem;margin-bottom:14px">Image Posts (16 total)</h3>
+    <div class="card" style="overflow-x:auto">
+      <table class="tbl">
+        <thead><tr><th>#</th><th>Market</th><th>Phase</th><th>Platform</th><th>Image</th><th>Language</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><span class="tag tag-il">IL</span></td><td>Awareness</td><td>FB + IG Feed</td><td>Aerial view</td><td>Hebrew</td></tr>
+          <tr><td>2</td><td><span class="tag tag-ph">PH</span></td><td>Awareness</td><td>FB + IG Feed</td><td>Aerial view</td><td>English</td></tr>
+          <tr><td>3</td><td><span class="tag tag-il">IL</span></td><td>Awareness</td><td>FB + IG Feed</td><td>Rear/Pool</td><td>Hebrew</td></tr>
+          <tr><td>4</td><td><span class="tag tag-ph">PH</span></td><td>Awareness</td><td>FB + IG Feed</td><td>Rear/Pool</td><td>English</td></tr>
+          <tr><td>5</td><td><span class="tag tag-il">IL</span></td><td>Awareness</td><td>Stories/Reels</td><td>Rooftop</td><td>Hebrew</td></tr>
+          <tr><td>6</td><td><span class="tag tag-ph">PH</span></td><td>Awareness</td><td>Stories/Reels</td><td>Rooftop</td><td>English</td></tr>
+          <tr><td>7</td><td><span class="tag tag-both">Both</span></td><td>Awareness</td><td>FB Feed</td><td>Panglao Is Next</td><td>EN + HE</td></tr>
+          <tr><td>8</td><td><span class="tag tag-il">IL</span></td><td>Awareness</td><td>Stories/Reels</td><td>Rear view</td><td>Hebrew</td></tr>
+          <tr><td>11</td><td><span class="tag tag-il">IL</span></td><td>Consideration</td><td>FB + IG Feed</td><td>Interior</td><td>Hebrew</td></tr>
+          <tr><td>12</td><td><span class="tag tag-ph">PH</span></td><td>Consideration</td><td>FB + IG Feed</td><td>Pool view</td><td>English</td></tr>
+          <tr><td>13</td><td><span class="tag tag-both">Both</span></td><td>Consideration</td><td>FB Feed</td><td>Price Advantage</td><td>EN + HE</td></tr>
+          <tr><td>14</td><td><span class="tag tag-both">Both</span></td><td>Consideration</td><td>FB Feed</td><td>P25B Township</td><td>EN + HE</td></tr>
+          <tr><td>15</td><td><span class="tag tag-both">Both</span></td><td>Consideration</td><td>Stories</td><td>Infrastructure</td><td>EN + HE</td></tr>
+          <tr><td>20</td><td><span class="tag tag-both">Both</span></td><td>Consideration</td><td>FB Feed</td><td>Brand Gravity</td><td>EN + HE</td></tr>
+          <tr><td>24</td><td><span class="tag tag-ph">PH</span></td><td>Consideration</td><td>Stories</td><td>Pool</td><td>English</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size:1rem;margin:20px 0 14px">Videos (9 total - including 4 NEW from May 3)</h3>
+    <div class="card" style="overflow-x:auto">
+      <table class="tbl">
+        <thead><tr><th>File</th><th>Size</th><th>Date</th><th>Source</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>20260416 BLUEEVEREST 1 Villas Bohol 2.mp4</td><td>70 MB</td><td>Apr 16</td><td>Local + Drive</td><td><span class="badge b-green">Ready</span></td></tr>
+          <tr><td>20260416 BLUEEVEREST 2 Villas Bohol 2.mp4</td><td>93 MB</td><td>Apr 16</td><td>Local + Drive</td><td><span class="badge b-green">Ready</span></td></tr>
+          <tr><td>VIDEO-2026-04-27-02-29-12.mp4</td><td>25 MB</td><td>Apr 27</td><td>Local</td><td><span class="badge b-green">Ready</span></td></tr>
+          <tr><td>VIDEO-2026-04-22-18-09-24.mp4</td><td>44 MB</td><td>Apr 22</td><td>Local + Drive</td><td><span class="badge b-green">Ready</span></td></tr>
+          <tr><td>VIDEO-2026-04-22-18-09-41.mp4</td><td>39 MB</td><td>Apr 22</td><td>Local</td><td><span class="badge b-green">Ready</span></td></tr>
+          <tr style="background:#ECFDF5"><td>20260503 BLUEEVEREST 3 Villas Bohol.mp4</td><td>25 MB</td><td>May 3</td><td>Drive (NEW)</td><td><span class="badge b-blue">New</span></td></tr>
+          <tr style="background:#ECFDF5"><td>20260503 BLUEEVEREST 4 Villas Bohol.mp4</td><td>44 MB</td><td>May 3</td><td>Drive (NEW)</td><td><span class="badge b-blue">New</span></td></tr>
+          <tr style="background:#ECFDF5"><td>20260503 BLUEEVEREST 5 Villas Bohol.mp4</td><td>39 MB</td><td>May 3</td><td>Drive (NEW)</td><td><span class="badge b-blue">New</span></td></tr>
+          <tr style="background:#ECFDF5"><td>20260503 BLUEEVEREST 6 Villas Bohol.mp4</td><td>27 MB</td><td>May 3</td><td>Drive (NEW)</td><td><span class="badge b-blue">New</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size:1rem;margin:20px 0 14px">Additional Assets</h3>
+    <div class="grid-3">
+      <div class="card" style="text-align:center">
+        <div style="font-size:2rem;margin-bottom:8px">65+</div>
+        <div style="font-size:0.85rem;color:var(--muted)">Property Images</div>
+        <div style="font-size:0.75rem;margin-top:4px">21 exterior + 44 interior renders</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:2rem;margin-bottom:8px">20</div>
+        <div style="font-size:0.85rem;color:var(--muted)">Email Templates</div>
+        <div style="font-size:0.75rem;margin-top:4px">EN + HE, Brevo-ready HTML</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:2rem;margin-bottom:8px">12</div>
+        <div style="font-size:0.85rem;color:var(--muted)">WhatsApp Flows</div>
+        <div style="font-size:0.75rem;margin-top:4px">WATI JSON, ready to import</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALENDAR TAB -->
+  <div class="panel" id="calendar">
+    <div class="card">
+      <h3 style="font-size:1rem;margin-bottom:14px">Organic Posting Schedule (3 Weeks)</h3>
+      <table class="tbl">
+        <thead><tr><th>Post</th><th>When</th><th>Where</th><th>Market</th><th>Content</th><th>Media</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Day 1, 7PM PHT</td><td>FB Page</td><td><span class="tag tag-ph">PH</span></td><td>Awareness - Aerial</td><td>Image</td></tr>
+          <tr><td>2</td><td>Day 2, 8PM ISR</td><td>IL Group</td><td><span class="tag tag-il">IL</span></td><td>Awareness - Investor angle</td><td>Image</td></tr>
+          <tr><td>3</td><td>Day 3, 7PM PHT</td><td>FB Page</td><td><span class="tag tag-both">Both</span></td><td>Panglao Is Next (Skyscanner)</td><td>Image</td></tr>
+          <tr><td>4</td><td>Day 5, 7PM PHT</td><td>FB Page</td><td><span class="tag tag-both">Both</span></td><td>Panglao vs Boracay</td><td>Image</td></tr>
+          <tr><td>5</td><td>Day 6, 8PM ISR</td><td>IL Group</td><td><span class="tag tag-il">IL</span></td><td>5-Star Neighborhood</td><td>Image</td></tr>
+          <tr><td>6</td><td>Day 7, 7PM PHT</td><td>FB Page</td><td><span class="tag tag-both">Both</span></td><td>P25B Township</td><td>Image</td></tr>
+          <tr><td>7</td><td>Day 8, 7PM PHT</td><td>FB Page</td><td><span class="tag tag-both">Both</span></td><td>Villa Walkthrough</td><td>Video</td></tr>
+          <tr><td>8</td><td>Day 9, 8PM ISR</td><td>IL Group</td><td><span class="tag tag-il">IL</span></td><td>Tel Aviv Comparison</td><td>Video</td></tr>
+          <tr><td>9</td><td>Day 10, 7PM PHT</td><td>FB Page</td><td><span class="tag tag-both">Both</span></td><td>ROI 136.9%</td><td>Video</td></tr>
+          <tr><td>10</td><td>Day 12, 7PM PHT</td><td>FB Page</td><td><span class="tag tag-both">Both</span></td><td>Villa Showcase 2</td><td>Video</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:14px;font-size:0.82rem;color:var(--muted)">
+        Full copy text for each post in: <strong>docs/ORGANIC_CONTENT_CALENDAR.md</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUDGET TAB -->
+  <div class="panel" id="budget">
+    <div class="grid-2">
+      <div class="card">
+        <h3 style="font-size:1rem;margin-bottom:14px">Phase 1: Awareness (Days 1-7)</h3>
+        <table class="tbl">
+          <thead><tr><th>Campaign</th><th>Daily</th><th>7-Day Total</th></tr></thead>
+          <tbody>
+            <tr><td>IL-1 Awareness</td><td>$20 (PHP 1,200)</td><td>$140</td></tr>
+            <tr><td>PH-1 Awareness</td><td>$15 (PHP 850)</td><td>$105</td></tr>
+            <tr style="font-weight:700"><td>Total Phase 1</td><td>$35/day</td><td>$245</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h3 style="font-size:1rem;margin-bottom:14px">Phase 2: Full Funnel (Days 8-15)</h3>
+        <table class="tbl">
+          <thead><tr><th>Campaign</th><th>Daily</th><th>8-Day Total</th></tr></thead>
+          <tbody>
+            <tr><td>IL-1 + IL-2 + IL-3</td><td>$45</td><td>$360</td></tr>
+            <tr><td>PH-1 + PH-2 + PH-3</td><td>$33</td><td>$264</td></tr>
+            <tr style="font-weight:700"><td>Total Phase 2</td><td>$78/day</td><td>$624</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <h3 style="font-size:1rem;margin-bottom:14px">15-Day Budget Summary</h3>
+      <div class="grid-3">
+        <div style="text-align:center">
+          <div style="font-size:1.6rem;font-weight:700;font-family:'Playfair Display',serif">$869</div>
+          <div style="font-size:0.82rem;color:var(--muted)">Estimated 15-Day Spend</div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:1.6rem;font-weight:700;font-family:'Playfair Display',serif">$900</div>
+          <div style="font-size:0.82rem;color:var(--muted)">Total Budget</div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:1.6rem;font-weight:700;font-family:'Playfair Display',serif;color:var(--green)">$31</div>
+          <div style="font-size:0.82rem;color:var(--muted)">Buffer for Scaling</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IDS TAB -->
+  <div class="panel" id="ids">
+    <div class="card">
+      <h3 style="font-size:1rem;margin-bottom:14px">Platform IDs & Access</h3>
+      <table class="tbl">
+        <thead><tr><th>Platform</th><th>ID / Key</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Meta Ad Account</td><td><code>2015125296073673</code></td><td><span class="badge b-green">Active</span></td></tr>
+          <tr><td>Meta Business</td><td><code>1091269377399273</code> (Blue Everest Asset Group)</td><td><span class="badge b-green">Active</span></td></tr>
+          <tr><td>Facebook Page</td><td><code>1091251924067685</code> (Blue Everest Asset Group)</td><td><span class="badge b-red">Not linked to ad account</span></td></tr>
+          <tr><td>Meta Pixel</td><td><code>1599211187973958</code></td><td><span class="badge b-red">Not installed on site</span></td></tr>
+          <tr><td>Google Analytics</td><td><code>G-04NZJT2C4V</code></td><td><span class="badge b-red">Not installed on site</span></td></tr>
+          <tr><td>Website</td><td><code>primevilla.ph</code></td><td><span class="badge b-green">Live</span></td></tr>
+          <tr><td>WhatsApp Marketing</td><td><code>+639542555553</code></td><td><span class="badge b-green">Active</span></td></tr>
+          <tr><td>WhatsApp Office</td><td><code>+639958565865</code></td><td><span class="badge b-green">Active</span></td></tr>
+          <tr><td>360 Virtual Tour</td><td><code>kuula.co/share/collection/7HMGx</code></td><td><span class="badge b-green">Active</span></td></tr>
+          <tr><td>Lead Sheet</td><td>PRIMEVILLA LIVE SITE (Google Sheets)</td><td><span class="badge b-green">2 test leads</span></td></tr>
+          <tr><td>Google Ads</td><td>-</td><td><span class="badge b-gray">Not setup</span></td></tr>
+          <tr><td>Brevo (Email)</td><td>-</td><td><span class="badge b-gray">Not setup</span></td></tr>
+          <tr><td>WATI (WhatsApp)</td><td>-</td><td><span class="badge b-gray">Not setup</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <h3 style="font-size:1rem;margin-bottom:14px">FX Rates (May 22, 2026)</h3>
+      <table class="tbl">
+        <thead><tr><th>Item</th><th>PHP</th><th>ILS</th><th>USD</th></tr></thead>
+        <tbody>
+          <tr><td>Villa D</td><td>PHP 28,000,000</td><td>~1,322,000</td><td>~$454,600</td></tr>
+          <tr><td>Villa C</td><td>PHP 30,000,000</td><td>~1,416,000</td><td>~$487,000</td></tr>
+          <tr><td>Monthly Income</td><td>PHP 395,000</td><td>Do not convert</td><td>Do not convert</td></tr>
+          <tr><td>Reservation</td><td>PHP 200,000</td><td>~9,440</td><td>~$3,250</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- GO LIVE STEPS -->
+<div class="section">
+  <h2 class="section-title">Go-Live Sequence</h2>
+  <div class="card">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0">1</div>
+        <div><strong>Resolve 4 blockers above</strong> (link page, install pixel, install GA4, upload media)</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0">2</div>
+        <div><strong>Tell Claude Code "blockers resolved"</strong> - campaigns IL-1 + PH-1 created via API (PAUSED)</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0">3</div>
+        <div><strong>Review all ads</strong> (especially Hebrew copy) - verify in Ads Manager</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0">4</div>
+        <div><strong>Say "go live"</strong> - campaigns activated, Day 1 begins</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  Panglao Prime Villas - Blue Everest Asset Group<br>
+  Dashboard generated May 23, 2026 by Claude Code<br>
+  <span style="color:var(--gold)">Simulation Mode Active - No Live Spend</span>
+</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+document.querySelectorAll('.copy-box').forEach(box => {
+  box.addEventListener('click', () => {
+    navigator.clipboard.writeText(box.textContent.trim());
+    box.style.borderColor = '#059669';
+    setTimeout(() => box.style.borderColor = '', 1500);
+  });
+});
+</script>
+</body>
+</html>

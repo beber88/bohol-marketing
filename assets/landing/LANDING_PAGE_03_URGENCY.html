@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Chance: Panglao Villas - Limited Time Pricing</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: #333; }
+    .urgency-banner { background: #ff6b6b; color: white; padding: 20px; text-align: center; font-size: 20px; font-weight: bold; animation: pulse 1s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
+    .hero { background: linear-gradient(to bottom, #1e3c72, #2a5298); color: white; padding: 60px 20px; text-align: center; }
+    .hero h1 { font-size: 44px; margin-bottom: 15px; }
+    .hero p { font-size: 22px; margin-bottom: 10px; }
+    .countdown { font-size: 32px; font-weight: bold; color: #ff6b6b; margin: 20px 0; }
+    .container { max-width: 1000px;  margin: 0 auto; padding: 40px 20px; }
+    .loss-calculator { background: #fff3cd; padding: 30px; border-radius: 8px; margin: 30px 0; border-left: 4px solid #ffc107; }
+    .loss-calculator h2 { color: #ff6b6b; margin-bottom: 20px; }
+    .loss-calculator table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+    .loss-calculator th, .loss-calculator td { padding: 12px; text-align: right; }
+    .loss-calculator th { background: #ffc107; font-weight: bold; }
+    .loss-calculator tr:nth-child(even) { background: #ffeccc; }
+    .loss-row { background: #ff6b6b; color: white; font-weight: bold; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+    .feature-card { background: #f0f8ff; padding: 20px; border-radius: 8px; border: 2px solid #1e3c72; }
+    .feature-card h3 { color: #1e3c72; margin-bottom: 10px; }
+    .testimonial { background: #e7f3ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #1e3c72; }
+    .cta-section { background: linear-gradient(135deg, #ff6b6b 0%, #ff4444 100%); color: white; padding: 40px 20px; border-radius: 8px; text-align: center; margin: 40px 0; }
+    .cta-section h2 { font-size: 32px; margin-bottom: 20px; }
+    .cta-button { display: inline-block; background: white; color: #ff6b6b; padding: 18px 40px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 18px; margin: 10px; }
+    .comparison-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; }
+    .grid-item { background: white; padding: 20px; border-radius: 8px; border: 1px solid #ddd; }
+    .grid-item.winner { border: 3px solid #28a745; background: #f0fff4; }
+    .grid-item h4 { color: #1e3c72; margin-bottom: 10px; }
+    footer { background: #1e3c72; color: white; padding: 30px 20px; text-align: center; margin-top: 60px; }
+  </style>
+</head>
+<body>
+
+<div class="urgency-banner">
+  ⏰ SPECIAL PRICING ENDS THIS WEEK • Only 2 Units Remaining • PHP 28M vs PHP 30.5M Next Batch
+</div>
+
+<div class="hero">
+  <h1>Last Chance to Own Panglao Prime Villas</h1>
+  <p>At This Price. Right Now.</p>
+  <div class="countdown">
+    Limited Offer Valid For: <span id="timer">72:00:00</span>
+  </div>
+  <a href="#schedule" class="cta-button" style="background: #ff6b6b; color: white;">Secure Your Villa Immediately</a>
+</div>
+
+<div class="container">
+
+  <div class="loss-calculator">
+    <h2>🚨 Cost of Waiting</h2>
+    <p>Here's exactly how much money you'll lose by delaying:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Timeline</th>
+          <th>Price/Villa</th>
+          <th>Your Loss</th>
+          <th>Months of Income Lost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>TODAY</strong></td>
+          <td><strong>PHP 28M</strong></td>
+          <td><strong>—</strong></td>
+          <td><strong>—</strong></td>
+        </tr>
+        <tr>
+          <td>1 Week Delay</td>
+          <td>PHP 28.5M</td>
+          <td>₱500K</td>
+          <td>1.3 months of income</td>
+        </tr>
+        <tr>
+          <td>2 Week Delay</td>
+          <td>PHP 29M</td>
+          <td>₱1M</td>
+          <td>2.5 months of income</td>
+        </tr>
+        <tr class="loss-row">
+          <td>1 Month Delay</td>
+          <td>PHP 30M</td>
+          <td>₱2M+</td>
+          <td>5+ months of income</td>
+        </tr>
+        <tr class="loss-row">
+          <td>2 Month Delay</td>
+          <td>PHP 30.5M</td>
+          <td>₱2.5M+</td>
+          <td>6+ months of income</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top: 20px; font-weight: bold;">⚠️ Each week you wait, your purchase price goes UP and your income timeline gets pushed back.</p>
+  </div>
+
+  <div style="background: #e7f3ff; padding: 20px; border-radius: 8px; margin: 30px 0; text-align: center; border: 2px solid #1e3c72;">
+    <h3 style="color: #1e3c72; margin-bottom: 15px;">Why People Don't Delay</h3>
+    <p style="font-size: 18px; margin-bottom: 20px;">
+      <strong>Money sitting in the bank:</strong> Earning 1-2% interest<br>
+      <strong>Villa investment:</strong> Earning 17-25% ROI + PHP 395K monthly<br>
+      <strong>Difference:</strong> 16-24% annual loss by waiting
+    </p>
+    <p style="font-size: 14px; color: #666;">Those monthly income payments don't retroactively apply. If you buy in 2 weeks, you've lost 2 weeks of income forever.</p>
+  </div>
+
+  <div class="cta-section">
+    <h2>⏰ Don't Wait. Act Now.</h2>
+    <p style="font-size: 18px; margin-bottom: 30px;">This pricing is reserved for investors who decide THIS WEEK.</p>
+    <a href="tel:+639542555553" class="cta-button">Call +639542555553 Now</a>
+    <a href="https://primevilla.ph/schedule" class="cta-button">Schedule Meeting</a>
+  </div>
+
+  <div class="testimonial">
+    <h3>What People Who Waited Told Us:</h3>
+    <blockquote style="font-style: italic; color: #666;">
+      "I wish I'd bought when it was 28 million. I waited two weeks and it was already 29.5 million. Cost me an extra 1.5 million AND I lost two months of rental income." — Former interested investor
+    </blockquote>
+  </div>
+
+  <div style="background: #f0f8ff; padding: 30px; border-radius: 8px; margin: 30px 0;">
+    <h2 style="color: #1e3c72; margin-bottom: 20px;">Your Options Right Now:</h2>
+
+    <div class="comparison-grid">
+      <div class="grid-item winner">
+        <h4>OPTION 1: Buy Today ✅</h4>
+        <p><strong>Price:</strong> PHP 28M</p>
+        <p><strong>Monthly Income:</strong> PHP 395K from Month 1</p>
+        <p><strong>Future Value:</strong> PHP 30M+ in appreciation</p>
+        <p style="margin-top: 15px; color: #28a745; font-weight: bold;">→ You Win</p>
+      </div>
+
+      <div class="grid-item">
+        <h4>OPTION 2: Wait & See 😟</h4>
+        <p><strong>Price:</strong> PHP 30.5M (next batch)</p>
+        <p><strong>Lost Income:</strong> PHP 2-5M (depends on when you buy)</p>
+        <p><strong>Regret:</strong> Inevitable</p>
+        <p style="margin-top: 15px; color: #ff6b6b; font-weight: bold;">→ You Lose</p>
+      </div>
+
+      <div class="grid-item">
+        <h4>OPTION 3: Do Nothing 😞</h4>
+        <p><strong>Income Tonight:</strong> PHP 0</p>
+        <p><strong>Income Next Year:</strong> PHP 0</p>
+        <p><strong>Units Available Then:</strong> Probably 0</p>
+        <p style="margin-top: 15px; color: #999; font-weight: bold;">→ Regret</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: white; padding: 30px; border-radius: 8px; border: 2px solid #1e3c72; margin: 30px 0;">
+    <h2 style="color: #1e3c72; margin-bottom: 20px;">The 3-Step Path to Ownership</h2>
+    <ol style="font-size: 18px; line-height: 2; list-style-position: inside;">
+      <li><strong>This Week:</strong> Call +639542555553 or schedule a consultation</li>
+      <li><strong>Next 7 Days:</strong> Due diligence, financing approval, documentation</li>
+      <li><strong>By End of Week:</strong> Closing, ownership transfer, first income deposit</li>
+    </ol>
+  </div>
+
+</div>
+
+<div class="cta-section" style="margin: 40px 0;">
+  <h2>Your Decision Point is NOW</h2>
+  <p style="font-size: 18px; margin-bottom: 30px;">In 72 hours, this offer expires and prices go up PHP 2.5 million.</p>
+  <p style="font-size: 16px; margin-bottom: 30px;">Will you be the one who bought at 28M and is now earning PHP 395K monthly?<br>Or the one who waited and paid 30.5M while regretting the lost income?</p>
+  <a href="tel:+639542555553" class="cta-button" style="font-size: 20px; padding: 20px 50px;">Make Your Decision: +639542555553</a>
+</div>
+
+<footer>
+  <h3>Panglao Prime Villas</h3>
+  <p>Only 2 units. Limited time pricing. Decide now.</p>
+  <p style="margin-top: 15px; font-size: 12px;">This is an investment opportunity for qualified buyers. Prices and availability subject to change.</p>
+</footer>
+
+<script>
+// Simple countdown (72 hours)
+function startCountdown() {
+  let seconds = 72 * 3600;
+  const timerEl = document.getElementById('timer');
+  setInterval(() => {
+    if (seconds <= 0) {
+      timerEl.textContent = "OFFER EXPIRED";
+      return;
+    }
+    const hours = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    timerEl.textContent = `${hours}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    seconds--;
+  }, 1000);
+}
+
+startCountdown();
+</script>
+
+</body>
+</html>

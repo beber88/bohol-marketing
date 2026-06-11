@@ -1,0 +1,37 @@
+{
+  "name": "FLOW_08_CLOSING_PROCESS",
+  "description": "Guides lead through purchase closing timeline and requirements",
+  "type": "interactive",
+  "version": "2.0",
+  "trigger": "high_intent_lead",
+  "created_at": "2026-04-14T10:45:00Z",
+  "nodes": [
+    {
+      "id": "closing_intro",
+      "type": "text",
+      "content": "📋 Purchase Process Overview (30 days typically):\n\nSTEP 1: Initial Inquiry ✅ (You are here)\nSTEP 2: Investment Review (3-5 days)\nSTEP 3: Site Visit (optional, recommended)\nSTEP 4: Due Diligence (5-7 days)\nSTEP 5: Financing Application (if needed)\nSTEP 6: Legal Review & Contract (5-7 days)\nSTEP 7: Payment & Closing (1-2 days)\n\nTotal: 3-4 weeks. Let's start!"
+    },
+    {
+      "id": "document_requirements",
+      "type": "text",
+      "content": "📝 Documents We Need:\n\n1. Passport / ID (copy)\n2. Proof of funds (bank statement)\n3. Tax returns (last 2 years)\n4. Employment letter (if applicable)\n5. BDO financing app (if using loan)\n6. POA (if purchasing via agent)\n\nWe provide templates. Easy process."
+    },
+    {
+      "id": "due_diligence",
+      "type": "text",
+      "content": "🔍 Due Diligence Phase (What we show you):\n\n✓ Property title (clear, no liens)\n✓ Airbnb earnings history (2 years)\n✓ Tax records (all paid)\n✓ Maintenance logs (property condition)\n✓ Guest reviews (proof of quality)\n✓ Insurance policies\n✓ Management contracts\n✓ Bank reconciliations\n\nFull transparency. Everything available."
+    },
+    {
+      "id": "payment_terms",
+      "type": "text",
+      "content": "💰 Payment Schedule:\n\nOption A (Direct):\n• Down payment: PHP 8.4M (30%)\n• At closing: PHP 19.6M (70%)\n• Via bank transfer (secure, all documented)\n\nOption B (Financed):\n• Down payment: PHP 8.4M\n• Loan: PHP 19.6M (BDO handles)\n• Monthly: ~PHP 154K (from rental income)\n\nOption C (Installment):\n• 30% (PHP 8.4M) at signing\n• 70% over 12 months\n• Interest: 2% (negotiable)\n\nWhich works best?"
+    },
+    {
+      "id": "closing_day",
+      "type": "text",
+      "content": "✅ Closing Day (Final Step):\n\n• All paperwork signed\n• Notary witnessed (Philippines requirement)\n• Funds transferred\n• Certificate of ownership issued\n• Income starts next month\n• Property in YOUR name\n\nDone. You're now owner."
+    }
+  ],
+  "export_format": "WATI",
+  "export_date": "2026-04-14T10:45:00Z"
+}

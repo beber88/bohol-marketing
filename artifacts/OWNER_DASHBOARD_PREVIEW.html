@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner Dashboard - Panglao Prime Villas</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; }
+    .header { background: #1e3c72; color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+    .header h1 { font-size: 24px; }
+    .user-info { text-align: right; }
+    .user-info p { font-size: 14px; }
+    .container { max-width: 1400px; margin: 20px auto; padding: 0 20px; }
+    .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px; }
+    .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .card h3 { color: #1e3c72; margin-bottom: 15px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+    .card .value { font-size: 32px; font-weight: bold; color: #1e3c72; margin-bottom: 5px; }
+    .card .label { color: #999; font-size: 12px; }
+    .card .detail { color: #666; font-size: 14px; margin-top: 10px; }
+    .green { color: #28a745; }
+    .blue { color: #0066cc; }
+    .chart-container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 30px; }
+    .chart-container h3 { color: #1e3c72; margin-bottom: 20px; }
+    .simple-bar { display: flex; align-items: center; margin-bottom: 15px; }
+    .bar-label { width: 80px; font-size: 14px; color: #666; }
+    .bar { background: #ddd; height: 20px; border-radius: 4px; flex: 1; margin: 0 10px; position: relative; overflow: hidden; }
+    .bar-fill { background: linear-gradient(90deg, #1e3c72, #2a5298); height: 100%; }
+    .bar-value { font-size: 12px; color: #333; margin-left: 10px; width: 80px; }
+    table { width: 100%; border-collapse: collapse; }
+    th { background: #f5f5f5; padding: 12px; text-align: left; font-weight: 600; color: #333; }
+    td { padding: 12px; border-bottom: 1px solid #eee; }
+    tr:hover { background: #f9f9f9; }
+    .badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+    .badge-ok { background: #d4edda; color: #155724; }
+    .badge-pending { background: #fff3cd; color: #856404; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🏝️ Owner Dashboard</h1>
+  <div class="user-info">
+    <p>Welcome, <strong>Raj Kumar</strong></p>
+    <p>Villa D, Panglao • Member since Jan 2025</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Key Metrics -->
+  <div class="dashboard-grid">
+    <div class="card">
+      <h3>💰 This Month</h3>
+      <div class="value green">₱395,000</div>
+      <div class="label">Earned</div>
+      <div class="detail">On track for ₱4.74M annually</div>
+    </div>
+
+    <div class="card">
+      <h3>📊 Year to Date</h3>
+      <div class="value blue">₱3,160,000</div>
+      <div class="label">Net Income</div>
+      <div class="detail">8 months of earnings</div>
+    </div>
+
+    <div class="card">
+      <h3>📅 Current Occupancy</h3>
+      <div class="value" style="color: #1e3c72;">68%</div>
+      <div class="label">This Month</div>
+      <div class="detail green">✓ Above 65% guarantee</div>
+    </div>
+
+    <div class="card">
+      <h3>⭐ Guest Rating</h3>
+      <div class="value" style="color: #ffc107;">4.9/5</div>
+      <div class="label">Based on 32 reviews</div>
+      <div class="detail">Top 5% of Airbnb properties</div>
+    </div>
+  </div>
+
+  <!-- Income Chart -->
+  <div class="chart-container">
+    <h3>Monthly Performance (Last 12 Months)</h3>
+
+    <div class="simple-bar">
+      <div class="bar-label">Apr 2024</div>
+      <div class="bar" style="width: 200px;"><div class="bar-fill" style="width: 90%;"></div></div>
+      <div class="bar-value">₱385K</div>
+    </div>
+
+    <div class="simple-bar">
+      <div class="bar-label">May 2024</div>
+      <div class="bar" style="width: 200px;"><div class="bar-fill" style="width: 100%;"></div></div>
+      <div class="bar-value">₱395K</div>
+    </div>
+
+    <div class="simple-bar">
+      <div class="bar-label">Jun 2024</div>
+      <div class="bar" style="width: 200px;"><div class="bar-fill" style="width: 98%;"></div></div>
+      <div class="bar-value">₱392K</div>
+    </div>
+
+    <div class="simple-bar">
+      <div class="bar-label">Jul 2024</div>
+      <div class="bar" style="width: 200px;"><div class="bar-fill" style="width: 102%;"></div></div>
+      <div class="bar-value">₱405K</div>
+    </div>
+
+    <div class="simple-bar" style="opacity: 0.5;">
+      <div class="bar-label">...</div>
+      <div class="bar" style="width: 200px;"><div class="bar-fill"></div></div>
+      <div class="bar-value">...</div>
+    </div>
+
+    <div class="simple-bar">
+      <div class="bar-label">Dec 2024</div>
+      <div class="bar" style="width: 200px;"><div class="bar-fill" style="width: 105%;"></div></div>
+      <div class="bar-value">₱415K</div>
+    </div>
+  </div>
+
+  <!-- Upcoming Bookings -->
+  <div class="chart-container">
+    <h3>📅 Next 30 Days Bookings</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Check-In</th>
+          <th>Check-Out</th>
+          <th>Nights</th>
+          <th>Guest</th>
+          <th>Rate</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Jan 3, 2025</td>
+          <td>Jan 5, 2025</td>
+          <td>2 nights</td>
+          <td>Maria S. (Australia)</td>
+          <td>₱14,500/night</td>
+          <td><span class="badge badge-ok">Confirmed</span></td>
+        </tr>
+        <tr>
+          <td>Jan 7, 2025</td>
+          <td>Jan 12, 2025</td>
+          <td>5 nights</td>
+          <td>James T. (US)</td>
+          <td>₱14,000/night</td>
+          <td><span class="badge badge-ok">Confirmed</span></td>
+        </tr>
+        <tr>
+          <td>Jan 14, 2025</td>
+          <td>Jan 21, 2025</td>
+          <td>7 nights</td>
+          <td>Yuki N. (Japan)</td>
+          <td>₱14,200/night</td>
+          <td><span class="badge badge-pending">Pending Payment</span></td>
+        </tr>
+        <tr>
+          <td>Jan 23, 2025</td>
+          <td>Jan 26, 2025</td>
+          <td>3 nights</td>
+          <td>Family Group (Singapore)</td>
+          <td>₱14,800/night</td>
+          <td><span class="badge badge-ok">Confirmed</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Property Status -->
+  <div class="chart-container">
+    <h3>🏠 Property Status</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>System</th>
+          <th>Status</th>
+          <th>Last Maintenance</th>
+          <th>Next Scheduled</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Air Conditioning</td>
+          <td><span class="badge badge-ok">Operational</span></td>
+          <td>Dec 20, 2024</td>
+          <td>Apr 2025</td>
+        </tr>
+        <tr>
+          <td>Pool System</td>
+          <td><span class="badge badge-ok">Operational</span></td>
+          <td>Dec 15, 2024</td>
+          <td>Feb 2025</td>
+        </tr>
+        <tr>
+          <td>Hot Water</td>
+          <td><span class="badge badge-ok">Operational</span></td>
+          <td>Nov 30, 2024</td>
+          <td>May 2025</td>
+        </tr>
+        <tr>
+          <td>Wifi/Smart Home</td>
+          <td><span class="badge badge-ok">Operational</span></td>
+          <td>Monthly</td>
+          <td>Ongoing</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Quick Actions -->
+  <div style="text-align: center; margin: 40px 0;">
+    <h3 style="color: #1e3c72; margin-bottom: 20px;">Questions or Issues?</h3>
+    <a href="tel:+639542555553" style="display: inline-block; background: #1e3c72; color: white; padding: 12px 30px; text-decoration: none; border-radius: 8px; margin: 0 10px; font-weight: 600;">Call Support</a>
+    <a href="mailto:ceo@blue-everest.com" style="display: inline-block; background: #999; color: white; padding: 12px 30px; text-decoration: none; border-radius: 8px; margin: 0 10px; font-weight: 600;">Email Support</a>
+  </div>
+
+</div>
+
+</body>
+</html>

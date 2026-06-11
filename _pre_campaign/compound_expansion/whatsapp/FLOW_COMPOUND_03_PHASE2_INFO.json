@@ -1,0 +1,35 @@
+{
+  "flow_name": "Phase 2 Information Request",
+  "flow_id": "COMPOUND_03_PHASE2_INFO",
+  "platform": "WATI",
+  "language": "en",
+  "trigger": "Contact replies 'PHASE2' or 'Phase 2' or tags phase2_interest",
+  "version": "compound_v1",
+
+  "messages": [
+    {
+      "step": 1,
+      "type": "text",
+      "delay_seconds": 0,
+      "content": "Here are the Phase 2 details for Panglao Prime Villas Compound:\n\n*Phase 2 Villas:*\n- Villa E: 4BR, 263.78 sqm, private pool + rooftop jacuzzi - [PRICE_PLACEHOLDER]\n- Villa F: 4BR, 263.78 sqm, private pool + rooftop jacuzzi - [PRICE_PLACEHOLDER]\n- Villa G: 4BR, 263.78 sqm, private pool + rooftop jacuzzi - [PRICE_PLACEHOLDER]\n- Villa H: Unique design, details coming soon - [PRICE_PLACEHOLDER]\n\n*What is the same as Phase 1:*\n- Location: between JW Marriott and Mithi Resort\n- 60 seconds to Panglao Beach\n- Verified Airbnb income: PHP 395,000/month\n- Annual ROI: 17-25%\n- Full property management by Blue Everest\n\n*What is new with the compound:*\n- Shared management reduces costs per villa\n- Airbnb collection ranking (higher visibility)\n- Compound security and landscaping\n- 8-villa private neighborhood identity\n\nReservation fee: PHP 200,000\nBDO Bank financing available.\n\nReply *CALL* to schedule a discussion.\nReply *COMPARE* to see Phase 1 vs Phase 2.\n\nWhatsApp (Marketing): +639542555553\nWhatsApp (Office): +639958565865"
+    },
+    {
+      "step": 2,
+      "type": "conditional",
+      "trigger": "user_reply",
+      "branches": {
+        "CALL": {
+          "content": "We would love to discuss Phase 2 with you.\n\nPlease share your preferred time and we will arrange a call.\nOur team is available Sunday-Friday, 9am-6pm PHT.\n\nWhatsApp (Marketing): +639542555553\nWhatsApp (Office): +639958565865",
+          "action": "tag_contact",
+          "tag": "phase2_call_request"
+        },
+        "COMPARE": {
+          "content": "*Phase 1 vs Phase 2 Comparison:*\n\n*Phase 1 (Proven):*\nVilla C: PHP 35,000,000\nVilla D: PHP 32,500,000\nStatus: Available now, move-in ready\nIncome: PHP 395,000/month (verified)\n\n*Phase 2 (New):*\nVillas E, F, G: Same specs as C/D\nVilla H: Unique design\nPricing: [PRICE_PLACEHOLDER]\nStatus: Open for reservation\n\n*Key difference:*\nPhase 2 buyers join a compound with proven operations. Phase 1 data validates the investment. Compound management means lower per-villa costs.\n\nBDO Bank financing available for both phases.\n\nReply *CALL* to discuss which villa suits your goals.\n\nWhatsApp (Office): +639958565865"
+        },
+        "default": {
+          "content": "Thank you for your interest. Our team will follow up with you shortly.\n\nWhatsApp (Marketing): +639542555553\nWhatsApp (Office): +639958565865"
+        }
+      }
+    }
+  ]
+}

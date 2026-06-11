@@ -1,0 +1,44 @@
+[
+  {
+    "id": "CNT-0001",
+    "priority": "HIGH",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 13 Facebook post (IL market)",
+    "instructions": "Publish to Facebook page. Market: IL. Use the provided image and copy. Schedule for optimal engagement time.",
+    "copy": "נכנסים בין הוכחת הקונספט (שכבר קרתה) לבין התמחור המלא (שעדיין לא הגיע). תיירות בשיא. שדה תעופה מעל קיבולת. גשר ממומן. Marriott בבנייה. כאן נכנס כסף חכם.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/RD1 ENHANCED.png",
+    "scheduled_time": "2026-04-17T18:00:00+08:00",
+    "hook_used": "נכנסים בין הוכחת הקונספט (שכבר קרתה) לבין התמחור המלא (שעדיין לא הגיע). תיירות בשיא. שדה תעופה מעל קיבולת. גשר ממומן. Marriott בבנייה. כאן נכנס כסף חכם.",
+    "language": "he"
+  },
+  {
+    "id": "CNT-0002",
+    "priority": "MEDIUM",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "PH",
+    "description": "Day 13 Facebook post (PH market, secondary)",
+    "instructions": "Publish secondary post for PH market. Schedule for alternate time slot.",
+    "copy": "This villa earned PHP 4,740,000 last year. Exposed concrete, rooftop jacuzzi, 60 seconds from the beach.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD2 ENHANCED.png",
+    "scheduled_time": "2026-04-17T14:00:00+08:00",
+    "hook_used": "This villa earned PHP 4,740,000 last year. Exposed concrete, rooftop jacuzzi, 60 seconds from the beach.",
+    "language": "en"
+  },
+  {
+    "id": "EDU-0003",
+    "priority": "MEDIUM",
+    "type": "facebook_group_edu",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 13 educational post for Israeli FB group",
+    "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+    "copy": "שדה תעופה בוהול: מ-2 מיליון ל-4 מיליון עד 2030\n\nAboitiz InfraCapital לקחה את שדה התעופה לזיכיון 30 שנה.\n\nהמצב היום: 2.22 מיליון נוסעים ב-2025.\nהיעד: כמעט 4 מיליון עד 2030.\n\n12 טיסות ביום ממנילה. טיסות ישירות מקוריאה (Jin Air, Jeju Air, Air Busan).\n\nשדה תעופה שעובר קיבולת = אינדיקציה שהביקוש כבר כאן. ההרחבה = ערובה לצמיחה לעשור הבא.\n\nמקור: Daily Tribune, Aboitiz InfraCapital, Bohol Gov",
+    "image_path": "",
+    "platform": "Facebook Group IL",
+    "scheduled_time": "2026-04-17T11:00:00+02:00",
+    "language": "he"
+  }
+]

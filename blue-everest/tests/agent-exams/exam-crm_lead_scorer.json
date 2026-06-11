@@ -1,0 +1,2142 @@
+{
+  "agent": "crm_lead_scorer",
+  "agent_display_name": "CRM Lead Scorer",
+  "description": "Tests lead scoring models, pipeline management, and qualification logic",
+  "total_questions": 100,
+  "pass_threshold": 100,
+  "categories": [
+    "scoring_model",
+    "behavioral_signals",
+    "demographic_signals",
+    "pipeline_stages",
+    "prioritization",
+    "hot_lead_protocol",
+    "score_thresholds",
+    "decay_rules",
+    "integration",
+    "scenario"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "category": "scoring_model",
+      "difficulty": "easy",
+      "question": "What are the four lead score tiers and their ranges?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Low/Medium/High/Critical: 0-25/26-50/51-75/76-100",
+        "B. Cold/Warm/Hot/Very Hot: 0-30/31-70/71-120/121+",
+        "C. Bronze/Silver/Gold/Platinum: 0-50/51-100/101-150/151+",
+        "D. New/Active/Engaged/Ready: 0-20/21-60/61-100/101+"
+      ],
+      "correct_answer": "B",
+      "explanation": "The lead scoring model uses four tiers: Cold (0-30), Warm (31-70), Hot (71-120), and Very Hot (121+). Each tier triggers different engagement strategies.",
+      "keywords": [
+        "tiers",
+        "cold",
+        "warm",
+        "hot",
+        "very hot",
+        "ranges"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "scoring_model",
+      "difficulty": "easy",
+      "question": "What is the maximum possible lead score a new lead can achieve from a single form submission with all fields completed?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 40 points",
+        "B. 75 points",
+        "C. 95 points",
+        "D. 120 points"
+      ],
+      "correct_answer": "B",
+      "explanation": "A form submit (+40) with country IL/UAE/SG/USA (+10), investment purpose (+10), and budget confirmed (+25) = 85 points maximum from form alone. However, this calculation may vary based on the specific combination of fields.",
+      "keywords": [
+        "form submit",
+        "maximum score",
+        "single action"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "scoring_model",
+      "difficulty": "medium",
+      "question": "How many points does a form submission add to the lead score?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +10",
+        "B. +20",
+        "C. +30",
+        "D. +40"
+      ],
+      "correct_answer": "D",
+      "explanation": "A form submission adds +40 points to the lead score. This is the highest single behavioral action score, reflecting the strong intent signal of filling out a contact form.",
+      "keywords": [
+        "+40",
+        "form submit",
+        "behavioral",
+        "highest action"
+      ]
+    },
+    {
+      "id": 4,
+      "category": "scoring_model",
+      "difficulty": "medium",
+      "question": "How many points does a WhatsApp click add to the lead score?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +10",
+        "B. +20",
+        "C. +30",
+        "D. +40"
+      ],
+      "correct_answer": "C",
+      "explanation": "A WhatsApp click adds +30 points. This is the second-highest behavioral action, as initiating a direct conversation shows strong purchase intent.",
+      "keywords": [
+        "+30",
+        "whatsapp click",
+        "behavioral"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "scoring_model",
+      "difficulty": "easy",
+      "question": "What two categories of signals contribute to the lead score?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Revenue and Cost signals",
+        "B. Behavioral signals and Demographic signals",
+        "C. Online and Offline signals",
+        "D. Marketing and Sales signals"
+      ],
+      "correct_answer": "B",
+      "explanation": "Lead scores are composed of Behavioral signals (website visits, clicks, downloads, form submissions) and Demographic signals (country, investment purpose, budget confirmation).",
+      "keywords": [
+        "behavioral",
+        "demographic",
+        "two categories"
+      ]
+    },
+    {
+      "id": 6,
+      "category": "scoring_model",
+      "difficulty": "medium",
+      "question": "What is the scoring philosophy behind assigning +40 to form submissions but only +10 to website visits?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Form submissions cost more to process",
+        "B. Form submissions require explicit action and personal data sharing, indicating much higher intent than passive browsing",
+        "C. There is no particular philosophy",
+        "D. Website visits are less reliable data"
+      ],
+      "correct_answer": "B",
+      "explanation": "The scoring model weights actions by intent intensity. Sharing personal data via a form (+40) requires commitment; visiting a page (+10) is passive. The 4:1 ratio reflects this intent gap.",
+      "keywords": [
+        "intent",
+        "commitment",
+        "passive vs active",
+        "scoring philosophy"
+      ]
+    },
+    {
+      "id": 7,
+      "category": "scoring_model",
+      "difficulty": "hard",
+      "question": "A lead visits the website once (+10), returns for a second visit (+10), spends 5+ minutes (+15), views the specs page (+10), uses the ROI calculator (+15), downloads the PDF (+20), and clicks WhatsApp (+30). What is their total behavioral score?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 90",
+        "B. 100",
+        "C. 110",
+        "D. 120"
+      ],
+      "correct_answer": "C",
+      "explanation": "Total: Website visit +10, 2nd visit +10, 5+ min site time +15, specs view +10, ROI calculator +15, PDF download +20, WhatsApp click +30 = 110 points from behavioral signals alone.",
+      "keywords": [
+        "calculation",
+        "behavioral total",
+        "cumulative",
+        "110"
+      ]
+    },
+    {
+      "id": 8,
+      "category": "scoring_model",
+      "difficulty": "hard",
+      "question": "Why does the scoring model use escalating email open scores (+5 for first, up to +40 for many) rather than a flat score per open?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Escalating email scores reflect increasing engagement depth. A single open might be accidental, but consistently opening multiple emails demonstrates sustained interest. The escalating model: +5 (first open, might be curiosity), +10 (second, showing return interest), +15 (third, consistent engagement), +20 (fourth, strong pattern), +40 (5+ opens, committed follower). This prevents single casual opens from inflating scores while rewarding genuine long-term engagement.",
+      "explanation": "Flat scoring would overvalue accidental opens and undervalue loyal readers. The escalating model better correlates with actual purchase intent.",
+      "keywords": [
+        "escalating",
+        "email",
+        "scores",
+        "reflect",
+        "increasing",
+        "engagement",
+        "depth",
+        "single",
+        "open",
+        "might"
+      ]
+    },
+    {
+      "id": 9,
+      "category": "scoring_model",
+      "difficulty": "medium",
+      "question": "What is the total score contribution from demographic signals for an Israeli lead with investment purpose and confirmed budget?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +25",
+        "B. +35",
+        "C. +45",
+        "D. +55"
+      ],
+      "correct_answer": "C",
+      "explanation": "Country IL (+10) + Purpose investment (+10) + Budget confirmed (+25) = 45 demographic points. This alone places the lead in the WARM tier (31-70).",
+      "keywords": [
+        "demographic total",
+        "israel",
+        "investment",
+        "budget",
+        "+45"
+      ]
+    },
+    {
+      "id": 10,
+      "category": "scoring_model",
+      "difficulty": "hard",
+      "question": "Should the scoring model cap total possible points, or allow unlimited accumulation? What are the trade-offs?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "The model should allow accumulation beyond 121+ (VERY HOT) but with diminishing practical significance. Trade-offs: Uncapped allows differentiation within VERY HOT tier (a 200-point lead is hotter than 125), useful for prioritization when multiple leads compete for attention. However, uncapped risks: (1) leads who game the system (excessive visits), (2) stale high-scores if decay is not aggressive enough, (3) difficulty comparing leads across different time periods. Best approach: no hard cap, but use the 121+ tier for routing decisions, and use raw score within VERY HOT for micro-prioritization. Implement decay to prevent score inflation over time.",
+      "explanation": "Uncapped scoring with decay provides both strategic routing (tier-based) and tactical prioritization (raw score within tier).",
+      "keywords": [
+        "cap",
+        "uncapped",
+        "accumulation",
+        "decay",
+        "prioritization",
+        "trade-offs"
+      ]
+    },
+    {
+      "id": 11,
+      "category": "scoring_model",
+      "difficulty": "medium",
+      "question": "How many points does a PDF download add to the lead score?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +5",
+        "B. +10",
+        "C. +15",
+        "D. +20"
+      ],
+      "correct_answer": "D",
+      "explanation": "A PDF download adds +20 points. Downloading property documentation shows serious research behavior and intent to study the investment in detail.",
+      "keywords": [
+        "+20",
+        "PDF download",
+        "documentation",
+        "research intent"
+      ]
+    },
+    {
+      "id": 12,
+      "category": "scoring_model",
+      "difficulty": "easy",
+      "question": "How many points does using the ROI calculator add?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +5",
+        "B. +10",
+        "C. +15",
+        "D. +20"
+      ],
+      "correct_answer": "C",
+      "explanation": "Using the ROI calculator adds +15 points. This signals the lead is actively evaluating the investment return, a strong intent indicator.",
+      "keywords": [
+        "+15",
+        "ROI calculator",
+        "investment evaluation"
+      ]
+    },
+    {
+      "id": 13,
+      "category": "scoring_model",
+      "difficulty": "medium",
+      "question": "What is the difference between the scoring for 2+ minutes on site vs 5+ minutes on site?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No difference",
+        "B. 2+ min = +10, 5+ min = +15",
+        "C. 2+ min = +5, 5+ min = +10",
+        "D. 2+ min = +15, 5+ min = +20"
+      ],
+      "correct_answer": "B",
+      "explanation": "Time on site is scored progressively: 2+ minutes adds +10 (engaged browsing), 5+ minutes adds +15 (deep research). The 5+ minute score replaces the 2+ minute score.",
+      "keywords": [
+        "site time",
+        "+10",
+        "+15",
+        "progressive",
+        "engagement depth"
+      ]
+    },
+    {
+      "id": 14,
+      "category": "scoring_model",
+      "difficulty": "hard",
+      "question": "Design a scenario where a lead reaches exactly the HOT threshold (71 points) using the minimum number of distinct actions.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Minimum-action path to 71: Form submission (+40) + WhatsApp click (+30) = 70. Add one website visit (+10) = 80, which is over 71. Alternatively: Form submit (+40) + country IL (+10) + investment purpose (+10) + website visit (+10) = 70, plus one more visit = 80. The absolute minimum is 2 high-value actions: form (+40) + WhatsApp (+30) = 70, then any single additional signal pushes over 71. Three distinct signals minimum to guarantee HOT status.",
+      "explanation": "Understanding minimum-action paths helps design efficient qualification flows that move leads to HOT status with the fewest friction points.",
+      "keywords": [
+        "minimum",
+        "action",
+        "path",
+        "form",
+        "submission",
+        "whatsapp",
+        "click",
+        "website",
+        "visit",
+        "which"
+      ]
+    },
+    {
+      "id": 15,
+      "category": "scoring_model",
+      "difficulty": "medium",
+      "question": "How many points does viewing the specs page add?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +5",
+        "B. +10",
+        "C. +15",
+        "D. +20"
+      ],
+      "correct_answer": "B",
+      "explanation": "Viewing the villa specifications page adds +10 points. This indicates the lead is researching detailed property information beyond general browsing.",
+      "keywords": [
+        "+10",
+        "specs view",
+        "property research"
+      ]
+    },
+    {
+      "id": 16,
+      "category": "behavioral_signals",
+      "difficulty": "easy",
+      "question": "What behavioral score does a first website visit contribute?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +5",
+        "B. +10",
+        "C. +15",
+        "D. +20"
+      ],
+      "correct_answer": "B",
+      "explanation": "A first website visit adds +10 points. This is the baseline behavioral signal indicating initial awareness and interest.",
+      "keywords": [
+        "+10",
+        "website visit",
+        "first visit",
+        "awareness"
+      ]
+    },
+    {
+      "id": 17,
+      "category": "behavioral_signals",
+      "difficulty": "medium",
+      "question": "How does the scoring model handle repeat website visits?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Only the first visit scores",
+        "B. Each visit adds +10, with additional +10 at 2+ visits and +10 at 3+ visits",
+        "C. Visits after the first add +5 each",
+        "D. All visits are scored equally at +10"
+      ],
+      "correct_answer": "B",
+      "explanation": "The model uses milestone-based scoring: first visit +10, reaching 2+ visits earns an additional +10, reaching 3+ visits earns another +10. This rewards return engagement without over-scoring obsessive refreshing.",
+      "keywords": [
+        "repeat visits",
+        "milestone",
+        "+10",
+        "2+ visits",
+        "3+ visits"
+      ]
+    },
+    {
+      "id": 18,
+      "category": "behavioral_signals",
+      "difficulty": "medium",
+      "question": "A lead opens their first email from the nurture sequence. How many points does this add?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +5",
+        "B. +10",
+        "C. +15",
+        "D. +20"
+      ],
+      "correct_answer": "A",
+      "explanation": "The first email open adds +5 points. Email open scoring escalates with subsequent opens: +5, +10, +15, +20, +40 for 5+ opens.",
+      "keywords": [
+        "+5",
+        "first email open",
+        "escalating"
+      ]
+    },
+    {
+      "id": 19,
+      "category": "behavioral_signals",
+      "difficulty": "hard",
+      "question": "A lead has the following email engagement over 14 days: opens 7 different emails, clicks links in 3 of them. Calculate the email-related behavioral score.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Email opens (7 emails, which is 5+ opens): +40 points from the escalating open score. Email clicks are typically scored as separate actions - clicking a WhatsApp CTA (+30), clicking ROI calculator (+15), or clicking specs page (+10) depending on the link destination. Without knowing which links were clicked, the email open contribution alone is +40. The clicks would add their respective action scores (e.g., 3 link clicks could add +30 + +15 + +10 = 55 if they went to WhatsApp, ROI, and specs). Total email-related: minimum +40 (opens only) up to +95 or more (opens + valuable clicks).",
+      "explanation": "Email engagement scoring combines escalating open scores with destination-specific click scores. The destination matters more than the act of clicking.",
+      "keywords": [
+        "email",
+        "opens",
+        "emails",
+        "which",
+        "points",
+        "from",
+        "escalating",
+        "open",
+        "score",
+        "clicks"
+      ]
+    },
+    {
+      "id": 20,
+      "category": "behavioral_signals",
+      "difficulty": "medium",
+      "question": "What behavioral signal has the highest single-action point value?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Website visit (+10)",
+        "B. PDF download (+20)",
+        "C. WhatsApp click (+30)",
+        "D. Form submission (+40)"
+      ],
+      "correct_answer": "D",
+      "explanation": "Form submission at +40 is the highest single behavioral action. It requires the most commitment (sharing personal data) and represents the strongest intent signal.",
+      "keywords": [
+        "+40",
+        "form submit",
+        "highest",
+        "commitment"
+      ]
+    },
+    {
+      "id": 21,
+      "category": "behavioral_signals",
+      "difficulty": "hard",
+      "question": "How should the scoring model handle a lead who visits the website 20 times in one day but never performs any other action?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Score all 20 visits at +10 each = 200 points",
+        "B. Cap website visit scoring at 3+ visits milestone (+30 total), flag as potentially anomalous behavior",
+        "C. Score only the first visit",
+        "D. Block the lead as suspicious"
+      ],
+      "correct_answer": "B",
+      "explanation": "The milestone-based system caps visit scoring at 3+ visits (+30 total: +10 first + +10 at 2+ + +10 at 3+). 20 visits with no other action is anomalous and should be flagged, not rewarded with inflated scores.",
+      "keywords": [
+        "anomalous",
+        "visit cap",
+        "milestone",
+        "flag",
+        "over-visiting"
+      ]
+    },
+    {
+      "id": 22,
+      "category": "behavioral_signals",
+      "difficulty": "medium",
+      "question": "A lead uses the ROI calculator twice on different days. Should the +15 points be awarded twice?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Yes - +15 each time",
+        "B. No - only +15 for the first use, but the second use should be logged as a re-engagement signal",
+        "C. +15 first time, +5 second time",
+        "D. Ignore repeat uses"
+      ],
+      "correct_answer": "B",
+      "explanation": "The ROI calculator score (+15) applies once. Repeat use is a valuable engagement signal to log but should not double the score, as it would disproportionately inflate the total.",
+      "keywords": [
+        "repeat action",
+        "once only",
+        "re-engagement signal",
+        "logging"
+      ]
+    },
+    {
+      "id": 23,
+      "category": "behavioral_signals",
+      "difficulty": "easy",
+      "question": "Which behavioral action adds +20 points to the lead score?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Website visit",
+        "B. Specs page view",
+        "C. PDF download",
+        "D. Email open"
+      ],
+      "correct_answer": "C",
+      "explanation": "PDF download adds +20 points. Downloading property documentation demonstrates serious research intent beyond casual browsing.",
+      "keywords": [
+        "+20",
+        "PDF download"
+      ]
+    },
+    {
+      "id": 24,
+      "category": "behavioral_signals",
+      "difficulty": "hard",
+      "question": "Rank the following behavioral signals from lowest to highest intent: email open, website visit, specs view, ROI calculator, PDF download, WhatsApp click, form submission.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "From lowest to highest intent: (1) Email open (+5 first) - passive, may be accidental. (2) Website visit (+10) - initial awareness. (3) Specs view (+10) - active research. (4) ROI calculator (+15) - investment evaluation. (5) PDF download (+20) - deep research commitment. (6) WhatsApp click (+30) - direct conversation intent. (7) Form submission (+40) - personal data commitment, highest intent. The scoring model directly reflects this intent hierarchy.",
+      "explanation": "The scoring values mirror the intent escalation ladder. Each step requires more commitment from the lead, justifying higher point values.",
+      "keywords": [
+        "from",
+        "lowest",
+        "highest",
+        "intent",
+        "email",
+        "open",
+        "first",
+        "passive",
+        "accidental",
+        "website"
+      ]
+    },
+    {
+      "id": 25,
+      "category": "behavioral_signals",
+      "difficulty": "medium",
+      "question": "How should the system score a lead who clicks on a WhatsApp link from an email?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +30 for WhatsApp click only",
+        "B. Email click score + WhatsApp click score (+30) as separate signals",
+        "C. +30 for WhatsApp, replaces email score",
+        "D. +15 since it came from email"
+      ],
+      "correct_answer": "B",
+      "explanation": "The email click and WhatsApp initiation are separate intent signals. The email click shows engagement with email content, while the WhatsApp click shows intent to have a direct conversation. Both should be scored.",
+      "keywords": [
+        "cross-channel",
+        "email + whatsapp",
+        "dual scoring",
+        "separate signals"
+      ]
+    },
+    {
+      "id": 26,
+      "category": "behavioral_signals",
+      "difficulty": "medium",
+      "question": "A lead visits the website on Monday, returns Wednesday, and visits again Friday, spending 3 minutes each time. What is their cumulative behavioral score from visits and time?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +30",
+        "B. +40",
+        "C. +50",
+        "D. +60"
+      ],
+      "correct_answer": "B",
+      "explanation": "Website visits: +10 (first) + +10 (2+ visits) + +10 (3+ visits) = +30. Site time: 3 minutes each time qualifies for 2+ min (+10). Total: +30 + +10 = +40.",
+      "keywords": [
+        "cumulative",
+        "visits",
+        "site time",
+        "+40"
+      ]
+    },
+    {
+      "id": 27,
+      "category": "behavioral_signals",
+      "difficulty": "hard",
+      "question": "How should 'negative' behavioral signals (bouncing immediately, unsubscribing from email, marking email as spam) affect the lead score?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No effect - only positive signals count",
+        "B. Subtract points: bounce -5, unsubscribe -15, spam report -30, and adjust segment accordingly",
+        "C. Reset score to zero",
+        "D. Delete the lead"
+      ],
+      "correct_answer": "B",
+      "explanation": "Negative signals should reduce scores proportionally: quick bounces (-5) suggest low interest, unsubscribes (-15) indicate disengagement, spam reports (-30) signal strong negative sentiment. This prevents false-positive HOT leads.",
+      "keywords": [
+        "negative signals",
+        "subtraction",
+        "bounce",
+        "unsubscribe",
+        "spam report"
+      ]
+    },
+    {
+      "id": 28,
+      "category": "behavioral_signals",
+      "difficulty": "medium",
+      "question": "What email open milestone triggers the maximum +40 point score?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 3 email opens",
+        "B. 5+ email opens",
+        "C. 10 email opens",
+        "D. 20 email opens"
+      ],
+      "correct_answer": "B",
+      "explanation": "The escalating email open scoring reaches its maximum of +40 at 5+ opens. The progression is: +5 (1st), +10 (2nd), +15 (3rd), +20 (4th), +40 (5+).",
+      "keywords": [
+        "5+ opens",
+        "+40",
+        "maximum",
+        "email escalation"
+      ]
+    },
+    {
+      "id": 29,
+      "category": "behavioral_signals",
+      "difficulty": "medium",
+      "question": "A lead downloads the villa specs PDF and then immediately submits a contact form. In what order should these actions be scored?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Only score the form submission as it is higher",
+        "B. Score both: PDF download +20 and form submission +40 = +60 total",
+        "C. Average them: +30",
+        "D. Score only the first action chronologically"
+      ],
+      "correct_answer": "B",
+      "explanation": "Both actions represent distinct intent signals and should be scored independently. The PDF download shows research behavior while the form submission shows contact intent. Combined: +60.",
+      "keywords": [
+        "dual actions",
+        "independent scoring",
+        "+60",
+        "PDF + form"
+      ]
+    },
+    {
+      "id": 30,
+      "category": "behavioral_signals",
+      "difficulty": "hard",
+      "question": "How should the system handle score attribution when a lead arrives via a Meta ad, visits the website, and submits a form in a single session?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Score each distinct action in the session: Website visit (+10) + site time (if 2+ min: +10, if 5+ min: +15) + any page views (specs +10, etc.) + form submission (+40). Source attribution (Meta ad) is tracked separately for analytics but does not add score points directly. The session might generate +60-80 behavioral points. Additionally, demographic signals from the form (country, purpose, budget) add their respective points. A complete first session could yield 80-120+ total points, potentially reaching HOT or VERY HOT immediately.",
+      "explanation": "Single-session scoring must capture all distinct actions while maintaining source attribution for channel performance analysis.",
+      "keywords": [
+        "score",
+        "each",
+        "distinct",
+        "action",
+        "session",
+        "website",
+        "visit",
+        "site",
+        "time",
+        "page"
+      ]
+    },
+    {
+      "id": 31,
+      "category": "demographic_signals",
+      "difficulty": "easy",
+      "question": "Which countries add +10 demographic points to a lead's score?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Any country",
+        "B. Israel, UAE, Singapore, and USA",
+        "C. Philippines only",
+        "D. All Asian countries"
+      ],
+      "correct_answer": "B",
+      "explanation": "Leads from Israel (IL), UAE, Singapore (SG), and USA receive +10 demographic points. These are identified as high-value investor markets for the Panglao Prime Villas campaign.",
+      "keywords": [
+        "country",
+        "+10",
+        "IL",
+        "UAE",
+        "SG",
+        "USA"
+      ]
+    },
+    {
+      "id": 32,
+      "category": "demographic_signals",
+      "difficulty": "easy",
+      "question": "How many points does 'investment purpose' add to the demographic score?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +5",
+        "B. +10",
+        "C. +15",
+        "D. +25"
+      ],
+      "correct_answer": "B",
+      "explanation": "Purpose = investment adds +10 demographic points. This distinguishes investment-oriented leads from those browsing for vacation or personal use.",
+      "keywords": [
+        "+10",
+        "investment purpose",
+        "demographic"
+      ]
+    },
+    {
+      "id": 33,
+      "category": "demographic_signals",
+      "difficulty": "easy",
+      "question": "How many points does 'budget confirmed' add to the demographic score?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +10",
+        "B. +15",
+        "C. +20",
+        "D. +25"
+      ],
+      "correct_answer": "D",
+      "explanation": "Budget confirmed adds +25 demographic points, the highest single demographic signal. A confirmed budget indicates financial readiness and serious purchase intent.",
+      "keywords": [
+        "+25",
+        "budget confirmed",
+        "financial readiness"
+      ]
+    },
+    {
+      "id": 34,
+      "category": "demographic_signals",
+      "difficulty": "medium",
+      "question": "A lead from the Philippines with vacation purpose and no budget information. What is their demographic score?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 0 points",
+        "B. +10 points",
+        "C. +25 points",
+        "D. +35 points"
+      ],
+      "correct_answer": "A",
+      "explanation": "Philippines is not in the +10 country list (IL/UAE/SG/USA), vacation purpose does not add points (only investment does), and no budget confirmation means no +25. Total demographic: 0.",
+      "keywords": [
+        "philippines",
+        "vacation",
+        "zero demographic",
+        "no bonus"
+      ]
+    },
+    {
+      "id": 35,
+      "category": "demographic_signals",
+      "difficulty": "medium",
+      "question": "Why does the scoring model award +10 for country but +25 for budget confirmation?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Budget is harder to fake",
+        "B. Budget confirmation is a stronger purchase-readiness signal than country of origin; country indicates potential, budget confirms capability",
+        "C. Budget is worth more to the business",
+        "D. There is no specific rationale"
+      ],
+      "correct_answer": "B",
+      "explanation": "Country indicates market alignment (potential buyer pool), while confirmed budget demonstrates financial capability and readiness. The 2.5x weight reflects the much stronger predictive value of budget for conversion.",
+      "keywords": [
+        "budget vs country",
+        "readiness",
+        "capability",
+        "predictive value"
+      ]
+    },
+    {
+      "id": 36,
+      "category": "demographic_signals",
+      "difficulty": "hard",
+      "question": "A lead from UAE indicates they are interested in both investment and personal use, and their budget range is 'PHP 25M-35M'. How should this be scored?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Country +10, purpose +10, budget +25 = +45",
+        "B. Country +10, purpose +10 (investment mentioned), budget +25 (range covers both villas) = +45",
+        "C. Country +10, purpose +5 (mixed), budget +15 (uncertain) = +30",
+        "D. Cannot score - data is ambiguous"
+      ],
+      "correct_answer": "B",
+      "explanation": "Score the strongest signals: UAE (+10), investment purpose is present even if mixed (+10), budget range of PHP 25M-35M covers both villas (D at 28M, C at 30M) so budget is confirmed (+25). Total: +45.",
+      "keywords": [
+        "mixed purpose",
+        "budget range",
+        "strongest signal",
+        "UAE",
+        "+45"
+      ]
+    },
+    {
+      "id": 37,
+      "category": "demographic_signals",
+      "difficulty": "medium",
+      "question": "Should a lead from the Philippines receive fewer demographic points than an Israeli lead by default?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Yes - Filipino leads are always lower value",
+        "B. No - country scoring reflects target market alignment, not lead value; Filipino leads can accumulate higher behavioral scores",
+        "C. Filipino leads should not be scored at all",
+        "D. Both should receive equal country points"
+      ],
+      "correct_answer": "B",
+      "explanation": "Country scoring reflects market targeting (Israeli market is a primary overseas investor target), not intrinsic lead value. Filipino leads compensate through behavioral engagement and BDO financing access.",
+      "keywords": [
+        "market targeting",
+        "not value judgment",
+        "behavioral compensation"
+      ]
+    },
+    {
+      "id": 38,
+      "category": "demographic_signals",
+      "difficulty": "hard",
+      "question": "How should the demographic scoring handle a lead who provides conflicting information (e.g., claims Philippine residency but has +972 phone number)?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Score based on the strongest verified signal: (1) Phone country code is a harder-to-fake signal than self-reported residency, so +972 likely means Israeli. (2) Award country IL (+10) based on phone code. (3) Flag the conflict in the CRM for human review. (4) The lead may be an Israeli expat in Philippines - create a dual-market tag. (5) Do not penalize for conflicting data - it often indicates complex but genuine situations (expat, dual citizenship). (6) Use the conflict as a qualification question in follow-up.",
+      "explanation": "Conflicting demographic data should trigger investigation, not disqualification. Phone codes are generally more reliable than self-reported data.",
+      "keywords": [
+        "conflicting data",
+        "phone code",
+        "verification",
+        "flag",
+        "dual-market"
+      ]
+    },
+    {
+      "id": 39,
+      "category": "demographic_signals",
+      "difficulty": "medium",
+      "question": "A lead from Singapore (+10 country) with investment purpose (+10) but says their budget is only PHP 15M (below Villa D at PHP 32.5M). Should budget confirmed (+25) be awarded?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Yes - they confirmed a budget amount",
+        "B. No - the budget is below property prices, so it does not qualify as 'confirmed' for this product",
+        "C. Award partial points (+10)",
+        "D. Award full +25 and explain financing"
+      ],
+      "correct_answer": "B",
+      "explanation": "Budget confirmed (+25) should reflect budget alignment with the product. PHP 15M is below the minimum villa price. However, with BDO 70% LTV, PHP 15M may cover a down payment. Tag as 'financing-dependent' and do not award +25.",
+      "keywords": [
+        "budget below minimum",
+        "financing dependent",
+        "no +25",
+        "alignment"
+      ]
+    },
+    {
+      "id": 40,
+      "category": "demographic_signals",
+      "difficulty": "medium",
+      "question": "What demographic data should be captured but NOT directly scored?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Nothing - score everything",
+        "B. Age range, occupation, family status, preferred communication channel, and source (Meta/Google/organic)",
+        "C. Email address and phone number",
+        "D. Only the lead's name"
+      ],
+      "correct_answer": "B",
+      "explanation": "Age, occupation, family status, communication preference, and lead source are valuable for segmentation and personalization but don't directly predict purchase intent like country, purpose, and budget do.",
+      "keywords": [
+        "non-scored data",
+        "segmentation",
+        "personalization",
+        "enrichment"
+      ]
+    },
+    {
+      "id": 41,
+      "category": "pipeline_stages",
+      "difficulty": "easy",
+      "question": "How many pipeline stages are there in the lead management process?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 5",
+        "B. 7",
+        "C. 9",
+        "D. 12"
+      ],
+      "correct_answer": "C",
+      "explanation": "There are 9 pipeline stages: New Lead, Contacted, Qualified, Investment Presented, Reservation Discussed, Agreement Signed, Deposit Received, Construction, and Handover.",
+      "keywords": [
+        "9 stages",
+        "pipeline",
+        "stages"
+      ]
+    },
+    {
+      "id": 42,
+      "category": "pipeline_stages",
+      "difficulty": "easy",
+      "question": "What is the first pipeline stage when a lead enters the system?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Contacted",
+        "B. Qualified",
+        "C. New Lead",
+        "D. Prospect"
+      ],
+      "correct_answer": "C",
+      "explanation": "Every lead begins at the 'New Lead' stage upon entering the system, regardless of source (form, WhatsApp, ad click).",
+      "keywords": [
+        "New Lead",
+        "first stage",
+        "entry"
+      ]
+    },
+    {
+      "id": 43,
+      "category": "pipeline_stages",
+      "difficulty": "medium",
+      "question": "What criteria must be met to move a lead from 'New Lead' to 'Contacted'?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Lead fills out a form",
+        "B. A sales agent or automated system has made first meaningful contact with the lead and received a response",
+        "C. Lead visits the website",
+        "D. 24 hours have passed since lead creation"
+      ],
+      "correct_answer": "B",
+      "explanation": "The 'Contacted' stage requires verified two-way communication: the sales team or automation has reached the lead AND received a response confirming engagement.",
+      "keywords": [
+        "contacted",
+        "two-way",
+        "response",
+        "engagement"
+      ]
+    },
+    {
+      "id": 44,
+      "category": "pipeline_stages",
+      "difficulty": "medium",
+      "question": "What defines the transition from 'Qualified' to 'Investment Presented'?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Lead confirms they have money",
+        "B. The full investment package (villa details, ROI analysis, legal structures, financing options) has been presented to the lead",
+        "C. Lead says they are interested",
+        "D. A meeting has been scheduled"
+      ],
+      "correct_answer": "B",
+      "explanation": "Moving to 'Investment Presented' requires that the lead has received a comprehensive investment presentation covering villa specifics, ROI data, legal ownership options, and financing (BDO for PH).",
+      "keywords": [
+        "investment presented",
+        "full package",
+        "ROI",
+        "legal",
+        "financing"
+      ]
+    },
+    {
+      "id": 45,
+      "category": "pipeline_stages",
+      "difficulty": "hard",
+      "question": "Map the 9 pipeline stages to the lead score tiers. At which stage should a lead typically be in each tier?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Cold (0-30): New Lead stage only. Warm (31-70): Contacted and Qualified stages. Hot (71-120): Investment Presented and Reservation Discussed stages. Very Hot (121+): Agreement Signed, Deposit Received, and beyond. However, this is a guideline, not a rule - a lead can be HOT at New Lead stage (e.g., high-value form submission) or WARM at Reservation Discussed (if they cooled off). The score tier informs urgency and routing, while the pipeline stage tracks actual progress in the sales process.",
+      "explanation": "Score tiers and pipeline stages are complementary but independent dimensions. Score measures intent/engagement; pipeline tracks actual sales progress.",
+      "keywords": [
+        "cold",
+        "lead",
+        "stage",
+        "only",
+        "warm",
+        "contacted",
+        "qualified",
+        "stages",
+        "investment",
+        "presented"
+      ]
+    },
+    {
+      "id": 46,
+      "category": "pipeline_stages",
+      "difficulty": "medium",
+      "question": "What is the 'Reservation Discussed' stage and what amount is referenced?",
+      "type": "multiple_choice",
+      "options": [
+        "A. PHP 100,000 deposit discussed",
+        "B. PHP 200,000 (Israeli) or equivalent PHP reservation fee discussed with the lead",
+        "C. Full villa price negotiation",
+        "D. Monthly payment plan discussion"
+      ],
+      "correct_answer": "B",
+      "explanation": "The 'Reservation Discussed' stage means the specific reservation amount (PHP 200,000 for Israeli leads, or the PHP equivalent for Filipino leads) has been presented and discussed with the lead.",
+      "keywords": [
+        "reservation discussed",
+        "9,999",
+        "shekels",
+        "specific amount"
+      ]
+    },
+    {
+      "id": 47,
+      "category": "pipeline_stages",
+      "difficulty": "hard",
+      "question": "A lead is at 'Agreement Signed' stage but their engagement score has dropped to WARM (45) due to decay. Should they be treated as WARM or prioritized differently?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Treat as WARM - score is authoritative",
+        "B. Pipeline stage takes precedence for signed agreements; override decay for leads past Reservation Discussed, maintain high priority",
+        "C. Remove from pipeline",
+        "D. Reset to New Lead"
+      ],
+      "correct_answer": "B",
+      "explanation": "Once a lead has signed an agreement, their commitment level is proven regardless of engagement score. Pipeline stage should override decay for post-agreement leads. These leads need operational follow-up, not re-qualification.",
+      "keywords": [
+        "pipeline override",
+        "agreement signed",
+        "decay exception",
+        "commitment proven"
+      ]
+    },
+    {
+      "id": 48,
+      "category": "pipeline_stages",
+      "difficulty": "medium",
+      "question": "What triggers the transition from 'Deposit Received' to 'Construction' stage?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Time passing",
+        "B. Confirmation that the deposit has been received and the villa construction/finishing is actively in progress",
+        "C. Lead request",
+        "D. Automatic after 30 days"
+      ],
+      "correct_answer": "B",
+      "explanation": "The 'Construction' stage is triggered by confirmed deposit receipt AND active construction/finishing of the villa. This is a manual transition based on real-world project status.",
+      "keywords": [
+        "deposit confirmed",
+        "construction active",
+        "manual transition"
+      ]
+    },
+    {
+      "id": 49,
+      "category": "pipeline_stages",
+      "difficulty": "easy",
+      "question": "What is the final pipeline stage?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Deposit Received",
+        "B. Construction",
+        "C. Handover",
+        "D. Closed Won"
+      ],
+      "correct_answer": "C",
+      "explanation": "Handover is the final pipeline stage, marking the completion of the sale when the villa is physically handed over to the buyer.",
+      "keywords": [
+        "handover",
+        "final stage",
+        "completion"
+      ]
+    },
+    {
+      "id": 50,
+      "category": "pipeline_stages",
+      "difficulty": "hard",
+      "question": "Design a pipeline stage regression policy. When and how should a lead be moved backward in the pipeline?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Regression rules: (1) Qualified -> Contacted: if qualification criteria are found to be invalid (e.g., budget was misrepresented). (2) Investment Presented -> Qualified: if the lead requests to start over or significant new information changes the investment case. (3) Reservation Discussed -> Investment Presented: if the lead wants to reconsider the investment fundamentals before committing to reservation. (4) NEVER regress past Agreement Signed without legal review. (5) All regressions must be logged with reason, approved by sales manager, and the lead's score should be manually reviewed. (6) Regression does not reset the score - behavioral history is preserved.",
+      "explanation": "Pipeline regressions are rare but important. Clear policies prevent confusion and ensure legal compliance, especially for post-reservation stages.",
+      "keywords": [
+        "regression",
+        "rules",
+        "qualified",
+        "contacted",
+        "qualification",
+        "criteria",
+        "found",
+        "invalid",
+        "budget",
+        "misrepresented"
+      ]
+    },
+    {
+      "id": 51,
+      "category": "pipeline_stages",
+      "difficulty": "medium",
+      "question": "How should the 'Qualified' stage be defined for the Panglao Prime Villas campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Lead has visited the website",
+        "B. Lead has confirmed: name, contact info, country, investment interest, approximate budget aligned with villa pricing, and a timeline within 12 months",
+        "C. Lead has opened an email",
+        "D. Lead has been in the system for 7 days"
+      ],
+      "correct_answer": "B",
+      "explanation": "Qualification requires confirmed identity, verified contact, country (market), investment intent, budget alignment with PHP 32.5M-30M range (or BDO financing eligibility), and a reasonable timeline.",
+      "keywords": [
+        "qualified",
+        "criteria",
+        "budget alignment",
+        "timeline",
+        "verification"
+      ]
+    },
+    {
+      "id": 52,
+      "category": "pipeline_stages",
+      "difficulty": "medium",
+      "question": "What average time-in-stage should trigger an alert for the 'Contacted' stage?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 24 hours",
+        "B. 3-5 days - if a contacted lead has not moved to Qualified within this window, it needs attention",
+        "C. 30 days",
+        "D. No time limit"
+      ],
+      "correct_answer": "B",
+      "explanation": "3-5 days in 'Contacted' without progression to 'Qualified' suggests the qualification conversation has stalled. An alert prompts the sales team to re-engage or re-qualify.",
+      "keywords": [
+        "time-in-stage",
+        "alert",
+        "3-5 days",
+        "stalled"
+      ]
+    },
+    {
+      "id": 53,
+      "category": "prioritization",
+      "difficulty": "easy",
+      "question": "When two leads are both HOT (score 71+), how should they be prioritized?",
+      "type": "multiple_choice",
+      "options": [
+        "A. First-in, first-out",
+        "B. Higher raw score gets priority; if equal, the one who reached HOT more recently",
+        "C. Random",
+        "D. Alphabetical order"
+      ],
+      "correct_answer": "B",
+      "explanation": "Within the same tier, higher raw score indicates stronger intent. If scores are equal, recency of reaching HOT suggests the lead is currently more engaged.",
+      "keywords": [
+        "prioritization",
+        "raw score",
+        "recency",
+        "within tier"
+      ]
+    },
+    {
+      "id": 54,
+      "category": "prioritization",
+      "difficulty": "medium",
+      "question": "A VERY HOT lead (score 130) has been waiting 1.5 hours for contact. A new HOT lead (score 75) just submitted a form. Which lead should be contacted first?",
+      "type": "multiple_choice",
+      "options": [
+        "A. The new HOT lead - they just submitted",
+        "B. The VERY HOT lead - they are higher priority AND approaching the 2-hour SLA deadline",
+        "C. Contact both simultaneously",
+        "D. Wait until a second agent is available"
+      ],
+      "correct_answer": "B",
+      "explanation": "The VERY HOT lead takes priority for two reasons: higher tier AND imminent SLA breach (1.5h of 2h used). The HOT lead's 2-hour clock just started, providing more time.",
+      "keywords": [
+        "SLA",
+        "VERY HOT",
+        "priority",
+        "time remaining",
+        "2-hour deadline"
+      ]
+    },
+    {
+      "id": 55,
+      "category": "prioritization",
+      "difficulty": "hard",
+      "question": "The sales team has 3 agents available and 5 HOT leads awaiting contact. Design the assignment algorithm.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Assignment algorithm: (1) Sort all 5 leads by score descending (highest first), (2) Check time-to-SLA-breach for each (2-hour window), (3) If any lead is within 30 minutes of SLA breach, they get absolute priority regardless of score, (4) Assign top 3 leads to agents based on: score (primary), time waiting (secondary), market match (agent language capability), (5) Queue the remaining 2 leads with countdown alerts, (6) As agents complete contacts, auto-assign next in queue, (7) If no agent available within 30 minutes for any lead, escalate to manager. Tie-breaking: prefer leads with confirmed budget (+25), then investment purpose (+10), then recency.",
+      "explanation": "The algorithm balances score priority, SLA compliance, agent capability, and queue management to maximize conversion probability.",
+      "keywords": [
+        "assignment algorithm",
+        "score sort",
+        "SLA",
+        "agent matching",
+        "queue",
+        "escalation"
+      ]
+    },
+    {
+      "id": 56,
+      "category": "prioritization",
+      "difficulty": "medium",
+      "question": "Should a WARM lead from Israel (score 65, budget confirmed) be prioritized over a HOT lead from the Philippines (score 72, no budget confirmed)?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Yes - budget confirmed is more important",
+        "B. No - HOT tier always takes priority over WARM regardless of individual signals",
+        "C. They should be equal priority",
+        "D. Depends on the day of the week"
+      ],
+      "correct_answer": "B",
+      "explanation": "Tier-based routing is the primary prioritization: HOT (71+) always outranks WARM (31-70). The budget-confirmed WARM lead will receive appropriate nurturing, while the HOT lead gets immediate sales attention.",
+      "keywords": [
+        "tier priority",
+        "HOT > WARM",
+        "routing rules"
+      ]
+    },
+    {
+      "id": 57,
+      "category": "prioritization",
+      "difficulty": "medium",
+      "question": "How should leads be prioritized at the start of each business day?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Process in order they were received",
+        "B. Sort by: (1) SLA breaches from overnight, (2) VERY HOT leads, (3) HOT leads by score, (4) WARM leads with recent engagement",
+        "C. Random assignment",
+        "D. Newest leads first"
+      ],
+      "correct_answer": "B",
+      "explanation": "Morning prioritization should address: SLA breaches first (damage control), then VERY HOT (highest value), HOT by score (conversion potential), and WARM with recent engagement (momentum maintenance).",
+      "keywords": [
+        "morning priority",
+        "SLA breaches",
+        "tier order",
+        "engagement recency"
+      ]
+    },
+    {
+      "id": 58,
+      "category": "prioritization",
+      "difficulty": "hard",
+      "question": "A lead's score crosses from 68 (WARM) to 73 (HOT) at 11:00 PM PHT on a Friday. The 2-hour protocol requires contact by 1:00 AM Saturday. Business hours are Mon-Sat 9am-6pm. What should happen?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Wait until Saturday 9:00 AM",
+        "B. Trigger automated WhatsApp VIP flow immediately, send email, alert on-call agent; the 2-hour protocol overrides business hours for HOT leads",
+        "C. Send email only",
+        "D. Nothing until Monday"
+      ],
+      "correct_answer": "B",
+      "explanation": "The 2-hour HOT lead protocol overrides business hours. Automated channels (WhatsApp, email) engage immediately, and an on-call agent is alerted for personal follow-up.",
+      "keywords": [
+        "after hours",
+        "2-hour protocol",
+        "override",
+        "automated + agent"
+      ]
+    },
+    {
+      "id": 59,
+      "category": "prioritization",
+      "difficulty": "medium",
+      "question": "When multiple leads are in the same tier with the same score, what tiebreaker criteria should be used?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Random selection",
+        "B. Most recent activity, then budget confirmed status, then villa preference specified, then country",
+        "C. Alphabetical by name",
+        "D. Longest time in system"
+      ],
+      "correct_answer": "B",
+      "explanation": "Tiebreakers prioritize: (1) recency of activity (current engagement), (2) budget confirmed (financial readiness), (3) villa preference specified (decision clarity), (4) target country (market alignment).",
+      "keywords": [
+        "tiebreaker",
+        "recency",
+        "budget",
+        "villa preference",
+        "country"
+      ]
+    },
+    {
+      "id": 60,
+      "category": "prioritization",
+      "difficulty": "hard",
+      "question": "How should the prioritization system handle a lead who keeps oscillating between WARM and HOT (score fluctuating around 71) due to decay and new engagement?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Ignore the oscillation",
+        "B. Implement a grace period: once HOT, maintain HOT routing for 48 hours even if score dips below 71; track oscillation as a signal of sustained moderate interest",
+        "C. Lock them at WARM until they reach 85+",
+        "D. Remove them from scoring"
+      ],
+      "correct_answer": "B",
+      "explanation": "Oscillation around the boundary indicates genuine but moderate interest. A 48-hour grace period prevents confusing routing changes while the lead stabilizes. Frequent oscillation itself is a useful data point.",
+      "keywords": [
+        "oscillation",
+        "grace period",
+        "48 hours",
+        "boundary",
+        "stabilization"
+      ]
+    },
+    {
+      "id": 61,
+      "category": "prioritization",
+      "difficulty": "medium",
+      "question": "A COLD lead (score 15) submits a form (+40), pushing their score to 55 (WARM). Should they be contacted with the same urgency as a lead who has been WARM for a week?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Yes - score is score",
+        "B. No - the sudden jump from COLD to WARM via a form submission suggests they should be contacted MORE urgently than a steady WARM lead, as they are showing a fresh intent spike",
+        "C. Less urgently - they were just COLD",
+        "D. Wait to see if they stay WARM"
+      ],
+      "correct_answer": "B",
+      "explanation": "A velocity signal (rapid score increase) is a strong engagement indicator. The lead has just taken a decisive action. Contacting them during the intent peak maximizes conversion probability.",
+      "keywords": [
+        "velocity",
+        "rapid increase",
+        "intent spike",
+        "urgency",
+        "momentum"
+      ]
+    },
+    {
+      "id": 62,
+      "category": "prioritization",
+      "difficulty": "easy",
+      "question": "Which lead tier triggers the 2-hour contact protocol?",
+      "type": "multiple_choice",
+      "options": [
+        "A. WARM and above",
+        "B. HOT (71+) and VERY HOT (121+)",
+        "C. VERY HOT only",
+        "D. All leads"
+      ],
+      "correct_answer": "B",
+      "explanation": "The 2-hour contact protocol activates for HOT (71-120) and VERY HOT (121+) leads. These tiers indicate strong purchase intent requiring immediate sales engagement.",
+      "keywords": [
+        "2-hour protocol",
+        "HOT",
+        "VERY HOT",
+        "71+"
+      ]
+    },
+    {
+      "id": 63,
+      "category": "hot_lead_protocol",
+      "difficulty": "easy",
+      "question": "What is the maximum time allowed to make first contact with a HOT lead?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 30 minutes",
+        "B. 1 hour",
+        "C. 2 hours",
+        "D. 24 hours"
+      ],
+      "correct_answer": "C",
+      "explanation": "HOT leads (score 71+) must be contacted within 2 hours. This window balances urgency with operational feasibility.",
+      "keywords": [
+        "2 hours",
+        "HOT lead",
+        "first contact",
+        "SLA"
+      ]
+    },
+    {
+      "id": 64,
+      "category": "hot_lead_protocol",
+      "difficulty": "medium",
+      "question": "What actions should be taken immediately when a lead crosses the HOT threshold (71)?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Send an email",
+        "B. Alert sales team, trigger WhatsApp VIP flow, move to accelerated email track, log timestamp for SLA tracking, assign to sales agent",
+        "C. Wait for their next action",
+        "D. Add them to a call list for tomorrow"
+      ],
+      "correct_answer": "B",
+      "explanation": "HOT threshold crossing triggers a multi-channel response: sales alert, WhatsApp VIP (Flow 2), accelerated email, SLA clock start, and agent assignment. Speed is critical.",
+      "keywords": [
+        "threshold crossing",
+        "multi-channel",
+        "sales alert",
+        "VIP flow",
+        "SLA start"
+      ]
+    },
+    {
+      "id": 65,
+      "category": "hot_lead_protocol",
+      "difficulty": "medium",
+      "question": "What escalation should occur if a HOT lead has not been contacted within 90 minutes?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No escalation until 2 hours",
+        "B. Alert the backup sales agent and the sales manager; the lead is 30 minutes from SLA breach",
+        "C. Send another automated message",
+        "D. Move the lead back to WARM"
+      ],
+      "correct_answer": "B",
+      "explanation": "At 90 minutes (75% of SLA), escalation to backup agent and manager ensures the remaining 30 minutes are used effectively. This proactive escalation prevents SLA breaches.",
+      "keywords": [
+        "escalation",
+        "90 minutes",
+        "backup agent",
+        "manager",
+        "proactive"
+      ]
+    },
+    {
+      "id": 66,
+      "category": "hot_lead_protocol",
+      "difficulty": "hard",
+      "question": "A HOT lead (score 85) from Israel contacts via WhatsApp at 3:00 AM PHT (10:00 PM IST) on a Tuesday. Describe the complete 2-hour protocol execution.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Execution timeline: 3:00 AM PHT (10:00 PM IST): (1) Auto-trigger Flow 2 (VIP) in Hebrew, (2) Score confirms HOT status, (3) SLA clock starts - deadline 5:00 AM PHT. 3:01 AM: Push notification to on-call agent. 3:05 AM: If within WATI business hours (no - it's 3 AM PHT), auto-reply acknowledges and promises rapid response. Flow 2 provides immediate automated engagement. 3:15 AM: If no agent response, escalate to backup. 3:30 AM: If no agent, escalate to sales manager via SMS. 4:00 AM: If no human response, send personalized template message with booking link. 4:30 AM: Final escalation alert. 5:00 AM: SLA breach logged if no human contact made. Note: 10 PM IST is a reasonable hour in Israel, so the lead is likely awake and engaged.",
+      "explanation": "The protocol must execute across timezones. The lead is in Israeli evening (reasonable) while the PHT office is closed. Automation bridges the gap until a human agent responds.",
+      "keywords": [
+        "execution",
+        "timeline",
+        "auto",
+        "trigger",
+        "flow",
+        "hebrew",
+        "score",
+        "confirms",
+        "status",
+        "clock"
+      ]
+    },
+    {
+      "id": 67,
+      "category": "hot_lead_protocol",
+      "difficulty": "medium",
+      "question": "What should be documented for every HOT lead contact attempt?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Just the outcome",
+        "B. Timestamp of threshold crossing, each contact attempt (channel, time, agent), response received, SLA compliance status, and next action",
+        "C. Agent name only",
+        "D. Nothing - just contact them"
+      ],
+      "correct_answer": "B",
+      "explanation": "Full documentation enables SLA tracking, agent performance evaluation, protocol improvement, and provides context for future interactions with the lead.",
+      "keywords": [
+        "documentation",
+        "timestamp",
+        "attempts",
+        "SLA status",
+        "next action"
+      ]
+    },
+    {
+      "id": 68,
+      "category": "hot_lead_protocol",
+      "difficulty": "hard",
+      "question": "The HOT lead protocol has been breached (no contact within 2 hours) for 3 leads this week. What systemic response should be implemented?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Extend the SLA to 4 hours",
+        "B. Root cause analysis: check agent availability, timezone coverage gaps, escalation chain functionality; implement fixes such as additional on-call coverage, faster escalation triggers, or automated booking links",
+        "C. Accept the breach as normal",
+        "D. Reduce the HOT threshold to generate fewer HOT leads"
+      ],
+      "correct_answer": "B",
+      "explanation": "Repeated SLA breaches indicate systemic issues, not individual failures. Root cause analysis should identify whether the problem is coverage, escalation, volume, or process-related.",
+      "keywords": [
+        "systemic response",
+        "root cause",
+        "coverage gaps",
+        "process improvement"
+      ]
+    },
+    {
+      "id": 69,
+      "category": "hot_lead_protocol",
+      "difficulty": "medium",
+      "question": "How should the HOT lead protocol handle a lead who reaches 71+ points but has explicitly stated 'Do not call me'?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Call anyway - protocol overrides preference",
+        "B. Respect the preference: use WhatsApp and email for the 2-hour contact, note the restriction, do not call",
+        "C. Remove from HOT protocol entirely",
+        "D. Wait until they contact first"
+      ],
+      "correct_answer": "B",
+      "explanation": "Contact preferences must be respected. The 2-hour protocol can be fulfilled via WhatsApp and email without calling. The lead's preference is documented and all agents are informed.",
+      "keywords": [
+        "preference",
+        "do not call",
+        "alternative channels",
+        "respect",
+        "WhatsApp"
+      ]
+    },
+    {
+      "id": 70,
+      "category": "hot_lead_protocol",
+      "difficulty": "easy",
+      "question": "Does the 2-hour HOT lead protocol apply on weekends and holidays?",
+      "type": "true_false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "true",
+      "explanation": "The 2-hour protocol applies 24/7, 365 days a year. HOT leads don't follow business hours. On-call coverage must be available for HOT lead responses at all times.",
+      "keywords": [
+        "24/7",
+        "weekends",
+        "holidays",
+        "always active"
+      ]
+    },
+    {
+      "id": 71,
+      "category": "hot_lead_protocol",
+      "difficulty": "hard",
+      "question": "What is the expected conversion rate difference between HOT leads contacted within 2 hours vs those contacted after 24 hours?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No measurable difference",
+        "B. 2-hour contacts convert at roughly 3-7x the rate of 24-hour contacts for real estate investment leads",
+        "C. 24-hour contacts convert better because the lead had time to think",
+        "D. 10% difference at most"
+      ],
+      "correct_answer": "B",
+      "explanation": "Real estate lead response studies consistently show that speed-to-contact dramatically affects conversion. Leads contacted within the first 2 hours are 3-7x more likely to convert than those contacted after 24 hours.",
+      "keywords": [
+        "conversion rate",
+        "speed-to-contact",
+        "3-7x",
+        "response time impact"
+      ]
+    },
+    {
+      "id": 72,
+      "category": "hot_lead_protocol",
+      "difficulty": "medium",
+      "question": "What automated channels should engage a HOT lead while waiting for a human agent?",
+      "type": "multiple_choice",
+      "options": [
+        "A. None - wait for human only",
+        "B. WhatsApp VIP flow (Flow 2), accelerated welcome email, and SMS if available",
+        "C. Email only",
+        "D. Social media DM"
+      ],
+      "correct_answer": "B",
+      "explanation": "Multiple automated channels engage the lead immediately: WhatsApp Flow 2 provides interactive conversation, email delivers detailed content, and SMS serves as a backup notification. Human agent follows up personally.",
+      "keywords": [
+        "multi-channel",
+        "automated",
+        "VIP flow",
+        "email",
+        "SMS",
+        "bridge"
+      ]
+    },
+    {
+      "id": 73,
+      "category": "score_thresholds",
+      "difficulty": "easy",
+      "question": "At what score does a lead become WARM?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 21",
+        "B. 31",
+        "C. 41",
+        "D. 51"
+      ],
+      "correct_answer": "B",
+      "explanation": "The WARM tier begins at score 31. Leads scoring 31-70 are considered engaged but not yet ready for aggressive sales outreach.",
+      "keywords": [
+        "31",
+        "WARM",
+        "threshold"
+      ]
+    },
+    {
+      "id": 74,
+      "category": "score_thresholds",
+      "difficulty": "easy",
+      "question": "At what score does a lead become HOT?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 51",
+        "B. 61",
+        "C. 71",
+        "D. 81"
+      ],
+      "correct_answer": "C",
+      "explanation": "The HOT tier begins at score 71. This triggers the 2-hour contact protocol and accelerated sales engagement.",
+      "keywords": [
+        "71",
+        "HOT",
+        "threshold",
+        "2-hour protocol"
+      ]
+    },
+    {
+      "id": 75,
+      "category": "score_thresholds",
+      "difficulty": "easy",
+      "question": "At what score does a lead become VERY HOT?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 101",
+        "B. 111",
+        "C. 121",
+        "D. 131"
+      ],
+      "correct_answer": "C",
+      "explanation": "The VERY HOT tier begins at score 121. These are the highest-priority leads requiring the most intensive engagement.",
+      "keywords": [
+        "121",
+        "VERY HOT",
+        "threshold",
+        "highest priority"
+      ]
+    },
+    {
+      "id": 76,
+      "category": "score_thresholds",
+      "difficulty": "medium",
+      "question": "What engagement strategy should be used for COLD leads (0-30)?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Aggressive sales calls",
+        "B. Educational content nurturing via email, market awareness, lifestyle content, no direct sales pressure",
+        "C. Ignore them",
+        "D. Same treatment as HOT leads"
+      ],
+      "correct_answer": "B",
+      "explanation": "COLD leads need awareness and education before sales engagement. Email nurture with market data, lifestyle content, and Bohol/Panglao information builds interest without premature sales pressure.",
+      "keywords": [
+        "COLD",
+        "educational",
+        "nurturing",
+        "no pressure",
+        "awareness"
+      ]
+    },
+    {
+      "id": 77,
+      "category": "score_thresholds",
+      "difficulty": "medium",
+      "question": "What is the engagement strategy for WARM leads (31-70)?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Only email",
+        "B. Investment-focused content: ROI analysis, legal structures, income verification, WhatsApp engagement, monthly broadcasts",
+        "C. Daily phone calls",
+        "D. Ignore until they become HOT"
+      ],
+      "correct_answer": "B",
+      "explanation": "WARM leads are investment-interested and should receive targeted content: detailed ROI data, legal ownership information, Airbnb income verification, and periodic WhatsApp broadcasts to build conviction.",
+      "keywords": [
+        "WARM",
+        "investment content",
+        "ROI",
+        "legal",
+        "WhatsApp"
+      ]
+    },
+    {
+      "id": 78,
+      "category": "score_thresholds",
+      "difficulty": "hard",
+      "question": "Should the threshold values (31, 71, 121) be static or dynamically adjusted based on campaign performance data?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Start with static thresholds (31/71/121) and review after 30 days of data. Adjust based on: (1) If less than 5% of leads reach HOT, lower the threshold or improve lead quality, (2) If more than 30% of HOT leads fail to convert, the threshold may be too low - increase it, (3) If WARM leads are converting without reaching HOT, the nurture-to-sales handoff may need adjustment rather than threshold change, (4) Use conversion rate by score band (e.g., score 60-70 converts at X%, 71-80 at Y%) to find the natural breakpoint, (5) Review quarterly and adjust by no more than +/-10 points per adjustment to avoid disruption.",
+      "explanation": "Static thresholds provide initial structure. Data-driven adjustments optimize the model over time, but changes should be gradual and evidence-based.",
+      "keywords": [
+        "start",
+        "with",
+        "static",
+        "thresholds",
+        "review",
+        "after",
+        "days",
+        "data",
+        "adjust",
+        "based"
+      ]
+    },
+    {
+      "id": 79,
+      "category": "score_thresholds",
+      "difficulty": "medium",
+      "question": "A lead has a score of 70 (top of WARM). What single action would push them into HOT territory?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Opening an email (+5) - this would make them 75",
+        "B. Any action worth +1 or more would push them to 71+",
+        "C. Only a form submission (+40) can do it",
+        "D. They cannot become HOT from WARM"
+      ],
+      "correct_answer": "B",
+      "explanation": "At score 70, any additional scoring event pushes the lead past 71 into HOT territory. Even an email open (+5) would result in a score of 75. The 2-hour protocol would then activate.",
+      "keywords": [
+        "threshold crossing",
+        "any action",
+        "70 to 71",
+        "boundary"
+      ]
+    },
+    {
+      "id": 80,
+      "category": "score_thresholds",
+      "difficulty": "hard",
+      "question": "What is the optimal ratio of leads in each tier for a healthy pipeline?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Equal distribution across all tiers",
+        "B. COLD 50-60%, WARM 25-30%, HOT 10-15%, VERY HOT 2-5%",
+        "C. All leads should be HOT",
+        "D. COLD 90%, others 10%"
+      ],
+      "correct_answer": "B",
+      "explanation": "A healthy pipeline has a funnel shape: mostly COLD (awareness), substantial WARM (nurturing), smaller HOT (sales-ready), and rare VERY HOT (imminent purchase). This ratio ensures sustainable flow and manageable sales workload.",
+      "keywords": [
+        "healthy pipeline",
+        "funnel shape",
+        "ratio",
+        "distribution"
+      ]
+    },
+    {
+      "id": 81,
+      "category": "decay_rules",
+      "difficulty": "easy",
+      "question": "Why is score decay necessary in the lead scoring model?",
+      "type": "multiple_choice",
+      "options": [
+        "A. To reduce database size",
+        "B. To ensure scores reflect current engagement, not historical interest; a lead who was active 3 months ago but silent since should not remain HOT",
+        "C. To make the system more complex",
+        "D. It is not necessary"
+      ],
+      "correct_answer": "B",
+      "explanation": "Score decay prevents stale leads from occupying high-priority positions. A lead active 90 days ago is not as engaged as one active today. Decay ensures scores reflect current state.",
+      "keywords": [
+        "decay",
+        "current engagement",
+        "stale leads",
+        "recency"
+      ]
+    },
+    {
+      "id": 82,
+      "category": "decay_rules",
+      "difficulty": "medium",
+      "question": "What is a reasonable decay rate for the Panglao Prime Villas lead scoring model?",
+      "type": "multiple_choice",
+      "options": [
+        "A. -1 point per day",
+        "B. -5 points per week of inactivity, starting after 7 days of no engagement",
+        "C. -50% of score per month",
+        "D. No decay for real estate leads"
+      ],
+      "correct_answer": "B",
+      "explanation": "-5 points per week after 7 days of inactivity is moderate enough to not punish normal decision-making cycles (real estate takes time) while preventing indefinitely inflated scores.",
+      "keywords": [
+        "-5 per week",
+        "7 days",
+        "inactivity trigger",
+        "moderate decay"
+      ]
+    },
+    {
+      "id": 83,
+      "category": "decay_rules",
+      "difficulty": "hard",
+      "question": "Should decay rules differ for leads in different pipeline stages? If so, how?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Yes, decay should be stage-aware: (1) New Lead / Contacted: standard decay (-5/week after 7 days inactivity). (2) Qualified / Investment Presented: slower decay (-3/week after 14 days) as these leads have demonstrated commitment. (3) Reservation Discussed and beyond: minimal or no decay, as they have expressed concrete purchase intent. (4) Agreement Signed / Deposit Received / Construction / Handover: NO decay - these are committed buyers. (5) Decay should also be paused during known events: Shabbat periods for Israeli leads, holiday seasons, or when the lead has communicated a specific 'will decide by X date'.",
+      "explanation": "Pipeline stage reflects commitment level. Aggressive decay on committed leads would create false urgency and confuse the sales team.",
+      "keywords": [
+        "decay",
+        "should",
+        "stage",
+        "aware",
+        "lead",
+        "contacted",
+        "standard",
+        "week",
+        "after",
+        "days"
+      ]
+    },
+    {
+      "id": 84,
+      "category": "decay_rules",
+      "difficulty": "medium",
+      "question": "A HOT lead (score 80) goes inactive for 3 weeks. With decay of -5 per week after 7 days, what is their approximate score and tier?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 80 - no decay applied yet",
+        "B. 70 - decayed to top of WARM (2 weeks of decay after 7-day grace = -10)",
+        "C. 65 - decayed into WARM (2 weeks of active decay = -10, plus partial third week = -5)",
+        "D. 50 - severe decay"
+      ],
+      "correct_answer": "C",
+      "explanation": "3 weeks inactive: 7-day grace period (no decay), then 2 full weeks of decay (-5 x 2 = -10), score drops from 80 to 70. Partial third week (days 22-25 approx) adds another -5 for a total of approximately 65 (WARM).",
+      "keywords": [
+        "decay calculation",
+        "3 weeks",
+        "-15 total",
+        "HOT to WARM"
+      ]
+    },
+    {
+      "id": 85,
+      "category": "decay_rules",
+      "difficulty": "hard",
+      "question": "How should decay interact with re-engagement? If a decayed WARM lead (original HOT, now 55) opens an email, should the decay be reversed?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Yes - restore to original pre-decay score",
+        "B. No reversal - the email open adds its normal points (+5-40 depending on history) to the current decayed score, and the inactivity clock resets",
+        "C. Partial reversal - restore 50% of decayed points",
+        "D. Ignore the email open"
+      ],
+      "correct_answer": "B",
+      "explanation": "Decay reflects a real reduction in engagement over time. Re-engagement earns fresh points on top of the current score and resets the inactivity clock. Full reversal would negate the purpose of decay.",
+      "keywords": [
+        "re-engagement",
+        "no reversal",
+        "fresh points",
+        "clock reset",
+        "additive"
+      ]
+    },
+    {
+      "id": 86,
+      "category": "integration",
+      "difficulty": "easy",
+      "question": "What systems should the CRM lead scoring integrate with?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Email only",
+        "B. Website analytics, email platform (Brevo), WhatsApp (WATI), Meta Ads, Google Ads, and the sales CRM",
+        "C. Social media only",
+        "D. Accounting software"
+      ],
+      "correct_answer": "B",
+      "explanation": "The lead scoring system must integrate with all touchpoints: website (behavioral tracking), Brevo (email engagement), WATI (WhatsApp activity), ad platforms (source attribution), and the CRM (pipeline management).",
+      "keywords": [
+        "integration",
+        "multi-platform",
+        "website",
+        "Brevo",
+        "WATI",
+        "ads",
+        "CRM"
+      ]
+    },
+    {
+      "id": 87,
+      "category": "integration",
+      "difficulty": "medium",
+      "question": "How should website visit data be captured and sent to the lead scoring system?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Manual entry by sales team",
+        "B. JavaScript tracking pixel on primevilla.ph that fires events for page views, time on site, specific page visits, and button clicks, sent to the scoring engine via API",
+        "C. Check server logs daily",
+        "D. Ask leads which pages they visited"
+      ],
+      "correct_answer": "B",
+      "explanation": "Automated tracking via JavaScript on the website captures real-time behavioral data (page views, time on site, specific pages like specs/ROI calculator, CTA clicks) and sends it to the scoring engine.",
+      "keywords": [
+        "tracking pixel",
+        "JavaScript",
+        "real-time",
+        "API",
+        "behavioral capture"
+      ]
+    },
+    {
+      "id": 88,
+      "category": "integration",
+      "difficulty": "medium",
+      "question": "How should Brevo email engagement data flow into the lead scoring system?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Manual export weekly",
+        "B. Brevo webhooks fire on email open, click, bounce, and unsubscribe events, which update the lead score in real-time",
+        "C. Check Brevo dashboard daily and manually update scores",
+        "D. Only track email sends"
+      ],
+      "correct_answer": "B",
+      "explanation": "Brevo webhooks provide real-time event data (opens, clicks, bounces, unsubscribes) that automatically trigger score updates. This ensures the lead score always reflects the latest engagement.",
+      "keywords": [
+        "Brevo",
+        "webhooks",
+        "real-time",
+        "opens",
+        "clicks",
+        "automated"
+      ]
+    },
+    {
+      "id": 89,
+      "category": "integration",
+      "difficulty": "hard",
+      "question": "Design the data flow for a lead who clicks a Meta ad, visits the website, uses the ROI calculator, and submits a form - all in one session. What integrations fire and in what order?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Data flow: (1) Meta Ad click: Meta Pixel fires, UTM parameters captured in URL, source tagged as 'meta-ad-[campaign-id]'. (2) Website landing: tracking pixel fires page_view event, +10 website visit score, session starts, UTM source stored. (3) Time on page tracked: after 2 min, +10 event fires; after 5 min, +15 replaces +10. (4) ROI calculator used: custom event fires, +15 score, tag 'ROI-interested'. (5) Form submission: form handler captures all fields, +40 score, demographic signals extracted (country +10 if applicable, purpose +10 if investment, budget +25 if confirmed). (6) Total score calculated and tier determined. (7) If HOT (71+): trigger 2-hour protocol. (8) CRM record created with full journey data. (9) Email nurture sequence triggered. (10) WATI contact created if phone number provided. All events logged with timestamps for attribution reporting.",
+      "explanation": "A single session can trigger 5+ integration points across Meta, website analytics, form handler, CRM, email platform, and WhatsApp. Real-time processing is essential.",
+      "keywords": [
+        "data",
+        "flow",
+        "meta",
+        "click",
+        "pixel",
+        "fires",
+        "parameters",
+        "captured",
+        "source",
+        "tagged"
+      ]
+    },
+    {
+      "id": 90,
+      "category": "integration",
+      "difficulty": "medium",
+      "question": "How should the lead scoring system handle duplicate leads (same person, different sources)?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Create separate records for each source",
+        "B. Merge into a single record: combine scores from all sources, keep the earliest creation date, preserve all source attributions for analytics",
+        "C. Keep only the highest-scoring record",
+        "D. Delete duplicates"
+      ],
+      "correct_answer": "B",
+      "explanation": "Duplicate merging creates a unified lead profile: combined engagement history from all sources, merged scores, earliest entry date, and multi-source attribution preserved for ROI analysis.",
+      "keywords": [
+        "deduplication",
+        "merge",
+        "unified profile",
+        "multi-source",
+        "attribution"
+      ]
+    },
+    {
+      "id": 91,
+      "category": "integration",
+      "difficulty": "hard",
+      "question": "What happens if the WATI-to-CRM webhook fails? How should the system ensure no lead data is lost?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Accept the data loss",
+        "B. Implement retry logic with exponential backoff, dead letter queue for failed events, daily reconciliation between WATI contacts and CRM records, alert on sync failures",
+        "C. Manual backup only",
+        "D. Don't use webhooks - poll instead"
+      ],
+      "correct_answer": "B",
+      "explanation": "Reliable integration requires: retry logic (3-5 attempts with backoff), dead letter queue (store failed events for later processing), daily reconciliation (catch any missed events), and alert systems for persistent failures.",
+      "keywords": [
+        "webhook failure",
+        "retry",
+        "dead letter queue",
+        "reconciliation",
+        "reliability"
+      ]
+    },
+    {
+      "id": 92,
+      "category": "integration",
+      "difficulty": "medium",
+      "question": "How should Meta Ads conversion data feed back into lead scoring?",
+      "type": "multiple_choice",
+      "options": [
+        "A. It shouldn't - ads are separate from scoring",
+        "B. Track which ad/campaign generated each lead for source scoring, and use ad engagement metrics (video views, carousel swipes) as behavioral signals if available",
+        "C. Only track ad spend",
+        "D. Score all ad leads equally"
+      ],
+      "correct_answer": "B",
+      "explanation": "Ad-to-lead attribution enables source-quality analysis (which campaigns produce HOT leads?) and ad engagement metrics provide pre-landing behavioral signals that enrich the lead profile.",
+      "keywords": [
+        "Meta Ads",
+        "attribution",
+        "source quality",
+        "ad engagement",
+        "enrichment"
+      ]
+    },
+    {
+      "id": 93,
+      "category": "integration",
+      "difficulty": "hard",
+      "question": "How should the scoring system handle Google Ads click data differently from organic website visits?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No difference",
+        "B. Both add +10 for the visit, but ad clicks should carry source attribution (Google Ads campaign/keyword) for ROI analysis; organic visits may indicate stronger natural interest",
+        "C. Ad clicks score higher",
+        "D. Organic visits don't count"
+      ],
+      "correct_answer": "B",
+      "explanation": "The visit itself scores the same (+10), but the source metadata (ad campaign, keyword, cost) is critical for attribution and ROI analysis. Organic visits, while scoring the same, may indicate higher natural intent.",
+      "keywords": [
+        "Google Ads vs organic",
+        "same score",
+        "different attribution",
+        "ROI analysis"
+      ]
+    },
+    {
+      "id": 94,
+      "category": "integration",
+      "difficulty": "medium",
+      "question": "What data should the CRM send to Brevo for email segmentation based on lead scores?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Only email address",
+        "B. Score tier (Cold/Warm/Hot/Very Hot), villa preference, market segment, language, pipeline stage, and relevant tags",
+        "C. Full lead record including all scores",
+        "D. Nothing - Brevo handles its own segmentation"
+      ],
+      "correct_answer": "B",
+      "explanation": "Brevo needs actionable segmentation data: tier (email track selection), villa preference (content personalization), market/language (content and timing), pipeline stage (CTA appropriateness), and tags (targeting).",
+      "keywords": [
+        "CRM to Brevo",
+        "segmentation data",
+        "tier",
+        "villa",
+        "language",
+        "tags"
+      ]
+    },
+    {
+      "id": 95,
+      "category": "integration",
+      "difficulty": "hard",
+      "question": "Design the integration architecture that ensures lead scores are consistent across all platforms (CRM, Brevo, WATI, website) within 5 minutes of any scoring event.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Architecture: (1) Central scoring engine (CRM is the source of truth for scores). (2) All platforms send events to the scoring engine via webhooks/API. (3) Scoring engine processes events, updates the master score, and pushes the updated score to all platforms within 60 seconds. (4) Platforms: Website -> tracking API -> scoring engine. Brevo -> webhook -> scoring engine. WATI -> webhook -> scoring engine. (5) Scoring engine -> pushes to Brevo (contact attribute update), WATI (tag update), website (personalization cookie). (6) Daily full reconciliation job at 2:00 AM PHT syncs all platform data with the CRM master record. (7) Health check: alert if any platform's score data is more than 5 minutes stale.",
+      "explanation": "A hub-and-spoke architecture with the CRM as the central scoring authority ensures consistency. Webhook-driven updates provide near-real-time sync, with daily reconciliation as a safety net.",
+      "keywords": [
+        "architecture",
+        "central",
+        "scoring",
+        "engine",
+        "source",
+        "truth",
+        "scores",
+        "platforms",
+        "send",
+        "events"
+      ]
+    },
+    {
+      "id": 96,
+      "category": "scenario",
+      "difficulty": "hard",
+      "question": "SCENARIO: An Israeli lead (Sarah) clicks a Meta ad on Monday, visits the website for 6 minutes viewing the specs page and ROI calculator, but does not submit a form. On Wednesday, she opens the retargeting email. On Friday, she clicks the WhatsApp link in the email and starts a conversation. Calculate her score at each step and determine when the HOT protocol triggers.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Monday: Website visit (+10), 2+ visits (N/A - first visit), 5+ min site time (+15), specs view (+10), ROI calculator (+15) = 50 points. Tier: WARM. Tuesday: No activity, no decay (within 7-day grace). Wednesday: Email open (+5) = 55 points. Tier: WARM. Friday: Email click (tracking signal), WhatsApp click (+30) = 85 points. TIER CROSSES TO HOT (71+). HOT protocol triggers on Friday when she clicks WhatsApp. 2-hour SLA clock starts. Check: Is it before Israeli Shabbat (Friday sunset)? If yes, the automated WhatsApp flow engages her before Shabbat begins; human follow-up may need to wait until Sunday if she doesn't respond before sunset.",
+      "explanation": "This scenario demonstrates progressive scoring across multiple days, the importance of WhatsApp as a high-value signal (+30), and the intersection of HOT protocol with Shabbat considerations.",
+      "keywords": [
+        "monday",
+        "website",
+        "visit",
+        "visits",
+        "first",
+        "site",
+        "time",
+        "specs",
+        "view",
+        "calculator"
+      ]
+    },
+    {
+      "id": 97,
+      "category": "scenario",
+      "difficulty": "hard",
+      "question": "SCENARIO: A Filipino lead (Juan) submits a form stating investment purpose, budget PHP 25M (below villa prices), and timeline 1-3 months. He is from the Philippines. What is his initial score, tier, and recommended action?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Score calculation: Form submit (+40) + Country PH (not in +10 list = +0) + Purpose investment (+10) + Budget: PHP 25M is below villa prices (D=28M, C=30M) but with BDO 70% LTV, 30% down on Villa D = PHP 8.4M which is well within budget. Budget interpretation is ambiguous - do not award +25 until clarified. Initial score: 50 (WARM). Recommended actions: (1) Begin 14-email nurture sequence with BDO financing focus, (2) Tag as 'financing-needed', 'Villa D candidate' (closer to budget), (3) Include BDO 70% LTV information prominently in communications (Rule 7), (4) 1-3 month timeline indicates urgency - accelerate email cadence to every 2 days, (5) First email should address the financing angle to show purchase is possible, (6) If he engages further (opens emails, clicks links), score will rise toward HOT.",
+      "explanation": "This scenario tests handling of below-asking-price budgets, BDO financing awareness, Filipino market rules, and the importance of not immediately disqualifying leads.",
+      "keywords": [
+        "below budget",
+        "BDO financing",
+        "Filipino",
+        "50 WARM",
+        "financing-needed",
+        "Villa D"
+      ]
+    },
+    {
+      "id": 98,
+      "category": "scenario",
+      "difficulty": "hard",
+      "question": "SCENARIO: A lead has been WARM (score 55) for 6 weeks with steady email engagement but no WhatsApp or form activity. They suddenly download the PDF on a Monday and use the ROI calculator on Tuesday. What is happening and how should the system respond?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Score before action: 55 (WARM, maintained by email opens offsetting decay). Monday: PDF download (+20) = 75. CROSSES TO HOT. HOT protocol triggers immediately. Tuesday: ROI calculator (+15) = 90. Deeper into HOT. What's happening: After 6 weeks of passive education, the lead has entered an active research phase - they're now seriously evaluating the investment. This is a classic nurture-to-intent transition. System response: (1) Monday when score hits 75: trigger 2-hour protocol, WhatsApp VIP flow, sales alert, (2) Move to accelerated email track, (3) Tuesday ROI action confirms the trend - sales agent should reference ROI in follow-up, (4) Tag as 'research-spike' for sales context, (5) If not contacted by Tuesday, this is a critical SLA concern.",
+      "explanation": "This scenario demonstrates the nurture-to-intent transition, the importance of detecting velocity signals, and the urgency of responding to behavioral changes in long-nurture leads.",
+      "keywords": [
+        "score",
+        "before",
+        "action",
+        "warm",
+        "maintained",
+        "email",
+        "opens",
+        "offsetting",
+        "decay",
+        "monday"
+      ]
+    },
+    {
+      "id": 99,
+      "category": "scenario",
+      "difficulty": "hard",
+      "question": "SCENARIO: Two leads both reach HOT at the same time. Lead A: Israeli, score 95, budget confirmed, Villa C interest, 1-month timeline. Lead B: Filipino, score 75, no budget confirmed, Villa D interest, 6-month timeline. Only one sales agent is available. Who gets priority and why?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Lead B - Filipino leads are easier to close",
+        "B. Lead A - higher score (95 vs 75), budget confirmed (+25), shorter timeline (1 month vs 6 months), all indicating stronger and more imminent purchase intent",
+        "C. Flip a coin",
+        "D. Contact Lead B first because they need more help"
+      ],
+      "correct_answer": "B",
+      "explanation": "Lead A wins on every prioritization metric: higher raw score (95 vs 75), budget confirmed (financial readiness), shorter timeline (urgency), and villa preference specified (decision clarity). Lead B gets automated engagement while waiting.",
+      "keywords": [
+        "dual HOT",
+        "prioritization",
+        "score",
+        "budget",
+        "timeline",
+        "urgency"
+      ]
+    },
+    {
+      "id": 100,
+      "category": "scenario",
+      "difficulty": "hard",
+      "question": "SCENARIO: The campaign has been running for 30 days. The data shows: 500 total leads, 300 COLD, 150 WARM, 40 HOT, 10 VERY HOT. Of the HOT leads, 25 were contacted within 2 hours and 15 were not. Of the 25 contacted, 8 moved to Reservation Discussed. Of the 15 not contacted in time, 2 moved to Reservation Discussed. What insights should inform scoring model adjustments?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Key insights: (1) Pipeline ratio is healthy: 60% Cold, 30% Warm, 8% Hot, 2% Very Hot - close to the ideal funnel. (2) 2-hour SLA compliance is 62.5% (25/40) - needs improvement to target 90%+. (3) Contacted HOT leads convert at 32% (8/25) to Reservation Discussed; non-contacted at 13.3% (2/15). This is a 2.4x difference, confirming the value of the 2-hour protocol. (4) The 15 non-contacted HOT leads represent significant lost opportunity. (5) Scoring adjustments: review the 40 HOT leads' scoring paths to identify which signals best predict Reservation Discussed (were budget-confirmed leads more likely to convert?). (6) Consider whether the 150 WARM leads are stuck - check if decay is too aggressive or not aggressive enough. (7) The 2 unconverted-but-converted leads suggest some leads have such high intent that they self-progress even without timely contact - identify these self-motivated patterns.",
+      "explanation": "30-day campaign data provides actionable insights for both operational improvements (SLA compliance) and scoring model optimization (signal-to-conversion correlation).",
+      "keywords": [
+        "insights",
+        "pipeline",
+        "ratio",
+        "healthy",
+        "cold",
+        "warm",
+        "very",
+        "close",
+        "ideal",
+        "funnel"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "date": "2026-06-04",
+  "task": "Continue group posting with the bridge campaign post (Panglao Is Not The Next Thing) + bridge infrastructure image, as Bar Gvili, respecting Facebook daily posting limits",
+  "account": "Bar Gvili (personal profile)",
+  "post_used": "Campaign bridge/awareness post 'Panglao Is Not The Next Thing - It's Already Happening'. Long dashes converted to regular hyphens (Rule 2 + user preference). Added both WhatsApp numbers (Rule 4) and BDO financing (Rule 7). Image: community-agent/07_bridge_infrastructure.jpg",
+  "posts": [
+    {"group": 17, "name": "PROPERTY FOR SALE IN PH", "status": "POSTED_BY_USER_MANUALLY"},
+    {"group": 18, "name": "PH RE Buyers and Renters", "status": "LIVE"},
+    {"group": 19, "name": "Investors at Real Estate Philippines", "status": "LIVE"},
+    {"group": 20, "name": "The Real Estate Group Philippines", "status": "POSTED_PENDING_ADMIN_APPROVAL"},
+    {"group": 21, "name": "Philippines RE (Condo, Lots)", "status": "SKIPPED", "reason": "listing-only buy/sell group"},
+    {"group": 22, "name": "House and Lot For Sale PH", "status": "FAILED_DIALOG", "reason": "post dialog would not open reliably (browser instability)"},
+    {"group": 23, "name": "Real Estate Philippines - SALE or RENT OPEN TO ALL (255K)", "status": "LIVE"},
+    {"group": 24, "name": "OFW Global (146K)", "status": "LIVE"},
+    {"group": 36, "name": "STR Deals + Rental Property Financing & Strategy", "status": "BLOCKED_FB_ERROR", "reason": "Facebook returned 'Please try refreshing the page or closing and re-opening your browser window' on Post; likely a rate-limit / temporary posting block after the day's posts"}
+  ],
+  "totals_today": {"live": 4, "pending_admin_approval": 1, "posted_by_user": 1, "skipped": 1, "failed_or_blocked": 2},
+  "stop_reason": "Facebook returned a posting error (likely daily rate-limit / temporary block). Stopped group posting to protect the account, consistent with the instruction to respect Facebook daily posting limits.",
+  "notes": [
+    "Facebook auto-converted the numbered/bulleted lines into a single 1-15 numbered list (cosmetic). For future posts, avoid leading '1.'/'2.' and '- ' which FB auto-formats; use plain lines.",
+    "Continued as Bar Gvili (not the Page) to protect the page/ad account.",
+    "Two scheduled daily tasks remain active for paced ongoing posting (PH 08:00 PHT, Israel 10:00 IL time)."
+  ]
+}

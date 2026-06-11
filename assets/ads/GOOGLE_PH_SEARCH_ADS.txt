@@ -1,0 +1,85 @@
+[SIMULATION - NOT FOR LIVE DEPLOYMENT]
+
+=== GOOGLE_PH_SEARCH_ADS.txt ===
+Platform: Google Ads (Search)
+Market: Philippines
+Funnel: All (Awareness → Conversion)
+Campaign: Search-PH-Villas
+Budget: $13/day
+Audience: Search intent (property/investment keywords in English + Tagalog)
+Language: English (Tagalog intent), adjust by region
+Destination: primevilla.ph/ph
+
+---
+
+SEARCH KEYWORDS:
+
+High intent:
+- Panglao villa investment
+- Bohol luxury villas for sale
+- Airbnb property Bohol
+- Passive income real estate Philippines
+- Vacation rental investment
+- Panglao prime villas
+- PHP 28 million villas
+
+Medium intent:
+- Best properties Bohol
+- Investment properties Philippines
+- Real estate Bohol
+- Luxury homes Bohol
+
+---
+
+HEADLINE 1: Panglao Prime Villas - PHP 32.5M
+HEADLINE 2: PHP 395K Monthly Income | 17-25% ROI
+HEADLINE 3: Only 2 Units Left - Reserve Today
+
+DESCRIPTION: Luxury 4-bedroom villas in Bohol between JW Marriott and Mithi Resort. 60 seconds to Panglao Beach. Verified Airbnb income: PHP 395,000/month. BDO financing available. Schedule site visit: +639542555553
+
+DISPLAY URL: primevilla.ph/ph
+FINAL URL: primevilla.ph/ph?utm_source=google&utm_medium=search&utm_campaign=PH-villas
+
+---
+
+SITELINK EXTENSIONS:
+
+Sitelink 1:
+- Text: "Schedule Site Visit"
+- URL: primevilla.ph/schedule-visit
+
+Sitelink 2:
+- Text: "Call: +639542555553"
+- URL: Tel: +639542555553 (call extension)
+
+Sitelink 3:
+- Text: "Investment Details"
+- URL: primevilla.ph/investment
+
+---
+
+CALLOUT EXTENSIONS:
+
+- PHP 395,000/Month
+- BDO Financing Available
+- Proven Airbnb Track Record
+- 65% Occupancy Rate
+
+---
+
+BID STRATEGY: Maximize conversions
+TARGET ROAS: 350% (3.5:1)
+MAX CPC BID: PHP 250 (~4.50 USD)
+
+OPTIMIZATION NOTES:
+- Bid highest on "Panglao villa investment" and "Bohol luxury villas"
+- Broad match for general keywords, phrase match for brand terms
+- Daily budget: PHP 500 (~9 USD Meta + 4 USD Google)
+- Location targeting: Metro Manila (BGC, Makati), Cebu, Davao +20% bid boost
+- Schedule: 7am-11pm PHT (weekdays peak 7pm-9pm)
+- Mobile bid: +15% (mobile-first audience for comparison shopping)
+- Test "Call" extension heavily — phone inquiries convert better
+
+=== FX METADATA ===
+FX date used: 2026-04-14
+PHP-USD rate: 0.01663

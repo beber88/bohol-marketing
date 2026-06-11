@@ -1,0 +1,241 @@
+{
+  "updated_at": "2026-06-03T10:30:00+08:00",
+  "passing_score_required": 100,
+  "note": "External training map for internal agent certification simulations. Official credentials still require a human or company account on the issuing platform.",
+  "official_sources": {
+    "google_ads_certifications": {
+      "provider": "Google Skillshop",
+      "url": "https://support.google.com/google-ads/answer/9702955",
+      "coverage": [
+        "Google Ads Search",
+        "Google Ads Display",
+        "Google Ads Video",
+        "Shopping ads",
+        "Google Ads Apps"
+      ],
+      "standard": "Google states certification assessments require 80% or greater within 75 minutes and remain valid for one year."
+    },
+    "google_skillshop": {
+      "provider": "Google Skillshop",
+      "url": "https://skillshop.withgoogle.com/",
+      "coverage": [
+        "Google Ads",
+        "Google Marketing Platform",
+        "Google Analytics",
+        "Google Business Profile",
+        "Google Ad Manager"
+      ],
+      "standard": "Training and certification site for Google product skills."
+    },
+    "google_analytics_academy": {
+      "provider": "Google Analytics Help / Skillshop",
+      "url": "https://support.google.com/analytics/answer/15440208",
+      "coverage": [
+        "GA4 setup",
+        "data collection",
+        "reports and analysis",
+        "marketing measurement",
+        "product integrations"
+      ],
+      "standard": "Google Analytics offers four training courses and a certification on Skillshop."
+    },
+    "google_enhanced_conversions_for_leads": {
+      "provider": "Google Ads Help",
+      "url": "https://support.google.com/google-ads/answer/14274408",
+      "coverage": [
+        "offline conversion import",
+        "hashed user-provided data",
+        "Data Manager",
+        "Google tag",
+        "qualified lead goals",
+        "diagnostics"
+      ],
+      "standard": "Google recommends enhanced conversions for leads for durable, accurate offline lead measurement."
+    },
+    "meta_blueprint_digital_marketing": {
+      "provider": "Meta Blueprint",
+      "url": "https://www.facebook.com/business/learn/certification/exams/100-101-exam",
+      "coverage": [
+        "Meta technologies value",
+        "business presence",
+        "advertising fundamentals",
+        "create and manage ads",
+        "reporting"
+      ],
+      "standard": "Meta Digital Marketing Associate exam is 60 questions, 90 minutes, passing score 700/1000, valid 24 months."
+    },
+    "meta_performance_5": {
+      "provider": "Meta for Business",
+      "url": "https://www.facebook.com/business/ads/performance-marketing",
+      "coverage": [
+        "account simplification",
+        "automation",
+        "creative diversification",
+        "data quality",
+        "results validation"
+      ],
+      "standard": "Meta Performance 5 framework for maximizing performance with AI and measurement."
+    },
+    "meta_conversions_api": {
+      "provider": "Meta Business Help Center",
+      "url": "https://www.facebook.com/business/help/AboutConversionsAPI",
+      "coverage": [
+        "server-side event connection",
+        "website events",
+        "offline conversions",
+        "messaging events",
+        "ad optimization",
+        "measurement"
+      ],
+      "standard": "Conversions API creates a direct connection between marketing data and Meta optimization systems."
+    },
+    "meta_lead_ads": {
+      "provider": "Meta for Business",
+      "url": "https://www.facebook.com/business/ads/ad-objectives/lead-generation/lead-ads-with-forms",
+      "coverage": [
+        "instant forms",
+        "lead generation",
+        "CRM handoff",
+        "offline events",
+        "lead optimization"
+      ],
+      "standard": "Meta lead ads support forms and CRM flows for lead generation and optimization."
+    },
+    "meta_advantage_plus": {
+      "provider": "Meta for Business",
+      "url": "https://www.facebook.com/business/ads/meta-advantage-plus",
+      "coverage": [
+        "AI optimization",
+        "Advantage+ suite",
+        "automated audience",
+        "automated placements",
+        "budget efficiency"
+      ],
+      "standard": "Meta Advantage+ uses AI to optimize campaigns across audience, placement, and budget."
+    },
+    "hubspot_inbound_marketing": {
+      "provider": "HubSpot Academy",
+      "url": "https://academy.hubspot.com/courses/inbound-marketing",
+      "coverage": [
+        "content that educates",
+        "lead nurturing",
+        "automation",
+        "AI tools",
+        "reporting and performance"
+      ],
+      "standard": "HubSpot Inbound Marketing Certification includes 9 lessons, 24 videos, 7 quizzes, and about 4h 53m of training."
+    },
+    "hubspot_academy": {
+      "provider": "HubSpot Academy",
+      "url": "https://academy.hubspot.com/",
+      "coverage": [
+        "Inbound",
+        "Social Media",
+        "Email Marketing",
+        "Content Marketing",
+        "Inbound Sales"
+      ],
+      "standard": "HubSpot Academy provides globally recognized certifications and badges."
+    },
+    "ama_dmi_digital_marketing": {
+      "provider": "American Marketing Association / Digital Marketing Institute",
+      "url": "https://www.ama.org/certifications/digital-marketing-certification/",
+      "coverage": [
+        "GA4",
+        "social media marketing",
+        "PPC",
+        "AI in marketing",
+        "digital strategy",
+        "soft skills"
+      ],
+      "standard": "AMA and DMI Digital Marketing Pro provides dual credentials: PCM Digital Marketing and Certified Digital Marketing Professional."
+    },
+    "whatsapp_business_policy": {
+      "provider": "WhatsApp Business",
+      "url": "https://whatsappbusiness.com/policy/",
+      "coverage": [
+        "business messaging policy",
+        "user value",
+        "compliance",
+        "business-initiated messaging"
+      ],
+      "standard": "WhatsApp Business Messaging Policy governs compliant customer messaging."
+    },
+    "brevo_deliverability": {
+      "provider": "Brevo Help Center",
+      "url": "https://help.brevo.com/hc/en-us/sections/18475621546258-Deliverability",
+      "coverage": [
+        "deliverability",
+        "domain authentication",
+        "DKIM",
+        "DMARC",
+        "sender reputation"
+      ],
+      "standard": "Brevo deliverability guidance covers authentication and inbox placement controls."
+    }
+  },
+  "agent_tracks": {
+    "cmo_orchestrator": [
+      "ama_dmi_digital_marketing",
+      "google_ads_certifications",
+      "meta_performance_5",
+      "hubspot_inbound_marketing"
+    ],
+    "content_strategist": [
+      "hubspot_inbound_marketing",
+      "ama_dmi_digital_marketing",
+      "meta_blueprint_digital_marketing",
+      "google_skillshop"
+    ],
+    "copywriter": [
+      "hubspot_inbound_marketing",
+      "meta_blueprint_digital_marketing",
+      "ama_dmi_digital_marketing",
+      "whatsapp_business_policy"
+    ],
+    "performance_ads": [
+      "google_ads_certifications",
+      "google_enhanced_conversions_for_leads",
+      "meta_blueprint_digital_marketing",
+      "meta_performance_5",
+      "meta_conversions_api",
+      "meta_advantage_plus"
+    ],
+    "email_nurture": [
+      "hubspot_academy",
+      "hubspot_inbound_marketing",
+      "brevo_deliverability",
+      "ama_dmi_digital_marketing"
+    ],
+    "whatsapp_agent": [
+      "whatsapp_business_policy",
+      "meta_blueprint_digital_marketing",
+      "hubspot_inbound_marketing"
+    ],
+    "crm_lead_scorer": [
+      "hubspot_inbound_marketing",
+      "meta_lead_ads",
+      "google_enhanced_conversions_for_leads",
+      "google_analytics_academy"
+    ],
+    "analytics_reporter": [
+      "google_analytics_academy",
+      "google_ads_certifications",
+      "google_enhanced_conversions_for_leads",
+      "meta_conversions_api",
+      "meta_performance_5"
+    ],
+    "brand_guard": [
+      "meta_blueprint_digital_marketing",
+      "whatsapp_business_policy",
+      "google_ads_certifications",
+      "ama_dmi_digital_marketing"
+    ],
+    "sales_chatbot": [
+      "hubspot_inbound_marketing",
+      "hubspot_academy",
+      "whatsapp_business_policy",
+      "meta_lead_ads"
+    ]
+  }
+}

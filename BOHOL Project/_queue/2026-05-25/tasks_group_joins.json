@@ -1,0 +1,460 @@
+{
+  "task_type": "group_joins",
+  "created": "2026-05-25",
+  "total_groups": 41,
+  "instructions": "Join each group using the Blue Everest page admin's personal profile. After joining, check if you can post AS the Blue Everest page inside the group. For private groups, paste the join_template when asked 'Why do you want to join?'. After joining, fill in the GROUP_JOIN_CHECKLIST for each group.",
+  "important": "NEVER touch Blueprint Building Group. This campaign is Blue Everest ONLY.",
+  "simulation_note": "Simulation mode is ON. Join groups but do NOT post content yet.",
+
+  "tier_1_immediate": {
+    "label": "JOIN NOW - Highest Priority (relevance 90+)",
+    "tasks": [
+      {
+        "id": "GJ-001",
+        "priority": "CRITICAL",
+        "status": "PENDING",
+        "group_name": "PANGLAO, BOHOL PROPERTIES FOR SALE",
+        "group_url": "https://www.facebook.com/groups/143654442368930/",
+        "privacy": "public",
+        "market_segment": "bohol_local",
+        "language": "en",
+        "join_template": null,
+        "instructions": "Public group - click Join. No template needed. After joining, check posting rules and whether page posting is allowed.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules", "posting_culture"]
+      },
+      {
+        "id": "GJ-002",
+        "priority": "CRITICAL",
+        "status": "PENDING",
+        "group_name": "Bohol Properties For Sale",
+        "group_url": "https://www.facebook.com/groups/boholpropertiesforsale/",
+        "privacy": "public",
+        "market_segment": "bohol_local",
+        "language": "en",
+        "join_template": null,
+        "instructions": "Public group - click Join.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules", "posting_culture"]
+      },
+      {
+        "id": "GJ-003",
+        "priority": "CRITICAL",
+        "status": "PENDING",
+        "group_name": "ישראלים בפיליפינים (Israelis in the Philippines)",
+        "group_url": "https://www.facebook.com/groups/822687757789549/",
+        "privacy": "private",
+        "market_segment": "israeli_investors",
+        "language": "he",
+        "join_template": "שלום, אנחנו Blue Everest Asset Group, חברת פיתוח נדל\"ן שפועלת בפיליפינים עם פרויקטים בפנגלאו, בוהול. אנחנו מחפשים לשתף מידע על השקעות נדל\"ן באזור ולהתחבר עם משקיעים ישראלים שמתעניינים בשוק האסייתי.",
+        "instructions": "Private group - click Join and paste the Hebrew join_template when asked why you want to join.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules", "posting_culture"]
+      },
+      {
+        "id": "GJ-004",
+        "priority": "CRITICAL",
+        "status": "PENDING",
+        "group_name": "Panglao, Bohol - Expats & Locals",
+        "group_url": "https://www.facebook.com/groups/989842814391169/",
+        "privacy": "private",
+        "market_segment": "expats_ph",
+        "language": "en",
+        "join_template": "Blue Everest Asset Group is a Philippine-registered developer building luxury villas in Panglao, Bohol. We're interested in joining to share information about property ownership options for foreigners in the Philippines and to learn from the community's experiences.",
+        "instructions": "Private group - click Join and paste the English expat join_template.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules", "posting_culture"]
+      },
+      {
+        "id": "GJ-005",
+        "priority": "CRITICAL",
+        "status": "PENDING",
+        "group_name": "BOHOL Real Estate for Sale or Rent",
+        "group_url": "https://www.facebook.com/groups/175361136564347/",
+        "privacy": "public",
+        "market_segment": "bohol_local",
+        "language": "en",
+        "join_template": null,
+        "instructions": "Public group - click Join.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules", "posting_culture"]
+      },
+      {
+        "id": "GJ-006",
+        "priority": "CRITICAL",
+        "status": "PENDING",
+        "group_name": "Beachfront & Luxury Real Estate Philippines Buy, Sell & Rent",
+        "group_url": "https://www.facebook.com/groups/1439777089708009/",
+        "privacy": "private",
+        "market_segment": "ph_investors",
+        "language": "en",
+        "join_template": "We are Blue Everest Asset Group Holding Inc., a licensed real estate developer in the Philippines with active projects in Panglao, Bohol. We'd like to join this community to share market insights from the Bohol region and connect with fellow property investors.",
+        "instructions": "Private group - click Join and paste the English RE investor template. LUXURY + BEACHFRONT = perfect match.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules", "posting_culture"]
+      },
+      {
+        "id": "GJ-007",
+        "priority": "CRITICAL",
+        "status": "PENDING",
+        "group_name": "Israel Philippines Community",
+        "group_url": "https://www.facebook.com/groups/israel.philippines/",
+        "privacy": "private",
+        "market_segment": "israeli_investors",
+        "language": "he",
+        "join_template": "אנחנו Blue Everest Asset Group, חברה שמפתחת פרויקטי וילות יוקרה בפנגלאו, בוהול. פועלים בפיליפינים ומחפשים לתרום לקהילה עם תובנות על שוק הנדל\"ן המקומי ולהכיר משקיעים ישראלים פעילים באזור.",
+        "instructions": "Private group - click Join and paste the Hebrew Israel-PH template.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules", "posting_culture"]
+      },
+      {
+        "id": "GJ-008",
+        "priority": "CRITICAL",
+        "status": "PENDING",
+        "group_name": "עסקים בפיליפינים, יזמים ישראלים",
+        "group_url": "https://www.facebook.com/groups/1703314606626241/",
+        "privacy": "private",
+        "market_segment": "israeli_investors",
+        "language": "he",
+        "join_template": "שלום, אנחנו Blue Everest Asset Group, חברת פיתוח נדל\"ן שפועלת בפיליפינים עם פרויקטים בפנגלאו, בוהול. אנחנו מחפשים לשתף מידע על השקעות נדל\"ן באזור ולהתחבר עם משקיעים ישראלים שמתעניינים בשוק האסייתי.",
+        "instructions": "Private group - Hebrew business entrepreneurs in PH. High-value audience.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules", "posting_culture"]
+      }
+    ]
+  },
+
+  "tier_2_this_week": {
+    "label": "JOIN THIS WEEK - High Priority (relevance 75-89)",
+    "tasks": [
+      {
+        "id": "GJ-009",
+        "status": "PENDING",
+        "group_name": "Real Estate Investors Philippines",
+        "group_url": "https://www.facebook.com/groups/141622635854137/",
+        "privacy": "private",
+        "market_segment": "ph_investors",
+        "language": "en",
+        "join_template": "We are Blue Everest Asset Group Holding Inc., a licensed real estate developer in the Philippines with active projects in Panglao, Bohol. We'd like to join this community to share market insights from the Bohol region and connect with fellow property investors.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-010",
+        "status": "PENDING",
+        "group_name": "Bohol Friends & Expats",
+        "group_url": "https://www.facebook.com/groups/1516890185239016/",
+        "privacy": "private",
+        "market_segment": "expats_ph",
+        "language": "en",
+        "join_template": "Blue Everest Asset Group is a Philippine-registered developer building luxury villas in Panglao, Bohol. We're interested in joining to share information about property ownership options for foreigners in the Philippines and to learn from the community's experiences.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-011",
+        "status": "PENDING",
+        "group_name": "Panglao, Bohol - Residents & Friends",
+        "group_url": "https://www.facebook.com/groups/panglaoandboholresidentsandfriends/",
+        "privacy": "private",
+        "market_segment": "bohol_local",
+        "language": "en",
+        "join_template": "Blue Everest Asset Group is a Philippine-registered developer building luxury villas in Panglao, Bohol. We're interested in joining to share information about property ownership options for foreigners in the Philippines and to learn from the community's experiences.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-012",
+        "status": "PENDING",
+        "group_name": "OFW Property Investment PH",
+        "group_url": "https://www.facebook.com/groups/ofwpropertyinvestment/",
+        "privacy": "private",
+        "market_segment": "ph_investors",
+        "language": "en",
+        "join_template": "We are Blue Everest Asset Group Holding Inc., a licensed real estate developer in the Philippines with active projects in Panglao, Bohol. We'd like to join this community to share market insights from the Bohol region and connect with fellow property investors.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-013",
+        "status": "PENDING",
+        "group_name": "OFW Real Estate Properties Investment Philippines",
+        "group_url": "https://www.facebook.com/groups/848276462199962/",
+        "privacy": "private",
+        "market_segment": "ph_investors",
+        "language": "en",
+        "join_template": "We are Blue Everest Asset Group Holding Inc., a licensed real estate developer in the Philippines with active projects in Panglao, Bohol. We'd like to join this community to share market insights from the Bohol region and connect with fellow property investors.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-014",
+        "status": "PENDING",
+        "group_name": "Jewish & Israeli Real Estate Investors",
+        "group_url": "https://www.facebook.com/groups/426821971015316/",
+        "privacy": "private",
+        "market_segment": "israeli_investors",
+        "language": "he",
+        "join_template": "שלום, אנחנו Blue Everest Asset Group, חברת פיתוח נדל\"ן שפועלת בפיליפינים עם פרויקטים בפנגלאו, בוהול. אנחנו מחפשים לשתף מידע על השקעות נדל\"ן באזור ולהתחבר עם משקיעים ישראלים שמתעניינים בשוק האסייתי.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-015",
+        "status": "PENDING",
+        "group_name": "Investors at Real Estate Philippines Group",
+        "group_url": "https://www.facebook.com/groups/411813206075412/",
+        "privacy": "private",
+        "market_segment": "ph_investors",
+        "language": "en",
+        "join_template": "We are Blue Everest Asset Group Holding Inc., a licensed real estate developer in the Philippines with active projects in Panglao, Bohol. We'd like to join this community to share market insights from the Bohol region and connect with fellow property investors.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-016",
+        "status": "PENDING",
+        "group_name": "Buy, Sell, Rent & Invest - Real Estate Philippines",
+        "group_url": "https://www.facebook.com/groups/2669597893303292/",
+        "privacy": "public",
+        "market_segment": "ph_investors",
+        "language": "en",
+        "join_template": null,
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-017",
+        "status": "PENDING",
+        "group_name": "Airbnb Investing",
+        "group_url": "https://www.facebook.com/groups/airbnbinvesting/",
+        "privacy": "private",
+        "market_segment": "real_estate_global",
+        "language": "en",
+        "join_template": "Blue Everest Asset Group develops luxury villas in Panglao, Bohol (Philippines) with verified Airbnb rental income. We'd like to join this community to share our STR data and operational insights from the Philippine market.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-018",
+        "status": "PENDING",
+        "group_name": "Short Term Rental Property Investors (VRBO & Airbnb)",
+        "group_url": "https://www.facebook.com/groups/rentalpropertyinvestors/",
+        "privacy": "private",
+        "market_segment": "real_estate_global",
+        "language": "en",
+        "join_template": "Blue Everest Asset Group develops luxury villas in Panglao, Bohol (Philippines) with verified Airbnb rental income. We'd like to join this community to share our STR data and operational insights from the Philippine market.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-019",
+        "status": "PENDING",
+        "group_name": "Philippines Expats",
+        "group_url": "https://www.facebook.com/groups/philippineexpats/",
+        "privacy": "private",
+        "market_segment": "expats_ph",
+        "language": "en",
+        "join_template": "Blue Everest Asset Group is a Philippine-registered developer building luxury villas in Panglao, Bohol. We're interested in joining to share information about property ownership options for foreigners in the Philippines and to learn from the community's experiences.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-020",
+        "status": "PENDING",
+        "group_name": "Expats in the Philippines",
+        "group_url": "https://www.facebook.com/groups/expatsinthephilippines/",
+        "privacy": "private",
+        "market_segment": "expats_ph",
+        "language": "en",
+        "join_template": "Blue Everest Asset Group is a Philippine-registered developer building luxury villas in Panglao, Bohol. We're interested in joining to share information about property ownership options for foreigners in the Philippines and to learn from the community's experiences.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-021",
+        "status": "PENDING",
+        "group_name": "CHINESE PROPERTY INVESTORS",
+        "group_url": "https://www.facebook.com/groups/chinesepropertyinternationalinvestors/",
+        "privacy": "private",
+        "market_segment": "foreign_investors_chinese",
+        "language": "en",
+        "join_template": "We are Blue Everest Asset Group, a licensed Philippine real estate developer with luxury villa projects in Panglao, Bohol. We'd like to join this community to share information about Philippine property investment opportunities.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-022",
+        "status": "PENDING",
+        "group_name": "OFW Global",
+        "group_url": "https://www.facebook.com/groups/ofwinvestment/",
+        "privacy": "private",
+        "market_segment": "ph_investors",
+        "language": "en",
+        "join_template": "We are Blue Everest Asset Group Holding Inc., a licensed real estate developer in the Philippines with active projects in Panglao, Bohol. We'd like to join this community to share market insights from the Bohol region and connect with fellow property investors.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-023",
+        "status": "PENDING",
+        "group_name": "Philippine Real Estate Buyers and Renters Group",
+        "group_url": "https://www.facebook.com/groups/103556767959/",
+        "privacy": "private",
+        "market_segment": "ph_investors",
+        "language": "en",
+        "join_template": "We are Blue Everest Asset Group Holding Inc., a licensed real estate developer in the Philippines with active projects in Panglao, Bohol. We'd like to join this community to share market insights from the Bohol region and connect with fellow property investors.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-024",
+        "status": "PENDING",
+        "group_name": "Bohol Islander Group",
+        "group_url": "https://www.facebook.com/groups/521599198683159/",
+        "privacy": "private",
+        "market_segment": "bohol_local",
+        "language": "en",
+        "join_template": "We are Blue Everest Asset Group Holding Inc., a licensed real estate developer in the Philippines with active projects in Panglao, Bohol. We'd like to join this community to share market insights from the Bohol region and connect with fellow property investors.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-025",
+        "status": "PENDING",
+        "group_name": "Real Estate Philippines Buy, Sell & Rent",
+        "group_url": "https://www.facebook.com/groups/philippinerealestatecommunity/",
+        "privacy": "public",
+        "market_segment": "ph_investors",
+        "language": "en",
+        "join_template": null,
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-026",
+        "status": "PENDING",
+        "group_name": "REAL ESTATE PHILIPPINES",
+        "group_url": "https://www.facebook.com/groups/realestatepho/",
+        "privacy": "public",
+        "market_segment": "ph_investors",
+        "language": "en",
+        "join_template": null,
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-027",
+        "status": "PENDING",
+        "group_name": "The Real Estate Group Philippines",
+        "group_url": "https://www.facebook.com/groups/therealestategroupphilippines/",
+        "privacy": "public",
+        "market_segment": "ph_investors",
+        "language": "en",
+        "join_template": null,
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      },
+      {
+        "id": "GJ-028",
+        "status": "PENDING",
+        "group_name": "Short & Mid Term Rental Investors",
+        "group_url": "https://www.facebook.com/groups/Vrolio/",
+        "privacy": "private",
+        "market_segment": "real_estate_global",
+        "language": "en",
+        "join_template": "Blue Everest Asset Group develops luxury villas in Panglao, Bohol (Philippines) with verified Airbnb rental income. We'd like to join this community to share our STR data and operational insights from the Philippine market.",
+        "post_join_check": ["member_count", "page_posting_allowed", "posting_rules"]
+      }
+    ]
+  },
+
+  "tier_3_when_ready": {
+    "label": "JOIN WHEN READY - Lower Priority (relevance <75)",
+    "tasks": [
+      {
+        "id": "GJ-029",
+        "status": "PENDING",
+        "group_name": "Expats In The Philippines",
+        "group_url": "https://www.facebook.com/groups/940114692829610/",
+        "privacy": "private",
+        "market_segment": "expats_ph",
+        "language": "en",
+        "join_template": "Blue Everest Asset Group is a Philippine-registered developer building luxury villas in Panglao, Bohol. We're interested in joining to share information about property ownership options for foreigners in the Philippines and to learn from the community's experiences."
+      },
+      {
+        "id": "GJ-030",
+        "status": "PENDING",
+        "group_name": "Expats living in the Philippines",
+        "group_url": "https://www.facebook.com/groups/1554771104828714/",
+        "privacy": "private",
+        "market_segment": "expats_ph",
+        "language": "en",
+        "join_template": "Blue Everest Asset Group is a Philippine-registered developer building luxury villas in Panglao, Bohol. We're interested in joining to share information about property ownership options for foreigners in the Philippines and to learn from the community's experiences."
+      },
+      {
+        "id": "GJ-031",
+        "status": "PENDING",
+        "group_name": "PHILIPPINE REAL ESTATE - FOR SALE BY OWNER",
+        "group_url": "https://www.facebook.com/groups/2074935019317208/",
+        "privacy": "public",
+        "market_segment": "ph_investors",
+        "language": "en",
+        "join_template": null
+      },
+      {
+        "id": "GJ-032",
+        "status": "PENDING",
+        "group_name": "PROPERTY FOR SALE IN THE PHILIPPINES",
+        "group_url": "https://www.facebook.com/groups/1473743926177925/",
+        "privacy": "public",
+        "market_segment": "ph_investors",
+        "language": "en",
+        "join_template": null
+      },
+      {
+        "id": "GJ-033",
+        "status": "PENDING",
+        "group_name": "Philippines Real Estate (Condo, Lots, House & Lot)",
+        "group_url": "https://www.facebook.com/groups/421416569208434/",
+        "privacy": "public",
+        "market_segment": "ph_investors",
+        "language": "en",
+        "join_template": null
+      },
+      {
+        "id": "GJ-034",
+        "status": "PENDING",
+        "group_name": "Positive Minded Expats Living in the Philippines",
+        "group_url": "https://www.facebook.com/groups/1086657165988662/",
+        "privacy": "private",
+        "market_segment": "expats_ph",
+        "language": "en",
+        "join_template": "Blue Everest Asset Group is a Philippine-registered developer building luxury villas in Panglao, Bohol. We're interested in joining to share information about property ownership options for foreigners in the Philippines and to learn from the community's experiences."
+      },
+      {
+        "id": "GJ-035",
+        "status": "PENDING",
+        "group_name": "Expats & Filipinos in the Philippines",
+        "group_url": "https://www.facebook.com/groups/4178638039123645/",
+        "privacy": "private",
+        "market_segment": "expats_ph",
+        "language": "en",
+        "join_template": "Blue Everest Asset Group is a Philippine-registered developer building luxury villas in Panglao, Bohol. We're interested in joining to share information about property ownership options for foreigners in the Philippines and to learn from the community's experiences."
+      },
+      {
+        "id": "GJ-036",
+        "status": "PENDING",
+        "group_name": "Philippines Expats (2)",
+        "group_url": "https://www.facebook.com/groups/2598990977047327/",
+        "privacy": "private",
+        "market_segment": "expats_ph",
+        "language": "en",
+        "join_template": "Blue Everest Asset Group is a Philippine-registered developer building luxury villas in Panglao, Bohol. We're interested in joining to share information about property ownership options for foreigners in the Philippines and to learn from the community's experiences."
+      },
+      {
+        "id": "GJ-037",
+        "status": "PENDING",
+        "group_name": "House and Lot For Sale Philippines",
+        "group_url": "https://www.facebook.com/groups/1290730897715250/",
+        "privacy": "public",
+        "market_segment": "ph_investors",
+        "language": "en",
+        "join_template": null
+      },
+      {
+        "id": "GJ-038",
+        "status": "PENDING",
+        "group_name": "Bahay Finder Philippines",
+        "group_url": "https://www.facebook.com/groups/bahayfinder/",
+        "privacy": "public",
+        "market_segment": "ph_investors",
+        "language": "en",
+        "join_template": null
+      },
+      {
+        "id": "GJ-039",
+        "status": "PENDING",
+        "group_name": "International Citizens / Expats Worldwide",
+        "group_url": "https://www.facebook.com/groups/internationalcitizens/",
+        "privacy": "private",
+        "market_segment": "real_estate_global",
+        "language": "en",
+        "join_template": "We represent Blue Everest Asset Group, a real estate developer in the Philippines specializing in luxury investment villas in Panglao, Bohol - one of Southeast Asia's fastest-growing tourism destinations. We'd like to contribute data-driven insights about the Philippine property market."
+      }
+    ]
+  }
+}

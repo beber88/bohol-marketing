@@ -1,0 +1,70 @@
+{
+  "name": "FLOW_02_ISRAEL_SPECIFIC",
+  "description": "Hebrew-language flow for Israeli inquiry qualification",
+  "type": "interactive",
+  "language": "he",
+  "version": "2.0",
+  "trigger": "inbound_text_keywords",
+  "keywords": ["israel", "עברית", "shekel", "שקל"],
+  "created_at": "2026-04-14T09:15:00Z",
+  "nodes": [
+    {
+      "id": "hebrew_welcome",
+      "type": "text",
+      "content": "🏝️ !ברוכים הבאים לפנגלאו פריים ווילס\n\nתודה על ההתעניינות בווילות הלוקסוס שלנו בבוהול.\n\n?למה הגעת אלינו",
+      "buttons": [
+        {"label": "השקעה", "action": "go_to", "target": "hebrew_investment"},
+        {"label": "ביקור באתר", "action": "go_to", "target": "hebrew_visit"},
+        {"label": "מימון", "action": "go_to", "target": "hebrew_financing"},
+        {"label": "שאלות כלליות", "action": "go_to", "target": "hebrew_qa"}
+      ]
+    },
+    {
+      "id": "hebrew_investment",
+      "type": "text",
+      "content": "💰 פרטי השקעה:\n\nכל וילה:\n• ₪1,366,400 מחיר\n• ₪23,700 הכנסה חודשית מאיירבנבי\n• 17-25% תשואה שנתית\n• ניהול מלא כלול\n• 65% תפוסה מובטחת\n\n?מעוניין בפרטים נוספים",
+      "buttons": [
+        {"label": "כן, קרא לי", "action": "go_to", "target": "israel_qualify"},
+        {"label": "עוד שאלות", "action": "go_to", "target": "hebrew_qa"}
+      ]
+    },
+    {
+      "id": "hebrew_visit",
+      "type": "text",
+      "content": "🏠 ביקורים באתר:\n\nאנחנו מציעים סיורים וירטואליים וביקורים אישיים.\n\n?מתי תוכל?",
+      "buttons": [
+        {"label": "בשבוע הבא", "action": "go_to", "target": "israel_qualify"},
+        {"label": "בעוד חודש", "action": "go_to", "target": "israel_qualify"},
+        {"label": "עדיין חושב", "action": "go_to", "target": "hebrew_qa"}
+      ]
+    },
+    {
+      "id": "hebrew_financing",
+      "type": "text",
+      "content": "🏦 אפשרויות מימון לישראלים:\n\nישראלים משתמשים בעיקר:\n• משכנתא זרה מבנק בישראל\n• הלוואה לעסקים (עד 80%)\n• השקעה מעתודות פנסיוניות\n\nאנחנו מעזרים עם התיעוד השלם.\n?האם לך חוקר?\n?זמן לטיפול?",
+      "buttons": [
+        {"label": "כן, יש לי חוקר", "action": "go_to", "target": "israel_qualify"},
+        {"label": "צריך עזרה", "action": "go_to", "target": "israel_qualify"},
+        {"label": "תשלום במזומן", "action": "go_to", "target": "israel_qualify"}
+      ]
+    },
+    {
+      "id": "hebrew_qa",
+      "type": "text",
+      "content": "❓ שאלות נפוצות:\n\n1. כמה רחוק מהחוף? (60 שניות)\n2. ניהול כלול? (כן, מלא)\n3. תאגלתות? (65% בינוני)\n4. דמי הזמנה? (₪58K)\n\n?מה עוד תרצה לדעת",
+      "buttons": [
+        {"label": "עוד שאלות", "action": "go_to", "target": "hebrew_qa_list"},
+        {"label": "קבע שיחה", "action": "go_to", "target": "israel_qualify"}
+      ]
+    },
+    {
+      "id": "israel_qualify",
+      "type": "text",
+      "content": "מעולה! כדי לעזור לך בצורה הטובה ביותר:\n\n1. שמך?\n2. ישוב בישראל?\n3. ציר הזמנים? (זריד / 30 יום / חוקר)",
+      "buttons": [],
+      "capture_fields": ["name", "city_il", "timeline_il"]
+    }
+  ],
+  "export_format": "WATI",
+  "export_date": "2026-04-14T09:15:00Z"
+}

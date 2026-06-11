@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panglao Prime Villas - Campaign Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f9;
+      color: #2c3e50;
+      line-height: 1.6;
+      transition: direction 0.3s ease;
+    }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 20px 40px; }
+
+    /* Header */
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      padding: 16px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .header-left { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .header h1 { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.5px; }
+    .header-meta { font-size: 0.85rem; opacity: 0.85; }
+    .status-badge {
+      display: inline-block;
+      background: #c9a84c; color: #1e3c72;
+      padding: 3px 12px; border-radius: 12px;
+      font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+    .lang-toggle {
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+      color: #fff; padding: 8px 18px; border-radius: 6px;
+      cursor: pointer; font-size: 0.9rem; font-weight: 600;
+      transition: background 0.2s;
+    }
+    .lang-toggle:hover { background: rgba(255,255,255,0.25); }
+    .lang-toggle .active-lang { color: #c9a84c; font-weight: 700; }
+
+    /* Status Banner */
+    .status-banner {
+      background: linear-gradient(90deg, #fff3cd, #ffeaa7);
+      border: 1px solid #f0d060;
+      color: #856404;
+      padding: 12px 24px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .status-banner .icon { font-size: 1.2rem; }
+
+    /* Section */
+    .section {
+      margin-top: 28px;
+    }
+    .section-header {
+      display: flex; align-items: baseline; gap: 10px;
+      margin-bottom: 14px; flex-wrap: wrap;
+    }
+    .section-title {
+      font-size: 1.15rem; font-weight: 700; color: #1e3c72;
+      border-left: 4px solid #c9a84c; padding-left: 12px;
+    }
+    [dir="rtl"] .section-title {
+      border-left: none; border-right: 4px solid #c9a84c;
+      padding-left: 0; padding-right: 12px;
+    }
+    .section-info {
+      font-size: 0.8rem; color: #7f8c8d;
+      background: #f0f2f5; padding: 3px 10px; border-radius: 10px;
+    }
+
+    /* Cards */
+    .card {
+      background: #fff; border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+
+    /* KPI Grid */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .kpi-card { text-align: center; }
+    .kpi-value {
+      font-size: 2rem; font-weight: 800; color: #1e3c72;
+      line-height: 1.2;
+    }
+    .kpi-label { font-size: 0.85rem; color: #7f8c8d; margin-top: 4px; }
+    .kpi-sub { font-size: 0.78rem; color: #aaa; margin-top: 2px; }
+    .progress-bar-container {
+      background: #e8ecf1; border-radius: 6px; height: 8px;
+      margin-top: 8px; overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%; border-radius: 6px;
+      background: linear-gradient(90deg, #c9a84c, #e0c068);
+      transition: width 0.5s ease;
+    }
+
+    /* Budget Chart */
+    .budget-chart { display: flex; flex-direction: column; gap: 10px; }
+    .budget-row {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .budget-label {
+      min-width: 160px; font-size: 0.82rem; font-weight: 600;
+      color: #34495e; text-align: right;
+    }
+    [dir="rtl"] .budget-label { text-align: left; }
+    .budget-bar-track {
+      flex: 1; background: #e8ecf1; border-radius: 4px;
+      height: 22px; position: relative; overflow: hidden;
+    }
+    .budget-bar-fill {
+      height: 100%; border-radius: 4px;
+      display: flex; align-items: center; justify-content: flex-end;
+      padding-right: 6px; font-size: 0.7rem; color: #fff; font-weight: 600;
+      min-width: 30px; transition: width 0.5s ease;
+    }
+    .budget-amount { font-size: 0.78rem; color: #7f8c8d; min-width: 50px; text-align: right; }
+    [dir="rtl"] .budget-amount { text-align: left; }
+
+    /* Timeline */
+    .timeline-container { position: relative; padding: 10px 0; }
+    .timeline-track {
+      background: #e8ecf1; border-radius: 8px; height: 36px;
+      position: relative; overflow: hidden;
+      display: flex;
+    }
+    .timeline-phase {
+      height: 100%; display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 600; color: #fff;
+      position: relative;
+    }
+    .timeline-marker {
+      position: absolute; top: -6px; width: 3px; height: 48px;
+      background: #c9a84c; border-radius: 2px; z-index: 2;
+      box-shadow: 0 0 8px rgba(201,168,76,0.5);
+    }
+    .timeline-days {
+      display: flex; justify-content: space-between;
+      font-size: 0.7rem; color: #999; margin-top: 4px; padding: 0 2px;
+    }
+    .timeline-labels {
+      display: flex; margin-top: 8px; gap: 4px; flex-wrap: wrap;
+    }
+    .timeline-label-chip {
+      font-size: 0.7rem; padding: 2px 10px; border-radius: 10px;
+      color: #fff; font-weight: 600;
+    }
+
+    /* Platform Grid */
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+    .platform-card {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 16px;
+    }
+    .platform-dot {
+      width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+    }
+    .dot-active { background: #27ae60; box-shadow: 0 0 6px rgba(39,174,96,0.4); }
+    .dot-partial { background: #f39c12; box-shadow: 0 0 6px rgba(243,156,18,0.4); }
+    .dot-inactive { background: #bdc3c7; }
+    .platform-name { font-weight: 600; font-size: 0.88rem; }
+    .platform-status { font-size: 0.75rem; color: #999; }
+
+    /* Feed Table */
+    .feed-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    .feed-table thead { background: #1e3c72; color: #fff; }
+    .feed-table th { padding: 10px 12px; text-align: left; font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    [dir="rtl"] .feed-table th { text-align: right; }
+    .feed-table td { padding: 10px 12px; border-bottom: 1px solid #ecf0f1; vertical-align: middle; }
+    .feed-table tr:hover td { background: #f8f9fa; }
+    .feed-thumb {
+      width: 80px; height: 60px; object-fit: cover; border-radius: 4px;
+      border: 1px solid #ddd; background: #f0f0f0;
+    }
+    .feed-thumb-placeholder {
+      width: 80px; height: 60px; border-radius: 4px;
+      background: #e8ecf1; display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; color: #aaa;
+    }
+    .feed-copy {
+      max-width: 260px; font-size: 0.8rem; color: #555;
+      overflow: hidden; text-overflow: ellipsis;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+    }
+    .badge {
+      display: inline-block; padding: 2px 8px; border-radius: 10px;
+      font-size: 0.72rem; font-weight: 600;
+    }
+    .badge-pending { background: #ffeaa7; color: #856404; }
+    .badge-live { background: #d4edda; color: #155724; }
+    .badge-completed { background: #d1ecf1; color: #0c5460; }
+    .market-badge {
+      display: inline-block; padding: 1px 7px; border-radius: 8px;
+      font-size: 0.72rem; font-weight: 700;
+    }
+    .market-il { background: #dbeafe; color: #1e40af; }
+    .market-ph { background: #fef3c7; color: #92400e; }
+    .market-both { background: #e0e7ff; color: #3730a3; }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+    }
+    .gallery-item { text-align: center; }
+    .gallery-img {
+      width: 100%; height: 110px; object-fit: cover; border-radius: 6px;
+      border: 2px solid #e8ecf1; background: #f0f0f0;
+      transition: border-color 0.2s;
+    }
+    .gallery-img:hover { border-color: #c9a84c; }
+    .gallery-name { font-size: 0.72rem; color: #888; margin-top: 4px; word-break: break-all; }
+
+    /* Market Preview */
+    .preview-card {
+      padding: 24px;
+    }
+    .preview-card h3 { font-size: 1.05rem; color: #1e3c72; margin-bottom: 12px; border-bottom: 2px solid #c9a84c; padding-bottom: 6px; display: inline-block; }
+    .preview-copy {
+      background: #f8f9fa; border-left: 3px solid #c9a84c;
+      padding: 16px; border-radius: 0 6px 6px 0;
+      font-size: 0.9rem; line-height: 1.7;
+      margin: 12px 0; white-space: pre-wrap;
+    }
+    [dir="rtl"] .preview-copy {
+      border-left: none; border-right: 3px solid #c9a84c;
+      border-radius: 6px 0 0 6px;
+    }
+    .preview-price {
+      display: inline-block;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #c9a84c; font-weight: 700; font-size: 1.1rem;
+      padding: 6px 16px; border-radius: 6px; margin: 4px 4px 4px 0;
+    }
+    .preview-detail { font-size: 0.88rem; color: #555; margin: 6px 0; }
+
+    /* FX Panel */
+    .fx-panel {
+      display: flex; gap: 24px; flex-wrap: wrap; align-items: center;
+    }
+    .fx-rate {
+      background: #f8f9fa; border-radius: 6px; padding: 10px 18px;
+      font-size: 0.9rem;
+    }
+    .fx-rate strong { color: #1e3c72; }
+    .fx-note { font-size: 0.8rem; color: #999; font-style: italic; }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: rgba(255,255,255,0.8);
+      padding: 24px;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.85rem;
+      border-radius: 8px;
+    }
+    .footer a { color: #c9a84c; text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+    .footer-row { margin: 4px 0; }
+
+    /* Feed scroll */
+    .feed-scroll {
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header { flex-direction: column; text-align: center; }
+      .header-left { justify-content: center; }
+      .budget-label { min-width: 100px; font-size: 0.75rem; }
+      .feed-table { font-size: 0.78rem; }
+      .feed-table th, .feed-table td { padding: 8px 6px; }
+      .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+      .section-title { font-size: 1rem; }
+    }
+
+    /* Two-column layout for market previews */
+    .market-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 20px;
+    }
+    @media (max-width: 860px) {
+      .market-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-left">
+    <div>
+      <h1 data-t="campaignName">Panglao Prime Villas - Marketing Campaign</h1>
+      <div class="header-meta">
+        <span class="status-badge" data-t="statusBadge">PRE-LAUNCH</span>
+        <span style="margin-left:12px;" data-t="headerDate">April 15, 2026</span>
+      </div>
+    </div>
+  </div>
+  <button class="lang-toggle" id="langToggle" onclick="toggleLang()">
+    <span id="langEN">EN</span> | <span id="langHE">&nbsp;&#1506;&#1489;</span>
+  </button>
+</header>
+
+<!-- STATUS BANNER -->
+<div class="status-banner" id="statusBanner">
+  <span class="icon">&#9888;</span>
+  <span data-t="bannerText">SIMULATION MODE - Nothing published. All entries below are planned actions.</span>
+</div>
+
+<div class="container">
+
+  <!-- KPI CARDS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title" data-t="kpiTitle">Key Performance Indicators</div>
+      <div class="section-info" data-t="kpiInfo">The most important numbers at a glance</div>
+    </div>
+    <div class="kpi-grid">
+      <div class="card kpi-card">
+        <div class="kpi-value">$0 <span style="font-size:1rem;color:#aaa">/ $900</span></div>
+        <div class="kpi-label" data-t="kpiBudget">Budget Spent</div>
+        <div class="kpi-sub" data-t="kpiBudgetSub">$60/day planned across all platforms</div>
+        <div class="progress-bar-container"><div class="progress-bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="card kpi-card">
+        <div class="kpi-value">0 <span style="font-size:1rem;color:#aaa">/ 15</span></div>
+        <div class="kpi-label" data-t="kpiDay">Campaign Day</div>
+        <div class="kpi-sub" data-t="kpiDaySub">Pre-launch phase</div>
+        <div class="progress-bar-container"><div class="progress-bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="card kpi-card">
+        <div class="kpi-value">0</div>
+        <div class="kpi-label" data-t="kpiLeads">Total Leads</div>
+        <div class="kpi-sub" data-t="kpiLeadsSub">WhatsApp + Form submissions</div>
+      </div>
+      <div class="card kpi-card">
+        <div class="kpi-value">0</div>
+        <div class="kpi-label" data-t="kpiCampaigns">Active Campaigns</div>
+        <div class="kpi-sub" data-t="kpiCampaignsSub">Meta Ads + Google Ads</div>
+      </div>
+      <div class="card kpi-card">
+        <div class="kpi-value">2 <span style="font-size:1rem;color:#aaa">/ 7</span></div>
+        <div class="kpi-label" data-t="kpiPlatforms">Platforms Ready</div>
+        <div class="kpi-sub" data-t="kpiPlatformsSub">FB Page + FB Group IL active</div>
+        <div class="progress-bar-container"><div class="progress-bar-fill" style="width:28.5%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUDGET CHART -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title" data-t="budgetTitle">Budget Allocation</div>
+      <div class="section-info" data-t="budgetInfo">Total advertising spend across all platforms - $900 over 15 days</div>
+    </div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px;">
+        <div style="font-size:0.85rem;color:#555;"><strong data-t="budgetDailyPace">Daily Pace:</strong> $60/day</div>
+        <div style="font-size:0.85rem;color:#555;"><strong data-t="budgetRemaining">Remaining:</strong> $900</div>
+      </div>
+      <div class="budget-chart" id="budgetChart">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CAMPAIGN TIMELINE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title" data-t="timelineTitle">Campaign Timeline</div>
+      <div class="section-info" data-t="timelineInfo">Campaign progress through 5 phases over 15 days</div>
+    </div>
+    <div class="card">
+      <div class="timeline-container">
+        <div class="timeline-track">
+          <div class="timeline-phase" style="width:13.3%;background:#3498db;" title="Setup (Day 1-2)">Setup</div>
+          <div class="timeline-phase" style="width:20%;background:#2ecc71;" title="Awareness (Day 3-5)">Aware</div>
+          <div class="timeline-phase" style="width:20%;background:#e67e22;" title="Consideration (Day 6-8)">Consider</div>
+          <div class="timeline-phase" style="width:26.7%;background:#e74c3c;" title="Conversion (Day 9-12)">Convert</div>
+          <div class="timeline-phase" style="width:20%;background:#9b59b6;" title="Retarget (Day 13-15)">Retarget</div>
+          <div class="timeline-marker" id="timelineMarker" style="left:0%"></div>
+        </div>
+        <div class="timeline-days">
+          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span>
+        </div>
+        <div class="timeline-labels">
+          <span class="timeline-label-chip" style="background:#3498db;" data-t="phSetup">Setup</span>
+          <span class="timeline-label-chip" style="background:#2ecc71;" data-t="phAware">Awareness</span>
+          <span class="timeline-label-chip" style="background:#e67e22;" data-t="phConsider">Consideration</span>
+          <span class="timeline-label-chip" style="background:#e74c3c;" data-t="phConvert">Conversion</span>
+          <span class="timeline-label-chip" style="background:#9b59b6;" data-t="phRetarget">Retarget</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLATFORM STATUS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title" data-t="platformTitle">Platform Status</div>
+      <div class="section-info" data-t="platformInfo">Readiness of each marketing channel</div>
+    </div>
+    <div class="platform-grid" id="platformGrid">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+
+  <!-- CAMPAIGN FEED -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title" data-t="feedTitle">Campaign Feed / Activity Log</div>
+      <div class="section-info" data-t="feedInfo">Every action the system takes - posts, ads, emails, messages</div>
+    </div>
+    <div class="card feed-scroll">
+      <table class="feed-table">
+        <thead>
+          <tr>
+            <th data-t="fhDay">Day</th>
+            <th data-t="fhPlatform">Platform</th>
+            <th data-t="fhMarket">Market</th>
+            <th data-t="fhType">Type</th>
+            <th data-t="fhCopy">Copy</th>
+            <th data-t="fhImage">Image</th>
+            <th data-t="fhBudget">Budget</th>
+            <th data-t="fhStatus">Status</th>
+          </tr>
+        </thead>
+        <tbody id="feedBody">
+          <!-- Filled by JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CONTENT PREVIEW GALLERY -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title" data-t="galleryTitle">Content Preview Gallery</div>
+      <div class="section-info" data-t="galleryInfo">Property images that will be used across all campaigns</div>
+    </div>
+    <div class="card">
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MARKET PREVIEWS -->
+  <div class="market-grid">
+    <!-- ISRAELI MARKET -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-title" data-t="ilTitle">Israeli Market Preview</div>
+      </div>
+      <div class="card preview-card">
+        <h3 data-t="ilCopyHeader">Hebrew Ad Copy - Facebook / Group</h3>
+        <div class="preview-copy" dir="rtl" style="text-align:right; font-family:'Segoe UI',Arial,sans-serif;">וילה בבוהול - 1,450,000 ש"ח. פחות מדירת 3 חדרים בתל אביב.
+
+וילה D - 4 חדרי שינה, ג'קוזי על הגג, בריכה פרטית
+<strong>1,450,000 ש"ח</strong>
+
+וילה C - 4 חדרי שינה, גימור פרימיום, מגרש גדול יותר
+<strong>1,550,000 ש"ח</strong>
+
+3 מסלולים משפטיים לבעלות זרים.
+
+שריינו את הווילה שלכם ב-<strong>9,999 ש"ח</strong> בלבד!
+
+פנגלאו, בוהול, פיליפינים
+60 שניות מהחוף | שעה ורבע טיסה ממנילה
+
+וואטסאפ: +639542555553
+משרד: +639958565865</div>
+        <div style="margin-top:16px;">
+          <span class="preview-price">Villa D: &#8362;1,450,000</span>
+          <span class="preview-price">Villa C: &#8362;1,550,000</span>
+        </div>
+        <div class="preview-detail" style="margin-top:12px;">
+          <strong data-t="ilReservation">Reservation deposit:</strong> &#8362;9,999
+        </div>
+        <div class="preview-detail">
+          <strong>WhatsApp:</strong> +639542555553 | <strong data-t="ilOffice">Office:</strong> +639958565865
+        </div>
+      </div>
+    </div>
+
+    <!-- FILIPINO MARKET -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-title" data-t="phTitle">Filipino Market Preview</div>
+      </div>
+      <div class="card preview-card">
+        <h3 data-t="phCopyHeader">English Ad Copy - Facebook Page</h3>
+        <div class="preview-copy">4 bedrooms. Rooftop jacuzzi. 60 seconds to the beach. And it pays for itself.
+
+<strong>Villa D</strong> - 4 BR, rooftop jacuzzi, private pool
+<strong>PHP 28,000,000</strong> (approx. USD 465,640, rate 14/04/2026)
+
+<strong>Villa C</strong> - 4 BR, premium finishes, larger lot
+<strong>PHP 30,000,000</strong> (approx. USD 498,900, rate 14/04/2026)
+
+Monthly rental income: PHP 395,000
+BDO Bank financing available.
+
+Reserve with PHP 200,000 today.
+
+WhatsApp: +639542555553
+Office: +639958565865</div>
+        <div style="margin-top:16px;">
+          <span class="preview-price">Villa D: PHP 28,000,000</span>
+          <span class="preview-price">Villa C: PHP 30,000,000</span>
+        </div>
+        <div class="preview-detail" style="margin-top:12px;">
+          <strong data-t="phFinancing">Financing:</strong> BDO Bank financing available
+        </div>
+        <div class="preview-detail">
+          <strong>WhatsApp:</strong> +639542555553 | <strong data-t="phOffice">Office:</strong> +639958565865
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FX RATES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title" data-t="fxTitle">FX Rates</div>
+    </div>
+    <div class="card">
+      <div class="fx-panel">
+        <div class="fx-rate"><strong>PHP/USD:</strong> 0.01663 <span style="color:#999">(1 USD = 60.13 PHP)</span></div>
+        <div class="fx-rate"><strong>PHP/ILS:</strong> 0.050746 <span style="color:#999">(1 ILS = 19.71 PHP)</span></div>
+        <div class="fx-note" data-t="fxNote">IL market uses fixed monthly pricing in ILS. FX rates are indicative only.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-row"><strong>Panglao Prime Villas</strong> - Blue Everest Development</div>
+    <div class="footer-row">WhatsApp: <a href="https://wa.me/639542555553">+639542555553</a> (Marketing) | <a href="https://wa.me/639958565865">+639958565865</a> (Office)</div>
+    <div class="footer-row"><a href="https://facebook.com" target="_blank">Facebook Page</a></div>
+    <div class="footer-row" style="margin-top:8px;font-size:0.78rem;opacity:0.6;" data-t="footerGenerated">Dashboard generated April 15, 2026</div>
+  </div>
+
+</div>
+
+<script>
+// ============ TRANSLATIONS ============
+const T = {
+  en: {
+    campaignName: 'Panglao Prime Villas - Marketing Campaign',
+    statusBadge: 'PRE-LAUNCH',
+    headerDate: 'April 15, 2026',
+    bannerText: 'SIMULATION MODE - Nothing published. All entries below are planned actions.',
+    kpiTitle: 'Key Performance Indicators',
+    kpiInfo: 'The most important numbers at a glance',
+    kpiBudget: 'Budget Spent',
+    kpiBudgetSub: '$60/day planned across all platforms',
+    kpiDay: 'Campaign Day',
+    kpiDaySub: 'Pre-launch phase',
+    kpiLeads: 'Total Leads',
+    kpiLeadsSub: 'WhatsApp + Form submissions',
+    kpiCampaigns: 'Active Campaigns',
+    kpiCampaignsSub: 'Meta Ads + Google Ads',
+    kpiPlatforms: 'Platforms Ready',
+    kpiPlatformsSub: 'FB Page + FB Group IL active',
+    budgetTitle: 'Budget Allocation',
+    budgetInfo: 'Total advertising spend across all platforms - $900 over 15 days',
+    budgetDailyPace: 'Daily Pace:',
+    budgetRemaining: 'Remaining:',
+    timelineTitle: 'Campaign Timeline',
+    timelineInfo: 'Campaign progress through 5 phases over 15 days',
+    phSetup: 'Setup',
+    phAware: 'Awareness',
+    phConsider: 'Consideration',
+    phConvert: 'Conversion',
+    phRetarget: 'Retarget',
+    platformTitle: 'Platform Status',
+    platformInfo: 'Readiness of each marketing channel',
+    feedTitle: 'Campaign Feed / Activity Log',
+    feedInfo: 'Every action the system takes - posts, ads, emails, messages',
+    fhDay: 'Day', fhPlatform: 'Platform', fhMarket: 'Market', fhType: 'Type',
+    fhCopy: 'Copy', fhImage: 'Image', fhBudget: 'Budget', fhStatus: 'Status',
+    galleryTitle: 'Content Preview Gallery',
+    galleryInfo: 'Property images that will be used across all campaigns',
+    ilTitle: 'Israeli Market Preview',
+    ilCopyHeader: 'Hebrew Ad Copy - Facebook / Group',
+    ilReservation: 'Reservation deposit:',
+    ilOffice: 'Office:',
+    phTitle: 'Filipino Market Preview',
+    phCopyHeader: 'English Ad Copy - Facebook Page',
+    phFinancing: 'Financing:',
+    phOffice: 'Office:',
+    fxTitle: 'FX Rates',
+    fxNote: 'IL market uses fixed monthly pricing in ILS. FX rates are indicative only.',
+    footerGenerated: 'Dashboard generated April 15, 2026'
+  },
+  he: {
+    campaignName: '\u05E4\u05E0\u05D2\u05DC\u05D0\u05D5 \u05E4\u05E8\u05D9\u05D9\u05DD \u05D5\u05D9\u05DC\u05D5\u05EA - \u05DC\u05D5\u05D7 \u05D1\u05E7\u05E8\u05D4 \u05E9\u05D9\u05D5\u05D5\u05E7',
+    statusBadge: '\u05DC\u05E4\u05E0\u05D9 \u05D4\u05E9\u05E7\u05D4',
+    headerDate: '15 \u05D1\u05D0\u05E4\u05E8\u05D9\u05DC 2026',
+    bannerText: '\u05DE\u05E6\u05D1 \u05E1\u05D9\u05DE\u05D5\u05DC\u05E6\u05D9\u05D4 - \u05E9\u05D5\u05DD \u05D3\u05D1\u05E8 \u05DC\u05D0 \u05E4\u05D5\u05E8\u05E1\u05DD. \u05DB\u05DC \u05D4\u05E4\u05E2\u05D5\u05DC\u05D5\u05EA \u05DC\u05DE\u05D8\u05D4 \u05DE\u05EA\u05D5\u05DB\u05E0\u05E0\u05D5\u05EA.',
+    kpiTitle: '\u05DE\u05D3\u05D3\u05D9 \u05D1\u05D9\u05E6\u05D5\u05E2\u05D9\u05DD \u05DE\u05E8\u05DB\u05D6\u05D9\u05D9\u05DD',
+    kpiInfo: '\u05D4\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05D4\u05D7\u05E9\u05D5\u05D1\u05D9\u05DD \u05D1\u05D9\u05D5\u05EA\u05E8 \u05D1\u05DE\u05D1\u05D8 \u05D0\u05D7\u05D3',
+    kpiBudget: '\u05EA\u05E7\u05E6\u05D9\u05D1 \u05E9\u05E0\u05D5\u05E6\u05DC',
+    kpiBudgetSub: '$60/\u05D9\u05D5\u05DD \u05DE\u05EA\u05D5\u05DB\u05E0\u05DF \u05D1\u05DB\u05DC \u05D4\u05E4\u05DC\u05D8\u05E4\u05D5\u05E8\u05DE\u05D5\u05EA',
+    kpiDay: '\u05D9\u05D5\u05DD \u05E7\u05DE\u05E4\u05D9\u05D9\u05DF',
+    kpiDaySub: '\u05E9\u05DC\u05D1 \u05DC\u05E4\u05E0\u05D9 \u05D4\u05E9\u05E7\u05D4',
+    kpiLeads: '\u05E1\u05D4"\u05DB \u05DC\u05D9\u05D3\u05D9\u05DD',
+    kpiLeadsSub: '\u05D5\u05D5\u05D0\u05D8\u05E1\u05D0\u05E4 + \u05D8\u05E4\u05E1\u05D9\u05DD',
+    kpiCampaigns: '\u05E7\u05DE\u05E4\u05D9\u05D9\u05E0\u05D9\u05DD \u05E4\u05E2\u05D9\u05DC\u05D9\u05DD',
+    kpiCampaignsSub: 'Meta Ads + Google Ads',
+    kpiPlatforms: '\u05E4\u05DC\u05D8\u05E4\u05D5\u05E8\u05DE\u05D5\u05EA \u05DE\u05D5\u05DB\u05E0\u05D5\u05EA',
+    kpiPlatformsSub: '\u05D3\u05E3 FB + \u05E7\u05D1\u05D5\u05E6\u05EA FB IL \u05E4\u05E2\u05D9\u05DC\u05D9\u05DD',
+    budgetTitle: '\u05D4\u05E7\u05E6\u05D0\u05EA \u05EA\u05E7\u05E6\u05D9\u05D1',
+    budgetInfo: '\u05E1\u05D4"\u05DB \u05D4\u05D5\u05E6\u05D0\u05D5\u05EA \u05E4\u05E8\u05E1\u05D5\u05DD \u05D1\u05DB\u05DC \u05D4\u05E4\u05DC\u05D8\u05E4\u05D5\u05E8\u05DE\u05D5\u05EA - $900 \u05D1-15 \u05D9\u05DE\u05D9\u05DD',
+    budgetDailyPace: '\u05E7\u05E6\u05D1 \u05D9\u05D5\u05DE\u05D9:',
+    budgetRemaining: '\u05E0\u05D5\u05EA\u05E8:',
+    timelineTitle: '\u05E6\u05D9\u05E8 \u05D6\u05DE\u05DF \u05E7\u05DE\u05E4\u05D9\u05D9\u05DF',
+    timelineInfo: '\u05D4\u05EA\u05E7\u05D3\u05DE\u05D5\u05EA \u05D4\u05E7\u05DE\u05E4\u05D9\u05D9\u05DF \u05D1-5 \u05E9\u05DC\u05D1\u05D9\u05DD \u05DC\u05D0\u05D5\u05E8\u05DA 15 \u05D9\u05DE\u05D9\u05DD',
+    phSetup: '\u05D4\u05E7\u05DE\u05D4',
+    phAware: '\u05DE\u05D5\u05D3\u05E2\u05D5\u05EA',
+    phConsider: '\u05E9\u05D9\u05E7\u05D5\u05DC',
+    phConvert: '\u05D4\u05DE\u05E8\u05D4',
+    phRetarget: '\u05E8\u05D9\u05D8\u05E8\u05D2\u05D8',
+    platformTitle: '\u05DE\u05E6\u05D1 \u05E4\u05DC\u05D8\u05E4\u05D5\u05E8\u05DE\u05D5\u05EA',
+    platformInfo: '\u05DE\u05D5\u05DB\u05E0\u05D5\u05EA \u05DB\u05DC \u05E2\u05E8\u05D5\u05E5 \u05E9\u05D9\u05D5\u05D5\u05E7',
+    feedTitle: '\u05E4\u05D9\u05D3 \u05E7\u05DE\u05E4\u05D9\u05D9\u05DF / \u05D9\u05D5\u05DE\u05DF \u05E4\u05E2\u05D9\u05DC\u05D5\u05EA',
+    feedInfo: '\u05DB\u05DC \u05E4\u05E2\u05D5\u05DC\u05D4 \u05E9\u05D4\u05DE\u05E2\u05E8\u05DB\u05EA \u05DE\u05D1\u05E6\u05E2\u05EA - \u05E4\u05D5\u05E1\u05D8\u05D9\u05DD, \u05DE\u05D5\u05D3\u05E2\u05D5\u05EA, \u05D0\u05D9\u05DE\u05D9\u05D9\u05DC\u05D9\u05DD',
+    fhDay: '\u05D9\u05D5\u05DD', fhPlatform: '\u05E4\u05DC\u05D8\u05E4\u05D5\u05E8\u05DE\u05D4', fhMarket: '\u05E9\u05D5\u05E7', fhType: '\u05E1\u05D5\u05D2',
+    fhCopy: '\u05E7\u05D5\u05E4\u05D9', fhImage: '\u05EA\u05DE\u05D5\u05E0\u05D4', fhBudget: '\u05EA\u05E7\u05E6\u05D9\u05D1', fhStatus: '\u05E1\u05D8\u05D8\u05D5\u05E1',
+    galleryTitle: '\u05D2\u05DC\u05E8\u05D9\u05D9\u05EA \u05EA\u05D5\u05DB\u05DF',
+    galleryInfo: '\u05EA\u05DE\u05D5\u05E0\u05D5\u05EA \u05E0\u05DB\u05E1\u05D9\u05DD \u05E9\u05D9\u05E9\u05DE\u05E9\u05D5 \u05D1\u05DB\u05DC \u05D4\u05E7\u05DE\u05E4\u05D9\u05D9\u05E0\u05D9\u05DD',
+    ilTitle: '\u05EA\u05E6\u05D5\u05D2\u05D4 \u05DC\u05E9\u05D5\u05E7 \u05D4\u05D9\u05E9\u05E8\u05D0\u05DC\u05D9',
+    ilCopyHeader: '\u05E7\u05D5\u05E4\u05D9 \u05E4\u05E8\u05E1\u05D5\u05DD \u05D1\u05E2\u05D1\u05E8\u05D9\u05EA - \u05E4\u05D9\u05D9\u05E1\u05D1\u05D5\u05E7 / \u05E7\u05D1\u05D5\u05E6\u05D4',
+    ilReservation: '\u05E4\u05D9\u05E7\u05D3\u05D5\u05DF \u05D4\u05D6\u05DE\u05E0\u05D4:',
+    ilOffice: '\u05DE\u05E9\u05E8\u05D3:',
+    phTitle: '\u05EA\u05E6\u05D5\u05D2\u05D4 \u05DC\u05E9\u05D5\u05E7 \u05D4\u05E4\u05D9\u05DC\u05D9\u05E4\u05D9\u05E0\u05D9',
+    phCopyHeader: '\u05E7\u05D5\u05E4\u05D9 \u05E4\u05E8\u05E1\u05D5\u05DD \u05D1\u05D0\u05E0\u05D2\u05DC\u05D9\u05EA - \u05D3\u05E3 \u05E4\u05D9\u05D9\u05E1\u05D1\u05D5\u05E7',
+    phFinancing: '\u05DE\u05D9\u05DE\u05D5\u05DF:',
+    phOffice: '\u05DE\u05E9\u05E8\u05D3:',
+    fxTitle: '\u05E9\u05E2\u05E8\u05D9 \u05DE\u05D8\u05D1\u05E2',
+    fxNote: '\u05E9\u05D5\u05E7 IL \u05DE\u05E9\u05EA\u05DE\u05E9 \u05D1\u05DE\u05D7\u05D9\u05E8\u05D9\u05DD \u05E7\u05D1\u05D5\u05E2\u05D9\u05DD \u05D1\u05E9"\u05D7. \u05E9\u05E2\u05E8\u05D9 \u05D4\u05DE\u05D8\u05D1\u05E2 \u05DC\u05D4\u05EA\u05D9\u05D9\u05D7\u05E1\u05D5\u05EA \u05D1\u05DC\u05D1\u05D3.',
+    footerGenerated: '\u05DC\u05D5\u05D7 \u05D1\u05E7\u05E8\u05D4 \u05E0\u05D5\u05E6\u05E8 15 \u05D1\u05D0\u05E4\u05E8\u05D9\u05DC 2026'
+  }
+};
+
+// ============ PLATFORM DATA ============
+const platforms = [
+  { name: { en: 'Facebook Page', he: '\u05D3\u05E3 \u05E4\u05D9\u05D9\u05E1\u05D1\u05D5\u05E7' }, status: 'active', label: { en: 'Active', he: '\u05E4\u05E2\u05D9\u05DC' } },
+  { name: { en: 'FB Group IL', he: '\u05E7\u05D1\u05D5\u05E6\u05EA FB \u05D9\u05E9\u05E8\u05D0\u05DC' }, status: 'active', label: { en: 'Active', he: '\u05E4\u05E2\u05D9\u05DC' } },
+  { name: { en: 'Meta Ads', he: 'Meta Ads' }, status: 'partial', label: { en: 'Partial Setup', he: '\u05D4\u05E7\u05DE\u05D4 \u05D7\u05DC\u05E7\u05D9\u05EA' } },
+  { name: { en: 'Google Ads', he: 'Google Ads' }, status: 'inactive', label: { en: 'Not Setup', he: '\u05DC\u05D0 \u05DE\u05D5\u05E7\u05DD' } },
+  { name: { en: 'Brevo (Email)', he: 'Brevo (\u05D0\u05D9\u05DE\u05D9\u05D9\u05DC)' }, status: 'inactive', label: { en: 'Not Setup', he: '\u05DC\u05D0 \u05DE\u05D5\u05E7\u05DD' } },
+  { name: { en: 'WATI (WhatsApp)', he: 'WATI (\u05D5\u05D5\u05D0\u05D8\u05E1\u05D0\u05E4)' }, status: 'inactive', label: { en: 'Not Setup', he: '\u05DC\u05D0 \u05DE\u05D5\u05E7\u05DD' } },
+  { name: { en: 'Website', he: '\u05D0\u05EA\u05E8 \u05D0\u05D9\u05E0\u05D8\u05E8\u05E0\u05D8' }, status: 'inactive', label: { en: 'Not Deployed', he: '\u05DC\u05D0 \u05D4\u05D5\u05E2\u05DC\u05D4' } }
+];
+
+// ============ BUDGET DATA ============
+const budgetItems = [
+  { label: { en: 'IL-1 Awareness', he: 'IL-1 \u05DE\u05D5\u05D3\u05E2\u05D5\u05EA' }, amount: 75, color: '#3498db' },
+  { label: { en: 'IL-2 Consideration', he: 'IL-2 \u05E9\u05D9\u05E7\u05D5\u05DC' }, amount: 90, color: '#2980b9' },
+  { label: { en: 'IL-3 Conversion', he: 'IL-3 \u05D4\u05DE\u05E8\u05D4' }, amount: 120, color: '#1a5276' },
+  { label: { en: 'PH-1 Awareness', he: 'PH-1 \u05DE\u05D5\u05D3\u05E2\u05D5\u05EA' }, amount: 75, color: '#27ae60' },
+  { label: { en: 'PH-2 Consideration', he: 'PH-2 \u05E9\u05D9\u05E7\u05D5\u05DC' }, amount: 90, color: '#229954' },
+  { label: { en: 'PH-3 Conversion', he: 'PH-3 \u05D4\u05DE\u05E8\u05D4' }, amount: 120, color: '#1e8449' },
+  { label: { en: 'Google IL', he: 'Google IL' }, amount: 165, color: '#e67e22' },
+  { label: { en: 'Google PH', he: 'Google PH' }, amount: 165, color: '#d35400' }
+];
+
+// ============ FEED DATA ============
+const feedData = [
+  {
+    day: 4, platform: { en: 'Facebook Page', he: '\u05D3\u05E3 \u05E4\u05D9\u05D9\u05E1\u05D1\u05D5\u05E7' },
+    market: 'PH', type: { en: 'Organic Post', he: '\u05E4\u05D5\u05E1\u05D8 \u05D0\u05D5\u05E8\u05D2\u05E0\u05D9' },
+    copy: '4 bedrooms. Rooftop jacuzzi. Private pool. Your own paradise in Panglao, Bohol.',
+    image: '../EXTERIOR - D5/FRONT 2_AI.png', budget: '$0', status: 'pending'
+  },
+  {
+    day: 5, platform: { en: 'Facebook Page + Group', he: '\u05D3\u05E3 + \u05E7\u05D1\u05D5\u05E6\u05D4 FB' },
+    market: 'IL', type: { en: 'Organic Post', he: '\u05E4\u05D5\u05E1\u05D8 \u05D0\u05D5\u05E8\u05D2\u05E0\u05D9' },
+    copy: '\u05D5\u05D9\u05DC\u05D4 D - 4 \u05D7\u05D3\u05E8\u05D9 \u05E9\u05D9\u05E0\u05D4, \u05D2\'\u05E7\u05D5\u05D6\u05D9 \u05E2\u05DC \u05D4\u05D2\u05D2 - \u20AA1,450,000',
+    image: '../EXTERIOR - D5/FRONT 3_AI.png', budget: '$0', status: 'pending'
+  },
+  {
+    day: 4, platform: { en: 'Meta Ads', he: 'Meta Ads' },
+    market: 'PH', type: { en: 'Paid Ad (Awareness)', he: '\u05DE\u05D5\u05D3\u05E2\u05D4 \u05DE\u05DE\u05D5\u05DE\u05E0\u05EA (\u05DE\u05D5\u05D3\u05E2\u05D5\u05EA)' },
+    copy: 'PH-1 Awareness campaign - Panglao Prime Villas',
+    image: null, budget: '$15/day', status: 'pending'
+  },
+  {
+    day: 4, platform: { en: 'Google Search', he: '\u05D7\u05D9\u05E4\u05D5\u05E9 Google' },
+    market: 'Both', type: { en: 'Search Ad', he: '\u05DE\u05D5\u05D3\u05E2\u05EA \u05D7\u05D9\u05E4\u05D5\u05E9' },
+    copy: '"buy villa Bohol" / "villa for sale Philippines" keywords',
+    image: null, budget: '$25/day', status: 'pending'
+  },
+  {
+    day: 8, platform: { en: 'Facebook Page', he: '\u05D3\u05E3 \u05E4\u05D9\u05D9\u05E1\u05D1\u05D5\u05E7' },
+    market: 'PH', type: { en: 'Organic Post', he: '\u05E4\u05D5\u05E1\u05D8 \u05D0\u05D5\u05E8\u05D2\u05E0\u05D9' },
+    copy: 'Imagine waking up to this view every morning. Panglao Prime Villas.',
+    image: '../EXTERIOR - D5/AERIAL 2_AI.png', budget: '$0', status: 'pending'
+  },
+  {
+    day: 8, platform: { en: 'Facebook Page + Group', he: '\u05D3\u05E3 + \u05E7\u05D1\u05D5\u05E6\u05D4 FB' },
+    market: 'IL', type: { en: 'Organic Post', he: '\u05E4\u05D5\u05E1\u05D8 \u05D0\u05D5\u05E8\u05D2\u05E0\u05D9' },
+    copy: '\u05DB\u05D1\u05E8 20 \u05DE\u05E9\u05E4\u05D7\u05D5\u05EA \u05D1\u05D9\u05E7\u05E9\u05D5 \u05DE\u05D9\u05D3\u05E2 \u05D4\u05E9\u05D1\u05D5\u05E2 - \u05D4\u05D6\u05D3\u05DE\u05E0\u05D5\u05EA \u05DC\u05D4\u05E9\u05E7\u05E2\u05D4 \u05D1\u05E4\u05E0\u05D2\u05DC\u05D0\u05D5',
+    image: '../EXTERIOR - D5/AERIAL 3_AI.png', budget: '$0', status: 'pending'
+  },
+  {
+    day: 6, platform: { en: 'Meta Ads', he: 'Meta Ads' },
+    market: 'IL', type: { en: 'Paid Ad (Consideration)', he: '\u05DE\u05D5\u05D3\u05E2\u05D4 \u05DE\u05DE\u05D5\u05DE\u05E0\u05EA (\u05E9\u05D9\u05E7\u05D5\u05DC)' },
+    copy: 'IL-2 Consideration - Video walkthrough + pricing',
+    image: null, budget: '$20/day', status: 'pending'
+  },
+  {
+    day: 10, platform: { en: 'Meta Ads', he: 'Meta Ads' },
+    market: 'Both', type: { en: 'Paid Ad (Conversion)', he: '\u05DE\u05D5\u05D3\u05E2\u05D4 \u05DE\u05DE\u05D5\u05DE\u05E0\u05EA (\u05D4\u05DE\u05E8\u05D4)' },
+    copy: 'Conversion campaign - WhatsApp lead form',
+    image: '../EXTERIOR - D5/FRONT 1 AI.png', budget: '$25/day', status: 'pending'
+  }
+];
+
+// ============ GALLERY IMAGES ============
+const galleryImages = [
+  'FRONT 1 AI.png', 'FRONT 2_AI.png', 'FRONT 3_AI.png', 'FRONT 4_AI.png',
+  'AERIAL_AI.png', 'AERIAL 2_AI.png', 'AERIAL 3_AI.png',
+  'REAR 1_AI.png', 'REAR 2_AI.png', 'REAR 3_AI.png', 'REAR 4_AI.png', 'REAR 5_AI.png',
+  'M1_AI.png', 'M2 AI.png', 'M3_AI.png',
+  'PD1_AI.png', 'PD2_AI.png', 'PD3_AI.png',
+  'RD1_AI.png', 'RD2_AI.png', 'RD3_AI.png',
+  'TOP_AI.png'
+];
+
+// ============ STATE ============
+let currentLang = localStorage.getItem('ppv_lang') || 'en';
+
+// ============ RENDER FUNCTIONS ============
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('ppv_lang', lang);
+
+  const html = document.documentElement;
+  html.setAttribute('dir', lang === 'he' ? 'rtl' : 'ltr');
+  html.setAttribute('lang', lang === 'he' ? 'he' : 'en');
+
+  // Update all data-t elements
+  document.querySelectorAll('[data-t]').forEach(el => {
+    const key = el.getAttribute('data-t');
+    if (T[lang][key] !== undefined) {
+      el.textContent = T[lang][key];
+    }
+  });
+
+  // Toggle active lang highlight
+  const enSpan = document.getElementById('langEN');
+  const heSpan = document.getElementById('langHE');
+  enSpan.className = lang === 'en' ? 'active-lang' : '';
+  heSpan.className = lang === 'he' ? 'active-lang' : '';
+
+  renderPlatforms();
+  renderBudgetChart();
+  renderFeed();
+}
+
+function toggleLang() {
+  applyLang(currentLang === 'en' ? 'he' : 'en');
+}
+
+function renderPlatforms() {
+  const grid = document.getElementById('platformGrid');
+  grid.innerHTML = platforms.map(p => `
+    <div class="card platform-card">
+      <div class="platform-dot dot-${p.status}"></div>
+      <div>
+        <div class="platform-name">${p.name[currentLang]}</div>
+        <div class="platform-status">${p.label[currentLang]}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderBudgetChart() {
+  const total = 900;
+  const chart = document.getElementById('budgetChart');
+  chart.innerHTML = budgetItems.map(item => {
+    const pct = (item.amount / total * 100).toFixed(1);
+    return `
+      <div class="budget-row">
+        <div class="budget-label">${item.label[currentLang]}</div>
+        <div class="budget-bar-track">
+          <div class="budget-bar-fill" style="width:${pct}%;background:${item.color};">$${item.amount}</div>
+        </div>
+        <div class="budget-amount">$${item.amount}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderFeed() {
+  const tbody = document.getElementById('feedBody');
+  tbody.innerHTML = feedData.map(item => {
+    const marketClass = item.market === 'IL' ? 'market-il' : item.market === 'PH' ? 'market-ph' : 'market-both';
+    const statusClass = item.status === 'pending' ? 'badge-pending' : item.status === 'live' ? 'badge-live' : 'badge-completed';
+    const statusText = item.status === 'pending' ? (currentLang === 'he' ? '\u05D1\u05D4\u05DE\u05EA\u05E0\u05D4' : 'Pending') :
+                       item.status === 'live' ? (currentLang === 'he' ? '\u05E4\u05E2\u05D9\u05DC' : 'Live') :
+                       (currentLang === 'he' ? '\u05D4\u05D5\u05E9\u05DC\u05DD' : 'Completed');
+    const imgHtml = item.image
+      ? `<img class="feed-thumb" src="${item.image}" alt="Preview" onerror="this.outerHTML='<div class=\\'feed-thumb-placeholder\\'>No img</div>'">`
+      : `<div class="feed-thumb-placeholder">${currentLang === 'he' ? '\u05DC\u05DC\u05D0 \u05EA\u05DE\u05D5\u05E0\u05D4' : 'No image'}</div>`;
+
+    return `
+      <tr>
+        <td><strong>${currentLang === 'he' ? '\u05D9\u05D5\u05DD' : 'Day'} ${item.day}</strong></td>
+        <td>${item.platform[currentLang]}</td>
+        <td><span class="market-badge ${marketClass}">${item.market}</span></td>
+        <td>${item.type[currentLang]}</td>
+        <td><div class="feed-copy">${item.copy}</div></td>
+        <td>${imgHtml}</td>
+        <td>${item.budget}</td>
+        <td><span class="badge ${statusClass}">${statusText}</span></td>
+      </tr>
+    `;
+  }).join('');
+}
+
+function renderGallery() {
+  const grid = document.getElementById('galleryGrid');
+  grid.innerHTML = galleryImages.map(name => `
+    <div class="gallery-item">
+      <img class="gallery-img" src="../EXTERIOR - D5/${name}" alt="${name}"
+           onerror="this.style.background='#e8ecf1';this.alt='Not found'">
+      <div class="gallery-name">${name}</div>
+    </div>
+  `).join('');
+}
+
+// ============ INIT ============
+document.addEventListener('DOMContentLoaded', () => {
+  renderGallery();
+  applyLang(currentLang);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "date": "2026-06-03",
+  "agent": "CONTENT_POST",
+  "run_type": "scheduled_daily_content_post",
+  "fire_time_pht": "RUN_AT_GENERATION",
+  "mode_per_phase_guard": "LIVE (phase=LIVE, simulation=false, start_date=2026-05-28)",
+  "publishing_performed": false,
+  "reason_no_publish": "No _queue/2026-06-03/tasks_content.json exists. Zero content tasks to validate or post. Absolute rule: never improvise copy.",
+  "tasks_total": 0,
+  "tasks_passed": 0,
+  "tasks_failed": 0,
+  "failures": [],
+  "drafts_ready": [],
+  "blocking_concerns": [
+    "STATE FLIP unverified: campaign_state.json was changed to phase=LIVE / simulation=false (last_updated 2026-06-03T08:00:00+08:00). Yesterday's EVENING_WRAP heartbeat (2026-06-02) still recorded phase=PRE_LAUNCH / simulation=true / start_date=null and listed the same blockers as open. No task queue or sign-off accompanied the flip. Treating as needs human confirmation before any live publish.",
+    "Meta ad account flagged UNSETTLED: 'billing balance must be paid before ads deliver' - ads would not deliver even if live.",
+    "IL pricing still inconsistent across three sources: CLAUDE.md (Villa D 1,535,000 / Villa C 1,650,000), this state file (same), and scheduled-task SKILL rule #4 (1,420,888 / 1,522,380 / and a 1,450,000 / 1,550,000 table). Copy could not be validated against a single authoritative price table.",
+    "Meta Pixel 1599211187973958 and Google Tag AW-18095957436 not confirmed installed on live site - no conversion attribution.",
+    "10th consecutive day with no tasks_content.json (last real content queue: 2026-04-16)."
+  ],
+  "actions_taken": [
+    "Read campaign_state.json and applied phase guard.",
+    "Checked _queue/2026-06-03/ - absent.",
+    "Wrote this validation file.",
+    "Updated _status/alert_no_tasks.md.",
+    "Updated _status/cowork_heartbeat.json.",
+    "Did NOT modify campaign_state.json (outside CONTENT_POST write scope)."
+  ]
+}

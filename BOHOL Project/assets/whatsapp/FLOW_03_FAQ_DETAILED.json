@@ -1,0 +1,44 @@
+{
+  "name": "FLOW_03_FAQ_DETAILED",
+  "description": "Deep-dive FAQ flow for detailed questions",
+  "type": "text_based",
+  "version": "2.0",
+  "trigger": "manual_or_selection",
+  "created_at": "2026-04-14T09:30:00Z",
+  "qa_pairs": [
+    {
+      "question": "What's included in the management?",
+      "answer": "Full Airbnb management includes:\n• Guest communication and booking\n• Cleaning and maintenance\n• All supplies (linens, toiletries)\n• 24/7 emergency support\n• Property photography/updates\n• Reporting and income transfers\n\nYour role: None. We handle everything."
+    },
+    {
+      "question": "What are the tax implications?",
+      "answer": "Tax details (varies by country):\n– Philippines: VAT and income tax apply\n– Israel: Capital gains + ongoing income tax\n– RECOMMENDED: Consult your accountant for specifics\n\nWe provide all income statements and documentation for your tax filing."
+    },
+    {
+      "question": "Can I use the villa for personal stays?",
+      "answer": "Yes, with conditions:\n• 14 days/year reserved for owner use\n• Book in advance (gaps in Airbnb calendar)\n• Outside high-occupancy periods (summer trades)\n• No additional cost to owner\n\nThis is negotiable in the purchase agreement."
+    },
+    {
+      "question": "How does the rental booking process work?",
+      "answer": "Fully automated:\n1. Guest books on Airbnb\n2. System notifies management company\n3. Management handles check-in/check-out\n4. You receive monthly payment to your account\n\nYou get real-time reports in the dashboard."
+    },
+    {
+      "question": "What are maintenance costs?",
+      "answer": "Standard maintenance (included in management):\n• Pool cleaning: 2x per month\n• General upkeep: Preventative\n• Major repairs: Built into reserve fund\n\nReserve fund: 10% of revenue set aside annually.\nYou receive 90% of income."
+    },
+    {
+      "question": "What if occupancy drops?",
+      "answer": "We guarantee:\n• 65% occupancy floor (contractual)\n• If below 65% → we supplement income\n• Happens <1% of the time historically\n• Safety net ensures stable returns"
+    },
+    {
+      "question": "Can I sell my villa later?",
+      "answer": "Yes, full ownership:\n• You own the property outright\n• Can sell anytime, no restrictions\n• Management contract ends at sale\n• We assist with buyer qualification\n• Historical appreciation: 3-5% annually"
+    },
+    {
+      "question": "What about insurance coverage?",
+      "answer": "Insurance included:\n• Property damage: Full coverage\n• Liability: Guests protected\n• Natural disaster: Covered (Typhoon Policy)\n• Theft/Crime: Covered\n\nAll costs included in management fees."
+    }
+  ],
+  "export_format": "WATI",
+  "export_date": "2026-04-14T09:30:00Z"
+}

@@ -1,0 +1,158 @@
+{
+  "generated": "2026-04-16T15:45:00+08:00",
+  "task_id": "SET-0007",
+  "total_creatives": 13,
+  "source_folder": "assets/ads/",
+  "creatives": [
+    {
+      "id": "META_IL_A1",
+      "file": "META_IL_AWARENESS_A1.txt",
+      "platform": "Meta (Facebook + Instagram)",
+      "market": "IL",
+      "funnel_stage": "Awareness",
+      "headline_he": "ישראלים משקיעים בפיליפינים. אנחנו מלווים.",
+      "key_numbers": "PHP 28M, 17-25% ROI, 2 units remaining",
+      "image_needed": "Villa exterior, pool, sea views"
+    },
+    {
+      "id": "META_IL_A2",
+      "file": "META_IL_AWARENESS_A2.txt",
+      "platform": "Meta (Facebook + Instagram)",
+      "market": "IL",
+      "funnel_stage": "Awareness",
+      "headline_he": "מה שישראלים היו עושים אחרת",
+      "key_numbers": "PHP 395K/month income",
+      "image_needed": "Villa exterior, 4 bedrooms, private pool, rooftop jacuzzi"
+    },
+    {
+      "id": "META_IL_A3",
+      "file": "META_IL_AWARENESS_A3.txt",
+      "platform": "Meta (Instagram Reels)",
+      "market": "IL",
+      "funnel_stage": "Awareness",
+      "headline_he": "PHP 28M = כ-1.37M שקל. וילה פרטית בפנגלאו.",
+      "key_numbers": "PHP 28M, 1.37M ILS",
+      "image_needed": "Villa renders (D5), pool shots, rooftop views, income graph, location map",
+      "format": "15-second video reel"
+    },
+    {
+      "id": "META_IL_C1",
+      "file": "META_IL_CONSIDERATION_C1.txt",
+      "platform": "Meta (Facebook + Instagram)",
+      "market": "IL",
+      "funnel_stage": "Consideration",
+      "headline_he": "לא רק קנייה. השקעה בהנאה.",
+      "key_numbers": "Sheqel-denominated metrics",
+      "image_needed": "Property beach/interior shots",
+      "target_age": "40-65"
+    },
+    {
+      "id": "META_IL_C2",
+      "file": "META_IL_CONSIDERATION_C2.txt",
+      "platform": "Meta (Stories)",
+      "market": "IL",
+      "funnel_stage": "Consideration",
+      "headline_he": "וילה שמרוויחה",
+      "key_numbers": "Income graph overlay",
+      "image_needed": "Aerial beachfront, pool sunset, income graph overlay",
+      "format": "15-second Stories"
+    },
+    {
+      "id": "META_IL_Conv1",
+      "file": "META_IL_CONVERSION_Conv1.txt",
+      "platform": "Meta (Facebook Feed)",
+      "market": "IL",
+      "funnel_stage": "Conversion",
+      "headline_he": "זמן מוגבל. 2 יחידות בלבד",
+      "key_numbers": "2 units only",
+      "image_needed": "Testimonial video (existing Israeli owner)",
+      "audience": "Warm retargeting"
+    },
+    {
+      "id": "META_PH_1A",
+      "file": "META_PH_AWARENESS_1A.txt",
+      "platform": "Meta (Facebook + Instagram)",
+      "market": "PH",
+      "funnel_stage": "Awareness",
+      "headline_en": "Stop Renting. Start Owning.",
+      "headline_tl": "Maging May-ari, Hindi Bisita",
+      "key_numbers": "PHP 28M, BDO financing",
+      "image_needed": "Pool, rooftop jacuzzi, sea views, location between resorts",
+      "target_age": "38-58"
+    },
+    {
+      "id": "META_PH_1B",
+      "file": "META_PH_AWARENESS_1B.txt",
+      "platform": "Meta (Instagram Reels)",
+      "market": "PH",
+      "funnel_stage": "Awareness",
+      "headline_tl": "PHP 395K/Buwan. Panglao Villa.",
+      "key_numbers": "PHP 395K/month",
+      "image_needed": "Drone overhead villas, interior quick cuts, pool, bedroom, income graph, location map",
+      "format": "15-second Reel"
+    },
+    {
+      "id": "META_PH_C1",
+      "file": "META_PH_CONSIDERATION_C1.txt",
+      "platform": "Meta (Facebook + Instagram)",
+      "market": "PH",
+      "funnel_stage": "Consideration",
+      "headline_tl": "Kumita Habang Natutulog",
+      "headline_en": "Sarili Mong Airbnb Negosyo",
+      "key_numbers": "BDO financing, Blue Everest trust angle",
+      "image_needed": "None specified"
+    },
+    {
+      "id": "META_PH_C2",
+      "file": "META_PH_CONSIDERATION_C2.txt",
+      "platform": "Meta (Instagram Reels + Facebook Video)",
+      "market": "PH",
+      "funnel_stage": "Consideration",
+      "headline_tl": "Negosyong Zero-Effort",
+      "key_numbers": "PHP 395K monthly",
+      "image_needed": "Property manager, phone notification, income graph, property + CTA",
+      "format": "15-second Reel"
+    },
+    {
+      "id": "META_PH_Conv1",
+      "file": "META_PH_CONVERSION_Conv1.txt",
+      "platform": "Meta (Facebook Feed + Reels)",
+      "market": "PH",
+      "funnel_stage": "Conversion",
+      "headline_tl": "Lahat Tapos Bukas",
+      "headline_en": "2 Villas. Ngayong Linggo Pa.",
+      "key_numbers": "2 villas remaining",
+      "image_needed": "Testimonial videos (existing owners + income proof)",
+      "audience": "Hot retargeting"
+    },
+    {
+      "id": "GOOGLE_IL",
+      "file": "GOOGLE_IL_SEARCH_ADS.txt",
+      "platform": "Google Search",
+      "market": "IL",
+      "funnel_stage": "Search (all stages)",
+      "headline_he": "וילה השקעה בבוהול - 28M",
+      "key_numbers": "395K/month, ROI 17-25%, $12/day budget, 400% ROAS target",
+      "image_needed": "N/A (search ads)",
+      "extensions": "Sitelinks + Callout"
+    },
+    {
+      "id": "GOOGLE_PH",
+      "file": "GOOGLE_PH_SEARCH_ADS.txt",
+      "platform": "Google Search",
+      "market": "PH",
+      "funnel_stage": "Search (all stages)",
+      "headline_en": "Panglao Prime Villas - PHP 28M",
+      "key_numbers": "PHP 395K/month, 17-25% ROI, $13/day budget, 350% ROAS target",
+      "image_needed": "N/A (search ads)",
+      "extensions": "Call extension, mobile +15% bid"
+    }
+  ],
+  "summary": {
+    "by_market": { "IL": 7, "PH": 6 },
+    "by_stage": { "Awareness": 5, "Consideration": 4, "Conversion": 2, "Search": 2 },
+    "by_platform": { "Meta": 11, "Google": 2 },
+    "video_formats": 5,
+    "static_formats": 8
+  }
+}

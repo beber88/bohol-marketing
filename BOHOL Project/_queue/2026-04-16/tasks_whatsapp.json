@@ -1,0 +1,21 @@
+[
+  {
+    "id": "WA-0008",
+    "priority": "HIGH",
+    "type": "whatsapp_broadcast",
+    "status": "PENDING",
+    "description": "Day 25 WhatsApp broadcast",
+    "instructions": "Send WhatsApp broadcast via WATI to all warm leads. Include personalized villa pricing and virtual tour link. Segment: leads who clicked ads or opened emails in last 7 days.",
+    "message_en": "2 villas remain at this price. After these, no more beachfront at PHP 28M.\n\nVilla D: PHP 28,000,000 | Villa C: PHP 30,000,000\nReserve with just PHP 200,000.\nReply YES for a virtual tour.",
+    "message_he": "וילה בבוהול - כ-1,420,888 שקל. פחות מדירת 3 חדרים בתל אביב.\n\nVilla D: ₪1,420,888 | Villa C: ₪1,522,380\nהזמנו עם ₪10,149 בלבד.\nהשיבו כן לסיור וירטואלי."
+  },
+  {
+    "id": "WA-0009",
+    "priority": "MEDIUM",
+    "type": "whatsapp_followup",
+    "status": "PENDING",
+    "description": "Day 25 WhatsApp follow-up with responders",
+    "instructions": "Follow up with leads who replied to the broadcast. Send virtual tour link and offer to schedule a call with sales team.",
+    "scheduled_time": "2026-04-16T16:00:00+08:00"
+  }
+]

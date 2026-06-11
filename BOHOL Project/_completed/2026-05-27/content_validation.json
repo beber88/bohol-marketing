@@ -1,0 +1,37 @@
+{
+  "agent": "CONTENT_POST",
+  "run_at_pht": "2026-05-27T10:00:00+08:00",
+  "mode": "PREPARATION",
+  "phase": "PRE_LAUNCH",
+  "simulation": true,
+  "queue_path_checked": "_queue/2026-05-27/tasks_content.json",
+  "queue_present": false,
+  "tasks_total": 0,
+  "tasks_passed": 0,
+  "tasks_failed": 0,
+  "failures": [],
+  "drafts_ready": [],
+  "notes": [
+    "No _queue/2026-05-27 folder exists. No tasks_content.json available for today.",
+    "Most recent queue folder is _queue/2026-05-25 which only contains tasks_group_joins.json (no content posting tasks).",
+    "Phase guard active: phase=PRE_LAUNCH, simulation=true, start_date=null. Posting is blocked by design.",
+    "No publishing performed. Awaiting Claude Code to generate tasks_content.json for the launch window.",
+    "Alert refreshed in _status/alert_no_tasks.md."
+  ],
+  "campaign_state_snapshot": {
+    "phase": "PRE_LAUNCH",
+    "simulation": true,
+    "go_live_date": null,
+    "start_date": null,
+    "il_fixed_pricing": {
+      "villa_d_ils": 1450000,
+      "villa_c_ils": 1550000,
+      "reservation_ils": 9999
+    }
+  },
+  "pricing_consistency_flag": {
+    "issue": "CLAUDE.md states Villa D 1,535,000 ILS and Villa C 1,650,000 ILS; campaign_state.json and SKILL guard state Villa D 1,450,000 ILS and Villa C 1,550,000 ILS.",
+    "impact": "No active tasks to validate, so no immediate action required.",
+    "action_required": "Claude Code must reconcile the IL fixed pricing before any IL content task is generated."
+  }
+}

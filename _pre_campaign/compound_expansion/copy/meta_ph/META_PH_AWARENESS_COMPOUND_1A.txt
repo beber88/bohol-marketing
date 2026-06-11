@@ -1,0 +1,103 @@
+=== META_PH_AWARENESS_COMPOUND_1A.txt ===
+Platform: Meta (Facebook + Instagram)
+Market: Philippines
+Funnel Stage: Awareness
+Campaign: PH-P2-AWR
+Objective: Brand awareness and reach for compound expansion announcement
+Audience: Metro Manila (BGC, Makati, Alabang, Ortigas), Cebu City, Davao, age 38-58
+Placements: Facebook Feed, Instagram Feed, Instagram Reels
+Schedule: Tuesday-Thursday priority, 7pm-11pm PHT
+
+---
+
+PRIMARY TEXT (V1 - English):
+
+From 4 villas to 8.
+
+When we built the first phase of Panglao Prime Villas, each unit generated PHP 395,000 per month on Airbnb. Guests pay PHP 14,000 per night. Occupancy sits at 65%.
+
+The numbers were clear. So we are expanding.
+
+4 new luxury villas (E, F, G, H) are now in development - same compound, same proven location between JW Marriott and Mithi Resort, 60 seconds from Panglao Beach.
+
+Phase 1 villas still available:
+- Villa C: PHP 35,000,000
+- Villa D: PHP 32,500,000
+
+Phase 2 villas: pricing to be announced.
+
+Each villa: 4 bedrooms, 263.78 sqm, 3 storeys plus roof deck, private pool, rooftop jacuzzi.
+
+BDO Bank financing available for qualified Filipino buyers.
+
+This is a compound, not a standalone unit. That means shared management, stronger Airbnb rankings, and lower operating costs for every owner.
+
+Inquire now:
+WhatsApp (Marketing): +639542555553
+WhatsApp (Office): +639958565865
+
+Blue Everest Asset Group Holding Inc.
+primevilla.ph
+
+PRIMARY TEXT (V2 - Tagalog):
+
+Mula 4 villas, ngayon 8 na.
+
+Noong itinayo namin ang unang phase ng Panglao Prime Villas, bawat unit ay kumikita ng PHP 395,000 bawat buwan sa Airbnb. Nagbabayad ang mga bisita ng PHP 14,000 bawat gabi. Occupancy rate: 65%.
+
+Malinaw ang mga numero. Kaya nagpapalawak kami.
+
+4 na bagong luxury villa (E, F, G, H) ang kasalukuyang dine-develop - parehong compound, parehong lokasyon sa pagitan ng JW Marriott at Mithi Resort, 60 segundo lang mula sa Panglao Beach.
+
+Phase 1 villas na available pa:
+- Villa C: PHP 35,000,000
+- Villa D: PHP 32,500,000
+
+Phase 2 villas: abangan ang presyo.
+
+Bawat villa: 4 na silid-tulugan, 263.78 sqm, 3 palapag plus roof deck, private pool, rooftop jacuzzi.
+
+May available na BDO Bank financing para sa mga kwalipikadong Filipino buyer.
+
+Ito ay compound, hindi standalone unit. Ibig sabihin: shared management, mas mataas na Airbnb ranking, at mas mababang operating cost para sa bawat may-ari.
+
+Mag-inquire na:
+WhatsApp (Marketing): +639542555553
+WhatsApp (Office): +639958565865
+
+Blue Everest Asset Group Holding Inc.
+primevilla.ph
+
+HEADLINE V1: "8-Villa Luxury Compound in Panglao, Bohol"
+HEADLINE V2: "PHP 395,000/Month Per Villa - Proven on Airbnb"
+HEADLINE V3: "From 4 to 8 Villas - Compound Expansion Now Open"
+
+DESCRIPTION V1: "4 new luxury villas joining the proven Panglao Prime compound. BDO financing available. Inquire today."
+DESCRIPTION V2: "263.78 sqm each, 4BR, private pool, rooftop jacuzzi. Between JW Marriott and Mithi Resort."
+
+CTA: Learn More
+
+---
+
+AUDIENCE TARGETING:
+
+Location: Metro Manila (BGC, Makati, Alabang, Ortigas Center), Cebu City, Davao City
+Age: 38-58
+Gender: All
+Language: English (Philippines), Filipino
+
+Detailed Targeting:
+- Interests: Real estate investing, Investment property, Vacation rentals, Airbnb (company), Passive income, Property development, Bohol tourism, Luxury real estate
+- Behaviors: Frequent international travelers, Small business owners, Engaged shoppers
+- Demographics: Homeowners, College educated, Business decision makers
+- Income: Top 10% income bracket (where available)
+
+Exclusions:
+- Exclude existing page followers (separate retargeting campaign)
+- Exclude ages under 38
+
+Custom Audiences:
+- Lookalike 1% based on existing website visitors (primevilla.ph)
+- Lookalike 1% based on existing lead form submissions
+
+Estimated Audience Size: 800,000-1,200,000

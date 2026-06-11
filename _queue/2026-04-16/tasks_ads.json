@@ -1,0 +1,34 @@
+[
+  {
+    "id": "ADS-0003",
+    "priority": "HIGH",
+    "type": "ad_management",
+    "status": "PENDING",
+    "description": "Day 10 ad management - CONSIDERATION phase (PH)",
+    "instructions": "Ensure CONSIDERATION ads are active for PH market. Daily budget: USD 80. Monitor CTR and CPC. Pause underperformers (CTR < 1%).",
+    "ad_files": [
+      "assets/ads/META_PH_CONSIDERATION_C1.txt",
+      "assets/ads/META_PH_CONSIDERATION_C2.txt"
+    ],
+    "daily_budget_usd": 80,
+    "market": "PH"
+  },
+  {
+    "id": "ADS-0004",
+    "priority": "MEDIUM",
+    "type": "google_ads",
+    "status": "PENDING",
+    "description": "Day 10 Google Search Ads (PH)",
+    "instructions": "Review and optimize Google Search Ads for PH. Check keyword bids and quality scores.",
+    "ad_file": "assets/ads/GOOGLE_PH_SEARCH_ADS.txt",
+    "market": "PH"
+  },
+  {
+    "id": "ADS-0005",
+    "priority": "HIGH",
+    "type": "retargeting",
+    "status": "PENDING",
+    "description": "Day 10 retargeting audience update",
+    "instructions": "Update retargeting audiences based on website visitors and Facebook engagement from the past 7 days. Create lookalike audiences if retargeting pool > 500."
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "ADS-0003",
+    "priority": "HIGH",
+    "type": "ad_management",
+    "status": "PENDING",
+    "description": "Day 7 ad management - AWARENESS phase (IL)",
+    "instructions": "Ensure AWARENESS ads are active for IL market. Daily budget: USD 50. Monitor CTR and CPC. Pause underperformers (CTR < 1%).",
+    "ad_files": [
+      "assets/ads/META_IL_AWARENESS_A1.txt",
+      "assets/ads/META_IL_AWARENESS_A2.txt",
+      "assets/ads/META_IL_AWARENESS_A3.txt"
+    ],
+    "daily_budget_usd": 50,
+    "market": "IL"
+  }
+]

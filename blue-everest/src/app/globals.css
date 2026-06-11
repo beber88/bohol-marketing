@@ -1,0 +1,217 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body-var), system-ui, sans-serif;
+  --font-display: var(--font-display-var), Georgia, serif;
+
+  /* Dark cinematic palette */
+  --color-bg: hsl(0 0% 4%);
+  --color-surface: hsl(0 0% 8%);
+  --color-text-primary: hsl(0 0% 96%);
+  --color-muted: hsl(0 0% 53%);
+  --color-stroke: hsl(0 0% 12%);
+
+  /* shadcn tokens */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+:root {
+  --background: hsl(0 0% 4%);
+  --foreground: hsl(0 0% 96%);
+  --card: hsl(0 0% 8%);
+  --card-foreground: hsl(0 0% 96%);
+  --popover: hsl(0 0% 8%);
+  --popover-foreground: hsl(0 0% 96%);
+  --primary: hsl(0 0% 96%);
+  --primary-foreground: hsl(0 0% 4%);
+  --secondary: hsl(0 0% 12%);
+  --secondary-foreground: hsl(0 0% 96%);
+  --muted: hsl(0 0% 12%);
+  --muted-foreground: hsl(0 0% 53%);
+  --accent: hsl(0 0% 12%);
+  --accent-foreground: hsl(0 0% 96%);
+  --destructive: hsl(0 72% 51%);
+  --border: hsl(0 0% 12%);
+  --input: hsl(0 0% 12%);
+  --ring: hsl(210 30% 65%);
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-bg text-text-primary;
+    line-height: 1.6;
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+  html {
+    @apply scroll-smooth;
+    overflow-x: hidden;
+    direction: ltr;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display-var), Georgia, serif;
+    font-weight: normal;
+    color: hsl(0 0% 96%);
+  }
+}
+
+/* Dashboard light mode overrides */
+.dashboard-light {
+  --color-bg: hsl(0 0% 97%);
+  --color-surface: hsl(0 0% 100%);
+  --color-text-primary: hsl(0 0% 10%);
+  --color-muted: hsl(0 0% 45%);
+  --color-stroke: hsl(0 0% 88%);
+  --background: hsl(0 0% 97%);
+  --foreground: hsl(0 0% 10%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 10%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(0 0% 10%);
+  --primary: hsl(0 0% 10%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(0 0% 93%);
+  --secondary-foreground: hsl(0 0% 10%);
+  --muted: hsl(0 0% 93%);
+  --muted-foreground: hsl(0 0% 45%);
+  --accent: hsl(0 0% 93%);
+  --accent-foreground: hsl(0 0% 10%);
+  --border: hsl(0 0% 88%);
+  --input: hsl(0 0% 88%);
+}
+
+.dashboard-light h1,
+.dashboard-light h2,
+.dashboard-light h3,
+.dashboard-light h4,
+.dashboard-light h5,
+.dashboard-light h6 {
+  color: hsl(0 0% 10%);
+}
+
+@layer utilities {
+  /* Accent gradient */
+  .accent-gradient {
+    background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
+  }
+
+  /* Container */
+  .container-wide {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .container-content {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* Scroll indicator animation */
+  @keyframes scroll-down {
+    0% { transform: translateY(-100%); opacity: 0; }
+    30% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { transform: translateY(200%); opacity: 0; }
+  }
+  .animate-scroll-down {
+    animation: scroll-down 1.5s ease-in-out infinite;
+  }
+
+  /* Role text fade in */
+  @keyframes role-fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-role-fade-in {
+    animation: role-fade-in 0.4s ease-out;
+  }
+
+  /* Gradient border shift */
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradient-shift 6s ease infinite;
+  }
+
+  /* Dashboard light theme */
+  .dashboard-light {
+    background: hsl(0 0% 97%);
+    color: hsl(0 0% 10%);
+  }
+  .dashboard-light .bg-bg { background: hsl(0 0% 97%); }
+  .dashboard-light .bg-surface { background: hsl(0 0% 100%); }
+  .dashboard-light .bg-surface\/50 { background: hsl(0 0% 100% / 0.5); }
+  .dashboard-light .bg-surface\/30 { background: hsl(0 0% 100% / 0.3); }
+  .dashboard-light .text-text-primary,
+  .dashboard-light .text-primary { color: hsl(0 0% 10%); }
+  .dashboard-light .text-primary\/80 { color: hsl(0 0% 10% / 0.8); }
+  .dashboard-light .text-muted { color: hsl(0 0% 45%); }
+  .dashboard-light .border-stroke { border-color: hsl(0 0% 88%); }
+  .dashboard-light .bg-white\/5 { background: hsl(0 0% 0% / 0.03); }
+  .dashboard-light .text-text-primary { color: hsl(0 0% 10%); }
+  .dashboard-light .text-text-primary\/80 { color: hsl(0 0% 10% / 0.8); }
+  .dashboard-light .bg-white\/\[0\.02\] { background: hsl(0 0% 0% / 0.02); }
+  .dashboard-light .bg-white\/\[0\.03\] { background: hsl(0 0% 0% / 0.02); }
+  .dashboard-light .bg-black\/60 { background: hsl(0 0% 0% / 0.5); }
+  .dashboard-light select option { color: hsl(0 0% 10%); background: white; }
+
+  /* Halftone overlay */
+  .halftone-overlay {
+    background-image: radial-gradient(circle, #000 1px, transparent 1px);
+    background-size: 4px 4px;
+  }
+
+  /* Marquee animation */
+  @keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 30s linear infinite;
+  }
+
+  /* Text stroke outline (for marquee ghost text) */
+  .text-stroke-outline {
+    -webkit-text-stroke: 1px hsl(0 0% 20%);
+  }
+}

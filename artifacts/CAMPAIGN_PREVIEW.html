@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campaign Preview - Panglao Prime Villas</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #333; direction: ltr; }
+    .header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; padding: 16px 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.2); }
+    .header h1 { font-size: 20px; font-weight: 700; }
+    .header-sub { font-size: 12px; opacity: 0.8; margin-top: 4px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    .warning-banner { background: #fff3cd; border: 2px solid #f0c040; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; font-size: 14px; color: #856404; display: flex; align-items: center; gap: 10px; }
+    .section-title { font-size: 14px; font-weight: 700; color: #1e3c72; text-transform: uppercase; letter-spacing: 1.5px; margin: 30px 0 15px; padding-bottom: 8px; border-bottom: 2px solid #e0e0e0; }
+    .phase-label { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-bottom: 12px; }
+    .phase-awareness { background: #d1ecf1; color: #0c5460; }
+    .phase-consideration { background: #fff3cd; color: #856404; }
+    .phase-conversion { background: #f8d7da; color: #721c24; }
+    .phase-close { background: #d4edda; color: #155724; }
+    .preview-card { background: white; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); margin-bottom: 24px; overflow: hidden; }
+    .preview-header { padding: 16px 20px; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; }
+    .preview-header h3 { font-size: 15px; color: #1e3c72; }
+    .preview-meta { display: flex; gap: 12px; font-size: 12px; color: #888; }
+    .preview-meta span { display: flex; align-items: center; gap: 4px; }
+    .market-badge { padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+    .market-il { background: #e8eaf6; color: #283593; }
+    .market-ph { background: #e8f5e9; color: #2e7d32; }
+    .preview-body { display: flex; gap: 0; }
+    .preview-image { width: 300px; min-height: 250px; background: #e9ecef; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .preview-image img { width: 100%; height: 100%; object-fit: cover; }
+    .preview-image .placeholder { color: #aaa; font-size: 13px; text-align: center; padding: 20px; }
+    .preview-content { flex: 1; padding: 20px; }
+    .preview-copy { font-size: 14px; line-height: 1.7; color: #333; white-space: pre-line; margin-bottom: 16px; padding: 16px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #c9a84c; }
+    .preview-copy[dir="rtl"] { border-left: none; border-right: 4px solid #c9a84c; }
+    .preview-details { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px; }
+    .preview-details .detail { display: flex; justify-content: space-between; padding: 6px 10px; background: #f5f7fa; border-radius: 4px; }
+    .detail-label { color: #888; }
+    .detail-value { font-weight: 600; color: #1e3c72; }
+    .platform-icon { font-size: 16px; }
+    .budget-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .budget-table th { background: #1e3c72; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+    .budget-table td { padding: 10px 12px; border-bottom: 1px solid #f0f0f0; }
+    .budget-table tr:hover { background: #f8f9fa; }
+    .budget-total { font-weight: 700; background: #f5f7fa; }
+    .channel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+    .channel-card { background: white; border-radius: 8px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #ccc; }
+    .channel-card.fb { border-top-color: #1877F2; }
+    .channel-card.ig { border-top-color: #E4405F; }
+    .channel-card.google { border-top-color: #4285F4; }
+    .channel-card.group { border-top-color: #42b72a; }
+    .channel-card h4 { font-size: 14px; color: #1e3c72; margin-bottom: 8px; }
+    .channel-card p { font-size: 12px; color: #666; margin: 4px 0; }
+    .footer { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-align: center; padding: 20px; margin-top: 30px; font-size: 12px; }
+    .footer p { margin: 4px 0; opacity: 0.85; }
+    @media (max-width: 768px) { .preview-body { flex-direction: column; } .preview-image { width: 100%; height: 200px; } .preview-details { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Campaign Preview - Panglao Prime Villas</h1>
+  <div class="header-sub">Review all campaigns before go-live. Nothing is published until you approve.</div>
+</div>
+
+<div class="container">
+
+  <div class="warning-banner">
+    <span style="font-size:20px;">&#9888;&#65039;</span>
+    <div><strong>SIMULATION MODE</strong> - Everything below is a preview. $0 spent. Nothing published. You must approve before anything goes live.</div>
+  </div>
+
+  <!-- WHERE ADS GO -->
+  <div class="section-title">Where Campaigns Are Published</div>
+  <div class="channel-grid">
+    <div class="channel-card fb">
+      <h4>&#128308; Facebook Page</h4>
+      <p><strong>Page:</strong> Blue Everest Asset Group</p>
+      <p><strong>Content:</strong> Daily organic posts (alternating IL/PH)</p>
+      <p><strong>Paid:</strong> Meta Ads (awareness, consideration, conversion)</p>
+      <p><strong>Audience:</strong> Israel 35-62 + Philippines 35-58</p>
+    </div>
+    <div class="channel-card group">
+      <h4>&#128101; Facebook Group (Israel)</h4>
+      <p><strong>Group:</strong> נדל"ן והשקעות בפיליפינים</p>
+      <p><strong>Content:</strong> Hebrew organic posts for Israeli investors</p>
+      <p><strong>Paid:</strong> No (organic only)</p>
+      <p><strong>Audience:</strong> Israeli real estate investors in Philippines</p>
+    </div>
+    <div class="channel-card ig">
+      <h4>&#128247; Instagram</h4>
+      <p><strong>Account:</strong> No separate account</p>
+      <p><strong>Content:</strong> Ads run through Meta Ads Manager</p>
+      <p><strong>Link:</strong> Direct to sales website</p>
+      <p><strong>Audience:</strong> Same targeting as Facebook</p>
+    </div>
+    <div class="channel-card google">
+      <h4>&#128269; Google Search</h4>
+      <p><strong>Content:</strong> Search ads for "villa Bohol", "invest Philippines"</p>
+      <p><strong>Paid:</strong> $25/day (starts Day 4)</p>
+      <p><strong>Audience:</strong> Intent-based (people searching for property)</p>
+    </div>
+  </div>
+
+  <!-- BUDGET BREAKDOWN -->
+  <div class="section-title">Budget Plan ($80/day - $2,400 total)</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Campaign</th><th>Platform</th><th>Market</th><th>Daily Budget</th><th>Phase</th><th>Days Active</th><th>Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>IL-1 Awareness</td><td>Meta (FB+IG)</td><td>Israel</td><td>$20/day</td><td>Days 4-21</td><td>18</td><td>$360</td></tr>
+      <tr><td>IL-2 Consideration</td><td>Meta (FB+IG)</td><td>Israel</td><td>$15/day</td><td>Days 8-21</td><td>14</td><td>$210</td></tr>
+      <tr><td>IL-3 Conversion</td><td>Meta (FB+IG)</td><td>Israel</td><td>$10/day</td><td>Days 15-30</td><td>16</td><td>$160</td></tr>
+      <tr><td>PH-1 Awareness</td><td>Meta (FB+IG)</td><td>Philippines</td><td>$15/day</td><td>Days 4-21</td><td>18</td><td>$270</td></tr>
+      <tr><td>PH-2 Consideration</td><td>Meta (FB+IG)</td><td>Philippines</td><td>$10/day</td><td>Days 8-21</td><td>14</td><td>$140</td></tr>
+      <tr><td>PH-3 Conversion</td><td>Meta (FB+IG)</td><td>Philippines</td><td>$8/day</td><td>Days 15-30</td><td>16</td><td>$128</td></tr>
+      <tr><td>Google Search IL</td><td>Google Ads</td><td>Israel</td><td>$12/day</td><td>Days 4-30</td><td>27</td><td>$324</td></tr>
+      <tr><td>Google Search PH</td><td>Google Ads</td><td>Philippines</td><td>$13/day</td><td>Days 4-30</td><td>27</td><td>$351</td></tr>
+      <tr><td>FB Group Posts</td><td>Facebook Group</td><td>Israel</td><td>$0</td><td>Days 4-30</td><td>27</td><td>$0 (organic)</td></tr>
+      <tr class="budget-total"><td colspan="6"><strong>Total</strong></td><td><strong>$1,943</strong></td></tr>
+      <tr><td colspan="6" style="color:#888;">Buffer for scaling winners</td><td style="color:#888;">$457</td></tr>
+    </tbody>
+  </table>
+
+  <!-- SAMPLE POSTS -->
+  <div class="section-title">Sample Facebook Posts (Days 4-8)</div>
+
+  <!-- Day 4 - PH -->
+  <div class="preview-card">
+    <div class="preview-header">
+      <h3>Day 4 - Philippines Awareness Post</h3>
+      <div class="preview-meta">
+        <span class="market-badge market-ph">PH</span>
+        <span class="platform-icon">&#128308;</span>
+        <span>Facebook Page</span>
+        <span>10:00 PHT</span>
+      </div>
+    </div>
+    <div class="preview-body">
+      <div class="preview-image">
+        <div class="placeholder">EXTERIOR - D5/<br>FRONT 2_AI.png<br><br><em>(Villa exterior render)</em></div>
+      </div>
+      <div class="preview-content">
+        <div class="preview-copy">4 bedrooms. Rooftop jacuzzi. 60 seconds to the beach. And it pays for itself.
+
+Villa D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)
+Villa C: PHP 30,000,000 (approx. USD 498,900, rate 14/04/2026)
+Monthly rental income: PHP 395,000
+BDO Bank financing available.
+
+Reserve with PHP 200,000 today.
+WhatsApp: +639542555553</div>
+        <div class="preview-details">
+          <div class="detail"><span class="detail-label">Phase</span><span class="detail-value">Awareness</span></div>
+          <div class="detail"><span class="detail-label">Language</span><span class="detail-value">English</span></div>
+          <div class="detail"><span class="detail-label">Hook</span><span class="detail-value">Lifestyle</span></div>
+          <div class="detail"><span class="detail-label">Paid Boost</span><span class="detail-value">$15/day</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 5 - IL -->
+  <div class="preview-card">
+    <div class="preview-header">
+      <h3>Day 5 - Israel Awareness Post</h3>
+      <div class="preview-meta">
+        <span class="market-badge market-il">IL</span>
+        <span class="platform-icon">&#128308;</span>
+        <span>Facebook Page + Group</span>
+        <span>20:00 IST</span>
+      </div>
+    </div>
+    <div class="preview-body">
+      <div class="preview-image">
+        <div class="placeholder">EXTERIOR - D5/<br>FRONT 3_AI.png<br><br><em>(Villa exterior render)</em></div>
+      </div>
+      <div class="preview-content">
+        <div class="preview-copy" dir="rtl">וילה בבוהול - כ-1,420,888 שקל. פחות מדירת 3 חדרים בתל אביב.
+
+Villa D: PHP 28,000,000 (כ-1,420,888 שקל, שער יציג 14/04/2026)
+Villa C: PHP 30,000,000 (כ-1,522,380 שקל, שער יציג 14/04/2026)
+הכנסה חודשית מהשכרה: ₪20,045
+3 מסלולים משפטיים לבעלות זרים.
+
+הזמנו עם ₪10,149 בלבד.
+WhatsApp: +639542555553</div>
+        <div class="preview-details">
+          <div class="detail"><span class="detail-label">Phase</span><span class="detail-value">Awareness</span></div>
+          <div class="detail"><span class="detail-label">Language</span><span class="detail-value">Hebrew</span></div>
+          <div class="detail"><span class="detail-label">Hook</span><span class="detail-value">Price Comparison (Tel Aviv)</span></div>
+          <div class="detail"><span class="detail-label">Paid Boost</span><span class="detail-value">$20/day</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 8 - PH Consideration -->
+  <div class="preview-card">
+    <div class="preview-header">
+      <h3>Day 8 - Philippines Consideration Post</h3>
+      <div class="preview-meta">
+        <span class="market-badge market-ph">PH</span>
+        <span class="platform-icon">&#128308;</span>
+        <span>Facebook Page</span>
+        <span>10:00 PHT</span>
+      </div>
+    </div>
+    <div class="preview-body">
+      <div class="preview-image">
+        <div class="placeholder">EXTERIOR - D5/<br>AERIAL 2 ENHANCED.png<br><br><em>(Aerial villa render)</em></div>
+      </div>
+      <div class="preview-content">
+        <div class="preview-copy">Imagine waking up to this. Now imagine collecting PHP 395,000 every month while you are not even there.
+
+Villa D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)
+Villa C: PHP 30,000,000 (approx. USD 498,900, rate 14/04/2026)
+Monthly rental income: PHP 395,000
+BDO Bank financing available.
+
+Reserve with PHP 200,000 today.
+WhatsApp: +639542555553</div>
+        <div class="preview-details">
+          <div class="detail"><span class="detail-label">Phase</span><span class="detail-value">Consideration</span></div>
+          <div class="detail"><span class="detail-label">Language</span><span class="detail-value">English</span></div>
+          <div class="detail"><span class="detail-label">Hook</span><span class="detail-value">Passive Income Dream</span></div>
+          <div class="detail"><span class="detail-label">Paid Boost</span><span class="detail-value">$10/day</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 8 - IL Consideration -->
+  <div class="preview-card">
+    <div class="preview-header">
+      <h3>Day 8 - Israel Consideration Post</h3>
+      <div class="preview-meta">
+        <span class="market-badge market-il">IL</span>
+        <span class="platform-icon">&#128308;</span>
+        <span>Facebook Page + Group</span>
+        <span>20:00 IST</span>
+      </div>
+    </div>
+    <div class="preview-body">
+      <div class="preview-image">
+        <div class="placeholder">EXTERIOR - D5/<br>AERIAL 3 ENHANCED.png<br><br><em>(Aerial villa render)</em></div>
+      </div>
+      <div class="preview-content">
+        <div class="preview-copy" dir="rtl">ישראלים כבר השקיעו בפנגלאו. אנחנו מלווים אותם מהיום הראשון עד מסירת המפתח.
+
+Villa D: PHP 28,000,000 (כ-1,420,888 שקל, שער יציג 14/04/2026)
+Villa C: PHP 30,000,000 (כ-1,522,380 שקל, שער יציג 14/04/2026)
+הכנסה חודשית מהשכרה: ₪20,045
+3 מסלולים משפטיים לבעלות זרים.
+
+הזמנו עם ₪10,149 בלבד.
+WhatsApp: +639542555553</div>
+        <div class="preview-details">
+          <div class="detail"><span class="detail-label">Phase</span><span class="detail-value">Consideration</span></div>
+          <div class="detail"><span class="detail-label">Language</span><span class="detail-value">Hebrew</span></div>
+          <div class="detail"><span class="detail-label">Hook</span><span class="detail-value">Social Proof (Israelis invested)</span></div>
+          <div class="detail"><span class="detail-label">Paid Boost</span><span class="detail-value">$15/day</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE SCHEDULE -->
+  <div class="section-title">30-Day Phase Schedule</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Phase</th><th>Days</th><th>What Happens</th><th>Daily Posts</th><th>Paid Campaigns</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="phase-label" style="background:#e9ecef;color:#495057;">Setup</span></td><td>1-3</td><td>Platform setup, content upload, QA testing</td><td>0</td><td>None</td></tr>
+      <tr><td><span class="phase-label phase-awareness">Awareness</span></td><td>4-7</td><td>Launch awareness ads, daily organic posts</td><td>1 (alternating IL/PH)</td><td>IL-1 + PH-1 + Google</td></tr>
+      <tr><td><span class="phase-label phase-consideration">Consideration</span></td><td>8-14</td><td>Retargeting, email sequences, dual-market posts</td><td>2 (both IL + PH)</td><td>IL-1,2 + PH-1,2 + Google</td></tr>
+      <tr><td><span class="phase-label phase-conversion">Conversion</span></td><td>15-21</td><td>Conversion ads, WhatsApp broadcasts, scarcity hooks</td><td>2 (both IL + PH)</td><td>All 6 Meta + Google</td></tr>
+      <tr><td><span class="phase-label phase-close">Close Push</span></td><td>22-28</td><td>Urgency messaging, budget to winners, final push</td><td>2 (both IL + PH)</td><td>All 6 Meta + Google</td></tr>
+      <tr><td><span class="phase-label" style="background:#f8d7da;color:#721c24;">Final</span></td><td>29-30</td><td>Last chance messaging, all retargeting maxed</td><td>2 (both IL + PH)</td><td>All at max budget</td></tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="footer">
+  <p style="font-weight:600;font-size:14px;">Panglao Prime Villas - Campaign Preview</p>
+  <p>SIMULATION MODE - Nothing published until approved</p>
+  <p>fb.com/BlueEverestGroup | WhatsApp: +639542555553</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "FLOW_10_FOLLOW_UP_ENGAGEMENT",
+  "description": "Re-engagement for paused/interested-but-undecided leads",
+  "type": "interactive",
+  "version": "2.0",
+  "trigger": "no_response_48h_or_selected",
+  "created_at": "2026-04-14T11:15:00Z",
+  "nodes": [
+    {
+      "id": "soft_followup",
+      "type": "text",
+      "content": "👋 Still thinking about Bohol?\n\nNo pressure! But wanted to share:\n\n• Updated earning reports just in (still 395K+)\n• New client from your city bought last week\n• Only 2 units left (one might be claimed this week)\n\nAnything still unclear? Happy to clarify."
+    },
+    {
+      "id": "value_reminder",
+      "type": "text",
+      "content": "💰 Quick reminder why this works:\n\nYour money elsewhere:\n★ Stocks: 8-12% per year (risky)\n★ Bonds: 3-5% per year (boring)\n★ Real estate back home: 3-5% (expensive)\n★ Crypto: -50% to +500% (stressful)\n\n🏝️ Panglao villa:\n★ 20-25% guaranteed return (boring in the best way)\n★ Monthly payments (not waiting for exit)\n★ Tangible asset (not digital worry)\n★ Appreciating property (bonus)\n\nReady to talk numbers?"
+    },
+    {
+      "id": "schedule_retry",
+      "type": "text",
+      "content": "📅 Let's find a time this week:\n\n• 30-minute investment review call\n• No obligation\n• Answer all remaining questions\n• See why 50+ investors already chose us\n\nWhen's best for you?\n- Today evening?\n- Tomorrow morning?\n- Wednesday?\n- Thursday?",
+      "buttons": [
+        {"label": "Today evening", "action": "capture", "field": "call_time"},
+        {"label": "Tomorrow AM", "action": "capture", "field": "call_time"},
+        {"label": "Wednesday", "action": "capture", "field": "call_time"},
+        {"label": "Thursday", "action": "capture", "field": "call_time"}
+      ]
+    },
+    {
+      "id": "objection_reopener",
+      "type": "text",
+      "content": "What's holding you back? (Real questions welcome):\n\n• Still skeptical of returns?\n• Worried about risks?\n• Concerned about legality?\n• Undecided between villas?\n• Waiting on financing clarity?\n\nTell me. We'll address it directly."
+    }
+  ],
+  "export_format": "WATI",
+  "export_date": "2026-04-14T11:15:00Z"
+}

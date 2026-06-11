@@ -1,0 +1,62 @@
+=== META_IL_CONVERSION_COMPOUND_C1.txt ===
+Platform: Meta (Facebook + Instagram)
+Market: Israel
+Funnel Stage: Conversion
+Campaign: IL-P2-CVR
+Objective: Conversions / Lead Generation
+Audience: Warm audiences, retargeting, high-intent
+Placements: Facebook Feed, Instagram Feed, Instagram Reels
+Schedule: Sunday-Thursday, 20:00-23:00 Israel time
+
+---
+
+PRIMARY TEXT:
+
+שלב 1 הוכיח את עצמו. שלב 2 נפתח להזמנות.
+
+הביקוש לוילות A ו-B סגר אותן מהר.
+C ו-D עדיין זמינות - אבל עכשיו יש גם E, F, G, H.
+
+Villa C: 1,650,000 ש"ח
+Villa D: 1,535,000 ש"ח
+וילות חדשות: [PRICE_PLACEHOLDER] ש"ח
+
+הזמנת מקום: 9,999 ש"ח בלבד.
+
+למה עכשיו:
+- מחירי שלב 2 נקבעים בקרוב. הזמנה מוקדמת נועלת עדיפות.
+- כל וילה: 4 חדרי שינה, 263.78 מ"ר, 3 קומות + גג, בריכה פרטית + ג'קוזי.
+- הכנסה חודשית: PHP 395,000 - מאומת באירביאנבי.
+- תשואה שנתית: 17-25%.
+- 60 שניות מחוף פנגלאו. בין JW Marriott ל-Mithi Resort.
+
+3 מסלולים משפטיים לבעלות:
+- Deed of Assignment
+- Leasehold 25+25
+- Domestic Corporation
+
+6 וילות זמינות מתוך 8.
+הזמינו שיחת ייעוץ. בדקו איזו וילה ואיזה מסלול בעלות מתאימים לכם.
+
+Blue Everest Asset Group Holding Inc.
+
+WhatsApp (שיווק): +639542555553
+WhatsApp (משרד): +639958565865
+
+HEADLINE V1: "9,999 ש"ח הזמנה. 6 וילות זמינות."
+HEADLINE V2: "שלב 2 נפתח. שלב 1 הוכח. הזמינו עכשיו."
+HEADLINE V3: "17-25% תשואה. 9,999 ש"ח להזמנה."
+
+DESCRIPTION: "6 וילות זמינות בקומפלקס פנגלאו. הזמנת מקום: 9,999 ש"ח. PHP 395,000 הכנסה חודשית מאומתת."
+
+CTA: Send Message
+
+---
+
+AUDIENCE TARGETING:
+- Geography: Israel
+- Age: 30-62
+- Language: Hebrew
+- Custom Audiences: Website visitors (primevilla.ph, 90 days), Lead form openers (non-submitters), Video viewers (75%+), Page engagers (60 days), Previous ad clickers
+- Lookalike: 1-3% from existing leads/converters
+- Exclusions: Existing customers, leads already booked consultation

@@ -1,0 +1,37 @@
+{
+  "run": "panglao-israel-daily-10am-il",
+  "date": "2026-06-09",
+  "evaluated_at_pht": "2026-06-09T15:00:00+08:00",
+  "market": "IL",
+  "language": "HE",
+  "platform_intended": "Facebook group נדל\"ן והשקעות בפיליפינים",
+  "group_url": "https://www.facebook.com/groups/investment.ph.il/",
+  "simulation": false,
+  "status": "HELD_NOT_PUBLISHED",
+  "published": false,
+  "candidate_post": {
+    "selection_basis": "No calendar entry exists for 2026-06-09 (calendar Week 2: Sun Jun 8 -> POST 4, Tue Jun 10 -> POST 21). Per the fallback rule 'post the next unpublished post in sequence', the next-in-line post falls inside the held 3-50 draft range.",
+    "post_number": "3 or 4 (next unpublished in sequence; both inside the held 3-50 range)"
+  },
+  "decision": "HOLD - did not publish. No browser action taken. No action of any kind taken on or near Blueprint Building Group.",
+  "block_reasons": [
+    "STANDING BLOCKER (campaign_state.json, severity MEDIUM, still OPEN): 'Future Hebrew community posts need Brand Guard review. Community posts 3-50 are held as drafts because they were authored before the current Israeli currency, CTA, legal ownership, and register rules.' The next-in-sequence post sits inside this held 3-50 range and has not been returned to the executable queue.",
+    "UNRESOLVED CURRENCY CONFLICT: CLAUDE.md Rule 1 and the scheduled-task instructions mandate SHEKELS ONLY for Israeli content (Villa D 1,535,000 ש\"ח, Villa C 1,650,000 ש\"ח, reservation 9,999 ש\"ח). campaign_state.json (pricing_rule 'php_only_all_markets', content_rules.israel currency 'PHP_ONLY', reservation 'PHP 200,000', note 'Do not show ILS, USD, or daily FX conversions in campaign copy') mandates the opposite. The two authoritative rule sets directly contradict and a single post cannot satisfy both. Editing the copy to resolve this is forbidden ('NEVER improvise copy').",
+    "MISSING IMAGE MAP: _queue/community-agent/IMAGE_MAP.md does not exist, so the mapped image for the post cannot be determined without guessing."
+  ],
+  "consistency_with_prior_runs": "Same determination as the 2026-06-04, 06-05, 06-07, and 06-08 IL runs (06-06 held additionally for Shabbat). Nothing in campaign_state.json has changed to clear these blockers; the Brand Guard hold and the php_only_all_markets pricing rule are both still in effect as of last_updated 2026-06-09T10:00.",
+  "browser_used": false,
+  "chrome_connection_attempted": false,
+  "screenshot_path": null,
+  "post_link": null,
+  "blueprint_touched": false,
+  "next_action": "Before the next IL slot (Tue 2026-06-10, POST 21): (1) resolve the shekel-vs-PHP currency rule conflict between CLAUDE.md/task and campaign_state.json and align both sources; (2) run posts 3-50 through Brand Guard and return approved drafts to the executable queue; (3) (re)create IMAGE_MAP.md so a mapped image can be selected; (4) reconcile the community_agent next_post pointer (state shows 36 / 2026-06-04) with the calendar. If unresolved by Jun 10, hold again and report.",
+  "rule_compliance": {
+    "did_not_publish_into_unresolved_conflict": true,
+    "did_not_improvise_or_edit_copy": true,
+    "did_not_touch_blueprint": true,
+    "one_post_only_constraint_respected": true,
+    "stopped_and_reported_on_ambiguity": true
+  },
+  "logged_at": "2026-06-09T15:00:00+08:00"
+}

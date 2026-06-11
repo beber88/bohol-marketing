@@ -1,0 +1,133 @@
+{
+  "campaign_day": 6,
+  "phase": "LIVE",
+  "simulation": false,
+  "go_live_date": "2026-05-28",
+  "start_date": "2026-05-28",
+  "total_days": 15,
+  "total_budget": 900,
+  "daily_budget_avg": 60,
+  "spent_to_date_php": 2965.70,
+  "spent_to_date_usd": 48.15,
+  "active_campaigns": [
+    {
+      "campaign_id": "120246990233390326",
+      "name": "IL-1 Awareness - Panglao Prime Villas",
+      "status": "ACTIVE",
+      "objective": "OUTCOME_TRAFFIC",
+      "daily_budget_php": 1200,
+      "special_ad_category": "HOUSING",
+      "market": "IL"
+    },
+    {
+      "campaign_id": "120246990234490326",
+      "name": "PH-1 Awareness - Panglao Prime Villas",
+      "status": "ACTIVE",
+      "objective": "OUTCOME_TRAFFIC",
+      "daily_budget_php": 850,
+      "special_ad_category": "HOUSING",
+      "market": "PH"
+    }
+  ],
+  "ad_sets": [
+    {"id": "120246991876370326", "name": "IL-1A Israeli Investors - Aerial Hook", "campaign": "IL-1", "status": "ACTIVE"},
+    {"id": "120246992434990326", "name": "IL-1B Israeli Investors - Rear Villa Hook", "campaign": "IL-1", "status": "ACTIVE"},
+    {"id": "120246992582890326", "name": "PH-1A Filipino Investors - Aerial Hook", "campaign": "PH-1", "status": "ACTIVE"},
+    {"id": "120246992674570326", "name": "PH-1B Filipino Investors - Pool Villa Hook", "campaign": "PH-1", "status": "ACTIVE"}
+  ],
+  "il_fixed_pricing": {
+    "villa_d_ils": 1535000,
+    "villa_c_ils": 1650000,
+    "reservation_ils": 9999
+  },
+  "villa_prices": {
+    "villa_c": {"php": 35000000, "php_formatted": "PHP 35,000,000", "ils_formatted": "1,650,000 ILS"},
+    "villa_d": {"php": 32500000, "php_formatted": "PHP 32,500,000", "ils_formatted": "1,535,000 ILS"}
+  },
+  "whatsapp_numbers": {
+    "marketing": "+639542555553",
+    "office": "+639958565865"
+  },
+  "platforms": {
+    "facebook_page": {
+      "status": "active",
+      "url": "https://www.facebook.com/BlueEverestGroup",
+      "name": "Blue Everest Asset Group",
+      "page_id": "1091251924067685"
+    },
+    "facebook_group_il": {
+      "status": "active",
+      "url": "https://www.facebook.com/groups/investment.ph.il/",
+      "name": "נדל\"ן והשקעות בפיליפינים"
+    },
+    "meta_ads": {
+      "status": "active",
+      "ad_account_id": "2015125296073673",
+      "ad_account_name": "Blue Everest - Panglao Prime Villas",
+      "business_id": "1091269377399273",
+      "business_name": "Blue Everest Asset Group",
+      "currency": "PHP",
+      "timezone": "Asia/Manila",
+      "payment_method": "connected",
+      "pixel_id": "1599211187973958",
+      "pixel_name": "Panglao Prime Villas Pixel",
+      "pixel_installed": true,
+      "page_linked_to_ad_account": true,
+      "special_ad_category": "HOUSING",
+      "account_issue": "UNSETTLED - billing balance must be paid before ads deliver"
+    },
+    "google_ads": {
+      "status": "ready",
+      "account_id": "4031838704",
+      "conversion_id": "AW-18095957436",
+      "campaigns_csv": "blue-everest/scripts/google-ads-import.csv",
+      "note": "3 campaigns ready for Google Ads Editor import"
+    },
+    "brevo": { "status": "active", "templates": 10, "lists": 5, "drip_sequence": true },
+    "wati": { "status": "not_setup" },
+    "hubspot": { "status": "not_setup" },
+    "website": {
+      "status": "live",
+      "url": "https://blue-everest.com",
+      "ga4_id": "G-04NZJT2C4V",
+      "ga4_installed": true,
+      "meta_pixel_installed": true,
+      "google_ads_tag_installed": true,
+      "whatsapp_buttons": true,
+      "contact_form": true
+    }
+  },
+  "creative_version": "v3_clean",
+  "creative_philosophy": "Clean property images - all marketing text in post copy. PHP primary, ILS at daily FX.",
+  "image_creative_count": 15,
+  "video_assigned": true,
+  "video_count": 5,
+  "total_creatives_ready": 24,
+  "video_files": [
+    "20260416 BLUEEVEREST 1 Villas Bohol 2.mp4",
+    "20260416 BLUEEVEREST 2 Villas Bohol 2.mp4",
+    "VIDEO-2026-04-27-02-29-12.mp4",
+    "VIDEO-2026-04-22-18-09-24.mp4",
+    "VIDEO-2026-04-22-18-09-41.mp4"
+  ],
+  "video_reserve": [
+    "VIDEO-2026-04-22-18-09-29.mp4",
+    "VIDEO-2026-04-22-18-09-34.mp4",
+    "VIDEO-2026-04-23-12-20-49.mp4",
+    "VIDEO-2026-04-23-12-20-54.mp4",
+    "VIDEO-2026-04-23-12-20-59.mp4"
+  ],
+  "last_updated": "2026-06-03T08:00:00+08:00",
+  "community_agent": {
+    "status": "ACTIVE",
+    "activated_at": "2026-05-28T17:30:00+08:00",
+    "posts_total": 50,
+    "posts_published": 1,
+    "current_post": 2,
+    "next_post_date": "2026-06-04",
+    "posting_schedule": "4/week, Sun-Thu, 8-10PM Israel time",
+    "target_group": "https://www.facebook.com/groups/investment.ph.il/",
+    "response_system": "ACTIVE",
+    "lead_qualification": "ACTIVE"
+  }
+}

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panglao Prime Villas - Marketing Command Center</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#f9f7f3;--cream-dark:#F5F3EE;--cream-card:#FDFBF8;
+  --gold:#BDA57F;--gold-light:#D5C09C;--gold-dark:#9A8563;
+  --teal:#558EA4;--teal-light:#65A2B9;
+  --charcoal:#121212;--text:#2c3e50;--muted:#968E7F;
+  --border:#EEE6D6;--green:#27ae60;--red:#e74c3c;--orange:#f39c12;
+  --shadow:0 2px 12px rgba(0,0,0,0.06);--shadow-lg:0 8px 32px rgba(0,0,0,0.1);
+}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--cream);color:var(--text);line-height:1.5}
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600}
+.header{background:var(--charcoal);color:#fff;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-bottom:3px solid var(--gold)}
+.header h1{font-size:1.4rem;color:#fff}
+.header-sub{font-size:0.8rem;color:var(--gold-light);margin-top:2px}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:16px;font-size:0.75rem;font-weight:600}
+.badge-gold{background:var(--gold);color:#fff}.badge-teal{background:var(--teal);color:#fff}
+.badge-green{background:var(--green);color:#fff}.badge-orange{background:var(--orange);color:#fff}
+.badge-red{background:var(--red);color:#fff}.badge-outline{border:1px solid var(--border);color:var(--muted)}
+.container{max-width:1440px;margin:0 auto;padding:20px}
+.section{margin-bottom:24px}
+.section-title{font-size:1.15rem;color:var(--charcoal);padding-left:14px;border-left:4px solid var(--gold);margin-bottom:14px}
+.card{background:#fff;border-radius:10px;border:1px solid var(--border);padding:20px;box-shadow:var(--shadow)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.grid-6{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+@media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
+
+/* KPI */
+.kpi{text-align:center;padding:18px 12px;position:relative}
+.kpi::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:3px;background:var(--gold);border-radius:2px}
+.kpi-val{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--charcoal)}
+.kpi-val .u{font-size:0.9rem;color:var(--muted);font-family:'Plus Jakarta Sans',sans-serif}
+.kpi-lbl{font-size:0.8rem;color:var(--muted);margin-top:4px}
+.kpi-sub{font-size:0.72rem;margin-top:3px;font-weight:600}
+.kpi-sub.up{color:var(--green)}.kpi-sub.down{color:var(--red)}.kpi-sub.wait{color:var(--orange)}
+.pbar{background:var(--cream-dark);border-radius:5px;height:6px;margin-top:8px;overflow:hidden}
+.pfill{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--gold-light),var(--gold))}
+
+/* Schedule Table */
+.tbl{width:100%;border-collapse:collapse;font-size:0.82rem}
+.tbl thead{background:var(--charcoal);color:#fff}
+.tbl th{padding:10px 12px;text-align:left;font-weight:600;font-size:0.73rem;text-transform:uppercase;letter-spacing:0.5px}
+.tbl td{padding:9px 12px;border-bottom:1px solid var(--border)}
+.tbl tr:hover td{background:var(--cream)}
+.tbl tr.clickable{cursor:pointer}
+.tbl tr.clickable:hover td{background:#FFF8ED}
+.day-badge{display:inline-block;width:28px;height:28px;border-radius:50%;text-align:center;line-height:28px;font-weight:700;font-size:0.75rem;color:#fff}
+
+/* Campaign Detail Modal */
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:1000;justify-content:center;align-items:flex-start;padding:40px 20px;overflow-y:auto}
+.modal-overlay.active{display:flex}
+.modal{background:#fff;border-radius:14px;max-width:900px;width:100%;box-shadow:var(--shadow-lg);position:relative;max-height:90vh;overflow-y:auto}
+.modal-header{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:#fff;border-radius:14px 14px 0 0;z-index:2}
+.modal-header h3{font-size:1.1rem}
+.modal-close{background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--muted);padding:4px 10px;border-radius:6px}
+.modal-close:hover{background:var(--cream-dark);color:var(--charcoal)}
+.modal-body{padding:24px}
+.modal-img{width:100%;object-fit:contain;border-radius:8px;border:1px solid var(--border);background:var(--cream-dark)}
+.modal-section{margin-top:20px}
+.modal-section h4{font-size:0.9rem;color:var(--charcoal);margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--gold);display:inline-block}
+.info-grid{display:grid;grid-template-columns:140px 1fr;gap:6px 12px;font-size:0.85rem}
+.info-grid .label{color:var(--muted);font-weight:600}
+.info-grid .val{color:var(--charcoal)}
+.error-list{background:#FFF5F5;border:1px solid #FED7D7;border-radius:8px;padding:14px;margin-top:12px}
+.error-list li{color:var(--red);font-size:0.83rem;margin-bottom:4px}
+.edit-area{margin-top:16px}
+.edit-area textarea{width:100%;min-height:100px;border:1px solid var(--border);border-radius:8px;padding:12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;resize:vertical}
+.edit-area textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(189,165,127,0.15)}
+.btn{padding:8px 20px;border-radius:20px;border:none;font-weight:600;font-size:0.82rem;cursor:pointer;transition:all 0.2s}
+.btn-gold{background:var(--gold);color:#fff}.btn-gold:hover{background:var(--gold-dark)}
+.btn-teal{background:var(--teal);color:#fff}.btn-teal:hover{background:#4A7A8E}
+.btn-outline{background:none;border:1px solid var(--border);color:var(--text)}.btn-outline:hover{background:var(--cream-dark)}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:#c0392b}
+.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.dot-ok{background:var(--green)}.dot-err{background:var(--red)}.dot-wait{background:var(--orange)}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--charcoal);color:#fff;padding:14px 24px;border-radius:10px;font-size:0.85rem;z-index:2000;display:none;box-shadow:var(--shadow-lg);border-left:4px solid var(--green)}
+.toast.show{display:block;animation:slideIn 0.3s}
+@keyframes slideIn{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+.scroll-x{overflow-x:auto}
+.footer{background:var(--charcoal);color:rgba(255,255,255,0.7);padding:24px;text-align:center;margin-top:32px;border-radius:10px;font-size:0.82rem}
+.footer a{color:var(--gold);text-decoration:none}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div>
+    <h1>Panglao Prime Villas</h1>
+    <div class="header-sub">Marketing Command Center - Blue Everest Asset Group</div>
+  </div>
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <button onclick="toggleLang()" style="background:rgba(255,255,255,0.1);border:1px solid var(--gold);color:var(--gold);padding:5px 14px;border-radius:16px;cursor:pointer;font-size:0.8rem;font-weight:600" id="langBtn">EN | עב</button>
+    <span class="badge badge-green" id="statusBadge">READY</span>
+    <span style="color:var(--gold-light);font-size:0.82rem" id="dateEl">April 30, 2026</span>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- KPIs -->
+<div class="section">
+  <h2 class="section-title">Financial Overview</h2>
+  <div class="grid-6">
+    <div class="card kpi"><div class="kpi-val">$0 <span class="u">/ $900</span></div><div class="kpi-lbl">Budget Spent</div><div class="pbar"><div class="pfill" style="width:0%"></div></div></div>
+    <div class="card kpi"><div class="kpi-val">$43</div><div class="kpi-lbl">Daily Target</div><div class="kpi-sub">$900 / 21 days</div></div>
+    <div class="card kpi"><div class="kpi-val">0</div><div class="kpi-lbl">Total Leads</div><div class="kpi-sub wait">Awaiting launch</div></div>
+    <div class="card kpi"><div class="kpi-val">$0</div><div class="kpi-lbl">Cost Per Lead</div><div class="kpi-sub">Target: &lt;$30</div></div>
+    <div class="card kpi"><div class="kpi-val">0 <span class="u">/ 21</span></div><div class="kpi-lbl">Campaign Day</div><div class="pbar"><div class="pfill" style="width:0%"></div></div></div>
+    <div class="card kpi"><div class="kpi-val">24</div><div class="kpi-lbl">Creatives Ready</div><div class="kpi-sub up">15 images + 5 videos + 2 Google + 2 reuse</div></div>
+  </div>
+</div>
+
+<!-- 3-WEEK SCHEDULE -->
+<div class="section">
+  <h2 class="section-title">3-Week Campaign Schedule</h2>
+  <div class="card scroll-x">
+    <table class="tbl" id="scheduleTable">
+      <thead>
+        <tr>
+          <th>Day</th><th>Date</th><th>Phase</th><th>Platform</th><th>Market</th>
+          <th>Creative</th><th>Type</th><th>Budget</th><th>Status</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="scheduleBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- BUDGET -->
+<div class="section">
+  <h2 class="section-title">Budget Allocation</h2>
+  <div class="grid-2">
+    <div class="card">
+      <h4 style="margin-bottom:14px;font-size:0.9rem">By Platform</h4>
+      <div id="budgetPlatform"></div>
+    </div>
+    <div class="card">
+      <h4 style="margin-bottom:14px;font-size:0.9rem">By Week / Funnel</h4>
+      <div id="budgetFunnel"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PLATFORMS -->
+<div class="section">
+  <h2 class="section-title">Platform Status</h2>
+  <div class="grid-6" id="platformGrid"></div>
+</div>
+
+<!-- INVESTMENT DATA -->
+<div class="section">
+  <h2 class="section-title">Investment Data (Marketing Pillars)</h2>
+  <div class="grid-6">
+    <div class="card kpi" style="border-left:3px solid var(--teal)"><div class="kpi-val" style="font-size:1.5rem">1.43M</div><div class="kpi-lbl">Tourists 2025</div><div class="kpi-sub up">+166% since 2022</div></div>
+    <div class="card kpi" style="border-left:3px solid var(--gold)"><div class="kpi-val" style="font-size:1.5rem">2.22M</div><div class="kpi-lbl">Airport Passengers</div><div class="kpi-sub up">Over capacity</div></div>
+    <div class="card kpi" style="border-left:3px solid var(--teal)"><div class="kpi-val" style="font-size:1.5rem">P25B</div><div class="kpi-lbl">Panglao Shores</div><div class="kpi-sub">Township next door</div></div>
+    <div class="card kpi" style="border-left:3px solid var(--gold)"><div class="kpi-val" style="font-size:1.5rem">P7.15B</div><div class="kpi-lbl">New Bridge</div><div class="kpi-sub">French-funded</div></div>
+    <div class="card kpi" style="border-left:3px solid var(--teal)"><div class="kpi-val" style="font-size:1.5rem">#8</div><div class="kpi-lbl">Skyscanner</div><div class="kpi-sub">Only PH destination</div></div>
+    <div class="card kpi" style="border-left:3px solid var(--gold)"><div class="kpi-val" style="font-size:1.5rem">65%</div><div class="kpi-lbl">Occupancy</div><div class="kpi-sub up">vs 49% market</div></div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section">
+  <div class="card" style="display:flex;gap:28px;flex-wrap:wrap;align-items:center;padding:16px 24px;font-size:0.85rem">
+    <div><strong>WhatsApp Marketing:</strong> <a href="https://wa.me/639542555553" style="color:var(--teal)">+639542555553</a></div>
+    <div><strong>WhatsApp Office:</strong> <a href="https://wa.me/639958565865" style="color:var(--teal)">+639958565865</a></div>
+    <div><strong>Facebook:</strong> <a href="https://facebook.com/BlueEverestGroup" style="color:var(--teal)">Blue Everest Group</a></div>
+    <div><strong>Website:</strong> <a href="https://primevilla.ph" style="color:var(--teal)">primevilla.ph</a></div>
+  </div>
+</div>
+
+<div class="footer">
+  <div><strong>Panglao Prime Villas</strong> - Blue Everest Asset Group Holding Inc.</div>
+  <div style="margin-top:4px">Marketing Command Center - Updated April 30, 2026 - v3 Clean Creatives</div>
+</div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modalTitle">Campaign Details</h3>
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// === CAMPAIGN DATA ===
+const CAMPAIGNS = [
+  // WEEK 1: AWARENESS
+  {id:1,day:1,date:'2026-04-27',phase:'Awareness',platform:'Meta Ads',market:'IL',
+   creative:'v3_IL_01_FB_AWARENESS_AERIAL.jpg',creativeName:'IL Awareness - Aerial',type:'FB Post',budget:7,
+   source:'AERIAL 3 ENHANCED.png',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:1). Image is clean property render with subtle price bar.',
+   targeting:'Israel, age 35-62, Hebrew, RE investment interests',
+   schedule:'Sun-Thu, 20:00-23:00 IST',
+   errors:[],
+   notes:'v3_clean - Full-bleed property render. Marketing text in post copy only.'},
+  {id:2,day:1,date:'2026-04-27',phase:'Awareness',platform:'Meta Ads',market:'PH',
+   creative:'v3_PH_01_FB_AWARENESS_AERIAL.jpg',creativeName:'PH Awareness - Aerial',type:'FB Post',budget:9,
+   source:'AERIAL 3 ENHANCED.png',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:2). Image is clean property render with subtle price bar.',
+   targeting:'Metro Manila (BGC, Makati), Cebu, Davao, age 38-58, CEO/Business Owner',
+   schedule:'Tue-Thu, 19:00-23:00 PHT',
+   errors:[],
+   notes:'v3_clean - Full-bleed property render. Marketing text in post copy only.'},
+  {id:3,day:2,date:'2026-04-28',phase:'Awareness',platform:'Meta Ads',market:'IL',
+   creative:'v3_IL_02_FB_AWARENESS_REAR.jpg',creativeName:'IL Awareness - Villa Full View',type:'FB Post',budget:7,
+   source:'REAR 2 ENHANCED.png',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:3). Clean image.',
+   targeting:'Israel, age 35-62, Hebrew, travel + investment',
+   schedule:'Sun-Thu, 20:00-23:00 IST',
+   errors:[],
+   notes:'v3_clean - REAR 2 full villa view. Text in post body.'},
+  {id:4,day:3,date:'2026-04-29',phase:'Awareness',platform:'Meta Ads',market:'PH',
+   creative:'v3_PH_02_FB_AWARENESS_REAR.jpg',creativeName:'PH Awareness - Villa Full View',type:'FB Post',budget:9,
+   source:'REAR 2 ENHANCED.png',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:4). Clean image.',
+   targeting:'Metro Manila, Cebu, Davao, age 38-58',
+   schedule:'Tue-Thu, 19:00-23:00 PHT',
+   errors:[],
+   notes:'v3_clean - REAR 2 full villa view. Text in post body.'},
+  {id:5,day:4,date:'2026-04-30',phase:'Awareness',platform:'Stories',market:'IL',
+   creative:'v3_IL_04_STORY_ROOFTOP.jpg',creativeName:'IL Story - Rooftop Aerial',type:'Story/Reel',budget:6,
+   source:'TOP ENHANCED.png',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:5). Clean story image.',
+   targeting:'Israel, age 35-62',
+   schedule:'Sun-Thu, 20:00-23:00 IST',
+   errors:[],
+   notes:'v3_clean - TOP ENHANCED. Text in post body.'},
+  {id:6,day:5,date:'2026-05-01',phase:'Awareness',platform:'Stories',market:'PH',
+   creative:'v3_PH_04_STORY_ROOFTOP.jpg',creativeName:'PH Story - Rooftop Aerial',type:'Story/Reel',budget:6,
+   source:'TOP ENHANCED.png',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:6). Clean story image.',
+   targeting:'Metro Manila, Cebu, Davao',
+   schedule:'Tue-Thu, 19:00-23:00 PHT',
+   errors:[],
+   notes:'v3_clean - TOP ENHANCED. Text in post body.'},
+  {id:7,day:6,date:'2026-05-02',phase:'Awareness',platform:'Meta Ads',market:'Both',
+   creative:'v3_BOTH_PILLAR_01_PANGLAO_IS_NEXT.jpg',creativeName:'Pillar: Panglao is Next',type:'FB Post',budget:8,
+   source:'AERIAL 3 ENHANCED.png',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:7). Clean image.',
+   targeting:'Both markets',
+   schedule:'Split schedule',
+   errors:[],
+   notes:'v3_clean - Research-backed pillar. Text in post body.'},
+  {id:8,day:7,date:'2026-05-03',phase:'Awareness',platform:'Stories',market:'IL',
+   creative:'v3_IL_05_STORY_REAR.jpg',creativeName:'IL Story - Rear View Income',type:'Story/Reel',budget:6,
+   source:'REAR 1 ENHANCED.png',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:8). Clean story image.',
+   targeting:'Israel, age 35-62',
+   schedule:'Sun-Thu, 20:00-23:00 IST',
+   errors:[],
+   notes:'v3_clean - REAR 1. Text in post body.'},
+  // VIDEO SLOTS - NOW ASSIGNED
+  {id:9,day:5,date:'2026-05-01',phase:'Awareness',platform:'Reels/Stories',market:'Both',
+   creative:'20260416 BLUEEVEREST 1 Villas Bohol 2.mp4',creativeName:'Blue Everest Villa Tour 1',type:'Video',budget:8,
+   source:'video/20260416 BLUEEVEREST 1 Villas Bohol 2.mp4',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:9). Professional villa walkthrough.',
+   targeting:'Both markets',schedule:'Split schedule',errors:[],
+   notes:'Professional villa tour video. No text overlay. Post copy in separate file.'},
+  {id:10,day:7,date:'2026-05-03',phase:'Awareness',platform:'Reels/Stories',market:'Both',
+   creative:'20260416 BLUEEVEREST 2 Villas Bohol 2.mp4',creativeName:'Blue Everest Villa Tour 2',type:'Video',budget:8,
+   source:'video/20260416 BLUEEVEREST 2 Villas Bohol 2.mp4',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:10). Professional villa walkthrough.',
+   targeting:'Both markets',schedule:'Split schedule',errors:[],
+   notes:'Professional villa tour video #2. Complements Tour 1.'},
+  // WEEK 2: CONSIDERATION
+  {id:11,day:8,date:'2026-05-04',phase:'Consideration',platform:'Meta Ads',market:'IL',
+   creative:'v3_IL_03_FB_CONSIDERATION_INTERIOR.jpg',creativeName:'IL Consideration - Interior',type:'FB Post',budget:11,
+   source:'LIVING 1.png',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:11). Clean interior image.',
+   targeting:'Israel, Tel Aviv, Ramat Gan, Herzliya, age 40-65, high income',
+   schedule:'Sun-Thu, 18:00-21:00 IST',
+   errors:[],
+   notes:'v3_clean - LIVING 1 interior. Text in post body. Retarget warm audiences.'},
+  {id:12,day:9,date:'2026-05-05',phase:'Consideration',platform:'Meta Ads',market:'PH',
+   creative:'v3_PH_03_FB_CONSIDERATION_POOL.jpg',creativeName:'PH Consideration - Pool Deck',type:'FB Post',budget:12,
+   source:'PD3 ENHANCED.png',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:12). Clean pool image.',
+   targeting:'BGC, Makati, Cebu, Davao, age 35-58, investors',
+   schedule:'Tue-Thu, 19:00-23:00 PHT',
+   errors:[],
+   notes:'v3_clean - PD3 pool deck. Text in post body.'},
+  {id:13,day:10,date:'2026-05-06',phase:'Consideration',platform:'Meta Ads',market:'Both',
+   creative:'v3_BOTH_PILLAR_04_PRICE_ADVANTAGE.jpg',creativeName:'Pillar: Price Advantage',type:'FB Post',budget:10,
+   source:'REAR 1 ENHANCED.png',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:13). Clean image.',
+   targeting:'Both markets',schedule:'Split',
+   errors:[],
+   notes:'v3_clean - REAR 1. Price comparison in post body.'},
+  {id:14,day:11,date:'2026-05-07',phase:'Consideration',platform:'Meta Ads',market:'Both',
+   creative:'v3_BOTH_PILLAR_02_P25B_TOWNSHIP.jpg',creativeName:'Pillar: P25B Township',type:'FB Post',budget:8,
+   source:'REAR 2 ENHANCED.png',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:14). Clean image.',
+   targeting:'Both markets',schedule:'Split',
+   errors:[],
+   notes:'v3_clean - REAR 2 villa view. Township data in post body.'},
+  {id:15,day:12,date:'2026-05-08',phase:'Consideration',platform:'Stories',market:'Both',
+   creative:'v3_BOTH_PILLAR_05_INFRASTRUCTURE.jpg',creativeName:'Pillar: Infrastructure Growth',type:'Story',budget:6,
+   source:'TOP ENHANCED.png',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:15). Clean story image.',
+   targeting:'Both markets',schedule:'Split',
+   errors:[],
+   notes:'v3_clean - TOP ENHANCED. Infrastructure data in post body.'},
+  // WEEK 2 VIDEO SLOTS - NOW ASSIGNED
+  {id:16,day:10,date:'2026-05-06',phase:'Consideration',platform:'Reels',market:'Both',
+   creative:'VIDEO-2026-04-27-02-29-12.mp4',creativeName:'Latest Villa Footage',type:'Video',budget:10,
+   source:'video/VIDEO-2026-04-27-02-29-12.mp4',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:16). Latest raw footage.',
+   targeting:'Both markets',schedule:'Split',errors:[],
+   notes:'Latest footage from Apr 27. Consideration phase detail video.'},
+  {id:17,day:12,date:'2026-05-08',phase:'Consideration',platform:'Reels',market:'IL',
+   creative:'VIDEO-2026-04-22-18-09-24.mp4',creativeName:'Villa Detail Walk IL',type:'Video',budget:10,
+   source:'video/VIDEO-2026-04-22-18-09-24.mp4',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:17). IL-targeted video.',
+   targeting:'Israel, age 35-62',schedule:'Sun-Thu, 20:00-23:00 IST',errors:[],
+   notes:'Deeper consideration video targeting Israel market only.'},
+  // WEEK 3: CONVERSION
+  {id:18,day:15,date:'2026-05-11',phase:'Conversion',platform:'Meta Ads',market:'IL',
+   creative:'v3_IL_01_FB_AWARENESS_AERIAL.jpg',creativeName:'IL Conversion - Urgency (reuse Aerial)',type:'FB Post',budget:15,
+   source:'AERIAL 3 ENHANCED.png',status:'ready',
+   copy:'[v3] Conversion copy: urgency messaging. Reuses v3 aerial image. Post copy in ALL_POST_COPY_V3.json.',
+   targeting:'Retarget: website visitors 180 days + engagement + lookalike 3-5%',
+   schedule:'Daily, all hours',
+   errors:[],
+   notes:'v3_clean - Reuses IL_01 aerial with conversion post copy. Retargeting warm audiences.'},
+  {id:19,day:16,date:'2026-05-12',phase:'Conversion',platform:'Meta Ads',market:'PH',
+   creative:'v3_PH_01_FB_AWARENESS_AERIAL.jpg',creativeName:'PH Conversion - Last 2 (reuse Aerial)',type:'FB Post',budget:20,
+   source:'AERIAL 3 ENHANCED.png',status:'ready',
+   copy:'[v3] Conversion copy: scarcity messaging. Reuses v3 aerial image. Post copy in ALL_POST_COPY_V3.json.',
+   targeting:'Hot audiences: website visitors, video viewers 80%+, lead form viewers',
+   schedule:'Daily',
+   errors:[],
+   notes:'v3_clean - Reuses PH_01 aerial. 70% retargeting budget.'},
+  {id:20,day:14,date:'2026-05-10',phase:'Consideration',platform:'Meta Ads',market:'Both',
+   creative:'v3_BOTH_PILLAR_03_BRAND_GRAVITY.jpg',creativeName:'Pillar: Brand Gravity',type:'FB Post',budget:8,
+   source:'PD3 ENHANCED.png',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:20). Clean pool image.',
+   targeting:'Both markets',schedule:'Split',
+   errors:[],
+   notes:'v3_clean - PD3 pool deck. Brand gravity messaging in post body.'},
+  {id:21,day:17,date:'2026-05-13',phase:'Conversion',platform:'Reels/Stories',market:'Both',
+   creative:'VIDEO-2026-04-22-18-09-41.mp4',creativeName:'Final Push Villa Video',type:'Video',budget:12,
+   source:'video/VIDEO-2026-04-22-18-09-41.mp4',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:21). Final conversion push.',
+   targeting:'Retargeting: website visitors, video viewers, lead form viewers',schedule:'Daily',errors:[],
+   notes:'Final push retargeting video. Conversion urgency in post copy.'},
+  // GOOGLE ADS
+  {id:22,day:1,date:'2026-04-27',phase:'All Phases',platform:'Google Search',market:'IL',
+   creative:null,creativeName:'Google Search IL (Text Ads)',type:'Search Ad',budget:12,
+   source:'Text only',status:'ready',
+   copy:'Headlines: Villa Investment Bohol - 1,450,000 ILS | 23,700 ILS/month | ROI 17-25%\nDescription: 2 villas only between 5-star hotels, 60 sec beach, 3 legal ownership paths',
+   targeting:'Keywords: Bohol villa investment, foreign property investment, Airbnb villa purchase',
+   schedule:'24/7',errors:[],notes:'Running all 21 days, $12/day'},
+  {id:23,day:1,date:'2026-04-27',phase:'All Phases',platform:'Google Search',market:'PH',
+   creative:null,creativeName:'Google Search PH (Text Ads)',type:'Search Ad',budget:13,
+   source:'Text only',status:'ready',
+   copy:'Headlines: Panglao Prime Villas - PHP 28M | PHP 395K Monthly Income | 17-25% ROI\nDescription: Luxury 4BR villas in Bohol, BDO financing, 60 sec to beach, verified Airbnb income',
+   targeting:'Keywords: Panglao villa investment, Bohol luxury villas, passive income Philippines',
+   schedule:'24/7',errors:[],notes:'Running all 21 days, $13/day'},
+  // PH STORY - Pool
+  {id:24,day:13,date:'2026-05-09',phase:'Consideration',platform:'Stories',market:'PH',
+   creative:'v3_PH_05_STORY_POOL.jpg',creativeName:'PH Story - Pool Deck',type:'Story/Reel',budget:6,
+   source:'PD3 ENHANCED.png',status:'ready',
+   copy:'[v3] Post copy in ALL_POST_COPY_V3.json (campaign_id:24). Clean story image.',
+   targeting:'Metro Manila, Cebu, Davao',
+   schedule:'Tue-Thu, 19:00-23:00 PHT',
+   errors:[],
+   notes:'v3_clean - PD3 pool deck story. Text in post body.'},
+];
+
+// === RENDER FUNCTIONS ===
+
+function getPhaseColor(phase){
+  return phase==='Awareness'?'#3498db':phase==='Consideration'?'#e67e22':phase==='Conversion'?'#e74c3c':'#9b59b6';
+}
+
+function getStatusBadge(status){
+  if(status==='ready') return '<span class="badge badge-green"><span class="status-dot dot-ok"></span>Ready</span>';
+  if(status==='review') return '<span class="badge badge-gold"><span class="status-dot dot-wait"></span>Review</span>';
+  if(status==='needs_fix') return '<span class="badge badge-red"><span class="status-dot dot-err"></span>Needs Fix</span>';
+  if(status==='pending') return '<span class="badge badge-orange"><span class="status-dot dot-wait"></span>Pending</span>';
+  if(status==='live') return '<span class="badge badge-green"><span class="status-dot dot-ok"></span>Live</span>';
+  return '<span class="badge badge-outline">Unknown</span>';
+}
+
+function renderSchedule(){
+  const tbody=document.getElementById('scheduleBody');
+  tbody.innerHTML=CAMPAIGNS.map(c=>{
+    const pc=getPhaseColor(c.phase);
+    const hasErrors=c.errors.length>0;
+    return `
+    <tr class="clickable" onclick="openCampaign(${c.id})">
+      <td><span class="day-badge" style="background:${pc}">${c.day}</span></td>
+      <td style="white-space:nowrap;font-size:0.8rem">${c.date}</td>
+      <td><span style="color:${pc};font-weight:600">${c.phase}</span></td>
+      <td>${c.platform}</td>
+      <td><span class="badge ${c.market==='IL'?'badge-teal':c.market==='PH'?'badge-gold':'badge-outline'}">${c.market}</span></td>
+      <td style="max-width:200px">
+        <div style="font-weight:600;font-size:0.82rem">${c.creativeName}</div>
+        ${hasErrors?'<div style="color:var(--red);font-size:0.72rem">'+c.errors.length+' error(s)</div>':''}
+      </td>
+      <td>${c.type}</td>
+      <td>$${c.budget}/day</td>
+      <td>${getStatusBadge(c.status)}</td>
+      <td><button class="btn btn-outline" onclick="event.stopPropagation();openCampaign(${c.id})" style="font-size:0.72rem;padding:4px 10px">Open</button></td>
+    </tr>`;
+  }).join('');
+}
+
+function openCampaign(id){
+  const c=CAMPAIGNS.find(x=>x.id===id);
+  if(!c) return;
+  document.getElementById('modalTitle').textContent=c.creativeName;
+  const hasCreative=c.creative!=null;
+  const isVideo=hasCreative && c.creative.endsWith('.mp4');
+  const encodedCreative=hasCreative?encodeURIComponent(c.creative).replace(/%2F/g,'/'):'';
+  const videoPath=isVideo?`../video/${encodedCreative}`:'';
+  const imgPath=hasCreative && !isVideo?`../BOHOL Project/assets/ad_creatives/v3_clean/${encodedCreative}`:'';
+
+  let mediaHtml='';
+  if(isVideo){
+    const vidId='vid_'+c.id;
+    mediaHtml=`<div id="videoWrap_${c.id}" style="position:relative">
+      <video id="${vidId}" controls preload="metadata" style="width:100%;max-height:500px;border-radius:8px;background:#000"
+        src="${videoPath}"
+        onerror="document.getElementById('videoWrap_${c.id}').innerHTML='<div style=\\'background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:8px;padding:40px;text-align:center\\'><div style=\\'font-size:3rem\\'>&#9654;</div><div style=\\'color:#fff;font-size:1.1rem;margin-top:12px;font-weight:600\\'>${c.creativeName}</div><div style=\\'color:var(--gold);font-size:0.85rem;margin-top:8px\\'>${c.creative}</div><div style=\\'color:rgba(255,255,255,0.5);font-size:0.75rem;margin-top:12px\\'>Video file: video/${c.creative}</div></div>'">
+      </video>
+    </div>`;
+  } else if(hasCreative){
+    mediaHtml=`<img class="modal-img" src="${imgPath}" alt="${c.creativeName}" onerror="this.style.display='none'">`;
+  } else if(c.type==='Search Ad'){
+    mediaHtml=`<div style="background:var(--cream-dark);height:120px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted)">Text Ad - No Image</div>`;
+  }
+
+  document.getElementById('modalBody').innerHTML=`
+    ${mediaHtml}
+
+    <div class="modal-section">
+      <h4>Campaign Info</h4>
+      <div class="info-grid">
+        <div class="label">Day / Date</div><div class="val">Day ${c.day} - ${c.date}</div>
+        <div class="label">Phase</div><div class="val"><span style="color:${getPhaseColor(c.phase)};font-weight:600">${c.phase}</span></div>
+        <div class="label">Platform</div><div class="val">${c.platform}</div>
+        <div class="label">Market</div><div class="val">${c.market}</div>
+        <div class="label">Type</div><div class="val">${c.type}</div>
+        <div class="label">Budget</div><div class="val">$${c.budget}/day</div>
+        <div class="label">Source Image</div><div class="val">${c.source}</div>
+        <div class="label">Targeting</div><div class="val">${c.targeting}</div>
+        <div class="label">Schedule</div><div class="val">${c.schedule}</div>
+        <div class="label">Status</div><div class="val">${getStatusBadge(c.status)}</div>
+      </div>
+    </div>
+
+    ${c.errors.length>0?`
+    <div class="modal-section">
+      <h4>Errors Found</h4>
+      <div class="error-list">
+        <ul style="padding-left:18px">${c.errors.map(e=>`<li>${e}</li>`).join('')}</ul>
+      </div>
+    </div>`:''}
+
+    <div class="modal-section">
+      <h4>Ad Copy</h4>
+      <pre style="background:var(--cream);padding:14px;border-radius:8px;font-size:0.83rem;white-space:pre-wrap;border:1px solid var(--border);font-family:'Plus Jakarta Sans',sans-serif">${c.copy}</pre>
+    </div>
+
+    <div class="modal-section">
+      <h4>Edit / Notes</h4>
+      <div class="edit-area">
+        <textarea id="editNotes_${c.id}" placeholder="Add notes, corrections, or instructions for this campaign...">${c.notes}</textarea>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+        <button class="btn btn-gold" onclick="saveNotes(${c.id})">Save Notes</button>
+        <button class="btn btn-teal" onclick="markReady(${c.id})">Mark as Ready</button>
+        <button class="btn btn-outline" onclick="markNeedsFix(${c.id})">Mark Needs Fix</button>
+        <button class="btn btn-red" onclick="regenerate(${c.id})">Request Regeneration</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('modal').classList.add('active');
+}
+
+function closeModal(){document.getElementById('modal').classList.remove('active')}
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+function saveNotes(id){
+  const c=CAMPAIGNS.find(x=>x.id===id);
+  const val=document.getElementById('editNotes_'+id).value;
+  c.notes=val;
+  showToast('Notes saved for: '+c.creativeName);
+}
+
+function markReady(id){
+  const c=CAMPAIGNS.find(x=>x.id===id);
+  c.status='ready';c.errors=[];
+  renderSchedule();openCampaign(id);
+  showToast('Marked as READY: '+c.creativeName);
+}
+
+function markNeedsFix(id){
+  const c=CAMPAIGNS.find(x=>x.id===id);
+  c.status='needs_fix';
+  renderSchedule();openCampaign(id);
+  showToast('Marked as NEEDS FIX: '+c.creativeName);
+}
+
+function regenerate(id){
+  const c=CAMPAIGNS.find(x=>x.id===id);
+  const notes=document.getElementById('editNotes_'+id)?.value||'';
+  c.notes='REGENERATION REQUESTED'+(notes?': '+notes:'');
+  c.status='pending';
+  renderSchedule();openCampaign(id);
+  showToast('Regeneration requested for: '+c.creativeName);
+}
+
+// Budget bars
+function renderBudget(){
+  const platforms={'Meta IL':0,'Meta PH':0,'Google IL':0,'Google PH':0,'Stories/Reels':0};
+  const weeks={'Week 1 (Awareness)':0,'Week 2 (Consideration)':0,'Week 3 (Conversion)':0};
+
+  CAMPAIGNS.forEach(c=>{
+    const days=c.day<=7?7:c.day<=14?7:7;
+    const total=c.budget*(c.platform==='Google Search'?21:days);
+
+    if(c.platform==='Google Search'&&c.market==='IL') platforms['Google IL']+=c.budget*21;
+    else if(c.platform==='Google Search'&&c.market==='PH') platforms['Google PH']+=c.budget*21;
+    else if(c.market==='IL') platforms['Meta IL']+=total;
+    else if(c.market==='PH') platforms['Meta PH']+=total;
+    else{platforms['Meta IL']+=total/2;platforms['Meta PH']+=total/2;}
+
+    if(c.day<=7) weeks['Week 1 (Awareness)']+=c.budget*(c.platform==='Google Search'?7:Math.min(days,7));
+    else if(c.day<=14) weeks['Week 2 (Consideration)']+=c.budget*(c.platform==='Google Search'?7:days);
+    else weeks['Week 3 (Conversion)']+=c.budget*(c.platform==='Google Search'?7:days);
+  });
+
+  const colors={
+    'Meta IL':'var(--teal)','Meta PH':'var(--teal-light)',
+    'Google IL':'var(--gold)','Google PH':'var(--gold-light)','Stories/Reels':'#9b59b6',
+    'Week 1 (Awareness)':'#3498db','Week 2 (Consideration)':'#e67e22','Week 3 (Conversion)':'#e74c3c'
+  };
+
+  function bar(data,containerId){
+    const max=Math.max(...Object.values(data));
+    document.getElementById(containerId).innerHTML=Object.entries(data).map(([k,v])=>`
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+        <div style="min-width:130px;font-size:0.8rem;font-weight:600;text-align:right">${k}</div>
+        <div style="flex:1;background:var(--cream-dark);border-radius:4px;height:22px;overflow:hidden">
+          <div style="height:100%;width:${(v/900*100).toFixed(1)}%;background:${colors[k]||'var(--gold)'};border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;font-size:0.7rem;color:#fff;font-weight:600;min-width:30px">$${Math.round(v)}</div>
+        </div>
+        <div style="font-size:0.78rem;color:var(--muted);min-width:45px">$${Math.round(v)}</div>
+      </div>
+    `).join('');
+  }
+  bar(platforms,'budgetPlatform');
+  bar(weeks,'budgetFunnel');
+}
+
+// Platforms
+function renderPlatforms(){
+  const p=[
+    {name:'Facebook Page',status:'live',detail:'Blue Everest - Active'},
+    {name:'FB Group IL',status:'live',detail:'investment.ph.il'},
+    {name:'Meta Ads',status:'partial',detail:'Account ready, pixel pending'},
+    {name:'Google Ads',status:'partial',detail:'Account ready, tag pending'},
+    {name:'Brevo (Email)',status:'off',detail:'Account needed'},
+    {name:'WATI (WhatsApp)',status:'off',detail:'Account needed'},
+    {name:'primevilla.ph',status:'partial',detail:'Server active, tracking pending'},
+  ];
+  document.getElementById('platformGrid').innerHTML=p.map(x=>`
+    <div class="card" style="display:flex;align-items:center;gap:10px;padding:14px 16px">
+      <div class="status-dot dot-${x.status==='live'?'ok':x.status==='partial'?'wait':'err'}" style="width:10px;height:10px;border-radius:50%"></div>
+      <div><div style="font-weight:600;font-size:0.85rem">${x.name}</div><div style="font-size:0.73rem;color:var(--muted)">${x.detail}</div></div>
+    </div>
+  `).join('');
+}
+
+// === HEBREW TRANSLATION ===
+let lang = 'en';
+const HE = {
+  'Financial Overview': 'סקירה פיננסית',
+  'Total Budget Spent': 'תקציב שנוצל',
+  'Daily Target': 'יעד יומי',
+  'Total Leads': 'סה"כ לידים',
+  'Cost Per Lead': 'עלות לליד',
+  'Campaign Day': 'יום קמפיין',
+  'Creatives Ready': 'קריאייטיבים מוכנים',
+  '3-Week Campaign Schedule': 'לוז קמפיין 3 שבועות',
+  'Budget Allocation': 'הקצאת תקציב',
+  'Platform Status': 'סטטוס פלטפורמות',
+  'Investment Data (Marketing Pillars)': 'נתוני השקעה (עמודי שיווק)',
+  'Tourists 2025': 'תיירים 2025',
+  'Airport Passengers': 'נוסעים בשדה התעופה',
+  'Panglao Shores': 'פנגלאו שורס',
+  'New Bridge': 'גשר חדש',
+  'Skyscanner': 'סקיסקנר',
+  'Occupancy': 'תפוסה',
+  'Over capacity': 'מעל הקיבולת',
+  'Township next door': 'עיר נופש ליד',
+  'French-funded': 'ממומן ע"י צרפת',
+  'Only PH destination': 'יעד PH היחיד',
+  'vs 49% market': 'מול 49% שוק',
+  '+166% since 2022': '+166% מאז 2022',
+  'Performance Targets vs Industry': 'יעדי ביצוע מול תעשייה',
+  'By Platform': 'לפי פלטפורמה',
+  'By Week / Funnel': 'לפי שבוע / משפך',
+  'Contact & Links': 'יצירת קשר וקישורים',
+  'Day':'יום','Date':'תאריך','Phase':'שלב','Platform':'פלטפורמה','Market':'שוק',
+  'Creative':'קריאייטיב','Type':'סוג','Budget':'תקציב','Status':'סטטוס','Actions':'פעולות',
+  'Campaign Info':'פרטי קמפיין','Errors Found':'שגיאות שנמצאו','Ad Copy':'טקסט מודעה',
+  'Edit / Notes':'עריכה / הערות','Save Notes':'שמור הערות','Mark as Ready':'סמן כמוכן',
+  'Mark Needs Fix':'סמן לתיקון','Request Regeneration':'בקש יצירה מחדש',
+  'Ready':'מוכן','Review':'בבדיקה','Needs Fix':'צריך תיקון','Pending':'ממתין','Live':'פעיל',
+  'Awareness':'מודעות','Consideration':'שיקול','Conversion':'המרה',
+  'PRE-LAUNCH':'לפני השקה',
+};
+
+function toggleLang(){
+  lang = lang==='en' ? 'he' : 'en';
+  document.documentElement.dir = lang==='he' ? 'rtl' : 'ltr';
+  document.documentElement.lang = lang;
+
+  // Translate section titles
+  document.querySelectorAll('.section-title').forEach(el => {
+    if(!el.dataset.en) el.dataset.en = el.textContent;
+    el.textContent = lang==='he' ? (HE[el.dataset.en] || el.dataset.en) : el.dataset.en;
+  });
+
+  // Translate KPI labels
+  document.querySelectorAll('.kpi-lbl').forEach(el => {
+    if(!el.dataset.en) el.dataset.en = el.textContent;
+    el.textContent = lang==='he' ? (HE[el.dataset.en] || el.dataset.en) : el.dataset.en;
+  });
+
+  document.querySelectorAll('.kpi-sub').forEach(el => {
+    if(!el.dataset.en) el.dataset.en = el.textContent;
+    el.textContent = lang==='he' ? (HE[el.dataset.en] || el.dataset.en) : el.dataset.en;
+  });
+
+  document.getElementById('langBtn').textContent = lang==='he' ? 'עב | EN' : 'EN | עב';
+  document.getElementById('statusBadge').textContent = lang==='he' ? 'מוכן' : 'READY';
+  document.getElementById('dateEl').textContent = lang==='he' ? '30 באפריל 2026' : 'April 30, 2026';
+
+  renderSchedule();
+}
+
+// Init
+renderSchedule();
+renderBudget();
+renderPlatforms();
+</script>
+</body>
+</html>

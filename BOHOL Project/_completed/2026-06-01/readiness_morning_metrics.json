@@ -1,0 +1,111 @@
+{
+  "timestamp": "2026-06-01T08:00:00+08:00",
+  "agent": "MORNING_METRICS",
+  "phase_detected": "PRE_LAUNCH",
+  "simulation_flag": true,
+  "go_live_date": null,
+  "start_date": null,
+  "mode": "PREPARATION",
+  "connectors_status": {
+    "meta_ads": {
+      "reachable": true,
+      "ad_account_id": "2015125296073673",
+      "ad_account_name": "Blue Everest - Panglao Prime Villas",
+      "account_status": "ACTIVE",
+      "is_queryable": true,
+      "currency": "PHP",
+      "has_payment_method": true,
+      "min_daily_budget_php": 61.95,
+      "note": "Account ID in campaign_state.json (120244375418610326) does NOT match the active ad account returned by MCP (2015125296073673). campaign_state.json should be reconciled."
+    },
+    "higgsfield": {
+      "reachable": true,
+      "credits": 1,
+      "plan": "plus",
+      "warning": "Only 1 credit remaining. Top up before any new image/video generation."
+    },
+    "google_drive": {
+      "reachable": false,
+      "error": "User rejected the MCP call. Connector likely not authorized for unattended scheduled runs.",
+      "action": "User must re-authorize Google Drive connector or grant unattended access."
+    },
+    "gmail": {
+      "reachable": true,
+      "labels_returned": 1,
+      "note": "Only system label '[Imap]/Drafts' visible. No custom Panglao labels yet."
+    },
+    "canva": {
+      "reachable": true,
+      "note": "Found existing design: 'PANGLAO PRIME VILLAS MARKETING 030326' (DAG3ubp_ok0, 15 pages, updated 2026)."
+    },
+    "google_ads": {
+      "reachable": false,
+      "note": "No Google Ads MCP connector loaded. Manual UI access required for metrics until connector added."
+    },
+    "brevo": {
+      "reachable": false,
+      "note": "Account not created (needs_account in campaign_state.json)."
+    },
+    "wati": {
+      "reachable": false,
+      "note": "Account not created (needs_account in campaign_state.json). Requires Client ID."
+    }
+  },
+  "tracking_status": {
+    "meta_pixel": {
+      "id": "1599211187973958",
+      "status": "created_not_installed",
+      "install_file": "_status/tracking_codes_install.html",
+      "blocker": "Pixel code not installed on primevilla.ph"
+    },
+    "google_tag": {
+      "id": "AW-18095957436",
+      "alt_id": "GT-PZZMF859",
+      "status": "created_not_installed",
+      "blocker": "Tag not installed on primevilla.ph"
+    },
+    "google_ads_advertiser_verification": "pending"
+  },
+  "queue_status": {
+    "today_pht": "2026-06-01",
+    "queue_folder_exists": false,
+    "queue_path_checked": "_queue/2026-06-01/",
+    "tasks_files_validated": 0,
+    "alert_file_present": "_status/alert_no_tasks.md"
+  },
+  "blockers": [
+    "Campaign in PRE_LAUNCH phase, simulation=true: no live actions permitted.",
+    "No task queue generated for 2026-06-01 (Claude Code needs to produce _queue/2026-06-01/tasks_*.json). Eighth consecutive day without a queue (last content tasks queued 2026-04-16, last queue folder of any kind 2026-05-25).",
+    "Meta Pixel 1599211187973958 not installed on primevilla.ph.",
+    "Google Tag AW-18095957436 not installed on primevilla.ph.",
+    "Google Ads advertiser verification still pending.",
+    "Brevo account not created.",
+    "WATI account not created (Client ID required).",
+    "Google Drive connector unauthorized for unattended access.",
+    "Higgsfield balance at 1 credit - insufficient for further creative generation.",
+    "Ad account ID mismatch: campaign_state.json lists 120244375418610326 but MCP returns 2015125296073673 as the active Panglao account."
+  ],
+  "suggested_actions": [
+    "Reconcile ad_account_id in campaign_state.json against the live Meta Ads MCP response (2015125296073673).",
+    "Have Claude Code generate _queue/2026-06-01/tasks_*.json so daily routines have work to execute. WEEKLY_REVIEW also fires today at 09:00 PHT (Monday) and will run against an empty queue.",
+    "Install Meta Pixel 1599211187973958 and Google Tag AW-18095957436 on primevilla.ph using _status/tracking_codes_install.html.",
+    "Complete Google Ads advertiser verification.",
+    "Create Brevo account at app.brevo.com and update campaign_state.platforms.brevo.",
+    "Create WATI account at app.wati.io, capture Client ID, update campaign_state.platforms.wati.",
+    "Re-authorize Google Drive MCP for scheduled-task access.",
+    "Top up Higgsfield credits before next creative batch.",
+    "Hold all spend until phase flips out of PRE_LAUNCH AND simulation=false AND start_date is set."
+  ],
+  "actions_taken_this_run": [
+    "Read _status/campaign_state.json - phase confirmed PRE_LAUNCH.",
+    "Pinged Meta Ads MCP (ads_get_ad_accounts).",
+    "Pinged Higgsfield MCP (balance).",
+    "Pinged Gmail MCP (list_labels).",
+    "Pinged Canva MCP (search-designs).",
+    "Attempted Google Drive MCP - rejected.",
+    "Verified tracking_codes_install.html present.",
+    "Verified no _queue/2026-06-01/ folder.",
+    "Wrote readiness report and updated heartbeat.",
+    "NO ads_metrics.json / email_metrics.json / whatsapp_metrics.json written - live metrics suppressed in PREPARATION mode per phase guard."
+  ]
+}

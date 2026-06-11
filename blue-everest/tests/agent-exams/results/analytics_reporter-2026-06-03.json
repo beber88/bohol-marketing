@@ -1,0 +1,811 @@
+{
+  "agent": "analytics_reporter",
+  "timestamp": "2026-06-03T19:32:10.876Z",
+  "total": 100,
+  "correct": 100,
+  "score": 100,
+  "passed": true,
+  "results": [
+    {
+      "id": 1,
+      "question": "What does CTR stand for and how is it calculated?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "CTR measures how often people who see your ad click on it. Calculated as clicks divided by impressions, multiplied by 100 to express as a percentage."
+    },
+    {
+      "id": 2,
+      "question": "What does CPL stand for in digital marketing?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "CPL (Cost Per Lead) measures how much you spend to acquire each lead. Calculated as Total Ad Spend divided by Number of Leads generated."
+    },
+    {
+      "id": 3,
+      "question": "What does CPM represent?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "CPM is Cost Per Mille (Latin for thousand). It represents the cost to show your ad 1,000 times. Calculated as (Spend / Impressions) x 1000."
+    },
+    {
+      "id": 4,
+      "question": "What is CPC in advertising?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "CPC (Cost Per Click) is the average amount paid for each click on an ad. Calculated as Total Ad Spend / Total Clicks."
+    },
+    {
+      "id": 5,
+      "question": "What is CVR (Conversion Rate) in the context of the Panglao Prime Villas campaign?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "For the villa campaign, CVR measures the rate at which ad clicks convert into qualified lead actions (form fills, WhatsApp inquiries). The RE benchmark CVR is 8.78%."
+    },
+    {
+      "id": 6,
+      "question": "What is ROAS and why is it relevant for the villa campaign?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "ROAS measures revenue generated per dollar of ad spend. For a PHP 28-30M villa sale from a $900 campaign budget, even one sale produces astronomical ROAS."
+    },
+    {
+      "id": 7,
+      "question": "What is the difference between CPA and CPL?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "CPL is specific to lead generation (form fills, inquiries). CPA can refer to any defined action including reservations or bookings. For villa sales, a lead is much earlier in the funnel than an acquisition."
+    },
+    {
+      "id": 8,
+      "question": "What does 'Frequency' measure in Meta Ads and why should it be monitored for the villa campaign?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Frequency = Impressions / Reach. For a niche audience (Israeli investors, high-net-worth Filipino buyers), frequency can climb quickly and cause ad fatigue, signaling the need for creative refresh."
+    },
+    {
+      "id": 9,
+      "question": "What is 'Reach' in advertising metrics?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Reach counts unique individuals, unlike Impressions which counts total views (including repeat views by the same person)."
+    },
+    {
+      "id": 10,
+      "question": "What is a 'Quality Score' or 'Relevance Score' and how does it affect CPC?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Quality/Relevance scores reward advertisers who create highly relevant ads with lower CPCs. For the villa campaign, well-targeted Hebrew ads to Israeli investors should achieve high relevance."
+    },
+    {
+      "id": 11,
+      "question": "What is the difference between 'View-Through Conversions' and 'Click-Through Conversions'?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "View-through conversions capture the influence of ad impressions on people who later convert without clicking. Important for high-consideration purchases like villas where the decision journey is long."
+    },
+    {
+      "id": 12,
+      "question": "What does 'Impressions' measure?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Impressions count every instance an ad appears on someone's screen, including multiple views by the same person. One person seeing the ad 3 times = 3 impressions but 1 reach."
+    },
+    {
+      "id": 13,
+      "question": "For the Panglao Prime Villas campaign, what is the most meaningful 'conversion event' to optimize for?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Villa purchases happen offline over weeks/months and cannot be tracked as a pixel event. The most meaningful trackable conversion is a qualified inquiry via WhatsApp or lead form, which initiates the sales pipeline."
+    },
+    {
+      "id": 14,
+      "question": "What is 'Bounce Rate' on a landing page?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Bounce rate indicates landing page effectiveness. A high bounce rate on primevilla.ph would signal that the page does not match visitor expectations set by the ad, or has usability issues."
+    },
+    {
+      "id": 15,
+      "question": "What is 'Incrementality' in advertising measurement and why is it hard to measure for the villa campaign?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Incrementality isolates the true causal impact of advertising. With only ~$900 budget and a niche audience, running holdout tests to measure incrementality is impractical due to small sample sizes."
+    },
+    {
+      "id": 16,
+      "question": "A Meta ad received 5,000 impressions and 75 clicks with $50 total spend. What is the CTR?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "CTR = (Clicks / Impressions) x 100 = (75 / 5,000) x 100 = 1.5%. This is above the RE benchmark of 0.98%, indicating good performance."
+    },
+    {
+      "id": 17,
+      "question": "A campaign spent $150 and generated 3 leads. What is the CPL?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "CPL = Total Spend / Number of Leads = $150 / 3 = $50. This is above the RE benchmark of $16.61 but needs context: luxury real estate typically has higher CPLs."
+    },
+    {
+      "id": 18,
+      "question": "A campaign had 10,000 impressions and $100 total spend. What is the CPM?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "CPM = (Spend / Impressions) x 1,000 = ($100 / 10,000) x 1,000 = $10. This is below the kill threshold of $18, so the campaign is healthy on this metric."
+    },
+    {
+      "id": 19,
+      "question": "An ad received 200 clicks and the total spend was $300. What is the CPC?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "CPC = Total Spend / Total Clicks = $300 / 200 = $1.50. This is below the RE benchmark CPC of $1.88, indicating cost-efficient traffic."
+    },
+    {
+      "id": 20,
+      "question": "An ad set had 8,000 impressions, 120 clicks, and 9 lead form submissions. What is the CVR (click-to-lead)?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "CVR = (Conversions / Clicks) x 100 = (9 / 120) x 100 = 7.5%. This is below the RE benchmark of 8.78%, so optimization may be needed on the landing page or lead form."
+    },
+    {
+      "id": 21,
+      "question": "The Israeli campaign ran for 7 days, spent $280, generated 12,000 impressions and 180 clicks. What are the CPC and CTR?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "CPC = $280 / 180 = $1.56. CTR = (180 / 12,000) x 100 = 1.5%. Both metrics are favorable: CPC is below the $1.88 benchmark and CTR is above the 0.98% benchmark."
+    },
+    {
+      "id": 22,
+      "question": "The total campaign budget is $900 for 15 days. After 10 days, $720 has been spent. What is the daily burn rate and will the budget last 15 days at this pace?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Daily burn = $720 / 10 = $72/day. At $72/day, $900 lasts $900 / $72 = 12.5 days. Budget will be exhausted before day 15. Remaining $180 at $72/day = 2.5 more days. Need to reduce daily spend to $36/day for the remaining 5 days."
+    },
+    {
+      "id": 23,
+      "question": "Campaign A: 50,000 impressions, 600 clicks, 18 leads, $360 spend. Campaign B: 30,000 impressions, 450 clicks, 21 leads, $300 spend. Which campaign has the better CPL and CVR?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Campaign A: CPL = $360/18 = $20, CVR = (18/600) x 100 = 3%. Campaign B: CPL = $300/21 = $14.29, CVR = (21/450) x 100 = 4.67%. Campaign B delivers cheaper leads at a higher conversion rate."
+    },
+    {
+      "id": 24,
+      "question": "A Google Ads keyword 'luxury villa Bohol' has: 2,400 impressions, 36 clicks, $85.32 spend, and 2 conversions. Calculate CPC, CTR, CPL, and CVR.",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "CPC = $85.32/36 = $2.37. CTR = (36/2,400) x 100 = 1.5%. CPL = $85.32/2 = $42.66. CVR = (2/36) x 100 = 5.56%. CPC is above the $1.88 benchmark, suggesting high competition for this keyword."
+    },
+    {
+      "id": 25,
+      "question": "An email campaign was sent to 500 contacts. 210 opened, 45 clicked, and 3 unsubscribed. What are the open rate, click rate, and click-to-open rate (CTOR)?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Open rate = (210/500) x 100 = 42%. Click rate = (45/500) x 100 = 9%. CTOR = (45/210) x 100 = 21.4%. CTOR measures engagement among people who actually opened the email."
+    },
+    {
+      "id": 26,
+      "question": "A WhatsApp broadcast was sent to 120 contacts. 95 were delivered, 78 were read, and 12 replied. What is the read rate (based on delivered)?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Read rate = (Read / Delivered) x 100 = (78 / 95) x 100 = 82.1%. WhatsApp typically has much higher read rates than email, making it highly effective for the Israeli market."
+    },
+    {
+      "id": 27,
+      "question": "Over 15 days, the campaign generated 22 qualified leads at a total spend of $870. If Villa D sells for PHP 32,500,000 and one lead converts to a sale, what is the ROAS in PHP terms (assume $1 = PHP 56)?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Ad spend in PHP = $870 x 56 = PHP 48,720. ROAS = Revenue / Ad Spend = PHP 32,500,000 / PHP 48,720 = 574.7x (approximately 575x). Even at high CPL, a single villa sale massively exceeds the ad investment."
+    },
+    {
+      "id": 28,
+      "question": "The Filipino campaign ad set shows: Reach 15,000, Impressions 42,000. What is the Frequency?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Frequency = Impressions / Reach = 42,000 / 15,000 = 2.8. Each person in the audience saw the ad an average of 2.8 times. If frequency exceeds 4-5, consider refreshing creative to avoid ad fatigue."
+    },
+    {
+      "id": 29,
+      "question": "Day 1 spend: $45, leads: 1. Day 2 spend: $58, leads: 2. Day 3 spend: $62, leads: 0. Day 4 spend: $55, leads: 3. Day 5 spend: $50, leads: 1. What is the 5-day rolling CPL?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Total spend over 5 days = $45 + $58 + $62 + $55 + $50 = $270. Total leads = 1 + 2 + 0 + 3 + 1 = 7. Rolling CPL = $270 / 7 = $38.57. This is above the $16.61 RE benchmark but acceptable for luxury real estate."
+    },
+    {
+      "id": 30,
+      "question": "The Israeli campaign targets 50,000 potential viewers. With a CPM of $12 and a budget of $300, how many impressions can be purchased, and at 1.5% CTR, how many clicks will that yield?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Impressions = (Budget / CPM) x 1,000 = ($300 / $12) x 1,000 = 25,000. Clicks = Impressions x CTR = 25,000 x 0.015 = 375. This gives a CPC of $300/375 = $0.80."
+    },
+    {
+      "id": 31,
+      "question": "Week 1 CTR: 1.8%. Week 2 CTR: 1.2%. Week 3 CTR: 0.9%. What trend do you identify and what is the likely cause?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "A consistent week-over-week CTR decline from 1.8% to 0.9% (50% drop over 3 weeks) strongly indicates ad fatigue. The same audience is seeing the same creative too often. By Week 3, CTR is below the 0.98% benchmark. Solution: introduce new creative variants."
+    },
+    {
+      "id": 32,
+      "question": "Israeli campaign CPL by week: Week 1 = $65, Week 2 = $42, Week 3 = $31. What does this trend indicate?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "A declining CPL trend ($65 to $31) shows Meta's algorithm is learning which audience segments convert best and optimizing delivery. This is the expected 'learning phase' behavior. CPL should continue to improve if creative stays fresh."
+    },
+    {
+      "id": 33,
+      "question": "You observe: CTR is stable at 1.4%, but CPL increased from $35 to $55 over 5 days while CPC remained constant at $1.60. What is happening?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "If CTR and CPC are stable but CPL is rising, the funnel issue is post-click. The same quality traffic is arriving (same CTR and CPC) but fewer are converting to leads. Investigate landing page, form friction, or page load speed."
+    },
+    {
+      "id": 34,
+      "question": "Filipino campaign day-of-week data shows leads are 3x higher on Sundays and Mondays compared to other days. What action should be recommended?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Day-of-week patterns reveal when the target audience is most receptive. Rather than cutting days entirely (which loses data), shift budget toward high-performing days to improve overall CPL."
+    },
+    {
+      "id": 35,
+      "question": "You see the following hourly pattern for the Israeli campaign: clicks peak at 9-11 PM Israel time (2-4 AM PHT). What does this suggest?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Evening hours in Israel (9-11 PM, UTC+3) align with leisure browsing time for professionals. Since this is 2-4 AM PHT, ensure WhatsApp auto-reply flows are configured to engage leads immediately when the Philippine team is offline."
+    },
+    {
+      "id": 36,
+      "question": "Week 1: 10 leads. Week 2: 8 leads. Total budget spent: $420 of $900. Is this campaign on track?",
+      "agent_answer": "true",
+      "correct_answer": "true",
+      "passed": true,
+      "explanation": "18 leads in 14 days with $420 spent = CPL of $23.33. Budget is roughly on pace ($420/14 = $30/day, actually underspending vs the $60/day target). The Week 1-to-2 drop of 2 leads is minor and could be normal variance."
+    },
+    {
+      "id": 37,
+      "question": "Google Ads shows: impressions declining 15% week-over-week while CPC is increasing 20% week-over-week, but conversion rate is stable. What is the most likely explanation?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Rising CPC with declining impressions at stable CVR points to auction dynamics: more competitors are bidding on the same keywords, driving up prices and reducing the share of voice achievable at the current budget."
+    },
+    {
+      "id": 38,
+      "question": "WhatsApp message open rates: Day 1 broadcast 92%, Day 5 broadcast 85%, Day 10 broadcast 71%, Day 14 broadcast 58%. What is happening?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Steadily declining open rates from 92% to 58% over 14 days indicates the audience is losing interest in the messages. Segment into hot leads (continue messaging) and cold leads (reduce frequency). Also refresh message content."
+    },
+    {
+      "id": 39,
+      "question": "CPM has risen from $8 to $16 over two weeks but CTR has also risen from 1.0% to 2.5%. Is this a problem?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "At CPM $8 / CTR 1.0%: CPC = $8/10 = $0.80. At CPM $16 / CTR 2.5%: CPC = $16/25 = $0.64. Despite CPM doubling, CPC dropped 20% because CTR increased 150%. However, monitor CPM closely since it is near the $18 kill threshold."
+    },
+    {
+      "id": 40,
+      "question": "The Israeli campaign shows strong CTR (2.1%) and low CPC ($1.20) but zero leads after 5 days and $250 spend. What should the report flag?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "High CTR + low CPC + zero conversions after significant spend ($250) is a red flag for a broken funnel. Either the conversion pixel is not firing, the landing page is down, the WhatsApp link is broken, or the lead form has an error. Investigate immediately."
+    },
+    {
+      "id": 41,
+      "question": "Week-over-week ad spend: W1 = $58, W2 = $61, W3 = $65. The daily budget is set to $60/day. Is this concerning?",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Meta's delivery system may overspend daily budgets by up to 25% on high-opportunity days, but weekly averages should align with the weekly budget (7 x $60 = $420). W3 at $65 is only 8.3% over, well within Meta's tolerance."
+    },
+    {
+      "id": 42,
+      "question": "A/B test results after 7 days: Ad A (lifestyle image) has CTR 2.3% and CPL $28. Ad B (property exterior) has CTR 1.1% and CPL $22. Which ad is performing better overall?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "CPL is the primary efficiency metric for lead generation campaigns. Ad B generates leads 21% cheaper despite lower CTR, meaning it attracts more qualified clickers. High CTR with higher CPL suggests Ad A attracts curiosity clicks that do not convert."
+    },
+    {
+      "id": 43,
+      "question": "A lead saw a Facebook ad on Day 1, clicked a Google ad on Day 5, and submitted a WhatsApp inquiry on Day 8 after clicking an email link. Under last-click attribution, which channel gets credit?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Last-click attribution gives 100% credit to the final touchpoint before conversion. The email click was the last interaction before the WhatsApp inquiry. This model undervalues Facebook's awareness role and Google's consideration role."
+    },
+    {
+      "id": 44,
+      "question": "Under first-touch attribution, in the same scenario (Facebook ad Day 1, Google ad Day 5, Email click Day 8, WhatsApp inquiry Day 8), which channel gets credit?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "First-touch attribution gives 100% credit to the channel that first introduced the lead to the brand. Facebook was the initial awareness driver. This model overvalues awareness and undervalues nurture channels."
+    },
+    {
+      "id": 45,
+      "question": "Why is linear attribution often more appropriate than last-click for high-value real estate like Panglao Prime Villas?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "A PHP 28-30M villa purchase is a high-consideration, multi-week decision. Prospects typically interact with multiple channels (ads, email, WhatsApp, website) before committing. Linear attribution distributes credit equally, reflecting the collaborative nature of the channels."
+    },
+    {
+      "id": 46,
+      "question": "What is the attribution window problem for the villa campaign when using Meta's default 7-day click / 1-day view window?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "High-value real estate decisions can take 2-8 weeks. Meta's default 7-day click window means leads who saw the ad, researched for 10 days, then inquired would NOT be attributed to the campaign. Consider extending to 28-day click window."
+    },
+    {
+      "id": 47,
+      "question": "The Israeli campaign uses both Facebook Group organic posts and paid Meta Ads. A lead reports they 'saw it on Facebook.' How should this be attributed?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Without UTM parameters, 'saw it on Facebook' is ambiguous. Proper attribution requires UTM tagging on every link: organic posts get utm_source=facebook&utm_medium=organic&utm_campaign=group_post, while ads get utm_source=facebook&utm_medium=paid&utm_campaign=IL-1."
+    },
+    {
+      "id": 48,
+      "question": "What is 'self-reported attribution' and why is it valuable for the villa campaign?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Self-reported attribution captures channels invisible to digital tracking: referrals from friends, Israeli community groups, offline events. For the diaspora market, word-of-mouth is especially powerful and would be completely missed by pixel-based attribution."
+    },
+    {
+      "id": 49,
+      "question": "Google Ads reports 5 conversions. Meta reports 4 conversions. But the CRM only shows 7 total leads for the same period. What is happening?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Each ad platform claims credit for conversions within its attribution window. When a lead clicks both a Google ad and a Meta ad before converting, both platforms count the conversion. This is why the CRM (single source of truth) shows 7, not 9."
+    },
+    {
+      "id": 50,
+      "question": "Why should the CRM (Google Sheets lead tracker) be the single source of truth for lead counts, not ad platform dashboards?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Each lead is one row in the CRM regardless of how many ad platforms touched them. This deduplicates the attribution overlap problem and provides the ground truth for calculating true CPL, CVR, and campaign ROI."
+    },
+    {
+      "id": 51,
+      "question": "A lead filled the form from a Google Ad click. Two days later, they clicked a retargeting Meta ad but did not convert again. Under time-decay attribution, how is credit distributed?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "The conversion (form fill) already happened on the Google Ad click. The subsequent Meta retargeting click did not produce a new conversion. Attribution only applies to interactions before the conversion event. Post-conversion touches are not attributed."
+    },
+    {
+      "id": 52,
+      "question": "What is a UTM parameter?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "UTM parameters (e.g., ?utm_source=facebook&utm_medium=paid&utm_campaign=IL-1) are appended to URLs to track where traffic comes from. Essential for distinguishing organic vs paid, and for cross-platform attribution in the villa campaign."
+    },
+    {
+      "id": 53,
+      "question": "The villa sales funnel is: Impression > Click > Landing Page View > Lead Form Submit > WhatsApp Qualification > Booking Meeting > Reservation > Sale. How many stages are there?",
+      "agent_answer": "d",
+      "correct_answer": "d",
+      "passed": true,
+      "explanation": "The funnel has 8 stages from first impression to final sale. Each stage represents a potential drop-off point that should be measured and optimized."
+    },
+    {
+      "id": 54,
+      "question": "Funnel data: 20,000 impressions > 300 clicks > 240 landing page views > 18 lead forms > 10 WhatsApp qualified > 3 booking meetings. Where is the biggest actionable drop-off?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "240 page views to 18 forms = 7.5% conversion, meaning 92.5% drop off. While Impression-to-Click is numerically large (98.5%), that is normal for display. The Landing Page to Form drop is actionable: improve the page layout, simplify the form, add trust signals."
+    },
+    {
+      "id": 55,
+      "question": "300 people clicked the ad but only 240 viewed the landing page. What accounts for the 60 missing visitors (20% drop)?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "A 20% click-to-page-view drop typically indicates page speed issues. Users clicked but the page did not load fast enough (especially on mobile or slow Philippine/Israeli networks). Check PageSpeed Insights and consider optimizing images and hosting."
+    },
+    {
+      "id": 56,
+      "question": "Israeli funnel: 100 leads > 45 WhatsApp qualified > 12 booking meetings > 2 reservations (PHP 200,000 each). Filipino funnel: 80 leads > 50 WhatsApp qualified > 8 booking meetings > 1 reservation. Which market has a better lead-to-reservation rate?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Israeli lead-to-reservation rate = 2/100 = 2.0%. Filipino rate = 1/80 = 1.25%. The Israeli market shows a 60% better conversion rate from lead to reservation, though both are within normal ranges for luxury real estate."
+    },
+    {
+      "id": 57,
+      "question": "Of 18 leads, 10 were WhatsApp-qualified but 8 were not. Analysis shows unqualified leads came mostly from the Filipino campaign with budgets under PHP 5M. What does this reveal about the funnel?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "44% disqualification rate with budget being the reason points to a targeting or messaging issue. Solutions: add price prominently in ad copy, tighten income/interest targeting, add a budget qualifying question on the lead form before submission."
+    },
+    {
+      "id": 58,
+      "question": "The average time from lead submission to WhatsApp response is 14 hours. Industry best practice is under 5 minutes. What impact does this have?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Speed-to-lead is critical even for high-value purchases. A 14-hour response time, especially with the PHT/IST timezone gap, means Israeli evening leads wait until the next Philippine business day. WATI auto-reply flows should be configured to engage immediately."
+    },
+    {
+      "id": 59,
+      "question": "Funnel comparison: Ad Set 1 (broad targeting): 500 clicks, 40 leads, 8 qualified, 1 meeting. Ad Set 2 (narrow targeting): 150 clicks, 25 leads, 18 qualified, 6 meetings. Both spent $200. Which should be scaled?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Ad Set 2 Cost Per Meeting = $200/6 = $33.33. Ad Set 1 Cost Per Meeting = $200/1 = $200. Despite fewer total leads, Ad Set 2's narrow targeting produces leads 6x more likely to reach a meeting. Scale Ad Set 2; pause or narrow Ad Set 1's targeting."
+    },
+    {
+      "id": 60,
+      "question": "What is a 'micro-conversion' in the villa campaign funnel?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Micro-conversions help track engagement before the main conversion. For villas, tracking pricing page views, video watches, and WhatsApp button clicks provides early signal data even before form submissions."
+    },
+    {
+      "id": 61,
+      "question": "The landing page has a lead form AND a WhatsApp button. 60% of leads come via form, 40% via WhatsApp. WhatsApp leads have a 2x higher qualification rate. What should the report recommend?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "WhatsApp leads qualify at 2x the rate, suggesting more engaged/serious prospects use that channel. Making WhatsApp more prominent should shift the ratio toward higher-quality leads. Keep the form for those who prefer it."
+    },
+    {
+      "id": 62,
+      "question": "Out of 50 landing page visitors, 30 scroll past the hero section, 15 view the pricing section, 8 click WhatsApp or the form, and 5 submit. What is the pricing section view-to-submission rate?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Pricing section view-to-submission = 5/15 = 33.3%. This means one-third of people who view pricing go on to submit. The bigger drop is hero-to-pricing (30 to 15 = 50% drop), suggesting the content between hero and pricing needs improvement."
+    },
+    {
+      "id": 63,
+      "question": "You build a cohort analysis of leads by week acquired. Week 1 cohort (10 leads): 3 meetings by Week 3. Week 2 cohort (12 leads): 2 meetings by Week 3. Week 3 cohort (15 leads): 0 meetings (only 1 week old). What is the expected meetings for Week 3 cohort if the pattern holds?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "W1: 3/10 = 30% meeting rate by week 3. W2: 2/12 = 16.7% but only had 1 week of maturation. If W2 follows W1's pattern, it may reach 25-30%. W3 cohort of 15 leads at approximately 25% = 3-4 expected meetings once the cohort matures."
+    },
+    {
+      "id": 64,
+      "question": "What is 'funnel velocity' and why does it matter?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Funnel velocity measures days between stages (e.g., lead-to-qualified: 2 days, qualified-to-meeting: 5 days). Leads that move quickly are typically more interested and more likely to convert. Slow-moving leads may need re-engagement."
+    },
+    {
+      "id": 65,
+      "question": "The RE (Real Estate) benchmark CTR is 0.98%. Your campaign CTR is 1.4%. How does this compare?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "1.4% vs 0.98% benchmark = (1.4 - 0.98) / 0.98 x 100 = 42.9% above benchmark. The campaign creative and targeting are outperforming industry average for real estate ads."
+    },
+    {
+      "id": 66,
+      "question": "The RE benchmark CPC is $1.88. Your campaign CPC is $2.40. What does this indicate?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "CPC of $2.40 vs $1.88 benchmark is 27.7% higher. This could indicate competitive keywords, narrow audience, or lower relevance scores. However, if lead quality is high (good CVR), slightly elevated CPC may be acceptable."
+    },
+    {
+      "id": 67,
+      "question": "The RE benchmark CPL is $16.61. Your luxury villa campaign CPL is $45. Should this be flagged as poor performance?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "RE benchmarks are averages across all real estate, from $500/month rentals to luxury homes. A PHP 28-30M villa targets a much smaller audience. The relevant comparison is luxury RE CPL ($40-$100+). At $45, the campaign is performing well within the luxury segment."
+    },
+    {
+      "id": 68,
+      "question": "The RE benchmark CVR is 8.78%. Your campaign CVR is 5.2%. The campaign targets Israeli investors for Philippine villas. Is the benchmark appropriate?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Cross-border real estate investment adds friction: foreign ownership concerns, distance, unfamiliarity with the market. The 8.78% benchmark applies to domestic buyers viewing local properties. For international investors, a lower CVR is expected and 5.2% may be competitive."
+    },
+    {
+      "id": 69,
+      "question": "The campaign CPM is $14. The kill threshold is CPM > $18. How much room is there, and what CPM level should trigger a warning?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "CPM $14 is $4 below the $18 kill threshold. Setting a warning at approximately $16 (89% of threshold) gives time to investigate and adjust before hitting the kill level. CPM can spike quickly due to competition or audience saturation."
+    },
+    {
+      "id": 70,
+      "question": "Your campaign CTR is 3.5%. The scale threshold is CTR > 3%. What should the report recommend?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "CTR > 3% triggers the scale signal. However, scaling should be gradual (20-30% increments) to avoid resetting Meta's learning phase. Monitor CPL closely during scaling; if CPL rises significantly, the incremental audience may be lower quality."
+    },
+    {
+      "id": 71,
+      "question": "Campaign CTR is 0.75%. The kill threshold is CTR < 0.8%. What action should be taken?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "CTR 0.75% is below the 0.8% kill threshold, triggering action. Before fully killing the campaign, pause and diagnose: is the creative stale (test new images/copy) or is the audience wrong (test different targeting)? If both are optimized and CTR is still below 0.8%, kill it."
+    },
+    {
+      "id": 72,
+      "question": "Bohol received 1.43M tourists. If 5% are potential luxury villa investors and your Meta Ads reach 2% of them, how many unique potential investors is the campaign reaching?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Potential investors = 1,430,000 x 5% = 71,500. Campaign reach = 71,500 x 2% = 1,430 unique potential investors. This small addressable audience reinforces why frequency management and creative rotation are critical."
+    },
+    {
+      "id": 73,
+      "question": "The campaign CPL is $28 and the scale threshold is CPL < $30. Does this trigger the scale signal?",
+      "agent_answer": "true",
+      "correct_answer": "true",
+      "passed": true,
+      "explanation": "CPL of $28 is below the $30 scale threshold. The rule is CPL < $30, and $28 < $30. This triggers a recommendation to gradually increase budget. However, the report should note it is only 7% below threshold, so scaling should be conservative."
+    },
+    {
+      "id": 74,
+      "question": "How should the Analytics Reporter contextualize the $60/day average budget against Meta's minimum effective budget recommendations?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "At $60/day, the campaign generates approximately 1-2 conversions per day, well below Meta's recommended 50 per week for optimal learning. Reports should note 'learning limited' status and set expectations that algorithm optimization will be slower than ideal."
+    },
+    {
+      "id": 75,
+      "question": "What should always be included in the daily analytics report header?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The report header must immediately orient the reader to the campaign's time position (Day X of 15), financial position (spent vs remaining of $900), and operational status (simulation on/off). This is critical context for all subsequent data."
+    },
+    {
+      "id": 76,
+      "question": "When reporting metrics for both the Israeli and Filipino campaigns, how should data be structured?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Each market has different benchmarks, currencies, audiences, and channels. The Israeli campaign (Hebrew, WhatsApp-led, ILS pricing) and Filipino campaign (English/Tagalog, BDO financing, PHP pricing) must be analyzed separately to make meaningful optimization decisions."
+    },
+    {
+      "id": 77,
+      "question": "The report shows CPL dropped from $55 to $35 this week. How should this be communicated to the CEO?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Effective reporting includes: the metric change with percentage, the absolute values, context relative to thresholds, and a forward-looking implication. The CEO needs to understand not just what happened but what it means for decisions."
+    },
+    {
+      "id": 78,
+      "question": "What format should the ads_metrics.json file follow when saving daily metrics?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The CLAUDE.md specifies a precise JSON structure for metric exports. Structured data enables automated trend analysis, comparison across days, and programmatic report generation. Screenshots supplement but do not replace structured data."
+    },
+    {
+      "id": 79,
+      "question": "The weekly review report is due on Monday at 09:00 PHT. What should it contain beyond daily metrics?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Weekly reviews synthesize daily data into strategic insights. They identify trends invisible in daily snapshots: is CPL trending down? Which ads are fatiguing? Is the budget pacing correctly for the 15-day window? Recommendations should be concrete and actionable."
+    },
+    {
+      "id": 80,
+      "question": "Why should reports include screenshots alongside structured data?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Screenshots are an audit trail. They capture not just numbers but delivery status, warning banners, account health indicators, and UI context. If there is ever a dispute about what the data showed, the screenshot is definitive proof."
+    },
+    {
+      "id": 81,
+      "question": "After the 15-day campaign, what should the final analytics report include that daily/weekly reports do not?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The 15-day report is the strategic document that determines whether to continue, modify, or pause spending. It must synthesize all learnings into actionable intelligence for the next cycle. Per CLAUDE.md: 'After 15 days: full analysis before continuing.'"
+    },
+    {
+      "id": 82,
+      "question": "When reporting the ROI of the villa campaign, which calculation is most meaningful?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Since villa sales take weeks/months to close, direct ROAS at Day 15 would be misleading. Pipeline-weighted ROI estimates expected revenue based on leads in the pipeline, giving a more realistic picture. Example: 10 qualified leads x 10% close rate x PHP 29M average = PHP 29M expected revenue."
+    },
+    {
+      "id": 83,
+      "question": "How should the report handle a day with zero leads?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "At $60/day with a $45 CPL, generating approximately 1.3 leads/day means zero-lead days are statistically expected. Report the fact, provide context (day of week, trending metrics), reference rolling averages to smooth variance, and only flag concern if zero-lead days become consecutive."
+    },
+    {
+      "id": 84,
+      "question": "Where should completed daily metric reports be saved?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Per the CLAUDE.md file structure, all completed work goes to _completed/YYYY-MM-DD/ with specific naming conventions. This creates a date-organized archive that can be reviewed by Claude Code for trend analysis."
+    },
+    {
+      "id": 85,
+      "question": "Meta Ads Manager shows 15 conversions but the Google Sheets lead tracker has only 11 new rows. What should the report do?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The CRM is the single source of truth for lead counts. Discrepancies must be flagged and investigated. Common causes: Meta counting view-through conversions, form submission errors, pixel firing on page load rather than form submit, or duplicate pixel events."
+    },
+    {
+      "id": 86,
+      "question": "You notice that 30% of leads have phone numbers starting with +1 (US numbers) despite targeting only Israel and Philippines. What should the report flag?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Unexpected phone number patterns indicate potential targeting issues. Israeli and Filipino diaspora in the US could be legitimate leads, but 30% is high. Investigate whether Advantage+ has expanded targeting beyond the intended geographic scope."
+    },
+    {
+      "id": 87,
+      "question": "The campaign_state.json shows simulation: true but you see live spend in the Meta Ads Manager. What should happen?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The campaign_state.json is the operational control file. If it says simulation: true but live spend is happening, either someone manually activated campaigns outside the system or the state file was not updated. This is a safety-critical discrepancy that requires human intervention."
+    },
+    {
+      "id": 88,
+      "question": "Why should metric collection timestamps be recorded in ISO 8601 format with timezone?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "PHT (UTC+8) and IST (UTC+3) have a 5-hour difference. An event at 11 PM IST is 4 AM PHT the next day. Without timezone info, daily metrics could be misaligned between markets. ISO 8601 (e.g., 2026-05-24T21:00:00+08:00) eliminates ambiguity."
+    },
+    {
+      "id": 89,
+      "question": "Google Ads reports a CTR of 4.8% on a campaign with only 42 impressions. Should this be reported as a high-performing ad?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "At 42 impressions, that is only 2 clicks producing 4.8% CTR. One additional click or non-click would swing the CTR dramatically. A minimum of approximately 1,000 impressions is needed for directionally reliable CTR data. Report the numbers but flag the small sample size."
+    },
+    {
+      "id": 90,
+      "question": "You discover that the Meta pixel is firing on every page load of primevilla.ph, not just on form submission. How does this affect reported conversions?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "A misconfigured pixel that fires on page load instead of form submission would count every visitor as a conversion. If 300 people visit but only 18 submit forms, the platform would report 300 conversions instead of 18, making all derived metrics (CPL, CVR, ROAS) meaningless."
+    },
+    {
+      "id": 91,
+      "question": "Campaign spent $100 over 2 days with 0 leads. What action should the Analytics Reporter recommend?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Zero leads from $100 is concerning but not yet conclusive. First, rule out technical issues (broken tracking, landing page down). If tracking is fine, the creative or targeting is the issue. Test a new variant rather than killing the entire campaign immediately."
+    },
+    {
+      "id": 92,
+      "question": "The Israeli campaign has CPL $32 and the Filipino campaign has CPL $68. Budget is 50/50 split. What should be recommended?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The Israeli market is delivering leads at less than half the cost. Budget should flow toward efficiency while maintaining some Filipino presence for testing and optimization. A gradual shift (not an all-or-nothing kill) preserves optionality."
+    },
+    {
+      "id": 93,
+      "question": "Ad creative A has been running for 12 days with declining CTR (from 2.1% to 1.1%). Ad creative B launched 3 days ago with CTR 2.8%. What should the report recommend?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Creative A shows clear fatigue (CTR halved over 12 days). Creative B is promising at 2.8% but only has 3 days of data. Shift most budget to B but keep A as a safety net until B's performance is validated over a full week."
+    },
+    {
+      "id": 94,
+      "question": "The campaign is on Day 12 of 15. $780 of $900 has been spent. 16 leads generated. The CEO asks whether to extend the campaign or stop at Day 15. What data should the report present?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Per CLAUDE.md: 'After 15 days: full analysis before continuing.' The report must arm the CEO with all relevant data for the continue/stop decision. Trend direction is key: an improving campaign deserves extension; a plateauing one may not."
+    },
+    {
+      "id": 95,
+      "question": "Email open rate has dropped from 42% to 18% over 3 email sends. What should the report recommend?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "A 57% drop in open rate signals multiple possible issues. Systematic investigation of subject lines, frequency, list health, and deliverability is needed. Quick wins: A/B test subject lines and reduce frequency to combat fatigue."
+    },
+    {
+      "id": 96,
+      "question": "Scenario: Day 8. Israeli campaign: $320 spent, 9 leads, CPL $35.56, CTR 1.8%. Filipino campaign: $280 spent, 3 leads, CPL $93.33, CTR 0.7%. Total: $600 spent, $300 remaining, 7 days left. Write the key findings for the daily report.",
+      "agent_answer": "Key findings: 1) Israeli campaign performing well - CTR 1.8% (above 0.98% benchmark), CPL $35.56 approaching $30 scale threshold. 2) Filipino campaign CRITICAL - CTR 0.7% is BELOW the 0.8% kill threshold, CPL $93.33 is unsustainable. Immediate action required: pause Filipino ads, diagnose creative/targeting, reallocate budget to Israeli campaign. 3) Budget pacing: $600/8 days = $75/day, exceeding $60/day target. At current rate, budget exhausted by Day 12. Recommend reducing daily spend to $42.86/day for remaining 7 days. 4) Combined CPL of $50 (12 leads from $600) is above luxury RE range. Israeli campaign is carrying the results.",
+      "correct_answer": "Key findings: 1) Israeli campaign performing well - CTR 1.8% (above 0.98% benchmark), CPL $35.56 approaching $30 scale threshold. 2) Filipino campaign CRITICAL - CTR 0.7% is BELOW the 0.8% kill threshold, CPL $93.33 is unsustainable. Immediate action required: pause Filipino ads, diagnose creative/targeting, reallocate budget to Israeli campaign. 3) Budget pacing: $600/8 days = $75/day, exceeding $60/day target. At current rate, budget exhausted by Day 12. Recommend reducing daily spend to $42.86/day for remaining 7 days. 4) Combined CPL of $50 (12 leads from $600) is above luxury RE range. Israeli campaign is carrying the results.",
+      "passed": true,
+      "explanation": "This scenario tests the ability to synthesize multi-market data into actionable findings, identify kill/scale thresholds, flag budget pacing issues, and provide concrete recommendations. The Filipino CTR below 0.8% is the most urgent finding."
+    },
+    {
+      "id": 97,
+      "question": "Scenario: A WhatsApp broadcast to 200 Israeli contacts achieves 88% read rate but only 2 replies. The message promoted Villa D at PHP 32,500,000 with a CTA to book a video call. What does this data tell you?",
+      "agent_answer": "The 88% read rate confirms strong list engagement and deliverability. The 1% reply rate (2/200) despite high readership indicates the CTA or offer is not compelling enough, or the price point creates friction without enough context. Recommendations: 1) Test a softer CTA (e.g., 'Reply for the ROI brochure' instead of 'book a video call'). 2) Add social proof or urgency. 3) Consider the message may be read but the action (booking a call) is too high-commitment for a first WhatsApp touch. 4) Segment: follow up with the 2 repliers as hot leads, send a different message to non-repliers in 3-4 days.",
+      "correct_answer": "The 88% read rate confirms strong list engagement and deliverability. The 1% reply rate (2/200) despite high readership indicates the CTA or offer is not compelling enough, or the price point creates friction without enough context. Recommendations: 1) Test a softer CTA (e.g., 'Reply for the ROI brochure' instead of 'book a video call'). 2) Add social proof or urgency. 3) Consider the message may be read but the action (booking a call) is too high-commitment for a first WhatsApp touch. 4) Segment: follow up with the 2 repliers as hot leads, send a different message to non-repliers in 3-4 days.",
+      "passed": true,
+      "explanation": "High read rate + low reply rate = message reach is fine but the call-to-action has too much friction. The analytics reporter must identify the disconnect between attention (88% read) and action (1% reply) and recommend CTA optimization."
+    },
+    {
+      "id": 98,
+      "question": "Scenario: It is Day 15. Final metrics: $892 spent (of $900), 22 total leads (14 Israeli, 8 Filipino), 12 WhatsApp-qualified, 4 booking meetings scheduled, 1 reservation deposit received (Villa D, PHP 200,000). What is the campaign's cost per qualified lead, cost per meeting, and preliminary ROI?",
+      "agent_answer": "Cost Per Qualified Lead = $892 / 12 = $74.33. Cost Per Meeting = $892 / 4 = $223. Preliminary ROI calculation: 1 reservation at Villa D (PHP 32,500,000). At approximately $1 = PHP 56, ad spend = PHP 49,952. If the reservation converts to a sale, ROI = (PHP 32,500,000 - PHP 49,952) / PHP 49,952 = 55,952% or approximately 560x return. Even accounting for full sales and commission costs, the ROI is extraordinary. Additionally, 3 more meetings in the pipeline represent additional potential value. The $892 campaign generated a verifiable reservation deposit, proving the funnel works.",
+      "correct_answer": "Cost Per Qualified Lead = $892 / 12 = $74.33. Cost Per Meeting = $892 / 4 = $223. Preliminary ROI calculation: 1 reservation at Villa D (PHP 32,500,000). At approximately $1 = PHP 56, ad spend = PHP 49,952. If the reservation converts to a sale, ROI = (PHP 32,500,000 - PHP 49,952) / PHP 49,952 = 55,952% or approximately 560x return. Even accounting for full sales and commission costs, the ROI is extraordinary. Additionally, 3 more meetings in the pipeline represent additional potential value. The $892 campaign generated a verifiable reservation deposit, proving the funnel works.",
+      "passed": true,
+      "explanation": "This tests the ability to calculate multiple down-funnel metrics and translate them into business ROI. The key insight is that even with seemingly high CPLs, one villa reservation from a $892 campaign represents massive ROI for a PHP 32.5M product."
+    },
+    {
+      "id": 99,
+      "question": "Scenario: Google Ads keyword 'invest in Bohol property' shows 1,200 impressions, 8 clicks, 0 conversions, $24 spend over 5 days. Keyword 'Panglao villa for sale' shows 400 impressions, 12 clicks, 2 conversions, $18 spend over the same period. What optimization should be recommended?",
+      "agent_answer": "Pause or reduce bid on 'invest in Bohol property' (CTR 0.67% below 0.8% kill threshold, CPC $3.00, 0 conversions from $24 = wasted spend). Scale 'Panglao villa for sale' (CTR 3.0% above 3% scale threshold, CPC $1.50 below benchmark, CPL $9.00 excellent, CVR 16.7% above 8.78% benchmark). The second keyword has high purchase intent ('for sale') vs general interest ('invest in'). Reallocate the first keyword's budget to increase the second keyword's daily budget or use it to test similar high-intent variations like 'Panglao villa price' or 'Bohol beachfront villa'.",
+      "correct_answer": "Pause or reduce bid on 'invest in Bohol property' (CTR 0.67% below 0.8% kill threshold, CPC $3.00, 0 conversions from $24 = wasted spend). Scale 'Panglao villa for sale' (CTR 3.0% above 3% scale threshold, CPC $1.50 below benchmark, CPL $9.00 excellent, CVR 16.7% above 8.78% benchmark). The second keyword has high purchase intent ('for sale') vs general interest ('invest in'). Reallocate the first keyword's budget to increase the second keyword's daily budget or use it to test similar high-intent variations like 'Panglao villa price' or 'Bohol beachfront villa'.",
+      "passed": true,
+      "explanation": "This tests keyword-level optimization analysis. The reporter must calculate per-keyword metrics, apply kill/scale thresholds, identify the intent difference, and recommend specific budget reallocation."
+    },
+    {
+      "id": 100,
+      "question": "Scenario: The CEO asks 'Is the campaign working?' on Day 10 with $620 spent and 15 leads. Construct a data-driven 3-sentence answer that includes the key metric, benchmark comparison, and forward projection.",
+      "agent_answer": "The campaign is generating leads at $41.33 CPL, which is within the expected range for luxury international real estate (general RE benchmark is $16.61 but luxury cross-border typically runs $40-$100). At the current pace of 1.5 leads/day with $280 remaining budget, we project 21-22 total leads by Day 15, of which approximately 55-60% should WhatsApp-qualify based on current trends. One actionable concern: budget pacing is $62/day against the $60/day target, so we are on track but should monitor closely to ensure we do not exhaust before Day 15.",
+      "correct_answer": "The campaign is generating leads at $41.33 CPL, which is within the expected range for luxury international real estate (general RE benchmark is $16.61 but luxury cross-border typically runs $40-$100). At the current pace of 1.5 leads/day with $280 remaining budget, we project 21-22 total leads by Day 15, of which approximately 55-60% should WhatsApp-qualify based on current trends. One actionable concern: budget pacing is $62/day against the $60/day target, so we are on track but should monitor closely to ensure we do not exhaust before Day 15.",
+      "passed": true,
+      "explanation": "This tests the ability to give a concise, CEO-appropriate answer that translates raw metrics into business context. The answer must include: current performance with benchmark context, a forward projection, and one specific concern or action item."
+    }
+  ],
+  "failures": []
+}

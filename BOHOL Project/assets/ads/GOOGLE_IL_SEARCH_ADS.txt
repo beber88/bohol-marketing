@@ -1,0 +1,76 @@
+[SIMULATION - NOT FOR LIVE DEPLOYMENT]
+
+=== GOOGLE_IL_SEARCH_ADS.txt ===
+Platform: Google Ads (Search)
+Market: Israel
+Funnel: All (Awareness → Conversion)
+Campaign: Search-IL-Villas
+Budget: $12/day
+Audience: Search intent (property investment keywords in Hebrew)
+Language: Hebrew
+Destination: primevilla.ph/il
+
+---
+
+SEARCH KEYWORDS:
+
+High intent:
+- בוהול וילה השקעה
+- נכס השקעה בחו״ל
+- Airbnb וילה קניה
+- השקעה בתיירות בוהול
+- נכס השקעה פיליפיני
+
+---
+
+HEADLINE 1: וילה השקעה בבוהול - 28M ₪
+HEADLINE 2: 395K ₪ בחודש | ROI 17-25%
+HEADLINE 3: בדוק השקעה חינם
+
+DESCRIPTION: 2 וילות בלבד בבוהול בין מלונות 5 כוכבים. הנכס יושב 60 שניות מחוף. מימון מישראל זמין. דיווח השקעה חינם. +639542555553
+
+DISPLAY URL: primevilla.ph/il
+FINAL URL: primevilla.ph/il?utm_source=google&utm_medium=search&utm_campaign=IL-villas
+
+---
+
+SITELINK EXTENSIONS:
+
+Sitelink 1:
+- Text: "בקשת דיווח השקעה"
+- URL: primevilla.ph/investment-review
+
+Sitelink 2:
+- Text: "צור קשר ישראלי"
+- URL: +639542555553 (call extension)
+
+Sitelink 3:
+- Text: "תמונות וידאו"
+- URL: primevilla.ph/il/gallery
+
+---
+
+CALLOUT EXTENSIONS:
+
+- ₪1.36M בלבד
+- מימון זמין
+- דיווח חינם
+- 60 שנייה לחוף
+
+---
+
+BID STRATEGY: Maximize conversions
+TARGET ROAS: 400% (4:1)
+MAX CPC BID: 50 ILS (~13 USD)
+
+OPTIMIZATION NOTES:
+- Bid higher on "וילה השקעה בוהול" — direct intent
+- Lower bids on general "השקעה" — high volume, lower conversion
+- Daily budget: 50 ILS (~13 USD)
+- Location bid: +20% for Tel Aviv, Ramat Gan
+- Schedule: 6am-11pm IST (weekend included)
+- Mobile bid: -10% (desktop preferred for investment decisions)
+
+=== FX METADATA ===
+FX date used: 2026-04-14
+PHP-ILS rate: 0.0488

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "LED-0010",
+    "priority": "HIGH",
+    "type": "lead_check",
+    "status": "PENDING",
+    "description": "Day 15 lead inbox check",
+    "instructions": "Check all lead sources: Facebook lead forms, website contact form, WhatsApp inquiries, email replies. Score each lead using scripts/lead_scorer.py. Respond to hot leads within 1 hour.",
+    "scheduled_time": "2026-04-17T09:00:00+08:00"
+  },
+  {
+    "id": "LED-0011",
+    "priority": "MEDIUM",
+    "type": "lead_check",
+    "status": "PENDING",
+    "description": "Day 15 afternoon lead check",
+    "instructions": "Second lead check of the day. Follow up on morning leads. Update CRM with new lead scores and notes.",
+    "scheduled_time": "2026-04-17T15:00:00+08:00"
+  },
+  {
+    "id": "LED-0012",
+    "priority": "HIGH",
+    "type": "lead_followup",
+    "status": "PENDING",
+    "description": "Day 15 warm lead follow-up calls",
+    "instructions": "Call all warm/hot leads from the past 48 hours who have not yet scheduled a virtual tour or made a reservation. Offer to answer questions and schedule a call with the sales director.",
+    "scheduled_time": "2026-04-17T11:00:00+08:00"
+  }
+]

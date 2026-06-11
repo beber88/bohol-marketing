@@ -1,0 +1,119 @@
+=== META_PH_CONSIDERATION_COMPOUND_2A.txt ===
+Platform: Meta (Facebook + Instagram)
+Market: Philippines
+Funnel Stage: Consideration
+Campaign: PH-P2-CON
+Objective: Traffic and engagement for compound economics education
+Audience: Metro Manila (BGC, Makati, Alabang, Ortigas), Cebu City, Davao, age 38-58
+Placements: Facebook Feed, Instagram Feed, Instagram Reels
+Schedule: Tuesday-Thursday priority, 7pm-11pm PHT
+
+---
+
+PRIMARY TEXT (V1 - English):
+
+Why a compound outperforms a standalone villa.
+
+Most investors buy one unit in one location. We built something different.
+
+Panglao Prime Villas is a managed compound - 8 luxury villas in one estate, between JW Marriott and Mithi Resort. Here is why compound economics matter for your returns:
+
+1. Shared property management.
+One on-site team handles maintenance, housekeeping, guest check-in, and Airbnb optimization for all 8 villas. You do not hire your own staff. Your cost per villa drops significantly compared to standalone ownership.
+
+2. Stronger Airbnb ranking.
+Multiple listings in one compound build a cluster effect. More reviews, higher visibility, faster bookings. Our Phase 1 villas average 65% occupancy and PHP 14,000 per night.
+
+3. Consistent guest experience.
+A compound delivers a resort-like feel. Guests see the pool area, the maintained grounds, the professional operation - and they leave better reviews. Better reviews mean higher rates.
+
+4. Real numbers, not projections.
+PHP 395,000 monthly income per villa. 17-25% annual ROI. These are Phase 1 actuals, not developer estimates.
+
+Phase 1 (2 units available):
+- Villa C: PHP 35,000,000
+- Villa D: PHP 32,500,000
+
+Phase 2 (4 new units): pricing to be announced.
+
+Every villa: 4 bedrooms, 263.78 sqm, 3 storeys plus roof deck, private pool, rooftop jacuzzi.
+
+BDO Bank financing is available. Terms discussed during consultation - no upfront commitment required to learn more.
+
+Talk to our team:
+WhatsApp (Marketing): +639542555553
+WhatsApp (Office): +639958565865
+
+Blue Everest Asset Group Holding Inc.
+primevilla.ph
+
+PRIMARY TEXT (V2 - Tagalog):
+
+Bakit mas maganda ang compound kaysa sa standalone na villa.
+
+Karamihan sa mga investor, isang unit lang sa isang lokasyon ang binibili. Kami, iba ang ginawa.
+
+Ang Panglao Prime Villas ay isang managed compound - 8 luxury villa sa isang estate, sa pagitan ng JW Marriott at Mithi Resort. Ito ang dahilan kung bakit mas malaki ang kita sa compound:
+
+1. Shared property management.
+Isang on-site team ang nag-aasikaso ng maintenance, housekeeping, guest check-in, at Airbnb optimization para sa lahat ng 8 villa. Hindi ka magha-hire ng sarili mong staff. Mas mababa ang gastos mo kumpara sa standalone.
+
+2. Mas mataas na Airbnb ranking.
+Maraming listing sa isang compound ang nagbubuo ng cluster effect. Mas maraming review, mas mataas na visibility, mas mabilis na booking. Ang Phase 1 villas namin ay may average na 65% occupancy at PHP 14,000 bawat gabi.
+
+3. Consistent na guest experience.
+Resort ang dating ng compound. Nakikita ng mga bisita ang pool area, malinis na grounds, at propesyonal na operasyon - kaya mas maganda ang review nila. Mas magandang review, mas mataas na rates.
+
+4. Totoong numero, hindi hula.
+PHP 395,000 buwanang kita bawat villa. 17-25% taunang ROI. Ito ay Phase 1 actuals, hindi developer estimate.
+
+Phase 1 (2 unit available):
+- Villa C: PHP 35,000,000
+- Villa D: PHP 32,500,000
+
+Phase 2 (4 na bagong unit): ia-announce pa ang presyo.
+
+Bawat villa: 4 na silid-tulugan, 263.78 sqm, 3 palapag plus roof deck, private pool, rooftop jacuzzi.
+
+May BDO Bank financing. Tatalakayin ang terms sa consultation - walang commitment para mag-inquire.
+
+Kausapin ang team namin:
+WhatsApp (Marketing): +639542555553
+WhatsApp (Office): +639958565865
+
+Blue Everest Asset Group Holding Inc.
+primevilla.ph
+
+HEADLINE V1: "Compound Economics: Why 8 Villas Beat 1"
+HEADLINE V2: "PHP 395,000/Month - Managed Compound Model"
+HEADLINE V3: "65% Occupancy, Professional Management, One Compound"
+
+DESCRIPTION V1: "Shared management, stronger Airbnb rankings, lower costs. See why compound ownership delivers 17-25% ROI."
+DESCRIPTION V2: "4BR luxury villas, 263.78 sqm each. BDO Bank financing available. Between JW Marriott and Mithi Resort."
+
+CTA: Send WhatsApp Message
+
+---
+
+AUDIENCE TARGETING:
+
+Location: Metro Manila (BGC, Makati, Alabang, Ortigas Center), Cebu City, Davao City
+Age: 38-58
+Gender: All
+Language: English (Philippines), Filipino
+
+Detailed Targeting:
+- Interests: Real estate investing, Investment property, Vacation rentals, Airbnb (company), Passive income, Stock market, BDO Unibank, Property management, Rental income, Financial planning, Bohol tourism, Luxury real estate
+- Behaviors: Frequent international travelers, Small business owners, Engaged shoppers
+- Demographics: Homeowners, College educated, Business decision makers
+- Income: Top 10% income bracket (where available)
+
+Exclusions:
+- Exclude ages under 38
+
+Custom Audiences:
+- Retarget: people who engaged with PH-P2-AWR campaigns (1A and 1B)
+- Retarget: website visitors to primevilla.ph in last 30 days
+- Lookalike 1% based on lead form submissions
+
+Estimated Audience Size: 400,000-700,000 (narrower due to retargeting layer)

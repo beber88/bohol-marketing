@@ -1,0 +1,45 @@
+[
+  {
+    "id": "CNT-0001",
+    "priority": "HIGH",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 15 Facebook post (IL market)",
+    "instructions": "Publish to Facebook page. Market: IL. Use the provided image and copy. Schedule for optimal engagement time.",
+    "copy": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/RD2 ENHANCED.png",
+    "scheduled_time": "2026-04-17T18:00:00+08:00",
+    "hook_used": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.",
+    "language": "he"
+  },
+  {
+    "id": "VID-0002",
+    "priority": "HIGH",
+    "type": "facebook_video",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 15 VIDEO post (IL market)",
+    "instructions": "Upload video to Facebook page. Market: IL. Use the provided video file and copy text as the post caption.",
+    "copy": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.\n\nצפו בסיור המלא בווילה.\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "video_path": "20260416 BLUEEVEREST 2 Villas Bohol.mp4",
+    "image_path": "",
+    "scheduled_time": "2026-04-17T20:00:00+08:00",
+    "hook_used": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.",
+    "language": "he"
+  },
+  {
+    "id": "CNT-0003",
+    "priority": "MEDIUM",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "PH",
+    "description": "Day 15 Facebook post (PH market, secondary)",
+    "instructions": "Publish secondary post for PH market. Schedule for alternate time slot.",
+    "copy": "Villa A: Sold. Villa B: Sold. Villa C and D: Your last chance.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD3 ENHANCED.png",
+    "scheduled_time": "2026-04-17T14:00:00+08:00",
+    "hook_used": "Villa A: Sold. Villa B: Sold. Villa C and D: Your last chance.",
+    "language": "en"
+  }
+]

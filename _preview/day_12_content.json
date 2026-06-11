@@ -1,0 +1,44 @@
+[
+  {
+    "id": "CNT-0001",
+    "priority": "HIGH",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "PH",
+    "description": "Day 12 Facebook post (PH market)",
+    "instructions": "Publish to Facebook page. Market: PH. Use the provided image and copy. Schedule for optimal engagement time.",
+    "copy": "Bohol airport: 2.22M passengers today, planned capacity nearly 4M by 2030. Aboitiz InfraCapital committed to a 30-year modernization program. The infrastructure is being built for the next decade.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nVilla C: PHP 30,000,000 (approx. USD 498,900, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/AERIAL 2 ENHANCED.png",
+    "scheduled_time": "2026-04-17T10:00:00+08:00",
+    "hook_used": "Bohol airport: 2.22M passengers today, planned capacity nearly 4M by 2030. Aboitiz InfraCapital committed to a 30-year modernization program. The infrastructure is being built for the next decade.",
+    "language": "en"
+  },
+  {
+    "id": "CNT-0002",
+    "priority": "MEDIUM",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 12 Facebook post (IL market, secondary)",
+    "instructions": "Publish secondary post for IL market. Schedule for alternate time slot.",
+    "copy": "פנגלאו הופכת ליעד Live + Work + Invest. קו-וורקינג, מרכז רפואי, בית ספר בינלאומי. הווילה שלכם משרתת שלושה שווקים.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/RD1 ENHANCED.png",
+    "scheduled_time": "2026-04-17T20:00:00+08:00",
+    "hook_used": "פנגלאו הופכת ליעד Live + Work + Invest. קו-וורקינג, מרכז רפואי, בית ספר בינלאומי. הווילה שלכם משרתת שלושה שווקים.",
+    "language": "he"
+  },
+  {
+    "id": "EDU-0003",
+    "priority": "MEDIUM",
+    "type": "facebook_group_edu",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 12 educational post for Israeli FB group",
+    "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+    "copy": "Airbnb בפנגלאו - המספרים האמיתיים\n\nנתוני AirDNA/Airbtics 2025:\n- 934-1,230 נכסים פעילים\n- תפוסה ממוצעת: 41-52%\n- ADR ממוצע: 2,481-2,900 פסו\n\nווילות יוקרה (4+ חדרים, בריכה):\n- ADR: 12,000-20,000 פסו ללילה\n- תפוסה: 70%+\n- הכנסה שנתית פוטנציאלית: 7 ספרות פסו\n\nעונתיות: ינואר הכי חזק, ספטמבר הכי חלש.\n\nלהשוואה: דירה בת\"א מניבה 1-2% נטו. וילה בפנגלאו מניבה 10-15% ברוטו.\n\nמקור: AirDNA, Airbtics, AirROI",
+    "image_path": "",
+    "platform": "Facebook Group IL",
+    "scheduled_time": "2026-04-17T11:00:00+02:00",
+    "language": "he"
+  }
+]

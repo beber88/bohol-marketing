@@ -1,0 +1,75 @@
+{
+  "name": "FLOW_01_INITIAL_INQUIRY",
+  "description": "First contact flow - qualifies lead intent",
+  "type": "interactive",
+  "language": "en",
+  "version": "2.0",
+  "trigger": "inbound_text_keywords",
+  "keywords": ["hi", "hello", "inquiry", "interested", "villas", "bohol"],
+  "created_at": "2026-04-14T09:00:00Z",
+  "nodes": [
+    {
+      "id": "welcome",
+      "type": "text",
+      "content": "🏝️ Welcome to Panglao Prime Villas!\n\nThank you for your interest. I'm here to answer your questions about our 2 luxury villas in Bohol.\n\nWhat brings you here today?",
+      "buttons": [
+        {"label": "Investment Details", "action": "go_to", "target": "investment_path"},
+        {"label": "Site Visit Info", "action": "go_to", "target": "site_visit_path"},
+        {"label": "Financing Options", "action": "go_to", "target": "financing_path"},
+        {"label": "General Info", "action": "go_to", "target": "general_qa"}
+      ]
+    },
+    {
+      "id": "investment_path",
+      "type": "text",
+      "content": "💰 Investment Overview:\n\nEach villa:\n• PHP 32,500,000 purchase price\n• PHP 395,000 monthly Airbnb income (verified)\n• 17-25% annual ROI\n• 263.78 sqm floor area\n• Full management included\n\nReady to discuss terms?",
+      "buttons": [
+        {"label": "Schedule Consultation", "action": "go_to", "target": "qualify_lead"},
+        {"label": "More Questions", "action": "go_to", "target": "general_qa"}
+      ]
+    },
+    {
+      "id": "site_visit_path",
+      "type": "text",
+      "content": "🏠 Site Visit Information:\n\nWe offer virtual tours and in-person visits.\n\nPreferred timing?",
+      "buttons": [
+        {"label": "Next 3 Days", "action": "go_to", "target": "qualify_lead"},
+        {"label": "Next Week", "action": "go_to", "target": "qualify_lead"},
+        {"label": "Next Month", "action": "go_to", "target": "qualify_lead"}
+      ]
+    },
+    {
+      "id": "financing_path",
+      "type": "text",
+      "content": "🏦 Financing Options:\n\nBDO Bank partnership available for qualified buyers.\n• Loan-to-value: Up to 70%\n• Terms: 15-20 years\n• Processing time: 3-5 business days\n\nAre you a qualified buyer?",
+      "buttons": [
+        {"label": "Yes, Tell Me More", "action": "go_to", "target": "qualify_lead"},
+        {"label": "Just Exploring", "action": "go_to", "target": "general_qa"}
+      ]
+    },
+    {
+      "id": "general_qa",
+      "type": "text",
+      "content": "❓ Common Questions:\n\n1. How far is the beach? (60 seconds walk)\n2. Management included? (Yes, full Airbnb management)\n3. Occupancy rate? (65% average, 49% market average)\n4. Reserve requirement? (PHP 200,000)\n\nWhat else would you like to know?",
+      "buttons": [
+        {"label": "View Full FAQ", "action": "go_to", "target": "faq_list"},
+        {"label": "Schedule Consultation", "action": "go_to", "target": "qualify_lead"}
+      ]
+    },
+    {
+      "id": "qualify_lead",
+      "type": "text",
+      "content": "Perfect! To help you best, could you share:\n\n1. Your name?\n2. Your country of residence?\n3. Investment timeline? (ASAP / Within 30 days / Exploring)",
+      "buttons": [],
+      "capture_fields": ["name", "country", "timeline"]
+    },
+    {
+      "id": "faq_list",
+      "type": "text",
+      "content": "📋 Full FAQ:\n\n1. What's included in management?\n2. Tax implications?\n3. Can I use the villa?\n4. Renting procedures?\n5. Maintenance costs?\n6. Exit strategy?\n7. Insurance?\n\nSelect a number (1-7) to learn more",
+      "buttons": []
+    }
+  ],
+  "export_format": "WATI",
+  "export_date": "2026-04-14T09:00:00Z"
+}

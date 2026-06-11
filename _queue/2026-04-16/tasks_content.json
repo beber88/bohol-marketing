@@ -1,0 +1,30 @@
+[
+  {
+    "id": "CNT-0001",
+    "priority": "HIGH",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "PH",
+    "description": "Day 10 Facebook post (PH market)",
+    "instructions": "Publish to Facebook page. Market: PH. Use the provided image and copy. Schedule for optimal engagement time.",
+    "copy": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nVilla C: PHP 30,000,000 (approx. USD 498,900, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/FRONT 1 ENHANCED.png",
+    "scheduled_time": "2026-04-16T10:00:00+08:00",
+    "hook_used": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.",
+    "language": "en"
+  },
+  {
+    "id": "CNT-0002",
+    "priority": "MEDIUM",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 10 Facebook post (IL market, secondary)",
+    "instructions": "Publish secondary post for IL market. Schedule for alternate time slot.",
+    "copy": "וילות יוקרה בפנגלאו מרוויחות 6,000-8,400 פסו ללילה עם תפוסה של 70%+. הווילה הזו לא רק נכס לייפסטייל - היא מכונה לייצור תזרים.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/FRONT 2 ENHANCED.png",
+    "scheduled_time": "2026-04-16T20:00:00+08:00",
+    "hook_used": "וילות יוקרה בפנגלאו מרוויחות 6,000-8,400 פסו ללילה עם תפוסה של 70%+. הווילה הזו לא רק נכס לייפסטייל - היא מכונה לייצור תזרים.",
+    "language": "he"
+  }
+]

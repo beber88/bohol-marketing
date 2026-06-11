@@ -1,0 +1,22 @@
+{
+  "date": "2026-06-05",
+  "run_type": "scheduled_il_hebrew_community_post",
+  "status": "BLOCKED_NOT_PUBLISHED",
+  "scheduled_post_number": 3,
+  "scheduled_post_file": "_queue/community-agent/posts/post_03_ph_vs_greece.md",
+  "scheduled_post_title": "למה פיליפינים ולא יוון? 10 מספרים",
+  "target_group": "https://www.facebook.com/groups/investment.ph.il/",
+  "simulation": false,
+  "published": false,
+  "block_reasons": [
+    "Currency conflict: POST 3 uses shekel pricing (1,535,000 ש\"ח) but campaign_state.json (2026-06-04) mandates pricing_rule php_only_all_markets and israel currency PHP_ONLY.",
+    "POST 3 is within the held-draft range 3-50 flagged in campaign_state.json blocker 'Future Hebrew community posts need Brand Guard review'; these posts are not in the executable queue until revised and approved."
+  ],
+  "action_taken": "none_published",
+  "browser_used": false,
+  "screenshot_path": null,
+  "post_link": null,
+  "blueprint_touched": false,
+  "next_action": "Resolve IL pricing rule (shekels vs PHP) and run POST 3 through Brand Guard, then re-run this task with an approved compliant draft.",
+  "logged_at": "2026-06-05T15:00:00+08:00"
+}

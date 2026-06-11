@@ -1,0 +1,22 @@
+{
+  "date": "2026-04-14",
+  "php_to_ils": 0.050746,
+  "php_to_usd": 0.01663,
+  "source_ils": "exchangerate-api.com",
+  "source_usd": "exchangerate-api.com",
+  "villa_c_php": 30000000,
+  "villa_c_ils": 1522380,
+  "villa_c_usd": 498900,
+  "villa_d_php": 28000000,
+  "villa_d_ils": 1420888,
+  "villa_d_usd": 465640,
+  "monthly_income_php": 395000,
+  "monthly_income_ils": 20045,
+  "monthly_income_usd": 6569,
+  "annual_income_php": 4740000,
+  "annual_income_ils": 240536,
+  "annual_income_usd": 78826,
+  "reservation_php": 200000,
+  "reservation_ils": 10149,
+  "reservation_usd": 3326
+}

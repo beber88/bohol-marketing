@@ -1,0 +1,8 @@
+node_modules/
+server/data/
+server/uploads/
+client/dist/
+data/
+.DS_Store
+__MACOSX/
+server/.env

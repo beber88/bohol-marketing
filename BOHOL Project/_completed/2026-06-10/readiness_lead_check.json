@@ -1,0 +1,101 @@
+{
+  "timestamp": "2026-06-10T08:03:00+08:00",
+  "agent": "LEAD_CHECK",
+  "phase_detected": "LIVE",
+  "simulation_flag": false,
+  "go_live_date": "2026-05-28",
+  "start_date": "2026-05-28",
+  "campaign_day": 14,
+  "mode": "LIVE_BLOCKED_NO_SOURCE",
+  "mode_rationale": "Per the phase guard (phase=LIVE, simulation=false, start_date set) this run is nominally LIVE, not PREPARATION. However NO lead source is provisioned or reachable for the villa campaign in this scheduled session, so live polling is physically impossible. As on prior days, the one reachable lead-bearing connector (Gmail) was probed to confirm no leads are silently capturable elsewhere. No leads were read, recorded, or escalated. A readiness/blocker report is the correct output.",
+  "scheduled_run_pht": "2026-06-10T13:00:00+08:00",
+  "actual_run_pht": "2026-06-10T08:03:00+08:00",
+  "note_on_run_time": "Cron drift unchanged for the fourteenth consecutive LEAD_CHECK run. Job fires ~08:03 PHT (00:03 UTC) instead of the documented 13:00 PHT slot. Recommendation unchanged: align the scheduled-tasks cron with the documented PHT slot, or rewrite the agent prompt to reflect the actual fire time.",
+  "connectors_probed_this_run": {
+    "gmail": {
+      "reachable": true,
+      "query": "newer_than:2d (lead OR inquiry OR villa OR Panglao OR investment OR \"contact form\" OR \"Blue Everest\" OR primevilla)",
+      "lead_notifications_found": 0,
+      "note": "Single match was an unrelated marketing newsletter (team@learn.mail.monday.com). No website contact-form lead notifications and no inbound inquiry emails for the villa campaign in the last 2 days. Consistent with every prior LEAD_CHECK sweep. The only lead-related artifact ever surfaced via Gmail remains a 2026-05-24 Drive share notification for a sheet titled 'PANGLAO PRIME VILLAS - LEAD PIPELINE' owned by ceo@blue-everest.com, which still cannot be opened (no Sheets/Drive MCP authorized) and is still not registered in lead_check_state.json."
+    }
+  },
+  "lead_sources": {
+    "google_sheets": {
+      "status": "exists_but_unwired",
+      "mcp_reachable": false,
+      "sheet_url": null,
+      "sheet_id": null,
+      "sheet_tab_name": null,
+      "header_row_validated": false,
+      "blocker": true,
+      "note": "The lead sheet 'PANGLAO PRIME VILLAS - LEAD PIPELINE' (owner ceo@blue-everest.com) is evidenced by a 2026-05-24 Drive share notification, but (1) no Google Sheets/Drive MCP connector is present in this session's tool inventory, (2) lead_check_state.json.lead_source_sheet is null on all three fields, and (3) header_row_validated=false. There is nothing this agent can poll."
+    },
+    "wati": {
+      "status": "not_setup",
+      "mcp_reachable": false,
+      "blocker": true,
+      "note": "campaign_state.json platforms.wati.status='not_setup'. No account, no Client ID, no registered sales-agent WA number. Inbound WhatsApp lead ingestion is unavailable AND outbound HOT-lead escalation to the sales agent CANNOT be automated. If a HOT lead arrived today it could not be alerted through WATI."
+    },
+    "hubspot": {
+      "status": "not_setup",
+      "mcp_reachable": false,
+      "blocker": true,
+      "note": "campaign_state.json platforms.hubspot.status='not_setup'. No CRM destination, no deal pipeline, no owner routing."
+    },
+    "brevo": {
+      "status": "active_per_state_file_but_unverified_this_run",
+      "mcp_reachable": false,
+      "blocker": true,
+      "note": "campaign_state.json platforms.brevo.status reads 'active' (templates=10, lists=5, drip_sequence=true). No Brevo MCP is reachable to verify, and LEAD_CHECK does not write to Brevo. Confirm the account/lists/drip exist before treating the lead -> email-nurture path as functional."
+    },
+    "meta_lead_ads": {
+      "status": "not_configured",
+      "mcp_reachable": true,
+      "blocker": true,
+      "note": "Meta Ads MCP is reachable. Two campaigns (IL-1, PH-1) are marked ACTIVE, but the ad account carries account_issue 'UNSETTLED - billing balance must be paid before ads deliver', so delivery (and therefore lead generation) is itself in question. No Meta Lead Ads forms exist and no lead-form-to-sheet/CRM bridge is configured."
+    }
+  },
+  "expected_lead_schema": [
+    "name",
+    "email",
+    "phone",
+    "country",
+    "villa_interest (C/D)",
+    "investment_amount",
+    "timeline",
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_content"
+  ],
+  "hot_lead_criteria": [
+    "investment_amount > PHP 20,000,000 OR > 1,200,000 ILS",
+    "timeline = 'immediately' OR 'within 30 days'",
+    "message mentions reservation / contract / payment"
+  ],
+  "leads_found": 0,
+  "hot_leads": 0,
+  "leads_escalated": 0,
+  "blockers": [
+    "No Google Sheets/Drive MCP connector authorized in this session; the 'PANGLAO PRIME VILLAS - LEAD PIPELINE' sheet exists but cannot be opened or registered.",
+    "lead_check_state.json sheet_id/tab_name still null; header_row_validated=false; last_check still null.",
+    "WATI not_setup: no inbound WhatsApp capture and no automated HOT-lead escalation path to the sales agent.",
+    "HubSpot not_setup: no CRM persistence beyond _completed/{date}/ files.",
+    "Brevo status 'active' per state file but unverified this run.",
+    "Meta ad account UNSETTLED: billing balance must be paid before ads deliver, so paid lead generation is itself in doubt.",
+    "UNCONFIRMED STATE FLIP persists: campaign_state.json has been LIVE / simulation=false since the 2026-06-03 update with no staged task queue and no human sign-off found in the project tree (now 8 days, and no _queue/ folder for today)."
+  ],
+  "suggested_actions": [
+    "Authorize a Google Sheets (or Drive) MCP connector for unattended scheduled runs, then register the 'PANGLAO PRIME VILLAS - LEAD PIPELINE' sheet_id and tab_name in _status/lead_check_state.json and set header_row_validated=true.",
+    "Validate the sheet header row against expected_lead_schema before the first live poll.",
+    "Stand up WATI (account + Client ID + sales-agent WA number) so HOT-lead escalation can be automated; until then HOT leads must be escalated manually.",
+    "Confirm whether the 2026-06-03 LIVE flip was intentional and human-authorized. If not, revert campaign_state.json to PRE_LAUNCH / simulation=true until at least one lead source is live.",
+    "Settle the Meta ad account billing balance so ads can deliver and generate leads.",
+    "Fix the LEAD_CHECK cron so it fires at the documented 13:00 PHT slot (currently ~08:03 PHT)."
+  ],
+  "state_writes": {
+    "lead_check_state_json": "NOT MODIFIED (outside this agent's write scope per CLAUDE.md; only _completed/ and _status/cowork_heartbeat.json are writable). last_check intentionally remains null since no successful poll occurred.",
+    "campaign_state_json": "NOT MODIFIED (outside write scope)."
+  },
+  "hebrew_summary": "סיכום בדיקת לידים 2026-06-10 (יום קמפיין 14): המערכת מסומנת LIVE (simulation=false), אך אין מקור לידים שניתן לקרוא ממנו עבור קמפיין הווילות. נבדק המחבר היחיד הזמין שקולט לידים (Gmail): לא נמצאו פניות או התראות טופס יצירת קשר ביומיים האחרונים (התוצאה היחידה הייתה ניוזלטר שיווקי לא רלוונטי), בהתאם לכל הסריקות הקודמות. הגיליון 'PANGLAO PRIME VILLAS - LEAD PIPELINE' (בבעלות ceo@blue-everest.com) קיים אך אינו רשום ב-lead_check_state.json ואין מחבר Google Sheets/Drive מורשה לפתוח אותו. WATI ו-HubSpot עדיין לא מוגדרים, ולכן אין קליטת לידים בוואטסאפ ואין הסלמה אוטומטית של ליד חם לסוכן המכירות. חשבון המודעות במטא עדיין UNSETTLED. ערוצים שאפשר לקלוט בהם לידים היום: אין אף ערוץ פעיל וניתן לקריאה. מה חסום: Google Sheets לא מחובר, WATI ו-HubSpot לא מוגדרים, חשבון מטא לא שולם, והמעבר ל-LIVE מ-03.06 לא אושר. מה צריך כדי להתחיל: לחבר Google Sheets ולרשום sheet_id ושם טאב, לאמת את שורת הכותרות, להקים WATI להסלמה, ולאשר את מצב ה-LIVE. לא נקלטו, נרשמו או הוסלמו לידים בריצה זו."
+}

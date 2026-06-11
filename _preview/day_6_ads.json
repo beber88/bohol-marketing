@@ -1,0 +1,16 @@
+[
+  {
+    "id": "ADS-0003",
+    "priority": "HIGH",
+    "type": "ad_management",
+    "status": "PENDING",
+    "description": "Day 6 ad management - AWARENESS phase (PH)",
+    "instructions": "Ensure AWARENESS ads are active for PH market. Daily budget: USD 50. Monitor CTR and CPC. Pause underperformers (CTR < 1%).",
+    "ad_files": [
+      "assets/ads/META_PH_AWARENESS_1A.txt",
+      "assets/ads/META_PH_AWARENESS_1B.txt"
+    ],
+    "daily_budget_usd": 50,
+    "market": "PH"
+  }
+]

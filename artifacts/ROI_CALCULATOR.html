@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panglao Villa ROI Calculator</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+    .container { max-width: 1000px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 30px; }
+    h1 { color: #1e3c72; margin-bottom: 30px; text-align: center; }
+    .calc-section { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+    .input-group { margin-bottom: 20px; }
+    label { display: block; margin-bottom: 8px; color: #333; font-weight: 500; }
+    input, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; }
+    input:focus { outline: none; border-color: #1e3c72; box-shadow: 0 0 5px rgba(30, 60, 114, 0.3); }
+    .output { background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 4px solid #1e3c72; }
+    .output h3 { color: #1e3c72; margin-bottom: 15px; }
+    .output-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; }
+    .output-row:last-child { border-bottom: none; }
+    .output-label { color: #666; }
+    .output-value { font-weight: bold; color: #1e3c72; }
+    .chart-container { margin: 30px 0; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th { background: #1e3c72; color: white; padding: 12px; text-align: left; font-weight: 600; }
+    td { padding: 10px 12px; border-bottom: 1px solid #ddd; }
+    tr:hover { background: #f5f5f5; }
+    .button-group { display: flex; gap: 10px; margin-top: 30px; }
+    button { padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; }
+    .btn-calculate { background: #1e3c72; color: white; }
+    .btn-reset { background: #999; color: white; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>💰 Panglao Villa ROI Calculator</h1>
+
+  <div class="calc-section">
+    <div>
+      <div class="input-group">
+        <label>Number of Villas</label>
+        <select id="numVillas">
+          <option value="1">1 Villa</option>
+          <option value="2">2 Villas</option>
+          <option value="3">3 Villas</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Financing Option</label>
+        <select id="financing">
+          <option value="0">All Cash (0% loan)</option>
+          <option value="70" selected>70% Financed</option>
+          <option value="50">50% Financed</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Loan Term (Years)</label>
+        <select id="loanTerm">
+          <option value="10">10 years</option>
+          <option value="15" selected>15 years</option>
+          <option value="20">20 years</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Annual Appreciation Rate (%)</label>
+        <input type="number" id="roiRate" value="4" min="1" max="15" />
+      </div>
+
+      <div class="button-group">
+        <button class="btn-calculate" onclick="calculateROI()">Calculate ROI</button>
+        <button class="btn-reset" onclick="resetCalculator()">Reset</button>
+      </div>
+    </div>
+
+    <div id="results" class="output">
+      <h3>📊 Your Projection</h3>
+      <div class="output-row">
+        <span class="output-label">Initial Investment:</span>
+        <span class="output-value" id="initInvest">PHP 0</span>
+      </div>
+      <div class="output-row">
+        <span class="output-label">Down Payment (30%):</span>
+        <span class="output-value" id="downPayment">PHP 0</span>
+      </div>
+      <div class="output-row">
+        <span class="output-label">Monthly Income (Gross):</span>
+        <span class="output-value" id="monthlyIncome">PHP 0</span>
+      </div>
+      <div class="output-row">
+        <span class="output-label">Monthly Loan Payment:</span>
+        <span class="output-value" id="loanPayment">PHP 0</span>
+      </div>
+      <div class="output-row" style="background: #e7f3ff; padding: 10px; border-radius: 4px;">
+        <span class="output-label"><strong>Net Monthly Cashflow:</strong></span>
+        <span class="output-value" id="netCashflow">PHP 0</span>
+      </div>
+      <div class="output-row" style="background: #e7f3ff; padding: 10px; border-radius: 4px; margin-top: 10px;">
+        <span class="output-label"><strong>Annual Net Income:</strong></span>
+        <span class="output-value" id="annualNetIncome">PHP 0</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <h3>📈 10-Year Wealth Projection</h3>
+    <table id="projectionTable">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Cumulative Income</th>
+          <th>Property Value</th>
+          <th>Total Wealth</th>
+          <th>ROI %</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Populated by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+const VILLA_PRICE = 28_000_000;
+const MONTHLY_INCOME_SINGLE = 395_000;
+
+function calculateROI() {
+  const numVillas = parseInt(document.getElementById('numVillas').value);
+  const financingPercent = parseFloat(document.getElementById('financing').value) / 100;
+  const loanTerm = parseInt(document.getElementById('loanTerm').value);
+  const roiRate = parseFloat(document.getElementById('roiRate').value) / 100;
+
+  const totalInvestment = VILLA_PRICE * numVillas;
+  const downPayment = totalInvestment * (1 - financingPercent);
+  const loanAmount = totalInvestment * financingPercent;
+  const monthlyIncome = MONTHLY_INCOME_SINGLE * numVillas;
+
+  // Calculate monthly payment
+  const monthlyRate = 0.06 / 12; // 6% annual interest rate
+  const months = loanTerm * 12;
+  const monthlyPayment = financingPercent > 0 
+    ? (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1)
+    : 0;
+
+  const netMonthly = monthlyIncome - monthlyPayment;
+  const annualNetIncome = netMonthly * 12;
+  
+  // Update display
+  document.getElementById('initInvest').textContent = `PHP ${totalInvestment.toLocaleString()}`;
+  document.getElementById('downPayment').textContent = `PHP ${downPayment.toLocaleString()}`;
+  document.getElementById('monthlyIncome').textContent = `PHP ${monthlyIncome.toLocaleString()}`;
+  document.getElementById('loanPayment').textContent = monthlyPayment > 0 ? `PHP ${monthlyPayment.toLocaleString('en-US', {maximumFractionDigits: 0})}` : 'PHP 0';
+  document.getElementById('netCashflow').textContent = `PHP ${netMonthly.toLocaleString('en-US', {maximumFractionDigits: 0})}`;
+  document.getElementById('annualNetIncome').textContent = `PHP ${annualNetIncome.toLocaleString()}`;
+
+  // Fill table
+  const tableBody = document.getElementById('tableBody');
+  tableBody.innerHTML = '';
+
+  for (let year = 1; year <= 10; year++) {
+    const income = monthlyIncome * year * 12;
+    const propertyValue = totalInvestment * Math.pow(1 + roiRate, year);
+    const totalWealth = downPayment + (netMonthly * year * 12) + (propertyValue - totalInvestment);
+    const roi = ((totalWealth - downPayment) / downPayment) * 100;
+
+    const row = `
+      <tr>
+        <td>Year ${year}</td>
+        <td>PHP ${income.toLocaleString('en-US', {maximumFractionDigits: 0})}</td>
+        <td>PHP ${propertyValue.toLocaleString('en-US', {maximumFractionDigits: 0})}</td>
+        <td>PHP ${totalWealth.toLocaleString('en-US', {maximumFractionDigits: 0})}</td>
+        <td>${roi.toFixed(1)}%</td>
+      </tr>
+    `;
+    tableBody.innerHTML += row;
+  }
+}
+
+function resetCalculator() {
+  document.getElementById('numVillas').value = '1';
+  document.getElementById('financing').value = '70';
+  document.getElementById('loanTerm').value = '15';
+  document.getElementById('roiRate').value = '17';
+  document.getElementById('tableBody').innerHTML = '';
+}
+
+// Calculate on load
+calculateROI();
+</script>
+
+</body>
+</html>

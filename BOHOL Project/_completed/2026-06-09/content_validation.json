@@ -1,0 +1,25 @@
+{
+  "date": "2026-06-09",
+  "agent": "CONTENT_POST",
+  "slot_pht": "10:00",
+  "phase_per_state_file": "LIVE",
+  "simulation_per_state_file": false,
+  "mode_applied": "LIVE_BLOCKED_NO_QUEUE",
+  "queue_folder_exists": false,
+  "tasks_content_file_exists": false,
+  "tasks_total": 0,
+  "tasks_passed": 0,
+  "tasks_failed": 0,
+  "failures": [],
+  "drafts_ready": [],
+  "published": 0,
+  "spend": 0,
+  "copy_improvised": false,
+  "blueprint_action_taken": false,
+  "notes": [
+    "No _queue/2026-06-09/ folder and no tasks_content.json; nothing to validate or publish.",
+    "Per phase guard the run is nominally LIVE, but with zero authorized content tasks and the rule against improvising copy, nothing was published.",
+    "Open blockers carried forward: Meta billing UNSETTLED; IL price-table inconsistency between CLAUDE.md/state file and SKILL rule #4; Pixel/Google Tag firing unverified; WATI/HubSpot not setup.",
+    "Alert written to _status/alert_no_tasks.md."
+  ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "CNT-0001",
+    "priority": "HIGH",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "PH",
+    "description": "Day 8 Facebook post (PH market)",
+    "instructions": "Publish to Facebook page. Market: PH. Use the provided image and copy. Schedule for optimal engagement time.",
+    "copy": "Luxury villas in Panglao earn ADR of P12,000-20,000 with 70%+ occupancy. This villa is not just a lifestyle asset. It is a cash flow machine.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nVilla C: PHP 30,000,000 (approx. USD 498,900, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD1 ENHANCED.png",
+    "scheduled_time": "2026-04-17T10:00:00+08:00",
+    "hook_used": "Luxury villas in Panglao earn ADR of P12,000-20,000 with 70%+ occupancy. This villa is not just a lifestyle asset. It is a cash flow machine.",
+    "language": "en"
+  },
+  {
+    "id": "CNT-0002",
+    "priority": "MEDIUM",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 8 Facebook post (IL market, secondary)",
+    "instructions": "Publish secondary post for IL market. Schedule for alternate time slot.",
+    "copy": "535,803 תיירים ב-2022. 1,427,362 ב-2025. זה 166% צמיחה ב-3 שנים. אנחנו לא בונים על תקווה - אנחנו בונים על מגמה מוכחת.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/RD2 ENHANCED.png",
+    "scheduled_time": "2026-04-17T20:00:00+08:00",
+    "hook_used": "535,803 תיירים ב-2022. 1,427,362 ב-2025. זה 166% צמיחה ב-3 שנים. אנחנו לא בונים על תקווה - אנחנו בונים על מגמה מוכחת.",
+    "language": "he"
+  },
+  {
+    "id": "EDU-0003",
+    "priority": "MEDIUM",
+    "type": "facebook_group_edu",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 8 educational post for Israeli FB group",
+    "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+    "copy": "מסגרת משפטית: איך ישראלי מחזיק נכס בפיליפינים?\n\n3 מסלולים חוקיים:\n\n1. Domestic Corporation (60/40)\nחברה פיליפינית שבה הזר מחזיק עד 40% מהמניות. החברה מחזיקה את הקרקע.\n\n2. Leasehold (עד 99 שנה)\nחוק חדש (RA 12252, 2025) מאפשר חכירה עד 99 שנה. יציבות ארוכת טווח.\n\n3. בעלות על מבנה + חכירת קרקע\nהזר מחזיק את הווילה עצמה, הקרקע בחכירה ארוכה.\n\nחשוב: קיימת אמנת מס ישראל-פיליפינים (מ-1997) למניעת כפל מס.\n\nהמלצה: ליווי של עורך דין פיליפיני מנוסה בנדל\"ן זר.\n\nמקור: Reuters, OneAsia Legal, Expatmodo",
+    "image_path": "",
+    "platform": "Facebook Group IL",
+    "scheduled_time": "2026-04-17T11:00:00+02:00",
+    "language": "he"
+  }
+]

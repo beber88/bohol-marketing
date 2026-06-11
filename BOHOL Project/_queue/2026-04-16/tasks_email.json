@@ -1,0 +1,28 @@
+[
+  {
+    "id": "EML-0006",
+    "priority": "HIGH",
+    "type": "email_nurture",
+    "status": "PENDING",
+    "market": "PH",
+    "description": "Day 8 email - nurture (PH)",
+    "instructions": "Send nurture email to PH lead list via Brevo. Subject: Panglao Prime Villas - Your Investment Breakdown. Include villa pricing from FX data and CTA to reservation form.",
+    "subject": "Panglao Prime Villas - Your Investment Breakdown",
+    "language": "en",
+    "villa_d_price": "PHP 28,000,000",
+    "villa_c_price": "PHP 30,000,000"
+  },
+  {
+    "id": "EML-0007",
+    "priority": "HIGH",
+    "type": "email_nurture",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 8 email - nurture (IL)",
+    "instructions": "Send nurture email to IL lead list via Brevo. Subject: פנגלאו פריים וילות - פירוט ההשקעה. Include villa pricing in ILS and CTA to WhatsApp.",
+    "subject": "פנגלאו פריים וילות - פירוט ההשקעה",
+    "language": "he",
+    "villa_d_price": "₪1,420,888",
+    "villa_c_price": "₪1,522,380"
+  }
+]

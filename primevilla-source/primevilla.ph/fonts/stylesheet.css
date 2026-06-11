@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'LT Museum';
+    src: url('LTMuseum-Bold.woff2') format('woff2'),
+        url('LTMuseum-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LT Museum Med';
+    src: url('LTMuseum-Medium.woff2') format('woff2'),
+        url('LTMuseum-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LT Museum';
+    src: url('LTMuseum-Light.woff2') format('woff2'),
+        url('LTMuseum-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

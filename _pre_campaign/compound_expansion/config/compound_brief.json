@@ -1,0 +1,133 @@
+{
+  "compound_name": "Panglao Prime Villas",
+  "tagline": "Panglao's First Private Luxury Villa Compound",
+  "total_villas": 8,
+  "total_available": 6,
+  "developer": "Blue Everest Asset Group Holding Inc.",
+  "location": "Between JW Marriott and Mithi Resort, Panglao, Bohol",
+  "beach_distance": "60 seconds to Panglao Beach",
+  "website": "https://blue-everest.com",
+  "facebook_page": "https://www.facebook.com/BlueEverestGroup",
+  "whatsapp_marketing": "+639542555553",
+  "whatsapp_office": "+639958565865",
+
+  "phases": {
+    "phase_1": {
+      "label": "Phase 1 (Original)",
+      "villa_count": 4,
+      "villas": {
+        "A": {
+          "status": "SOLD",
+          "price_php": null,
+          "price_ils": null,
+          "specs": "same_as_cd"
+        },
+        "B": {
+          "status": "SOLD",
+          "price_php": null,
+          "price_ils": null,
+          "specs": "same_as_cd"
+        },
+        "C": {
+          "status": "AVAILABLE",
+          "price_php": 35000000,
+          "price_php_formatted": "PHP 35,000,000",
+          "price_ils": 1650000,
+          "price_ils_formatted": "1,650,000 ש\"ח",
+          "specs": "standard"
+        },
+        "D": {
+          "status": "AVAILABLE",
+          "price_php": 32500000,
+          "price_php_formatted": "PHP 32,500,000",
+          "price_ils": 1535000,
+          "price_ils_formatted": "1,535,000 ש\"ח",
+          "specs": "standard"
+        }
+      }
+    },
+    "phase_2": {
+      "label": "Phase 2 (Expansion)",
+      "villa_count": 4,
+      "villas": {
+        "E": {
+          "status": "AVAILABLE",
+          "price_php": "AWAITING_BAR",
+          "price_ils": "AWAITING_BAR",
+          "specs": "standard",
+          "note": "Same specs as Villa C/D"
+        },
+        "F": {
+          "status": "AVAILABLE",
+          "price_php": "AWAITING_BAR",
+          "price_ils": "AWAITING_BAR",
+          "specs": "standard",
+          "note": "Same specs as Villa C/D"
+        },
+        "G": {
+          "status": "AVAILABLE",
+          "price_php": "AWAITING_BAR",
+          "price_ils": "AWAITING_BAR",
+          "specs": "standard",
+          "note": "Same specs as Villa C/D"
+        },
+        "H": {
+          "status": "AVAILABLE",
+          "price_php": "AWAITING_BAR",
+          "price_ils": "AWAITING_BAR",
+          "specs": "unique_design",
+          "note": "Different design from C/D - details TBD from Bar"
+        }
+      }
+    }
+  },
+
+  "standard_specs": {
+    "floor_area_sqm": 263.78,
+    "bedrooms": 4,
+    "bedrooms_detail": "4 En-Suite Bedrooms",
+    "pool": "Private Pool + Rooftop Jacuzzi",
+    "stories": "3 Storeys + Roof Deck",
+    "lot_area_sqm": "TBD"
+  },
+
+  "villa_h_specs": {
+    "note": "AWAITING_BAR - different design, details TBD"
+  },
+
+  "compound_amenities": "AWAITING_BAR - not decided yet",
+
+  "financials": {
+    "monthly_income_verified_php": 395000,
+    "monthly_income_source": "Verified Airbnb data",
+    "roi_annual": "17-25%",
+    "occupancy_rate": "65%",
+    "reservation_fee_php": 200000,
+    "reservation_fee_ils": 9999,
+    "payment_terms": "Details at booking meeting",
+    "financing": "BDO Bank (Philippines market only)"
+  },
+
+  "content_rules": {
+    "israel": {
+      "currency": "ILS_ONLY",
+      "price_note": "Fixed monthly prices, no FX recalculation",
+      "required_legal_solutions": ["Deed of Assignment", "Leasehold 25+25", "Domestic Corporation"],
+      "required_whatsapp": "Both numbers"
+    },
+    "philippines": {
+      "currency": "PHP_ONLY",
+      "required_financing_mention": "BDO Bank financing",
+      "required_whatsapp": "Both numbers"
+    },
+    "universal": {
+      "every_post_needs_number": true,
+      "forbidden_words": ["amazing", "incredible", "dream home", "once in a lifetime"],
+      "no_em_dashes": true,
+      "no_en_dashes": true
+    }
+  },
+
+  "construction_timeline": "AWAITING_BAR",
+  "last_updated": "2026-06-10"
+}

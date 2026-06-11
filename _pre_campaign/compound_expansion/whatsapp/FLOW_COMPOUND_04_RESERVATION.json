@@ -1,0 +1,71 @@
+{
+  "flow_name": "Phase 2 Reservation Flow",
+  "flow_id": "COMPOUND_04_RESERVATION",
+  "platform": "WATI",
+  "language": "en",
+  "trigger": "Contact mentions 'reserve', 'reservation', 'book', or is tagged reservation_interest",
+  "version": "compound_v1",
+
+  "messages": [
+    {
+      "step": 1,
+      "type": "text",
+      "delay_seconds": 0,
+      "content": "Thank you for your interest in reserving a villa at Panglao Prime Villas.\n\n*Currently available:*\nVilla C: PHP 35,000,000\nVilla D: PHP 32,500,000\nVilla E: [PRICE_PLACEHOLDER]\nVilla F: [PRICE_PLACEHOLDER]\nVilla G: [PRICE_PLACEHOLDER]\nVilla H: [PRICE_PLACEHOLDER] (unique design)\n\n*Reservation process:*\n1. Choose your villa\n2. Pay reservation fee: PHP 200,000\n3. Review and sign the agreement\n4. Balance per agreed payment terms\n\nBDO Bank financing available for qualified buyers.\n\nWhich villa interests you?\n\n*C* - Villa C (PHP 35,000,000)\n*D* - Villa D (PHP 32,500,000)\n*E* - Villa E\n*F* - Villa F\n*G* - Villa G\n*H* - Villa H (unique design)\n*CALL* - I want to discuss options first"
+    },
+    {
+      "step": 2,
+      "type": "conditional",
+      "trigger": "user_reply",
+      "branches": {
+        "C": {
+          "content": "Villa C - PHP 35,000,000\n\n263.78 sqm, 4 en-suite bedrooms, private pool, rooftop jacuzzi.\nPremium lot positioning within the compound.\n\nReservation fee: PHP 200,000\nVerified income: PHP 395,000/month\nROI: 17-25% annual\n\nTo proceed, our investment team will:\n1. Send you the complete investment package\n2. Schedule a call to answer your questions\n3. Guide you through the reservation process\n\nI am connecting you with our team now.\n\nWhatsApp (Marketing): +639542555553\nWhatsApp (Office): +639958565865",
+          "action": "alert_sales",
+          "priority": "HOT",
+          "tag": "reservation_villa_c"
+        },
+        "D": {
+          "content": "Villa D - PHP 32,500,000\n\n263.78 sqm, 4 en-suite bedrooms, private pool, rooftop jacuzzi.\nOptimal value entry into the compound.\n\nReservation fee: PHP 200,000\nVerified income: PHP 395,000/month\nROI: 17-25% annual\n\nTo proceed, our investment team will:\n1. Send you the complete investment package\n2. Schedule a call to answer your questions\n3. Guide you through the reservation process\n\nI am connecting you with our team now.\n\nWhatsApp (Marketing): +639542555553\nWhatsApp (Office): +639958565865",
+          "action": "alert_sales",
+          "priority": "HOT",
+          "tag": "reservation_villa_d"
+        },
+        "E": {
+          "content": "Villa E - Phase 2\n\nSame specs as Villa C/D: 263.78 sqm, 4 en-suite bedrooms, private pool, rooftop jacuzzi.\n\nPricing will be announced soon. You are on the early notification list.\n\nI am connecting you with our team to discuss Phase 2 options.\n\nWhatsApp (Marketing): +639542555553\nWhatsApp (Office): +639958565865",
+          "action": "alert_sales",
+          "priority": "WARM",
+          "tag": "reservation_villa_e"
+        },
+        "F": {
+          "content": "Villa F - Phase 2\n\nSame specs as Villa C/D: 263.78 sqm, 4 en-suite bedrooms, private pool, rooftop jacuzzi.\n\nPricing will be announced soon. You are on the early notification list.\n\nI am connecting you with our team to discuss Phase 2 options.\n\nWhatsApp (Marketing): +639542555553\nWhatsApp (Office): +639958565865",
+          "action": "alert_sales",
+          "priority": "WARM",
+          "tag": "reservation_villa_f"
+        },
+        "G": {
+          "content": "Villa G - Phase 2\n\nSame specs as Villa C/D: 263.78 sqm, 4 en-suite bedrooms, private pool, rooftop jacuzzi.\n\nPricing will be announced soon. You are on the early notification list.\n\nI am connecting you with our team to discuss Phase 2 options.\n\nWhatsApp (Marketing): +639542555553\nWhatsApp (Office): +639958565865",
+          "action": "alert_sales",
+          "priority": "WARM",
+          "tag": "reservation_villa_g"
+        },
+        "H": {
+          "content": "Villa H - Phase 2 (Unique Design)\n\nVilla H features a distinctive architectural design, different from the standard compound villas.\n\nFull specs, renders, and pricing are coming soon. You are on the early notification list.\n\nI am connecting you with our team to discuss this unique option.\n\nWhatsApp (Marketing): +639542555553\nWhatsApp (Office): +639958565865",
+          "action": "alert_sales",
+          "priority": "WARM",
+          "tag": "reservation_villa_h"
+        },
+        "CALL": {
+          "content": "Happy to arrange a call to discuss which villa best matches your investment goals.\n\nPlease share your preferred time and our team will reach out.\n\nWhatsApp (Marketing): +639542555553\nWhatsApp (Office): +639958565865",
+          "action": "alert_sales",
+          "priority": "WARM",
+          "tag": "reservation_call_request"
+        },
+        "default": {
+          "content": "Thank you for your interest in reserving. Our team will follow up with you shortly.\n\nWhatsApp (Marketing): +639542555553\nWhatsApp (Office): +639958565865",
+          "action": "alert_sales",
+          "priority": "WARM"
+        }
+      }
+    }
+  ]
+}

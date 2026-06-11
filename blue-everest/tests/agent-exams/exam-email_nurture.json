@@ -1,0 +1,2067 @@
+{
+  "agent": "email_nurture",
+  "agent_display_name": "Email Nurture Agent",
+  "description": "Tests email sequence design, automation, deliverability, and lead nurturing",
+  "total_questions": 100,
+  "pass_threshold": 100,
+  "categories": [
+    "sequence_design",
+    "subject_lines",
+    "automation_triggers",
+    "deliverability",
+    "personalization",
+    "ab_testing",
+    "segmentation",
+    "timing",
+    "content_rules",
+    "compliance"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "category": "sequence_design",
+      "difficulty": "easy",
+      "question": "How many emails are in the full Panglao Prime Villas nurture sequence?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 7",
+        "B. 10",
+        "C. 14",
+        "D. 21"
+      ],
+      "correct_answer": "C",
+      "explanation": "The complete nurture sequence consists of 14 emails designed to move leads from awareness through to reservation.",
+      "keywords": [
+        "sequence",
+        "14-email",
+        "nurture"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "sequence_design",
+      "difficulty": "easy",
+      "question": "What is the primary goal of Email 1 (Welcome) in the nurture sequence?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Close the sale immediately",
+        "B. Establish credibility and set expectations for the sequence",
+        "C. Ask for referrals",
+        "D. Present the ROI calculator"
+      ],
+      "correct_answer": "B",
+      "explanation": "The welcome email establishes Blue Everest's credibility, introduces the villas, and sets expectations for what the lead will receive in following emails.",
+      "keywords": [
+        "welcome",
+        "credibility",
+        "expectations"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "sequence_design",
+      "difficulty": "medium",
+      "question": "In the nurture sequence, which email should introduce the three legal ownership structures for Israeli leads?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Email 1 (Welcome)",
+        "B. Email 3-4 (Trust Building)",
+        "C. Email 5-6 (Legal & Ownership)",
+        "D. Email 12-14 (Close)"
+      ],
+      "correct_answer": "C",
+      "explanation": "Legal ownership structures (Deed of Assignment, Leasehold 25+25, Domestic Corporation) are introduced in the mid-sequence trust-building phase, typically emails 5-6.",
+      "keywords": [
+        "legal",
+        "ownership",
+        "deed of assignment",
+        "leasehold",
+        "domestic corporation"
+      ]
+    },
+    {
+      "id": 4,
+      "category": "sequence_design",
+      "difficulty": "medium",
+      "question": "What is the recommended delay between Email 1 (Welcome) and Email 2 in the nurture sequence?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Immediately after",
+        "B. 24 hours",
+        "C. 2-3 days",
+        "D. 7 days"
+      ],
+      "correct_answer": "C",
+      "explanation": "A 2-3 day gap after the welcome email allows the lead to absorb initial information without feeling overwhelmed, while maintaining engagement momentum.",
+      "keywords": [
+        "timing",
+        "delay",
+        "welcome",
+        "cadence"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "sequence_design",
+      "difficulty": "medium",
+      "question": "Which email in the sequence should feature the PHP 395,000/month verified Airbnb income data?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Email 1 only",
+        "B. Email 2-3 (ROI Focus)",
+        "C. Email 10-11 (Urgency)",
+        "D. It should appear in multiple emails throughout the sequence"
+      ],
+      "correct_answer": "D",
+      "explanation": "The PHP 395,000/month income figure is a key selling point and should be reinforced across multiple emails, though the detailed ROI breakdown belongs in the early-to-mid sequence.",
+      "keywords": [
+        "income",
+        "395000",
+        "airbnb",
+        "ROI"
+      ]
+    },
+    {
+      "id": 6,
+      "category": "sequence_design",
+      "difficulty": "hard",
+      "question": "A lead opens Emails 1-3 but does not click any links. What should the sequence do at Email 4?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Continue the normal sequence unchanged",
+        "B. Branch to a re-engagement sub-sequence with a different angle",
+        "C. Remove the lead from the sequence entirely",
+        "D. Send all remaining emails at once"
+      ],
+      "correct_answer": "B",
+      "explanation": "Opens without clicks indicate interest but insufficient motivation. Branching to a re-engagement sub-sequence with a stronger hook (e.g., ROI calculator, video tour) can reactivate the lead.",
+      "keywords": [
+        "branching",
+        "re-engagement",
+        "behavioral",
+        "opens-no-clicks"
+      ]
+    },
+    {
+      "id": 7,
+      "category": "sequence_design",
+      "difficulty": "easy",
+      "question": "Every email in the nurture sequence must include which two WhatsApp numbers?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +639542555553 and +639958565865",
+        "B. +639542555553 only",
+        "C. +639958565865 only",
+        "D. Neither - WhatsApp links are only in landing pages"
+      ],
+      "correct_answer": "A",
+      "explanation": "Per content rules, every piece of content including emails must include both WhatsApp numbers: Marketing (+639542555553) and Office (+639958565865).",
+      "keywords": [
+        "whatsapp",
+        "CTA",
+        "phone numbers"
+      ]
+    },
+    {
+      "id": 8,
+      "category": "sequence_design",
+      "difficulty": "medium",
+      "question": "What distinguishes the Israeli nurture sequence from the Filipino sequence in terms of content structure?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Israeli sequence is shorter",
+        "B. Israeli sequence emphasizes 3 legal ownership solutions; Filipino sequence emphasizes BDO financing",
+        "C. Filipino sequence has no ROI data",
+        "D. Israeli sequence skips the welcome email"
+      ],
+      "correct_answer": "B",
+      "explanation": "Israeli content must mention the 3 legal ownership structures while Filipino content must mention BDO Bank financing. This fundamental difference shapes the mid-sequence emails.",
+      "keywords": [
+        "israel",
+        "philippines",
+        "legal structures",
+        "BDO",
+        "segmentation"
+      ]
+    },
+    {
+      "id": 9,
+      "category": "sequence_design",
+      "difficulty": "hard",
+      "question": "At what point in the 14-email sequence should a lead who clicks the WhatsApp link be removed from the email sequence?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Immediately - they are now in the WhatsApp flow",
+        "B. Never - email and WhatsApp run in parallel",
+        "C. They should be moved to a different email track that complements WhatsApp",
+        "D. Only if they complete the WhatsApp qualification flow"
+      ],
+      "correct_answer": "C",
+      "explanation": "A WhatsApp click signals high intent. The lead should move to a complementary email track that reinforces WhatsApp conversations rather than duplicating content, preventing message fatigue.",
+      "keywords": [
+        "cross-channel",
+        "whatsapp",
+        "track switching",
+        "coordination"
+      ]
+    },
+    {
+      "id": 10,
+      "category": "sequence_design",
+      "difficulty": "medium",
+      "question": "What content rule must every email in the sequence follow regarding numbers?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No numbers in subject lines",
+        "B. Every email must include at least one specific project number",
+        "C. Numbers should be spelled out, not written as digits",
+        "D. Only use round numbers"
+      ],
+      "correct_answer": "B",
+      "explanation": "Per Rule 3, every post/email must include at least one specific number such as PHP 395,000, 17-25%, 9,999, PHP 32.5M/30M, 263.78 sqm, 4 bedrooms, etc.",
+      "keywords": [
+        "numbers",
+        "content rules",
+        "specificity"
+      ]
+    },
+    {
+      "id": 11,
+      "category": "sequence_design",
+      "difficulty": "hard",
+      "question": "Design the email sequence for a lead scored as HOT (71-120). How should the sequence differ from the standard 14-email nurture?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "HOT leads should receive an accelerated sequence: compress the 14 emails into a faster cadence (every 1-2 days instead of 2-3), skip early awareness emails, lead with ROI data and legal structures immediately, include a direct booking CTA from Email 1, and trigger a parallel WhatsApp outreach within 2 hours per HOT lead protocol. The sequence should be 7-8 emails max focused on conversion.",
+      "explanation": "HOT leads already demonstrate high intent through their behavioral signals. An accelerated, conversion-focused sequence prevents them from cooling off.",
+      "keywords": [
+        "hot lead",
+        "accelerated",
+        "sequence compression",
+        "2-hour protocol"
+      ]
+    },
+    {
+      "id": 12,
+      "category": "sequence_design",
+      "difficulty": "medium",
+      "question": "Which villa pricing should appear in Israeli market emails?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Villa C PHP 35,000,000 and Villa D PHP 32,500,000",
+        "B. Villa C PHP 35,000,000 and Villa D PHP 32,500,000",
+        "C. Villa C $550,000 and Villa D $510,000",
+        "D. No pricing in emails - direct to website only"
+      ],
+      "correct_answer": "B",
+      "explanation": "Per Rule 1, Israeli content shows ONLY shekels. Villa D is PHP 32,500,000 and Villa C is PHP 35,000,000. No PHP, no USD in Israeli content.",
+      "keywords": [
+        "pricing",
+        "shekels",
+        "israel",
+        "currency"
+      ]
+    },
+    {
+      "id": 13,
+      "category": "sequence_design",
+      "difficulty": "easy",
+      "question": "What is the reservation amount that should be featured in Israeli email sequences?",
+      "type": "multiple_choice",
+      "options": [
+        "A. $1,000",
+        "B. PHP 50,000",
+        "C. PHP 200,000",
+        "D. 15,000 ש\"ח"
+      ],
+      "correct_answer": "C",
+      "explanation": "The reservation amount for Israeli leads is PHP 200,000 as specified in the fixed shekel prices.",
+      "keywords": [
+        "reservation",
+        "9999",
+        "shekels"
+      ]
+    },
+    {
+      "id": 14,
+      "category": "sequence_design",
+      "difficulty": "hard",
+      "question": "A lead has opened all 14 emails but never clicked or responded. What post-sequence strategy should be employed?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Place the lead in a monthly digest list with project updates, new ROI data, construction progress, and market news. After 60 days, attempt one re-engagement email with a strong new angle (price change, limited inventory, new amenity). If no engagement after 90 days, reduce to quarterly updates only. Never fully remove - real estate purchase decisions can take 6-12 months.",
+      "explanation": "Real estate leads have long decision cycles. Persistent but non-aggressive nurturing keeps the brand top-of-mind without causing unsubscribes.",
+      "keywords": [
+        "post-sequence",
+        "re-engagement",
+        "long cycle",
+        "digest"
+      ]
+    },
+    {
+      "id": 15,
+      "category": "sequence_design",
+      "difficulty": "medium",
+      "question": "What words are forbidden in all email content per the content rules?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Luxury, premium, exclusive",
+        "B. Amazing, incredible, dream home, once in a lifetime",
+        "C. Investment, ROI, returns",
+        "D. Discount, sale, free"
+      ],
+      "correct_answer": "B",
+      "explanation": "Per Rule 5, the forbidden words are: amazing, incredible, dream home, once in a lifetime (and their Hebrew equivalents).",
+      "keywords": [
+        "forbidden words",
+        "content rules"
+      ]
+    },
+    {
+      "id": 16,
+      "category": "subject_lines",
+      "difficulty": "easy",
+      "question": "What is the maximum recommended character length for email subject lines to avoid truncation on mobile?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 30 characters",
+        "B. 41 characters",
+        "C. 60 characters",
+        "D. 80 characters"
+      ],
+      "correct_answer": "B",
+      "explanation": "Mobile email clients typically truncate subject lines around 41 characters. Keeping under this limit ensures the full subject is visible on mobile devices.",
+      "keywords": [
+        "subject line",
+        "mobile",
+        "character limit",
+        "truncation"
+      ]
+    },
+    {
+      "id": 17,
+      "category": "subject_lines",
+      "difficulty": "medium",
+      "question": "Which subject line best follows the Panglao Prime Villas content rules for the Israeli market?",
+      "type": "multiple_choice",
+      "options": [
+        "A. \"Amazing villa investment in the Philippines!\"",
+        "B. \"17-25% ROI: וילה בפנגלאו - 3 מסלולי בעלות\"",
+        "C. \"Your dream home in Bohol awaits\"",
+        "D. \"Incredible opportunity - limited villas\""
+      ],
+      "correct_answer": "B",
+      "explanation": "Option B includes a specific number (17-25% ROI), is in Hebrew for the Israeli market, references legal ownership, and avoids all forbidden words.",
+      "keywords": [
+        "subject line",
+        "hebrew",
+        "numbers",
+        "forbidden words"
+      ]
+    },
+    {
+      "id": 18,
+      "category": "subject_lines",
+      "difficulty": "medium",
+      "question": "Should email subject lines for the Israeli market be written in RTL (right-to-left) format?",
+      "type": "true_false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "true",
+      "explanation": "Hebrew is an RTL language. Subject lines for the Israeli market must be in Hebrew with proper RTL formatting to display correctly in email clients.",
+      "keywords": [
+        "RTL",
+        "hebrew",
+        "subject line",
+        "formatting"
+      ]
+    },
+    {
+      "id": 19,
+      "category": "subject_lines",
+      "difficulty": "easy",
+      "question": "Which punctuation marks are forbidden in subject lines (and all content)?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Periods and commas",
+        "B. Em dashes and en dashes",
+        "C. Question marks and exclamation marks",
+        "D. Semicolons and colons"
+      ],
+      "correct_answer": "B",
+      "explanation": "Per Rule 2, em dashes, en dashes, and Hebrew maqaf are forbidden. Use regular hyphens (-), colons (:), or commas (,) instead.",
+      "keywords": [
+        "dashes",
+        "punctuation",
+        "forbidden",
+        "content rules"
+      ]
+    },
+    {
+      "id": 20,
+      "category": "subject_lines",
+      "difficulty": "hard",
+      "question": "You are A/B testing subject lines for the Israeli market. Line A: \"וילה בבוהול - PHP 32,500,000\" vs Line B: \"395,000 PHP הכנסה חודשית מ-Airbnb\". Which line violates a content rule and why?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Line B violates Rule 1 (Currency - Israeli Market). Israeli content must show ONLY shekels - no PHP, no USD. The monthly income should be expressed in shekels, not PHP.",
+      "explanation": "Line B uses PHP in Israeli-market content, which violates the strict currency rule. All financial figures in Israeli content must be in shekels only.",
+      "keywords": [
+        "currency",
+        "shekels",
+        "PHP",
+        "violation",
+        "A/B test"
+      ]
+    },
+    {
+      "id": 21,
+      "category": "subject_lines",
+      "difficulty": "medium",
+      "question": "What is the recommended approach for subject line personalization in the nurture sequence?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Always include the lead's first name",
+        "B. Use first name in Emails 1, 7, and 14 only; use data-driven hooks in others",
+        "C. Never use personalization in subject lines",
+        "D. Use company name instead of first name"
+      ],
+      "correct_answer": "B",
+      "explanation": "Strategic personalization prevents name fatigue. Using the first name at key points (welcome, mid-sequence, and close) while using compelling data hooks elsewhere maintains freshness.",
+      "keywords": [
+        "personalization",
+        "first name",
+        "strategy",
+        "fatigue"
+      ]
+    },
+    {
+      "id": 22,
+      "category": "subject_lines",
+      "difficulty": "easy",
+      "question": "Per content rules, what must every subject line contain?",
+      "type": "multiple_choice",
+      "options": [
+        "A. The company name",
+        "B. At least one specific number",
+        "C. A call to action",
+        "D. An emoji"
+      ],
+      "correct_answer": "B",
+      "explanation": "Per Rule 3, every piece of content must include at least one specific number. Subject lines should contain figures like ROI percentages, prices, income amounts, or property specs.",
+      "keywords": [
+        "numbers",
+        "content rules",
+        "subject line"
+      ]
+    },
+    {
+      "id": 23,
+      "category": "subject_lines",
+      "difficulty": "medium",
+      "question": "Which subject line is best for the Filipino market Email 3 (BDO Financing Focus)?",
+      "type": "multiple_choice",
+      "options": [
+        "A. \"70% LTV: BDO finances your Panglao villa\"",
+        "B. \"Amazing financing options for dream homes\"",
+        "C. \"BDO Bank - incredible rates available\"",
+        "D. \"Villa financing - once in a lifetime opportunity\""
+      ],
+      "correct_answer": "A",
+      "explanation": "Option A includes a specific number (70% LTV), mentions BDO financing (required for Filipino content), and avoids all forbidden words. Options B, C, D all contain forbidden words.",
+      "keywords": [
+        "BDO",
+        "financing",
+        "filipino",
+        "numbers",
+        "forbidden words"
+      ]
+    },
+    {
+      "id": 24,
+      "category": "subject_lines",
+      "difficulty": "hard",
+      "question": "What is the optimal subject line length difference between desktop-primary markets and mobile-primary markets?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No difference needed",
+        "B. Mobile should be 10-15 characters shorter",
+        "C. Desktop should be 10-15 characters shorter",
+        "D. Mobile should use emojis to save space"
+      ],
+      "correct_answer": "B",
+      "explanation": "Mobile clients show fewer characters (35-41) vs desktop (60+). For mobile-primary segments, subject lines should be shorter to prevent truncation of the key message.",
+      "keywords": [
+        "mobile",
+        "desktop",
+        "character length",
+        "optimization"
+      ]
+    },
+    {
+      "id": 25,
+      "category": "subject_lines",
+      "difficulty": "medium",
+      "question": "A subject line reads: \"Panglao Prime Villas — 4 Bedrooms, 263.78 sqm\". What content rule does it violate?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Rule 3 (no number included)",
+        "B. Rule 2 (em dash used)",
+        "C. Rule 5 (forbidden word)",
+        "D. No rules violated"
+      ],
+      "correct_answer": "B",
+      "explanation": "The em dash (—) is forbidden per Rule 2. It should be replaced with a regular hyphen (-), colon (:), or comma (,).",
+      "keywords": [
+        "em dash",
+        "punctuation",
+        "rule 2",
+        "violation"
+      ]
+    },
+    {
+      "id": 26,
+      "category": "subject_lines",
+      "difficulty": "easy",
+      "question": "For the Israeli market, what register should subject lines be written in?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Casual slang",
+        "B. Academic formal",
+        "C. Formal but warm, peer-to-peer professional",
+        "D. Sales-aggressive"
+      ],
+      "correct_answer": "C",
+      "explanation": "Per Rule 8, Hebrew content must use a formal but warm, peer-to-peer professional register. No slang.",
+      "keywords": [
+        "hebrew",
+        "register",
+        "tone",
+        "professional"
+      ]
+    },
+    {
+      "id": 27,
+      "category": "subject_lines",
+      "difficulty": "hard",
+      "question": "You need to write a re-engagement subject line for leads who have not opened the last 3 emails. The lead is in the Israeli segment. Which approach is most effective while following all content rules?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Use a curiosity-driven subject line with a specific new data point not previously shared, in Hebrew, with formal-warm tone. Example: \"עדכון חדש: תשואה של 136.9% ב-5 שנים - פנגלאו\". This introduces a new number (136.9%), creates curiosity about updated data, maintains professional tone, and avoids all forbidden words and punctuation.",
+      "explanation": "Re-engagement requires a fresh angle. Using a new data point that was not in previous emails creates genuine curiosity rather than repetition.",
+      "keywords": [
+        "re-engagement",
+        "curiosity",
+        "hebrew",
+        "new data"
+      ]
+    },
+    {
+      "id": 28,
+      "category": "automation_triggers",
+      "difficulty": "easy",
+      "question": "What event should trigger the start of the 14-email nurture sequence?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Website visit only",
+        "B. Lead form submission",
+        "C. WhatsApp message received",
+        "D. Both B and C"
+      ],
+      "correct_answer": "D",
+      "explanation": "The nurture sequence should trigger when a lead enters the system via form submission or WhatsApp first contact, as both represent explicit interest signals.",
+      "keywords": [
+        "trigger",
+        "form submission",
+        "whatsapp",
+        "sequence start"
+      ]
+    },
+    {
+      "id": 29,
+      "category": "automation_triggers",
+      "difficulty": "medium",
+      "question": "When a lead's score changes from WARM (31-70) to HOT (71-120), what email automation action should trigger?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No change to email sequence",
+        "B. Immediately send the next email in sequence",
+        "C. Move to accelerated HOT lead email track",
+        "D. Stop all emails and switch to phone only"
+      ],
+      "correct_answer": "C",
+      "explanation": "A score transition to HOT indicates high intent. The lead should be moved to an accelerated track with conversion-focused content and faster cadence.",
+      "keywords": [
+        "score change",
+        "hot lead",
+        "track switch",
+        "automation"
+      ]
+    },
+    {
+      "id": 30,
+      "category": "automation_triggers",
+      "difficulty": "medium",
+      "question": "What automation trigger should fire when a lead clicks the ROI calculator link in an email?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Add 5 points to lead score",
+        "B. Add 15 points to lead score and tag as 'ROI-interested'",
+        "C. Send a follow-up email immediately",
+        "D. Remove from sequence"
+      ],
+      "correct_answer": "B",
+      "explanation": "An ROI calculator click adds +15 to the lead score per the scoring model. The lead should also be tagged for segmentation purposes to enable targeted follow-ups.",
+      "keywords": [
+        "ROI calculator",
+        "scoring",
+        "+15",
+        "tag"
+      ]
+    },
+    {
+      "id": 31,
+      "category": "automation_triggers",
+      "difficulty": "hard",
+      "question": "A lead submits a form at 23:00 PHT on a Friday. The lead is Israeli. When should the welcome email be sent?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Immediately",
+        "B. Saturday morning PHT",
+        "C. Sunday evening Israel time (20:00-22:00 IST)",
+        "D. Monday morning PHT"
+      ],
+      "correct_answer": "C",
+      "explanation": "Friday evening through Saturday is Shabbat for Israeli leads. The welcome email should be delayed until Sunday evening Israel time (20:00-22:00), which is the start of the Israeli work week and optimal send time.",
+      "keywords": [
+        "shabbat",
+        "timing",
+        "israel",
+        "delay",
+        "sunday"
+      ]
+    },
+    {
+      "id": 32,
+      "category": "automation_triggers",
+      "difficulty": "medium",
+      "question": "What should happen when a lead clicks the WhatsApp CTA link in an email?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Nothing - track the click only",
+        "B. Add +30 to lead score, move to WhatsApp-complementary email track",
+        "C. Remove from email sequence entirely",
+        "D. Send a duplicate of the email via WhatsApp"
+      ],
+      "correct_answer": "B",
+      "explanation": "A WhatsApp click adds +30 to lead score per the scoring model. The lead should transition to an email track that complements (not duplicates) the WhatsApp conversation.",
+      "keywords": [
+        "whatsapp click",
+        "+30",
+        "cross-channel",
+        "track switch"
+      ]
+    },
+    {
+      "id": 33,
+      "category": "automation_triggers",
+      "difficulty": "easy",
+      "question": "What automation should trigger when a lead opens 3 consecutive emails without clicking?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Send a plain-text email with direct question",
+        "B. Continue normally",
+        "C. Remove from sequence",
+        "D. Double the sending frequency"
+      ],
+      "correct_answer": "A",
+      "explanation": "Three opens without clicks suggest the content format may not be engaging enough. A plain-text, conversational email with a direct question can break through the pattern.",
+      "keywords": [
+        "opens-no-clicks",
+        "plain text",
+        "re-engagement"
+      ]
+    },
+    {
+      "id": 34,
+      "category": "automation_triggers",
+      "difficulty": "hard",
+      "question": "Design the automation trigger logic for a lead who downloads the property PDF (score +20), then visits the website twice more within 48 hours (score +10 each). What should happen?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Total score addition: +40 (20+10+10). If this pushes the lead over 71, trigger the HOT lead protocol: (1) move to accelerated email track, (2) notify sales team for 2-hour contact window, (3) send next email within 4 hours focused on booking a call, (4) trigger WhatsApp automated message if WhatsApp number is available. If lead remains WARM, accelerate next email by 1 day and tag as 'high-engagement'.",
+      "explanation": "Multiple high-value actions in a short window signal urgent intent. The automation must respond proportionally based on whether the accumulated score crosses the HOT threshold.",
+      "keywords": [
+        "total",
+        "score",
+        "addition",
+        "this",
+        "pushes",
+        "lead",
+        "over",
+        "trigger",
+        "protocol",
+        "move"
+      ]
+    },
+    {
+      "id": 35,
+      "category": "automation_triggers",
+      "difficulty": "medium",
+      "question": "What trigger should pause the email sequence for a lead?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Lead marks email as spam",
+        "B. Lead replies with 'not interested'",
+        "C. Lead's score drops below 10 due to decay",
+        "D. All of the above"
+      ],
+      "correct_answer": "D",
+      "explanation": "All three events should pause the sequence: spam marking (compliance), explicit disinterest (respect), and severe score decay (cold lead). Each requires different follow-up handling.",
+      "keywords": [
+        "pause",
+        "spam",
+        "disinterest",
+        "decay",
+        "compliance"
+      ]
+    },
+    {
+      "id": 36,
+      "category": "automation_triggers",
+      "difficulty": "medium",
+      "question": "When a form submission includes 'budget confirmed' data, what score should be added and what automation should fire?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +10 points, continue normal sequence",
+        "B. +25 points, tag as budget-confirmed, potentially trigger HOT protocol",
+        "C. +40 points, skip to final emails",
+        "D. +5 points, no special action"
+      ],
+      "correct_answer": "B",
+      "explanation": "Budget confirmed adds +25 points per the scoring model. Combined with other signals, this may push the lead into HOT territory (71+), triggering the 2-hour contact protocol.",
+      "keywords": [
+        "budget confirmed",
+        "+25",
+        "hot protocol",
+        "form data"
+      ]
+    },
+    {
+      "id": 37,
+      "category": "automation_triggers",
+      "difficulty": "easy",
+      "question": "What should the automation do when an email hard bounces?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Retry sending 3 times",
+        "B. Mark email as invalid, suppress from future sends, attempt WhatsApp if number available",
+        "C. Continue sending to the address",
+        "D. Delete the lead entirely"
+      ],
+      "correct_answer": "B",
+      "explanation": "Hard bounces indicate permanently invalid addresses. The address should be suppressed to protect sender reputation, and alternative channels (WhatsApp) should be attempted.",
+      "keywords": [
+        "hard bounce",
+        "suppress",
+        "deliverability",
+        "alternative channel"
+      ]
+    },
+    {
+      "id": 38,
+      "category": "automation_triggers",
+      "difficulty": "hard",
+      "question": "A lead scored VERY HOT (121+) replies to an email saying they want to schedule a viewing. What automation chain should execute?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Auto-reply with available dates",
+        "B. Pause sequence, alert sales team immediately, log in CRM, send calendar booking link within 30 minutes",
+        "C. Send the next email in the sequence",
+        "D. Forward to a generic inbox"
+      ],
+      "correct_answer": "B",
+      "explanation": "A VERY HOT lead requesting a viewing is the highest-priority event. The sequence pauses, sales is alerted for immediate action (within 2-hour HOT protocol), and a booking link is sent.",
+      "keywords": [
+        "very hot",
+        "viewing",
+        "sales alert",
+        "calendar",
+        "immediate"
+      ]
+    },
+    {
+      "id": 39,
+      "category": "automation_triggers",
+      "difficulty": "medium",
+      "question": "What trigger should activate when a lead from the Israeli segment opens an email during Shabbat (Friday sunset to Saturday sunset)?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Nothing special - track normally",
+        "B. Flag as possibly secular Israeli, adjust send times accordingly",
+        "C. Send immediate follow-up",
+        "D. Remove from Israeli segment"
+      ],
+      "correct_answer": "B",
+      "explanation": "An Israeli lead opening email during Shabbat may be secular. This behavioral signal should be logged to potentially adjust optimal send times for this specific lead.",
+      "keywords": [
+        "shabbat",
+        "behavioral signal",
+        "secular",
+        "send time optimization"
+      ]
+    },
+    {
+      "id": 40,
+      "category": "deliverability",
+      "difficulty": "easy",
+      "question": "What three DNS records must be configured for optimal email deliverability?",
+      "type": "multiple_choice",
+      "options": [
+        "A. A, AAAA, MX",
+        "B. SPF, DKIM, DMARC",
+        "C. CNAME, TXT, SRV",
+        "D. PTR, SOA, NS"
+      ],
+      "correct_answer": "B",
+      "explanation": "SPF (Sender Policy Framework), DKIM (DomainKeys Identified Mail), and DMARC (Domain-based Message Authentication) are the three essential authentication records for email deliverability.",
+      "keywords": [
+        "SPF",
+        "DKIM",
+        "DMARC",
+        "DNS",
+        "authentication"
+      ]
+    },
+    {
+      "id": 41,
+      "category": "deliverability",
+      "difficulty": "medium",
+      "question": "What is the recommended maximum email sending volume for a new domain in the first week?",
+      "type": "multiple_choice",
+      "options": [
+        "A. As many as needed",
+        "B. 50-100 per day, gradually increasing",
+        "C. 1,000 per day from day 1",
+        "D. 500 per day"
+      ],
+      "correct_answer": "B",
+      "explanation": "New domains must warm up gradually. Starting with 50-100 emails per day and increasing by 25-50% every few days builds sender reputation without triggering spam filters.",
+      "keywords": [
+        "domain warmup",
+        "sending volume",
+        "reputation",
+        "gradual"
+      ]
+    },
+    {
+      "id": 42,
+      "category": "deliverability",
+      "difficulty": "medium",
+      "question": "What is the maximum acceptable hard bounce rate before it threatens sender reputation?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 10%",
+        "B. 5%",
+        "C. 2%",
+        "D. 0.5%"
+      ],
+      "correct_answer": "C",
+      "explanation": "Hard bounce rates above 2% signal list quality issues to email providers and can damage sender reputation, leading to increased spam filtering.",
+      "keywords": [
+        "hard bounce",
+        "rate",
+        "sender reputation",
+        "threshold"
+      ]
+    },
+    {
+      "id": 43,
+      "category": "deliverability",
+      "difficulty": "hard",
+      "question": "The campaign sends emails from the primevilla.ph domain. What DMARC policy should be set initially, and when should it be tightened?",
+      "type": "multiple_choice",
+      "options": [
+        "A. p=reject from day 1",
+        "B. p=none initially, move to p=quarantine after 2 weeks of clean data, then p=reject after 4 weeks",
+        "C. p=quarantine from day 1",
+        "D. DMARC is not needed if SPF and DKIM are set"
+      ],
+      "correct_answer": "B",
+      "explanation": "Starting with p=none allows monitoring without affecting delivery. After confirming authentication passes consistently, gradually tightening to quarantine then reject maximizes protection while minimizing risk.",
+      "keywords": [
+        "DMARC",
+        "policy",
+        "gradual",
+        "monitoring"
+      ]
+    },
+    {
+      "id": 44,
+      "category": "deliverability",
+      "difficulty": "easy",
+      "question": "What is the purpose of a dedicated sending IP for the campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Faster email delivery",
+        "B. Isolate sender reputation from other senders sharing the same IP",
+        "C. Required by law in the Philippines",
+        "D. Reduces email costs"
+      ],
+      "correct_answer": "B",
+      "explanation": "A dedicated IP ensures the campaign's sender reputation is not affected by other senders' practices on a shared IP. This is important for maintaining consistent deliverability.",
+      "keywords": [
+        "dedicated IP",
+        "sender reputation",
+        "isolation"
+      ]
+    },
+    {
+      "id": 45,
+      "category": "deliverability",
+      "difficulty": "medium",
+      "question": "What should the email unsubscribe rate be kept below to maintain good deliverability?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 5%",
+        "B. 2%",
+        "C. 0.5%",
+        "D. 0.1%"
+      ],
+      "correct_answer": "C",
+      "explanation": "Unsubscribe rates above 0.5% per email send indicate content relevance issues and can trigger spam filter escalation from email providers.",
+      "keywords": [
+        "unsubscribe rate",
+        "threshold",
+        "deliverability"
+      ]
+    },
+    {
+      "id": 46,
+      "category": "deliverability",
+      "difficulty": "hard",
+      "question": "The campaign uses Brevo for sending. What specific Brevo configuration optimizes deliverability for Hebrew RTL emails?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Configure Brevo with: (1) Dedicated IP if volume warrants it, (2) SPF/DKIM/DMARC records for primevilla.ph verified in Brevo, (3) HTML dir='rtl' attribute on the body/container for Hebrew emails, (4) UTF-8 encoding explicitly set, (5) Preheader text in Hebrew, (6) List-Unsubscribe header in Hebrew, (7) Test rendering across Gmail, Outlook, and Yahoo in RTL mode before production send.",
+      "explanation": "Hebrew RTL emails have unique rendering challenges across email clients. Proper configuration in Brevo ensures both deliverability and correct visual display.",
+      "keywords": [
+        "brevo",
+        "RTL",
+        "hebrew",
+        "configuration",
+        "rendering"
+      ]
+    },
+    {
+      "id": 47,
+      "category": "deliverability",
+      "difficulty": "medium",
+      "question": "What is the recommended image-to-text ratio in emails to avoid spam filters?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 90% image, 10% text",
+        "B. 60% text, 40% image",
+        "C. 50/50",
+        "D. Images should not be used"
+      ],
+      "correct_answer": "B",
+      "explanation": "A 60/40 text-to-image ratio is optimal. Image-heavy emails trigger spam filters, while text-only emails may look unprofessional for real estate marketing.",
+      "keywords": [
+        "image-to-text",
+        "ratio",
+        "spam filters"
+      ]
+    },
+    {
+      "id": 48,
+      "category": "deliverability",
+      "difficulty": "easy",
+      "question": "Why should the 'From' name be consistent across all nurture sequence emails?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Legal requirement",
+        "B. Builds recognition and trust, improving open rates and reducing spam reports",
+        "C. Email clients require it",
+        "D. It has no effect"
+      ],
+      "correct_answer": "B",
+      "explanation": "Consistent sender name builds familiarity, which increases open rates and reduces the likelihood of leads marking emails as spam.",
+      "keywords": [
+        "from name",
+        "consistency",
+        "recognition",
+        "trust"
+      ]
+    },
+    {
+      "id": 49,
+      "category": "deliverability",
+      "difficulty": "hard",
+      "question": "Campaign emails are landing in Gmail Promotions tab instead of Primary. What three optimizations should be attempted?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Use more images, bigger fonts, and brighter colors",
+        "B. Reduce HTML complexity, use plain-text versions, personalize with merge tags",
+        "C. Add more links and CTAs",
+        "D. Send from a Gmail address instead"
+      ],
+      "correct_answer": "B",
+      "explanation": "Gmail's Promotions tab filter is triggered by heavy HTML, lack of personalization, and commercial patterns. Simplifying HTML, including plain-text alternatives, and using merge tags for personalization helps land in Primary.",
+      "keywords": [
+        "gmail",
+        "promotions tab",
+        "primary",
+        "optimization"
+      ]
+    },
+    {
+      "id": 50,
+      "category": "personalization",
+      "difficulty": "easy",
+      "question": "What merge tag data points should be collected at lead capture for effective email personalization?",
+      "type": "multiple_choice",
+      "options": [
+        "A. First name only",
+        "B. First name, country, villa interest (C or D), investment timeline, language preference",
+        "C. Email address only",
+        "D. First name and phone number"
+      ],
+      "correct_answer": "B",
+      "explanation": "Effective personalization requires first name (greeting), country (market segmentation), villa interest (content targeting), timeline (urgency calibration), and language (content delivery).",
+      "keywords": [
+        "merge tags",
+        "data collection",
+        "personalization fields"
+      ]
+    },
+    {
+      "id": 51,
+      "category": "personalization",
+      "difficulty": "medium",
+      "question": "How should email content differ for a lead interested in Villa C (PHP 35M) vs Villa D (PHP 32.5M)?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No difference needed",
+        "B. Feature the selected villa's specs, pricing, and images prominently while mentioning the other as an alternative",
+        "C. Only show the selected villa, never mention the other",
+        "D. Show both equally in every email"
+      ],
+      "correct_answer": "B",
+      "explanation": "Primary focus on the villa of interest with secondary mention of the alternative maximizes relevance while keeping cross-sell opportunity open.",
+      "keywords": [
+        "villa preference",
+        "content targeting",
+        "personalization"
+      ]
+    },
+    {
+      "id": 52,
+      "category": "personalization",
+      "difficulty": "medium",
+      "question": "A lead from Israel fills out the form in English. Should they receive Hebrew or English emails?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Hebrew only - they are Israeli",
+        "B. English only - they chose English",
+        "C. English with Hebrew option offered in Email 1; switch to Hebrew if they click Hebrew version",
+        "D. Alternate between Hebrew and English"
+      ],
+      "correct_answer": "C",
+      "explanation": "Form language indicates preference but is not conclusive. Offering both options in the welcome email and letting the lead choose respects their preference while ensuring proper segmentation.",
+      "keywords": [
+        "language preference",
+        "israel",
+        "english",
+        "hebrew",
+        "choice"
+      ]
+    },
+    {
+      "id": 53,
+      "category": "personalization",
+      "difficulty": "hard",
+      "question": "How should the email content adapt based on the lead's score tier (Cold 0-30, Warm 31-70, Hot 71-120, Very Hot 121+)?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Cold (0-30): Educational content, market overview, Bohol tourism data, lifestyle focus. Warm (31-70): Investment analysis, ROI details, legal structures, income verification. Hot (71-120): Accelerated cadence, direct booking CTAs, availability urgency, sales team introduction, virtual tour invitations. Very Hot (121+): Personalized from sales agent, reservation process details, payment plan specifics, calendar booking for call/viewing. Each tier should have distinct email templates, CTAs, and sending frequency.",
+      "explanation": "Score-based personalization ensures content intensity matches lead readiness, preventing premature sales pressure on cold leads or insufficient urgency for hot leads.",
+      "keywords": [
+        "score tiers",
+        "content adaptation",
+        "cold",
+        "warm",
+        "hot",
+        "very hot"
+      ]
+    },
+    {
+      "id": 54,
+      "category": "personalization",
+      "difficulty": "medium",
+      "question": "What dynamic content block should appear in emails for Filipino leads but not Israeli leads?",
+      "type": "multiple_choice",
+      "options": [
+        "A. ROI calculator link",
+        "B. BDO Bank financing details (70% LTV)",
+        "C. Property specifications",
+        "D. Virtual tour link"
+      ],
+      "correct_answer": "B",
+      "explanation": "Per Rule 7, Filipino content must mention BDO Bank financing. This is a Philippines-specific financing option not relevant to Israeli leads, who instead see legal ownership structures.",
+      "keywords": [
+        "BDO",
+        "filipino",
+        "dynamic content",
+        "financing"
+      ]
+    },
+    {
+      "id": 55,
+      "category": "personalization",
+      "difficulty": "easy",
+      "question": "What fallback should be used when a lead's first name is not available for the greeting merge tag?",
+      "type": "multiple_choice",
+      "options": [
+        "A. \"Dear Customer\"",
+        "B. \"Dear Investor\" or \"שלום\" (for Hebrew)",
+        "C. Leave the greeting blank",
+        "D. Use the email address as the name"
+      ],
+      "correct_answer": "B",
+      "explanation": "A professional fallback that matches the target audience (investor for English, a warm Hebrew greeting for Israeli) maintains the personal tone without looking broken.",
+      "keywords": [
+        "fallback",
+        "merge tag",
+        "greeting",
+        "default"
+      ]
+    },
+    {
+      "id": 56,
+      "category": "personalization",
+      "difficulty": "hard",
+      "question": "A lead's behavioral data shows they visited the villa specs page 4 times and used the ROI calculator twice, but their form data shows 'just browsing' as investment timeline. How should the email personalization handle this contradiction?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Trust the form data - send casual content",
+        "B. Trust the behavioral data - send investment-focused content",
+        "C. Use behavioral data for scoring but form data for content tone; send investment content with a softer, educational framing",
+        "D. Ask the lead to re-fill the form"
+      ],
+      "correct_answer": "C",
+      "explanation": "Behavioral signals often indicate truer intent than self-reported data. The email should deliver investment-relevant content (matching behavior) but in an educational, low-pressure tone (respecting stated timeline).",
+      "keywords": [
+        "behavioral",
+        "form data",
+        "contradiction",
+        "intent",
+        "framing"
+      ]
+    },
+    {
+      "id": 57,
+      "category": "personalization",
+      "difficulty": "medium",
+      "question": "How should email personalization handle leads from countries outside Israel and the Philippines (e.g., Singapore, UAE, USA)?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Default to Filipino market content",
+        "B. Default to Israeli market content",
+        "C. Use English content with investment focus, include both legal structures and general financing options, use appropriate timezone for send optimization",
+        "D. Do not send emails to these leads"
+      ],
+      "correct_answer": "C",
+      "explanation": "International leads from key markets (SG, UAE, USA) get +10 score for country. They should receive English investment-focused content that covers both legal structures and financing without market-specific rules.",
+      "keywords": [
+        "international",
+        "segmentation",
+        "english",
+        "investment focus"
+      ]
+    },
+    {
+      "id": 58,
+      "category": "personalization",
+      "difficulty": "easy",
+      "question": "What personalization element should always appear in the email footer?",
+      "type": "multiple_choice",
+      "options": [
+        "A. The lead's full address",
+        "B. Both WhatsApp numbers with the lead's preferred language greeting",
+        "C. The lead's score",
+        "D. Nothing personalized in the footer"
+      ],
+      "correct_answer": "B",
+      "explanation": "The footer must include both WhatsApp numbers (per CTA rule) and should use the lead's language for the contact prompt to maintain consistency.",
+      "keywords": [
+        "footer",
+        "whatsapp",
+        "language",
+        "CTA"
+      ]
+    },
+    {
+      "id": 59,
+      "category": "personalization",
+      "difficulty": "medium",
+      "question": "When personalizing the subject line with the lead's investment purpose (e.g., 'investment' vs 'vacation home'), what scoring signal does 'investment purpose' carry?",
+      "type": "multiple_choice",
+      "options": [
+        "A. +5 points",
+        "B. +10 points",
+        "C. +20 points",
+        "D. +30 points"
+      ],
+      "correct_answer": "B",
+      "explanation": "Per the scoring model, purpose = investment adds +10 points. This signal should inform subject line personalization and content angle (ROI-focused vs lifestyle-focused).",
+      "keywords": [
+        "investment purpose",
+        "+10",
+        "scoring",
+        "personalization"
+      ]
+    },
+    {
+      "id": 60,
+      "category": "ab_testing",
+      "difficulty": "easy",
+      "question": "What is the minimum sample size per variant for a statistically significant A/B test of email subject lines?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 50 per variant",
+        "B. 100 per variant",
+        "C. 500 per variant",
+        "D. 1,000 per variant"
+      ],
+      "correct_answer": "C",
+      "explanation": "For email A/B tests with typical open rates (15-25%), at least 500 recipients per variant are needed to detect meaningful differences with 95% confidence.",
+      "keywords": [
+        "sample size",
+        "statistical significance",
+        "A/B test"
+      ]
+    },
+    {
+      "id": 61,
+      "category": "ab_testing",
+      "difficulty": "medium",
+      "question": "When A/B testing email send times for the Israeli market, which two time slots should be tested first?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Monday 9:00 AM and Friday 3:00 PM IST",
+        "B. Sunday 20:00 and Tuesday 20:00 IST",
+        "C. Saturday 10:00 and Sunday 10:00 IST",
+        "D. Wednesday 14:00 and Thursday 14:00 IST"
+      ],
+      "correct_answer": "B",
+      "explanation": "Israel's optimal send times are Sun-Thu 20:00-22:00. Testing Sunday (start of work week) vs Tuesday (mid-week) at the optimal 20:00 hour provides the most actionable comparison.",
+      "keywords": [
+        "send time",
+        "israel",
+        "A/B test",
+        "20:00",
+        "sun-thu"
+      ]
+    },
+    {
+      "id": 62,
+      "category": "ab_testing",
+      "difficulty": "medium",
+      "question": "What is the recommended A/B test duration for email open rates before declaring a winner?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 2 hours",
+        "B. 24 hours",
+        "C. 48-72 hours",
+        "D. 7 days"
+      ],
+      "correct_answer": "C",
+      "explanation": "48-72 hours captures the majority of opens across different time zones and email-checking habits. Shorter windows miss late openers; longer windows introduce confounding variables.",
+      "keywords": [
+        "test duration",
+        "open rates",
+        "48-72 hours"
+      ]
+    },
+    {
+      "id": 63,
+      "category": "ab_testing",
+      "difficulty": "hard",
+      "question": "You want to A/B test the CTA format in emails: Version A has WhatsApp button only, Version B has both WhatsApp button and form link. What is the primary metric and what confounding variable must you control for?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Primary metric: total conversion rate (clicks on any CTA). Secondary metrics: WhatsApp click rate, form click rate, eventual lead score change. Confounding variable: leads who already have WhatsApp installed vs those who don't - this should be controlled by ensuring both variants go to the same market segment, and by tracking device type (mobile users more likely to have WhatsApp).",
+      "explanation": "CTA format tests must account for platform availability and user preference to avoid attributing results to design when the cause is technology access.",
+      "keywords": [
+        "CTA",
+        "A/B test",
+        "confounding",
+        "whatsapp",
+        "conversion"
+      ]
+    },
+    {
+      "id": 64,
+      "category": "ab_testing",
+      "difficulty": "easy",
+      "question": "When A/B testing, how many variables should be changed at once?",
+      "type": "multiple_choice",
+      "options": [
+        "A. As many as possible for faster learning",
+        "B. One variable at a time",
+        "C. Two variables at a time",
+        "D. Three variables at a time"
+      ],
+      "correct_answer": "B",
+      "explanation": "Changing one variable at a time isolates the impact of each change, enabling clear attribution of results. Multiple changes make it impossible to determine which caused the difference.",
+      "keywords": [
+        "single variable",
+        "isolation",
+        "attribution"
+      ]
+    },
+    {
+      "id": 65,
+      "category": "ab_testing",
+      "difficulty": "medium",
+      "question": "For the Filipino market email A/B test on send times, which two slots should be tested?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Monday 7:00 AM and Friday 5:00 PM PHT",
+        "B. Tuesday 19:00 and Thursday 19:00 PHT",
+        "C. Saturday 10:00 and Sunday 10:00 PHT",
+        "D. Wednesday 12:00 and Thursday 12:00 PHT"
+      ],
+      "correct_answer": "B",
+      "explanation": "Filipino optimal send times are Tue-Thu 19:00-21:00 PHT. Testing Tuesday vs Thursday at 19:00 provides a clean comparison within the optimal window.",
+      "keywords": [
+        "send time",
+        "philippines",
+        "A/B test",
+        "19:00",
+        "tue-thu"
+      ]
+    },
+    {
+      "id": 66,
+      "category": "ab_testing",
+      "difficulty": "hard",
+      "question": "After 3 A/B tests, you find that Hebrew subject lines with shekel amounts outperform those with ROI percentages. Should you stop testing shekel vs ROI?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Yes - 3 tests is conclusive",
+        "B. No - continue testing quarterly as market conditions change, and test shekel amounts against other variables",
+        "C. Yes - switch all subject lines to shekel amounts permanently",
+        "D. No - run 10 more tests to be certain"
+      ],
+      "correct_answer": "B",
+      "explanation": "Three consistent results indicate a trend, but market psychology changes. Quarterly re-testing validates the finding while exploring new angles. The winner becomes the control for future tests.",
+      "keywords": [
+        "iterative testing",
+        "market change",
+        "control",
+        "quarterly"
+      ]
+    },
+    {
+      "id": 67,
+      "category": "ab_testing",
+      "difficulty": "medium",
+      "question": "What A/B test should be run first for a brand new email nurture sequence?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Email design (HTML vs plain text)",
+        "B. Subject line format (number-led vs question-led)",
+        "C. Send time optimization",
+        "D. Welcome email timing (immediate vs 1-hour delay)"
+      ],
+      "correct_answer": "B",
+      "explanation": "Subject lines have the highest impact on open rates, which is the gateway metric. Testing subject line format first establishes the baseline that all subsequent tests build upon.",
+      "keywords": [
+        "priority",
+        "subject line",
+        "first test",
+        "open rates"
+      ]
+    },
+    {
+      "id": 68,
+      "category": "ab_testing",
+      "difficulty": "medium",
+      "question": "How should A/B test results from the Israeli market be applied to the Filipino market?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Directly - what works in Israel works in Philippines",
+        "B. Never - they are completely different",
+        "C. As hypotheses to test, not as conclusions to apply",
+        "D. Only apply design/format findings, never content findings"
+      ],
+      "correct_answer": "C",
+      "explanation": "Cross-market findings should inform hypotheses, not direct implementation. Cultural, linguistic, and behavioral differences mean what works in one market may not transfer.",
+      "keywords": [
+        "cross-market",
+        "hypotheses",
+        "cultural differences"
+      ]
+    },
+    {
+      "id": 69,
+      "category": "ab_testing",
+      "difficulty": "hard",
+      "question": "Design an A/B test plan for the first month of the email nurture campaign covering both markets. Specify which emails to test, what to test, and success metrics.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Week 1: Test welcome email subject line (number-led vs benefit-led) for both markets separately. Metric: open rate. Week 2: Test Email 2 CTA format (single WhatsApp vs dual WhatsApp+form) for both markets. Metric: click rate. Week 3: Test Email 3 send time within optimal windows (early vs late in the window) per market. Metric: open rate + click rate. Week 4: Test Email 4 content format (image-heavy vs text-heavy) for both markets. Metric: click rate + reply rate. Each test requires minimum 500 per variant per market. Document all results in a shared testing log with statistical significance noted.",
+      "explanation": "A structured monthly plan ensures systematic learning while respecting sample size requirements. Testing one variable per week across both markets builds a robust data foundation.",
+      "keywords": [
+        "week",
+        "test",
+        "welcome",
+        "email",
+        "subject",
+        "line",
+        "number",
+        "benefit",
+        "both",
+        "markets"
+      ]
+    },
+    {
+      "id": 70,
+      "category": "segmentation",
+      "difficulty": "easy",
+      "question": "What are the two primary market segments for the email nurture campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Male and Female",
+        "B. Israel and Philippines",
+        "C. High budget and Low budget",
+        "D. Desktop and Mobile"
+      ],
+      "correct_answer": "B",
+      "explanation": "The campaign targets two primary markets: Israel (Hebrew, WhatsApp-led, shekel pricing) and Philippines (English/Tagalog, BDO financing, PHP pricing).",
+      "keywords": [
+        "market segments",
+        "israel",
+        "philippines"
+      ]
+    },
+    {
+      "id": 71,
+      "category": "segmentation",
+      "difficulty": "medium",
+      "question": "Beyond market (Israel/Philippines), what secondary segmentation should be applied to email lists?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Villa preference (C vs D), lead score tier, investment timeline",
+        "B. Hair color and height",
+        "C. Time zone only",
+        "D. Email provider (Gmail vs Outlook)"
+      ],
+      "correct_answer": "A",
+      "explanation": "Secondary segmentation by villa preference, lead score tier (cold/warm/hot/very hot), and investment timeline enables content personalization that matches intent and readiness.",
+      "keywords": [
+        "secondary segmentation",
+        "villa preference",
+        "score tier",
+        "timeline"
+      ]
+    },
+    {
+      "id": 72,
+      "category": "segmentation",
+      "difficulty": "medium",
+      "question": "How should leads from the Facebook group 'נדל\"ן והשקעות בפיליפינים' be segmented?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Generic international list",
+        "B. Israeli market segment with 'organic-FB-group' source tag",
+        "C. Filipino market segment",
+        "D. Do not email - Facebook group leads only"
+      ],
+      "correct_answer": "B",
+      "explanation": "Leads from the Israeli investment Facebook group are Israeli market leads sourced organically. They should be in the Israeli segment with appropriate source tracking for attribution.",
+      "keywords": [
+        "facebook group",
+        "israeli",
+        "source tracking",
+        "organic"
+      ]
+    },
+    {
+      "id": 73,
+      "category": "segmentation",
+      "difficulty": "hard",
+      "question": "A lead is an Israeli citizen currently living in the Philippines. Which segment should they be in and what content rules apply?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Israeli segment with shekel pricing only",
+        "B. Filipino segment with PHP pricing only",
+        "C. Custom segment: Hebrew language, dual pricing (shekel primary), legal structures AND BDO financing info",
+        "D. Remove from email list - too complex"
+      ],
+      "correct_answer": "C",
+      "explanation": "Israeli expats in the Philippines have unique needs. They likely prefer Hebrew but can access BDO financing. A custom segment or dual-content approach serves them best.",
+      "keywords": [
+        "expat",
+        "dual market",
+        "custom segment",
+        "hebrew"
+      ]
+    },
+    {
+      "id": 74,
+      "category": "segmentation",
+      "difficulty": "easy",
+      "question": "What score range defines the WARM lead segment?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 0-30",
+        "B. 31-70",
+        "C. 71-120",
+        "D. 121+"
+      ],
+      "correct_answer": "B",
+      "explanation": "Per the lead scoring model: Cold 0-30, Warm 31-70, Hot 71-120, Very Hot 121+.",
+      "keywords": [
+        "warm",
+        "score range",
+        "31-70",
+        "segmentation"
+      ]
+    },
+    {
+      "id": 75,
+      "category": "segmentation",
+      "difficulty": "medium",
+      "question": "How should the email list be segmented based on lead source (Meta ads vs Google ads vs organic vs WhatsApp)?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No source-based segmentation needed",
+        "B. Separate lists per source with source-specific welcome emails",
+        "C. Source only matters for analytics, not for email content",
+        "D. Only segment paid vs organic"
+      ],
+      "correct_answer": "B",
+      "explanation": "Lead source affects expectations and context. A Meta ad lead saw a specific message; their welcome email should acknowledge that context. Source-specific welcome emails improve relevance.",
+      "keywords": [
+        "lead source",
+        "meta",
+        "google",
+        "organic",
+        "welcome email"
+      ]
+    },
+    {
+      "id": 76,
+      "category": "segmentation",
+      "difficulty": "hard",
+      "question": "Design a segmentation matrix for the email campaign that accounts for market, villa preference, score tier, and language. How many distinct segments result?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Market: Israel, Philippines, International (3). Villa: C, D, Undecided (3). Score tier: Cold, Warm, Hot, Very Hot (4). Language: Hebrew, English, Tagalog (3). Theoretical maximum: 3x3x4x3 = 108 segments. Practical approach: Collapse to 12-16 active segments by combining low-volume segments. Primary axis: Market x Score tier (12 segments), with villa preference and language as dynamic content blocks within each segment rather than separate segments.",
+      "explanation": "While the matrix yields many theoretical segments, practical email marketing requires collapsing low-volume segments. Using dynamic content blocks instead of fully separate segments reduces complexity.",
+      "keywords": [
+        "segmentation matrix",
+        "dynamic content",
+        "practical",
+        "collapse"
+      ]
+    },
+    {
+      "id": 77,
+      "category": "segmentation",
+      "difficulty": "medium",
+      "question": "When should a lead be moved from the COLD segment email track to the WARM segment email track?",
+      "type": "multiple_choice",
+      "options": [
+        "A. After opening 3 emails",
+        "B. When their lead score crosses 31",
+        "C. After 7 days in the sequence",
+        "D. When they click any link"
+      ],
+      "correct_answer": "B",
+      "explanation": "Lead score is the definitive segmentation trigger. When the score crosses 31 (entering WARM territory), the email track should adjust to match the lead's demonstrated engagement level.",
+      "keywords": [
+        "segment transition",
+        "score threshold",
+        "31",
+        "cold-to-warm"
+      ]
+    },
+    {
+      "id": 78,
+      "category": "segmentation",
+      "difficulty": "medium",
+      "question": "How should unengaged leads (no opens for 30+ days) be segmented?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Keep in current segment",
+        "B. Move to 'Sunset' segment with monthly low-frequency re-engagement",
+        "C. Delete from all lists",
+        "D. Send more frequently to re-engage"
+      ],
+      "correct_answer": "B",
+      "explanation": "30+ days of no engagement requires a sunset segment: reduced frequency (monthly), fresh angles, and eventual suppression if non-responsive after 90 days to protect deliverability.",
+      "keywords": [
+        "sunset",
+        "unengaged",
+        "re-engagement",
+        "suppression"
+      ]
+    },
+    {
+      "id": 79,
+      "category": "segmentation",
+      "difficulty": "hard",
+      "question": "A lead from UAE (country score +10) submits a form in English, expresses interest in Villa C, and has a budget confirmed (+25). They request information in Arabic. How should they be segmented?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Israeli segment (closest to Arabic)",
+        "B. International segment with English content only",
+        "C. International segment with English content, Arabic-aware sales outreach, and manual translation of key emails",
+        "D. Do not email - Arabic is not supported"
+      ],
+      "correct_answer": "C",
+      "explanation": "Arabic is not a primary campaign language, but the lead is high-value (country +10, budget confirmed +25 = at least 35, WARM). They get the international English track with sales team alerted for Arabic-language personal outreach.",
+      "keywords": [
+        "UAE",
+        "arabic",
+        "international",
+        "manual outreach",
+        "high-value"
+      ]
+    },
+    {
+      "id": 80,
+      "category": "timing",
+      "difficulty": "easy",
+      "question": "What are the optimal email send times for the Israeli market?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Mon-Fri 9:00-11:00 IST",
+        "B. Sun-Thu 20:00-22:00 IST",
+        "C. Sat-Sun 10:00-12:00 IST",
+        "D. Daily 14:00-16:00 IST"
+      ],
+      "correct_answer": "B",
+      "explanation": "Israeli optimal send times are Sunday through Thursday (work week) between 20:00-22:00 IST (evening, when professionals check personal email).",
+      "keywords": [
+        "israel",
+        "send time",
+        "20:00-22:00",
+        "sun-thu"
+      ]
+    },
+    {
+      "id": 81,
+      "category": "timing",
+      "difficulty": "easy",
+      "question": "What are the optimal email send times for the Filipino market?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Mon-Fri 9:00-11:00 PHT",
+        "B. Tue-Thu 19:00-21:00 PHT",
+        "C. Sat-Sun 10:00-12:00 PHT",
+        "D. Daily 14:00-16:00 PHT"
+      ],
+      "correct_answer": "B",
+      "explanation": "Filipino optimal send times are Tuesday through Thursday between 19:00-21:00 PHT (evening after work hours).",
+      "keywords": [
+        "philippines",
+        "send time",
+        "19:00-21:00",
+        "tue-thu"
+      ]
+    },
+    {
+      "id": 82,
+      "category": "timing",
+      "difficulty": "medium",
+      "question": "Why must emails to the Israeli market avoid Friday evening through Saturday evening?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Low open rates on weekends",
+        "B. Shabbat - sending during this period is culturally insensitive and reduces engagement",
+        "C. Email servers are slower on weekends",
+        "D. Israeli ISPs block weekend emails"
+      ],
+      "correct_answer": "B",
+      "explanation": "Shabbat (Friday sunset to Saturday sunset) is observed by many Israelis. Sending during this time is culturally insensitive and emails are likely to be buried under Saturday night/Sunday morning volume.",
+      "keywords": [
+        "shabbat",
+        "cultural sensitivity",
+        "friday",
+        "saturday"
+      ]
+    },
+    {
+      "id": 83,
+      "category": "timing",
+      "difficulty": "medium",
+      "question": "What is the time difference between PHT and IST, and how does this affect campaign scheduling?",
+      "type": "multiple_choice",
+      "options": [
+        "A. PHT is 5 hours ahead of IST",
+        "B. IST is 5 hours behind PHT; when it is 20:00 IST it is 01:00+1 PHT",
+        "C. They are the same timezone",
+        "D. PHT is 2 hours ahead of IST"
+      ],
+      "correct_answer": "B",
+      "explanation": "Israel Standard Time (IST/IDT) is UTC+2/+3, while PHT is UTC+8. This 5-6 hour difference means Israeli evening sends (20:00 IST) correspond to early morning PHT (01:00-02:00).",
+      "keywords": [
+        "timezone",
+        "PHT",
+        "IST",
+        "scheduling",
+        "offset"
+      ]
+    },
+    {
+      "id": 84,
+      "category": "timing",
+      "difficulty": "hard",
+      "question": "Design the optimal weekly email schedule for a lead receiving both Israeli and Filipino content (e.g., Israeli expat in Philippines). Consider timezone, cultural restrictions, and cadence fatigue.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Send maximum 2 emails per week to prevent fatigue. Schedule: Sunday 20:00 IST (02:00 Mon PHT) for Hebrew content, Wednesday 19:00 PHT (14:00 IST) for English/Filipino content. This respects Shabbat, uses optimal windows for both markets, and maintains a 3-4 day gap between emails. If the lead is in Philippines timezone, prioritize PHT-friendly times and adjust Hebrew emails to Sunday evening PHT instead.",
+      "explanation": "Dual-market leads require careful scheduling to respect both cultural norms and prevent over-communication. Timezone-aware scheduling is essential.",
+      "keywords": [
+        "send",
+        "maximum",
+        "emails",
+        "week",
+        "prevent",
+        "fatigue",
+        "schedule",
+        "sunday",
+        "hebrew",
+        "content"
+      ]
+    },
+    {
+      "id": 85,
+      "category": "timing",
+      "difficulty": "medium",
+      "question": "What is the optimal timing for the welcome email after a lead submits a form?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Immediately (within 1 minute)",
+        "B. After 1 hour",
+        "C. Next day at optimal send time",
+        "D. Within 5 minutes, unless it falls during Shabbat for Israeli leads"
+      ],
+      "correct_answer": "D",
+      "explanation": "Welcome emails should be near-immediate (within 5 minutes) for maximum engagement, but must respect Shabbat timing for Israeli leads by queuing until Sunday evening.",
+      "keywords": [
+        "welcome email",
+        "timing",
+        "immediate",
+        "shabbat exception"
+      ]
+    },
+    {
+      "id": 86,
+      "category": "timing",
+      "difficulty": "hard",
+      "question": "A HOT lead (score 85) submits a form at 23:30 PHT on a Tuesday. Per the HOT lead protocol, they must be contacted within 2 hours. But the optimal send time has passed (19:00-21:00 PHT). What should happen?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Wait until Wednesday 19:00 PHT",
+        "B. Send welcome email immediately regardless of optimal window - HOT lead protocol overrides send time optimization",
+        "C. Send a WhatsApp message immediately but delay the email",
+        "D. Do nothing until morning"
+      ],
+      "correct_answer": "B",
+      "explanation": "The HOT lead 2-hour contact protocol takes precedence over send time optimization. A HOT lead's engagement window is narrow; speed of response matters more than optimal timing.",
+      "keywords": [
+        "hot lead",
+        "2-hour protocol",
+        "override",
+        "speed",
+        "welcome"
+      ]
+    },
+    {
+      "id": 87,
+      "category": "timing",
+      "difficulty": "medium",
+      "question": "What is the recommended maximum number of emails per week to prevent list fatigue?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 1",
+        "B. 2-3",
+        "C. 5",
+        "D. 7 (daily)"
+      ],
+      "correct_answer": "B",
+      "explanation": "For real estate investment content, 2-3 emails per week is optimal. More frequent sends risk fatigue and unsubscribes; less frequent risks losing momentum in the nurture sequence.",
+      "keywords": [
+        "frequency",
+        "fatigue",
+        "weekly maximum",
+        "cadence"
+      ]
+    },
+    {
+      "id": 88,
+      "category": "content_rules",
+      "difficulty": "easy",
+      "question": "Can an email for the Israeli market include the price 'PHP 32,500,000' for Villa D?",
+      "type": "true_false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "false",
+      "explanation": "Per Rule 1, Israeli content shows ONLY shekels. Villa D's price in Israeli content is PHP 32,500,000. No PHP, no USD.",
+      "keywords": [
+        "currency",
+        "israel",
+        "shekels only",
+        "no PHP"
+      ]
+    },
+    {
+      "id": 89,
+      "category": "content_rules",
+      "difficulty": "medium",
+      "question": "An email contains the sentence: 'This is an incredible investment - don't miss this once-in-a-lifetime opportunity.' How many content rule violations are present?",
+      "type": "multiple_choice",
+      "options": [
+        "A. 1 violation",
+        "B. 2 violations",
+        "C. 3 violations",
+        "D. 4 violations"
+      ],
+      "correct_answer": "B",
+      "explanation": "Two violations: (1) 'incredible' is a forbidden word (Rule 5), (2) 'once-in-a-lifetime' is a forbidden phrase (Rule 5). The regular hyphen is acceptable per Rule 2.",
+      "keywords": [
+        "violations",
+        "forbidden words",
+        "multiple rules"
+      ]
+    },
+    {
+      "id": 90,
+      "category": "content_rules",
+      "difficulty": "medium",
+      "question": "An email for the Filipino market discusses villa financing but does not mention BDO Bank. Is this acceptable?",
+      "type": "true_false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "false",
+      "explanation": "Per Rule 7, Filipino content must mention BDO Bank financing. Omitting it from a financing-focused email violates this rule.",
+      "keywords": [
+        "BDO",
+        "filipino",
+        "financing",
+        "rule 7"
+      ]
+    },
+    {
+      "id": 91,
+      "category": "content_rules",
+      "difficulty": "hard",
+      "question": "Review this Israeli market email excerpt and identify all rule violations: 'Amazing villa in Bohol! 4 bedrooms, PHP 35M. Built by Blueprint, an Israeli company with the best reputation. Contact us on WhatsApp: +639542555553'",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Violations: (1) 'Amazing' - forbidden word (Rule 5). (2) 'PHP 35M' - Israeli content must use shekels only, should be PHP 35,000,000 (Rule 1). (3) 'Israeli company' - Blueprint must never be described as Israeli/foreign-origin (brand rule). (4) Only one WhatsApp number - must include both +639542555553 AND +639958565865 (Rule 4). (5) No mention of 3 legal ownership structures required for Israeli content (Rule 6).",
+      "explanation": "This single paragraph contains at least 5 clear rule violations, demonstrating why content rules must be checked systematically against every piece of copy.",
+      "keywords": [
+        "violations",
+        "amazing",
+        "forbidden",
+        "word",
+        "rule",
+        "israeli",
+        "content",
+        "must",
+        "shekels",
+        "only"
+      ]
+    },
+    {
+      "id": 92,
+      "category": "content_rules",
+      "difficulty": "easy",
+      "question": "What type of dash/hyphen is allowed in email content?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Em dash (—)",
+        "B. En dash (–)",
+        "C. Regular hyphen (-)",
+        "D. Hebrew maqaf (־)"
+      ],
+      "correct_answer": "C",
+      "explanation": "Per Rule 2, only the regular hyphen (-) is allowed. Em dashes, en dashes, and Hebrew maqaf are forbidden.",
+      "keywords": [
+        "hyphen",
+        "dash",
+        "punctuation",
+        "rule 2"
+      ]
+    },
+    {
+      "id": 93,
+      "category": "content_rules",
+      "difficulty": "medium",
+      "question": "An email includes the sentence 'Earn passive income with your dream home in paradise.' Which forbidden word is present?",
+      "type": "multiple_choice",
+      "options": [
+        "A. passive income",
+        "B. dream home",
+        "C. paradise",
+        "D. earn"
+      ],
+      "correct_answer": "B",
+      "explanation": "Per Rule 5, 'dream home' is a forbidden phrase. It must be replaced with factual, specific language about the property.",
+      "keywords": [
+        "dream home",
+        "forbidden",
+        "rule 5"
+      ]
+    },
+    {
+      "id": 94,
+      "category": "content_rules",
+      "difficulty": "hard",
+      "question": "Write a compliant email CTA block for the Israeli market that follows all content rules.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Example compliant CTA block: 'לפרטים נוספים על וילות בפנגלאו - PHP 32,500,000, עם 3 מסלולי בעלות חוקיים:\nWhatsApp (שיווק): +639542555553\nWhatsApp (משרד): +639958565865\nאו השיבו למייל זה.'\n\nThis includes: shekel pricing (Rule 1), both WhatsApp numbers (Rule 4), reference to 3 legal structures (Rule 6), regular hyphen only (Rule 2), formal-warm Hebrew register (Rule 8), and a specific number (Rule 3).",
+      "explanation": "A compliant CTA block must satisfy Rules 1, 2, 3, 4, 6, and 8 simultaneously for the Israeli market.",
+      "keywords": [
+        "CTA",
+        "compliant",
+        "israeli",
+        "all rules"
+      ]
+    },
+    {
+      "id": 95,
+      "category": "content_rules",
+      "difficulty": "medium",
+      "question": "Can an email contain zero numbers if it is a relationship-building/storytelling email?",
+      "type": "true_false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "false",
+      "explanation": "Per Rule 3, EVERY email must include at least one specific number. Even storytelling emails should weave in numbers like 4 bedrooms, 263.78 sqm, 17-25% ROI, etc.",
+      "keywords": [
+        "numbers",
+        "every email",
+        "rule 3",
+        "no exceptions"
+      ]
+    },
+    {
+      "id": 96,
+      "category": "compliance",
+      "difficulty": "easy",
+      "question": "What Philippine law governs data privacy and must be complied with for the Filipino email list?",
+      "type": "multiple_choice",
+      "options": [
+        "A. GDPR",
+        "B. CAN-SPAM Act",
+        "C. Data Privacy Act of 2012 (RA 10173)",
+        "D. CCPA"
+      ],
+      "correct_answer": "C",
+      "explanation": "The Philippines' Data Privacy Act of 2012 (Republic Act 10173) governs the collection, processing, and storage of personal data from Filipino leads.",
+      "keywords": [
+        "Data Privacy Act",
+        "2012",
+        "RA 10173",
+        "Philippines"
+      ]
+    },
+    {
+      "id": 97,
+      "category": "compliance",
+      "difficulty": "medium",
+      "question": "What must every marketing email include per CAN-SPAM requirements?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Phone number only",
+        "B. Physical mailing address, unsubscribe link, and accurate sender information",
+        "C. Company logo only",
+        "D. Social media links"
+      ],
+      "correct_answer": "B",
+      "explanation": "CAN-SPAM requires a physical postal address, clear unsubscribe mechanism, accurate From/Subject headers, and identification as an advertisement if applicable.",
+      "keywords": [
+        "CAN-SPAM",
+        "unsubscribe",
+        "physical address",
+        "sender info"
+      ]
+    },
+    {
+      "id": 98,
+      "category": "compliance",
+      "difficulty": "medium",
+      "question": "How quickly must an unsubscribe request be processed?",
+      "type": "multiple_choice",
+      "options": [
+        "A. Immediately",
+        "B. Within 10 business days",
+        "C. Within 30 days",
+        "D. Within 24 hours"
+      ],
+      "correct_answer": "B",
+      "explanation": "CAN-SPAM requires processing unsubscribe requests within 10 business days. Best practice is immediate or same-day processing.",
+      "keywords": [
+        "unsubscribe",
+        "processing time",
+        "10 business days",
+        "CAN-SPAM"
+      ]
+    },
+    {
+      "id": 99,
+      "category": "compliance",
+      "difficulty": "hard",
+      "question": "The campaign targets Israeli leads. What Israeli data protection considerations apply to email marketing?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Israel's Protection of Privacy Law 5741-1981 and the Privacy Protection Regulations govern data processing. Key requirements: (1) Consent must be explicit and documented, (2) Database registration may be required with the Israel Law, Information and Technology Authority (ILITA) for databases over a certain size, (3) Cross-border data transfer provisions apply since data is processed in the Philippines, (4) Right to access, correct, and delete personal data, (5) Purpose limitation - data collected for villa marketing cannot be used for unrelated purposes.",
+      "explanation": "Israeli data protection law adds additional requirements beyond CAN-SPAM. Cross-border data processing (Israel to Philippines) requires particular attention.",
+      "keywords": [
+        "israeli law",
+        "privacy",
+        "ILITA",
+        "cross-border",
+        "consent"
+      ]
+    },
+    {
+      "id": 100,
+      "category": "compliance",
+      "difficulty": "medium",
+      "question": "What consent mechanism must be in place before adding a lead to the email nurture sequence?",
+      "type": "multiple_choice",
+      "options": [
+        "A. No consent needed - they filled a form",
+        "B. Single opt-in with clear disclosure of email marketing at the form",
+        "C. Double opt-in with confirmation email",
+        "D. Verbal consent over phone"
+      ],
+      "correct_answer": "C",
+      "explanation": "Double opt-in (form submission + confirmation email click) provides the strongest legal basis for email marketing, complies with both Philippine Data Privacy Act and Israeli privacy law, and ensures list quality.",
+      "keywords": [
+        "double opt-in",
+        "consent",
+        "confirmation",
+        "compliance"
+      ]
+    }
+  ]
+}

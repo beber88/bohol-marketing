@@ -1,0 +1,33 @@
+[
+  {
+    "id": "ADS-0005",
+    "priority": "HIGH",
+    "type": "ad_management",
+    "status": "PENDING",
+    "description": "Day 15 ad management - CONVERSION phase (IL)",
+    "instructions": "Ensure CONVERSION ads are active for IL market. Daily budget: USD 120. Monitor CTR and CPC. Pause underperformers (CTR < 1%).",
+    "ad_files": [
+      "assets/ads/META_IL_CONVERSION_Conv1.txt"
+    ],
+    "daily_budget_usd": 120,
+    "market": "IL"
+  },
+  {
+    "id": "ADS-0006",
+    "priority": "MEDIUM",
+    "type": "google_ads",
+    "status": "PENDING",
+    "description": "Day 15 Google Search Ads (IL)",
+    "instructions": "Review and optimize Google Search Ads for IL. Check keyword bids and quality scores.",
+    "ad_file": "assets/ads/GOOGLE_IL_SEARCH_ADS.txt",
+    "market": "IL"
+  },
+  {
+    "id": "ADS-0007",
+    "priority": "HIGH",
+    "type": "retargeting",
+    "status": "PENDING",
+    "description": "Day 15 retargeting audience update",
+    "instructions": "Update retargeting audiences based on website visitors and Facebook engagement from the past 7 days. Create lookalike audiences if retargeting pool > 500."
+  }
+]

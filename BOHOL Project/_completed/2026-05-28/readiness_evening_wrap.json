@@ -1,0 +1,167 @@
+{
+  "timestamp": "2026-05-28T21:00:00+08:00",
+  "actual_run_pht": "2026-05-28T16:05:00+08:00",
+  "actual_run_utc": "2026-05-28T08:05:00Z",
+  "note_on_run_time": "Cron 0 16 * * * fires at 16:05 PHT, not at the 21:00 PHT slot named in the SKILL prompt. Same drift documented yesterday and not yet reconciled. Either retime cron expressions to 0 13 * * * (21:00 PHT = 13:00 UTC) or update prompts to match the actual fire times.",
+  "agent": "EVENING_WRAP",
+  "phase_detected": "PRE_LAUNCH",
+  "simulation_flag": true,
+  "mode": "PREPARATION",
+  "campaign_state_snapshot": {
+    "phase": "PRE_LAUNCH",
+    "simulation": true,
+    "start_date": null,
+    "go_live_date": null,
+    "campaign_day": 0,
+    "total_days": 15,
+    "total_budget_usd": 900,
+    "daily_budget_avg_usd": 60,
+    "spent_to_date_usd": 0
+  },
+  "scheduled_agents_status": [
+    {
+      "task_id": "panglao-morning-metrics",
+      "scheduled_for_pht": "08:00",
+      "cron_actual_pht": "03:07",
+      "ran_today": true,
+      "last_run_utc": "2026-05-27T19:06:53.934Z",
+      "last_run_pht": "2026-05-28T03:06:53+08:00",
+      "output_file_in_completed_today": null,
+      "audit_gap": true,
+      "notes": "Cron fired but left no readiness/metrics file in _completed/2026-05-28/. Third consecutive day with this gap (2026-05-26, 2026-05-27, 2026-05-28). Prompt should be updated to always write a readiness stub even when phase guard blocks live polling."
+    },
+    {
+      "task_id": "panglao-content-post",
+      "scheduled_for_pht": "10:00",
+      "cron_actual_pht": "05:04",
+      "ran_today": true,
+      "last_run_utc": "2026-05-27T21:04:14.963Z",
+      "last_run_pht": "2026-05-28T05:04:14+08:00",
+      "output_file_in_completed_today": null,
+      "audit_gap": true,
+      "notes": "Cron fired but left no validation/result file in _completed/2026-05-28/. Yesterday it did write content_validation.json. Today's run produced nothing in the daily folder. No _queue/2026-05-28/ exists, so still no posting attempted."
+    },
+    {
+      "task_id": "panglao-wa-broadcast",
+      "scheduled_for_pht": "Tue+Thu 10:00",
+      "cron_actual_pht": "Tue+Thu 05:04",
+      "ran_today": true,
+      "last_run_utc": "2026-05-27T21:03:52.971Z",
+      "last_run_pht": "2026-05-28T05:03:52+08:00",
+      "output_file_in_completed_today": null,
+      "audit_gap": true,
+      "notes": "2026-05-28 is Thursday PHT so the broadcast slot did fire. WATI account still in needs_account state - no audience to broadcast to. No file written in _completed/2026-05-28/. _status/no_broadcast_today.md last updated 2026-05-25; should be refreshed to today."
+    },
+    {
+      "task_id": "panglao-lead-check",
+      "scheduled_for_pht": "13:00",
+      "cron_actual_pht": "08:02",
+      "ran_today": true,
+      "last_run_utc": "2026-05-28T00:02:36.939Z",
+      "last_run_pht": "2026-05-28T08:02:36+08:00",
+      "output_file_in_completed_today": "_completed/2026-05-28/readiness_lead_check.json",
+      "audit_gap": false,
+      "notes": "Filed a full readiness report (9.4 KB). Re-confirmed all lead-source blockers (Google Sheet, WATI, HubSpot, Brevo, Meta Lead Ads, Google Ads Lead Form). No state changes vs 2026-05-27. lead_check_state.json not modified by design."
+    },
+    {
+      "task_id": "panglao-afternoon-ops",
+      "scheduled_for_pht": "17:00",
+      "cron_actual_pht": "12:04",
+      "ran_today": true,
+      "last_run_utc": "2026-05-28T04:04:07.689Z",
+      "last_run_pht": "2026-05-28T12:04:07+08:00",
+      "output_file_in_completed_today": null,
+      "audit_gap": true,
+      "notes": "Cron fired but left no readiness/ops file in _completed/2026-05-28/. No live campaigns to optimize, but audit trail is still missing. Third consecutive day with this gap."
+    },
+    {
+      "task_id": "panglao-evening-wrap",
+      "scheduled_for_pht": "21:00",
+      "cron_actual_pht": "16:05",
+      "ran_today": true,
+      "last_run_utc": "2026-05-28T08:05:00.404Z",
+      "last_run_pht": "2026-05-28T16:05:00+08:00",
+      "output_file_in_completed_today": "_completed/2026-05-28/readiness_evening_wrap.json",
+      "audit_gap": false,
+      "notes": "This file."
+    },
+    {
+      "task_id": "panglao-weekly-review",
+      "scheduled_for_pht": "Mon 09:00",
+      "cron_actual_pht": "Mon 04:01",
+      "ran_today": false,
+      "last_run_utc": null,
+      "last_run_pht": null,
+      "output_file_in_completed_today": null,
+      "audit_gap": false,
+      "notes": "Idle by design today (Thursday). Next fire 2026-06-01 PHT (cron 0 4 * * 1)."
+    }
+  ],
+  "totals_today": {
+    "agents_expected_to_run": 6,
+    "agents_that_ran": 6,
+    "agents_idle_by_design": 1,
+    "readiness_or_validation_reports_in_completed_today_before_this_run": 1,
+    "readiness_or_validation_reports_after_this_run": 2,
+    "audit_gap_agents": [
+      "panglao-morning-metrics",
+      "panglao-content-post",
+      "panglao-wa-broadcast",
+      "panglao-afternoon-ops"
+    ]
+  },
+  "state_changes_since_yesterday": {
+    "campaign_state": "no changes to phase, simulation, start_date, go_live_date, pricing, platform statuses, or budget. Only last_updated field will refresh this run.",
+    "blockers_closed_since_2026_05_27": [],
+    "blockers_added_since_2026_05_27": [],
+    "net_change": "zero - 24 hours elapsed with no provisioning progress."
+  },
+  "blockers_aggregated": [
+    "Phase guard active: phase=PRE_LAUNCH, simulation=true, start_date=null. No live operations permitted by design.",
+    "No _queue/2026-05-28/ folder. Most recent queue is _queue/2026-05-25/tasks_group_joins.json. No content/email/whatsapp/ads/lead tasks queued for today.",
+    "Meta Pixel 1599211187973958 created but not installed on primevilla.ph. Snippet ready at _status/tracking_codes_install.html.",
+    "Google Tag AW-18095957436 / GT-PZZMF859 created but not installed on primevilla.ph.",
+    "Google Ads advertiser_verification: pending for customer 4031838704. Cannot serve ads until verified.",
+    "Brevo: needs_account. Email automation cannot be configured or sent.",
+    "WATI: needs_account. No Client ID, no inbound WhatsApp lead ingestion, no Tue/Thu broadcasts, no HOT-lead alerts to sales.",
+    "HubSpot: not_setup. No CRM destination, no deal pipeline, no owner routing.",
+    "Lead-capture Google Sheet not created or linked. sheet_id and tab name unknown.",
+    "No Meta Lead Ads forms and no Google Ads Lead Form assets configured.",
+    "primevilla.ph status 'active' in campaign_state.json but tracking installs still pending. Confirm site is reachable in production before launch.",
+    "Higgsfield credits: funding / balance still unconfirmed for paid creative generation.",
+    "Sales agent identity, WhatsApp number, and escalation SLA not recorded in campaign_state.json (no sales_agent object).",
+    "IL fixed pricing inconsistency unresolved 48+ hours: CLAUDE.md says Villa D 1,535,000 / Villa C 1,650,000 ILS; campaign_state.json + several SKILL guards say 1,450,000 / 1,550,000 ILS. Must be reconciled before any IL content task is generated.",
+    "Cron drift: every panglao-* daily agent fires 5+ hours earlier than the PHT slot named in its prompt. Either retime the cron expressions or update the prompts.",
+    "Audit gap: four cron runs today (morning-metrics, content-post, wa-broadcast, afternoon-ops) left no file in _completed/2026-05-28/. Same pattern for three consecutive days."
+  ],
+  "next_steps_required_for_launch": [
+    "Deploy primevilla.ph and verify the site is reachable in production.",
+    "Install Meta Pixel 1599211187973958 on every page of primevilla.ph using the snippet in _status/tracking_codes_install.html, then validate fires in Meta Events Manager.",
+    "Install Google Tag AW-18095957436 site-wide and verify in Google Tag Assistant.",
+    "Complete Google Ads advertiser verification for customer 4031838704.",
+    "Create Brevo account at app.brevo.com, generate API key, store in config, upload approved email templates from assets/email/.",
+    "Create WATI account at app.wati.io, obtain Client ID, import WhatsApp templates and flows from assets/whatsapp/ and assets/wati/, load opt-in lists for IL and PH.",
+    "Create HubSpot portal (or alternative CRM), define a single 'Panglao Prime Villas' pipeline (New, Qualified, Meeting Scheduled, Reservation Paid, Contract, Closed), assign owner.",
+    "Create the lead-capture Google Sheet (columns per readiness_lead_check.json expected_lead_schema), share with Cowork Google Drive connector, record sheetId + tab name in campaign_state.json.",
+    "Build at least one Meta Lead Ads form and one Google Ads Lead Form asset with matching field set so paid channels can capture leads without depending on the website.",
+    "Fund Higgsfield credits and confirm the paid creative generation pipeline.",
+    "Add sales_agent object to campaign_state.json: {name, whatsapp, email, hours_pht, escalation_sla_minutes}.",
+    "Reconcile IL fixed pricing between CLAUDE.md and campaign_state.json (decision needed: 1,535,000 / 1,650,000 vs 1,450,000 / 1,550,000 ILS). 48+ hours overdue.",
+    "Claude Code: generate the first _queue/YYYY-MM-DD/ task bundle (tasks_content, tasks_ads, tasks_email, tasks_whatsapp, tasks_lead) for launch day.",
+    "Update panglao-morning-metrics, panglao-content-post, panglao-wa-broadcast, and panglao-afternoon-ops prompts to always write a readiness stub to _completed/{today_PHT}/ even when phase guard blocks live work.",
+    "Reconcile scheduled-task cron expressions with intended PHT slots (or update the prompts to reflect the actual fire times).",
+    "Only when every item above is green: set start_date, set go_live_date, flip simulation=false, set phase=LIVE in campaign_state.json."
+  ],
+  "platforms_status_snapshot": {
+    "facebook_page": "active",
+    "facebook_group_il": "active",
+    "meta_ads": "partial (pixel created, not installed)",
+    "google_ads": "active (verification pending, tag not installed, 0 campaigns)",
+    "brevo": "needs_account",
+    "wati": "needs_account",
+    "hubspot": "not_setup",
+    "website_primevilla_ph": "active per state file, tracking install still required"
+  },
+  "errors_today": [],
+  "next_run_pht": "2026-05-29T21:00:00+08:00"
+}

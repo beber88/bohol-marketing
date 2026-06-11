@@ -1,0 +1,26 @@
+{
+  "agent": "CONTENT_POST",
+  "run_at_pht": "2026-06-01T10:00:00+08:00",
+  "mode": "PREPARATION",
+  "phase": "PRE_LAUNCH",
+  "simulation": true,
+  "start_date": null,
+  "queue_folder_checked": "_queue/2026-06-01/",
+  "queue_folder_exists": false,
+  "tasks_file_checked": "_queue/2026-06-01/tasks_content.json",
+  "tasks_file_exists": false,
+  "tasks_total": 0,
+  "tasks_passed": 0,
+  "tasks_failed": 0,
+  "failures": [],
+  "drafts_ready": [],
+  "publish_attempted": false,
+  "publish_blocked_reason": "Preparation mode (phase=PRE_LAUNCH, simulation=true, start_date=null). Also: no tasks queued.",
+  "consecutive_days_no_content_queue": 8,
+  "last_content_queue": "_queue/2026-04-16/tasks_content.json",
+  "notes": [
+    "8th consecutive day with no _queue/{date}/tasks_content.json from Claude Code.",
+    "Phase guard would have blocked publishing even if tasks were present.",
+    "IL pricing inconsistency between CLAUDE.md, campaign_state.json, and SKILL guard remains unresolved (carried from prior days)."
+  ]
+}

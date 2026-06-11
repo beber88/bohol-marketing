@@ -1,0 +1,16 @@
+[
+  {
+    "id": "CNT-0001",
+    "priority": "HIGH",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "PH",
+    "description": "Day 6 Facebook post (PH market)",
+    "instructions": "Publish to Facebook page. Market: PH. Use the provided image and copy. Schedule for optimal engagement time.",
+    "copy": "Bohol airport handled 2.22 million passengers in 2025 - exceeding its 2M design capacity. 12 daily flights from Manila. Direct flights from Korea.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nVilla C: PHP 30,000,000 (approx. USD 498,900, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/FRONT 4_AI.png",
+    "scheduled_time": "2026-04-16T10:00:00+08:00",
+    "hook_used": "Bohol airport handled 2.22 million passengers in 2025 - exceeding its 2M design capacity. 12 daily flights from Manila. Direct flights from Korea.",
+    "language": "en"
+  }
+]

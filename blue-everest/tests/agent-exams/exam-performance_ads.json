@@ -1,0 +1,2124 @@
+{
+  "agent": "performance_ads",
+  "agent_display_name": "Performance Ads Manager",
+  "description": "Tests Meta Ads, Google Ads, targeting, budget optimization, and kill/scale rules for Panglao Prime Villas campaign",
+  "total_questions": 100,
+  "pass_threshold": 100,
+  "categories": [
+    "meta_ads",
+    "google_ads",
+    "audience_targeting",
+    "budget_optimization",
+    "ab_testing",
+    "pixel_tracking",
+    "bidding_strategy",
+    "creative_testing",
+    "kill_scale_rules",
+    "compliance"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "category": "meta_ads",
+      "difficulty": "basic",
+      "question": "What is the daily Meta Ads budget allocation for the Israeli market in the Panglao Prime Villas campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "a) $15/day",
+        "b) $20/day",
+        "c) $25/day",
+        "d) $30/day"
+      ],
+      "correct_answer": "b",
+      "explanation": "The campaign budget splits $60/day as: Meta IL $20, Meta PH $15, Google $25.",
+      "keywords": [
+        "budget",
+        "meta_ads",
+        "israel",
+        "daily_spend"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "meta_ads",
+      "difficulty": "basic",
+      "question": "What is the daily Meta Ads budget allocation for the Philippine market?",
+      "type": "multiple_choice",
+      "options": [
+        "a) $10/day",
+        "b) $15/day",
+        "c) $20/day",
+        "d) $25/day"
+      ],
+      "correct_answer": "b",
+      "explanation": "The campaign allocates $15/day for Meta PH ads, $20/day for Meta IL, and $25/day for Google.",
+      "keywords": [
+        "budget",
+        "meta_ads",
+        "philippines",
+        "daily_spend"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "meta_ads",
+      "difficulty": "basic",
+      "question": "What is the Meta Pixel ID used for tracking conversions in the Panglao Prime Villas campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 1599211187973958",
+        "b) AW-18095957436",
+        "c) 1599211187973859",
+        "d) AW-18095957634"
+      ],
+      "correct_answer": "a",
+      "explanation": "Meta Pixel ID 1599211187973958 is used for Meta Ads tracking. AW-18095957436 is the Google Ads tag.",
+      "keywords": [
+        "pixel",
+        "meta",
+        "tracking",
+        "conversion"
+      ]
+    },
+    {
+      "id": 4,
+      "category": "meta_ads",
+      "difficulty": "intermediate",
+      "question": "A Meta ad set targeting Israeli investors has run for 3 days with CPM of $19.50 and CTR of 0.6%. According to campaign rules, what action should be taken?",
+      "type": "scenario",
+      "options": [
+        "a) Continue running - give it more time",
+        "b) Kill it - CPM exceeds $18 threshold AND CTR is below 0.8%",
+        "c) Scale budget up to test further",
+        "d) Only pause if both conditions persist for 5 more days"
+      ],
+      "correct_answer": "b) Kill it - CPM exceeds $18 threshold AND CTR is below 0.8%",
+      "explanation": "Campaign kill rules state: Kill when CPM > $18 OR CTR < 0.8%. This ad set violates both thresholds, so it must be killed immediately.",
+      "keywords": [
+        "kill_rules",
+        "cpm",
+        "ctr",
+        "optimization"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "meta_ads",
+      "difficulty": "intermediate",
+      "question": "Which Facebook page should Meta Ads for Panglao Prime Villas be published from?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Blueprint Building Group",
+        "b) Blue Everest Asset Group",
+        "c) Panglao Prime Villas",
+        "d) Any page the agent has access to"
+      ],
+      "correct_answer": "b",
+      "explanation": "All villa campaign activity operates ONLY through Blue Everest Asset Group (facebook.com/BlueEverestGroup). Blueprint Building Group is a completely separate business and must NEVER be used.",
+      "keywords": [
+        "page",
+        "brand_safety",
+        "blue_everest",
+        "compliance"
+      ]
+    },
+    {
+      "id": 6,
+      "category": "meta_ads",
+      "difficulty": "intermediate",
+      "question": "For Israeli market Meta Ads, what currency must be displayed in ad copy?",
+      "type": "multiple_choice",
+      "options": [
+        "a) USD only",
+        "b) PHP only",
+        "c) ILS (shekels) only",
+        "d) Both USD and ILS"
+      ],
+      "correct_answer": "c",
+      "explanation": "Israeli content shows ONLY shekels. No PHP, no USD, no other currencies. Villa D: 1,535,000 shekel, Villa C: 1,650,000 shekel.",
+      "keywords": [
+        "currency",
+        "israel",
+        "compliance",
+        "shekel"
+      ]
+    },
+    {
+      "id": 7,
+      "category": "meta_ads",
+      "difficulty": "advanced",
+      "question": "A Meta campaign is showing CTR of 3.5% and CPL of $25. According to scale rules, what should you do?",
+      "type": "scenario",
+      "options": [
+        "a) Kill it - something must be wrong with such high CTR",
+        "b) Scale it - both CTR > 3% and CPL < $30 meet scale criteria",
+        "c) Maintain current budget - wait for more data",
+        "d) Scale only if CTR stays above 3% for 7 days"
+      ],
+      "correct_answer": "b) Scale it - both CTR > 3% and CPL < $30 meet scale criteria",
+      "explanation": "Scale rules: CTR > 3% OR CPL < $30 triggers scaling. This ad meets both criteria, so it should be scaled up.",
+      "keywords": [
+        "scale_rules",
+        "ctr",
+        "cpl",
+        "optimization"
+      ]
+    },
+    {
+      "id": 8,
+      "category": "meta_ads",
+      "difficulty": "advanced",
+      "question": "You are setting up a Meta Ads campaign for Panglao Prime Villas targeting the Israeli diaspora. Which Facebook Group should be leveraged for organic posts?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Any Israel real estate group",
+        "b) The group at facebook.com/groups/investment.ph.il/",
+        "c) Create a new group for the campaign",
+        "d) Groups cannot be used for marketing"
+      ],
+      "correct_answer": "b",
+      "explanation": "The specific Israeli market group is facebook.com/groups/investment.ph.il/ - 'Real Estate and Investments in the Philippines'. This is designated for Israeli market organic posts.",
+      "keywords": [
+        "facebook_group",
+        "israel",
+        "organic",
+        "targeting"
+      ]
+    },
+    {
+      "id": 9,
+      "category": "meta_ads",
+      "difficulty": "basic",
+      "question": "What is the total campaign budget for 15 days?",
+      "type": "multiple_choice",
+      "options": [
+        "a) $600",
+        "b) $750",
+        "c) $900",
+        "d) $1,200"
+      ],
+      "correct_answer": "c",
+      "explanation": "Total budget is $900 for 15 days at $60/day average. After 15 days, a full analysis is required before continuing.",
+      "keywords": [
+        "budget",
+        "total",
+        "campaign_duration"
+      ]
+    },
+    {
+      "id": 10,
+      "category": "meta_ads",
+      "difficulty": "expert",
+      "question": "A Meta Lookalike Audience based on WhatsApp lead converters is performing at CPL $14. The base Custom Audience has 120 contacts. Your Lookalike is set to 1%. The campaign has been running 5 days with $100 spent. Should you expand to 2% Lookalike or duplicate the ad set with new creative?",
+      "type": "scenario",
+      "options": [
+        "a) Expand to 2% - the CPL is excellent so wider audience will maintain performance",
+        "b) Duplicate with new creative - the seed audience is too small for reliable 2% expansion",
+        "c) Do nothing - $100 is insufficient data to make changes",
+        "d) Kill the campaign - 120 contacts is too small a seed"
+      ],
+      "correct_answer": "b) Duplicate with new creative - the seed audience is too small for reliable 2% expansion",
+      "explanation": "With only 120 contacts as seed, expanding from 1% to 2% Lookalike risks diluting quality significantly. Better to test new creative on the performing 1% Lookalike to find more winning angles while keeping CPL below the $30 scale threshold.",
+      "keywords": [
+        "duplicate",
+        "with",
+        "creative",
+        "seed",
+        "audience",
+        "small",
+        "reliable",
+        "expansion"
+      ]
+    },
+    {
+      "id": 11,
+      "category": "meta_ads",
+      "difficulty": "intermediate",
+      "question": "Does the Panglao Prime Villas campaign have a separate Instagram account for ads?",
+      "type": "true_false",
+      "options": [
+        "a) True - there is a dedicated Instagram account",
+        "b) False - Instagram ads run through Meta Ads Manager linking directly to the sales website with no separate IG page"
+      ],
+      "correct_answer": "false",
+      "explanation": "There is no separate Instagram account. Instagram ads are run through Meta Ads Manager linking directly to the sales website.",
+      "keywords": [
+        "instagram",
+        "meta_ads",
+        "campaign_setup"
+      ]
+    },
+    {
+      "id": 12,
+      "category": "meta_ads",
+      "difficulty": "advanced",
+      "question": "An Israeli-targeted Meta ad uses the phrase 'once in a lifetime investment opportunity'. What is the issue?",
+      "type": "multiple_choice",
+      "options": [
+        "a) The ad is too long",
+        "b) 'Once in a lifetime' is a forbidden phrase per campaign compliance rules",
+        "c) The ad needs a disclaimer",
+        "d) No issue - this is standard real estate copy"
+      ],
+      "correct_answer": "b",
+      "explanation": "Forbidden words include: amazing, incredible, dream home, once in a lifetime (or Hebrew equivalents). This ad must be revised.",
+      "keywords": [
+        "forbidden_words",
+        "compliance",
+        "copy_rules"
+      ]
+    },
+    {
+      "id": 13,
+      "category": "meta_ads",
+      "difficulty": "expert",
+      "question": "You are running a Meta conversion campaign for Villa C (PHP 35M / 1,650,000 shekel). After 7 days, the campaign has 2 leads at $45 CPL and a frequency of 4.2 on your core Israeli audience of 15,000 people. What is your recommended action?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Refresh creative immediately due to high frequency (4.2 indicates ad fatigue), expand the audience or add new interest layers, and consider switching to a new ad set with fresh creative. CPL of $45 exceeds the $30 scale threshold but does not trigger the kill rule. The small audience size (15,000) combined with high frequency means the audience is saturated.",
+      "explanation": "At frequency 4.2 on a 15,000 person audience, ad fatigue is significant. While CPL $45 is above scale threshold ($30), the immediate issue is creative exhaustion. Refresh creative, broaden targeting, or both.",
+      "keywords": [
+        "refresh",
+        "creative",
+        "immediately",
+        "high",
+        "frequency",
+        "indicates",
+        "fatigue",
+        "expand",
+        "audience",
+        "interest"
+      ]
+    },
+    {
+      "id": 14,
+      "category": "meta_ads",
+      "difficulty": "basic",
+      "question": "Every ad post must include at least one specific number. Which of these is NOT a valid number to include?",
+      "type": "multiple_choice",
+      "options": [
+        "a) PHP 395,000 monthly income",
+        "b) 17-25% ROI",
+        "c) 500+ happy customers",
+        "d) 4 bedrooms"
+      ],
+      "correct_answer": "c",
+      "explanation": "Every post must include specific verified numbers from the project data: 9,999, PHP 395,000, 17-25%, 136.9%, 65%, 60 seconds, 263.78 sqm, 4 bedrooms, PHP 32.5M/30M, etc. '500+ happy customers' is not a verified project number.",
+      "keywords": [
+        "content_rules",
+        "numbers",
+        "compliance"
+      ]
+    },
+    {
+      "id": 15,
+      "category": "meta_ads",
+      "difficulty": "intermediate",
+      "question": "Every Meta ad post must include which WhatsApp numbers in its CTA?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Only +639542555553",
+        "b) Only +639958565865",
+        "c) Both +639542555553 (Marketing) and +639958565865 (Office)",
+        "d) Neither - use a website link instead"
+      ],
+      "correct_answer": "c",
+      "explanation": "Every post must include BOTH WhatsApp numbers: Marketing (+639542555553) and Office (+639958565865).",
+      "keywords": [
+        "cta",
+        "whatsapp",
+        "compliance",
+        "contact"
+      ]
+    },
+    {
+      "id": 16,
+      "category": "google_ads",
+      "difficulty": "basic",
+      "question": "What is the daily Google Ads budget for the Panglao Prime Villas campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "a) $15/day",
+        "b) $20/day",
+        "c) $25/day",
+        "d) $30/day"
+      ],
+      "correct_answer": "c",
+      "explanation": "The daily budget split is Meta IL $20, Meta PH $15, Google $25. Google gets the largest daily allocation at $25.",
+      "keywords": [
+        "budget",
+        "google_ads",
+        "daily_spend"
+      ]
+    },
+    {
+      "id": 17,
+      "category": "google_ads",
+      "difficulty": "basic",
+      "question": "What is the Google Ads conversion tag ID for the Panglao Prime Villas campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 1599211187973958",
+        "b) AW-18095957436",
+        "c) GT-18095957436",
+        "d) UA-18095957436"
+      ],
+      "correct_answer": "b",
+      "explanation": "The Google Ads tag is AW-18095957436. The Meta Pixel is 1599211187973958. These must not be confused.",
+      "keywords": [
+        "google_tag",
+        "tracking",
+        "conversion"
+      ]
+    },
+    {
+      "id": 18,
+      "category": "google_ads",
+      "difficulty": "intermediate",
+      "question": "What is the real estate industry benchmark CTR that the campaign should aim to beat?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 0.50%",
+        "b) 0.98%",
+        "c) 1.50%",
+        "d) 2.00%"
+      ],
+      "correct_answer": "b",
+      "explanation": "RE industry benchmarks: CTR 0.98%, CPC $1.88, CPL $16.61, CVR 8.78%. The campaign kill threshold is CTR < 0.8%, which is below the industry benchmark.",
+      "keywords": [
+        "benchmark",
+        "ctr",
+        "real_estate",
+        "industry"
+      ]
+    },
+    {
+      "id": 19,
+      "category": "google_ads",
+      "difficulty": "intermediate",
+      "question": "What is the real estate industry benchmark CPC?",
+      "type": "multiple_choice",
+      "options": [
+        "a) $0.98",
+        "b) $1.50",
+        "c) $1.88",
+        "d) $2.50"
+      ],
+      "correct_answer": "c",
+      "explanation": "RE benchmarks: CTR 0.98%, CPC $1.88, CPL $16.61, CVR 8.78%.",
+      "keywords": [
+        "benchmark",
+        "cpc",
+        "real_estate"
+      ]
+    },
+    {
+      "id": 20,
+      "category": "google_ads",
+      "difficulty": "intermediate",
+      "question": "What is the real estate industry benchmark conversion rate (CVR)?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 5.50%",
+        "b) 8.78%",
+        "c) 12.00%",
+        "d) 3.25%"
+      ],
+      "correct_answer": "b",
+      "explanation": "RE benchmarks: CTR 0.98%, CPC $1.88, CPL $16.61, CVR 8.78%.",
+      "keywords": [
+        "benchmark",
+        "cvr",
+        "conversion_rate",
+        "real_estate"
+      ]
+    },
+    {
+      "id": 21,
+      "category": "google_ads",
+      "difficulty": "advanced",
+      "question": "A Google Search campaign for 'Bohol investment property' has run 7 days: 3,200 impressions, 28 clicks, $52 spend, 1 conversion. Calculate CPC and CTR, and determine action.",
+      "type": "scenario",
+      "options": [
+        "a) CTR 0.88%, CPC $1.86 - maintain, close to benchmarks",
+        "b) CTR 0.88%, CPC $1.86 - kill it, CTR above 0.8% but barely",
+        "c) CTR 0.88%, CPC $1.86 - kill it, CTR is above 0.8% threshold so maintain",
+        "d) CTR 0.88%, CPC $1.86 - scale it, CPC is below benchmark"
+      ],
+      "correct_answer": "a) CTR 0.88%, CPC $1.86 - maintain, close to benchmarks",
+      "explanation": "CTR = 28/3200 = 0.875% (rounds to 0.88%), CPC = $52/28 = $1.86. CTR is above the 0.8% kill threshold. CPC is near the $1.88 benchmark. Not killing (above 0.8%) and not scaling (below 3% CTR and CPL not below $30). Maintain and optimize.",
+      "keywords": [
+        "maintain",
+        "close",
+        "benchmarks"
+      ]
+    },
+    {
+      "id": 22,
+      "category": "google_ads",
+      "difficulty": "advanced",
+      "question": "For Filipino market Google Ads, which financing option must be mentioned in ad copy?",
+      "type": "multiple_choice",
+      "options": [
+        "a) RCBC Bank financing",
+        "b) BDO Bank financing",
+        "c) BPI Bank financing",
+        "d) No financing needs to be mentioned"
+      ],
+      "correct_answer": "b",
+      "explanation": "Filipino content must mention BDO Bank financing. This is a hard compliance rule for all Filipino-facing content.",
+      "keywords": [
+        "bdo",
+        "financing",
+        "philippines",
+        "compliance"
+      ]
+    },
+    {
+      "id": 23,
+      "category": "google_ads",
+      "difficulty": "basic",
+      "question": "What is the real estate industry benchmark CPL?",
+      "type": "multiple_choice",
+      "options": [
+        "a) $8.50",
+        "b) $12.30",
+        "c) $16.61",
+        "d) $22.00"
+      ],
+      "correct_answer": "c",
+      "explanation": "RE benchmarks: CTR 0.98%, CPC $1.88, CPL $16.61, CVR 8.78%.",
+      "keywords": [
+        "benchmark",
+        "cpl",
+        "real_estate"
+      ]
+    },
+    {
+      "id": 24,
+      "category": "google_ads",
+      "difficulty": "expert",
+      "question": "You are running a Google Search campaign targeting 'Panglao villa investment' with $25/day. After 10 days ($250 spent), you have 5 leads (CPL $50), CTR 1.2%, CPC $2.10. The campaign is not meeting CPL benchmarks but CTR and CPC are reasonable. What is the optimal next step?",
+      "type": "scenario",
+      "options": [
+        "a) Kill the campaign - CPL is too high",
+        "b) Optimize landing page conversion rate since traffic quality (CTR/CPC) is acceptable but leads are not converting",
+        "c) Increase budget to get more data",
+        "d) Switch entirely to Meta Ads"
+      ],
+      "correct_answer": "b) Optimize landing page conversion rate since traffic quality (CTR/CPC) is acceptable but leads are not converting",
+      "explanation": "CTR 1.2% is above the 0.98% benchmark. CPC $2.10 is slightly above the $1.88 benchmark. The issue is conversion: 5 leads from $250 = CPL $50 vs benchmark $16.61. Since traffic quality is decent, the bottleneck is the landing page or form. Optimize the conversion funnel.",
+      "keywords": [
+        "optimize",
+        "landing",
+        "page",
+        "conversion",
+        "rate",
+        "since",
+        "traffic",
+        "quality",
+        "acceptable",
+        "leads"
+      ]
+    },
+    {
+      "id": 25,
+      "category": "google_ads",
+      "difficulty": "intermediate",
+      "question": "What is the Bohol tourism visitor number that can be referenced in Google Ads copy?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 1.00M visitors",
+        "b) 1.43M visitors",
+        "c) 2.10M visitors",
+        "d) 850K visitors"
+      ],
+      "correct_answer": "b",
+      "explanation": "Bohol tourism figure is 1.43M, which is a valid specific number to reference in ad copy to support the investment case.",
+      "keywords": [
+        "tourism",
+        "bohol",
+        "data_point",
+        "copy"
+      ]
+    },
+    {
+      "id": 26,
+      "category": "google_ads",
+      "difficulty": "advanced",
+      "question": "A Google Display campaign has CPM of $17.50 and CTR of 0.75%. Should it be killed?",
+      "type": "true_false",
+      "options": [
+        "a) True - CTR is below 0.8% kill threshold",
+        "b) False - CPM is under $18 so it should continue"
+      ],
+      "correct_answer": "true",
+      "explanation": "Kill rules are: CPM > $18 OR CTR < 0.8%. The rules use OR logic, so violating either condition triggers a kill. CTR 0.75% < 0.8% means kill, regardless of CPM being under $18.",
+      "keywords": [
+        "kill_rules",
+        "ctr",
+        "cpm",
+        "or_logic"
+      ]
+    },
+    {
+      "id": 27,
+      "category": "google_ads",
+      "difficulty": "expert",
+      "question": "You discover a Google Ads competitor is bidding aggressively on 'Panglao villa for sale', pushing your CPC from $1.90 to $3.50 while your CTR dropped from 1.1% to 0.9%. Daily budget is $25. What is the optimal strategy?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Shift to long-tail keywords where competition is lower (e.g., 'Bohol investment villa Airbnb income', 'Panglao luxury villa ROI'). At $3.50 CPC with $25/day, you only get ~7 clicks/day. Focus on high-intent, lower-competition terms. CTR 0.9% is still above the 0.8% kill threshold. Consider adding negative keywords to avoid wasted spend on low-intent searches. Monitor CPL closely - at $3.50 CPC and 8.78% benchmark CVR, implied CPL would be ~$40, above the $30 scale threshold.",
+      "explanation": "When competitors drive up CPC on head terms, the optimal move for a limited budget is shifting to long-tail keywords with lower competition and higher intent. The math: $3.50 CPC / 8.78% CVR = $39.86 implied CPL, which exceeds the $30 scale threshold.",
+      "keywords": [
+        "shift",
+        "long",
+        "tail",
+        "keywords",
+        "where",
+        "competition",
+        "lower",
+        "bohol",
+        "investment",
+        "villa"
+      ]
+    },
+    {
+      "id": 28,
+      "category": "google_ads",
+      "difficulty": "basic",
+      "question": "The Villa D price in PHP is:",
+      "type": "multiple_choice",
+      "options": [
+        "a) PHP 25,000,000",
+        "b) PHP 32,500,000",
+        "c) PHP 35,000,000",
+        "d) PHP 32,000,000"
+      ],
+      "correct_answer": "b",
+      "explanation": "Villa D is PHP 32,500,000 (28M). Villa C is PHP 35,000,000 (30M).",
+      "keywords": [
+        "villa_d",
+        "price",
+        "php"
+      ]
+    },
+    {
+      "id": 29,
+      "category": "google_ads",
+      "difficulty": "intermediate",
+      "question": "For Israeli market content, Villa D is priced at:",
+      "type": "multiple_choice",
+      "options": [
+        "a) 1,350,000 shekel",
+        "b) 1,535,000 shekel",
+        "c) 1,650,000 shekel",
+        "d) $560,000"
+      ],
+      "correct_answer": "b",
+      "explanation": "Villa D: 1,535,000 shekel. Villa C: 1,650,000 shekel. These are fixed prices for the current month, not to be recalculated from FX rates. Israeli content must show ONLY shekels.",
+      "keywords": [
+        "villa_d",
+        "price",
+        "shekel",
+        "israel"
+      ]
+    },
+    {
+      "id": 30,
+      "category": "google_ads",
+      "difficulty": "advanced",
+      "question": "A Google Ads headline reads: 'Dream Home in Paradise - Amazing Panglao Villa'. What compliance issues exist?",
+      "type": "multiple_choice",
+      "options": [
+        "a) No issues",
+        "b) 'Dream home' and 'amazing' are both forbidden words",
+        "c) Only 'amazing' is forbidden",
+        "d) The headline is too long for Google Ads"
+      ],
+      "correct_answer": "b",
+      "explanation": "Forbidden words: amazing, incredible, dream home, once in a lifetime. Both 'dream home' and 'amazing' violate compliance rules.",
+      "keywords": [
+        "forbidden_words",
+        "compliance",
+        "google_ads",
+        "copy"
+      ]
+    },
+    {
+      "id": 31,
+      "category": "audience_targeting",
+      "difficulty": "basic",
+      "question": "What are the two primary markets for the Panglao Prime Villas campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Israel and Japan",
+        "b) Israel and Philippines",
+        "c) Philippines and Korea",
+        "d) Israel and Singapore"
+      ],
+      "correct_answer": "b",
+      "explanation": "The two markets are Israel (Hebrew, WhatsApp-led) and Philippines (English/Tagalog, BDO financing).",
+      "keywords": [
+        "markets",
+        "targeting",
+        "israel",
+        "philippines"
+      ]
+    },
+    {
+      "id": 32,
+      "category": "audience_targeting",
+      "difficulty": "basic",
+      "question": "The Israeli market communication is primarily led by which channel?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Email",
+        "b) SMS",
+        "c) WhatsApp",
+        "d) Viber"
+      ],
+      "correct_answer": "c",
+      "explanation": "The Israeli market is WhatsApp-led. WhatsApp is the primary communication channel for the Israeli audience.",
+      "keywords": [
+        "israel",
+        "whatsapp",
+        "channel",
+        "communication"
+      ]
+    },
+    {
+      "id": 33,
+      "category": "audience_targeting",
+      "difficulty": "intermediate",
+      "question": "For Israeli-targeted ads, which legal ownership solutions must be mentioned directly or indirectly?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Freehold only",
+        "b) Deed of Assignment, Leasehold 25+25, Domestic Corporation",
+        "c) Condominium Certificate of Title only",
+        "d) No legal solutions need to be mentioned"
+      ],
+      "correct_answer": "b",
+      "explanation": "Israeli content must mention 3 legal ownership solutions: Deed of Assignment, Leasehold 25+25, and Domestic Corporation - directly or indirectly.",
+      "keywords": [
+        "legal",
+        "ownership",
+        "israel",
+        "compliance"
+      ]
+    },
+    {
+      "id": 34,
+      "category": "audience_targeting",
+      "difficulty": "intermediate",
+      "question": "What is the reservation amount in shekels for the Israeli market?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 5,000 shekel",
+        "b) 7,500 shekel",
+        "c) 9,999 shekel",
+        "d) 15,000 shekel"
+      ],
+      "correct_answer": "c",
+      "explanation": "The reservation deposit is 9,999 shekel for the Israeli market. This is a fixed figure, not recalculated from FX.",
+      "keywords": [
+        "reservation",
+        "shekel",
+        "israel",
+        "deposit"
+      ]
+    },
+    {
+      "id": 35,
+      "category": "audience_targeting",
+      "difficulty": "advanced",
+      "question": "You are building a Custom Audience for Israeli investors on Meta. Which targeting approach is most appropriate for this niche luxury real estate product?",
+      "type": "scenario",
+      "options": [
+        "a) Broad targeting: all Israelis aged 25+",
+        "b) Interest targeting: real estate investment + Philippines travel + high income indicators, age 30-65, located in Israel",
+        "c) Lookalike from page followers only",
+        "d) Retargeting only - no prospecting"
+      ],
+      "correct_answer": "b) Interest targeting: real estate investment + Philippines travel + high income indicators, age 30-65, located in Israel",
+      "explanation": "For a luxury villa investment (1.45-1.55M shekel), targeting must be precise: real estate/investment interests, Philippines affinity, age 30-65 (investable wealth), in Israel. Broad targeting wastes budget on non-investors. Pure retargeting has no top-of-funnel.",
+      "keywords": [
+        "interest",
+        "targeting",
+        "real",
+        "estate",
+        "investment",
+        "philippines",
+        "travel",
+        "high",
+        "income",
+        "indicators"
+      ]
+    },
+    {
+      "id": 36,
+      "category": "audience_targeting",
+      "difficulty": "intermediate",
+      "question": "The verified monthly Airbnb income figure for the villas is:",
+      "type": "multiple_choice",
+      "options": [
+        "a) PHP 250,000",
+        "b) PHP 350,000",
+        "c) PHP 395,000",
+        "d) PHP 450,000"
+      ],
+      "correct_answer": "c",
+      "explanation": "Verified Airbnb monthly income is PHP 395,000. This is a key selling point and one of the required specific numbers in content.",
+      "keywords": [
+        "income",
+        "airbnb",
+        "monthly",
+        "roi"
+      ]
+    },
+    {
+      "id": 37,
+      "category": "audience_targeting",
+      "difficulty": "advanced",
+      "question": "For the Filipino market, you are considering targeting OFWs (Overseas Filipino Workers) in the Middle East. What language should the ad copy be in?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Arabic",
+        "b) English or Tagalog",
+        "c) Hebrew",
+        "d) Cebuano only"
+      ],
+      "correct_answer": "b",
+      "explanation": "Filipino market content uses English or Tagalog. The language is determined by the market (Filipino), not the location of the audience.",
+      "keywords": [
+        "ofw",
+        "language",
+        "tagalog",
+        "english",
+        "targeting"
+      ]
+    },
+    {
+      "id": 38,
+      "category": "audience_targeting",
+      "difficulty": "expert",
+      "question": "You have 48 leads from the first week - 30 from Israel (Meta) and 18 from Philippines (Meta + Google). Israeli leads have a 12% booking rate but $42 CPL. Filipino leads have a 4% booking rate but $18 CPL. Total budget constraint is $60/day. How should you reallocate?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Calculate cost per booking: Israel = $42/0.12 = $350 per booking; Philippines = $18/0.04 = $450 per booking. Despite higher CPL, Israel produces cheaper bookings. Recommend shifting budget toward Israel Meta (increase from $20 to $28/day), reduce Philippines Meta (from $15 to $12/day), maintain Google at $20/day. However, also consider villa prices are higher in the Israel market (higher revenue per booking), making the Israel channel even more valuable on a ROAS basis.",
+      "explanation": "Cost per booking (not just CPL) is the true optimization metric. Israel: $42 CPL / 12% booking rate = $350/booking. Philippines: $18 CPL / 4% = $450/booking. Israel is more efficient per booking despite higher CPL.",
+      "keywords": [
+        "calculate",
+        "cost",
+        "booking",
+        "israel",
+        "philippines",
+        "despite",
+        "higher",
+        "produces",
+        "cheaper",
+        "bookings"
+      ]
+    },
+    {
+      "id": 39,
+      "category": "audience_targeting",
+      "difficulty": "basic",
+      "question": "What is the annual ROI range for the Panglao Prime Villas?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 10-15%",
+        "b) 12-18%",
+        "c) 17-25%",
+        "d) 20-30%"
+      ],
+      "correct_answer": "c",
+      "explanation": "Annual ROI is 17-25%, which is a verified project number and required in content.",
+      "keywords": [
+        "roi",
+        "annual",
+        "investment",
+        "returns"
+      ]
+    },
+    {
+      "id": 40,
+      "category": "audience_targeting",
+      "difficulty": "advanced",
+      "question": "For retargeting, what is the optimal window for real estate investment leads who visited the landing page but did not submit the form?",
+      "type": "scenario",
+      "options": [
+        "a) 3 days - short window for impulse buys",
+        "b) 7-14 days - standard e-commerce retargeting",
+        "c) 30-60 days - real estate has long consideration cycles",
+        "d) 90-180 days - maximum window for high-value purchases"
+      ],
+      "correct_answer": "c) 30-60 days - real estate has long consideration cycles",
+      "explanation": "Luxury real estate investment decisions (PHP 28-30M / 1.45-1.55M shekel) have long consideration cycles. A 30-60 day retargeting window captures leads who are still in the research and deliberation phase. Too short misses serious buyers; too long wastes budget on abandoned interest.",
+      "keywords": [
+        "days",
+        "real",
+        "estate",
+        "long",
+        "consideration",
+        "cycles"
+      ]
+    },
+    {
+      "id": 41,
+      "category": "audience_targeting",
+      "difficulty": "intermediate",
+      "question": "The Hebrew register in ads should be:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Casual and slangy",
+        "b) Formal but warm, peer-to-peer professional",
+        "c) Extremely formal and corporate",
+        "d) Informal with lots of emojis"
+      ],
+      "correct_answer": "b",
+      "explanation": "Hebrew register must be formal but warm, peer-to-peer professional. No slang.",
+      "keywords": [
+        "hebrew",
+        "register",
+        "tone",
+        "copy"
+      ]
+    },
+    {
+      "id": 42,
+      "category": "audience_targeting",
+      "difficulty": "expert",
+      "question": "You want to create a Lookalike Audience for Philippine market targeting using your existing WhatsApp leads as a seed. Your WhatsApp leads are stored in WATI. Describe the process and key consideration.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Export WhatsApp leads from WATI as CSV. Upload to Meta Ads Manager as Custom Audience (phone numbers, ensuring +63 country code format). Create 1% Lookalike from this Custom Audience for Philippines. Key consideration: ensure minimum 100 contacts in seed for reliable Lookalike quality. Also ensure data privacy compliance - these leads gave consent for WhatsApp communication, verify if Meta Ads usage is covered under the consent. Cross-reference with campaign_state.json simulation flag before any live action.",
+      "explanation": "WATI export to Meta Custom Audience to Lookalike is the workflow. Minimum seed size, data consent, and simulation mode are key considerations.",
+      "keywords": [
+        "lookalike",
+        "wati",
+        "custom_audience",
+        "data_privacy",
+        "seed"
+      ]
+    },
+    {
+      "id": 43,
+      "category": "budget_optimization",
+      "difficulty": "basic",
+      "question": "What is the total daily budget across all channels?",
+      "type": "multiple_choice",
+      "options": [
+        "a) $45/day",
+        "b) $50/day",
+        "c) $60/day",
+        "d) $75/day"
+      ],
+      "correct_answer": "c",
+      "explanation": "$60/day average: Meta IL $20 + Meta PH $15 + Google $25 = $60.",
+      "keywords": [
+        "budget",
+        "daily",
+        "total"
+      ]
+    },
+    {
+      "id": 44,
+      "category": "budget_optimization",
+      "difficulty": "basic",
+      "question": "After how many days must a full analysis be conducted before continuing the campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 7 days",
+        "b) 10 days",
+        "c) 15 days",
+        "d) 30 days"
+      ],
+      "correct_answer": "c",
+      "explanation": "Budget is $900 for 15 days. After 15 days, a full analysis is required before continuing. No additional spend without explicit approval.",
+      "keywords": [
+        "analysis",
+        "review_period",
+        "budget"
+      ]
+    },
+    {
+      "id": 45,
+      "category": "budget_optimization",
+      "difficulty": "intermediate",
+      "question": "If Meta IL spends $20/day for 15 days, what is the total Meta IL spend?",
+      "type": "multiple_choice",
+      "options": [
+        "a) $200",
+        "b) $250",
+        "c) $300",
+        "d) $350"
+      ],
+      "correct_answer": "c",
+      "explanation": "$20/day x 15 days = $300 total Meta IL spend.",
+      "keywords": [
+        "calculation",
+        "meta_il",
+        "total_spend"
+      ]
+    },
+    {
+      "id": 46,
+      "category": "budget_optimization",
+      "difficulty": "intermediate",
+      "question": "If Meta PH spends $15/day for 15 days, what is the total Meta PH spend?",
+      "type": "multiple_choice",
+      "options": [
+        "a) $150",
+        "b) $175",
+        "c) $200",
+        "d) $225"
+      ],
+      "correct_answer": "d",
+      "explanation": "$15/day x 15 days = $225 total Meta PH spend.",
+      "keywords": [
+        "calculation",
+        "meta_ph",
+        "total_spend"
+      ]
+    },
+    {
+      "id": 47,
+      "category": "budget_optimization",
+      "difficulty": "intermediate",
+      "question": "If Google Ads spends $25/day for 15 days, what is the total Google Ads spend?",
+      "type": "multiple_choice",
+      "options": [
+        "a) $300",
+        "b) $350",
+        "c) $375",
+        "d) $400"
+      ],
+      "correct_answer": "c",
+      "explanation": "$25/day x 15 days = $375 total Google Ads spend.",
+      "keywords": [
+        "calculation",
+        "google_ads",
+        "total_spend"
+      ]
+    },
+    {
+      "id": 48,
+      "category": "budget_optimization",
+      "difficulty": "advanced",
+      "question": "On Day 8, total spend is $520. You are on track to spend $975 by Day 15. What action is required?",
+      "type": "scenario",
+      "options": [
+        "a) Continue as planned - slight overage is acceptable",
+        "b) Reduce daily budgets to stay within $900 total cap",
+        "c) Request additional budget approval",
+        "d) Pause all campaigns until Day 15 analysis"
+      ],
+      "correct_answer": "b) Reduce daily budgets to stay within $900 total cap",
+      "explanation": "Remaining budget: $900 - $520 = $380 for 7 remaining days = $54.29/day max. Must reduce from $60/day to ~$54/day to stay within the $900 hard cap. Do NOT exceed $900 total without explicit approval.",
+      "keywords": [
+        "reduce",
+        "daily",
+        "budgets",
+        "stay",
+        "within",
+        "total"
+      ]
+    },
+    {
+      "id": 49,
+      "category": "budget_optimization",
+      "difficulty": "advanced",
+      "question": "A Meta campaign has CPL of $28 and CTR of 3.2%. Scale rules are met. Current budget is $20/day. How much can you scale by without exceeding the daily total of $60?",
+      "type": "scenario",
+      "options": [
+        "a) Unlimited - shift all budget here",
+        "b) Up to $25/day maximum by reducing other channels proportionally",
+        "c) Cannot scale - must maintain original allocation",
+        "d) Scale to $40/day and pause Google"
+      ],
+      "correct_answer": "b) Up to $25/day maximum by reducing other channels proportionally",
+      "explanation": "Total daily cap is $60. Any scaling of one channel must come from reducing others while maintaining the $60/day total. A modest increase (e.g., from $20 to $25) is reasonable, reducing another channel by $5. Never exceed the total daily budget.",
+      "keywords": [
+        "maximum",
+        "reducing",
+        "other",
+        "channels",
+        "proportionally"
+      ]
+    },
+    {
+      "id": 50,
+      "category": "budget_optimization",
+      "difficulty": "expert",
+      "question": "Day 10 report: Meta IL spent $210, CPL $35, 6 leads. Meta PH spent $155, CPL $22, 7 leads. Google spent $260, CPL $52, 5 leads. Total: $625 spent, 18 leads, $34.72 average CPL. You have $275 remaining for 5 days. What is the optimal reallocation?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Daily budget for remaining 5 days: $275/5 = $55/day. Google has worst CPL ($52) - reduce to $15/day. Meta PH has best CPL ($22) - increase to $22/day. Meta IL middle CPL ($35) - set to $18/day. Total: $55/day. This prioritizes the most efficient channel (Meta PH at $22 CPL) while maintaining presence on all channels. Kill any Google ad groups with CTR < 0.8%. Consider pausing Google entirely if Day 11 CPL remains above $50 and reallocating to Meta channels.",
+      "explanation": "With $275 for 5 days ($55/day), reallocate away from worst-performing channel (Google at $52 CPL) toward best-performing (Meta PH at $22 CPL). Maintain all channels but weight by efficiency.",
+      "keywords": [
+        "daily",
+        "budget",
+        "remaining",
+        "days",
+        "google",
+        "worst",
+        "reduce",
+        "meta",
+        "best",
+        "increase"
+      ]
+    },
+    {
+      "id": 51,
+      "category": "budget_optimization",
+      "difficulty": "basic",
+      "question": "What percentage of the daily budget goes to Meta Ads (IL + PH combined)?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 42%",
+        "b) 50%",
+        "c) 58%",
+        "d) 67%"
+      ],
+      "correct_answer": "c",
+      "explanation": "Meta IL $20 + Meta PH $15 = $35. $35/$60 = 58.3% of daily budget goes to Meta.",
+      "keywords": [
+        "budget_split",
+        "percentage",
+        "meta"
+      ]
+    },
+    {
+      "id": 52,
+      "category": "budget_optimization",
+      "difficulty": "advanced",
+      "question": "At RE benchmark CPL of $16.61, how many leads should the full $900 budget theoretically generate?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 38 leads",
+        "b) 45 leads",
+        "c) 54 leads",
+        "d) 62 leads"
+      ],
+      "correct_answer": "c",
+      "explanation": "$900 / $16.61 = 54.18, approximately 54 leads at benchmark CPL.",
+      "keywords": [
+        "lead_projection",
+        "benchmark",
+        "cpl",
+        "calculation"
+      ]
+    },
+    {
+      "id": 53,
+      "category": "budget_optimization",
+      "difficulty": "expert",
+      "question": "You need to calculate ROAS for each market. Israeli leads book at 12% and the average villa value is 1,650,000 shekel. Filipino leads book at 4% with average villa value PHP 29,000,000 (avg of 28M and 30M). Using approximate exchange rates (1 shekel = PHP 16, $1 = PHP 58), which market has better cost-per-booking and is there a ROAS calculation possible at this stage?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "ROAS cannot be calculated until actual sales close, as these are just leads/bookings, not completed purchases. However, cost-per-booking can be estimated. If Israel CPL is $35 and booking rate 12%: cost per booking = $35/0.12 = $292. If Philippines CPL is $18 and booking rate 4%: cost per booking = $18/0.04 = $450. Israel produces cheaper bookings ($292 vs $450). For potential ROAS, each Israeli booking represents potential 1,650,000 shekel sale; each Filipino booking represents potential PHP 29M sale. True ROAS requires tracking through to actual sale completion, which is beyond the 15-day campaign window.",
+      "explanation": "ROAS requires closed sales data. At the lead/booking stage, cost-per-booking is the meaningful metric. Israel is more efficient per booking despite higher CPL.",
+      "keywords": [
+        "roas",
+        "cannot",
+        "calculated",
+        "until",
+        "actual",
+        "sales",
+        "close",
+        "these",
+        "just",
+        "leads"
+      ]
+    },
+    {
+      "id": 54,
+      "category": "budget_optimization",
+      "difficulty": "intermediate",
+      "question": "A campaign agent wants to exceed the $900 budget because results are promising. What is the correct response?",
+      "type": "true_false",
+      "options": [
+        "a) True - if results justify it, exceed the budget",
+        "b) False - do NOT exceed $900 total without explicit approval"
+      ],
+      "correct_answer": "false",
+      "explanation": "Hard rule: Do NOT exceed $900 total without explicit approval. After 15 days, a full analysis must be conducted before any additional spending.",
+      "keywords": [
+        "budget_cap",
+        "approval",
+        "compliance"
+      ]
+    },
+    {
+      "id": 55,
+      "category": "ab_testing",
+      "difficulty": "basic",
+      "question": "When A/B testing ad copy, what is the minimum recommended sample size before drawing conclusions?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 50 impressions per variant",
+        "b) 100 clicks per variant",
+        "c) 500 impressions per variant",
+        "d) 1,000 impressions per variant with statistical significance"
+      ],
+      "correct_answer": "d",
+      "explanation": "For reliable A/B test results, you need at minimum 1,000 impressions per variant to achieve statistical significance, especially for CTR comparisons in paid advertising.",
+      "keywords": [
+        "ab_test",
+        "sample_size",
+        "statistical_significance"
+      ]
+    },
+    {
+      "id": 56,
+      "category": "ab_testing",
+      "difficulty": "intermediate",
+      "question": "You are A/B testing two Israeli market ads. Ad A emphasizes ROI (17-25% annual return) and Ad B emphasizes lifestyle (luxury Panglao living). After 3 days, Ad A has CTR 2.8% and Ad B has CTR 1.2%. What should you do?",
+      "type": "scenario",
+      "options": [
+        "a) Kill Ad B immediately - Ad A is clearly winning",
+        "b) Continue both for at least 5-7 days total for statistical significance",
+        "c) Kill Ad A - lifestyle content performs better long-term",
+        "d) Duplicate Ad A with increased budget"
+      ],
+      "correct_answer": "b) Continue both for at least 5-7 days total for statistical significance",
+      "explanation": "3 days is too early to declare a winner with certainty, especially with a small daily budget ($20/day split between variants). Continue to 5-7 days minimum. However, if Ad B drops below 0.8% CTR, it triggers the kill rule regardless of the A/B test.",
+      "keywords": [
+        "continue",
+        "both",
+        "least",
+        "days",
+        "total",
+        "statistical",
+        "significance"
+      ]
+    },
+    {
+      "id": 57,
+      "category": "ab_testing",
+      "difficulty": "advanced",
+      "question": "You want to test 3 headline variants and 2 image variants for a Meta carousel ad. How many unique combinations exist, and is this feasible with a $20/day budget?",
+      "type": "scenario",
+      "options": [
+        "a) 6 combinations - feasible with dynamic creative optimization (DCO)",
+        "b) 6 combinations - not feasible, too many variants for the budget",
+        "c) 5 combinations - test sequentially",
+        "d) 3 combinations - only test headlines, keep image constant"
+      ],
+      "correct_answer": "a) 6 combinations - feasible with dynamic creative optimization (DCO)",
+      "explanation": "3 headlines x 2 images = 6 combinations. With a $20/day budget, running 6 separate ad sets is not feasible. However, Meta's Dynamic Creative Optimization (DCO) can test all combinations within a single ad set, automatically optimizing delivery toward winning combinations.",
+      "keywords": [
+        "dco",
+        "combinations",
+        "creative_testing",
+        "budget_constraint"
+      ]
+    },
+    {
+      "id": 58,
+      "category": "ab_testing",
+      "difficulty": "intermediate",
+      "question": "When testing landing pages for the Panglao Prime Villas campaign, what is the primary conversion metric?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Page views",
+        "b) Time on page",
+        "c) Lead form submission (WhatsApp or form)",
+        "d) Scroll depth"
+      ],
+      "correct_answer": "c",
+      "explanation": "The primary conversion for this campaign is lead generation via form submission or WhatsApp contact. Page views and engagement metrics are secondary indicators.",
+      "keywords": [
+        "conversion",
+        "landing_page",
+        "lead_form",
+        "whatsapp"
+      ]
+    },
+    {
+      "id": 59,
+      "category": "ab_testing",
+      "difficulty": "expert",
+      "question": "You run an A/B test on CTA buttons: 'WhatsApp Us Now' vs 'Book Villa Tour'. After 2,000 impressions each, variant A has 45 clicks (2.25% CTR) and variant B has 38 clicks (1.90% CTR). Is this difference statistically significant?",
+      "type": "scenario",
+      "options": [
+        "a) Yes - 0.35% CTR difference is significant",
+        "b) No - need to calculate p-value; with these sample sizes the difference is likely not significant at 95% confidence",
+        "c) Yes - any positive difference means the test is conclusive",
+        "d) Cannot determine without more context"
+      ],
+      "correct_answer": "b) No - need to calculate p-value; with these sample sizes the difference is likely not significant at 95% confidence",
+      "explanation": "A chi-squared test or z-test for proportions would show that the difference between 2.25% and 1.90% with 2,000 samples each is unlikely to be statistically significant at 95% confidence (p > 0.05). The z-score is approximately 0.82, well below 1.96. Need more data.",
+      "keywords": [
+        "need",
+        "calculate",
+        "value",
+        "with",
+        "these",
+        "sample",
+        "sizes",
+        "difference",
+        "likely",
+        "significant"
+      ]
+    },
+    {
+      "id": 60,
+      "category": "ab_testing",
+      "difficulty": "advanced",
+      "question": "For the Israeli market, you want to A/B test price anchoring: Ad A shows '1,535,000 shekel' (Villa D price) and Ad B shows '9,999 shekel reservation deposit'. Which metric should be the primary evaluation criterion?",
+      "type": "multiple_choice",
+      "options": [
+        "a) CTR - which ad gets more clicks",
+        "b) CPL - which ad generates leads more cheaply",
+        "c) Lead quality - which ad generates leads that progress to booking meetings",
+        "d) Impressions - which ad gets more reach"
+      ],
+      "correct_answer": "c",
+      "explanation": "Price anchoring affects lead quality more than quantity. The low reservation amount (9,999 shekel) may generate more leads but lower quality. The full price (1,535,000 shekel) pre-qualifies leads. The true test is downstream conversion to booking meetings.",
+      "keywords": [
+        "price_anchoring",
+        "lead_quality",
+        "downstream_conversion",
+        "ab_test"
+      ]
+    },
+    {
+      "id": 61,
+      "category": "ab_testing",
+      "difficulty": "basic",
+      "question": "In an A/B test, you should change only one variable at a time to isolate its effect. What is this principle called?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Multivariate testing",
+        "b) Isolation principle / single variable testing",
+        "c) Split testing",
+        "d) Sequential testing"
+      ],
+      "correct_answer": "b",
+      "explanation": "Changing one variable at a time (headline, image, CTA, audience) ensures you can attribute any performance difference to that specific change.",
+      "keywords": [
+        "isolation",
+        "single_variable",
+        "testing_methodology"
+      ]
+    },
+    {
+      "id": 62,
+      "category": "ab_testing",
+      "difficulty": "intermediate",
+      "question": "You are testing Hebrew ad copy for the Israeli market. Test A uses formal register and Test B uses casual slang. Which should be immediately disqualified?",
+      "type": "true_false",
+      "options": [
+        "a) Test A - formal is too corporate",
+        "b) Test B - casual slang violates the Hebrew register compliance rule"
+      ],
+      "correct_answer": "false",
+      "explanation": "Hebrew register must be 'formal but warm, peer-to-peer professional. No slang.' Test B violates compliance rules and should not be tested at all.",
+      "keywords": [
+        "hebrew",
+        "register",
+        "compliance",
+        "ab_test"
+      ]
+    },
+    {
+      "id": 63,
+      "category": "ab_testing",
+      "difficulty": "advanced",
+      "question": "With a $20/day Israeli Meta budget, how long would it take to achieve statistical significance when A/B testing two ad variants, assuming $10 CPM and needing 5,000 impressions per variant?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 1 day",
+        "b) 3 days",
+        "c) 5 days",
+        "d) 10 days"
+      ],
+      "correct_answer": "c",
+      "explanation": "At $10 CPM, $20/day buys 2,000 impressions/day total. Split between 2 variants = 1,000/variant/day. To reach 5,000/variant: 5,000/1,000 = 5 days. This assumes even budget split between variants.",
+      "keywords": [
+        "time_to_significance",
+        "cpm",
+        "budget",
+        "impressions"
+      ]
+    },
+    {
+      "id": 64,
+      "category": "ab_testing",
+      "difficulty": "expert",
+      "question": "You want to test whether video ads outperform carousel ads for Villa C. However, the video ad format has different auction dynamics (typically lower CPM but different CTR patterns). How should you design this test fairly?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Use separate ad sets with identical targeting, budget, schedule, and optimization objective. Do NOT compare across different ad sets with different targeting. Set equal daily budgets for each ad set. Run for minimum 7 days. Primary metric should be CPL (cost per lead), not CTR or CPM, since format differences make engagement metrics incomparable. Use the conversion pixel for consistent measurement. Account for the learning phase (first 3 days) by excluding it from final analysis.",
+      "explanation": "Cross-format A/B tests require CPL as the primary metric since engagement metrics (CTR, CPM) have different baselines across formats. Identical targeting and budgets ensure fair comparison.",
+      "keywords": [
+        "separate",
+        "sets",
+        "with",
+        "identical",
+        "targeting",
+        "budget",
+        "schedule",
+        "optimization",
+        "objective",
+        "compare"
+      ]
+    },
+    {
+      "id": 65,
+      "category": "pixel_tracking",
+      "difficulty": "basic",
+      "question": "What is the Meta Pixel ID for the Panglao Prime Villas campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "a) AW-18095957436",
+        "b) 1599211187973958",
+        "c) GT-1599211187973958",
+        "d) FB-18095957436"
+      ],
+      "correct_answer": "b",
+      "explanation": "Meta Pixel: 1599211187973958. Google Tag: AW-18095957436.",
+      "keywords": [
+        "pixel",
+        "meta",
+        "id"
+      ]
+    },
+    {
+      "id": 66,
+      "category": "pixel_tracking",
+      "difficulty": "basic",
+      "question": "What is the Google Ads conversion tag for the campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 1599211187973958",
+        "b) AW-18095957436",
+        "c) GA-18095957436",
+        "d) DC-18095957436"
+      ],
+      "correct_answer": "b",
+      "explanation": "Google Ads tag: AW-18095957436. This is different from the Meta Pixel.",
+      "keywords": [
+        "google_tag",
+        "conversion",
+        "tracking"
+      ]
+    },
+    {
+      "id": 67,
+      "category": "pixel_tracking",
+      "difficulty": "intermediate",
+      "question": "Which conversion events should be set up on the Meta Pixel for a real estate lead generation campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "a) PageView only",
+        "b) PageView, ViewContent, Lead, Contact",
+        "c) Purchase only",
+        "d) AddToCart, InitiateCheckout, Purchase"
+      ],
+      "correct_answer": "b",
+      "explanation": "For real estate lead gen: PageView (all visitors), ViewContent (villa page views), Lead (form submission), Contact (WhatsApp click). E-commerce events like AddToCart and Purchase are not applicable to villa sales.",
+      "keywords": [
+        "conversion_events",
+        "pixel",
+        "lead_gen",
+        "setup"
+      ]
+    },
+    {
+      "id": 68,
+      "category": "pixel_tracking",
+      "difficulty": "intermediate",
+      "question": "The Meta Pixel fires a 'Lead' event when a user clicks the WhatsApp CTA but no form is submitted. Is this correct tracking setup?",
+      "type": "true_false",
+      "options": [
+        "a) True - WhatsApp click counts as a lead",
+        "b) False - 'Lead' should fire on form submission; WhatsApp click should be tracked as 'Contact' event"
+      ],
+      "correct_answer": "false",
+      "explanation": "Best practice: 'Lead' event fires on actual form submission (name, email captured). WhatsApp CTA click should fire 'Contact' or a custom event. This prevents inflating lead counts with low-intent clicks.",
+      "keywords": [
+        "event_tracking",
+        "lead_vs_contact",
+        "accuracy"
+      ]
+    },
+    {
+      "id": 69,
+      "category": "pixel_tracking",
+      "difficulty": "advanced",
+      "question": "You notice the Meta Pixel is showing 15 Lead events but Google Analytics shows only 8 form submissions for the same period. What is the most likely cause?",
+      "type": "scenario",
+      "options": [
+        "a) Meta Pixel is broken",
+        "b) Google Analytics is under-counting",
+        "c) The Meta Pixel may be double-firing or counting WhatsApp clicks as leads in addition to form submissions",
+        "d) Time zone differences between platforms"
+      ],
+      "correct_answer": "c) The Meta Pixel may be double-firing or counting WhatsApp clicks as leads in addition to form submissions",
+      "explanation": "Discrepancy between Meta Pixel and GA is common. Most likely: the Pixel is firing 'Lead' on both form submission AND WhatsApp click, or is double-firing on form submit (e.g., on both button click and thank-you page load). Audit the Pixel events and triggers.",
+      "keywords": [
+        "meta",
+        "pixel",
+        "double",
+        "firing",
+        "counting",
+        "whatsapp",
+        "clicks",
+        "leads",
+        "addition",
+        "form"
+      ]
+    },
+    {
+      "id": 70,
+      "category": "pixel_tracking",
+      "difficulty": "advanced",
+      "question": "For the Google Ads conversion tag AW-18095957436, what conversion window is most appropriate for a luxury villa campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 1-day click",
+        "b) 7-day click",
+        "c) 30-day click, 1-day view",
+        "d) 90-day click"
+      ],
+      "correct_answer": "c",
+      "explanation": "Luxury real estate has a longer consideration cycle than impulse purchases. A 30-day click window captures leads who research before converting. 1-day view attribution for view-through conversions. 90-day is excessive for lead gen (not sale completion).",
+      "keywords": [
+        "conversion_window",
+        "attribution",
+        "google_ads",
+        "luxury"
+      ]
+    },
+    {
+      "id": 71,
+      "category": "pixel_tracking",
+      "difficulty": "expert",
+      "question": "You want to set up server-side tracking via the Meta Conversions API (CAPI) in addition to the browser Pixel. Why is this important for the villa campaign, and what deduplication method should be used?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Server-side CAPI is important because: 1) iOS 14+ ATT restrictions block many browser Pixel events, reducing attributed conversions. 2) Ad blockers prevent Pixel from firing. 3) For a high-value campaign ($900 budget, PHP 28-30M villas), accurate attribution is critical. Deduplication: use event_id parameter matching - send the same unique event_id from both browser Pixel and server CAPI. Meta will deduplicate and count only once. Implementation: when form submits, generate UUID, fire Pixel with event_id, send same event_id via CAPI from the server.",
+      "explanation": "CAPI + browser Pixel with event_id deduplication provides the most accurate tracking, especially post-iOS 14. For a campaign with limited budget tracking high-value leads, every conversion must be accurately attributed.",
+      "keywords": [
+        "capi",
+        "server_side",
+        "deduplication",
+        "ios14",
+        "attribution"
+      ]
+    },
+    {
+      "id": 72,
+      "category": "pixel_tracking",
+      "difficulty": "intermediate",
+      "question": "You set up a custom conversion event called 'VillaTourBooked' on the Meta Pixel. When should this event fire?",
+      "type": "multiple_choice",
+      "options": [
+        "a) When someone views the villa page",
+        "b) When someone submits a booking form for an actual villa tour/viewing",
+        "c) When someone clicks any CTA button",
+        "d) When someone spends more than 30 seconds on the page"
+      ],
+      "correct_answer": "b",
+      "explanation": "VillaTourBooked should fire only on confirmed tour booking submission, representing a high-intent conversion event deeper in the funnel than a general lead.",
+      "keywords": [
+        "custom_event",
+        "funnel",
+        "intent",
+        "tracking"
+      ]
+    },
+    {
+      "id": 73,
+      "category": "pixel_tracking",
+      "difficulty": "advanced",
+      "question": "The campaign website uses a multi-step form: Step 1 (name/email), Step 2 (budget/timeline), Step 3 (schedule call). Which Pixel events should fire at each step?",
+      "type": "scenario",
+      "options": [
+        "a) Lead event at Step 3 only",
+        "b) Lead at Step 1, CompleteRegistration at Step 3",
+        "c) InitiateCheckout at Step 1, Lead at Step 2, Schedule at Step 3",
+        "d) Contact at Step 1, Lead at Step 2, VillaTourBooked at Step 3"
+      ],
+      "correct_answer": "d) Contact at Step 1, Lead at Step 2, VillaTourBooked at Step 3",
+      "explanation": "Step 1 captures basic contact info (Contact event). Step 2 qualifies the lead with budget/timeline (Lead event). Step 3 is the highest-value action (custom VillaTourBooked). This funnel tracking allows optimization at each stage.",
+      "keywords": [
+        "contact",
+        "step",
+        "lead",
+        "villatourbooked"
+      ]
+    },
+    {
+      "id": 74,
+      "category": "pixel_tracking",
+      "difficulty": "expert",
+      "question": "Your Google Ads tag AW-18095957436 is configured with enhanced conversions. A lead submits the form with email 'investor@gmail.com'. Explain how enhanced conversions work and why they matter for this campaign.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Enhanced conversions hash the user's PII (email, phone, name) using SHA-256 on the client side before sending to Google. Google matches the hashed data against signed-in Google users to improve attribution. For this villa campaign it matters because: 1) Cross-device tracking - an Israeli investor might click a Google ad on mobile but submit the form on desktop. 2) Small conversion volumes (expected ~54 leads from $900) mean every conversion must be accurately attributed. 3) Post-cookie world requires first-party data signals. Implementation: capture email from form, hash with SHA-256, pass to gtag() along with the conversion event.",
+      "explanation": "Enhanced conversions use hashed first-party data to improve Google's attribution model. Critical for low-volume, high-value campaigns where every conversion matters.",
+      "keywords": [
+        "enhanced",
+        "conversions",
+        "hash",
+        "user",
+        "email",
+        "phone",
+        "name",
+        "using",
+        "client",
+        "side"
+      ]
+    },
+    {
+      "id": 75,
+      "category": "bidding_strategy",
+      "difficulty": "basic",
+      "question": "For a new Meta Ads campaign with no historical conversion data, which bidding strategy is most appropriate?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Target CPA",
+        "b) Lowest cost (auto bidding)",
+        "c) Bid cap at $10",
+        "d) Highest value"
+      ],
+      "correct_answer": "b",
+      "explanation": "With no historical data, 'Lowest cost' allows Meta's algorithm to find conversions efficiently while learning. Target CPA and bid caps require historical performance data to set appropriate thresholds.",
+      "keywords": [
+        "bidding",
+        "new_campaign",
+        "lowest_cost",
+        "learning_phase"
+      ]
+    },
+    {
+      "id": 76,
+      "category": "bidding_strategy",
+      "difficulty": "intermediate",
+      "question": "After 50 conversions on Meta, your average CPL is $22. You want to maintain this efficiency. What bidding change makes sense?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Switch to cost cap at $25 to prevent CPL from rising",
+        "b) Keep lowest cost - it is already working",
+        "c) Switch to bid cap at $15 to force lower CPL",
+        "d) Switch to highest value bidding"
+      ],
+      "correct_answer": "a",
+      "explanation": "After gathering enough conversion data (50+), switching to cost cap at slightly above current CPL ($25 vs $22) gives the algorithm flexibility while preventing CPL spikes. Too tight a cap ($15) would restrict delivery significantly.",
+      "keywords": [
+        "cost_cap",
+        "cpl",
+        "optimization",
+        "bidding_transition"
+      ]
+    },
+    {
+      "id": 77,
+      "category": "bidding_strategy",
+      "difficulty": "advanced",
+      "question": "Your Google Search campaign uses Maximize Conversions. After 2 weeks, CPC has risen from $1.90 to $3.20 while conversion rate dropped from 8% to 5%. The system is overspending. What bidding change is appropriate?",
+      "type": "scenario",
+      "options": [
+        "a) Switch to Manual CPC with $2.00 max bid",
+        "b) Switch to Target CPA based on historical CPL",
+        "c) Continue with Maximize Conversions but lower the daily budget",
+        "d) Switch to Maximize Clicks to get more traffic"
+      ],
+      "correct_answer": "b) Switch to Target CPA based on historical CPL",
+      "explanation": "With 2 weeks of data, Target CPA is viable. Set it based on your acceptable CPL (e.g., $30 or less per campaign rules). This constrains the algorithm's spending while optimizing for conversions. Manual CPC removes Google's optimization advantage. Maximize Clicks optimizes for wrong metric.",
+      "keywords": [
+        "switch",
+        "target",
+        "based",
+        "historical"
+      ]
+    },
+    {
+      "id": 78,
+      "category": "bidding_strategy",
+      "difficulty": "advanced",
+      "question": "Meta's learning phase requires approximately 50 conversion events per week per ad set. With a $20/day Israeli budget and expected CPL of $35, how many ad sets can exit the learning phase simultaneously?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 1 ad set",
+        "b) 2 ad sets",
+        "c) 3 ad sets",
+        "d) Cannot exit learning phase with this budget"
+      ],
+      "correct_answer": "a",
+      "explanation": "$20/day x 7 days = $140/week. At $35 CPL, that produces $140/$35 = 4 conversions/week. 50 conversions needed per ad set for learning phase exit. Even with 1 ad set, 4 conversions/week is far below 50. Realistically, the ad set will remain in learning phase. This is a constraint of the budget. Focus on 1 ad set to maximize data concentration.",
+      "keywords": [
+        "learning_phase",
+        "budget_constraint",
+        "ad_set",
+        "conversions"
+      ]
+    },
+    {
+      "id": 79,
+      "category": "bidding_strategy",
+      "difficulty": "expert",
+      "question": "Given the budget constraints ($60/day total), should the campaign optimize for Lead events or Contact events (WhatsApp clicks) on Meta? Consider the volume needed for algorithmic optimization.",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Optimize for Contact events (WhatsApp clicks) rather than Lead events (form submissions). Reasoning: 1) WhatsApp clicks occur at higher volume than form submissions, giving Meta's algorithm more conversion signals. 2) With a $20/day budget (IL), optimizing for the lower-volume Lead event means the ad set will stay in limited learning permanently. 3) Contact events still capture high-intent users (they clicked to message). 4) However, track Lead events as a secondary metric to measure actual lead quality. 5) Once volume is sufficient (if budget increases), switch to optimizing for Lead to get higher-quality conversions. This is a pragmatic trade-off between algorithmic efficiency and lead quality.",
+      "explanation": "In budget-constrained campaigns, optimize for a higher-volume conversion event to give the algorithm sufficient signals, while tracking the true objective (Lead) as a secondary metric.",
+      "keywords": [
+        "optimize",
+        "contact",
+        "events",
+        "whatsapp",
+        "clicks",
+        "rather",
+        "than",
+        "lead",
+        "form",
+        "submissions"
+      ]
+    },
+    {
+      "id": 80,
+      "category": "bidding_strategy",
+      "difficulty": "intermediate",
+      "question": "What is the Google Ads 'learning period' typically for Smart Bidding strategies?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 24 hours",
+        "b) 3-5 days",
+        "c) 1-2 weeks",
+        "d) 30 days"
+      ],
+      "correct_answer": "c",
+      "explanation": "Google's Smart Bidding (Target CPA, Maximize Conversions, etc.) typically needs 1-2 weeks to calibrate after initial setup or significant changes. Avoid making major changes during this period.",
+      "keywords": [
+        "learning_period",
+        "smart_bidding",
+        "google_ads"
+      ]
+    },
+    {
+      "id": 81,
+      "category": "bidding_strategy",
+      "difficulty": "expert",
+      "question": "You are running both Meta and Google campaigns. Meta uses 'Lowest cost' and Google uses 'Maximize Conversions'. Both platforms are competing for the same Israeli audience. Meta CPL is $30 and Google CPL is $45. Should you shift budget from Google to Meta?",
+      "type": "scenario",
+      "options": [
+        "a) Yes - Meta is 33% cheaper per lead, shift all Google budget to Meta",
+        "b) No - maintain both for audience diversification even at different CPLs",
+        "c) Partially - reduce Google but maintain minimum presence for search intent capture",
+        "d) Switch Google to manual CPC first to reduce CPL before deciding"
+      ],
+      "correct_answer": "c) Partially - reduce Google but maintain minimum presence for search intent capture",
+      "explanation": "Google Search captures high-intent searchers actively looking for Bohol/Panglao investment properties. Meta captures interest-based audiences. Even though Google CPL is higher, search intent leads may convert at a higher rate. Reduce Google budget but maintain presence to capture high-intent searches. Track downstream booking rates by source before full reallocation.",
+      "keywords": [
+        "partially",
+        "reduce",
+        "google",
+        "maintain",
+        "minimum",
+        "presence",
+        "search",
+        "intent",
+        "capture"
+      ]
+    },
+    {
+      "id": 82,
+      "category": "bidding_strategy",
+      "difficulty": "intermediate",
+      "question": "A Meta ad set has spent $60 over 3 days with zero conversions. The ad set is in 'Learning Limited' status. What does this mean?",
+      "type": "multiple_choice",
+      "options": [
+        "a) The ad set is performing well and will improve",
+        "b) The ad set cannot get enough conversion events to optimize delivery, likely due to small audience or low budget",
+        "c) The ad was rejected by Meta review",
+        "d) The bidding is too aggressive"
+      ],
+      "correct_answer": "b",
+      "explanation": "'Learning Limited' means the ad set lacks sufficient conversion volume for Meta's algorithm to optimize effectively. Common causes: small audience, insufficient budget, or optimizing for a too-rare event.",
+      "keywords": [
+        "learning_limited",
+        "meta",
+        "volume",
+        "optimization"
+      ]
+    },
+    {
+      "id": 83,
+      "category": "creative_testing",
+      "difficulty": "basic",
+      "question": "Which image folders contain the property photos for the Panglao Prime Villas campaign?",
+      "type": "multiple_choice",
+      "options": [
+        "a) assets/images/",
+        "b) EXTERIOR - D5/ and INTERIOR D5/",
+        "c) photos/villa/",
+        "d) media/property/"
+      ],
+      "correct_answer": "b",
+      "explanation": "Property images are stored in 'EXTERIOR - D5/' and 'INTERIOR D5/' directories.",
+      "keywords": [
+        "image_folders",
+        "property_photos",
+        "assets"
+      ]
+    },
+    {
+      "id": 84,
+      "category": "creative_testing",
+      "difficulty": "intermediate",
+      "question": "You want to test whether interior or exterior villa photos perform better in ads. Both sets have similar composition quality. What is the recommended test setup?",
+      "type": "scenario",
+      "options": [
+        "a) Run interior photos for week 1, exterior for week 2",
+        "b) Run both simultaneously in separate ad sets with identical copy, targeting, and budget",
+        "c) Mix interior and exterior in the same carousel",
+        "d) Only use exterior - interior photos perform worse in real estate"
+      ],
+      "correct_answer": "b) Run both simultaneously in separate ad sets with identical copy, targeting, and budget",
+      "explanation": "Simultaneous testing with identical variables except the creative ensures fair comparison. Sequential testing introduces time-based confounds. Keep copy, targeting, and budget identical across both ad sets.",
+      "keywords": [
+        "both",
+        "simultaneously",
+        "separate",
+        "sets",
+        "with",
+        "identical",
+        "copy",
+        "targeting",
+        "budget"
+      ]
+    },
+    {
+      "id": 85,
+      "category": "creative_testing",
+      "difficulty": "advanced",
+      "question": "An ad using a drone shot of the villa exterior performs at CTR 2.8%, but the same ad with an interior kitchen photo performs at CTR 1.9%. Both are above the 0.8% kill threshold. Should you eliminate the interior creative entirely?",
+      "type": "true_false",
+      "options": [
+        "a) True - exterior outperforms, focus budget there",
+        "b) False - keep both; interior may resonate with a different segment and diversifies the creative pool"
+      ],
+      "correct_answer": "false",
+      "explanation": "Both are above the kill threshold. Interior photos may appeal to buyers focused on living quality while exterior appeals to investment/location buyers. Creative diversity prevents audience fatigue. Keep both but allocate more budget to the higher-performing exterior creative.",
+      "keywords": [
+        "creative_diversity",
+        "audience_segments",
+        "fatigue_prevention"
+      ]
+    },
+    {
+      "id": 86,
+      "category": "creative_testing",
+      "difficulty": "intermediate",
+      "question": "For Israeli market creatives, which text formatting rule must be followed?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Use em dashes for emphasis",
+        "b) Use only regular hyphens, colons, and commas - no em or en dashes",
+        "c) Use en dashes for ranges",
+        "d) No punctuation rules apply"
+      ],
+      "correct_answer": "b",
+      "explanation": "Forbidden: em dash, en dash, Hebrew maqaf. Use only regular hyphen (-), colon (:), comma (,).",
+      "keywords": [
+        "formatting",
+        "dashes",
+        "compliance",
+        "punctuation"
+      ]
+    },
+    {
+      "id": 87,
+      "category": "creative_testing",
+      "difficulty": "advanced",
+      "question": "You are creating a video ad for the Israeli market. The script mentions 'the most incredible investment opportunity in Southeast Asia'. What must be changed?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Remove 'Southeast Asia' - too vague",
+        "b) Remove 'incredible' - it is a forbidden word",
+        "c) Change to Hebrew",
+        "d) Nothing - video scripts have different rules"
+      ],
+      "correct_answer": "b",
+      "explanation": "Forbidden words: amazing, incredible, dream home, once in a lifetime (or Hebrew equivalents). 'Incredible' must be replaced with a compliant alternative.",
+      "keywords": [
+        "forbidden_words",
+        "video",
+        "compliance",
+        "creative"
+      ]
+    },
+    {
+      "id": 88,
+      "category": "creative_testing",
+      "difficulty": "expert",
+      "question": "After testing 8 different creatives over 10 days, you have clear winners and losers. Your top 2 creatives have CTR > 3% and bottom 3 have CTR < 1%. How should you restructure the campaign for the remaining 5 days?",
+      "type": "open_ended",
+      "options": [],
+      "correct_answer": "Kill the bottom 3 creatives (CTR < 1% violates the < 0.8% threshold for 2 of them, and the third at ~0.9% is borderline). Consolidate budget into the top 2 winning creatives. Create 1-2 new variations of the winning creatives (same angle, different hook or image crop) to test for further optimization while preventing fatigue. Allocate 70% of budget to proven winners and 30% to new variations. Monitor frequency on winning creatives - with concentrated budget, fatigue may set in faster.",
+      "explanation": "Consolidate around winners, kill clear losers, and introduce iterations of winners for continued testing. Balance exploitation (winners) with exploration (new variations).",
+      "keywords": [
+        "creative_consolidation",
+        "winners",
+        "iterations",
+        "fatigue"
+      ]
+    },
+    {
+      "id": 89,
+      "category": "creative_testing",
+      "difficulty": "basic",
+      "question": "Every ad creative for the Panglao Prime Villas campaign must include:",
+      "type": "multiple_choice",
+      "options": [
+        "a) At least one emoji",
+        "b) At least one specific number from the project data",
+        "c) At least one testimonial",
+        "d) At least one comparison to competitors"
+      ],
+      "correct_answer": "b",
+      "explanation": "Every post must include at least one specific number: PHP 395,000, 17-25%, 136.9%, 65%, 60 seconds, 263.78 sqm, 4 bedrooms, PHP 32.5M/30M, etc.",
+      "keywords": [
+        "content_rules",
+        "numbers",
+        "compliance"
+      ]
+    },
+    {
+      "id": 90,
+      "category": "creative_testing",
+      "difficulty": "advanced",
+      "question": "You are testing carousel vs single image ads for the Philippine market. The carousel shows 5 villa photos and has CTR 2.1%. The single image (best exterior shot) has CTR 2.6%. CPL for carousel is $20 and single image is $17. Which should receive more budget?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Carousel - it shows more of the property",
+        "b) Single image - lower CPL and higher CTR",
+        "c) Split evenly - both perform well",
+        "d) Kill carousel - single image is clearly better"
+      ],
+      "correct_answer": "b",
+      "explanation": "Single image has both higher CTR (2.6% vs 2.1%) and lower CPL ($17 vs $20). It should receive more budget. However, keep the carousel running as it is above kill thresholds and provides creative diversity.",
+      "keywords": [
+        "carousel_vs_single",
+        "cpl",
+        "ctr",
+        "budget_allocation"
+      ]
+    },
+    {
+      "id": 91,
+      "category": "kill_scale_rules",
+      "difficulty": "basic",
+      "question": "What CPM threshold triggers a kill decision?",
+      "type": "multiple_choice",
+      "options": [
+        "a) CPM > $10",
+        "b) CPM > $15",
+        "c) CPM > $18",
+        "d) CPM > $25"
+      ],
+      "correct_answer": "c",
+      "explanation": "Kill rule: CPM > $18 OR CTR < 0.8%. Either condition alone triggers a kill.",
+      "keywords": [
+        "kill_rule",
+        "cpm",
+        "threshold"
+      ]
+    },
+    {
+      "id": 92,
+      "category": "kill_scale_rules",
+      "difficulty": "basic",
+      "question": "What CTR threshold triggers a kill decision?",
+      "type": "multiple_choice",
+      "options": [
+        "a) CTR < 0.5%",
+        "b) CTR < 0.8%",
+        "c) CTR < 1.0%",
+        "d) CTR < 1.5%"
+      ],
+      "correct_answer": "b",
+      "explanation": "Kill rule: CPM > $18 OR CTR < 0.8%. Either condition triggers a kill.",
+      "keywords": [
+        "kill_rule",
+        "ctr",
+        "threshold"
+      ]
+    },
+    {
+      "id": 93,
+      "category": "kill_scale_rules",
+      "difficulty": "intermediate",
+      "question": "An ad set has CPM of $16 and CTR of 0.7%. Should it be killed?",
+      "type": "true_false",
+      "options": [
+        "a) True - CTR is below 0.8% kill threshold",
+        "b) False - CPM is below $18 so it is safe"
+      ],
+      "correct_answer": "true",
+      "explanation": "Kill rules use OR logic: CPM > $18 OR CTR < 0.8%. CTR 0.7% < 0.8% triggers a kill even though CPM is under $18.",
+      "keywords": [
+        "kill_rule",
+        "or_logic",
+        "ctr"
+      ]
+    },
+    {
+      "id": 94,
+      "category": "kill_scale_rules",
+      "difficulty": "advanced",
+      "question": "What are BOTH conditions that trigger a scale decision?",
+      "type": "multiple_choice",
+      "options": [
+        "a) CTR > 2% AND CPL < $20",
+        "b) CTR > 3% OR CPL < $30",
+        "c) CTR > 3% AND CPL < $30",
+        "d) CPM < $10 AND CTR > 2%"
+      ],
+      "correct_answer": "b",
+      "explanation": "Scale rule: CTR > 3% OR CPL < $30. Either condition alone triggers scaling consideration.",
+      "keywords": [
+        "scale_rule",
+        "ctr",
+        "cpl",
+        "or_logic"
+      ]
+    },
+    {
+      "id": 95,
+      "category": "kill_scale_rules",
+      "difficulty": "expert",
+      "question": "An ad set has CPM $17.50 (below kill), CTR 0.85% (above kill), CPL $32 (above scale), but it is generating the highest quality leads (3 out of 5 leads booked villa tours). The other ad sets have better metrics but zero bookings. What is the correct decision?",
+      "type": "scenario",
+      "options": [
+        "a) Kill it - metrics are borderline and it does not meet scale criteria",
+        "b) Scale it - tour bookings override metric thresholds",
+        "c) Maintain it - it passes kill thresholds and downstream quality justifies continued spend despite not meeting scale criteria",
+        "d) Pause it until other ad sets generate bookings for comparison"
+      ],
+      "correct_answer": "c) Maintain it - it passes kill thresholds and downstream quality justifies continued spend despite not meeting scale criteria",
+      "explanation": "This ad set passes both kill thresholds (CPM < $18, CTR > 0.8%) so it should not be killed. It does not meet scale criteria (CTR < 3%, CPL > $30). However, lead quality (3/5 booked tours) is exceptional. Maintain at current budget while tracking downstream conversion. Kill/scale rules are guardrails, not the only decision factor when downstream data is available.",
+      "keywords": [
+        "maintain",
+        "passes",
+        "kill",
+        "thresholds",
+        "downstream",
+        "quality",
+        "justifies",
+        "continued",
+        "spend",
+        "despite"
+      ]
+    },
+    {
+      "id": 96,
+      "category": "compliance",
+      "difficulty": "basic",
+      "question": "Can any action be taken on the Blueprint Building Group Facebook page for the villa campaign?",
+      "type": "true_false",
+      "options": [
+        "a) True - Blueprint is part of the Blue Group",
+        "b) False - Blueprint Building Group is completely separate and must NEVER be used for the villa campaign"
+      ],
+      "correct_answer": "false",
+      "explanation": "NEVER touch Blueprint Building Group. It is a completely separate business. Do NOT post, comment, message, advertise, or take ANY action on the Blueprint page. This rule is permanent and absolute.",
+      "keywords": [
+        "blueprint",
+        "compliance",
+        "brand_safety",
+        "separation"
+      ]
+    },
+    {
+      "id": 97,
+      "category": "compliance",
+      "difficulty": "intermediate",
+      "question": "An Israeli market ad shows Villa C priced at '$600,000 USD'. What is wrong?",
+      "type": "multiple_choice",
+      "options": [
+        "a) The price is incorrect",
+        "b) Israeli content must show ONLY shekels - no USD, no PHP",
+        "c) Nothing is wrong",
+        "d) It should show both USD and shekel"
+      ],
+      "correct_answer": "b",
+      "explanation": "Israeli content shows ONLY shekels. Villa C: 1,650,000 shekel. No PHP, no USD, no other currencies in Israeli-facing content.",
+      "keywords": [
+        "currency",
+        "compliance",
+        "israel",
+        "shekel"
+      ]
+    },
+    {
+      "id": 98,
+      "category": "compliance",
+      "difficulty": "advanced",
+      "question": "A Filipino market ad for Villa D says 'PHP 32,500,000 - no bank financing needed, pay in full!' What compliance rule does this violate?",
+      "type": "multiple_choice",
+      "options": [
+        "a) No violation",
+        "b) Filipino content must mention BDO Bank financing",
+        "c) The price is wrong",
+        "d) Must include USD equivalent"
+      ],
+      "correct_answer": "b",
+      "explanation": "Filipino content must mention BDO Bank financing. Saying 'no financing needed' directly contradicts this compliance requirement.",
+      "keywords": [
+        "bdo",
+        "financing",
+        "compliance",
+        "philippines"
+      ]
+    },
+    {
+      "id": 99,
+      "category": "compliance",
+      "difficulty": "expert",
+      "question": "You are asked to improvise ad copy because the queue file was not generated. What is the correct action?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Write your own copy based on project data",
+        "b) Use copy from a previous day's task",
+        "c) NEVER improvise copy - mark task as NEEDS_CLARIFICATION and write alert to _status/alert_no_tasks.md",
+        "d) Use a template and fill in the blanks"
+      ],
+      "correct_answer": "c",
+      "explanation": "Golden rule: NEVER improvise copy. Use only the exact text from task files. If no task file exists, write alert to _status/alert_no_tasks.md so Claude Code can generate tasks.",
+      "keywords": [
+        "no_improvisation",
+        "compliance",
+        "golden_rule",
+        "process"
+      ]
+    },
+    {
+      "id": 100,
+      "category": "compliance",
+      "difficulty": "intermediate",
+      "question": "Before publishing any live ad, what must be checked in _status/campaign_state.json?",
+      "type": "multiple_choice",
+      "options": [
+        "a) The budget remaining",
+        "b) The simulation flag - if true, screenshot only, do NOT publish",
+        "c) The last checkin time",
+        "d) The campaign name"
+      ],
+      "correct_answer": "b",
+      "explanation": "ALWAYS check campaign_state.json before any live action. If simulation: true, take screenshots only - do not publish, send, or spend.",
+      "keywords": [
+        "simulation",
+        "campaign_state",
+        "safety",
+        "compliance"
+      ]
+    }
+  ]
+}

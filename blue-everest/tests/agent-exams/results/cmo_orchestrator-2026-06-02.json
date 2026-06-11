@@ -1,0 +1,811 @@
+{
+  "agent": "cmo_orchestrator",
+  "timestamp": "2026-06-02T20:23:02.993Z",
+  "total": 100,
+  "correct": 100,
+  "score": 100,
+  "passed": true,
+  "results": [
+    {
+      "id": 1,
+      "question": "What does the 'A' in the AIDA funnel stand for, and why is it the first priority in a 30-day villa campaign?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "AIDA begins with Awareness. In a 30-day campaign for a relatively unknown luxury villa project, the first phase must generate visibility among Israeli and Filipino audiences before moving to Interest, Desire, and Action."
+    },
+    {
+      "id": 2,
+      "question": "During a 30-day Panglao Prime Villas campaign, when should the CMO shift the funnel focus from Awareness to Consideration?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "With a 30-day window and $900 budget, the transition from Awareness to Consideration should begin around Day 4-6. This allows 3-5 days to build initial pixel data, establish audience baselines, and create retargeting pools before shifting to engagement-focused content."
+    },
+    {
+      "id": 3,
+      "question": "Villa C is PHP 35M and Villa D is PHP 32.5M. The CMO must position these as investment properties, not vacation homes. Which positioning framework best applies?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "At PHP 28-30M price points, buyers are sophisticated investors, not impulse purchasers. ROI-first positioning with verified Airbnb income (PHP 395,000/month), 17-25% annual return, and comparison anchoring against Tel Aviv apartments or BGC condos is the correct framework. Aspirational lifestyle alone cannot justify this investment level."
+    },
+    {
+      "id": 4,
+      "question": "What is the primary strategic advantage of running a dual-market campaign (Israel + Philippines) simultaneously?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Dual-market approach diversifies risk. If Israeli leads stall, Filipino leads may still convert, and vice versa. Cross-market social proof (e.g., 'international investors are buying') also strengthens positioning in both markets."
+    },
+    {
+      "id": 5,
+      "question": "The CMO notices that Israeli leads engage heavily with ROI content but Filipino leads engage more with lifestyle/status content. How should the overall strategy adapt while maintaining a unified brand?",
+      "agent_answer": "Segment the content strategy by market: Israeli content leads with financial metrics (ILS 1,535,000-1,650,000 price, 17-25% ROI, PHP 395,000 monthly income, comparison to Tel Aviv RE prices) while Filipino content leads with prestige indicators (Panglao location, BDO financing accessibility, property appreciation, lifestyle upgrade from BGC condo). The unified brand thread is 'smart money moves to Bohol' - framed as shrewd investment for Israel, as status-elevating investment for Philippines. Never mix currencies across markets.",
+      "correct_answer": "Segment the content strategy by market: Israeli content leads with financial metrics (ILS 1,535,000-1,650,000 price, 17-25% ROI, PHP 395,000 monthly income, comparison to Tel Aviv RE prices) while Filipino content leads with prestige indicators (Panglao location, BDO financing accessibility, property appreciation, lifestyle upgrade from BGC condo). The unified brand thread is 'smart money moves to Bohol' - framed as shrewd investment for Israel, as status-elevating investment for Philippines. Never mix currencies across markets.",
+      "passed": true,
+      "explanation": "Different markets require different emotional triggers while maintaining brand coherence. The investment thesis is the same; the framing must adapt to cultural context."
+    },
+    {
+      "id": 6,
+      "question": "In the 30-day plan, what is the purpose of Phase 1 (Days 1-3)?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Phase 1 (Setup, Days 1-3) is foundational. Without proper pixel installation, audience segmentation, campaign structure, and baseline metrics, subsequent phases operate blind. Rushing to lead generation without setup wastes budget on unoptimized delivery."
+    },
+    {
+      "id": 7,
+      "question": "Why should the CMO use comparison anchoring (Boracay PHP 55-70K/sqm vs Panglao PHP 27-49K/sqm) as a core strategic pillar rather than standalone pricing?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "PHP 28-30M in absolute terms is a large number. Comparison anchoring against Boracay (a known premium market at PHP 55-70K/sqm vs Panglao at PHP 27-49K/sqm) reframes the purchase as 'getting more for less' and triggers the value perception bias. The villa price becomes a smart deal rather than a large expense."
+    },
+    {
+      "id": 8,
+      "question": "What is the conversion goal at the bottom of the AIDA funnel for this villa campaign?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "For a PHP 28-30M property, the conversion goal is a qualified consultation booking via WhatsApp, leading to reservation payment. Page likes and website visits are mid-funnel metrics, not conversion goals."
+    },
+    {
+      "id": 9,
+      "question": "The CMO has data showing that carousel ads get 3x more clicks than single-image ads, and video gets 42% more engagement. Given the $60/day budget constraint, how should creative format allocation be prioritized across the 30-day campaign?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "Creative format should align with funnel stage. Video captures attention in Awareness (42% more engagement), carousels drive exploration in Consideration (3x clicks for property comparisons and ROI breakdowns), and single-image with bold CTA works for Conversion (clean, focused message). Budget constraint means we cannot A/B test all formats at every stage."
+    },
+    {
+      "id": 10,
+      "question": "Why must the CMO ensure that all Blueprint-facing content describes Blueprint as a Philippine company and never as Israeli or foreign-origin?",
+      "agent_answer": "true",
+      "correct_answer": "true",
+      "passed": true,
+      "explanation": "Per the CLAUDE.md specification, this is a hard rule baked into every prompt template. Blueprint Building Group Inc. is a Philippine company (blueprint-ph.com), and all content must reflect this. This protects local market positioning and is a non-negotiable compliance requirement."
+    },
+    {
+      "id": 11,
+      "question": "The CMO is planning the transition from Phase 4 (Conversion, Days 16-22) to Phase 5 (Close Push, Days 23-27). What strategic shift defines this transition?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Phase 5 (Close Push) targets the warmest leads with urgency signals: limited villas (only Villa C and Villa D), reservation deadline, ILS 9,999 reservation amount, and direct WhatsApp booking CTA. This is pure bottom-funnel retargeting of engaged audiences, not broad reach."
+    },
+    {
+      "id": 12,
+      "question": "What are the two parallel pipelines that BMC-OS runs?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "BMC-OS runs two parallel pipelines: the Marketing pipeline (brand, lead generation, project sales, e-commerce) and the Recruitment pipeline (hiring campaigns for Blueprint). Both are managed through the same system with shared infrastructure."
+    },
+    {
+      "id": 13,
+      "question": "After 15 days, the campaign has spent $450 and generated 25 leads but only 3 are hot (budget > PHP 20M). The CMO must decide: continue the same strategy or pivot. What analysis framework should guide this decision?",
+      "agent_answer": "Evaluate against KPI benchmarks: CPL = $450/25 = $18 (under $30 target - good), hot lead ratio = 3/25 = 12% (acceptable for luxury RE), cost per hot lead = $150 (needs monitoring). Analyze by market: which market produces more hot leads? Which channel? Which creative? The decision framework: 1) If one market produces disproportionately more hot leads, reallocate 30% budget toward it. 2) If a specific creative/channel drives hot leads, scale it. 3) If hot lead ratio is below 8%, the targeting is too broad - narrow audiences. 4) Never exceed $900 total without explicit CEO approval. Conduct full analysis before continuing past Day 15 as per budget rules.",
+      "correct_answer": "Evaluate against KPI benchmarks: CPL = $450/25 = $18 (under $30 target - good), hot lead ratio = 3/25 = 12% (acceptable for luxury RE), cost per hot lead = $150 (needs monitoring). Analyze by market: which market produces more hot leads? Which channel? Which creative? The decision framework: 1) If one market produces disproportionately more hot leads, reallocate 30% budget toward it. 2) If a specific creative/channel drives hot leads, scale it. 3) If hot lead ratio is below 8%, the targeting is too broad - narrow audiences. 4) Never exceed $900 total without explicit CEO approval. Conduct full analysis before continuing past Day 15 as per budget rules.",
+      "passed": true,
+      "explanation": "The Day 15 checkpoint is explicitly defined in the campaign rules. Full analysis is mandatory before continuing spend. The decision should be data-driven, comparing actual KPIs against targets."
+    },
+    {
+      "id": 14,
+      "question": "Why is WhatsApp the primary CTA channel for the Israeli market rather than email or phone calls?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "WhatsApp is the dominant communication platform in Israel for both personal and business use. For a cross-timezone transaction (6-hour difference), asynchronous WhatsApp messaging is far more practical than scheduled phone calls. Open rates of 90%+ far exceed email open rates of 15-25%."
+    },
+    {
+      "id": 15,
+      "question": "The LLM Council produces a campaign brief that positions Panglao Prime Villas as 'the next Boracay.' The CMO must decide whether to accept or override this positioning. What is the correct decision?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Positioning as 'the next X' implies the property is aspirational and unproven. Panglao has its own investment thesis: 1.43M tourists, 2.22M airport passengers, PHP 7.15B third bridge, P25B township development, JW Marriott. These are concrete differentiators that stand alone. The comparison to Boracay should be used for price anchoring (PHP 27-49K vs 55-70K/sqm), not as identity positioning. The CEO override is logged as a training signal."
+    },
+    {
+      "id": 16,
+      "question": "What is the total campaign budget and daily average for the Panglao Prime Villas campaign?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "The total budget is $900 for 15 days, averaging $60/day. After 15 days, a full analysis is required before any additional spend is approved. The budget must never be exceeded without explicit CEO approval."
+    },
+    {
+      "id": 17,
+      "question": "How should the $60/day budget be split across channels by default?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "The default daily split is Meta Israel $20 (Hebrew campaigns), Meta Philippines $15 (English/Tagalog campaigns), and Google $25 (Search + Display). This reflects the higher intent value of Google search traffic and the need for distinct Meta campaigns per market."
+    },
+    {
+      "id": 18,
+      "question": "Israeli Meta campaigns are achieving CTR of 3.5% and CPL of $22, while Filipino Meta campaigns have CTR of 0.9% and CPL of $45. The CMO should:",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "The rule is: when one market outperforms, shift up to 30% from the underperforming market. However, never reduce a performing channel's budget. So IL Meta stays at $20 or increases, PH Meta reduces from $15 to approximately $10.50, and the freed $4.50 moves to IL Meta (now $24.50). PH campaigns also need creative/targeting diagnosis, not just budget cuts."
+    },
+    {
+      "id": 19,
+      "question": "Can the CMO exceed the $900 total budget without CEO approval?",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "The budget rule is absolute: do NOT exceed $900 total without explicit approval. After 15 days, a full analysis must be conducted before continuing. This is a hard constraint, not a guideline."
+    },
+    {
+      "id": 20,
+      "question": "During the Awareness phase (Days 4-8), what percentage of the daily budget should be allocated to reach/impression objectives versus engagement objectives?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "During Awareness phase, the primary goal is reach and impressions to establish brand presence. However, allocating 30% to engagement objectives builds retargeting audiences (video viewers, post engagers) that become the core audience for Consideration and Conversion phases."
+    },
+    {
+      "id": 21,
+      "question": "The campaign is on Day 10. Cumulative spend is $520 ($52/day average vs $60/day target). Google Search is producing leads at $18 CPL but only 2 per day. Meta IL produces leads at $28 CPL but 5 per day. How should the remaining $380 be allocated over the final 5 days?",
+      "agent_answer": "Remaining budget: $380 over 5 days = $76/day (higher than average because of underspend). Google is efficient ($18 CPL) but volume-limited (2/day) - increasing budget likely won't increase volume proportionally due to search volume ceiling. Meta IL is higher CPL ($28) but scalable (5/day). Allocation: Google stays at $25/day (capture all available search volume), Meta IL increases to $36/day (scale the volume source), Meta PH gets $15/day (maintain presence). Total daily: $76. Monitor daily: if Meta IL CPL rises above $30 as budget increases, reallocate excess to Google Display for retargeting.",
+      "correct_answer": "Remaining budget: $380 over 5 days = $76/day (higher than average because of underspend). Google is efficient ($18 CPL) but volume-limited (2/day) - increasing budget likely won't increase volume proportionally due to search volume ceiling. Meta IL is higher CPL ($28) but scalable (5/day). Allocation: Google stays at $25/day (capture all available search volume), Meta IL increases to $36/day (scale the volume source), Meta PH gets $15/day (maintain presence). Total daily: $76. Monitor daily: if Meta IL CPL rises above $30 as budget increases, reallocate excess to Google Display for retargeting.",
+      "passed": true,
+      "explanation": "Budget allocation must consider both efficiency (CPL) and scalability (volume ceiling). Google Search has natural volume limits; Meta scales with budget. The optimal strategy maximizes total qualified leads within budget, not just minimizes CPL."
+    },
+    {
+      "id": 22,
+      "question": "What is the kill threshold for CPM (cost per thousand impressions) that should trigger immediate campaign pause?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "The kill rule states: CPM > $18 triggers campaign pause. At $18 CPM with a $60/day budget, we reach only about 3,333 people per day, which is insufficient for a luxury real estate campaign that needs broad initial reach. Campaign must be paused and targeting/creative diagnosed before restarting."
+    },
+    {
+      "id": 23,
+      "question": "The LLM Council recommends allocating budget to LinkedIn for Israeli professional targeting. Given the $60/day budget, is this recommendation sound?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "LinkedIn CPMs are typically $30-50+, well above the $18 kill threshold. With only $60/day total, adding a third paid platform would dilute spend below effective thresholds on all channels. LinkedIn can be used for organic content only. Paid budget stays on Meta and Google."
+    },
+    {
+      "id": 24,
+      "question": "What happens when the monthly OpenRouter LLM spend exceeds the BUDGET_USD environment variable?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Per the cost discipline rules, when monthly OpenRouter spend exceeds $BUDGET_USD, the Council automatically degrades to single-Chairman mode (one model instead of four) and sends an email alert to the CEO. This preserves functionality while controlling costs."
+    },
+    {
+      "id": 25,
+      "question": "On Day 7, Meta reports a 'learning phase' warning on the Israeli campaign. The CMO should:",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Meta's learning phase requires approximately 50 conversion events to optimize. Making significant changes (budget >20%, new creative, audience changes) resets the learning phase. The correct action is to maintain stability for 48-72 hours and evaluate after the algorithm has sufficient data."
+    },
+    {
+      "id": 26,
+      "question": "The campaign has achieved 45 leads at Day 12, but Villa C has 30 leads and Villa D only 15. Villa D at PHP 32.5M has better ROI (lower price, same rental income). How should budget be reallocated between villa-specific ad sets?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "Lead volume alone is misleading. Villa D at PHP 32.5M with the same PHP 395,000 monthly income has a mathematically superior ROI. Fewer leads might mean the creative isn't effectively communicating this advantage, or the targeting is off. Diagnose before reallocating. If Villa D leads convert to reservations at a higher rate, it's actually the better performer despite lower volume."
+    },
+    {
+      "id": 27,
+      "question": "What is the maximum percentage of budget that should be shifted from a failing market to a performing market in a single reallocation?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "The rule specifies shifting up to 30% when one market outperforms the other. Larger shifts risk killing a market that might recover with creative adjustments, and violate the dual-market diversification strategy."
+    },
+    {
+      "id": 28,
+      "question": "When should the CMO delegate a task to the LLM Council versus using a single fast model?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "The Council is reserved for strategic decisions where multi-model deliberation adds value. Tactical tasks like translation, formatting, and simple rewrites do not benefit from 4-model deliberation and should use claude-haiku-4.5 or gpt-4o-mini for speed and cost efficiency."
+    },
+    {
+      "id": 29,
+      "question": "The CMO needs Hebrew ad copy for an Israeli Facebook campaign. Which agent or process should handle this?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Hebrew ad copy for a luxury investment property is not translation - it's strategic creative work. The Content Strategist creates the brief (audience, tone, key messages), then the Council deliberates the actual copy. The Council includes Grok for cultural awareness and Claude for nuanced copy, both essential for Hebrew market positioning."
+    },
+    {
+      "id": 30,
+      "question": "A borderline applicant (screening score 55/100) has applied for a marketing role through the recruitment pipeline. Who handles the screening deliberation?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Per the specification, the Council deliberates only on borderline cases (score 40-70). A score of 55 is in the borderline range, so it requires full Council deliberation. Clear-yes (>70) and clear-no (<40) go through fast single-model screening to conserve LLM costs."
+    },
+    {
+      "id": 31,
+      "question": "Which Council member is best suited as the default Chairman for synthesizing final outputs?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Claude Opus 4.7 is the default Chairman per the DEFAULT_COUNCIL config. Its strengths in copy, nuance, long-form synthesis, and ethics make it the best synthesizer of diverse opinions. It can integrate GPT's structure, Gemini's data, and Grok's contrarian angles into a coherent final output."
+    },
+    {
+      "id": 32,
+      "question": "The CMO wants to generate a post-mortem analysis of the first week's campaign performance. What is the correct delegation flow?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "Post-mortems are explicitly listed as Council-deliberated tasks. The flow is: analytics agent compiles raw data, then Council members each analyze and recommend independently, then peer review rankings, then Chairman synthesizes into a structured retrospective with concrete next-week bets."
+    },
+    {
+      "id": 33,
+      "question": "The CMO receives a request to translate an approved English ad into Tagalog, then a separate request to create a new Tagalog ad targeting OFW families in Manila. How should delegation differ between these two tasks?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "Translation of approved copy is a tactical task - the strategic decisions are already made. A single fast model (claude-haiku-4.5) handles it efficiently. Creating a new ad for OFW families is a strategic creative task requiring understanding of OFW psychology, remittance patterns, family dynamics, and Tagalog register - this benefits from Council deliberation."
+    },
+    {
+      "id": 34,
+      "question": "During Stage 2 (peer review), one Council member fails to return a parsable ranking. What should the system do?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Per the specification: 'If a model fails to return a parsable ranking, fall back to a secondary parse, then mark its review as unranked and continue, do not retry indefinitely.' The system is designed to be resilient to individual model failures without blocking the entire deliberation."
+    },
+    {
+      "id": 35,
+      "question": "All LLM calls in BMC-OS must go through which two authorized paths?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Per coding standards, all LLM calls go through lib/council/ (for multi-model deliberation) or lib/llm/single.ts (for fast single-model tasks). No raw fetches to OpenRouter elsewhere. This ensures consistent tracing, cost tracking, and prompt management."
+    },
+    {
+      "id": 36,
+      "question": "The CMO needs to publish approved ad copy to Meta Ads Manager. Which component handles this?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "Channel Adapters in lib/channels/ handle all external platform publishing. meta.ts implements the shared interface publish(asset, audience, budget) -> publicationId. This ensures consistent publishing, audit logging, and approval checking across all channels."
+    },
+    {
+      "id": 37,
+      "question": "The CEO overrides the Council's recommended campaign brief and selects a different Council member's opinion. How is this logged and used?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "CEO overrides are logged as training signals in the overrides table. Combined with actual campaign performance data in model_performance, this creates a learning loop: over time, the system learns which model the CEO prefers for which task type, and Council config can adapt. These overrides can later be exported as DPO-style training data."
+    },
+    {
+      "id": 38,
+      "question": "An inbound WhatsApp message arrives from a potential Israeli buyer asking about Villa D pricing. How should the Inbox and Conversation Router handle this, and what delegation chain follows?",
+      "agent_answer": "The Inbox and Conversation Router first classifies the message using AI triage as 'lead' (not applicant, spam, press, partner, or support). Since this is a high-stakes lead (potential buyer with specific villa interest), the auto-reply suggestion goes through Council deliberation (not single-model). The Council generates a response that: 1) acknowledges in Hebrew, 2) references Villa D at ILS 1,535,000, 3) mentions the 3 legal ownership solutions, 4) includes a CTA to book a detailed consultation. The response requires human approval before sending because publishing/sending to a qualified lead requires approval. The lead is also logged in the leads table with intent_company = 'BlueEverest', source = 'WhatsApp', and score assigned based on message intent signals.",
+      "correct_answer": "The Inbox and Conversation Router first classifies the message using AI triage as 'lead' (not applicant, spam, press, partner, or support). Since this is a high-stakes lead (potential buyer with specific villa interest), the auto-reply suggestion goes through Council deliberation (not single-model). The Council generates a response that: 1) acknowledges in Hebrew, 2) references Villa D at ILS 1,535,000, 3) mentions the 3 legal ownership solutions, 4) includes a CTA to book a detailed consultation. The response requires human approval before sending because publishing/sending to a qualified lead requires approval. The lead is also logged in the leads table with intent_company = 'BlueEverest', source = 'WhatsApp', and score assigned based on message intent signals.",
+      "passed": true,
+      "explanation": "The delegation chain is: WhatsApp adapter receives, then Inbox Router classifies, then Council deliberates response (high-stakes), then approval required, then response sent, then lead logged in CRM. This ensures no automated message goes to a high-value lead without quality control."
+    },
+    {
+      "id": 39,
+      "question": "Which Council member's strengths are most relevant for analyzing Korean tourist data (42% of Bohol tourists) to identify a potential new target market?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "Gemini 3 Pro's strengths in research and data visualization make it the best first-opinion generator for market analysis tasks. However, all four models contribute: GPT structures the analysis, Grok provides cultural insights on Korean investment patterns, and Claude synthesizes the final recommendation."
+    },
+    {
+      "id": 40,
+      "question": "How many tourists visited Bohol in the reference period, and what was the year-over-year growth rate?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Bohol tourism reached 1.43 million visitors with a 166% growth rate. This is a core data point used in investment positioning - it demonstrates the demand trajectory that supports the PHP 395,000 monthly Airbnb income projection."
+    },
+    {
+      "id": 41,
+      "question": "What is the price per square meter comparison between Boracay and Panglao, and why is this data strategically important?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Boracay at PHP 55-70K/sqm vs Panglao at PHP 27-49K/sqm creates a powerful comparison anchor. This 40-60% price gap positions Panglao as an undervalued market with similar tourism appeal. The data is used in ad copy and investment presentations to trigger value perception bias."
+    },
+    {
+      "id": 42,
+      "question": "Korean tourists represent 42% of Bohol visitors. How should this data influence the villa marketing strategy?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "The 42% Korean tourist share strengthens the investment case (diversified demand = more stable Airbnb income) and should appear in content as a data point. However, adding a third market (Korean) within $900/15 days would dilute budget below effective thresholds. It's a content data point, not a targeting expansion."
+    },
+    {
+      "id": 43,
+      "question": "What is the verified monthly Airbnb income for the Panglao Prime Villas?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "The verified Airbnb monthly income is PHP 395,000. This is a critical data point that must appear in content - it is verified, not projected, which gives it credibility in investment positioning. Every post must include at least one specific number, and this is one of the approved figures."
+    },
+    {
+      "id": 44,
+      "question": "What major infrastructure development supports the Panglao investment thesis, and what is its value?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "The PHP 7.15B third bridge is a major infrastructure investment that directly increases Panglao's accessibility and property values. Combined with the 2.22M airport passengers and P25B township development, it demonstrates government and private sector commitment to the area's growth."
+    },
+    {
+      "id": 45,
+      "question": "The Filipino target audience is defined as BGC/Makati professionals aged 35-58 with household income PHP 500K+. Why is this specific segment chosen over broader Filipino targeting?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "PHP 28-30M is accessible only to high-income professionals. BGC/Makati concentration identifies the geographic cluster with highest density of qualifying buyers. PHP 500K+ household income is the minimum threshold for BDO mortgage qualification at these property values. Broader targeting burns budget on unqualified impressions."
+    },
+    {
+      "id": 46,
+      "question": "An Israeli investor asks: 'Why Bohol instead of investing in a Tel Aviv apartment?' How should the CMO frame the response using market analysis data?",
+      "agent_answer": "The comparison framework: 1) Entry price: Tel Aviv 2BR apartment costs ILS 2.5-4M vs Panglao Prime Villa at ILS 1,535,000-1,650,000 for a 4BR luxury villa (263.78 sqm). 2) Rental yield: Tel Aviv gross yield is 2-3% vs Panglao verified 17-25% annual ROI. 3) Monthly income: Tel Aviv 2BR rents for approximately ILS 5,000-7,000/month vs Panglao PHP 395,000 (approximately ILS 42,000+) monthly Airbnb income. 4) Growth trajectory: Tel Aviv is a mature market with 2-4% annual appreciation vs Bohol's 136.9% tourism growth, PHP 7.15B bridge investment, and emerging market dynamics suggesting double-digit appreciation potential. 5) Legal structure: 3 ownership solutions (Deed of Assignment, Leasehold 25+25, Domestic Corporation) address the foreigner ownership question. Frame as: 'For the price of a down payment on a Tel Aviv apartment, own a cash-flowing luxury villa in the fastest-growing tourism market in Southeast Asia.'",
+      "correct_answer": "The comparison framework: 1) Entry price: Tel Aviv 2BR apartment costs ILS 2.5-4M vs Panglao Prime Villa at ILS 1,535,000-1,650,000 for a 4BR luxury villa (263.78 sqm). 2) Rental yield: Tel Aviv gross yield is 2-3% vs Panglao verified 17-25% annual ROI. 3) Monthly income: Tel Aviv 2BR rents for approximately ILS 5,000-7,000/month vs Panglao PHP 395,000 (approximately ILS 42,000+) monthly Airbnb income. 4) Growth trajectory: Tel Aviv is a mature market with 2-4% annual appreciation vs Bohol's 136.9% tourism growth, PHP 7.15B bridge investment, and emerging market dynamics suggesting double-digit appreciation potential. 5) Legal structure: 3 ownership solutions (Deed of Assignment, Leasehold 25+25, Domestic Corporation) address the foreigner ownership question. Frame as: 'For the price of a down payment on a Tel Aviv apartment, own a cash-flowing luxury villa in the fastest-growing tourism market in Southeast Asia.'",
+      "passed": true,
+      "explanation": "Market analysis comparison must use real data points, address the objection directly, and reframe the price as advantageous rather than just 'cheaper.' The Tel Aviv comparison is powerful because every Israeli investor knows the Tel Aviv RE market intimately."
+    },
+    {
+      "id": 47,
+      "question": "What is the Bohol Panglao International Airport passenger throughput, and why is it relevant to villa investment?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "The 2.22M airport passengers demonstrate accessibility - a critical factor for both tourism demand (supporting STR income) and property liquidity (investors can easily visit). Growing passenger numbers correlate with growing tourism demand, which supports the PHP 395,000 monthly income projection."
+    },
+    {
+      "id": 48,
+      "question": "What annual ROI range is advertised for Panglao Prime Villas?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "The advertised ROI is 17-25% annually. This is based on the verified PHP 395,000 monthly Airbnb income against the PHP 28-30M property prices. This figure must appear in marketing content as it is a core investment proposition."
+    },
+    {
+      "id": 49,
+      "question": "The P25B township development near Panglao is mentioned as a growth catalyst. How should this be used in marketing content?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "The P25B township is one data point in a cluster of infrastructure investments. Used alone, it might seem speculative. Used alongside the PHP 7.15B bridge, airport growth, JW Marriott, and tourism statistics, it builds a compelling 'institutional money is flowing in' narrative that reduces perceived investment risk."
+    },
+    {
+      "id": 50,
+      "question": "What is the assumed occupancy rate used in the STR (short-term rental) economics calculations?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "The STR economics use 65% occupancy as the baseline. This is a conservative but realistic figure for Panglao given the tourism growth trajectory. It is one of the approved numbers that must appear in content (per Rule 3: every post must include at least one specific number)."
+    },
+    {
+      "id": 51,
+      "question": "Bohol's economy is described as growing at 6.6-8.8%. How should the CMO validate and present this figure to skeptical Israeli investors?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Israeli investors are typically sophisticated and skeptical of emerging market claims. The 6.6-8.8% growth figure should be presented with attribution (PSA, NEDA, NSCB) and contextualized against Philippines national GDP and Southeast Asian averages. Specific catalysts (tourism surge, infrastructure pipeline, JW Marriott entry) make the abstract number concrete and verifiable."
+    },
+    {
+      "id": 52,
+      "question": "How many phases comprise the 30-day campaign plan?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "The 30-day campaign has 6 phases: Phase 1 Setup (Days 1-3), Phase 2 Awareness (Days 4-8), Phase 3 Consideration (Days 9-15), Phase 4 Conversion (Days 16-22), Phase 5 Close Push (Days 23-27), Phase 6 Final Analysis (Days 28-30)."
+    },
+    {
+      "id": 53,
+      "question": "On Day 1 of the campaign, what are the critical setup tasks that must be completed before any paid spend begins?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Day 1 setup is foundational. Pixel/tag installation enables conversion tracking and retargeting. Custom Audience creation (website visitors, lookalikes, interest-based) defines targeting. Conversion event setup ensures optimization toward the right goals. WhatsApp and lead form testing prevents lost leads once traffic starts flowing."
+    },
+    {
+      "id": 54,
+      "question": "The campaign plan calls for content rotation. Why should the CMO avoid running the same ad creative for more than 5-7 days?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Ad fatigue is a measurable phenomenon: CTR declines and CPM increases as frequency rises. With a limited audience (Israeli investors interested in Philippine RE, Filipino high-income professionals), the audience saturates quickly. Creative rotation every 5-7 days maintains freshness and generates comparative performance data."
+    },
+    {
+      "id": 55,
+      "question": "What is the mandatory checkpoint at Day 15 of the campaign?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Day 15 is a hard checkpoint: full analysis before continuing. The $900 budget covers 15 days at $60/day. Continuing beyond Day 15 requires explicit CEO approval based on data from the analysis. This prevents runaway spend on underperforming campaigns."
+    },
+    {
+      "id": 56,
+      "question": "What type of Meta campaign objective should be used during the Awareness phase (Days 4-8)?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "During Awareness (Days 4-8), the goal is maximum impressions within the target audience to build brand recognition and pixel data. Reach/Brand Awareness objectives optimize for this. Conversion objectives require 50+ events to optimize and will perform poorly with a cold audience and no historical data."
+    },
+    {
+      "id": 57,
+      "question": "The CMO plans to use the Facebook group 'investment.ph.il' for organic posting. What content cadence and type is appropriate?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Facebook investment groups have anti-spam norms. Pure advertisement posts get deleted or generate negative engagement. The correct approach is value-first content (market data, legal guides, tourism stats) that establishes Blue Everest as a knowledgeable market participant, with soft villa mentions and WhatsApp CTAs for interested readers. 2-3 posts/week maintains visibility without triggering spam filters."
+    },
+    {
+      "id": 58,
+      "question": "Design the Google Ads campaign structure for the Panglao Prime Villas campaign. Include campaign types, ad groups, and keyword strategy.",
+      "agent_answer": "Google Ads structure with $25/day: Campaign 1 - Search (IL) $12/day: Ad Group 1 'Investment Philippines' (Hebrew keywords for Philippine real estate investment, Bohol investment), Ad Group 2 'Villa Bohol' (Hebrew keywords for villa in Bohol, villa in Panglao, investment property in Asia). Campaign 2 - Search (PH) $8/day: Ad Group 1 'Bohol Investment' (keywords: Bohol property investment, Panglao villa for sale, Bohol real estate), Ad Group 2 'Luxury Villa PH' (keywords: luxury villa Philippines, beach property investment, Airbnb investment Philippines). Campaign 3 - Display Retargeting $5/day: Retarget website visitors and YouTube viewers with villa imagery. All campaigns use exact and phrase match, negative keywords exclude rentals/hotels/cheap. Landing page: primevilla.ph with WhatsApp CTA. Conversion tracking: WhatsApp click, form submission.",
+      "correct_answer": "Google Ads structure with $25/day: Campaign 1 - Search (IL) $12/day: Ad Group 1 'Investment Philippines' (Hebrew keywords for Philippine real estate investment, Bohol investment), Ad Group 2 'Villa Bohol' (Hebrew keywords for villa in Bohol, villa in Panglao, investment property in Asia). Campaign 2 - Search (PH) $8/day: Ad Group 1 'Bohol Investment' (keywords: Bohol property investment, Panglao villa for sale, Bohol real estate), Ad Group 2 'Luxury Villa PH' (keywords: luxury villa Philippines, beach property investment, Airbnb investment Philippines). Campaign 3 - Display Retargeting $5/day: Retarget website visitors and YouTube viewers with villa imagery. All campaigns use exact and phrase match, negative keywords exclude rentals/hotels/cheap. Landing page: primevilla.ph with WhatsApp CTA. Conversion tracking: WhatsApp click, form submission.",
+      "passed": true,
+      "explanation": "Google Ads structure must separate markets (different languages, currencies, landing pages), use high-intent keywords, and allocate retargeting budget. The $25/day split reflects higher value of Israeli search traffic (higher property prices in ILS) while maintaining PH presence."
+    },
+    {
+      "id": 59,
+      "question": "What email automation sequence should be set up for new leads who submit the inquiry form?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "A structured 5-email drip nurture matches the AIDA funnel: welcome (Awareness confirmed), ROI data (Interest), legal guide (Desire reduction of barriers), social proof (Desire reinforcement), reservation CTA (Action). Spacing prevents email fatigue while maintaining touchpoints."
+    },
+    {
+      "id": 60,
+      "question": "What is the reservation amount that appears in Israeli market content?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "The reservation amount for the Israeli market is 9,999 shekel. This specific number is one of the approved figures per Rule 3, and it serves as a low-barrier entry point for a multi-million shekel investment decision."
+    },
+    {
+      "id": 61,
+      "question": "The CMO is planning WhatsApp broadcast campaigns. What are the compliance requirements for WhatsApp Business API message templates?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "WhatsApp Business API requires template pre-approval, opt-in consent, and opt-out mechanisms. Marketing messages outside the 24-hour conversation window require approved template messages. Non-compliance can result in account restriction, which would cripple the Israeli market CTA channel."
+    },
+    {
+      "id": 62,
+      "question": "Why should the landing page (primevilla.ph) have separate language versions rather than one multilingual page?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Per the currency rules, Israeli content shows ONLY shekels and Filipino content shows PHP primarily. Beyond currency, the selling proposition differs: Israeli buyers care about legal ownership and yield comparison to local market; Filipino buyers care about BDO financing and lifestyle. Separate pages optimize conversion for each audience."
+    },
+    {
+      "id": 63,
+      "question": "Map out the complete lead journey from first ad impression to reservation payment for an Israeli investor. Include all touchpoints, decision points, and system interactions.",
+      "agent_answer": "Journey: 1) Ad impression (Meta/Google) leads to click and Hebrew landing page on primevilla.ph. 2) Landing page: hero with villa image, ILS 1,535,000-1,650,000 pricing, 17-25% ROI, virtual tour, WhatsApp CTA. 3) Form submission or WhatsApp message triggers lead capture in Supabase, classified by AI triage. 4) Automated: welcome email (Day 0) + WhatsApp welcome template in Hebrew. 5) Day 2: ROI breakdown email with Tel Aviv comparison. 6) Day 3-5: Retargeting ads (carousel with property details, comparison data). 7) Day 5: Legal ownership guide email (Deed of Assignment, Leasehold 25+25, Domestic Corporation). 8) WhatsApp conversation: sales agent answers specific questions, shares virtual tour. 9) Day 8: Social proof email. 10) Day 10-12: Close push - WhatsApp message with reservation offer (ILS 9,999). 11) Reservation payment processing. 12) Post-reservation: consultation booking, due diligence package. Throughout: all interactions logged in lead_communications, lead score updated, campaign attribution tracked.",
+      "correct_answer": "Journey: 1) Ad impression (Meta/Google) leads to click and Hebrew landing page on primevilla.ph. 2) Landing page: hero with villa image, ILS 1,535,000-1,650,000 pricing, 17-25% ROI, virtual tour, WhatsApp CTA. 3) Form submission or WhatsApp message triggers lead capture in Supabase, classified by AI triage. 4) Automated: welcome email (Day 0) + WhatsApp welcome template in Hebrew. 5) Day 2: ROI breakdown email with Tel Aviv comparison. 6) Day 3-5: Retargeting ads (carousel with property details, comparison data). 7) Day 5: Legal ownership guide email (Deed of Assignment, Leasehold 25+25, Domestic Corporation). 8) WhatsApp conversation: sales agent answers specific questions, shares virtual tour. 9) Day 8: Social proof email. 10) Day 10-12: Close push - WhatsApp message with reservation offer (ILS 9,999). 11) Reservation payment processing. 12) Post-reservation: consultation booking, due diligence package. Throughout: all interactions logged in lead_communications, lead score updated, campaign attribution tracked.",
+      "passed": true,
+      "explanation": "The lead journey must be mapped end-to-end with clear handoffs between automated systems and human touchpoints. Every interaction is tracked for attribution and the lead score updates at each stage."
+    },
+    {
+      "id": 64,
+      "question": "What is the target Cost Per Lead (CPL) for the Panglao Prime Villas campaign?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "The CPL target is less than $30. For a PHP 28-30M property, a $30 CPL is aggressive but achievable with proper targeting. At $900 budget, this targets 30+ leads minimum, though the actual target is 60+ total leads including organic channels."
+    },
+    {
+      "id": 65,
+      "question": "What are the minimum CTR thresholds for Israeli and Filipino market campaigns?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Israel target CTR > 2%, Philippines target CTR > 1.5%. The Israeli threshold is higher because the audience is smaller and more targeted (Hebrew-speaking investors interested in Philippine RE), so ad relevance should be higher. Filipino targeting is broader, so slightly lower CTR is acceptable."
+    },
+    {
+      "id": 66,
+      "question": "The campaign has generated 40 leads in 10 days. How should the CMO evaluate whether this is on track?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Volume alone is misleading. The CMO must evaluate both quantity (40 leads at 4/day pace = 60 in 15 days, meeting the 60+ target) AND quality (hot lead ratio, defined as budget > PHP 20M). The target is 15+ hot leads. If the hot lead ratio is below 25%, the campaign is generating noise, not signal."
+    },
+    {
+      "id": 67,
+      "question": "What CTR threshold triggers a scale-up action on a campaign?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "CTR > 3% triggers the scale action. This indicates high audience-creative relevance and justifies increasing budget allocation. Combined with CPL < $30, it signals a performing campaign that deserves more investment."
+    },
+    {
+      "id": 68,
+      "question": "What CTR threshold triggers a kill action (campaign pause)?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "CTR < 0.8% triggers the kill action. Below this threshold, the ad is not resonating with the audience. Continuing spend on sub-0.8% CTR campaigns wastes budget on irrelevant impressions. The campaign should be paused, diagnosed (creative? audience? placement?), and relaunched with changes."
+    },
+    {
+      "id": 69,
+      "question": "The CMO is tracking ROAS (Return on Ad Spend) for the villa campaign. Given that villas are PHP 28-30M and the campaign budget is $900, what ROAS calculation applies?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "For high-value, low-frequency transactions like luxury real estate, standard ROAS is misleading during the campaign because sales cycles are long. Pipeline value ROAS (qualified leads x average deal value / ad spend) provides an intermediate signal. The final ROAS (one sale = PHP 32.5M / $900 spend = approximately 550x) validates the investment but may take months to materialize."
+    },
+    {
+      "id": 70,
+      "question": "What is the total lead target for the 15-day campaign?",
+      "agent_answer": "true",
+      "correct_answer": "true",
+      "passed": true,
+      "explanation": "The lead targets are 60+ total leads and 15+ hot leads (budget > PHP 20M or equivalent ILS intent). Quality matters as much as quantity for luxury real estate."
+    },
+    {
+      "id": 71,
+      "question": "Design a KPI dashboard for the CMO that shows the health of both markets at a glance. What metrics, thresholds, and visualizations should it include?",
+      "agent_answer": "Dashboard layout: Top row - Campaign Health Scorecard with IL (green/yellow/red), PH (green/yellow/red), Overall (green/yellow/red). Thresholds: Green = CTR > 2%(IL)/1.5%(PH), CPL < $30, CPM < $18. Yellow = CTR 0.8-2%(IL)/0.8-1.5%(PH), CPL $30-45, CPM $14-18. Red = CTR < 0.8%, CPL > $45, CPM > $18. Row 2 - Budget tracker: $900 total bar, daily spend line chart, budget remaining countdown. Row 3 - Lead pipeline: total leads (60+ target), hot leads (15+ target), lead source breakdown (Meta IL, Meta PH, Google, Organic, WhatsApp), lead quality funnel (cold to warm to hot to reservation). Row 4 - Channel performance table: channel, impressions, clicks, CTR, CPL, spend, leads, hot leads. Row 5 - Creative performance: top 3 and bottom 3 ads by CTR and CPL. Row 6 - Council metrics: deliberations run, avg cost per deliberation, override rate. All data refreshes from Meta/Google APIs via channel adapters, stored in Supabase, displayed via PostHog.",
+      "correct_answer": "Dashboard layout: Top row - Campaign Health Scorecard with IL (green/yellow/red), PH (green/yellow/red), Overall (green/yellow/red). Thresholds: Green = CTR > 2%(IL)/1.5%(PH), CPL < $30, CPM < $18. Yellow = CTR 0.8-2%(IL)/0.8-1.5%(PH), CPL $30-45, CPM $14-18. Red = CTR < 0.8%, CPL > $45, CPM > $18. Row 2 - Budget tracker: $900 total bar, daily spend line chart, budget remaining countdown. Row 3 - Lead pipeline: total leads (60+ target), hot leads (15+ target), lead source breakdown (Meta IL, Meta PH, Google, Organic, WhatsApp), lead quality funnel (cold to warm to hot to reservation). Row 4 - Channel performance table: channel, impressions, clicks, CTR, CPL, spend, leads, hot leads. Row 5 - Creative performance: top 3 and bottom 3 ads by CTR and CPL. Row 6 - Council metrics: deliberations run, avg cost per deliberation, override rate. All data refreshes from Meta/Google APIs via channel adapters, stored in Supabase, displayed via PostHog.",
+      "passed": true,
+      "explanation": "A CMO dashboard must provide instant health assessment (scorecard), budget control (remaining budget), pipeline visibility (leads by quality), and actionable insights (creative performance). Color-coded thresholds enable quick decision-making."
+    },
+    {
+      "id": 72,
+      "question": "A campaign's CPL is $25 (under the $30 target) but CTR is only 0.9%. Should the CMO be concerned?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Low CTR with acceptable CPL indicates a small converting audience within a large irrelevant audience. The budget is subsidizing wasted impressions. As the small engaged audience saturates, CPL will rise. The CMO should narrow targeting to improve CTR above 1.5% while maintaining CPL, making the campaign more efficient and sustainable."
+    },
+    {
+      "id": 73,
+      "question": "How should the CMO measure Council performance over time?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Council performance is multi-dimensional: which models consistently rank highest for which task types, how often the CEO overrides Chairman recommendations (indicating misalignment), cost efficiency per deliberation, and ultimately whether Council-generated content outperforms overridden alternatives in actual campaign metrics. This data feeds back into Council config optimization."
+    },
+    {
+      "id": 74,
+      "question": "The campaign generated 8 leads from email, 35 from Meta, and 17 from Google. How should this attribution data influence future budget allocation?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Multi-channel attribution must consider both CPL and volume. Meta at approximately $15 CPL is most efficient, Google at approximately $22 CPL is still under the $30 threshold, and email generates free leads through nurture sequences. The optimal allocation increases Meta budget, maintains Google, and continues email at zero marginal cost."
+    },
+    {
+      "id": 75,
+      "question": "After 15 days, how should the CMO structure the mandatory full analysis report to support the CEO's decision on whether to continue spending?",
+      "agent_answer": "Report structure: 1) Executive Summary: total spend vs budget, total leads vs 60+ target, hot leads vs 15+ target, CPL actual vs target, best/worst performing elements. 2) Market Breakdown: IL vs PH performance on all KPIs. 3) Channel Breakdown: Meta IL, Meta PH, Google Search, Google Display, Email, WhatsApp - each with impressions, clicks, CTR, CPL, leads, hot leads, pipeline value. 4) Creative Performance: top 3 ads by CTR and CPL, bottom 3 to kill, A/B test results. 5) Lead Quality Analysis: hot lead conversion rate, reservation pipeline, estimated close probability. 6) Council Performance: deliberations run, cost, override rate, winning model per task type. 7) Recommendation: continue/pause/pivot with proposed budget and channel allocation for next 15 days. 8) Risk Assessment: contingency plans. Council deliberates this report as it is a post-mortem, an explicitly listed Council task type.",
+      "correct_answer": "Report structure: 1) Executive Summary: total spend vs budget, total leads vs 60+ target, hot leads vs 15+ target, CPL actual vs target, best/worst performing elements. 2) Market Breakdown: IL vs PH performance on all KPIs. 3) Channel Breakdown: Meta IL, Meta PH, Google Search, Google Display, Email, WhatsApp - each with impressions, clicks, CTR, CPL, leads, hot leads, pipeline value. 4) Creative Performance: top 3 ads by CTR and CPL, bottom 3 to kill, A/B test results. 5) Lead Quality Analysis: hot lead conversion rate, reservation pipeline, estimated close probability. 6) Council Performance: deliberations run, cost, override rate, winning model per task type. 7) Recommendation: continue/pause/pivot with proposed budget and channel allocation for next 15 days. 8) Risk Assessment: contingency plans. Council deliberates this report as it is a post-mortem, an explicitly listed Council task type.",
+      "passed": true,
+      "explanation": "The Day 15 analysis must be comprehensive enough for the CEO to make an informed spend/no-spend decision. It should be data-driven with clear recommendations and risk assessment."
+    },
+    {
+      "id": 76,
+      "question": "Campaign CPM has exceeded $18. What is the immediate action protocol?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "CPM > $18 is a kill trigger. Immediate pause prevents further budget waste. Diagnosis is essential before restarting: audience too narrow (expand lookalike), creative seen too many times (rotate), competitive auction spike (wait or change placement), platform issue (check ad account health). Never throw more budget at high CPM."
+    },
+    {
+      "id": 77,
+      "question": "After spending $100 on Meta ads, the campaign has generated zero leads. What is the escalation protocol?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Zero leads after $100 is a crisis signal. At $60/day average, $100 represents approximately 1.5 days of spend. The diagnostic checklist starts with technical (pixel, landing page, form) then moves to strategic (audience, creative, CTA). The most common culprits are broken tracking (leads exist but aren't recorded) or non-functional forms."
+    },
+    {
+      "id": 78,
+      "question": "The Meta ad account receives a policy violation warning for 'misleading financial claims' on an ad showing '17-25% annual ROI.' How should the CMO respond?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "Financial claims in ads are heavily scrutinized. The response must protect the ad account (the campaign's lifeline), comply with Meta policies, and maintain the investment messaging. Adding disclaimers and using 'verified historical data' framing is standard. Running alternative ads while appealing ensures continuity. Creating new accounts violates Meta ToS and risks permanent ban."
+    },
+    {
+      "id": 79,
+      "question": "WhatsApp Business API is rate-limited and the campaign's broadcast messages are being throttled. What should the CMO do?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "WhatsApp rate limits are tiered based on account quality. The response should: prioritize (send to hot leads first), optimize (improve message quality to maintain quality rating), and escalate (request tier upgrade from Meta). Using personal numbers violates WhatsApp ToS. Pausing loses the highest-engagement channel."
+    },
+    {
+      "id": 80,
+      "question": "A lead submits a form at 3 AM Philippine time (10 PM Israel time). When should the automated response fire?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Lead response time directly correlates with conversion probability. Automated responses (WhatsApp template + email) should fire immediately to acknowledge the inquiry. The automated message sets expectations ('our team will contact you within 24 hours') while the instant acknowledgment prevents the lead from moving on to a competitor."
+    },
+    {
+      "id": 81,
+      "question": "The campaign website (primevilla.ph) goes down during a peak advertising period. What is the immediate crisis response?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Running ads to a dead website wastes budget and creates negative brand impressions. Immediate pause preserves budget. WhatsApp direct links provide an alternative conversion path. The entire incident must be logged in the audit trail for the Day 15 analysis."
+    },
+    {
+      "id": 82,
+      "question": "On Day 8, a competitor launches a similar luxury villa campaign in Panglao at PHP 22M (20% cheaper). How should the CMO respond strategically?",
+      "agent_answer": "Response framework: 1) Do NOT engage in price war or mention competitor. 2) Double down on differentiation: verified Airbnb income (PHP 395,000/month), Blue Everest's developer track record, specific villa features (263.78 sqm, 4 bedrooms), legal ownership support. 3) Shift messaging emphasis from price to value: 'at PHP 32.5M with PHP 395,000/month verified income, you recover your investment in X years - show us another property with verified returns like this.' 4) If competitor lacks verified income data, emphasize 'verified vs projected' distinction. 5) Consider Council deliberation on rapid competitive response brief. 6) Monitor whether competitor's entry increases market awareness (rising tide) or splits audience (zero-sum). 7) Do NOT reduce prices or change villa pricing in response.",
+      "correct_answer": "Response framework: 1) Do NOT engage in price war or mention competitor. 2) Double down on differentiation: verified Airbnb income (PHP 395,000/month), Blue Everest's developer track record, specific villa features (263.78 sqm, 4 bedrooms), legal ownership support. 3) Shift messaging emphasis from price to value: 'at PHP 32.5M with PHP 395,000/month verified income, you recover your investment in X years - show us another property with verified returns like this.' 4) If competitor lacks verified income data, emphasize 'verified vs projected' distinction. 5) Consider Council deliberation on rapid competitive response brief. 6) Monitor whether competitor's entry increases market awareness (rising tide) or splits audience (zero-sum). 7) Do NOT reduce prices or change villa pricing in response.",
+      "passed": true,
+      "explanation": "In luxury real estate, competing on price is a losing strategy. The response should emphasize unique value propositions that the competitor cannot match, particularly the verified income data."
+    },
+    {
+      "id": 83,
+      "question": "The CEO notices a published ad that describes Blueprint Building Group incorrectly as an Israeli company. What is the crisis severity and response?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Describing Blueprint as Israeli or foreign-origin is explicitly listed as a hard rule violation (Anti-pattern #6). This is a critical compliance incident requiring immediate unpublishing. The investigation must determine whether this was a Council output failure, a prompt template gap, or a human approval miss, and fix the systemic root cause."
+    },
+    {
+      "id": 84,
+      "question": "What is the primary comparison anchor used to position Panglao Prime Villas as a value investment?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Boracay is the primary comparison anchor because it's the most recognized Philippine beach destination among both Filipino and international investors. The PHP 55-70K/sqm vs PHP 27-49K/sqm gap immediately positions Panglao as undervalued relative to an established market."
+    },
+    {
+      "id": 85,
+      "question": "How does Panglao Prime Villas compare to a BGC (Bonifacio Global City) condo as an investment for Filipino buyers?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "BGC condos are the default investment for Manila professionals. Panglao competes on rental yield (17-25% vs 3-5%), which is the primary advantage. BGC's strength is capital appreciation and liquidity. The positioning frames Panglao as 'the income play' vs BGC's 'the appreciation play' - appealing to investors who prioritize cash flow."
+    },
+    {
+      "id": 86,
+      "question": "For Israeli investors, how does Panglao Prime Villas compare to a Tel Aviv apartment purchase?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "The Tel Aviv comparison is the most powerful Israeli market anchor. Every Israeli investor knows Tel Aviv RE prices (ILS 2.5-4M for a 2BR) and yields (2-3%). Positioning the full villa purchase price as equivalent to a Tel Aviv down payment, with 5-10x the yield, creates a compelling reframe."
+    },
+    {
+      "id": 87,
+      "question": "The JW Marriott's entry into Bohol is cited as a growth catalyst. Why is this competitively significant?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Institutional hotel brands like JW Marriott conduct extensive market feasibility studies before entering. Their presence validates the tourism demand thesis more powerfully than any ad copy could. It also signals infrastructure improvement that benefits all property owners in the area."
+    },
+    {
+      "id": 88,
+      "question": "A potential Israeli buyer says: 'I can invest ILS 1.5M in a dividend-yielding TASE stock portfolio and earn 4-6% annually with zero hassle. Why should I buy a villa in Bohol?' How should the CMO frame the competitive response?",
+      "agent_answer": "Response framework: 1) Acknowledge the valid alternative - stock portfolio is liquid and passive. 2) Compare yields: TASE 4-6% vs Panglao 17-25%, that's 3-5x the return. 3) Asset diversification: stocks are correlated to market cycles, real estate provides non-correlated returns and inflation hedge. 4) Physical asset: unlike stocks, the villa is tangible, can be personally used, gifted to family. 5) Tax advantages depending on Israeli tax structure. 6) Tourism megatrend: 1.43M visitors and 166% growth is structural, not a market bet. 7) Low entry barrier: ILS 9,999 reservation vs full capital commitment for stocks. 8) Concede: real estate requires management (addressed by property management service). Frame: 'You're comparing a market-rate return to a market-beating return backed by a physical asset in the fastest-growing tourism destination in Southeast Asia.'",
+      "correct_answer": "Response framework: 1) Acknowledge the valid alternative - stock portfolio is liquid and passive. 2) Compare yields: TASE 4-6% vs Panglao 17-25%, that's 3-5x the return. 3) Asset diversification: stocks are correlated to market cycles, real estate provides non-correlated returns and inflation hedge. 4) Physical asset: unlike stocks, the villa is tangible, can be personally used, gifted to family. 5) Tax advantages depending on Israeli tax structure. 6) Tourism megatrend: 1.43M visitors and 166% growth is structural, not a market bet. 7) Low entry barrier: ILS 9,999 reservation vs full capital commitment for stocks. 8) Concede: real estate requires management (addressed by property management service). Frame: 'You're comparing a market-rate return to a market-beating return backed by a physical asset in the fastest-growing tourism destination in Southeast Asia.'",
+      "passed": true,
+      "explanation": "Competitive responses against financial assets must acknowledge the alternative's strengths while demonstrating yield advantage, diversification benefit, and tangible asset value. Never dismiss a valid alternative - reframe the comparison."
+    },
+    {
+      "id": 89,
+      "question": "What is the villa's total lot area, and why is this relevant in competitive positioning?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "263.78 sqm with 4 bedrooms is a competitive differentiator. A Boracay property at PHP 55-70K/sqm of this size would cost PHP 14.5-18.5M for the land alone. A BGC condo of comparable area would cost PHP 40-60M+. The size reinforces the value-per-sqm advantage of Panglao."
+    },
+    {
+      "id": 90,
+      "question": "BMC-OS claims to be categorically different from HubSpot, Greenhouse, and generic AI marketing tools. What is the primary competitive moat?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "The Council engine is the moat. Single-model outputs are a coin flip on quality; Council outputs are reproducibly above single-model baselines through triangulation. The audit-grade deliberation logs become proprietary training data. No off-the-shelf tool offers multi-LLM deliberation with peer review for marketing strategy."
+    },
+    {
+      "id": 91,
+      "question": "Israeli content shows prices in ILS only, while Filipino content shows PHP. An Israeli lead asks 'What is the price in dollars?' via WhatsApp. How should the CMO handle this?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Per Rule 1, Israeli content shows ONLY shekels. A private WhatsApp conversation can reference other currencies conversationally, but the published response template and any shareable content must maintain ILS only. The booking consultation is the appropriate venue for multi-currency discussions."
+    },
+    {
+      "id": 92,
+      "question": "What are the optimal posting times for the Israeli and Filipino markets, and why do they differ?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Social media engagement peaks during evening hours when users have leisure time. Israel (UTC+2/3) and Philippines (UTC+8) have a 5-6 hour time difference, so optimal posting times differ. Israeli evening (20:00-23:00) is Philippines early morning and vice versa."
+    },
+    {
+      "id": 93,
+      "question": "Every post must include BOTH WhatsApp numbers. What are they?",
+      "agent_answer": "true",
+      "correct_answer": "true",
+      "passed": true,
+      "explanation": "Per Rule 4, every post must include BOTH WhatsApp numbers: Marketing (+639542555553) and Office (+639958565865). This provides redundancy and routes inquiries to both the marketing team and the office."
+    },
+    {
+      "id": 94,
+      "question": "The CMO discovers that OFW (Overseas Filipino Worker) audiences in the Middle East are showing high engagement with villa ads. Should a third market segment be created?",
+      "agent_answer": "Analysis: OFWs in the Middle East earn tax-free salaries, actively invest in Philippine real estate, and have strong emotional connection to building back home. However, within $900/15-day budget, a third segment risks diluting all three below effective thresholds. Recommendation: 1) Do NOT create a separate paid campaign in the initial 15 days. 2) DO create OFW-specific organic content (Tagalog, BDO financing emphasis, pride narrative). 3) Note OFW engagement data for Day 15 analysis. 4) If budget extends, propose dedicated OFW ad set with Middle East geo-targeting. 5) Middle East timezone aligns with Israeli campaigns for ad scheduling.",
+      "correct_answer": "Analysis: OFWs in the Middle East earn tax-free salaries, actively invest in Philippine real estate, and have strong emotional connection to building back home. However, within $900/15-day budget, a third segment risks diluting all three below effective thresholds. Recommendation: 1) Do NOT create a separate paid campaign in the initial 15 days. 2) DO create OFW-specific organic content (Tagalog, BDO financing emphasis, pride narrative). 3) Note OFW engagement data for Day 15 analysis. 4) If budget extends, propose dedicated OFW ad set with Middle East geo-targeting. 5) Middle East timezone aligns with Israeli campaigns for ad scheduling.",
+      "passed": true,
+      "explanation": "Recognizing an emerging segment is good; overreacting by splitting budget is bad. The correct response is organic capture now, paid targeting later if budget allows."
+    },
+    {
+      "id": 95,
+      "question": "Israeli content must mention 3 legal ownership solutions. What are they?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Per Rule 6, Israeli content must mention 3 legal ownership solutions: Deed of Assignment, Leasehold 25+25, and Domestic Corporation. These address the foreigner ownership restriction in Philippine real estate, which is a primary objection for Israeli investors."
+    },
+    {
+      "id": 96,
+      "question": "Which words are forbidden in all Panglao Prime Villas marketing content?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Per Rule 5, the forbidden words are: amazing, incredible, dream home, once in a lifetime (and their Hebrew equivalents). These words are hyperbolic and undermine the data-driven, professional positioning of the investment opportunity."
+    },
+    {
+      "id": 97,
+      "question": "The execution agent wants to post content on the Blueprint Building Group Facebook page about the villas. Is this permitted?",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Blueprint Building Group is completely separate. No posting, commenting, messaging, advertising, or ANY action on the Blueprint page. No using Blueprint followers as leads. The villa campaign operates ONLY through Blue Everest Asset Group Holding Inc. This rule is permanent and absolute."
+    },
+    {
+      "id": 98,
+      "question": "An ad is prepared that uses an em dash in the Hebrew copy. Should it be published?",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Per Rule 2, em dashes, en dashes, and Hebrew maqaf are all forbidden. The ad must be corrected to use only regular hyphens (-), colons (:), or commas (,) before publishing."
+    },
+    {
+      "id": 99,
+      "question": "What approval is required before any asset is published to a paid channel?",
+      "agent_answer": "C",
+      "correct_answer": "C",
+      "passed": true,
+      "explanation": "Per Anti-pattern #4, approval must be a row in the approvals table, not a UI checkbox state. This is an audit requirement: every publication to a paid channel must have a traceable approval record linking the approver, the asset, the budget, and the timestamp."
+    },
+    {
+      "id": 100,
+      "question": "The CMO is preparing content for the Filipino market. Rule 7 requires mentioning BDO Bank financing. The Council generates copy that mentions 'bank financing available' without naming BDO specifically. Should this be accepted or overridden?",
+      "agent_answer": "B",
+      "correct_answer": "B",
+      "passed": true,
+      "explanation": "Rule 7 is specific: Filipino content must mention BDO Bank financing. 'Bank financing available' is generic and does not satisfy the rule. The CMO must override the Council output. This override is logged as a training signal so the Council learns to include BDO in future Filipino content generations."
+    }
+  ],
+  "failures": []
+}

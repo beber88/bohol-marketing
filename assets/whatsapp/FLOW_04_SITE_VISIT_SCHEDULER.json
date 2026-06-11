@@ -1,0 +1,76 @@
+{
+  "name": "FLOW_04_SITE_VISIT_SCHEDULER",
+  "description": "Guides lead through site visit scheduling and logistics",
+  "type": "interactive",
+  "version": "2.0",
+  "trigger": "button_selection_or_keyword",
+  "keywords": ["visit", "tour", "see property", "schedule"],
+  "created_at": "2026-04-14T09:45:00Z",
+  "nodes": [
+    {
+      "id": "visit_logistics",
+      "type": "text",
+      "content": "✈️ Site Visit Information:\n\nYou have two options:\n\n1. VIRTUAL TOUR (30 min) → Today/Tomorrow\n   • 360° property views\n   • Q&A with manager\n   • Floor plans shared\n\n2. IN-PERSON VISIT → 3-5 days to arrange\n   • Flight from Manila: 1 hour\n   • We arrange airport pickup\n   • Full property tour + lunch\n   • Financing review possible\n\nWhich interests you?",
+      "buttons": [
+        {"label": "Virtual Tour Now", "action": "go_to", "target": "virtual_tour_booking"},
+        {"label": "In-Person Visit", "action": "go_to", "target": "inperson_scheduling"},
+        {"label": "Need More Info", "action": "go_to", "target": "visit_info"}
+      ]
+    },
+    {
+      "id": "virtual_tour_booking",
+      "type": "text",
+      "content": "📹 Virtual Tour Scheduling:\n\nWhen works best for you?\n\nCurrent availability: Today 3pm-5pm PHT, Tomorrow 10am-12pm PHT",
+      "buttons": [
+        {"label": "Today 3pm PHT", "action": "capture", "field": "virtual_time"},
+        {"label": "Tomorrow 10am PHT", "action": "capture", "field": "virtual_time"},
+        {"label": "Other time", "action": "go_to", "target": "custom_time"}
+      ]
+    },
+    {
+      "id": "inperson_scheduling",
+      "type": "text",
+      "content": "🏠 In-Person Visit Planning:\n\nWhat's your preferred date range?\n\n• Next 3 days: Rush (additional fee: PHP 5,000)\n• Next week: Standard\n• Next month: Flexible\n\nNote: Includes airport pickup, meals, tour, 2 nights accommodation.",
+      "buttons": [
+        {"label": "Next 3 Days", "action": "go_to", "target": "rush_visit"},
+        {"label": "Next Week", "action": "go_to", "target": "standard_visit"},
+        {"label": "Next Month", "action": "go_to", "target": "flexible_visit"}
+      ]
+    },
+    {
+      "id": "rush_visit",
+      "type": "text",
+      "content": "⚡ Rush Visit (Next 3 Days):\n\nConfirm details:\n• Exact departure date?\n• Departure city? (Manila/Cebu/Other)\n• Any dietary restrictions?\n\nWe'll confirm slots within the hour.",
+      "buttons": [],
+      "capture_fields": ["visit_date", "origin_city", "dietary"]
+    },
+    {
+      "id": "standard_visit",
+      "type": "text",
+      "content": "📅 Standard Visit (Next Week):\n\nPlease provide:\n• Preferred dates (give 2-3 options)\n• Departure city?\n• Traveling with anyone?\n\nWe'll send itinerary within 24 hours.",
+      "buttons": [],
+      "capture_fields": ["preferred_dates", "origin_city", "travel_with"]
+    },
+    {
+      "id": "flexible_visit",
+      "type": "text",
+      "content": "🗓️ Flexible Visit Planning:\n\nWe'll keep your details for Q2 scheduling.\n\nIn the meantime:\n• Virtual tour recommended?\n• Monthly updates on project?\n• Investment prospectus via email?\n\nWhat would help?",
+      "buttons": [
+        {"label": "Yes Virtual Tour", "action": "go_to", "target": "virtual_tour_booking"},
+        {"label": "Updates Only", "action": "capture", "field": "followup_preference"},
+        {"label": "Both", "action": "capture", "field": "followup_preference"}
+      ]
+    },
+    {
+      "id": "visit_info",
+      "type": "text",
+      "content": "ℹ️ What to Expect:\n\nVIRTUAL:\n• 30 minutes with manager\n• See all rooms + amenities\n• Ask anything\n• Recording provided\n\nIN-PERSON:\n• 2-day immersion\n• Full transparency\n• Meet team + owners\n• Final questions answered\n\nBoth are free with no obligation.",
+      "buttons": [
+        {"label": "Schedule Virtual", "action": "go_to", "target": "virtual_tour_booking"},
+        {"label": "Plan In-Person", "action": "go_to", "target": "inperson_scheduling"}
+      ]
+    }
+  ],
+  "export_format": "WATI",
+  "export_date": "2026-04-14T09:45:00Z"
+}

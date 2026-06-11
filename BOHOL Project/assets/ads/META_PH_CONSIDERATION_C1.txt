@@ -1,0 +1,76 @@
+[SIMULATION - NOT FOR LIVE DEPLOYMENT]
+
+=== META_PH_CONSIDERATION_C1.txt ===
+Platform: Meta (Facebook + Instagram)
+Market: Philippines
+Funnel Stage: Consideration
+Campaign: PH-2
+Objective: Landing Page Views / Conversions
+Budget: $12/day
+Audience: Metro Manila, Cebu, Davao, age 35-58, investment-intent
+Placements: Facebook Feed, Instagram Feed
+Schedule: Tuesday-Thursday, 7pm-11pm PHT
+
+---
+
+PRIMARY TEXT (V1 - Tagalog):
+
+Sarili mong Airbnb, sarili mong kumita.
+
+PHP 32,500,000 lang magsimula.
+PHP 395,000 bawat buwan.
+
+Dalawang malinaw na tagumpay na itinayo na ng Blue Everest.
+Walang risk. May guarantee.
+
+Investors mula BGC hanggang Makati - kumikita na ngayon.
+
+Reserve ng PHP 200,000. BDO financing.
+
+---
+
+PRIMARY TEXT (V2 - English):
+
+What if your vacation property paid your expenses?
+
+Panglao Prime Villas: PHP 32.5M investment, PHP 395K monthly income.
+Proven Airbnb track record.
+17-25% annual return.
+
+Only 2 units remaining.
+Reserve with PHP 200,000 today.
+
+---
+
+HEADLINE V1: "Kumita Habang Natutulog"
+HEADLINE V2: "PHP 395K/Buwan. Panglao Investment."
+HEADLINE V3: "Sarili Mong Airbnb Negosyo"
+
+DESCRIPTION V1: "Verified earnings. BDO financing available. Tour the property online."
+DESCRIPTION V2: "₱28,000,000 investment. 17-25% annual ROI."
+
+CTA: Schedule Site Visit / Get Investment Details
+
+---
+
+AUDIENCE TARGETING:
+- Geography: BGC, Makati, Alabang, Ortigas, Cebu City, Davao
+- Age: 35-58
+- Income: Middle to high net worth (PHP 5M+ liquid assets)
+- Interests: Real estate investment, Airbnb, Business ownership, Passive income
+- Behaviors: Entrepreneurial, Property investors, Frequent travelers
+
+BUDGET RECOMMENDATION: $12/day within PH-2 (Consideration)
+
+OPTIMIZATION NOTES:
+- Shift from "vacation" angle to "investment + income" angle
+- Include "BDO financing" for qualified buyer signals
+- Mention "Blue Everest reputation" for trust
+- Facebook performs better than Instagram for this value-proposition
+- Peak engagement: 7pm-11pm PHT (post-work browsing)
+- A/B test Tagalog vs English by geographic sub-audience
+
+=== FX METADATA ===
+FX date used: 2026-04-14
+PHP-ILS rate: 0.0488
+PHP-USD rate: 0.01663

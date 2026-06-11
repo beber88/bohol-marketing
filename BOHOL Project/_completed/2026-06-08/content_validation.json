@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-08",
+  "collected_at": "2026-06-08T05:25:48+08:00",
+  "agent": "CONTENT_POST",
+  "slot": "10:00 PHT",
+  "phase_per_state_file": "LIVE",
+  "simulation_per_state_file": false,
+  "mode": "LIVE_BLOCKED_NO_QUEUE",
+  "queue_folder_exists": false,
+  "tasks_total": 0,
+  "tasks_passed": 0,
+  "tasks_failed": 0,
+  "failures": [],
+  "drafts_ready": [],
+  "published": 0,
+  "spend": 0,
+  "copy_improvised": false,
+  "consecutive_days_no_content_queue": 15,
+  "note": "No _queue/2026-06-08/tasks_content.json. Most recent real content queue is _queue/2026-04-16/. Nothing to validate or publish. Absolute rule against improvising copy honored. No Blueprint action taken."
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2026-06-03",
+  "agent": "LEAD_CHECK",
+  "run_pht": "2026-06-03T08:03:04+08:00",
+  "scheduled_slot_pht": "2026-06-03T13:00:00+08:00",
+  "mode": "LIVE_BLOCKED_NO_SOURCE",
+  "new_leads": [],
+  "hot_leads": [],
+  "leads_processed_today": 0,
+  "hot_leads_today": 0,
+  "escalations_sent": [],
+  "reason": "No lead source is provisioned (lead-capture sheet sheet_id=null) and no Google Sheets MCP connector is reachable in this scheduled session. Live polling was physically impossible, so zero leads were read, recorded, or escalated. WATI is not_setup, so HOT-lead escalation could not have been delivered either. See readiness_lead_check.json for the full blocker list and the unconfirmed LIVE-flip flag.",
+  "absolute_rules_observed": [
+    "No lead contacted directly.",
+    "No lead data shared outside the project tree.",
+    "campaign_state.json not modified (outside write scope).",
+    "No improvised polling of arbitrary user sheets."
+  ]
+}

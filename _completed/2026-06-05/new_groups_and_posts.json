@@ -1,0 +1,22 @@
+{
+  "date": "2026-06-05",
+  "approach": "Gradual scaling: find high-activity Bohol/Panglao groups, join, post the new Tagalog post + aerial complex image. Stop condition: Facebook posting block (no arbitrary cap).",
+  "account": "Bar Gvili (personal profile)",
+  "post_used": "New Tagalog post: 'Ngayong linggo pa lang. Dalawang unit na. PHP 32,500,000. PHP 395,000 bawat buwan. Blue Everest Asset Group. 2 villas remaining. WhatsApp (Marketing) +639542555553 / (Office) +639958565865'. Image: ai-generated/aerial-complex-1.jpg (aerial of whole villa complex).",
+  "new_groups_joined_today": [
+    {"name": "BARATONG YUTA SA BOHOL", "members": "34K", "activity": "90+/day"},
+    {"name": "Bohol Real Estate Buyers and Sellers", "members": "20K", "activity": "90+/day"},
+    {"name": "PANGLAO OFFICIAL BUY AND SELL GROUP", "members": "18.6K", "activity": "90+/day", "url": "groups/340197213789010"},
+    {"name": "DAUIS / PANGLAO ISLAND, BOHOL PROVINCE", "members": "15K", "activity": "90+/day"},
+    {"name": "Bohol Property Buy & Sell", "members": "9.6K", "activity": "90+/day"},
+    {"name": "BOHOL BUY AND SELL", "members": "38.4K", "activity": "90+/day", "url": "groups/246795460505808"}
+  ],
+  "posts_today": [
+    {"group": "House and Lot For Sale Philippines (group 22)", "status": "POSTED_PENDING_ADMIN_APPROVAL"},
+    {"group": "PANGLAO OFFICIAL BUY AND SELL GROUP", "status": "LIVE"},
+    {"group": "BOHOL BUY AND SELL", "status": "SUBMITTED (likely pending new-member approval)"}
+  ],
+  "facebook_block": "Not triggered yet today (yesterday's block cleared).",
+  "more_candidates_found": ["Bohol Properties For Sale (4.5K, 70+/day)", "BOHOL ISLAND REAL ESTATE BUY and SELL (5.4K, 90+/day)", "Properties for Sale in Bohol (4.2K, 70+/day)", "PANGLAO - DAUIS AFFORDABLE LOT FOR SALE (1.2K, 60+/day)", "baratung yuta sa BOHOL baligya og pautang (4.6K, 40+/day)", "Bohol Properties - House/Lot/Condo (1.1K, 30+/day)"],
+  "next": "Continue posting the new post + aerial image to the joined groups, stop only on a Facebook block."
+}

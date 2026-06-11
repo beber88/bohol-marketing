@@ -1,0 +1,25 @@
+{
+  "attempted_at": "2026-06-04T05:07:28.194Z",
+  "post_id": 36,
+  "title": "שאלו אותי כל דבר - נדל\"ן בפיליפינים 🇵🇭",
+  "target_group_id": "2073937843407799",
+  "target_group_url": "https://www.facebook.com/groups/investment.ph.il/",
+  "simulation": false,
+  "brand_guard": {
+    "passed": true,
+    "violations": [],
+    "suggestions": []
+  },
+  "image_path": "/Users/admin/Downloads/Bohol Marketing/blue-everest/public/images/exterior/rear-1.webp",
+  "endpoint": "/2073937843407799/photos",
+  "http_status": 403,
+  "response": {
+    "error": {
+      "message": "(#200) Insufficient permission to post to group",
+      "type": "OAuthException",
+      "code": 200,
+      "fbtrace_id": "AJEDDN4if3Y79jrX_6e-OUi"
+    }
+  },
+  "success": false
+}

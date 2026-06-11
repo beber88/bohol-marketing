@@ -1,0 +1,149 @@
+{
+  "timestamp": "2026-06-03T10:37:49.137Z",
+  "allAgents": 10,
+  "liveLLMReady": true,
+  "activation": [
+    {
+      "agent": "cmo_orchestrator",
+      "displayName": "CMO Orchestrator",
+      "status": "READY",
+      "liveLLMReady": true,
+      "prompt": true,
+      "exam": true,
+      "deterministicRun": null,
+      "note": "Ready for live dispatch."
+    },
+    {
+      "agent": "content_strategist",
+      "displayName": "Content Strategist",
+      "status": "READY",
+      "liveLLMReady": true,
+      "prompt": true,
+      "exam": true,
+      "deterministicRun": null,
+      "note": "Ready for live dispatch."
+    },
+    {
+      "agent": "copywriter",
+      "displayName": "Copywriter",
+      "status": "READY",
+      "liveLLMReady": true,
+      "prompt": true,
+      "exam": true,
+      "deterministicRun": null,
+      "note": "Ready for live dispatch."
+    },
+    {
+      "agent": "performance_ads",
+      "displayName": "Performance Ads Manager",
+      "status": "READY",
+      "liveLLMReady": true,
+      "prompt": true,
+      "exam": true,
+      "deterministicRun": {
+        "success": true,
+        "data": {
+          "recommendations": [
+            {
+              "campaignId": "activation-meta-1",
+              "campaignName": "Activation Meta High CTR",
+              "currentMetrics": {
+                "ctr": 4.2,
+                "cpl": 20,
+                "cpm": 3.2,
+                "spend": 80
+              },
+              "recommendation": "scale",
+              "reason": "CTR (4.20%) above 3%. Strong audience-creative fit. Increase budget to capture more of this audience.",
+              "suggestedAction": {
+                "action": "scale",
+                "platform": "meta",
+                "campaignId": "activation-meta-1",
+                "params": {
+                  "budgetMultiplier": 1.5
+                },
+                "reason": "High CTR 4.20% - scale budget by 1.5x"
+              }
+            }
+          ],
+          "summary": "Analyzed 1 campaign(s). | Scale: 1",
+          "ruleBasedCount": 1,
+          "llmAssistedCount": 0
+        },
+        "agentName": "performance_ads",
+        "runId": "c86fb68a-bdd0-4f5c-a002-8037e3353084",
+        "tokensUsed": {
+          "input": 0,
+          "output": 0
+        },
+        "costUsd": 0,
+        "duration": 1
+      },
+      "note": "Ready for live dispatch."
+    },
+    {
+      "agent": "email_nurture",
+      "displayName": "Email Nurture Agent",
+      "status": "READY",
+      "liveLLMReady": true,
+      "prompt": true,
+      "exam": true,
+      "deterministicRun": null,
+      "note": "Ready for live dispatch."
+    },
+    {
+      "agent": "whatsapp_agent",
+      "displayName": "WhatsApp Agent",
+      "status": "READY",
+      "liveLLMReady": true,
+      "prompt": true,
+      "exam": true,
+      "deterministicRun": null,
+      "note": "Ready for live dispatch."
+    },
+    {
+      "agent": "crm_lead_scorer",
+      "displayName": "CRM Lead Scorer",
+      "status": "READY",
+      "liveLLMReady": true,
+      "prompt": true,
+      "exam": true,
+      "deterministicRun": null,
+      "note": "Ready for live dispatch."
+    },
+    {
+      "agent": "analytics_reporter",
+      "displayName": "Analytics Reporter",
+      "status": "READY",
+      "liveLLMReady": true,
+      "prompt": true,
+      "exam": true,
+      "deterministicRun": null,
+      "note": "Ready for live dispatch."
+    },
+    {
+      "agent": "brand_guard",
+      "displayName": "Brand Guard",
+      "status": "READY",
+      "liveLLMReady": true,
+      "prompt": true,
+      "exam": true,
+      "deterministicRun": {
+        "passed": true,
+        "violations": [],
+        "suggestions": []
+      },
+      "note": "Ready for live dispatch."
+    },
+    {
+      "agent": "sales_chatbot",
+      "displayName": "Sales Chatbot",
+      "status": "READY",
+      "liveLLMReady": true,
+      "prompt": true,
+      "exam": true,
+      "deterministicRun": null,
+      "note": "Ready for live dispatch."
+    }
+  ]
+}

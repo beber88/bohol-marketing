@@ -1,0 +1,57 @@
+[SIMULATION - NOT FOR LIVE DEPLOYMENT]
+
+=== META_IL_CONVERSION_Conv1.txt ===
+Platform: Meta (Facebook Feed)
+Market: Israel
+Funnel Stage: Conversion
+Campaign: IL-3
+Objective: Conversions
+Budget: $15/day
+Audience: Warm audiences (website visitors + engagement, retargeting)
+Placements: Facebook Feed (primary)
+Schedule: Daily, all hours
+
+---
+
+PRIMARY TEXT (V1 - Hebrew):
+
+הזמן חלף. הן כמעט סגורות.
+
+2 יחידות בלבד.
+PHP 32.5M = ₪1.36M
+₪23,700 בחודש. 17-25% שנתי.
+
+בעלים בישראל כבר השקיעו.
+בדוק את השקעתך בחינם.
+
+Schedule: primevilla.ph או WhatsApp
+
+---
+
+HEADLINE V1: "זמן מוגבל. 2 יחידות בלבד"
+HEADLINE V2: "החלטה היום. הרווח מחר"
+HEADLINE V3: "₪1.36M ללא סיבוך"
+
+DESCRIPTION V1: "בדיקה חינם. מימון זמין. הצעת מועד אחרון."
+
+CTA: Claim Spot / Schedule Call
+
+---
+
+AUDIENCE TARGETING:
+- Retargeting: Website visitors (180 days)
+- Engagement audiences (Israeli interests)
+- Lookalike: 3-5% from converters
+- Exclude: Previous buyers
+
+OPTIMIZATION NOTES:
+- Extreme urgency: "2 units only" is true
+- Hebrew-primary copy
+- Remove friction: "free review", no pressure
+- DirectMessaging pathway via WhatsApp
+- Retargeting budget should be 60% of IL-3
+- Video creative: testimonial from existing Israeli owner if available
+
+=== FX METADATA ===
+FX date used: 2026-04-14
+PHP-ILS rate: 0.0488

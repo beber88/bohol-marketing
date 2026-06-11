@@ -1,0 +1,41 @@
+{
+  "last_checkin": "2026-06-11T11:31:00+08:00",
+  "agent": "WA_BROADCAST",
+  "status": "preparing",
+  "mode": "PREPARATION_NO_CHANNEL_NO_TASK",
+  "run_type": "scheduled_wa_broadcast",
+  "scheduled_slot": "2026-06-11T10:00:00+08:00",
+  "phase_per_state_file": "LIVE",
+  "simulation_per_state_file": false,
+  "campaign_day_state_file": 6,
+  "campaign_day_elapsed_actual": 15,
+  "broadcast_task_present": false,
+  "drafts_validated": 0,
+  "drafts_rejected": 0,
+  "messages_sent": 0,
+  "report": "_status/no_broadcast_today.md",
+  "issues": [
+    "No _queue/2026-06-11/ folder and no tasks_whatsapp.json today: no broadcast draft to validate or send.",
+    "WATI not_setup and no WATI MCP connected: there is physically no channel to send a broadcast.",
+    "No approved opt-in lists (IL Hebrew / PH English-Tagalog) provided; absolute rule forbids sending without them.",
+    "Last tasks_whatsapp.json on disk is 2026-04-16 (WA-0008) with OUTDATED pricing (PHP 28M/30M; ILS 1,420,888 / 1,522,380 / 10,149) - would be rejected against current fixed pricing.",
+    "Guard string mismatch unresolved: phase guard checks wati.status == 'needs_account' but state file holds 'not_setup'.",
+    "UNCONFIRMED STATE FLIP persists: LIVE/simulation=false since 2026-06-03 with no staged queue and no human sign-off.",
+    "Meta ad account UNSETTLED: billing balance must be paid before ads deliver."
+  ],
+  "actions_taken": [
+    "Read campaign_state.json, prior heartbeat, prior no_broadcast_today.md; confirmed PHT date 2026-06-11 (Thursday).",
+    "Applied phase guard: no WATI channel + no broadcast task => forced PREPARATION mode; did NOT send.",
+    "Checked _queue/2026-06-11/tasks_whatsapp.json: not present (no queue folder for today).",
+    "Updated _status/no_broadcast_today.md with today's run details and carry-over blockers.",
+    "Did NOT create _completed/2026-06-11/broadcast_drafts.json (no draft to validate).",
+    "Did NOT modify _status/broadcasts_pending_send.md (no validated draft to pend).",
+    "Did NOT send, draft, or queue any message; did NOT modify campaign_state.json; did NOT touch Blueprint Building Group."
+  ],
+  "previous_checkin": {
+    "timestamp": "2026-06-11T11:27:30+08:00",
+    "agent": "LEAD_CHECK",
+    "note": "LIVE_BLOCKED_NO_SOURCE; 0 villa leads, no reachable lead source."
+  },
+  "next_run": "2026-06-16T10:00:00+08:00 (WA_BROADCAST, next Tue slot)"
+}

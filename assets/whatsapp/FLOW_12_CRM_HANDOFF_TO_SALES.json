@@ -1,0 +1,74 @@
+{
+  "name": "FLOW_12_CRM_HANDOFF_TO_SALES",
+  "description": "Internal flow for CRM handoff when lead is qualified for sales team",
+  "type": "system",
+  "version": "2.0",
+  "trigger": "auto_qualification_met",
+  "created_at": "2026-04-14T11:45:00Z",
+  "qualification_criteria": {
+    "min_score": 70,
+    "auto_triggers": [
+      "lead_agreed_to_tour",
+      "lead_financing_approved",
+      "lead_timeline_urgent",
+      "lead_investment_amount_confirmed"
+    ]
+  },
+  "handoff_flow": [
+    {
+      "state": "qualified_lead_detected",
+      "action": "create_crm_record",
+      "transfer_to": "ceo@blue-everest.com",
+      "message_template": "✅ QUALIFIED LEAD HANDOFF\n\nLead: {lead_name}\nLocation: {lead_country}\nInvestment intent: {investment_amount}\nTimeline: {timeline}\nNext step: {next_step}\n\nCRM record created. Sales team taking over."
+    },
+    {
+      "state": "customer_message",
+      "action": "notify_lead",
+      "message": "Great news! You've been qualified for our Sales Team.\n\nAlex (Sales Lead) will reach out within 2 hours to schedule your next milestone.\n\nExpect: Call or video review session.\n\nMeanwhile, let me send you the investment prospectus →"
+    },
+    {
+      "state": "send_documents",
+      "action": "email_docs",
+      "documents": [
+        "Investment_Prospectus_PHP.pdf",
+        "Airbnb_Earnings_History.pdf",
+        "Property_Specs_Full.pdf",
+        "Management_Agreement_Template.pdf",
+        "BDO_Financing_Worksheet.pdf",
+        "FAQ_Full_Document.pdf"
+      ],
+      "note": "Documents personalized with lead investment size"
+    },
+    {
+      "state": "salesforce_sync",
+      "action": "hubspot_create",
+      "fields": {
+        "contact_name": "{lead_name}",
+        "email": "{lead_email}",
+        "phone": "{lead_phone}",
+        "country": "{lead_country}",
+        "investment_amount": "{investment_amount}",
+        "timeline": "{timeline}",
+        "funnel_stage": "Qualified Lead",
+        "lead_score": "{calculated_score}",
+        "next_action": "Sales Call",
+        "assigned_to": "sales_team"
+      }
+    },
+    {
+      "state": "calendar_booking",
+      "action": "send_calendly",
+      "message": "If you prefer to schedule directly, here's our calendar →\n\n[Calendly link]\n\nOtherwise, Alex will call you.",
+      "calendly_link": "primevilla.ph/schedule"
+    }
+  ],
+  "quality_gates": [
+    "Verified phone number",
+    "Investment amount clear",
+    "Timeline specified",
+    "Objections addressed",
+    "Lead engagement score > 70"
+  ],
+  "export_format": "WATI",
+  "export_date": "2026-04-14T11:45:00Z"
+}

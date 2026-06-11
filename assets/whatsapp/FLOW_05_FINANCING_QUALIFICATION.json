@@ -1,0 +1,44 @@
+{
+  "name": "FLOW_05_FINANCING_QUALIFICATION",
+  "description": "BDO Bank financing qualification flow",
+  "type": "interactive",
+  "version": "2.0",
+  "trigger": "keyword_or_selection",
+  "keywords": ["financing", "loan", "bdo", "payment plan"],
+  "created_at": "2026-04-14T10:00:00Z",
+  "nodes": [
+    {
+      "id": "financing_intro",
+      "type": "text",
+      "content": "🏦 BDO Bank Financing Available!\n\nFor qualified buyers:\n• Up to 70% loan-to-value\n• Terms: 15-20 years\n• Competitive rates\n• Processing: 3-5 business days\n\nLet's check your eligibility.",
+      "buttons": [
+        {"label": "Check Eligibility", "action": "go_to", "target": "eligibility_questions"},
+        {"label": "Tell Me Rates", "action": "go_to", "target": "rates_info"},
+        {"label": "Skip for Now", "action": "go_to", "target": "skip_financing"}
+      ]
+    },
+    {
+      "id": "eligibility_questions",
+      "type": "text",
+      "content": "Quick qualification check:\n\n1. Are you a Philippine citizen or PR?\n2. Do you have steady income (business/employment)?\n3. Available for down payment? (30% = ~PHP 8.4M)\n\nAnswer yes/no to each.",
+      "buttons": [],
+      "capture_fields": ["citizenship", "income_source", "downpayment_ready"]
+    },
+    {
+      "id": "rates_info",
+      "type": "text",
+      "content": "📊 BDO Financing Terms:\n\nLoan: Up to PHP 19.6M (70% of PHP 32.5M)\nDown payment: PHP 8.4M (30%)\n\nRate: ~5.5-6.5% p.a. (subject to approval)\nTerm: 15-20 years preferred\nMonthly payment: ~PHP 154K-185K\n\nMonthly income: PHP 395K (Airbnb)\nNet: PHP 210K-241K after financing\n\nDoes this work for you?"
+    },
+    {
+      "id": "skip_financing",
+      "type": "text",
+      "content": "No problem! Cash buyers welcome too.\n\nNext steps:\n1. Review investment prospectus\n2. Schedule property tour\n3. Finalize purchase\n\nCan we schedule a tour?",
+      "buttons": [
+        {"label": "Yes, Schedule Tour", "action": "go_to", "target": "site_visit_scheduler"},
+        {"label": "Send Docs First", "action": "capture", "field": "doc_request"}
+      ]
+    }
+  ],
+  "export_format": "WATI",
+  "export_date": "2026-04-14T10:00:00Z"
+}

@@ -1,0 +1,41 @@
+{
+  "date": "2026-06-03",
+  "collected_at": "2026-06-03T17:41:36+08:00",
+  "source": "Live Meta Graph API and user Ads Manager screenshot",
+  "meta_ads": {
+    "account_status": "ACTIVE_DELIVERING",
+    "campaigns": [
+      {
+        "name": "IL-1 Awareness - Panglao Prime Villas",
+        "impressions": 22707,
+        "clicks": 1190,
+        "ctr": 5.24,
+        "cpc_php": 2.85,
+        "spend_php": 3392.65,
+        "conversions": 0
+      },
+      {
+        "name": "PH-1 Awareness - Panglao Prime Villas",
+        "impressions": 105536,
+        "clicks": 4059,
+        "ctr": 3.85,
+        "cpc_php": 0.46,
+        "spend_php": 1855.14,
+        "conversions": 0
+      }
+    ],
+    "total_impressions": 128243,
+    "total_clicks": 5249,
+    "total_spend_php": 5247.79,
+    "total_reach": 83518,
+    "total_conversions": 0
+  },
+  "google_ads": {
+    "status": "NOT_LIVE_UNVERIFIED",
+    "note": "No proof of imported or posted Google Ads campaigns. Google Ads API credentials are missing in local and Vercel production environments.",
+    "ad_groups": [],
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "total_spend": 0
+  }
+}

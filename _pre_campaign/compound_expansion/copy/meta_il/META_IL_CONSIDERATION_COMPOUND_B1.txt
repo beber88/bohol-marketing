@@ -1,0 +1,62 @@
+=== META_IL_CONSIDERATION_COMPOUND_B1.txt ===
+Platform: Meta (Facebook + Instagram)
+Market: Israel
+Funnel Stage: Consideration
+Campaign: IL-P2-CON
+Objective: Traffic / Engagement
+Audience: Israel, age 30-62, Hebrew, warm audiences + interest-based
+Placements: Facebook Feed, Instagram Feed, Instagram Reels
+Schedule: Sunday-Thursday, 20:00-23:00 Israel time
+
+---
+
+PRIMARY TEXT:
+
+למה קומפלקס ולא וילה בודדת? כי המספרים שונים.
+
+וילה בודדת באירביאנבי מתחרה לבד.
+קומפלקס של 8 וילות יוצר יתרון שלא ניתן לשכפל:
+
+1. ניהול משותף: חברת ניהול אחת ל-8 יחידות. עלויות נמוכות יותר, שירות אחיד, תחזוקה מקצועית - בלי שתצטרכו להיות שם.
+
+2. דירוג קולקטיבי באירביאנבי: 8 וילות באותו קומפלקס צוברות ביקורות מהר יותר. דירוג גבוה יותר - תפוסה גבוהה יותר. התפוסה הנוכחית: 65%.
+
+3. פרמיית מכירה חוזרת: קומפלקס ממותג עם רקורד מוכח שווה יותר בעת מכירה מאשר וילה בודדת ללא היסטוריה.
+
+הכנסה חודשית: PHP 395,000 לכל וילה.
+תשואה שנתית: 17-25%.
+מחירי הוילות הזמינות:
+Villa C: 1,650,000 ש"ח
+Villa D: 1,535,000 ש"ח
+וילות חדשות (E, F, G, H): [PRICE_PLACEHOLDER] ש"ח
+
+3 מסלולים משפטיים לבעלות ישראלית:
+- Deed of Assignment: בעלות ישירה על המבנה
+- Leasehold 25+25: חוזה ל-50 שנה עם שליטה מלאה
+- Domestic Corporation: תאגיד מקומי לביטחון מרבי
+
+רוצים להבין איזה מסלול מתאים לכם? שלחו הודעה.
+
+Blue Everest Asset Group Holding Inc.
+
+WhatsApp (שיווק): +639542555553
+WhatsApp (משרד): +639958565865
+
+HEADLINE V1: "קומפלקס עם 8 וילות - לא וילה בודדת."
+HEADLINE V2: "ניהול משותף. דירוג גבוה. פרמיית מכירה."
+HEADLINE V3: "65% תפוסה. 17-25% תשואה. המודל עובד."
+
+DESCRIPTION: "8 וילות בקומפלקס אחד. ניהול משותף, דירוג מואץ באירביאנבי, ופרמיית מכירה חוזרת. 3 מסלולי בעלות לישראלים."
+
+CTA: Send Message
+
+---
+
+AUDIENCE TARGETING:
+- Geography: Israel
+- Age: 30-62
+- Language: Hebrew
+- Custom Audiences: Website visitors (primevilla.ph, 180 days), Video viewers (50%+), Page engagers (90 days)
+- Interest Layering: Real estate investment + (Airbnb OR Passive income OR Property management)
+- Behaviors: Frequent international travelers, Business page admins
+- Exclusions: Previous converters, leads already in pipeline

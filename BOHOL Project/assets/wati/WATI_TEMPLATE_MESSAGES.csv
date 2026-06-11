@@ -1,0 +1,123 @@
+Template Name,Category,Language,Header Type,Header Content,Body,Footer,Button 1 Type,Button 1 Text,Button 2 Type,Button 2 Text,Button 3 Type,Button 3 Text
+ppv_welcome,MARKETING,en,TEXT,Panglao Prime Villas,"🏝️ Welcome to Panglao Prime Villas!
+
+Thank you for your interest, {{1}}. I'm here to answer your questions about our luxury villas in Bohol.
+
+💰 Investment: PHP 28,000,000
+📈 Monthly Income: PHP 395,000
+🎯 Annual ROI: 17-25%
+
+What brings you here today?",Panglao Prime Villas,QUICK_REPLY,Investment Details,QUICK_REPLY,Site Visit Info,QUICK_REPLY,Financing Options
+ppv_welcome_he,MARKETING,he,TEXT,פנגלאו פריים ווילס,"🏝️ שלום {{1}}! ברוכים הבאים לפנגלאו פריים ווילס!
+
+תודה על ההתעניינות. אני כאן לענות על כל שאלה לגבי הווילות שלנו בבוהול.
+
+💰 השקעה: ₱28,000,000
+📈 הכנסה חודשית: ₱395,000
+🎯 תשואה שנתית: 17-25%
+
+במה אוכל לעזור?",Panglao Prime Villas,QUICK_REPLY,פרטי השקעה,QUICK_REPLY,ביקור באתר,QUICK_REPLY,אפשרויות מימון
+ppv_investment_overview,MARKETING,en,TEXT,Investment Overview,"💰 Investment Details:
+
+• Purchase Price: PHP 28,000,000
+• Monthly Airbnb Income: PHP 395,000 (verified)
+• Annual ROI: 17-25%
+• Floor Area: 263.78 sqm
+• Full professional management included
+• 65% average occupancy (market avg: 49%)
+
+📍 Location: 60 seconds to Panglao Beach, between JW Marriott & Mithi Resort.
+
+Would you like to schedule a consultation?",Panglao Prime Villas,QUICK_REPLY,Schedule Call,QUICK_REPLY,More Questions,QUICK_REPLY,Send Prospectus
+ppv_site_visit,UTILITY,en,TEXT,Site Visit Options,"🏠 Site Visit Options:
+
+1️⃣ VIRTUAL TOUR (30 min)
+Available today or tomorrow via Zoom/WhatsApp Video
+
+2️⃣ IN-PERSON VISIT
+We can arrange within 3-5 days
+Includes airport pickup + hotel accommodation
+
+When would you prefer?",Panglao Prime Villas,QUICK_REPLY,Virtual Tour Now,QUICK_REPLY,In-Person Visit,QUICK_REPLY,Need More Info
+ppv_financing,UTILITY,en,TEXT,Financing Options,"🏦 Financing Available for Qualified Buyers:
+
+• Loan-to-Value: Up to 70%
+• Terms: 15-20 years
+• Interest Rate: ~6% annual
+• Processing: 3-5 business days
+• Down Payment: 30% minimum
+
+Requirements:
+✅ Valid ID + proof of income
+✅ Credit check
+✅ Employment/business verification
+
+Would you like to check your eligibility?",Panglao Prime Villas,QUICK_REPLY,Check Eligibility,QUICK_REPLY,Tell Me Rates,QUICK_REPLY,Skip for Now
+ppv_financing_he,UTILITY,he,TEXT,אפשרויות מימון,"🏦 מימון זמין למשקיעים מתאימים:
+
+• אחוז מימון: עד 70%
+• תקופה: 15-20 שנה
+• ריבית: ~6% שנתי
+• זמן טיפול: 3-5 ימי עסקים
+• מקדמה: 30% מינימום
+
+דרישות:
+✅ תעודה מזהה + הוכחת הכנסה
+✅ בדיקת אשראי
+✅ אימות תעסוקה/עסק
+
+רוצים לבדוק התאמה?",Panglao Prime Villas,QUICK_REPLY,בדוק התאמה,QUICK_REPLY,פרטי ריבית,QUICK_REPLY,לא כרגע
+ppv_follow_up,MARKETING,en,TEXT,Still Thinking?,"👋 Hi {{1}}, still thinking about Bohol?
+
+No pressure! But wanted to share some updates:
+
+📊 Updated earnings report available
+🏘️ Only 2 units remaining at current pricing
+💰 Current price: PHP 28M (next batch: PHP 30.5M+)
+
+Would you like to schedule a quick call to discuss?",Panglao Prime Villas,QUICK_REPLY,Yes Schedule Call,QUICK_REPLY,Send More Info,QUICK_REPLY,Not Now
+ppv_follow_up_he,MARKETING,he,TEXT,עדיין חושבים?,"👋 היי {{1}}, עדיין חושבים על בוהול?
+
+בלי לחץ! רק רצינו לשתף כמה עדכונים:
+
+📊 דוח רווחים מעודכן זמין
+🏘️ נשארו רק 2 יחידות במחיר נוכחי
+💰 מחיר נוכחי: ₱28M (אצווה הבאה: ₱30.5M+)
+
+רוצים לתאם שיחה קצרה?",Panglao Prime Villas,QUICK_REPLY,כן תאמו שיחה,QUICK_REPLY,שלחו עוד מידע,QUICK_REPLY,לא כרגע
+ppv_urgency,MARKETING,en,TEXT,Last Chance,"⏰ URGENT: {{1}}, time is running out!
+
+Only 2 villas remaining at PHP 28,000,000.
+
+Next batch pricing: PHP 30,500,000+
+That's PHP 2.5M MORE for the same villa.
+
+Every week you wait = PHP 395,000 in lost income.
+
+This isn't a marketing trick — it's math.
+
+Ready to move forward?",Panglao Prime Villas,QUICK_REPLY,Yes Let's Go,QUICK_REPLY,Schedule Call,QUICK_REPLY,Need More Time
+ppv_closing,UTILITY,en,TEXT,Purchase Process,"✅ Your Purchase Process (30 days):
+
+Step 1: Consultation & Due Diligence (Days 1-3)
+Step 2: Property Reservation — PHP 200K deposit (Day 3)
+Step 3: Financing Application (Days 4-7)
+Step 4: Contract Preparation (Days 7-14)
+Step 5: Document Signing (Days 14-21)
+Step 6: Title Transfer (Days 21-28)
+Step 7: Handover & First Income (Day 30)
+
+Your dedicated agent will guide you through every step.
+
+Ready to begin?",Panglao Prime Villas,QUICK_REPLY,Start Now,QUICK_REPLY,Questions First,
+ppv_vip_fasttrack,MARKETING,en,TEXT,VIP Fast-Track,"⭐ VIP Fast-Track Program
+
+{{1}}, we see you're a serious investor. Let's move quickly.
+
+What's your priority?
+🚀 Fast close (7-day process)
+🏘️ Both villas (bulk discount available)
+💼 Financing structure
+🤝 Direct CEO conversation
+
+We'll assign a dedicated VIP agent to handle everything.",Panglao Prime Villas,QUICK_REPLY,Fast Close,QUICK_REPLY,Both Villas,QUICK_REPLY,CEO Call

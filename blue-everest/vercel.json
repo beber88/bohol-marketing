@@ -1,0 +1,24 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/daily-automation",
+      "schedule": "0 0 * * *"
+    },
+    {
+      "path": "/api/cron/daily-automation",
+      "schedule": "0 9 * * *"
+    },
+    {
+      "path": "/api/cron/daily-automation",
+      "schedule": "0 14 * * *"
+    },
+    {
+      "path": "/api/cron/morning-readiness",
+      "schedule": "0 23 * * *"
+    },
+    {
+      "path": "/api/cron/community-post",
+      "schedule": "0 2 * * *"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+=== META_PH_CONVERSION_COMPOUND_3A.txt ===
+Platform: Meta (Facebook + Instagram)
+Market: Philippines
+Funnel Stage: Conversion
+Campaign: PH-P2-CVR
+Objective: Lead generation and reservation conversions
+Audience: Metro Manila (BGC, Makati, Alabang, Ortigas), Cebu City, Davao, age 38-58
+Placements: Facebook Feed, Instagram Feed, Instagram Reels
+Schedule: Tuesday-Thursday priority, 7pm-11pm PHT
+
+---
+
+PRIMARY TEXT (V1 - English):
+
+Phase 1 moved fast. Phase 2 will not wait.
+
+Villa A: sold. Villa B: sold. That is 2 of 4 units gone before we even launched Phase 2.
+
+Villa C (PHP 35,000,000) and Villa D (PHP 32,500,000) are still available, but they are Phase 1 pricing. When Phase 2 opens, the compound will have proven even more demand - and prices will reflect that.
+
+Reserve your villa today with PHP 200,000.
+
+What you secure with that reservation:
+- Your unit selection from 6 available villas (2 Phase 1, 4 Phase 2)
+- A priority consultation to review the full financial model
+- Access to BDO Bank financing terms and payment structure
+- A site visit schedule at the compound in Panglao, Bohol
+
+Each villa: 4 bedrooms, 263.78 sqm, 3 storeys plus roof deck, private pool, rooftop jacuzzi. Located between JW Marriott and Mithi Resort, 60 seconds from Panglao Beach.
+
+Verified performance:
+- PHP 395,000 monthly Airbnb income per villa
+- PHP 14,000 per night guest rate
+- 65% occupancy
+- 17-25% annual ROI
+
+6 villas available today. That number will shrink.
+
+Reserve now:
+WhatsApp (Marketing): +639542555553
+WhatsApp (Office): +639958565865
+
+Blue Everest Asset Group Holding Inc.
+primevilla.ph
+
+PRIMARY TEXT (V2 - Tagalog):
+
+Mabilis ang Phase 1. Hindi maghihintay ang Phase 2.
+
+Villa A: nabenta. Villa B: nabenta. 2 sa 4 na unit ang nawala bago pa namin ini-launch ang Phase 2.
+
+Available pa ang Villa C (PHP 35,000,000) at Villa D (PHP 32,500,000), pero Phase 1 pricing pa ito. Pag bumukas ang Phase 2, mas lalong mapapatunayan ang demand ng compound - at mag-a-adjust ang presyo.
+
+I-reserve ang villa mo ngayon sa PHP 200,000.
+
+Ano ang makukuha mo sa reservation:
+- Pagpili ng unit mula sa 6 na available na villa (2 Phase 1, 4 Phase 2)
+- Priority consultation para i-review ang buong financial model
+- Access sa BDO Bank financing terms at payment structure
+- Site visit schedule sa compound sa Panglao, Bohol
+
+Bawat villa: 4 na silid-tulugan, 263.78 sqm, 3 palapag plus roof deck, private pool, rooftop jacuzzi. Nasa pagitan ng JW Marriott at Mithi Resort, 60 segundo lang mula sa Panglao Beach.
+
+Napatunayang performance:
+- PHP 395,000 buwanang Airbnb income bawat villa
+- PHP 14,000 bawat gabing rate ng mga bisita
+- 65% occupancy
+- 17-25% taunang ROI
+
+6 na villa ang available ngayon. Bababa ang bilang na iyan.
+
+Mag-reserve na:
+WhatsApp (Marketing): +639542555553
+WhatsApp (Office): +639958565865
+
+Blue Everest Asset Group Holding Inc.
+primevilla.ph
+
+PRIMARY TEXT (V3 - Tagalog Urgency Variant):
+
+Mayroon nang bumibili.
+
+2 sa 8 villa sa Panglao Prime Villas, nabenta na. 6 na lang ang natitira - kasama na ang bagong Phase 2 units.
+
+Hindi ito subdivision na may daan-daang lot. 8 villa lang sa isang compound. Pag napuno, wala nang maidadagdag.
+
+PHP 200,000 lang ang reservation.
+
+Bawat villa: PHP 395,000 buwanang Airbnb income. 17-25% annual ROI. 4 silid-tulugan, 263.78 sqm, 60 segundo mula sa Panglao Beach.
+
+May BDO Bank financing. Kausapin kami bago maubos:
+
+WhatsApp (Marketing): +639542555553
+WhatsApp (Office): +639958565865
+
+Blue Everest Asset Group Holding Inc.
+primevilla.ph
+
+HEADLINE V1: "Reserve With PHP 200,000 - 6 Villas Left"
+HEADLINE V2: "Phase 1 Sold Fast - Secure Your Phase 2 Villa"
+HEADLINE V3: "PHP 395,000/Month Income - BDO Financing Ready"
+
+DESCRIPTION V1: "2 of 8 villas already sold. Reserve your unit with PHP 200,000. BDO Bank financing available."
+DESCRIPTION V2: "17-25% annual ROI, 65% occupancy, professional compound management. Talk to our team today."
+
+CTA: Send WhatsApp Message
+
+---
+
+AUDIENCE TARGETING:
+
+Location: Metro Manila (BGC, Makati, Alabang, Ortigas Center), Cebu City, Davao City
+Age: 38-58
+Gender: All
+Language: English (Philippines), Filipino
+
+Detailed Targeting:
+- Interests: Real estate investing, Investment property, Vacation rentals, Airbnb (company), Passive income, Luxury real estate, BDO Unibank, Property development, Financial planning, High net worth
+- Behaviors: Frequent international travelers, Small business owners, Engaged shoppers
+- Demographics: Homeowners, College educated, Business decision makers
+- Income: Top 10% income bracket (where available)
+
+Exclusions:
+- Exclude ages under 38
+
+Custom Audiences (PRIORITY - conversion relies on warm audiences):
+- Retarget: people who engaged with PH-P2-AWR campaigns (1A and 1B)
+- Retarget: people who engaged with PH-P2-CON campaigns (2A)
+- Retarget: website visitors to primevilla.ph in last 60 days
+- Retarget: people who opened lead form but did not submit
+- Lookalike 1% based on existing buyers/reservations (if available)
+- Lookalike 1% based on lead form completions
+
+Estimated Audience Size: 150,000-400,000 (tight warm audience focus)

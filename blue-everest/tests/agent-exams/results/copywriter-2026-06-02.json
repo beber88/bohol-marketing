@@ -1,0 +1,811 @@
+{
+  "agent": "copywriter",
+  "timestamp": "2026-06-02T20:23:02.994Z",
+  "total": 100,
+  "correct": 100,
+  "score": 100,
+  "passed": true,
+  "results": [
+    {
+      "id": 1,
+      "question": "Which headline best follows the project rule that every post must include at least one specific number?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Project Rule 3 requires every post to include at least one specific number. Only option b includes the specific measurement of 263.78 sqm. All other options lack any numerical data."
+    },
+    {
+      "id": 2,
+      "question": "Which headline violates the forbidden words rule?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 5 explicitly forbids the phrase 'dream home'. Option b uses this forbidden phrase. All other options use factual, number-driven language that complies with the rules."
+    },
+    {
+      "id": 3,
+      "question": "For an Israeli-market Facebook ad headline, which is correctly formatted?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 1 requires Israeli content to show ONLY shekels (no PHP, no USD). Option a uses USD, option c uses PHP, and option d uses em dashes which violate Rule 2. Option b correctly uses ILS only and includes a specific number (4 bedrooms)."
+    },
+    {
+      "id": 4,
+      "question": "What makes this headline weak for a real estate investment ad: 'Beautiful Property Available Now'?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Rule 3 mandates every post include at least one specific number (e.g., PHP 395,000, 17-25%, 263.78 sqm). This headline has zero numbers and no specificity, making it weak and non-compliant."
+    },
+    {
+      "id": 5,
+      "question": "You need a headline for a Filipino-market Google Search ad with a 30-character limit. Which is best?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Option a includes specific numbers (PHP 32.5M and 25% ROI) per Rule 3, uses PHP for Filipino market per Rule 1B, and fits within character limits. Option b lacks numbers, option c uses forbidden word 'incredible', option d lacks numbers."
+    },
+    {
+      "id": 6,
+      "question": "Which punctuation is allowed in headlines per project rules?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Rule 2 explicitly forbids em dashes, en dashes, and Hebrew maqaf. Only regular hyphens (-), colons (:), and commas (,) are permitted."
+    },
+    {
+      "id": 7,
+      "question": "Which headline best combines social proof with specificity for the Israeli market?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Option a uses the specific tourism statistic (1.43M visitors) as social proof with a concrete number per Rule 3. Option b is vague, option c uses a forbidden word equivalent, option d lacks numbers."
+    },
+    {
+      "id": 8,
+      "question": "You must write a headline for a retargeting ad targeting users who visited the villa page but did not inquire. Which approach is most effective?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "For retargeting warm audiences who already know the product, leading with the low reservation amount (9,999 ILS) reduces the perceived barrier to next action. Option b may reinforce the hesitation that caused them to leave. Option c uses the forbidden phrase 'once in a lifetime'. Option d lacks specificity and numbers."
+    },
+    {
+      "id": 9,
+      "question": "For a Facebook carousel ad headline, which approach generates highest engagement for investment properties?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Carousel ads perform best when each card tells a progressive story. Using different number-driven benefits (17-25% ROI, PHP 395,000/month, 263.78 sqm, 60 seconds to beach) satisfies Rule 3 on every card while giving users multiple reasons to engage across the swipe sequence."
+    },
+    {
+      "id": 10,
+      "question": "Which number from the approved list would be most compelling in a headline about investment returns?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "For an investment-focused headline, 17-25% ROI is the most compelling number because it directly addresses the investor's primary concern: return on investment. The other numbers relate to physical features, which are secondary to financial performance in investment messaging."
+    },
+    {
+      "id": 11,
+      "question": "Which headline follows ALL project rules for the Filipino market?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Option b includes a specific number (PHP 32.5M), uses PHP for Filipino market (Rule 1B), mentions BDO financing (Rule 7), uses only regular hyphens (Rule 2), and includes a WhatsApp number (Rule 4 partial). Option a uses 'dream home' (Rule 5 violation). Option c uses 'amazing' (Rule 5) and em dash (Rule 2). Option d is decent but lacks WhatsApp number for CTA."
+    },
+    {
+      "id": 12,
+      "question": "You are writing a headline for a lookalike audience campaign targeting high-net-worth Israelis. The headline must differentiate from competitor Philippine real estate ads. Which approach is strongest?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "For cold lookalike audiences, macro-trend validation (Skyscanner #8, +166% growth, 1.43M visitors) is strongest because it establishes market credibility before product specifics. Option a is powerful but works better for warm audiences who already trust the market. Option b violates the factual tone requirement. Option d is generic and may use forbidden phrases."
+    },
+    {
+      "id": 13,
+      "question": "Which headline format is most effective for Facebook newsfeed ads based on platform best practices?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Statement headlines with specific proof points perform best on Facebook newsfeed because they communicate value immediately without requiring mental processing. Questions work but are less direct. ALL CAPS appears spammy and may reduce delivery. Overly long headlines get truncated on mobile."
+    },
+    {
+      "id": 14,
+      "question": "True or false: A headline for an Israeli-market ad can use USD as the currency.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Rule 1 is absolute: Israeli content shows ONLY shekels (ILS). No PHP, no USD, no other currencies. The fixed shekel prices must be used: Villa D at 1,535,000 and Villa C at 1,650,000."
+    },
+    {
+      "id": 15,
+      "question": "Which headline best leverages the location advantage for a Google Display Network ad?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Option a uses three specific proof points (60 seconds, named luxury neighbors, 17% ROI) creating credibility through precision. Option b is vague, option c uses forbidden word 'incredible', option d has no specificity or numbers. Named luxury brands (JW Marriott, Mithi) serve as implicit social proof."
+    },
+    {
+      "id": 16,
+      "question": "Which ad body copy correctly includes both WhatsApp numbers as required by Rule 4?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 4 requires every post to include BOTH WhatsApp numbers: Marketing (+639542555553) and Office (+639958565865). Only option b includes both numbers with clear labels."
+    },
+    {
+      "id": 17,
+      "question": "Which Meta ad primary text is best structured for a cold Israeli audience?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "For cold audiences, the hook-bridge-close structure works best: macro data (1.43M visitors, +166% growth) establishes market credibility, villa specifics (263.78 sqm, 4 bedrooms, PHP 395K income) provide the offer, and the low reservation (9,999 ILS) with WhatsApp numbers gives a clear next step."
+    },
+    {
+      "id": 18,
+      "question": "For Filipino market ad copy, which financing detail must be mentioned per Rule 7?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 7 mandates that Filipino content must mention BDO Bank financing. The specific terms are 70% LTV, 15-year term, approximately 6% interest rate."
+    },
+    {
+      "id": 19,
+      "question": "Which ad copy correctly handles the payment structure?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "The verified payment structure is 25/55/20: 25% down payment, 55% during construction, and 20% on handover. This is the only accurate representation of the actual payment terms."
+    },
+    {
+      "id": 20,
+      "question": "You are writing a Facebook ad for the Israeli market. Which body copy section about legal structures is compliant with Rule 6?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Rule 6 requires Israeli content to mention 3 legal ownership solutions: Deed of Assignment, Leasehold 25+25, and Domestic Corporation. Only option a explicitly names all three structures. The other options are vague about legal ownership."
+    },
+    {
+      "id": 21,
+      "question": "Which of these is a violation of the forbidden words rule in ad copy?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 5 forbids the word 'incredible'. Options a, c, and d use factual, specific language that complies with all rules."
+    },
+    {
+      "id": 22,
+      "question": "Which ad copy structure maximizes the character limit of a Meta Ads primary text (125 characters visible before 'See More')?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "The first 125 characters are visible without clicking 'See More'. Leading with the strongest number (17-25% ROI) and location (Panglao, Bohol) captures attention and earns the click to read more. CTAs belong at the end, and intros waste prime real estate."
+    },
+    {
+      "id": 23,
+      "question": "You are writing a Google Search ad for 'Bohol villa investment'. You have 3 headlines (30 chars each) and 2 descriptions (90 chars each). Which combination is strongest?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Option a packs every headline with specific numbers (25% ROI, PHP 32.5M, 263 sqm), mentions BDO financing (Rule 7), includes both WhatsApp numbers (Rule 4), and uses factual language. Option b uses three forbidden words. Option c wastes headlines on branding. Option d is vague with no numbers."
+    },
+    {
+      "id": 24,
+      "question": "When writing ad copy about the villa's income potential, which phrasing is most credible?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Option b uses two verified project numbers (PHP 395,000 and 65% occupancy) with the qualifier 'verified Airbnb', making it specific and credible. The other options are vague, unsubstantiated, or use cliche marketing language."
+    },
+    {
+      "id": 25,
+      "question": "Which approach best handles the objection 'Why Philippines and not Thailand or Bali?' in ad copy?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Using verified macro data (+166% growth, Skyscanner #8, 1.43M visitors) positions Bohol as an emerging high-growth market implicitly superior to saturated alternatives. This addresses the objection with facts rather than claims, while satisfying Rule 3's number requirement."
+    },
+    {
+      "id": 26,
+      "question": "True or false: Ad copy for the Israeli market can mention PHP prices alongside ILS prices.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Rule 1 is strict: Israeli content shows ONLY shekels. No PHP, no USD, no other currencies. The fixed ILS prices are Villa D: 1,535,000 and Villa C: 1,650,000."
+    },
+    {
+      "id": 27,
+      "question": "You are writing a long-form Facebook post for the Israeli investment group (נדל\"ן והשקעות בפיליפינים). The post must work organically (no ad spend). Which structure is optimal?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Organic group posts need to deliver value to earn engagement. A provocative question hooks readers, specific metrics (ROI, income, occupancy) provide substance, legal structures address the #1 Israeli concern about Philippine property, and both WhatsApp numbers enable immediate action. This satisfies Rules 3, 4, 6, and group-appropriate formatting."
+    },
+    {
+      "id": 28,
+      "question": "Which ad copy element is most important to include when the kill criteria (CPM > $18 or CTR < 0.8%) are close to being triggered?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "When CTR is approaching the 0.8% kill threshold, the priority is getting more clicks per impression. A stronger opening hook with the most compelling number (e.g., 17-25% ROI or PHP 395,000/month income) is the fastest lever to improve CTR without changing targeting or budget."
+    },
+    {
+      "id": 29,
+      "question": "For a retargeting ad to people who clicked but did not submit a lead form, which copy angle converts best?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Retargeting audiences already know the product. Their non-conversion likely stems from a specific objection. Highlighting the low reservation amount and flexible 25/55/20 payment structure directly addresses price/commitment objections with specific numbers."
+    },
+    {
+      "id": 30,
+      "question": "How should Villa D's price be displayed in Filipino market ad copy?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Rule 1B states PHP is the primary currency for Filipino content, formatted with commas: PHP 32,500,000. USD can be secondary with 'approx.' prefix. ILS is never used in Filipino content."
+    },
+    {
+      "id": 31,
+      "question": "Which persuasion principle is best leveraged by mentioning 'Between JW Marriott and Mithi Resort'?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Positioning the villa between two recognized luxury hospitality brands (JW Marriott and Mithi Resort) leverages authority by association. It implicitly communicates that the location is luxury-grade without making subjective claims, aligning with the factual tone rules."
+    },
+    {
+      "id": 32,
+      "question": "The reservation amount of 9,999 ILS (or PHP 200,000) primarily leverages which psychological principle?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "The reservation amount (9,999 ILS vs 1,535,000 ILS total, or PHP 200K vs PHP 32.5M) creates a powerful anchor. The prospect mentally compares the small reservation to the large total, making the initial commitment feel minimal. The 9,999 pricing also uses the 'just under' psychological pricing tactic."
+    },
+    {
+      "id": 33,
+      "question": "Which sequence of information in a long-form ad best applies the 'problem-agitate-solve' framework for Israeli investors?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "PAS framework works by first identifying a pain the reader recognizes (low Israeli yields), then intensifying it (rising prices), then presenting your offer as the solution with specific numbers. This creates emotional resonance before the logical argument, making the 17-25% ROI feel like relief rather than just a statistic."
+    },
+    {
+      "id": 34,
+      "question": "Why is '136.9% tourism growth' a more persuasive number than simply saying 'tourism is growing' in ad copy?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "The precision heuristic means people perceive precise numbers (136.9%) as more credible than round numbers or vague claims. The specificity of '136.9%' signals that this is measured data, not a marketing estimate. This aligns with Rule 3's requirement for specific numbers in every post."
+    },
+    {
+      "id": 35,
+      "question": "Which call-to-action creates the lowest psychological barrier for a cold prospect?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "For cold prospects, sending a WhatsApp message is the lowest commitment action: it is free, instant, non-binding, and familiar. Buying, reserving, or traveling represent progressively higher commitments that cold audiences are not ready for."
+    },
+    {
+      "id": 36,
+      "question": "How does mentioning '3 legal ownership solutions' for Israeli investors leverage loss aversion?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Presenting 3 legal structures (Deed of Assignment, Leasehold 25+25, Domestic Corporation) without explaining which is best for the individual creates an information gap. The investor fears choosing wrong (or missing the best option for their situation), motivating them to inquire. This is loss aversion applied to decision-making."
+    },
+    {
+      "id": 37,
+      "question": "In behavioral economics, 'mental accounting' affects how investors evaluate property. How should ad copy frame the 25/55/20 payment structure to leverage this?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Mental accounting means people evaluate financial decisions in separate 'accounts'. By tying each payment to a milestone (ownership, construction progress, finished asset), each chunk feels like a justified expenditure in its own account rather than one large outflow. This reduces the pain of paying."
+    },
+    {
+      "id": 38,
+      "question": "Which element makes the '60 seconds to beach' claim more persuasive than '1 minute to beach'?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "The granularity effect: '60 seconds' implies someone actually timed the walk, making it feel verified and precise. '1 minute' feels like a rough estimate. This mirrors the precision heuristic - specific units signal measured data over marketing approximation."
+    },
+    {
+      "id": 39,
+      "question": "Why is stating 'verified Airbnb income' more effective than stating 'potential rental income'?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "The word 'verified' triggers the authority heuristic - it implies a third party (Airbnb) has confirmed the data. 'Potential' signals unverified projections. For investment decisions, reducing perceived risk through verified claims is more persuasive than speculative upside."
+    },
+    {
+      "id": 40,
+      "question": "The project data shows 17-25% ROI. When is it more effective to use 17% vs 25% in copy?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Sophisticated investors are suspicious of high numbers and respond better to conservative estimates (17%). First-time investors seeking opportunity respond better to the upside potential (25%). The range 17-25% is useful for both, but emphasizing one end vs the other should match the audience's sophistication level."
+    },
+    {
+      "id": 41,
+      "question": "Which cognitive bias explains why leading with 'Villa D: 1,535,000 ILS' before mentioning 'Villa C: 1,650,000 ILS' makes Villa C feel more expensive than it is?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Anchoring bias means the first number presented becomes the reference point for evaluating subsequent numbers. Showing Villa D at 1,535,000 ILS first anchors the prospect, making Villa C at 1,650,000 feel like a 100K premium. Reversing the order (C first) would make D feel like a 100K discount. Choose the order based on which villa you want to sell."
+    },
+    {
+      "id": 42,
+      "question": "How does mentioning 'Skyscanner ranked Bohol #8 globally' leverage the bandwagon effect?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The bandwagon effect drives people to follow what others are doing. A Skyscanner #8 global ranking implies millions of travelers have validated Bohol as a destination. For investors, this signals demand - a crucial factor for rental income. The investor feels they are joining a proven, data-backed trend rather than taking a speculative bet."
+    },
+    {
+      "id": 43,
+      "question": "Which languages are supported for generated marketing assets in this project?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "The project targets two markets: Israel (Hebrew) and Philippines (English and Tagalog). These three languages cover all required marketing assets."
+    },
+    {
+      "id": 44,
+      "question": "What register should Hebrew marketing copy use per Rule 8?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 8 specifies: formal but warm, peer-to-peer professional. No slang. This establishes credibility while maintaining approachability for Israeli investor audiences."
+    },
+    {
+      "id": 45,
+      "question": "When adapting the CTA 'Send us a WhatsApp message' to Hebrew, which version is correct?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Hebrew plural imperative (שלחו) is the appropriate register for formal-but-warm professional communication (Rule 8). Singular informal (תשלח) is too casual. Leaving it in English defeats the purpose of Hebrew content. Changing the CTA type is inaccurate."
+    },
+    {
+      "id": 46,
+      "question": "In Hebrew content, how should Villa D's price be displayed?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Rule 1 mandates Israeli content uses ONLY shekels with the Hebrew abbreviation ש\"ח. The fixed price for Villa D is 1,535,000 ש\"ח. Using ILS abbreviation instead of ש\"ח would be less natural for Hebrew readers."
+    },
+    {
+      "id": 47,
+      "question": "When writing Tagalog ad copy for Facebook, which approach is most effective?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Taglish (code-switching between Tagalog and English) is the natural register for Filipino social media communication, especially for real estate and investment topics. Pure formal Tagalog feels stiff, pure English may not resonate emotionally, and Cebuano alone would exclude the Metro Manila audience."
+    },
+    {
+      "id": 48,
+      "question": "How should the phrase '3 legal ownership solutions' be adapted for Hebrew copy to satisfy Rule 6?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Rule 6 requires Israeli content to mention all 3 legal ownership solutions: Deed of Assignment (שטר הקצאה), Leasehold 25+25 (חכירה 25+25), and Domestic Corporation (חברה מקומית). Translating them provides clarity for Hebrew readers while satisfying the rule requirement."
+    },
+    {
+      "id": 49,
+      "question": "You need to write a WhatsApp broadcast message in Hebrew. WhatsApp has a 1024-character limit for template messages. Which content should be prioritized?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Within 1024 characters in Hebrew, prioritize: one hook number (e.g., 17-25% תשואה), the low barrier (9,999 ש\"ח להזמנה), legal structure mention (Rule 6), and a reply CTA. WhatsApp is conversational, so the goal is to start a dialogue, not deliver all information. Company intros waste characters."
+    },
+    {
+      "id": 50,
+      "question": "When translating '65% occupancy rate' to Hebrew for an investment-focused ad, which phrasing is most effective?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Adding 'verified through Airbnb' (מאומתת באמצעות Airbnb) in the Hebrew translation provides the credibility signal that sophisticated Israeli investors need. Simple translation loses the verification context, removing the number violates Rule 3, and leaving it in English breaks the Hebrew immersion."
+    },
+    {
+      "id": 51,
+      "question": "True or false: The Hebrew maqaf (־) can be used in Hebrew marketing content.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Rule 2 explicitly forbids the Hebrew maqaf (־) along with em dashes and en dashes. Only regular hyphens (-), colons (:), and commas (,) are allowed."
+    },
+    {
+      "id": 52,
+      "question": "For the Facebook group 'נדל\"ן והשקעות בפיליפינים', which posting language strategy maximizes engagement?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The group's primary language is Hebrew, but Israeli investors naturally code-switch to English for financial and brand terms (ROI, Airbnb, WhatsApp). Using Hebrew for the narrative with English for established financial terminology feels natural and professional, matching Rule 8's peer-to-peer professional register."
+    },
+    {
+      "id": 53,
+      "question": "When localizing the payment terms '25/55/20' for different markets, how should the copy differ?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Each market needs locally appropriate terminology: Hebrew uses מקדמה/בבנייה/במסירה with ILS amounts (Rule 1), while Filipino uses Down/Progress/Turnover with PHP amounts (Rule 1B) and must include BDO financing mention (Rule 7). The structure is the same but the language, currency, and supplementary info differ by market."
+    },
+    {
+      "id": 54,
+      "question": "Which Hebrew word should NEVER be used as a translation for 'amazing' in villa descriptions?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 5 forbids 'amazing' and its Hebrew equivalents. מדהים is the direct Hebrew translation of 'amazing' and is therefore forbidden. מרשים (impressive), איכותי (quality), and מקצועי (professional) are acceptable alternatives that convey quality without using banned terms."
+    },
+    {
+      "id": 55,
+      "question": "What is the kill criteria threshold for Meta ads in this campaign?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The kill criteria are CPM > $18 or CTR < 0.8%. If either threshold is breached, the ad must be killed immediately. This prevents wasting budget on underperforming creative."
+    },
+    {
+      "id": 56,
+      "question": "For Instagram ads run through Meta Ads Manager, what is required per the project setup?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Per project instructions: 'No separate IG account. Run Instagram ads through Meta Ads Manager linking directly to the sales website. No Instagram page needed.' This simplifies the channel setup while still accessing Instagram's audience."
+    },
+    {
+      "id": 57,
+      "question": "When writing copy for a Meta carousel ad (up to 10 cards), what is the optimal content distribution for Villa D?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Carousel ads should tell a progressive story, each card revealing a new compelling element. Starting with the strongest number (ROI) hooks attention, then building through visuals, income proof, payment structure, and legal frameworks before closing with a CTA. This satisfies Rule 3 (numbers on multiple cards) and Rule 4 (WhatsApp numbers in CTA)."
+    },
+    {
+      "id": 58,
+      "question": "What is the total campaign budget and daily average?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 9 specifies: total budget $900 for 15 days ($60/day average). After 15 days, a full analysis must be conducted before continuing. Budget must not be exceeded without explicit approval."
+    },
+    {
+      "id": 59,
+      "question": "Where should organic Israeli-market posts be published?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The project specifies using the Facebook Group 'נדל\"ן והשקעות בפיליפינים | Philippines Real Estate & Investments' for Israeli market organic posts. Blueprint Building Group must NEVER be used (it is a completely separate business)."
+    },
+    {
+      "id": 60,
+      "question": "When writing Google Search ad copy for the keyword 'Bohol investment villa', which ad extension strategy best supports the campaign?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Sitelink extensions with specific pages (individual villa pages, payment calculator, WhatsApp contact) give the ad more real estate on the SERP, provide multiple entry points for different user intents, and improve quality score. This aligns with the number-driven approach since each sitelink can feature a key metric."
+    },
+    {
+      "id": 61,
+      "question": "A Meta ad is showing CPM of $16 and CTR of 0.9%. Both metrics are above kill thresholds but not performing well. What copy optimization should be tested first?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "At CPM $16 and CTR 0.9%, the ad is alive but underperforming. The highest-leverage change is the hook (first line users see). A/B testing two different leading numbers (income vs ROI) identifies which data point resonates more. CTA button changes are secondary, budget changes do not fix creative issues, and killing at above-threshold metrics wastes learnings."
+    },
+    {
+      "id": 62,
+      "question": "For WhatsApp template messages, what is the approval requirement?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "WhatsApp Business API requires all template messages to be submitted and approved by Meta before they can be sent to users. This applies to both text and media templates. Free-form messages can only be sent within the 24-hour customer service window after a user initiates conversation."
+    },
+    {
+      "id": 63,
+      "question": "Which Facebook page should all Panglao Prime Villas content be posted from?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "All page posts must come from the Blue Everest Asset Group page (https://www.facebook.com/BlueEverestGroup). Blueprint Building Group is a completely separate business and must NEVER be used for villa marketing. This is a permanent and absolute rule."
+    },
+    {
+      "id": 64,
+      "question": "When creating a Meta lead form ad, which form field order maximizes completion rate for villa inquiries?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "For investment property leads, phone and country are more valuable than email (WhatsApp is the primary channel). Villa preference (C or D) pre-qualifies the lead. Making email optional reduces friction. Progressive disclosure keeps the form short while capturing the most actionable data points."
+    },
+    {
+      "id": 65,
+      "question": "What must every CTA in this campaign include per Rule 4?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Rule 4 mandates every post include BOTH WhatsApp numbers: Marketing (+639542555553) and Office (+639958565865). This ensures leads have two contact options and no single point of failure."
+    },
+    {
+      "id": 66,
+      "question": "Which CTA is most appropriate for a cold Israeli audience seeing a villa ad for the first time?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Cold audiences need a low-commitment first step. Requesting an investment brief via WhatsApp is free, instant, and non-binding. Reserving, traveling, or transferring money are high-commitment actions inappropriate for first contact."
+    },
+    {
+      "id": 67,
+      "question": "For a retargeting ad to warm Israeli leads who already received the investment brief, which CTA moves them down the funnel?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Warm leads who have the brief need a next-step CTA that advances them. The reservation CTA (9,999 ILS) is the logical next commitment on the ladder. Repeating the brief offer stalls the funnel. Social engagement CTAs do not advance toward purchase."
+    },
+    {
+      "id": 68,
+      "question": "True or false: A CTA that says only 'Contact us' without WhatsApp numbers is compliant with project rules.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Rule 4 requires both WhatsApp numbers in every post. A vague 'Contact us' without the specific numbers (+639542555553 and +639958565865) violates this rule."
+    },
+    {
+      "id": 69,
+      "question": "Which CTA format works best in a Hebrew WhatsApp template message?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "WhatsApp template messages with reply buttons dramatically increase response rates because they eliminate the effort of typing. A pre-filled Hebrew reply text maintains the formal-but-warm register (Rule 8) while making the action effortless."
+    },
+    {
+      "id": 70,
+      "question": "When writing a CTA for a Filipino market ad with BDO financing, which phrasing combines the financing hook with action?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Option b combines the financing hook (BDO 70%), a specific action (WhatsApp for pre-qualification), and both required WhatsApp numbers (Rule 4). Option a does not include numbers, option c redirects away from WhatsApp, option d uses forbidden phrase 'dream home' (Rule 5)."
+    },
+    {
+      "id": 71,
+      "question": "You are designing a CTA sequence for an email drip campaign. Which order of CTAs across 5 emails best matches the buyer journey?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "The commitment ladder should progressively increase from low (download brief) to medium (virtual tour, video call) to high (reservation, site visit). Each email earns the right to ask for more commitment by delivering value first. Repetitive or immediately high-commitment CTAs cause unsubscribes."
+    },
+    {
+      "id": 72,
+      "question": "For a Google Search ad CTA, which approach is most effective given the limited description space?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Option a packs three elements into the CTA: the action channel (WhatsApp), a specific number (17-25% ROI), and the deliverable (investment brief). This is specific, actionable, and includes at least one WhatsApp number. The other options are either vague, lack numbers, or waste the limited space."
+    },
+    {
+      "id": 73,
+      "question": "Which CTA approach is appropriate when the campaign is in simulation mode?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "When simulation mode is true in campaign_state.json, all actions must be drafted and screenshotted but NOT published. The CTA is written as it would appear in the live version, but the post remains in draft state."
+    },
+    {
+      "id": 74,
+      "question": "Which CTA placement within a long Facebook post body generates the most WhatsApp messages?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Two CTA placements catch both scanners (who read the hook then look to act) and readers (who consume the full post). The early CTA captures impulse responders, while the end CTA captures those who needed the full argument. Both must include the WhatsApp numbers per Rule 4."
+    },
+    {
+      "id": 75,
+      "question": "Which description of Panglao Prime Villas best matches the required tone?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The project requires factual, specific, number-driven copy. Option b uses verified data without emotional language. Option a uses three forbidden phrases (amazing, once-in-a-lifetime, dream home). Option c uses excessive capitalization and hyperbole. Option d is too casual."
+    },
+    {
+      "id": 76,
+      "question": "How should Hebrew copy address the reader to match Rule 8's 'formal but warm, peer-to-peer professional' register?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 8 requires formal but warm, peer-to-peer professional Hebrew with no slang. Second person plural (אתם) is the standard formal-but-friendly Hebrew register for business communication. It is respectful without being stiff or distant."
+    },
+    {
+      "id": 77,
+      "question": "Which word can safely replace 'amazing' in villa copy?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 5 forbids: amazing, incredible, dream home, and once in a lifetime. 'Premium' is a factual descriptor that conveys quality without using any forbidden terms."
+    },
+    {
+      "id": 78,
+      "question": "When writing about the investment opportunity, which tone best serves Israeli high-net-worth investors?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Israeli high-net-worth investors are sophisticated and skeptical of hype. Data-driven, understated copy with verified numbers builds trust. Hype triggers suspicion, fear-driven copy feels manipulative, and emotional copy feels amateurish for investment products."
+    },
+    {
+      "id": 79,
+      "question": "Which sentence correctly maintains the factual tone while describing the villa location?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Option b uses factual, verifiable claims (named landmarks, measured distance, specific beach name) without any forbidden words or subjective language. Options a, c, and d use forbidden words or unverifiable superlatives."
+    },
+    {
+      "id": 80,
+      "question": "You need to write about the villas' premium quality in a way that conveys luxury without using any forbidden words. Which approach is most effective?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Specific details (exact measurements, features, materials) communicate luxury more effectively than adjectives. 15.08 sqm pool, 6.37 sqm jacuzzi, and 263.78 sqm total area let the reader conclude 'luxury' themselves. This aligns with the factual, number-driven tone requirement."
+    },
+    {
+      "id": 81,
+      "question": "True or false: The copy can describe Blue Everest as an 'Israeli developer' in marketing materials.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "While the project CLAUDE.md does not explicitly forbid describing Blue Everest as Israeli (that rule applies to Blueprint), the marketing materials should focus on Blue Everest as a Philippine-registered holding company. The developer is Blue Everest Asset Group Holding Inc., a Philippine entity."
+    },
+    {
+      "id": 82,
+      "question": "When writing about ROI in ad copy, which framing avoids regulatory issues while remaining compelling?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Using 'projected' and 'based on verified data' provides factual grounding without guaranteeing returns, which could create legal liability. Options a, c, and d make guarantees or promises that could be considered misleading advertising."
+    },
+    {
+      "id": 83,
+      "question": "For Tagalog/Taglish copy targeting Filipino investors, which cultural nuance should be reflected in tone?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Filipino culture values pakikisama (getting along) and family. Investment messaging should frame the villa as providing family security and generational wealth, with BDO financing (Rule 7) making it accessible. This resonates more than aggressive sales or impersonal business language."
+    },
+    {
+      "id": 84,
+      "question": "Which of these sentences is too casual for the project's required professional tone?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Option b uses informal internet language (OMG, literally, insane), excessive punctuation, and ALL CAPS, which violate the professional tone requirement. The other options use factual, measured language appropriate for investment property marketing."
+    },
+    {
+      "id": 85,
+      "question": "When A/B testing ad copy for the Israeli market, which variable should be isolated first?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Effective A/B testing isolates one variable. Testing the leading number (ROI vs reservation amount) with identical images, body copy structure, and CTAs reveals which hook resonates more with the Israeli audience. Testing multiple variables simultaneously makes results unattributable."
+    },
+    {
+      "id": 86,
+      "question": "With a $60/day average budget over 15 days, what is the minimum sample size consideration for an A/B test to reach statistical significance?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "At $60/day, a 50/50 split gives $30/day per variant. With typical CPMs, this generates meaningful data in 3-5 days. One day is insufficient for significance, 15 days wastes budget on a losing variant, and sample size always matters. Kill criteria (CPM>$18 or CTR<0.8%) should still be applied to each variant independently."
+    },
+    {
+      "id": 87,
+      "question": "In an A/B test of two Facebook ad headlines, what should remain constant?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "A/B testing requires isolating a single variable (headline in this case) while keeping all other elements constant: image, body text, CTA, targeting, budget, and schedule. This ensures any performance difference is attributable to the headline change."
+    },
+    {
+      "id": 88,
+      "question": "After an A/B test shows Version A (ROI-led headline) has 1.2% CTR and Version B (income-led headline) has 0.9% CTR after 5 days, what is the next action?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Version B (0.9%) is above the kill threshold (0.8%) so it is not dead yet. Shifting to 70/30 captures more value from the winner while giving Version B a smaller window to recover or confirm the loss. This is more efficient than premature killing or wasteful 50/50 continuation."
+    },
+    {
+      "id": 89,
+      "question": "You want to test whether Hebrew copy with ILS amounts outperforms Hebrew copy with USD amounts (hypothetically, if rules allowed both). Why is this test fundamentally flawed per project rules?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Rule 1 is non-negotiable: Israeli content shows ONLY shekels. Even if USD might theoretically perform better, creating a USD variant for testing would violate the rule. Some A/B test ideas are invalid because they conflict with hard brand/compliance constraints."
+    },
+    {
+      "id": 90,
+      "question": "Which two CTA variations would provide the most actionable A/B test insight for improving conversion rate?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Testing 'request information' (low commitment) vs 'reserve now' (high commitment) reveals whether the audience is in research or purchase mode. This directly informs funnel strategy. Options a and c test trivial wording differences, option d tests having vs not having a CTA which is not a real strategic question."
+    },
+    {
+      "id": 91,
+      "question": "Which entity must NEVER be mentioned, referenced, or used in any Panglao Prime Villas marketing?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Blueprint Building Group is a completely separate business. The rule is explicit: 'NEVER touch BluePrint Building Group. Do NOT post, comment, message, advertise, or take ANY action on the Blueprint page, its audience, or its followers. This rule is permanent and absolute.'"
+    },
+    {
+      "id": 92,
+      "question": "When writing about ROI projections in Philippine advertising, which phrasing best protects against misleading advertising claims?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Using 'projected', citing the data source ('verified Airbnb occupancy'), providing a range (17-25%), and adding a disclaimer about past performance protects against misleading advertising claims. Guarantees and absolute claims create legal liability."
+    },
+    {
+      "id": 93,
+      "question": "For Israeli investor targeting, which data privacy consideration applies to WhatsApp marketing?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Israeli Privacy Protection Law (Amendment 40) regulates direct marketing communications including WhatsApp. Messages require prior consent, Meta requires template pre-approval for WhatsApp Business API, and recipients must have an opt-out mechanism. This applies to all marketing messages sent to Israeli phone numbers."
+    },
+    {
+      "id": 94,
+      "question": "What must happen before any money is spent on live advertising?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The golden rules state: 'NEVER spend money unless a task explicitly instructs you to and simulation is false.' Both conditions must be met: simulation mode must be off AND the specific task must authorize the spend with an exact budget amount."
+    },
+    {
+      "id": 95,
+      "question": "If a task file instructs you to post content that uses the phrase 'once in a lifetime opportunity', what should you do?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The instructions state: 'If a task violates any rule, mark it NEEDS_CLARIFICATION and skip it.' The agent must NEVER improvise copy (Golden Rule 1), so modifying the text is also not allowed. The correct action is to flag the violation and skip."
+    },
+    {
+      "id": 96,
+      "question": "It is Day 8 of the campaign. Meta ad IL-1 (Israeli market, ROI-led) shows CPM $17.50 and CTR 0.82%. Meta ad PH-1 (Filipino market, BDO-led) shows CPM $12 and CTR 1.1%. You have spent $420 of the $900 budget. What copy-related action should you take?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "IL-1 is technically alive (CPM $17.50 < $18, CTR 0.82% > 0.8%) but marginal. Rather than killing a live ad, test a hook variation (e.g., leading with monthly income in ILS instead of ROI percentage) to improve CTR. PH-1 is healthy and should continue. Budget is on track ($420/8 days = $52.50/day < $60 average)."
+    },
+    {
+      "id": 97,
+      "question": "A lead from the Israeli Facebook group asks in Hebrew: 'How do I know the income numbers are real and not just marketing?' What copy principle should guide the response?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Skeptical Israeli investors need verifiable proof, not emotional reassurance. Citing specific data sources (Airbnb records, occupancy methodology), named landmarks (JW Marriott, Mithi), and offering documented records via WhatsApp builds trust through transparency. Option d uses two forbidden phrases."
+    },
+    {
+      "id": 98,
+      "question": "You are creating a 3-email sequence for a new Filipino lead who submitted a form expressing interest in Villa D. Each email must follow all rules. Which sequence is correct?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Option a follows all rules: PHP pricing (Rule 1B), numbers in every email (Rule 3), both WhatsApp numbers in Email 3 (Rule 4), no forbidden words (Rule 5), BDO financing (Rule 7), and a logical progression from information to action. Option b uses three forbidden phrases, option c promotes the wrong company, option d is aggressive and lacks substance."
+    },
+    {
+      "id": 99,
+      "question": "The campaign needs a Google Display Network ad (300x250 banner) with copy overlay. You have 4 lines of text maximum. Which copy maximizes impact?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Option a packs maximum information in 4 lines: brand name, ROI, income proof, and WhatsApp CTA. Each line contains a specific number or actionable element. Option b is vague, option c uses ALL FOUR forbidden phrases, option d ignores banner readability constraints."
+    },
+    {
+      "id": 100,
+      "question": "It is Day 15, the end of the initial campaign period. You must write the copy for a campaign summary post on the Blue Everest Facebook page. Total results: 847 leads, 12 reservations, $892 spent. Which post angle is most effective for ongoing momentum?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Option b uses specific numbers (12 reservations, 15 days), creates scarcity (limited availability), includes both villa prices (Rule 3), and both WhatsApp numbers (Rule 4). Option a uses three forbidden words. Option c lacks energy and numbers. Option d makes an unverifiable superlative claim."
+    }
+  ],
+  "failures": []
+}

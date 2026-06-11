@@ -1,0 +1,23 @@
+[
+  {
+    "id": "RPT-0005",
+    "priority": "MEDIUM",
+    "type": "metric_collection",
+    "status": "PENDING",
+    "description": "Day 6 metric collection",
+    "instructions": "Collect metrics from all active platforms: facebook_page, facebook_group_il. Record: impressions, clicks, CTR, CPC, leads generated, spend.",
+    "active_platforms": [
+      "facebook_page",
+      "facebook_group_il"
+    ]
+  },
+  {
+    "id": "RPT-0006",
+    "priority": "MEDIUM",
+    "type": "daily_report",
+    "status": "PENDING",
+    "description": "Day 6 daily report",
+    "instructions": "Generate daily report using scripts/daily_report_generator.py. Review metrics against KPIs. Flag any anomalies.",
+    "scheduled_time": "2026-04-16T21:00:00+08:00"
+  }
+]

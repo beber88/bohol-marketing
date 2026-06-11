@@ -1,0 +1,48 @@
+[SIMULATION - NOT FOR LIVE DEPLOYMENT]
+
+=== META_IL_CONSIDERATION_C2.txt ===
+Platform: Meta (Facebook + Instagram Stories)
+Market: Israel
+Funnel Stage: Consideration
+Campaign: IL-2
+Objective: Conversions
+Budget: $7/day (part of IL-2 allocation)
+Audience: Israel, age 45-60, luxury property interest
+Format: Stories (9:16 video, 15 sec)
+Schedule: Evening prime, 6-9pm IST
+
+---
+
+STORIES SCRIPT (15 seconds):
+
+[0-3s] Aerial beachfront property shot
+Text: "לא יום חופש. יום כסף."
+
+[3-7s] Interior: pool area, sunset view
+Text: "PHP 32.5M. ₪1.36M."
+
+[7-11s] Income graph overlay
+Text: "₪23,700 בחודש. בטוח."
+
+[11-15s] Logo + CTA button
+Text: "דיווח השקעה →"
+
+---
+
+HEADLINE: "וילה שמרוויחה"
+CTA BUTTON TEXT: "בקשת דיווח"
+
+---
+
+OPTIMIZATION NOTES:
+- Stories format drives higher click-through than feed
+- Emoji use minimal (Hebrew text prefers Western audience)
+- Value proposition clear in first 3 seconds
+- Call-to-action explicit: דיווח (report/review), not abstract
+- Retarget Website Visitors + Engagement audiences
+- Budget lower than C1 due to test phase
+
+=== FX METADATA ===
+FX date used: 2026-04-14
+PHP-ILS rate: 0.0488
+PHP-USD rate: 0.01663

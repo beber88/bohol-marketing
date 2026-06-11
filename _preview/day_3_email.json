@@ -1,0 +1,28 @@
+[
+  {
+    "id": "EML-0007",
+    "priority": "HIGH",
+    "type": "email_conversion",
+    "status": "PENDING",
+    "market": "PH",
+    "description": "Day 15 email - conversion (PH)",
+    "instructions": "Send conversion email to PH lead list via Brevo. Subject: Last 2 Villas Available - Schedule Your Virtual Tour. Include villa pricing from FX data and CTA to reservation form. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+    "subject": "Last 2 Villas Available - Schedule Your Virtual Tour",
+    "language": "en",
+    "villa_d_price": "PHP 28,000,000",
+    "villa_c_price": "PHP 30,000,000"
+  },
+  {
+    "id": "EML-0008",
+    "priority": "HIGH",
+    "type": "email_conversion",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 15 email - conversion (IL)",
+    "instructions": "Send conversion email to IL lead list via Brevo. Subject: 2 וילות אחרונות - קבעו סיור וירטואלי. Include villa pricing in ILS and CTA to WhatsApp. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+    "subject": "2 וילות אחרונות - קבעו סיור וירטואלי",
+    "language": "he",
+    "villa_d_price": "₪1,420,888",
+    "villa_c_price": "₪1,522,380"
+  }
+]

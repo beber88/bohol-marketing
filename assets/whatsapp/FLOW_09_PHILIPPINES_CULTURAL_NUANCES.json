@@ -1,0 +1,36 @@
+{
+  "name": "FLOW_09_PHILIPPINES_CULTURAL_NUANCES",
+  "description": "Philippines-specific messaging and considerations",
+  "type": "text_based",
+  "version": "2.0",
+  "trigger": "PH_audience",
+  "created_at": "2026-04-14T11:00:00Z",
+  "topics": [
+    {
+      "topic": "BDO Financing (Philippines context)",
+      "content": "💡 Why BDO works for Pinoys:\n\n✓ BDO is trusted (biggest bank)\n✓ Fast approval (3-5 days vs weeks elsewhere)\n✓ Property-backed lending (more favorable terms)\n✓ Rates competitive (5.5-6.5%)\n✓ We handle documentation\n✓ No hidden fees (BDO transparent)\n\nIf self-employed? Even better — BDO values real estate backing."
+    },
+    {
+      "topic": "Remittance angle",
+      "content": "📤 Alternative: Use remittances!\n\nIf you have OFW family:\n• Pool resources → One villa\n• Split ownership (50-50)\n• Shared income: PHP 197.5K each\n• Multiple families doing this\n• Collective wealth building\n• Generational asset\n\nRemit → BDO → Accumulate → Invest"
+    },
+    {
+      "topic": "Barangay & local relations",
+      "content": "🤝 Community standing:\n\n• Property is secure (barangay knows location)\n• Blue Everest maintains community relations\n• Local staff employed (~5 people)\n• Taxes paid locally\n• Not a ghost property\n• Barangay captain briefed\n\nYou're investing IN the community."
+    },
+    {
+      "topic": "Bahay loans & family business",
+      "content": "👨‍👩‍👧‍👦 For entrepreneurs:\n\nInstead of:\n❌ Bahay loan (5-10% interest only, no asset growth)\n\nConsider:\n✅ Villa investment (20% returns + asset ownership)\n\nSame capital deployment, way better outcome.\nYour children inherit property + wealth."
+    },
+    {
+      "topic": "Estate planning",
+      "content": "📋 In your Will:\n\nVilla ownership is EASILY inheritable:\n• Property in your name (simple)\n• Income continues automatically\n• Management transfers to heirs\n• No probate complications\n• Building family wealth\n• Generational income stream\n\nYour kids benefit for decades."
+    },
+    {
+      "topic": "Philippine tax clarity",
+      "content": "🏛️ Tax obligations (transparent):\n\n✓ Income tax: On rental earnings (included in management)\n✓ Capital gains: When you sell\n✓ Annual property tax: ~2-3% (low)\n✓ CPA assistance: Provided\n✓ Reporting: Automated, we help\n• No surprises\n• Fully legal\n• All documented"
+    }
+  ],
+  "export_format": "WATI",
+  "export_date": "2026-04-14T11:00:00Z"
+}

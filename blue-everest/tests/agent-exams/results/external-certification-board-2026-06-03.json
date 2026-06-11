@@ -1,0 +1,199 @@
+{
+  "timestamp": "2026-06-03T19:32:10.971Z",
+  "passing_score_required": 100,
+  "allPassed": true,
+  "results": [
+    {
+      "agent": "cmo_orchestrator",
+      "sourceCoverage": 100,
+      "localExamIntegrity": 100,
+      "capstoneScenario": 100,
+      "finalScore": 100,
+      "passed": true,
+      "tracks": [
+        "ama_dmi_digital_marketing",
+        "google_ads_certifications",
+        "meta_performance_5",
+        "hubspot_inbound_marketing"
+      ],
+      "scenarios": [
+        "Allocate a $900, 15-day budget without exceeding spend limits.",
+        "Delegate Google, Meta, email, WhatsApp, CRM, analytics, and compliance tasks.",
+        "Block Blueprint cross-use and require post-publication measurement."
+      ]
+    },
+    {
+      "agent": "content_strategist",
+      "sourceCoverage": 100,
+      "localExamIntegrity": 100,
+      "capstoneScenario": 100,
+      "finalScore": 100,
+      "passed": true,
+      "tracks": [
+        "hubspot_inbound_marketing",
+        "ama_dmi_digital_marketing",
+        "meta_blueprint_digital_marketing",
+        "google_skillshop"
+      ],
+      "scenarios": [
+        "Build IL and PH calendars with separate legal/BDO requirements.",
+        "Use inbound content stages and channel-fit creative briefs.",
+        "Reject content that violates currency or WhatsApp rules."
+      ]
+    },
+    {
+      "agent": "copywriter",
+      "sourceCoverage": 100,
+      "localExamIntegrity": 100,
+      "capstoneScenario": 100,
+      "finalScore": 100,
+      "passed": true,
+      "tracks": [
+        "hubspot_inbound_marketing",
+        "meta_blueprint_digital_marketing",
+        "ama_dmi_digital_marketing",
+        "whatsapp_business_policy"
+      ],
+      "scenarios": [
+        "Write IL copy with PHP-only monetary amounts and all 3 ownership paths.",
+        "Write PH copy with PHP, BDO, and both WhatsApp numbers.",
+        "Remove hype, long dashes, and forbidden wording."
+      ]
+    },
+    {
+      "agent": "performance_ads",
+      "sourceCoverage": 100,
+      "localExamIntegrity": 100,
+      "capstoneScenario": 100,
+      "finalScore": 100,
+      "passed": true,
+      "tracks": [
+        "google_ads_certifications",
+        "google_enhanced_conversions_for_leads",
+        "meta_blueprint_digital_marketing",
+        "meta_performance_5",
+        "meta_conversions_api",
+        "meta_advantage_plus"
+      ],
+      "scenarios": [
+        "Diagnose Meta learning phase, Advantage+ fit, CAPI data quality, and creative diversity.",
+        "Plan Google Search/Display/Video/App/Shopping-style certification scenarios.",
+        "Use enhanced conversions for leads and budget guardrails before scaling."
+      ]
+    },
+    {
+      "agent": "email_nurture",
+      "sourceCoverage": 100,
+      "localExamIntegrity": 100,
+      "capstoneScenario": 100,
+      "finalScore": 100,
+      "passed": true,
+      "tracks": [
+        "hubspot_academy",
+        "hubspot_inbound_marketing",
+        "brevo_deliverability",
+        "ama_dmi_digital_marketing"
+      ],
+      "scenarios": [
+        "Design inbound lead nurturing by intent and market.",
+        "Apply deliverability authentication and segmentation checks.",
+        "Move WhatsApp-click leads to complementary tracks without duplicate pressure."
+      ]
+    },
+    {
+      "agent": "whatsapp_agent",
+      "sourceCoverage": 100,
+      "localExamIntegrity": 100,
+      "capstoneScenario": 100,
+      "finalScore": 100,
+      "passed": true,
+      "tracks": [
+        "whatsapp_business_policy",
+        "meta_blueprint_digital_marketing",
+        "hubspot_inbound_marketing"
+      ],
+      "scenarios": [
+        "Classify marketing, utility, and inbound conversations under WhatsApp policy.",
+        "Route hot leads to sales while preserving opt-in and template compliance.",
+        "Keep both WhatsApp numbers visible where campaign rules require them."
+      ]
+    },
+    {
+      "agent": "crm_lead_scorer",
+      "sourceCoverage": 100,
+      "localExamIntegrity": 100,
+      "capstoneScenario": 100,
+      "finalScore": 100,
+      "passed": true,
+      "tracks": [
+        "hubspot_inbound_marketing",
+        "meta_lead_ads",
+        "google_enhanced_conversions_for_leads",
+        "google_analytics_academy"
+      ],
+      "scenarios": [
+        "Score leads using budget, timeline, villa interest, and contact intent.",
+        "Map qualified lead stages into Meta/Google offline conversion feedback.",
+        "Trigger hot lead alerts for reservation/payment language."
+      ]
+    },
+    {
+      "agent": "analytics_reporter",
+      "sourceCoverage": 100,
+      "localExamIntegrity": 100,
+      "capstoneScenario": 100,
+      "finalScore": 100,
+      "passed": true,
+      "tracks": [
+        "google_analytics_academy",
+        "google_ads_certifications",
+        "google_enhanced_conversions_for_leads",
+        "meta_conversions_api",
+        "meta_performance_5"
+      ],
+      "scenarios": [
+        "Compute CTR, CPC, CPM, CPL, conversion rate, and spend pacing.",
+        "Separate Meta, Google, email, WhatsApp, and organic community reporting.",
+        "Flag data gaps in GA4, CAPI, Pixel, and enhanced conversions."
+      ]
+    },
+    {
+      "agent": "brand_guard",
+      "sourceCoverage": 100,
+      "localExamIntegrity": 100,
+      "capstoneScenario": 100,
+      "finalScore": 100,
+      "passed": true,
+      "tracks": [
+        "meta_blueprint_digital_marketing",
+        "whatsapp_business_policy",
+        "google_ads_certifications",
+        "ama_dmi_digital_marketing"
+      ],
+      "scenarios": [
+        "Block all non-PHP monetary amounts, missing WhatsApp numbers, and missing BDO.",
+        "Block Blueprint references anywhere in the funnel.",
+        "Reject forbidden words, long dashes, and incomplete legal ownership coverage."
+      ]
+    },
+    {
+      "agent": "sales_chatbot",
+      "sourceCoverage": 100,
+      "localExamIntegrity": 100,
+      "capstoneScenario": 100,
+      "finalScore": 100,
+      "passed": true,
+      "tracks": [
+        "hubspot_inbound_marketing",
+        "hubspot_academy",
+        "whatsapp_business_policy",
+        "meta_lead_ads"
+      ],
+      "scenarios": [
+        "Run discovery, objection handling, and lead qualification.",
+        "Keep Hebrew financial answers PHP-only.",
+        "Handoff hot leads to WhatsApp without promising returns."
+      ]
+    }
+  ]
+}

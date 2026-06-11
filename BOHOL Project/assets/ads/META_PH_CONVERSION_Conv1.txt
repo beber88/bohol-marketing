@@ -1,0 +1,71 @@
+[SIMULATION - NOT FOR LIVE DEPLOYMENT]
+
+=== META_PH_CONVERSION_Conv1.txt ===
+Platform: Meta (Facebook Feed + Reels)
+Market: Philippines
+Funnel Stage: Conversion
+Campaign: PH-3
+Objective: Conversions / Lead Calls
+Budget: $20/day
+Audience: Hot audiences (website visitors, high-value leads, retargeting)
+Placements: Facebook Feed, Instagram Reels
+Schedule: Daily
+
+---
+
+PRIMARY TEXT (V1 - Tagalog - URGENCY):
+
+Ngayong linggo pa lang. Dalawang unit na.
+
+PHP 32,500,000. PHP 395,000 bawat buwan.
+Blue Everest guaranteed. BDO financing ready.
+
+Hindi na mauulit ang presyong ito.
+
+WhatsApp: +639542555553
+Schedule site visit: primevilla.ph
+
+---
+
+PRIMARY TEXT (V2 - English):
+
+Last 2 villas. Limited time pricing.
+PHP 32.5M → PHP 395K/month passive income.
+BDO financed. Move-in ready.
+
+Call or WhatsApp now: +639542555553
+
+---
+
+HEADLINE V1: "Lahat Tapos Bukas"
+HEADLINE V2: "2 Villas. Ngayong Linggo Pa."
+HEADLINE V3: "₱395K/Buwan. Ngayon Na."
+
+DESCRIPTION V1: "Guaranteed income. Financing approved. 60-second beach access."
+DESCRIPTION V2: "Verified Airbnb earning history. Blue Everest management."
+
+CTA: Call Now / Message Us
+
+---
+
+RETARGETING AUDIENCES:
+- Website visitors (all)
+- Engagement audience (high-intent)
+- Video viewers (80%+)
+- Lead form viewers (non-converters)
+- Website visitor retargeting - recent (7-14 days)
+
+OPTIMIZATION NOTES:
+- Extreme urgency language: This is the final push
+- WhatsApp number prominently displayed
+- Multiple CTAs: Call, Message, Site Visit
+- Daily budget higher (20 vs 15 for IL) due to larger PH market
+- Retargeting spend: 70% of total PH-3 budget
+- Videos outperform static for conversion funnel
+- Testimonial videos: existing owners + rental income proof
+- Time-limited messaging: "This week only" — update weekly
+
+=== FX METADATA ===
+FX date used: 2026-04-14
+PHP-ILS rate: 0.0488
+PHP-USD rate: 0.01663

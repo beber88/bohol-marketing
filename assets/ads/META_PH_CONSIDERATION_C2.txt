@@ -1,0 +1,48 @@
+[SIMULATION - NOT FOR LIVE DEPLOYMENT]
+
+=== META_PH_CONSIDERATION_C2.txt ===
+Platform: Meta (Instagram Reels + Facebook Video)
+Market: Philippines
+Funnel Stage: Consideration
+Campaign: PH-2
+Objective: Video Views / Conversions
+Budget: $8/day
+Audience: Website visitors, Engagement audiences, Lookalike 1%
+Format: Reel (15 sec, Tagalog)
+Schedule: Tuesday-Thursday, 8pm-11pm PHT
+
+---
+
+REEL SCRIPT (15 seconds):
+
+[0-3s] Day in the life: property manager checking reservations
+Text: "Ibang trabaho mo ang mag-manage."
+
+[3-7s] Phone notification: ₱14,000 booking confirmed
+Text: "Automation lahat."
+
+[7-11s] Graph: PHP 395K/month income visualization
+Text: "Monthly ko."
+
+[11-15s] Property + CTA
+Text: "Tour bukas. +639542555553"
+
+---
+
+CAPTION (Tagalog):
+
+Ito ang bagong paraan mag-invest. Hindi dami ng trabaho - dami ng pera.
+Blue Everest managed 2 villas already. 65% occupancy. ₱395K/month average.
+Estate financing from BDO.
+
+Schedule your private tour: +639542555553
+
+---
+
+HEADLINE: "Negosyong Zero-Effort"
+CTA: Message Us
+
+=== FX METADATA ===
+FX date used: 2026-04-14
+PHP-ILS rate: 0.0488
+PHP-USD rate: 0.01663

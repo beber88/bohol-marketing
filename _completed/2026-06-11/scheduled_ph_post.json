@@ -1,0 +1,38 @@
+{
+  "run": "panglao-ph-daily-8am",
+  "date": "2026-06-11",
+  "market": "PH",
+  "language": "EN",
+  "platform": "Facebook Page timeline",
+  "page": "Blue Everest Asset Group",
+  "page_url": "https://www.facebook.com/BlueEverestGroup",
+  "status": "NOT_PUBLISHED",
+  "blocked_reason": "Browser disambiguation required, no user present (unattended scheduled run). Three Chrome extensions connected with ambiguous identities: 'Blue Everest' (2935dc6d-141f-4c19-83ce-33e219d2bf40), 'BLUE EVEREST' (6627a787-3526-45d1-837a-083e2cb7cfe0), and 'פייסבוק' (97c7d8e5-f744-4905-a49f-ab898970182a). The browser MCP explicitly mandates user selection and forbids auto-picking. Guessing risks posting to the wrong account and could violate CLAUDE.md Rule 6 (never touch Blueprint). Same block as 2026-06-09 and 2026-06-10.",
+  "simulation": false,
+  "rotation": "c",
+  "theme": "JW Marriott / Accor 5-star corridor (rotation option c)",
+  "image": "blue-everest/public/images/ai-generated/pool-night.jpg",
+  "copy_source": "assets/ads/v3_post_copy/ALL_POST_COPY_V3.json -> image_posts[13] (post_copy_en), verbatim. Prices match authoritative CLAUDE.md / campaign_state.json (PHP 32,500,000 / 35,000,000), no stale-price edit needed.",
+  "copy": "Between JW Marriott and Accor MGallery. 60 seconds to beach.\n\nWhen JW Marriott and Accor move in, it's no longer a small island.\nIt's a destination brand.\n\nYour private villa in a 5-star neighborhood.\nPHP 395,000/month | 17-25% ROI | 65% occupancy\n\nVilla D: PHP 32,500,000 | Villa C: PHP 35,000,000\nBDO Bank financing available.\nReserve with PHP 200,000.\n\nWhatsApp: +639542555553\nOffice: +639958565865\nprimevilla.ph",
+  "connected_browsers": [
+    {"name": "Blue Everest", "deviceId": "2935dc6d-141f-4c19-83ce-33e219d2bf40", "note": "Device that published successfully on 06-03/04/05/08"},
+    {"name": "BLUE EVEREST", "deviceId": "6627a787-3526-45d1-837a-083e2cb7cfe0", "note": "Returned 'Permission denied by user' on 06-07"},
+    {"name": "פייסבוק", "deviceId": "97c7d8e5-f744-4905-a49f-ab898970182a"}
+  ],
+  "rotation_context": "Published history: 06-03 (a income, hero-aerial), 06-04 (b tourism, rooftop-sunset), 06-05 (c JW Marriott, pool-night), 06-06 (a income, hero-aerial), 06-07 BLOCKED, 06-08 (b tourism/136.9%, rooftop-sunset) PUBLISHED, 06-09 BLOCKED (intended c), 06-10 BLOCKED (intended a). Last actually-published was 06-08 (b). Selected c (JW Marriott + pool-night): pool-night is the least-recently-published image (last 06-05) and continues natural rotation.",
+  "rule_checks_on_prepared_copy": {
+    "php_primary_currency": true,
+    "no_ils_in_ph_content": true,
+    "specific_number_present": true,
+    "both_whatsapp_numbers": true,
+    "bdo_financing_mentioned": true,
+    "no_long_dashes": true,
+    "no_forbidden_words": true,
+    "approved_copy_used_verbatim": true,
+    "did_not_touch_blueprint": true,
+    "one_post_only": true
+  },
+  "screenshot_path": null,
+  "post_link": null,
+  "timestamp": "2026-06-11T08:00:00+08:00"
+}

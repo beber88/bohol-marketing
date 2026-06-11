@@ -1,0 +1,46 @@
+{
+  "run": "panglao-israel-daily-10am-il",
+  "date": "2026-06-07",
+  "evaluated_at_pht": "2026-06-07T15:00:00+08:00",
+  "market": "IL",
+  "language": "HE",
+  "platform_intended": "Facebook group נדל\"ן והשקעות בפיליפינים",
+  "group_url": "https://www.facebook.com/groups/investment.ph.il/",
+  "simulation": false,
+  "status": "HELD_NOT_PUBLISHED",
+  "published": false,
+  "candidate_post": {
+    "post_number": 3,
+    "file": "_queue/community-agent/posts/post_03_ph_vs_greece.md",
+    "title": "למה פיליפינים ולא יוון? 10 מספרים",
+    "category": "EDUCATE",
+    "selection_basis": "No calendar entry exists for 2026-06-07 (calendar Week 1 ends Jun 5, Week 2 begins Jun 8). Per the fallback rule 'post next unpublished in sequence': posts 1 and 2 are published, so POST 3 is next in line. The calendar's next scheduled IL slot is Sunday 2026-06-08 (POST 4).",
+    "mapped_image": "_queue/community-agent/images/02_ph_vs_greece.png (per IMAGE_MAP.md)"
+  },
+  "decision": "HOLD - did not publish. No browser action taken. No action of any kind taken on Blueprint Building Group.",
+  "block_reasons": [
+    "STANDING BLOCKER (campaign_state.json, severity MEDIUM): 'Future Hebrew community posts need Brand Guard review. Community posts 3-50 are held as drafts because they were authored before the current Israeli currency, CTA, legal ownership, and register rules.' POST 3 is inside the held 3-50 range and has not been cleared back into the executable queue. This blocker is still listed as open.",
+    "UNRESOLVED CURRENCY CONFLICT: CLAUDE.md and the scheduled-task instructions mandate shekels only for Israeli content (Villa D 1,535,000 ש\"ח, Villa C 1,650,000 ש\"ח, reservation 9,999 ש\"ח). campaign_state.json (last_updated 2026-06-04) mandates the opposite: pricing_rule 'php_only_all_markets', israel currency 'PHP_ONLY', reservation 'PHP 200,000', and 'Do not state ILS, USD, or recalculated monetary amounts in Israeli content.' POST 3 prices in shekels, which satisfies CLAUDE.md but violates campaign_state.json. The two authoritative rule sets directly contradict and a single post cannot satisfy both. This conflict must be resolved by a human / Claude Code before any priced IL post can publish.",
+    "SECONDARY currency note on POST 3 under the strict CLAUDE.md reading: the copy cites USD macro figures (OFW 35.63 מיליארד דולר, BPO 40 מיליארד דולר) and a EUR-to-ILS conversion (250,000 אירו, כ-960,000 ש\"ח). These are economic-context figures, not property prices, but CLAUDE.md Rule 1 ('No PHP. No USD.') is absolute, so this is an additional reason the draft needs Brand Guard sign-off rather than auto-publish."
+  ],
+  "consistency_with_prior_runs": "Same determination as 2026-06-04, 2026-06-05, and 2026-06-06 IL runs, all of which held for the identical standing-blocker + currency-conflict reasons. Nothing in campaign_state.json has changed to clear these blockers since.",
+  "rule_checks_on_candidate": {
+    "three_legal_solutions": "PASS (99-year leasehold, Deed of Assignment, Domestic Corporation 60/40 all present)",
+    "both_whatsapp_numbers": "PASS (+639542555553 and +639958565865 present)",
+    "specific_number_present": "PASS (1,535,000, 263.78, 26.1, and others)",
+    "forbidden_long_dashes": "PASS (none found)",
+    "forbidden_words": "PASS (none found)",
+    "currency_rule": "CONFLICTED (compliant with CLAUDE.md shekel rule, non-compliant with campaign_state.json PHP-only rule)",
+    "shabbat_check": "PASS (2026-06-07 is Sunday, a valid Israeli posting day)"
+  },
+  "browser_used": false,
+  "chrome_connection_attempted": false,
+  "screenshot_path": null,
+  "post_link": null,
+  "blueprint_touched": false,
+  "next_action": "Before the next IL slot (Sunday 2026-06-08, POST 4): (1) resolve the shekel-vs-PHP currency rule conflict between CLAUDE.md and campaign_state.json, and (2) run posts 3-50 through Brand Guard and return approved drafts to the executable queue. If both are unresolved by Jun 8, hold again and report.",
+  "notes": [
+    "Per scheduled-task instruction ('If a platform block appears or anything is ambiguous, stop and report rather than guessing') and CLAUDE.md ('If a task violates any rule, mark it NEEDS_CLARIFICATION and skip it'), no Facebook action was taken.",
+    "No Chrome connection was attempted because the decision not to publish is determined by campaign rules alone, independent of platform availability."
+  ]
+}

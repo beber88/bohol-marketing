@@ -1,0 +1,82 @@
+[SIMULATION - NOT FOR LIVE DEPLOYMENT]
+
+=== META_PH_AWARENESS_1B.txt ===
+Platform: Meta (Instagram Reels)
+Market: Philippines
+Funnel Stage: Awareness
+Campaign: PH-1
+Format: Reel / Video Script (15 seconds, Tagalog + English)
+Budget: $15/day (shared across 1A and 1B)
+Audience: Metro Manila, Cebu, Davao, age 35-58
+Schedule: Tuesday-Thursday priority, 7pm-11pm PHT
+
+---
+
+REEL SCRIPT:
+
+[0-3s] Drone shot from above - show both villas, beach visible behind
+Text: "Para sa mga nagtatanong: magkano ba talaga ang kumita sa Bohol?"
+
+[3-7s] Quick cuts: pool, rooftop with sea view, glass facade, bedroom
+Text: "Private pool. Rooftop jacuzzi. Full sea view. 4 bedrooms."
+
+[7-11s] Airbnb income graphic - PHP 395,000/month highlighted
+Text: "PHP 395,000 bawat buwan. Verified na Airbnb data."
+
+[11-14s] Map: Marriott on left, Mithi on right, SITE in center
+Text: "Sa pagitan ng dalawang 5-star resort. 60 segundos sa beach."
+
+[14-15s] Logo + CTA
+Text: "2 villas na lang. BDO financing available. primevilla.ph"
+
+---
+
+CAPTION (Tagalog):
+
+Ngayon na ang tamang oras para mag-invest sa Panglao.
+Tourism +38% bawat taon. Airport expanding to 2.5M by 2026.
+PHP 395,000/buwan average Airbnb income.
+17-25% annual ROI. 65% occupancy vs 49% market average.
+2 villas na lang ang natitira.
+BDO Bank financing available para sa qualified buyers.
+Link sa bio o WhatsApp namin: +639542555553
+
+---
+
+HEADLINE V1: "PHP 395K/Buwan. Panglao Villa."
+HEADLINE V2: "2 Villas Na Lang. Mag-invest Na."
+HEADLINE V3: "Kumita Habang Wala Ka. Panglao Prime Villas."
+
+CTA: Learn More
+
+---
+
+AUDIENCE TARGETING:
+- Geography: Metro Manila (BGC, Makati, Alabang, Ortigas, San Juan), Cebu City, Davao
+- Age: 35-58
+- Job Titles: CEO, President, Managing Director, Business Owner, Entrepreneur
+- Interests: Real estate Philippines, Investment properties, Bohol travel, Airbnb
+- Placements: Instagram Reels (primary), Facebook Feed (secondary)
+
+BUDGET RECOMMENDATION: $6/day within the $15/day PH-1 awareness campaign
+
+PRODUCTION NOTES:
+- Use villa renders from /EXTERIOR - D5/ folder
+- Interior shots from /INTERIOR D5/ folder
+- Pool and rooftop shots are priority
+- Map graphic needed showing Marriott-SITE-Mithi layout
+- Income chart: simple bar graph, PHP 395K highlighted
+- All text overlay: white on dark background
+- End frame: Blue Everest logo + primevilla.ph + WhatsApp number
+
+OPTIMIZATION NOTES:
+- Tagalog captions perform well with 38+ Filipino audience
+- BDO financing in end frame increases qualified leads
+- Site visits are important for local buyers
+- Peak engagement: 7pm-11pm PHT
+
+=== FX METADATA ===
+FX date used: 2026-04-14
+PHP-ILS rate: 0.0488
+PHP-USD rate: 0.01663
+Auto-refresh: enabled

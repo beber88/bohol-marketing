@@ -1,0 +1,30 @@
+[
+  {
+    "id": "CNT-0001",
+    "priority": "HIGH",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 7 Facebook post (IL market)",
+    "instructions": "Publish to Facebook page. Market: IL. Use the provided image and copy. Schedule for optimal engagement time.",
+    "copy": "עיר נופש חדשה ב-25 מיליארד פסו. JW Marriott. MGallery של Accor. גשר שלישי ממומן ע\"י צרפת. 2.22 מיליון נוסעים בשדה התעופה. פנגלאו כבר לא אי שקט.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/AERIAL 3 ENHANCED.png",
+    "scheduled_time": "2026-04-17T18:00:00+08:00",
+    "hook_used": "עיר נופש חדשה ב-25 מיליארד פסו. JW Marriott. MGallery של Accor. גשר שלישי ממומן ע\"י צרפת. 2.22 מיליון נוסעים בשדה התעופה. פנגלאו כבר לא אי שקט.",
+    "language": "he"
+  },
+  {
+    "id": "EDU-0002",
+    "priority": "MEDIUM",
+    "type": "facebook_group_edu",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 7 educational post for Israeli FB group",
+    "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+    "copy": "Panglao Shores - עיר נופש חדשה ב-25 מיליארד פסו\n\nAlturas Group בונה Township על 57.7 הקטר:\n- 6+ מלונות\n- 1,000+ יחידות מגורים\n- קונבנשן סנטר\n- קניון\n- Beach Club\n- מרכז רפואי\n- בית ספר\n\n1 ק\"מ חזית חוף לבנה. סטטוס Flagship TEZ של TIEZA.\n\nזה לא בניין בודד. זו עיר שלמה שנבנית מאפס.\n\nמי שנכנס לפני שה-Township חי - נכנס במחיר של היום עם ערך של מחר.\n\nמקור: TIEZA, PhilStar, Esquire Philippines",
+    "image_path": "",
+    "platform": "Facebook Group IL",
+    "scheduled_time": "2026-04-17T11:00:00+02:00",
+    "language": "he"
+  }
+]

@@ -1,0 +1,1846 @@
+[
+  {
+    "day": 1,
+    "content": [
+      {
+        "id": "CNT-0001",
+        "priority": "HIGH",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 Facebook post (IL market)",
+        "instructions": "Publish to Facebook page. Market: IL. Use the provided image and copy. Schedule for optimal engagement time.",
+        "copy": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/RD2 ENHANCED.png",
+        "scheduled_time": "2026-04-17T18:00:00+08:00",
+        "hook_used": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.",
+        "language": "he"
+      },
+      {
+        "id": "VID-0002",
+        "priority": "HIGH",
+        "type": "facebook_video",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 VIDEO post (IL market)",
+        "instructions": "Upload video to Facebook page. Market: IL. Use the provided video file and copy text as the post caption.",
+        "copy": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.\n\nצפו בסיור המלא בווילה.\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "video_path": "20260416 BLUEEVEREST 2 Villas Bohol.mp4",
+        "image_path": "",
+        "scheduled_time": "2026-04-17T20:00:00+08:00",
+        "hook_used": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.",
+        "language": "he"
+      },
+      {
+        "id": "CNT-0003",
+        "priority": "MEDIUM",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 15 Facebook post (PH market, secondary)",
+        "instructions": "Publish secondary post for PH market. Schedule for alternate time slot.",
+        "copy": "Villa A: Sold. Villa B: Sold. Villa C and D: Your last chance.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD3 ENHANCED.png",
+        "scheduled_time": "2026-04-17T14:00:00+08:00",
+        "hook_used": "Villa A: Sold. Villa B: Sold. Villa C and D: Your last chance.",
+        "language": "en"
+      }
+    ],
+    "ads": [
+      {
+        "id": "ADS-0003",
+        "priority": "HIGH",
+        "type": "ad_setup",
+        "status": "PENDING",
+        "description": "Upload ad creatives to Meta Ads Manager",
+        "instructions": "Upload all 13 ad copy files from assets/ads/ to Meta Ads Manager. Create ad sets for IL and PH audiences. Do not publish yet.",
+        "ad_files": [
+          "assets/ads/GOOGLE_IL_SEARCH_ADS.txt",
+          "assets/ads/GOOGLE_PH_SEARCH_ADS.txt",
+          "assets/ads/META_IL_AWARENESS_A1.txt",
+          "assets/ads/META_IL_AWARENESS_A2.txt",
+          "assets/ads/META_IL_AWARENESS_A3.txt",
+          "assets/ads/META_IL_CONSIDERATION_C1.txt",
+          "assets/ads/META_IL_CONSIDERATION_C2.txt",
+          "assets/ads/META_IL_CONVERSION_Conv1.txt",
+          "assets/ads/META_PH_AWARENESS_1A.txt",
+          "assets/ads/META_PH_AWARENESS_1B.txt",
+          "assets/ads/META_PH_CONSIDERATION_C1.txt",
+          "assets/ads/META_PH_CONSIDERATION_C2.txt",
+          "assets/ads/META_PH_CONVERSION_Conv1.txt"
+        ]
+      }
+    ],
+    "email": [
+      {
+        "id": "EML-0007",
+        "priority": "HIGH",
+        "type": "email_conversion",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 15 email - conversion (PH)",
+        "instructions": "Send conversion email to PH lead list via Brevo. Subject: Last 2 Villas Available - Schedule Your Virtual Tour. Include villa pricing from FX data and CTA to reservation form. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "Last 2 Villas Available - Schedule Your Virtual Tour",
+        "language": "en",
+        "villa_d_price": "PHP 28,000,000",
+        "villa_c_price": "PHP 30,000,000"
+      },
+      {
+        "id": "EML-0008",
+        "priority": "HIGH",
+        "type": "email_conversion",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 email - conversion (IL)",
+        "instructions": "Send conversion email to IL lead list via Brevo. Subject: 2 וילות אחרונות - קבעו סיור וירטואלי. Include villa pricing in ILS and CTA to WhatsApp. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "2 וילות אחרונות - קבעו סיור וירטואלי",
+        "language": "he",
+        "villa_d_price": "₪1,420,888",
+        "villa_c_price": "₪1,522,380"
+      }
+    ],
+    "whatsapp": [
+      {
+        "id": "WA-0008",
+        "priority": "HIGH",
+        "type": "whatsapp_broadcast",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp broadcast",
+        "instructions": "Send WhatsApp broadcast via WATI to all warm leads. Include personalized villa pricing and virtual tour link. Segment: leads who clicked ads or opened emails in last 7 days.",
+        "message_en": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.\n\nVilla D: PHP 28,000,000 | Villa C: PHP 30,000,000\nReserve with just PHP 200,000.\nReply YES for a virtual tour.",
+        "message_he": "Aboitiz InfraCapital - חברת תשתיות ענקית עם אופק 30 שנה בשדה התעופה. גשר שלישי ממומן ע\"י צרפת. עיר נופש ב-25 מיליארד. SM בדרך. כל התשתיות בו-זמנית.\n\nVilla D: ₪1,420,888 | Villa C: ₪1,522,380\nהזמנו עם ₪10,149 בלבד.\nהשיבו כן לסיור וירטואלי."
+      },
+      {
+        "id": "WA-0009",
+        "priority": "MEDIUM",
+        "type": "whatsapp_followup",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp follow-up with responders",
+        "instructions": "Follow up with leads who replied to the broadcast. Send virtual tour link and offer to schedule a call with sales team.",
+        "scheduled_time": "2026-04-17T16:00:00+08:00"
+      }
+    ]
+  },
+  {
+    "day": 2,
+    "content": [
+      {
+        "id": "CNT-0001",
+        "priority": "HIGH",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 Facebook post (IL market)",
+        "instructions": "Publish to Facebook page. Market: IL. Use the provided image and copy. Schedule for optimal engagement time.",
+        "copy": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/RD2 ENHANCED.png",
+        "scheduled_time": "2026-04-17T18:00:00+08:00",
+        "hook_used": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.",
+        "language": "he"
+      },
+      {
+        "id": "VID-0002",
+        "priority": "HIGH",
+        "type": "facebook_video",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 VIDEO post (IL market)",
+        "instructions": "Upload video to Facebook page. Market: IL. Use the provided video file and copy text as the post caption.",
+        "copy": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.\n\nצפו בסיור המלא בווילה.\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "video_path": "20260416 BLUEEVEREST 2 Villas Bohol.mp4",
+        "image_path": "",
+        "scheduled_time": "2026-04-17T20:00:00+08:00",
+        "hook_used": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.",
+        "language": "he"
+      },
+      {
+        "id": "CNT-0003",
+        "priority": "MEDIUM",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 15 Facebook post (PH market, secondary)",
+        "instructions": "Publish secondary post for PH market. Schedule for alternate time slot.",
+        "copy": "Villa A: Sold. Villa B: Sold. Villa C and D: Your last chance.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD3 ENHANCED.png",
+        "scheduled_time": "2026-04-17T14:00:00+08:00",
+        "hook_used": "Villa A: Sold. Villa B: Sold. Villa C and D: Your last chance.",
+        "language": "en"
+      }
+    ],
+    "ads": [
+      {
+        "id": "ADS-0003",
+        "priority": "HIGH",
+        "type": "ad_setup",
+        "status": "PENDING",
+        "description": "Upload ad creatives to Meta Ads Manager",
+        "instructions": "Upload all 13 ad copy files from assets/ads/ to Meta Ads Manager. Create ad sets for IL and PH audiences. Do not publish yet.",
+        "ad_files": [
+          "assets/ads/GOOGLE_IL_SEARCH_ADS.txt",
+          "assets/ads/GOOGLE_PH_SEARCH_ADS.txt",
+          "assets/ads/META_IL_AWARENESS_A1.txt",
+          "assets/ads/META_IL_AWARENESS_A2.txt",
+          "assets/ads/META_IL_AWARENESS_A3.txt",
+          "assets/ads/META_IL_CONSIDERATION_C1.txt",
+          "assets/ads/META_IL_CONSIDERATION_C2.txt",
+          "assets/ads/META_IL_CONVERSION_Conv1.txt",
+          "assets/ads/META_PH_AWARENESS_1A.txt",
+          "assets/ads/META_PH_AWARENESS_1B.txt",
+          "assets/ads/META_PH_CONSIDERATION_C1.txt",
+          "assets/ads/META_PH_CONSIDERATION_C2.txt",
+          "assets/ads/META_PH_CONVERSION_Conv1.txt"
+        ]
+      }
+    ],
+    "email": [
+      {
+        "id": "EML-0007",
+        "priority": "HIGH",
+        "type": "email_conversion",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 15 email - conversion (PH)",
+        "instructions": "Send conversion email to PH lead list via Brevo. Subject: Last 2 Villas Available - Schedule Your Virtual Tour. Include villa pricing from FX data and CTA to reservation form. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "Last 2 Villas Available - Schedule Your Virtual Tour",
+        "language": "en",
+        "villa_d_price": "PHP 28,000,000",
+        "villa_c_price": "PHP 30,000,000"
+      },
+      {
+        "id": "EML-0008",
+        "priority": "HIGH",
+        "type": "email_conversion",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 email - conversion (IL)",
+        "instructions": "Send conversion email to IL lead list via Brevo. Subject: 2 וילות אחרונות - קבעו סיור וירטואלי. Include villa pricing in ILS and CTA to WhatsApp. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "2 וילות אחרונות - קבעו סיור וירטואלי",
+        "language": "he",
+        "villa_d_price": "₪1,420,888",
+        "villa_c_price": "₪1,522,380"
+      }
+    ],
+    "whatsapp": [
+      {
+        "id": "WA-0008",
+        "priority": "HIGH",
+        "type": "whatsapp_broadcast",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp broadcast",
+        "instructions": "Send WhatsApp broadcast via WATI to all warm leads. Include personalized villa pricing and virtual tour link. Segment: leads who clicked ads or opened emails in last 7 days.",
+        "message_en": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.\n\nVilla D: PHP 28,000,000 | Villa C: PHP 30,000,000\nReserve with just PHP 200,000.\nReply YES for a virtual tour.",
+        "message_he": "Aboitiz InfraCapital - חברת תשתיות ענקית עם אופק 30 שנה בשדה התעופה. גשר שלישי ממומן ע\"י צרפת. עיר נופש ב-25 מיליארד. SM בדרך. כל התשתיות בו-זמנית.\n\nVilla D: ₪1,420,888 | Villa C: ₪1,522,380\nהזמנו עם ₪10,149 בלבד.\nהשיבו כן לסיור וירטואלי."
+      },
+      {
+        "id": "WA-0009",
+        "priority": "MEDIUM",
+        "type": "whatsapp_followup",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp follow-up with responders",
+        "instructions": "Follow up with leads who replied to the broadcast. Send virtual tour link and offer to schedule a call with sales team.",
+        "scheduled_time": "2026-04-17T16:00:00+08:00"
+      }
+    ]
+  },
+  {
+    "day": 3,
+    "content": [
+      {
+        "id": "CNT-0001",
+        "priority": "HIGH",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 Facebook post (IL market)",
+        "instructions": "Publish to Facebook page. Market: IL. Use the provided image and copy. Schedule for optimal engagement time.",
+        "copy": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/RD2 ENHANCED.png",
+        "scheduled_time": "2026-04-17T18:00:00+08:00",
+        "hook_used": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.",
+        "language": "he"
+      },
+      {
+        "id": "VID-0002",
+        "priority": "HIGH",
+        "type": "facebook_video",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 VIDEO post (IL market)",
+        "instructions": "Upload video to Facebook page. Market: IL. Use the provided video file and copy text as the post caption.",
+        "copy": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.\n\nצפו בסיור המלא בווילה.\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "video_path": "20260416 BLUEEVEREST 2 Villas Bohol.mp4",
+        "image_path": "",
+        "scheduled_time": "2026-04-17T20:00:00+08:00",
+        "hook_used": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.",
+        "language": "he"
+      },
+      {
+        "id": "CNT-0003",
+        "priority": "MEDIUM",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 15 Facebook post (PH market, secondary)",
+        "instructions": "Publish secondary post for PH market. Schedule for alternate time slot.",
+        "copy": "Villa A: Sold. Villa B: Sold. Villa C and D: Your last chance.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD3 ENHANCED.png",
+        "scheduled_time": "2026-04-17T14:00:00+08:00",
+        "hook_used": "Villa A: Sold. Villa B: Sold. Villa C and D: Your last chance.",
+        "language": "en"
+      }
+    ],
+    "ads": [
+      {
+        "id": "ADS-0003",
+        "priority": "HIGH",
+        "type": "ad_setup",
+        "status": "PENDING",
+        "description": "Upload ad creatives to Meta Ads Manager",
+        "instructions": "Upload all 13 ad copy files from assets/ads/ to Meta Ads Manager. Create ad sets for IL and PH audiences. Do not publish yet.",
+        "ad_files": [
+          "assets/ads/GOOGLE_IL_SEARCH_ADS.txt",
+          "assets/ads/GOOGLE_PH_SEARCH_ADS.txt",
+          "assets/ads/META_IL_AWARENESS_A1.txt",
+          "assets/ads/META_IL_AWARENESS_A2.txt",
+          "assets/ads/META_IL_AWARENESS_A3.txt",
+          "assets/ads/META_IL_CONSIDERATION_C1.txt",
+          "assets/ads/META_IL_CONSIDERATION_C2.txt",
+          "assets/ads/META_IL_CONVERSION_Conv1.txt",
+          "assets/ads/META_PH_AWARENESS_1A.txt",
+          "assets/ads/META_PH_AWARENESS_1B.txt",
+          "assets/ads/META_PH_CONSIDERATION_C1.txt",
+          "assets/ads/META_PH_CONSIDERATION_C2.txt",
+          "assets/ads/META_PH_CONVERSION_Conv1.txt"
+        ]
+      }
+    ],
+    "email": [
+      {
+        "id": "EML-0007",
+        "priority": "HIGH",
+        "type": "email_conversion",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 15 email - conversion (PH)",
+        "instructions": "Send conversion email to PH lead list via Brevo. Subject: Last 2 Villas Available - Schedule Your Virtual Tour. Include villa pricing from FX data and CTA to reservation form. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "Last 2 Villas Available - Schedule Your Virtual Tour",
+        "language": "en",
+        "villa_d_price": "PHP 28,000,000",
+        "villa_c_price": "PHP 30,000,000"
+      },
+      {
+        "id": "EML-0008",
+        "priority": "HIGH",
+        "type": "email_conversion",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 email - conversion (IL)",
+        "instructions": "Send conversion email to IL lead list via Brevo. Subject: 2 וילות אחרונות - קבעו סיור וירטואלי. Include villa pricing in ILS and CTA to WhatsApp. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "2 וילות אחרונות - קבעו סיור וירטואלי",
+        "language": "he",
+        "villa_d_price": "₪1,420,888",
+        "villa_c_price": "₪1,522,380"
+      }
+    ],
+    "whatsapp": [
+      {
+        "id": "WA-0008",
+        "priority": "HIGH",
+        "type": "whatsapp_broadcast",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp broadcast",
+        "instructions": "Send WhatsApp broadcast via WATI to all warm leads. Include personalized villa pricing and virtual tour link. Segment: leads who clicked ads or opened emails in last 7 days.",
+        "message_en": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.\n\nVilla D: PHP 28,000,000 | Villa C: PHP 30,000,000\nReserve with just PHP 200,000.\nReply YES for a virtual tour.",
+        "message_he": "Aboitiz InfraCapital - חברת תשתיות ענקית עם אופק 30 שנה בשדה התעופה. גשר שלישי ממומן ע\"י צרפת. עיר נופש ב-25 מיליארד. SM בדרך. כל התשתיות בו-זמנית.\n\nVilla D: ₪1,420,888 | Villa C: ₪1,522,380\nהזמנו עם ₪10,149 בלבד.\nהשיבו כן לסיור וירטואלי."
+      },
+      {
+        "id": "WA-0009",
+        "priority": "MEDIUM",
+        "type": "whatsapp_followup",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp follow-up with responders",
+        "instructions": "Follow up with leads who replied to the broadcast. Send virtual tour link and offer to schedule a call with sales team.",
+        "scheduled_time": "2026-04-17T16:00:00+08:00"
+      }
+    ]
+  },
+  {
+    "day": 4,
+    "content": [
+      {
+        "id": "CNT-0001",
+        "priority": "HIGH",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 4 Facebook post (PH market)",
+        "instructions": "Publish to Facebook page. Market: PH. Use the provided image and copy. Schedule for optimal engagement time.",
+        "copy": "4 bedrooms. Rooftop jacuzzi. 60 seconds to the beach. And it pays for itself.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nVilla C: PHP 30,000,000 (approx. USD 498,900, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/AERIAL 2 ENHANCED.png",
+        "scheduled_time": "2026-04-17T10:00:00+08:00",
+        "hook_used": "4 bedrooms. Rooftop jacuzzi. 60 seconds to the beach. And it pays for itself.",
+        "language": "en"
+      },
+      {
+        "id": "EDU-0002",
+        "priority": "MEDIUM",
+        "type": "facebook_group_edu",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 4 educational post for Israeli FB group",
+        "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+        "copy": "למה פנגלאו? מדריך למשקיע הישראלי\n\nפנגלאו הוכרזה ע\"י Skyscanner כאחד מ-10 היעדים הטרנדיים בעולם ל-2025. היעד היחיד מהפיליפינים ברשימה.\n\nחיפושי טיסות קפצו ב-77% במחצית הראשונה של 2024.\n\nשדה התעופה טיפל ב-2.22 מיליון נוסעים ב-2025 - מעל הקיבולת התכנונית.\n\n12 טיסות ביום ממנילה. שעה ורבע בלבד. טיסות ישירות מקוריאה.\n\nהגשר השלישי לפנגלאו ממומן ע\"י ממשלת צרפת - P7.15 מיליארד.\n\nבפוסט הבא: השוואת תשואות ישראל מול פיליפינים.",
+        "image_path": "",
+        "platform": "Facebook Group IL",
+        "scheduled_time": "2026-04-17T11:00:00+02:00",
+        "language": "he"
+      }
+    ],
+    "ads": [
+      {
+        "id": "ADS-0003",
+        "priority": "HIGH",
+        "type": "ad_management",
+        "status": "PENDING",
+        "description": "Day 4 ad management - AWARENESS phase (PH)",
+        "instructions": "Ensure AWARENESS ads are active for PH market. Daily budget: USD 50. Monitor CTR and CPC. Pause underperformers (CTR < 1%).",
+        "ad_files": [
+          "assets/ads/META_PH_AWARENESS_1A.txt",
+          "assets/ads/META_PH_AWARENESS_1B.txt"
+        ],
+        "daily_budget_usd": 50,
+        "market": "PH"
+      }
+    ],
+    "email": [
+      {
+        "id": "EML-0007",
+        "priority": "HIGH",
+        "type": "email_conversion",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 15 email - conversion (PH)",
+        "instructions": "Send conversion email to PH lead list via Brevo. Subject: Last 2 Villas Available - Schedule Your Virtual Tour. Include villa pricing from FX data and CTA to reservation form. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "Last 2 Villas Available - Schedule Your Virtual Tour",
+        "language": "en",
+        "villa_d_price": "PHP 28,000,000",
+        "villa_c_price": "PHP 30,000,000"
+      },
+      {
+        "id": "EML-0008",
+        "priority": "HIGH",
+        "type": "email_conversion",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 email - conversion (IL)",
+        "instructions": "Send conversion email to IL lead list via Brevo. Subject: 2 וילות אחרונות - קבעו סיור וירטואלי. Include villa pricing in ILS and CTA to WhatsApp. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "2 וילות אחרונות - קבעו סיור וירטואלי",
+        "language": "he",
+        "villa_d_price": "₪1,420,888",
+        "villa_c_price": "₪1,522,380"
+      }
+    ],
+    "whatsapp": [
+      {
+        "id": "WA-0008",
+        "priority": "HIGH",
+        "type": "whatsapp_broadcast",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp broadcast",
+        "instructions": "Send WhatsApp broadcast via WATI to all warm leads. Include personalized villa pricing and virtual tour link. Segment: leads who clicked ads or opened emails in last 7 days.",
+        "message_en": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.\n\nVilla D: PHP 28,000,000 | Villa C: PHP 30,000,000\nReserve with just PHP 200,000.\nReply YES for a virtual tour.",
+        "message_he": "Aboitiz InfraCapital - חברת תשתיות ענקית עם אופק 30 שנה בשדה התעופה. גשר שלישי ממומן ע\"י צרפת. עיר נופש ב-25 מיליארד. SM בדרך. כל התשתיות בו-זמנית.\n\nVilla D: ₪1,420,888 | Villa C: ₪1,522,380\nהזמנו עם ₪10,149 בלבד.\nהשיבו כן לסיור וירטואלי."
+      },
+      {
+        "id": "WA-0009",
+        "priority": "MEDIUM",
+        "type": "whatsapp_followup",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp follow-up with responders",
+        "instructions": "Follow up with leads who replied to the broadcast. Send virtual tour link and offer to schedule a call with sales team.",
+        "scheduled_time": "2026-04-17T16:00:00+08:00"
+      }
+    ]
+  },
+  {
+    "day": 5,
+    "content": [
+      {
+        "id": "CNT-0001",
+        "priority": "HIGH",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 5 Facebook post (IL market)",
+        "instructions": "Publish to Facebook page. Market: IL. Use the provided image and copy. Schedule for optimal engagement time.",
+        "copy": "Skyscanner דירג את פנגלאו במקום ה-8 ביעדים הטרנדיים בעולם ל-2025. היעד היחיד מהפיליפינים ברשימה. חיפושי טיסות קפצו ב-77%.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/RD1 ENHANCED.png",
+        "scheduled_time": "2026-04-17T18:00:00+08:00",
+        "hook_used": "Skyscanner דירג את פנגלאו במקום ה-8 ביעדים הטרנדיים בעולם ל-2025. היעד היחיד מהפיליפינים ברשימה. חיפושי טיסות קפצו ב-77%.",
+        "language": "he"
+      },
+      {
+        "id": "VID-0002",
+        "priority": "HIGH",
+        "type": "facebook_video",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 5 VIDEO post (IL market)",
+        "instructions": "Upload video to Facebook page. Market: IL. Use the provided video file and copy text as the post caption.",
+        "copy": "Skyscanner דירג את פנגלאו במקום ה-8 ביעדים הטרנדיים בעולם ל-2025. היעד היחיד מהפיליפינים ברשימה. חיפושי טיסות קפצו ב-77%.\n\nצפו בסיור המלא בווילה.\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "video_path": "20260416 BLUEEVEREST 2 Villas Bohol.mp4",
+        "image_path": "",
+        "scheduled_time": "2026-04-17T20:00:00+08:00",
+        "hook_used": "Skyscanner דירג את פנגלאו במקום ה-8 ביעדים הטרנדיים בעולם ל-2025. היעד היחיד מהפיליפינים ברשימה. חיפושי טיסות קפצו ב-77%.",
+        "language": "he"
+      },
+      {
+        "id": "EDU-0003",
+        "priority": "MEDIUM",
+        "type": "facebook_group_edu",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 5 educational post for Israeli FB group",
+        "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+        "copy": "השוואת תשואות: ישראל מול פיליפינים\n\nדירה בתל אביב:\n- מחיר: 5-6 מיליון שקל\n- תשואה שנתית: 2-3% ברוטו\n- תשואה נטו: 1-2%\n\nוילת יוקרה בפנגלאו:\n- מחיר: 1,450,000 שקל\n- תשואה שנתית: 10-15% ברוטו\n- ADR: 12,000-20,000 פסו ללילה\n- תפוסה: 70%+\n\nבמחיר של דירת 3 חדרים בחיפה אתה מקבל וילת יוקרה עם בריכה פרטית באי טרופי.\n\nמקור: Global Property Guide, AirDNA, Airbtics",
+        "image_path": "",
+        "platform": "Facebook Group IL",
+        "scheduled_time": "2026-04-17T11:00:00+02:00",
+        "language": "he"
+      }
+    ],
+    "ads": [
+      {
+        "id": "ADS-0004",
+        "priority": "HIGH",
+        "type": "ad_management",
+        "status": "PENDING",
+        "description": "Day 5 ad management - AWARENESS phase (IL)",
+        "instructions": "Ensure AWARENESS ads are active for IL market. Daily budget: USD 50. Monitor CTR and CPC. Pause underperformers (CTR < 1%).",
+        "ad_files": [
+          "assets/ads/META_IL_AWARENESS_A1.txt",
+          "assets/ads/META_IL_AWARENESS_A2.txt",
+          "assets/ads/META_IL_AWARENESS_A3.txt"
+        ],
+        "daily_budget_usd": 50,
+        "market": "IL"
+      }
+    ],
+    "email": [
+      {
+        "id": "EML-0007",
+        "priority": "HIGH",
+        "type": "email_conversion",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 15 email - conversion (PH)",
+        "instructions": "Send conversion email to PH lead list via Brevo. Subject: Last 2 Villas Available - Schedule Your Virtual Tour. Include villa pricing from FX data and CTA to reservation form. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "Last 2 Villas Available - Schedule Your Virtual Tour",
+        "language": "en",
+        "villa_d_price": "PHP 28,000,000",
+        "villa_c_price": "PHP 30,000,000"
+      },
+      {
+        "id": "EML-0008",
+        "priority": "HIGH",
+        "type": "email_conversion",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 email - conversion (IL)",
+        "instructions": "Send conversion email to IL lead list via Brevo. Subject: 2 וילות אחרונות - קבעו סיור וירטואלי. Include villa pricing in ILS and CTA to WhatsApp. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "2 וילות אחרונות - קבעו סיור וירטואלי",
+        "language": "he",
+        "villa_d_price": "₪1,420,888",
+        "villa_c_price": "₪1,522,380"
+      }
+    ],
+    "whatsapp": [
+      {
+        "id": "WA-0008",
+        "priority": "HIGH",
+        "type": "whatsapp_broadcast",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp broadcast",
+        "instructions": "Send WhatsApp broadcast via WATI to all warm leads. Include personalized villa pricing and virtual tour link. Segment: leads who clicked ads or opened emails in last 7 days.",
+        "message_en": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.\n\nVilla D: PHP 28,000,000 | Villa C: PHP 30,000,000\nReserve with just PHP 200,000.\nReply YES for a virtual tour.",
+        "message_he": "Aboitiz InfraCapital - חברת תשתיות ענקית עם אופק 30 שנה בשדה התעופה. גשר שלישי ממומן ע\"י צרפת. עיר נופש ב-25 מיליארד. SM בדרך. כל התשתיות בו-זמנית.\n\nVilla D: ₪1,420,888 | Villa C: ₪1,522,380\nהזמנו עם ₪10,149 בלבד.\nהשיבו כן לסיור וירטואלי."
+      },
+      {
+        "id": "WA-0009",
+        "priority": "MEDIUM",
+        "type": "whatsapp_followup",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp follow-up with responders",
+        "instructions": "Follow up with leads who replied to the broadcast. Send virtual tour link and offer to schedule a call with sales team.",
+        "scheduled_time": "2026-04-17T16:00:00+08:00"
+      }
+    ]
+  },
+  {
+    "day": 6,
+    "content": [
+      {
+        "id": "CNT-0001",
+        "priority": "HIGH",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 6 Facebook post (PH market)",
+        "instructions": "Publish to Facebook page. Market: PH. Use the provided image and copy. Schedule for optimal engagement time.",
+        "copy": "Bohol airport handled 2.22 million passengers in 2025 - exceeding its 2M design capacity. 12 daily flights from Manila. Direct flights from Korea.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nVilla C: PHP 30,000,000 (approx. USD 498,900, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD2 ENHANCED.png",
+        "scheduled_time": "2026-04-17T10:00:00+08:00",
+        "hook_used": "Bohol airport handled 2.22 million passengers in 2025 - exceeding its 2M design capacity. 12 daily flights from Manila. Direct flights from Korea.",
+        "language": "en"
+      },
+      {
+        "id": "EDU-0002",
+        "priority": "MEDIUM",
+        "type": "facebook_group_edu",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 6 educational post for Israeli FB group",
+        "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+        "copy": "JW Marriott נבנה בפנגלאו - מה זה אומר למשקיעים?\n\nAppleOne בונה את JW Marriott Panglao Island Resort & Residences על 7 הקטר בחזית ים.\n\n80 חדרי ריזורט + 70 יחידות residences ממותגות.\n\nבמקביל, South Palms Resort הופך ל-MGallery הראשון בפיליפינים (Accor) - 188 חדרים.\n\nכש-Marriott ו-Accor נכנסים, זה כבר לא אי קטן. זה מותג יעד.\n\nמשמעות למשקיע: עליית ערך נדל\"ן, ADR גבוה יותר, ביקוש בינלאומי יציב.\n\nמקור: AppleOne, Marriott Residences, Hospitality News PH",
+        "image_path": "",
+        "platform": "Facebook Group IL",
+        "scheduled_time": "2026-04-17T11:00:00+02:00",
+        "language": "he"
+      }
+    ],
+    "ads": [
+      {
+        "id": "ADS-0003",
+        "priority": "HIGH",
+        "type": "ad_management",
+        "status": "PENDING",
+        "description": "Day 6 ad management - AWARENESS phase (PH)",
+        "instructions": "Ensure AWARENESS ads are active for PH market. Daily budget: USD 50. Monitor CTR and CPC. Pause underperformers (CTR < 1%).",
+        "ad_files": [
+          "assets/ads/META_PH_AWARENESS_1A.txt",
+          "assets/ads/META_PH_AWARENESS_1B.txt"
+        ],
+        "daily_budget_usd": 50,
+        "market": "PH"
+      }
+    ],
+    "email": [
+      {
+        "id": "EML-0007",
+        "priority": "HIGH",
+        "type": "email_conversion",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 15 email - conversion (PH)",
+        "instructions": "Send conversion email to PH lead list via Brevo. Subject: Last 2 Villas Available - Schedule Your Virtual Tour. Include villa pricing from FX data and CTA to reservation form. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "Last 2 Villas Available - Schedule Your Virtual Tour",
+        "language": "en",
+        "villa_d_price": "PHP 28,000,000",
+        "villa_c_price": "PHP 30,000,000"
+      },
+      {
+        "id": "EML-0008",
+        "priority": "HIGH",
+        "type": "email_conversion",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 email - conversion (IL)",
+        "instructions": "Send conversion email to IL lead list via Brevo. Subject: 2 וילות אחרונות - קבעו סיור וירטואלי. Include villa pricing in ILS and CTA to WhatsApp. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "2 וילות אחרונות - קבעו סיור וירטואלי",
+        "language": "he",
+        "villa_d_price": "₪1,420,888",
+        "villa_c_price": "₪1,522,380"
+      }
+    ],
+    "whatsapp": [
+      {
+        "id": "WA-0008",
+        "priority": "HIGH",
+        "type": "whatsapp_broadcast",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp broadcast",
+        "instructions": "Send WhatsApp broadcast via WATI to all warm leads. Include personalized villa pricing and virtual tour link. Segment: leads who clicked ads or opened emails in last 7 days.",
+        "message_en": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.\n\nVilla D: PHP 28,000,000 | Villa C: PHP 30,000,000\nReserve with just PHP 200,000.\nReply YES for a virtual tour.",
+        "message_he": "Aboitiz InfraCapital - חברת תשתיות ענקית עם אופק 30 שנה בשדה התעופה. גשר שלישי ממומן ע\"י צרפת. עיר נופש ב-25 מיליארד. SM בדרך. כל התשתיות בו-זמנית.\n\nVilla D: ₪1,420,888 | Villa C: ₪1,522,380\nהזמנו עם ₪10,149 בלבד.\nהשיבו כן לסיור וירטואלי."
+      },
+      {
+        "id": "WA-0009",
+        "priority": "MEDIUM",
+        "type": "whatsapp_followup",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp follow-up with responders",
+        "instructions": "Follow up with leads who replied to the broadcast. Send virtual tour link and offer to schedule a call with sales team.",
+        "scheduled_time": "2026-04-17T16:00:00+08:00"
+      }
+    ]
+  },
+  {
+    "day": 7,
+    "content": [
+      {
+        "id": "CNT-0001",
+        "priority": "HIGH",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 7 Facebook post (IL market)",
+        "instructions": "Publish to Facebook page. Market: IL. Use the provided image and copy. Schedule for optimal engagement time.",
+        "copy": "עיר נופש חדשה ב-25 מיליארד פסו. JW Marriott. MGallery של Accor. גשר שלישי ממומן ע\"י צרפת. 2.22 מיליון נוסעים בשדה התעופה. פנגלאו כבר לא אי שקט.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/AERIAL 3 ENHANCED.png",
+        "scheduled_time": "2026-04-17T18:00:00+08:00",
+        "hook_used": "עיר נופש חדשה ב-25 מיליארד פסו. JW Marriott. MGallery של Accor. גשר שלישי ממומן ע\"י צרפת. 2.22 מיליון נוסעים בשדה התעופה. פנגלאו כבר לא אי שקט.",
+        "language": "he"
+      },
+      {
+        "id": "EDU-0002",
+        "priority": "MEDIUM",
+        "type": "facebook_group_edu",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 7 educational post for Israeli FB group",
+        "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+        "copy": "Panglao Shores - עיר נופש חדשה ב-25 מיליארד פסו\n\nAlturas Group בונה Township על 57.7 הקטר:\n- 6+ מלונות\n- 1,000+ יחידות מגורים\n- קונבנשן סנטר\n- קניון\n- Beach Club\n- מרכז רפואי\n- בית ספר\n\n1 ק\"מ חזית חוף לבנה. סטטוס Flagship TEZ של TIEZA.\n\nזה לא בניין בודד. זו עיר שלמה שנבנית מאפס.\n\nמי שנכנס לפני שה-Township חי - נכנס במחיר של היום עם ערך של מחר.\n\nמקור: TIEZA, PhilStar, Esquire Philippines",
+        "image_path": "",
+        "platform": "Facebook Group IL",
+        "scheduled_time": "2026-04-17T11:00:00+02:00",
+        "language": "he"
+      }
+    ],
+    "ads": [
+      {
+        "id": "ADS-0003",
+        "priority": "HIGH",
+        "type": "ad_management",
+        "status": "PENDING",
+        "description": "Day 7 ad management - AWARENESS phase (IL)",
+        "instructions": "Ensure AWARENESS ads are active for IL market. Daily budget: USD 50. Monitor CTR and CPC. Pause underperformers (CTR < 1%).",
+        "ad_files": [
+          "assets/ads/META_IL_AWARENESS_A1.txt",
+          "assets/ads/META_IL_AWARENESS_A2.txt",
+          "assets/ads/META_IL_AWARENESS_A3.txt"
+        ],
+        "daily_budget_usd": 50,
+        "market": "IL"
+      }
+    ],
+    "email": [
+      {
+        "id": "EML-0007",
+        "priority": "HIGH",
+        "type": "email_conversion",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 15 email - conversion (PH)",
+        "instructions": "Send conversion email to PH lead list via Brevo. Subject: Last 2 Villas Available - Schedule Your Virtual Tour. Include villa pricing from FX data and CTA to reservation form. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "Last 2 Villas Available - Schedule Your Virtual Tour",
+        "language": "en",
+        "villa_d_price": "PHP 28,000,000",
+        "villa_c_price": "PHP 30,000,000"
+      },
+      {
+        "id": "EML-0008",
+        "priority": "HIGH",
+        "type": "email_conversion",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 email - conversion (IL)",
+        "instructions": "Send conversion email to IL lead list via Brevo. Subject: 2 וילות אחרונות - קבעו סיור וירטואלי. Include villa pricing in ILS and CTA to WhatsApp. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "2 וילות אחרונות - קבעו סיור וירטואלי",
+        "language": "he",
+        "villa_d_price": "₪1,420,888",
+        "villa_c_price": "₪1,522,380"
+      }
+    ],
+    "whatsapp": [
+      {
+        "id": "WA-0008",
+        "priority": "HIGH",
+        "type": "whatsapp_broadcast",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp broadcast",
+        "instructions": "Send WhatsApp broadcast via WATI to all warm leads. Include personalized villa pricing and virtual tour link. Segment: leads who clicked ads or opened emails in last 7 days.",
+        "message_en": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.\n\nVilla D: PHP 28,000,000 | Villa C: PHP 30,000,000\nReserve with just PHP 200,000.\nReply YES for a virtual tour.",
+        "message_he": "Aboitiz InfraCapital - חברת תשתיות ענקית עם אופק 30 שנה בשדה התעופה. גשר שלישי ממומן ע\"י צרפת. עיר נופש ב-25 מיליארד. SM בדרך. כל התשתיות בו-זמנית.\n\nVilla D: ₪1,420,888 | Villa C: ₪1,522,380\nהזמנו עם ₪10,149 בלבד.\nהשיבו כן לסיור וירטואלי."
+      },
+      {
+        "id": "WA-0009",
+        "priority": "MEDIUM",
+        "type": "whatsapp_followup",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp follow-up with responders",
+        "instructions": "Follow up with leads who replied to the broadcast. Send virtual tour link and offer to schedule a call with sales team.",
+        "scheduled_time": "2026-04-17T16:00:00+08:00"
+      }
+    ]
+  },
+  {
+    "day": 8,
+    "content": [
+      {
+        "id": "CNT-0001",
+        "priority": "HIGH",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 8 Facebook post (PH market)",
+        "instructions": "Publish to Facebook page. Market: PH. Use the provided image and copy. Schedule for optimal engagement time.",
+        "copy": "Luxury villas in Panglao earn ADR of P12,000-20,000 with 70%+ occupancy. This villa is not just a lifestyle asset. It is a cash flow machine.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nVilla C: PHP 30,000,000 (approx. USD 498,900, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD1 ENHANCED.png",
+        "scheduled_time": "2026-04-17T10:00:00+08:00",
+        "hook_used": "Luxury villas in Panglao earn ADR of P12,000-20,000 with 70%+ occupancy. This villa is not just a lifestyle asset. It is a cash flow machine.",
+        "language": "en"
+      },
+      {
+        "id": "CNT-0002",
+        "priority": "MEDIUM",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 8 Facebook post (IL market, secondary)",
+        "instructions": "Publish secondary post for IL market. Schedule for alternate time slot.",
+        "copy": "535,803 תיירים ב-2022. 1,427,362 ב-2025. זה 166% צמיחה ב-3 שנים. אנחנו לא בונים על תקווה - אנחנו בונים על מגמה מוכחת.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/RD2 ENHANCED.png",
+        "scheduled_time": "2026-04-17T20:00:00+08:00",
+        "hook_used": "535,803 תיירים ב-2022. 1,427,362 ב-2025. זה 166% צמיחה ב-3 שנים. אנחנו לא בונים על תקווה - אנחנו בונים על מגמה מוכחת.",
+        "language": "he"
+      },
+      {
+        "id": "EDU-0003",
+        "priority": "MEDIUM",
+        "type": "facebook_group_edu",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 8 educational post for Israeli FB group",
+        "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+        "copy": "מסגרת משפטית: איך ישראלי מחזיק נכס בפיליפינים?\n\n3 מסלולים חוקיים:\n\n1. Domestic Corporation (60/40)\nחברה פיליפינית שבה הזר מחזיק עד 40% מהמניות. החברה מחזיקה את הקרקע.\n\n2. Leasehold (עד 99 שנה)\nחוק חדש (RA 12252, 2025) מאפשר חכירה עד 99 שנה. יציבות ארוכת טווח.\n\n3. בעלות על מבנה + חכירת קרקע\nהזר מחזיק את הווילה עצמה, הקרקע בחכירה ארוכה.\n\nחשוב: קיימת אמנת מס ישראל-פיליפינים (מ-1997) למניעת כפל מס.\n\nהמלצה: ליווי של עורך דין פיליפיני מנוסה בנדל\"ן זר.\n\nמקור: Reuters, OneAsia Legal, Expatmodo",
+        "image_path": "",
+        "platform": "Facebook Group IL",
+        "scheduled_time": "2026-04-17T11:00:00+02:00",
+        "language": "he"
+      }
+    ],
+    "ads": [
+      {
+        "id": "ADS-0004",
+        "priority": "HIGH",
+        "type": "ad_management",
+        "status": "PENDING",
+        "description": "Day 8 ad management - CONSIDERATION phase (PH)",
+        "instructions": "Ensure CONSIDERATION ads are active for PH market. Daily budget: USD 80. Monitor CTR and CPC. Pause underperformers (CTR < 1%).",
+        "ad_files": [
+          "assets/ads/META_PH_CONSIDERATION_C1.txt",
+          "assets/ads/META_PH_CONSIDERATION_C2.txt"
+        ],
+        "daily_budget_usd": 80,
+        "market": "PH"
+      },
+      {
+        "id": "ADS-0005",
+        "priority": "MEDIUM",
+        "type": "google_ads",
+        "status": "PENDING",
+        "description": "Day 8 Google Search Ads (PH)",
+        "instructions": "Review and optimize Google Search Ads for PH. Check keyword bids and quality scores.",
+        "ad_file": "assets/ads/GOOGLE_PH_SEARCH_ADS.txt",
+        "market": "PH"
+      },
+      {
+        "id": "ADS-0006",
+        "priority": "HIGH",
+        "type": "retargeting",
+        "status": "PENDING",
+        "description": "Day 8 retargeting audience update",
+        "instructions": "Update retargeting audiences based on website visitors and Facebook engagement from the past 7 days. Create lookalike audiences if retargeting pool > 500."
+      }
+    ],
+    "email": [
+      {
+        "id": "EML-0007",
+        "priority": "HIGH",
+        "type": "email_nurture",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 8 email - nurture (PH)",
+        "instructions": "Send nurture email to PH lead list via Brevo. Subject: Panglao Prime Villas - Your Investment Breakdown. Include villa pricing from FX data and CTA to reservation form. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "Panglao Prime Villas - Your Investment Breakdown",
+        "language": "en",
+        "villa_d_price": "PHP 28,000,000",
+        "villa_c_price": "PHP 30,000,000"
+      },
+      {
+        "id": "EML-0008",
+        "priority": "HIGH",
+        "type": "email_nurture",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 8 email - nurture (IL)",
+        "instructions": "Send nurture email to IL lead list via Brevo. Subject: פנגלאו פריים וילות - פירוט ההשקעה. Include villa pricing in ILS and CTA to WhatsApp. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "פנגלאו פריים וילות - פירוט ההשקעה",
+        "language": "he",
+        "villa_d_price": "₪1,420,888",
+        "villa_c_price": "₪1,522,380"
+      }
+    ],
+    "whatsapp": [
+      {
+        "id": "WA-0008",
+        "priority": "HIGH",
+        "type": "whatsapp_broadcast",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp broadcast",
+        "instructions": "Send WhatsApp broadcast via WATI to all warm leads. Include personalized villa pricing and virtual tour link. Segment: leads who clicked ads or opened emails in last 7 days.",
+        "message_en": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.\n\nVilla D: PHP 28,000,000 | Villa C: PHP 30,000,000\nReserve with just PHP 200,000.\nReply YES for a virtual tour.",
+        "message_he": "Aboitiz InfraCapital - חברת תשתיות ענקית עם אופק 30 שנה בשדה התעופה. גשר שלישי ממומן ע\"י צרפת. עיר נופש ב-25 מיליארד. SM בדרך. כל התשתיות בו-זמנית.\n\nVilla D: ₪1,420,888 | Villa C: ₪1,522,380\nהזמנו עם ₪10,149 בלבד.\nהשיבו כן לסיור וירטואלי."
+      },
+      {
+        "id": "WA-0009",
+        "priority": "MEDIUM",
+        "type": "whatsapp_followup",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp follow-up with responders",
+        "instructions": "Follow up with leads who replied to the broadcast. Send virtual tour link and offer to schedule a call with sales team.",
+        "scheduled_time": "2026-04-17T16:00:00+08:00"
+      }
+    ]
+  },
+  {
+    "day": 9,
+    "content": [
+      {
+        "id": "CNT-0001",
+        "priority": "HIGH",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 9 Facebook post (IL market)",
+        "instructions": "Publish to Facebook page. Market: IL. Use the provided image and copy. Schedule for optimal engagement time.",
+        "copy": "כש-JW Marriott ו-Accor נכנסים, זה כבר לא אי קטן. זה מותג יעד. הווילות שלנו יושבות במשולש Marriott-Mithi-South Palms.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/RD2 ENHANCED.png",
+        "scheduled_time": "2026-04-17T18:00:00+08:00",
+        "hook_used": "כש-JW Marriott ו-Accor נכנסים, זה כבר לא אי קטן. זה מותג יעד. הווילות שלנו יושבות במשולש Marriott-Mithi-South Palms.",
+        "language": "he"
+      },
+      {
+        "id": "CNT-0002",
+        "priority": "MEDIUM",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 9 Facebook post (PH market, secondary)",
+        "instructions": "Publish secondary post for PH market. Schedule for alternate time slot.",
+        "copy": "SM is building a mega mall in Bohol, opening 2028. SM does not build where there is no market. This province is now Tier-1.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/AERIAL 1 ENHANCED.png",
+        "scheduled_time": "2026-04-17T14:00:00+08:00",
+        "hook_used": "SM is building a mega mall in Bohol, opening 2028. SM does not build where there is no market. This province is now Tier-1.",
+        "language": "en"
+      },
+      {
+        "id": "EDU-0003",
+        "priority": "MEDIUM",
+        "type": "facebook_group_edu",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 9 educational post for Israeli FB group",
+        "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+        "copy": "מחירים: פנגלאו מול בורקאי מול סיארגאו\n\nמחיר למ\"ר חזית חוף:\n- פנגלאו: 27,500-49,000 פסו (BIR zonal)\n- בורקאי: 55,000-70,000+ פסו\n- סיארגאו: 25,746-39,600 פסו\n- אל נידו: 12,000-57,200 פסו\n\nפנגלאו עדיין מתומחרת מתחת לבורקאי, אבל עם כל מנועי הצמיחה:\n- Marriott + MGallery\n- שדה תעופה מעל קיבולת\n- גשר שלישי ממומן\n- Township ב-25 מיליארד\n\nהפער נסגר. מי שנכנס היום - נכנס לפני התמחור המלא.\n\nמקור: BIR Zonal Values 2025, OnePropertee, FazWaz",
+        "image_path": "",
+        "platform": "Facebook Group IL",
+        "scheduled_time": "2026-04-17T11:00:00+02:00",
+        "language": "he"
+      }
+    ],
+    "ads": [
+      {
+        "id": "ADS-0004",
+        "priority": "HIGH",
+        "type": "ad_management",
+        "status": "PENDING",
+        "description": "Day 9 ad management - CONSIDERATION phase (IL)",
+        "instructions": "Ensure CONSIDERATION ads are active for IL market. Daily budget: USD 80. Monitor CTR and CPC. Pause underperformers (CTR < 1%).",
+        "ad_files": [
+          "assets/ads/META_IL_CONSIDERATION_C1.txt",
+          "assets/ads/META_IL_CONSIDERATION_C2.txt"
+        ],
+        "daily_budget_usd": 80,
+        "market": "IL"
+      },
+      {
+        "id": "ADS-0005",
+        "priority": "MEDIUM",
+        "type": "google_ads",
+        "status": "PENDING",
+        "description": "Day 9 Google Search Ads (IL)",
+        "instructions": "Review and optimize Google Search Ads for IL. Check keyword bids and quality scores.",
+        "ad_file": "assets/ads/GOOGLE_IL_SEARCH_ADS.txt",
+        "market": "IL"
+      },
+      {
+        "id": "ADS-0006",
+        "priority": "HIGH",
+        "type": "retargeting",
+        "status": "PENDING",
+        "description": "Day 9 retargeting audience update",
+        "instructions": "Update retargeting audiences based on website visitors and Facebook engagement from the past 7 days. Create lookalike audiences if retargeting pool > 500."
+      }
+    ],
+    "email": [
+      {
+        "id": "EML-0007",
+        "priority": "HIGH",
+        "type": "email_nurture",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 9 email - nurture (PH)",
+        "instructions": "Send nurture email to PH lead list via Brevo. Subject: Panglao Prime Villas - Your Investment Breakdown. Include villa pricing from FX data and CTA to reservation form. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "Panglao Prime Villas - Your Investment Breakdown",
+        "language": "en",
+        "villa_d_price": "PHP 28,000,000",
+        "villa_c_price": "PHP 30,000,000"
+      },
+      {
+        "id": "EML-0008",
+        "priority": "HIGH",
+        "type": "email_nurture",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 9 email - nurture (IL)",
+        "instructions": "Send nurture email to IL lead list via Brevo. Subject: פנגלאו פריים וילות - פירוט ההשקעה. Include villa pricing in ILS and CTA to WhatsApp. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "פנגלאו פריים וילות - פירוט ההשקעה",
+        "language": "he",
+        "villa_d_price": "₪1,420,888",
+        "villa_c_price": "₪1,522,380"
+      }
+    ],
+    "whatsapp": [
+      {
+        "id": "WA-0008",
+        "priority": "HIGH",
+        "type": "whatsapp_broadcast",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp broadcast",
+        "instructions": "Send WhatsApp broadcast via WATI to all warm leads. Include personalized villa pricing and virtual tour link. Segment: leads who clicked ads or opened emails in last 7 days.",
+        "message_en": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.\n\nVilla D: PHP 28,000,000 | Villa C: PHP 30,000,000\nReserve with just PHP 200,000.\nReply YES for a virtual tour.",
+        "message_he": "Aboitiz InfraCapital - חברת תשתיות ענקית עם אופק 30 שנה בשדה התעופה. גשר שלישי ממומן ע\"י צרפת. עיר נופש ב-25 מיליארד. SM בדרך. כל התשתיות בו-זמנית.\n\nVilla D: ₪1,420,888 | Villa C: ₪1,522,380\nהזמנו עם ₪10,149 בלבד.\nהשיבו כן לסיור וירטואלי."
+      },
+      {
+        "id": "WA-0009",
+        "priority": "MEDIUM",
+        "type": "whatsapp_followup",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp follow-up with responders",
+        "instructions": "Follow up with leads who replied to the broadcast. Send virtual tour link and offer to schedule a call with sales team.",
+        "scheduled_time": "2026-04-17T16:00:00+08:00"
+      }
+    ]
+  },
+  {
+    "day": 10,
+    "content": [
+      {
+        "id": "CNT-0001",
+        "priority": "HIGH",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 10 Facebook post (PH market)",
+        "instructions": "Publish to Facebook page. Market: PH. Use the provided image and copy. Schedule for optimal engagement time.",
+        "copy": "Panglao is becoming a Live + Work + Invest destination. Co-working, medical center, international school - not just a beach holiday. Your villa serves all three markets.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nVilla C: PHP 30,000,000 (approx. USD 498,900, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/AERIAL 1 ENHANCED.png",
+        "scheduled_time": "2026-04-17T10:00:00+08:00",
+        "hook_used": "Panglao is becoming a Live + Work + Invest destination. Co-working, medical center, international school - not just a beach holiday. Your villa serves all three markets.",
+        "language": "en"
+      },
+      {
+        "id": "VID-0002",
+        "priority": "HIGH",
+        "type": "facebook_video",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 10 VIDEO post (PH market)",
+        "instructions": "Upload video to Facebook page. Market: PH. Use the provided video file and copy text as the post caption.",
+        "copy": "Panglao is becoming a Live + Work + Invest destination. Co-working, medical center, international school - not just a beach holiday. Your villa serves all three markets.\n\nWatch the full villa tour.\nVilla D: PHP 28,000,000\nVilla C: PHP 30,000,000\nBDO Bank financing available.\n\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "video_path": "20260416 BLUEEVEREST 1 Villas Bohol.mp4",
+        "image_path": "",
+        "scheduled_time": "2026-04-17T12:00:00+08:00",
+        "hook_used": "Panglao is becoming a Live + Work + Invest destination. Co-working, medical center, international school - not just a beach holiday. Your villa serves all three markets.",
+        "language": "en"
+      },
+      {
+        "id": "CNT-0003",
+        "priority": "MEDIUM",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 10 Facebook post (IL market, secondary)",
+        "instructions": "Publish secondary post for IL market. Schedule for alternate time slot.",
+        "copy": "וילות יוקרה בפנגלאו מרוויחות 12,000-20,000 פסו ללילה עם תפוסה של 70%+. הווילה הזו לא רק נכס לייפסטייל - היא מכונה לייצור תזרים.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD3 ENHANCED.png",
+        "scheduled_time": "2026-04-17T20:00:00+08:00",
+        "hook_used": "וילות יוקרה בפנגלאו מרוויחות 12,000-20,000 פסו ללילה עם תפוסה של 70%+. הווילה הזו לא רק נכס לייפסטייל - היא מכונה לייצור תזרים.",
+        "language": "he"
+      },
+      {
+        "id": "EDU-0004",
+        "priority": "MEDIUM",
+        "type": "facebook_group_edu",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 10 educational post for Israeli FB group",
+        "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+        "copy": "כלכלת בוהול: המחוז הצומח ביותר באזור\n\nנתונים:\n- צמיחת GDP: 6.6-8.8% ב-2024\n- תיירות = 70-74% מהתוצר\n- GDP: כ-182-198 מיליארד פסו\n- עוני ירד: מ-19.1% (2021) ל-14.8% (2023)\n\nבוהול הוכרזה כהכלכלה הצומחת ביותר ב-Central Visayas.\n\nזו לא רק השקעה ב\"אי יפה\". זו חשיפה לכלכלה אזורית צומחת עם תיירות כמנוע מרכזי.\n\nמקור: PSA, Manila Bulletin, FINEX",
+        "image_path": "",
+        "platform": "Facebook Group IL",
+        "scheduled_time": "2026-04-17T11:00:00+02:00",
+        "language": "he"
+      }
+    ],
+    "ads": [
+      {
+        "id": "ADS-0005",
+        "priority": "HIGH",
+        "type": "ad_management",
+        "status": "PENDING",
+        "description": "Day 10 ad management - CONSIDERATION phase (PH)",
+        "instructions": "Ensure CONSIDERATION ads are active for PH market. Daily budget: USD 80. Monitor CTR and CPC. Pause underperformers (CTR < 1%).",
+        "ad_files": [
+          "assets/ads/META_PH_CONSIDERATION_C1.txt",
+          "assets/ads/META_PH_CONSIDERATION_C2.txt"
+        ],
+        "daily_budget_usd": 80,
+        "market": "PH"
+      },
+      {
+        "id": "ADS-0006",
+        "priority": "MEDIUM",
+        "type": "google_ads",
+        "status": "PENDING",
+        "description": "Day 10 Google Search Ads (PH)",
+        "instructions": "Review and optimize Google Search Ads for PH. Check keyword bids and quality scores.",
+        "ad_file": "assets/ads/GOOGLE_PH_SEARCH_ADS.txt",
+        "market": "PH"
+      },
+      {
+        "id": "ADS-0007",
+        "priority": "HIGH",
+        "type": "retargeting",
+        "status": "PENDING",
+        "description": "Day 10 retargeting audience update",
+        "instructions": "Update retargeting audiences based on website visitors and Facebook engagement from the past 7 days. Create lookalike audiences if retargeting pool > 500."
+      }
+    ],
+    "email": [
+      {
+        "id": "EML-0008",
+        "priority": "HIGH",
+        "type": "email_nurture",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 10 email - nurture (PH)",
+        "instructions": "Send nurture email to PH lead list via Brevo. Subject: Panglao Prime Villas - Your Investment Breakdown. Include villa pricing from FX data and CTA to reservation form. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "Panglao Prime Villas - Your Investment Breakdown",
+        "language": "en",
+        "villa_d_price": "PHP 28,000,000",
+        "villa_c_price": "PHP 30,000,000"
+      },
+      {
+        "id": "EML-0009",
+        "priority": "HIGH",
+        "type": "email_nurture",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 10 email - nurture (IL)",
+        "instructions": "Send nurture email to IL lead list via Brevo. Subject: פנגלאו פריים וילות - פירוט ההשקעה. Include villa pricing in ILS and CTA to WhatsApp. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "פנגלאו פריים וילות - פירוט ההשקעה",
+        "language": "he",
+        "villa_d_price": "₪1,420,888",
+        "villa_c_price": "₪1,522,380"
+      }
+    ],
+    "whatsapp": [
+      {
+        "id": "WA-0010",
+        "priority": "HIGH",
+        "type": "whatsapp_broadcast",
+        "status": "PENDING",
+        "description": "Day 10 WhatsApp broadcast",
+        "instructions": "Send WhatsApp broadcast via WATI to all warm leads. Include personalized villa pricing and virtual tour link. Segment: leads who clicked ads or opened emails in last 7 days.",
+        "message_en": "Panglao is becoming a Live + Work + Invest destination. Co-working, medical center, international school - not just a beach holiday. Your villa serves all three markets.\n\nVilla D: PHP 28,000,000 | Villa C: PHP 30,000,000\nReserve with just PHP 200,000.\nReply YES for a virtual tour.",
+        "message_he": "וילות יוקרה בפנגלאו מרוויחות 12,000-20,000 פסו ללילה עם תפוסה של 70%+. הווילה הזו לא רק נכס לייפסטייל - היא מכונה לייצור תזרים.\n\nVilla D: ₪1,420,888 | Villa C: ₪1,522,380\nהזמנו עם ₪10,149 בלבד.\nהשיבו כן לסיור וירטואלי."
+      },
+      {
+        "id": "WA-0011",
+        "priority": "MEDIUM",
+        "type": "whatsapp_followup",
+        "status": "PENDING",
+        "description": "Day 10 WhatsApp follow-up with responders",
+        "instructions": "Follow up with leads who replied to the broadcast. Send virtual tour link and offer to schedule a call with sales team.",
+        "scheduled_time": "2026-04-17T16:00:00+08:00"
+      }
+    ]
+  },
+  {
+    "day": 11,
+    "content": [
+      {
+        "id": "CNT-0001",
+        "priority": "HIGH",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 11 Facebook post (IL market)",
+        "instructions": "Publish to Facebook page. Market: IL. Use the provided image and copy. Schedule for optimal engagement time.",
+        "copy": "SM בונה קניון ענק בבוהול, פתיחה ב-2028. SM לא בונה איפה שאין שוק. הפרובינציה הזו כבר ברמת Tier-1.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD3 ENHANCED.png",
+        "scheduled_time": "2026-04-17T18:00:00+08:00",
+        "hook_used": "SM בונה קניון ענק בבוהול, פתיחה ב-2028. SM לא בונה איפה שאין שוק. הפרובינציה הזו כבר ברמת Tier-1.",
+        "language": "he"
+      },
+      {
+        "id": "CNT-0002",
+        "priority": "MEDIUM",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 11 Facebook post (PH market, secondary)",
+        "instructions": "Publish secondary post for PH market. Schedule for alternate time slot.",
+        "copy": "Enter between Proof of Concept (already happened) and Full Pricing (not yet). Tourism record. Airport over capacity. Bridge funded. Marriott building. This is where smart money enters.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/AERIAL 2 ENHANCED.png",
+        "scheduled_time": "2026-04-17T14:00:00+08:00",
+        "hook_used": "Enter between Proof of Concept (already happened) and Full Pricing (not yet). Tourism record. Airport over capacity. Bridge funded. Marriott building. This is where smart money enters.",
+        "language": "en"
+      },
+      {
+        "id": "EDU-0003",
+        "priority": "MEDIUM",
+        "type": "facebook_group_edu",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 11 educational post for Israeli FB group",
+        "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+        "copy": "UNESCO Global Geopark - למה זה חשוב למשקיע?\n\nבוהול היא הגיאופארק הראשון של UNESCO בפיליפינים. 1 מתוך 195 בעולם.\n\nמה זה אומר:\n- הגנה על הנוף והטבע לדורות\n- שיווק בינלאומי מובנה (UNESCO = מותג עולמי)\n- תיירות איכותית ולא המונית\n- Chocolate Hills - תצורה גיאולוגית ייחודית\n- Danajon Reef - שונית מחסום כפולה, היחידה בדרום-מזרח אסיה\n\nלמשקיע: נכס בסביבה מוגנת ברמה עולמית שומר על ערכו לטווח ארוך.\n\nמקור: UNESCO, PPDO Bohol",
+        "image_path": "",
+        "platform": "Facebook Group IL",
+        "scheduled_time": "2026-04-17T11:00:00+02:00",
+        "language": "he"
+      }
+    ],
+    "ads": [
+      {
+        "id": "ADS-0004",
+        "priority": "HIGH",
+        "type": "ad_management",
+        "status": "PENDING",
+        "description": "Day 11 ad management - CONSIDERATION phase (IL)",
+        "instructions": "Ensure CONSIDERATION ads are active for IL market. Daily budget: USD 80. Monitor CTR and CPC. Pause underperformers (CTR < 1%).",
+        "ad_files": [
+          "assets/ads/META_IL_CONSIDERATION_C1.txt",
+          "assets/ads/META_IL_CONSIDERATION_C2.txt"
+        ],
+        "daily_budget_usd": 80,
+        "market": "IL"
+      },
+      {
+        "id": "ADS-0005",
+        "priority": "MEDIUM",
+        "type": "google_ads",
+        "status": "PENDING",
+        "description": "Day 11 Google Search Ads (IL)",
+        "instructions": "Review and optimize Google Search Ads for IL. Check keyword bids and quality scores.",
+        "ad_file": "assets/ads/GOOGLE_IL_SEARCH_ADS.txt",
+        "market": "IL"
+      },
+      {
+        "id": "ADS-0006",
+        "priority": "HIGH",
+        "type": "retargeting",
+        "status": "PENDING",
+        "description": "Day 11 retargeting audience update",
+        "instructions": "Update retargeting audiences based on website visitors and Facebook engagement from the past 7 days. Create lookalike audiences if retargeting pool > 500."
+      }
+    ],
+    "email": [
+      {
+        "id": "EML-0007",
+        "priority": "HIGH",
+        "type": "email_nurture",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 11 email - nurture (PH)",
+        "instructions": "Send nurture email to PH lead list via Brevo. Subject: Panglao Prime Villas - Your Investment Breakdown. Include villa pricing from FX data and CTA to reservation form. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "Panglao Prime Villas - Your Investment Breakdown",
+        "language": "en",
+        "villa_d_price": "PHP 28,000,000",
+        "villa_c_price": "PHP 30,000,000"
+      },
+      {
+        "id": "EML-0008",
+        "priority": "HIGH",
+        "type": "email_nurture",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 11 email - nurture (IL)",
+        "instructions": "Send nurture email to IL lead list via Brevo. Subject: פנגלאו פריים וילות - פירוט ההשקעה. Include villa pricing in ILS and CTA to WhatsApp. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "פנגלאו פריים וילות - פירוט ההשקעה",
+        "language": "he",
+        "villa_d_price": "₪1,420,888",
+        "villa_c_price": "₪1,522,380"
+      }
+    ],
+    "whatsapp": [
+      {
+        "id": "WA-0010",
+        "priority": "HIGH",
+        "type": "whatsapp_broadcast",
+        "status": "PENDING",
+        "description": "Day 10 WhatsApp broadcast",
+        "instructions": "Send WhatsApp broadcast via WATI to all warm leads. Include personalized villa pricing and virtual tour link. Segment: leads who clicked ads or opened emails in last 7 days.",
+        "message_en": "Panglao is becoming a Live + Work + Invest destination. Co-working, medical center, international school - not just a beach holiday. Your villa serves all three markets.\n\nVilla D: PHP 28,000,000 | Villa C: PHP 30,000,000\nReserve with just PHP 200,000.\nReply YES for a virtual tour.",
+        "message_he": "וילות יוקרה בפנגלאו מרוויחות 12,000-20,000 פסו ללילה עם תפוסה של 70%+. הווילה הזו לא רק נכס לייפסטייל - היא מכונה לייצור תזרים.\n\nVilla D: ₪1,420,888 | Villa C: ₪1,522,380\nהזמנו עם ₪10,149 בלבד.\nהשיבו כן לסיור וירטואלי."
+      },
+      {
+        "id": "WA-0011",
+        "priority": "MEDIUM",
+        "type": "whatsapp_followup",
+        "status": "PENDING",
+        "description": "Day 10 WhatsApp follow-up with responders",
+        "instructions": "Follow up with leads who replied to the broadcast. Send virtual tour link and offer to schedule a call with sales team.",
+        "scheduled_time": "2026-04-17T16:00:00+08:00"
+      }
+    ]
+  },
+  {
+    "day": 12,
+    "content": [
+      {
+        "id": "CNT-0001",
+        "priority": "HIGH",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 12 Facebook post (PH market)",
+        "instructions": "Publish to Facebook page. Market: PH. Use the provided image and copy. Schedule for optimal engagement time.",
+        "copy": "Bohol airport: 2.22M passengers today, planned capacity nearly 4M by 2030. Aboitiz InfraCapital committed to a 30-year modernization program. The infrastructure is being built for the next decade.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nVilla C: PHP 30,000,000 (approx. USD 498,900, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/AERIAL 2 ENHANCED.png",
+        "scheduled_time": "2026-04-17T10:00:00+08:00",
+        "hook_used": "Bohol airport: 2.22M passengers today, planned capacity nearly 4M by 2030. Aboitiz InfraCapital committed to a 30-year modernization program. The infrastructure is being built for the next decade.",
+        "language": "en"
+      },
+      {
+        "id": "CNT-0002",
+        "priority": "MEDIUM",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 12 Facebook post (IL market, secondary)",
+        "instructions": "Publish secondary post for IL market. Schedule for alternate time slot.",
+        "copy": "פנגלאו הופכת ליעד Live + Work + Invest. קו-וורקינג, מרכז רפואי, בית ספר בינלאומי. הווילה שלכם משרתת שלושה שווקים.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/RD1 ENHANCED.png",
+        "scheduled_time": "2026-04-17T20:00:00+08:00",
+        "hook_used": "פנגלאו הופכת ליעד Live + Work + Invest. קו-וורקינג, מרכז רפואי, בית ספר בינלאומי. הווילה שלכם משרתת שלושה שווקים.",
+        "language": "he"
+      },
+      {
+        "id": "EDU-0003",
+        "priority": "MEDIUM",
+        "type": "facebook_group_edu",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 12 educational post for Israeli FB group",
+        "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+        "copy": "Airbnb בפנגלאו - המספרים האמיתיים\n\nנתוני AirDNA/Airbtics 2025:\n- 934-1,230 נכסים פעילים\n- תפוסה ממוצעת: 41-52%\n- ADR ממוצע: 2,481-2,900 פסו\n\nווילות יוקרה (4+ חדרים, בריכה):\n- ADR: 12,000-20,000 פסו ללילה\n- תפוסה: 70%+\n- הכנסה שנתית פוטנציאלית: 7 ספרות פסו\n\nעונתיות: ינואר הכי חזק, ספטמבר הכי חלש.\n\nלהשוואה: דירה בת\"א מניבה 1-2% נטו. וילה בפנגלאו מניבה 10-15% ברוטו.\n\nמקור: AirDNA, Airbtics, AirROI",
+        "image_path": "",
+        "platform": "Facebook Group IL",
+        "scheduled_time": "2026-04-17T11:00:00+02:00",
+        "language": "he"
+      }
+    ],
+    "ads": [
+      {
+        "id": "ADS-0004",
+        "priority": "HIGH",
+        "type": "ad_management",
+        "status": "PENDING",
+        "description": "Day 12 ad management - CONSIDERATION phase (PH)",
+        "instructions": "Ensure CONSIDERATION ads are active for PH market. Daily budget: USD 80. Monitor CTR and CPC. Pause underperformers (CTR < 1%).",
+        "ad_files": [
+          "assets/ads/META_PH_CONSIDERATION_C1.txt",
+          "assets/ads/META_PH_CONSIDERATION_C2.txt"
+        ],
+        "daily_budget_usd": 80,
+        "market": "PH"
+      },
+      {
+        "id": "ADS-0005",
+        "priority": "MEDIUM",
+        "type": "google_ads",
+        "status": "PENDING",
+        "description": "Day 12 Google Search Ads (PH)",
+        "instructions": "Review and optimize Google Search Ads for PH. Check keyword bids and quality scores.",
+        "ad_file": "assets/ads/GOOGLE_PH_SEARCH_ADS.txt",
+        "market": "PH"
+      },
+      {
+        "id": "ADS-0006",
+        "priority": "HIGH",
+        "type": "retargeting",
+        "status": "PENDING",
+        "description": "Day 12 retargeting audience update",
+        "instructions": "Update retargeting audiences based on website visitors and Facebook engagement from the past 7 days. Create lookalike audiences if retargeting pool > 500."
+      }
+    ],
+    "email": [
+      {
+        "id": "EML-0007",
+        "priority": "HIGH",
+        "type": "email_nurture",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 12 email - nurture (PH)",
+        "instructions": "Send nurture email to PH lead list via Brevo. Subject: Panglao Prime Villas - Your Investment Breakdown. Include villa pricing from FX data and CTA to reservation form. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "Panglao Prime Villas - Your Investment Breakdown",
+        "language": "en",
+        "villa_d_price": "PHP 28,000,000",
+        "villa_c_price": "PHP 30,000,000"
+      },
+      {
+        "id": "EML-0008",
+        "priority": "HIGH",
+        "type": "email_nurture",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 12 email - nurture (IL)",
+        "instructions": "Send nurture email to IL lead list via Brevo. Subject: פנגלאו פריים וילות - פירוט ההשקעה. Include villa pricing in ILS and CTA to WhatsApp. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "פנגלאו פריים וילות - פירוט ההשקעה",
+        "language": "he",
+        "villa_d_price": "₪1,420,888",
+        "villa_c_price": "₪1,522,380"
+      }
+    ],
+    "whatsapp": [
+      {
+        "id": "WA-0010",
+        "priority": "HIGH",
+        "type": "whatsapp_broadcast",
+        "status": "PENDING",
+        "description": "Day 10 WhatsApp broadcast",
+        "instructions": "Send WhatsApp broadcast via WATI to all warm leads. Include personalized villa pricing and virtual tour link. Segment: leads who clicked ads or opened emails in last 7 days.",
+        "message_en": "Panglao is becoming a Live + Work + Invest destination. Co-working, medical center, international school - not just a beach holiday. Your villa serves all three markets.\n\nVilla D: PHP 28,000,000 | Villa C: PHP 30,000,000\nReserve with just PHP 200,000.\nReply YES for a virtual tour.",
+        "message_he": "וילות יוקרה בפנגלאו מרוויחות 12,000-20,000 פסו ללילה עם תפוסה של 70%+. הווילה הזו לא רק נכס לייפסטייל - היא מכונה לייצור תזרים.\n\nVilla D: ₪1,420,888 | Villa C: ₪1,522,380\nהזמנו עם ₪10,149 בלבד.\nהשיבו כן לסיור וירטואלי."
+      },
+      {
+        "id": "WA-0011",
+        "priority": "MEDIUM",
+        "type": "whatsapp_followup",
+        "status": "PENDING",
+        "description": "Day 10 WhatsApp follow-up with responders",
+        "instructions": "Follow up with leads who replied to the broadcast. Send virtual tour link and offer to schedule a call with sales team.",
+        "scheduled_time": "2026-04-17T16:00:00+08:00"
+      }
+    ]
+  },
+  {
+    "day": 13,
+    "content": [
+      {
+        "id": "CNT-0001",
+        "priority": "HIGH",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 13 Facebook post (IL market)",
+        "instructions": "Publish to Facebook page. Market: IL. Use the provided image and copy. Schedule for optimal engagement time.",
+        "copy": "נכנסים בין הוכחת הקונספט (שכבר קרתה) לבין התמחור המלא (שעדיין לא הגיע). תיירות בשיא. שדה תעופה מעל קיבולת. גשר ממומן. Marriott בבנייה. כאן נכנס כסף חכם.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/RD1 ENHANCED.png",
+        "scheduled_time": "2026-04-17T18:00:00+08:00",
+        "hook_used": "נכנסים בין הוכחת הקונספט (שכבר קרתה) לבין התמחור המלא (שעדיין לא הגיע). תיירות בשיא. שדה תעופה מעל קיבולת. גשר ממומן. Marriott בבנייה. כאן נכנס כסף חכם.",
+        "language": "he"
+      },
+      {
+        "id": "CNT-0002",
+        "priority": "MEDIUM",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 13 Facebook post (PH market, secondary)",
+        "instructions": "Publish secondary post for PH market. Schedule for alternate time slot.",
+        "copy": "This villa earned PHP 4,740,000 last year. Exposed concrete, rooftop jacuzzi, 60 seconds from the beach.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD2 ENHANCED.png",
+        "scheduled_time": "2026-04-17T14:00:00+08:00",
+        "hook_used": "This villa earned PHP 4,740,000 last year. Exposed concrete, rooftop jacuzzi, 60 seconds from the beach.",
+        "language": "en"
+      },
+      {
+        "id": "EDU-0003",
+        "priority": "MEDIUM",
+        "type": "facebook_group_edu",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 13 educational post for Israeli FB group",
+        "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+        "copy": "שדה תעופה בוהול: מ-2 מיליון ל-4 מיליון עד 2030\n\nAboitiz InfraCapital לקחה את שדה התעופה לזיכיון 30 שנה.\n\nהמצב היום: 2.22 מיליון נוסעים ב-2025.\nהיעד: כמעט 4 מיליון עד 2030.\n\n12 טיסות ביום ממנילה. טיסות ישירות מקוריאה (Jin Air, Jeju Air, Air Busan).\n\nשדה תעופה שעובר קיבולת = אינדיקציה שהביקוש כבר כאן. ההרחבה = ערובה לצמיחה לעשור הבא.\n\nמקור: Daily Tribune, Aboitiz InfraCapital, Bohol Gov",
+        "image_path": "",
+        "platform": "Facebook Group IL",
+        "scheduled_time": "2026-04-17T11:00:00+02:00",
+        "language": "he"
+      }
+    ],
+    "ads": [
+      {
+        "id": "ADS-0004",
+        "priority": "HIGH",
+        "type": "ad_management",
+        "status": "PENDING",
+        "description": "Day 13 ad management - CONSIDERATION phase (IL)",
+        "instructions": "Ensure CONSIDERATION ads are active for IL market. Daily budget: USD 80. Monitor CTR and CPC. Pause underperformers (CTR < 1%).",
+        "ad_files": [
+          "assets/ads/META_IL_CONSIDERATION_C1.txt",
+          "assets/ads/META_IL_CONSIDERATION_C2.txt"
+        ],
+        "daily_budget_usd": 80,
+        "market": "IL"
+      },
+      {
+        "id": "ADS-0005",
+        "priority": "MEDIUM",
+        "type": "google_ads",
+        "status": "PENDING",
+        "description": "Day 13 Google Search Ads (IL)",
+        "instructions": "Review and optimize Google Search Ads for IL. Check keyword bids and quality scores.",
+        "ad_file": "assets/ads/GOOGLE_IL_SEARCH_ADS.txt",
+        "market": "IL"
+      },
+      {
+        "id": "ADS-0006",
+        "priority": "HIGH",
+        "type": "retargeting",
+        "status": "PENDING",
+        "description": "Day 13 retargeting audience update",
+        "instructions": "Update retargeting audiences based on website visitors and Facebook engagement from the past 7 days. Create lookalike audiences if retargeting pool > 500."
+      }
+    ],
+    "email": [
+      {
+        "id": "EML-0007",
+        "priority": "HIGH",
+        "type": "email_nurture",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 13 email - nurture (PH)",
+        "instructions": "Send nurture email to PH lead list via Brevo. Subject: Panglao Prime Villas - Your Investment Breakdown. Include villa pricing from FX data and CTA to reservation form. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "Panglao Prime Villas - Your Investment Breakdown",
+        "language": "en",
+        "villa_d_price": "PHP 28,000,000",
+        "villa_c_price": "PHP 30,000,000"
+      },
+      {
+        "id": "EML-0008",
+        "priority": "HIGH",
+        "type": "email_nurture",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 13 email - nurture (IL)",
+        "instructions": "Send nurture email to IL lead list via Brevo. Subject: פנגלאו פריים וילות - פירוט ההשקעה. Include villa pricing in ILS and CTA to WhatsApp. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "פנגלאו פריים וילות - פירוט ההשקעה",
+        "language": "he",
+        "villa_d_price": "₪1,420,888",
+        "villa_c_price": "₪1,522,380"
+      }
+    ],
+    "whatsapp": [
+      {
+        "id": "WA-0010",
+        "priority": "HIGH",
+        "type": "whatsapp_broadcast",
+        "status": "PENDING",
+        "description": "Day 10 WhatsApp broadcast",
+        "instructions": "Send WhatsApp broadcast via WATI to all warm leads. Include personalized villa pricing and virtual tour link. Segment: leads who clicked ads or opened emails in last 7 days.",
+        "message_en": "Panglao is becoming a Live + Work + Invest destination. Co-working, medical center, international school - not just a beach holiday. Your villa serves all three markets.\n\nVilla D: PHP 28,000,000 | Villa C: PHP 30,000,000\nReserve with just PHP 200,000.\nReply YES for a virtual tour.",
+        "message_he": "וילות יוקרה בפנגלאו מרוויחות 12,000-20,000 פסו ללילה עם תפוסה של 70%+. הווילה הזו לא רק נכס לייפסטייל - היא מכונה לייצור תזרים.\n\nVilla D: ₪1,420,888 | Villa C: ₪1,522,380\nהזמנו עם ₪10,149 בלבד.\nהשיבו כן לסיור וירטואלי."
+      },
+      {
+        "id": "WA-0011",
+        "priority": "MEDIUM",
+        "type": "whatsapp_followup",
+        "status": "PENDING",
+        "description": "Day 10 WhatsApp follow-up with responders",
+        "instructions": "Follow up with leads who replied to the broadcast. Send virtual tour link and offer to schedule a call with sales team.",
+        "scheduled_time": "2026-04-17T16:00:00+08:00"
+      }
+    ]
+  },
+  {
+    "day": 14,
+    "content": [
+      {
+        "id": "CNT-0001",
+        "priority": "HIGH",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 14 Facebook post (PH market)",
+        "instructions": "Publish to Facebook page. Market: PH. Use the provided image and copy. Schedule for optimal engagement time.",
+        "copy": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nVilla C: PHP 30,000,000 (approx. USD 498,900, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD2 ENHANCED.png",
+        "scheduled_time": "2026-04-17T10:00:00+08:00",
+        "hook_used": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.",
+        "language": "en"
+      },
+      {
+        "id": "CNT-0002",
+        "priority": "MEDIUM",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 14 Facebook post (IL market, secondary)",
+        "instructions": "Publish secondary post for IL market. Schedule for alternate time slot.",
+        "copy": "Aboitiz InfraCapital - חברת תשתיות ענקית עם אופק 30 שנה בשדה התעופה. גשר שלישי ממומן ע\"י צרפת. עיר נופש ב-25 מיליארד. SM בדרך. כל התשתיות בו-זמנית.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD1 ENHANCED.png",
+        "scheduled_time": "2026-04-17T20:00:00+08:00",
+        "hook_used": "Aboitiz InfraCapital - חברת תשתיות ענקית עם אופק 30 שנה בשדה התעופה. גשר שלישי ממומן ע\"י צרפת. עיר נופש ב-25 מיליארד. SM בדרך. כל התשתיות בו-זמנית.",
+        "language": "he"
+      },
+      {
+        "id": "EDU-0003",
+        "priority": "MEDIUM",
+        "type": "facebook_group_edu",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 14 educational post for Israeli FB group",
+        "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+        "copy": "SM בונה קניון בבוהול - למה זה חשוב?\n\nSM Supermalls - הרשת הגדולה בפיליפינים - הודיעה על SM Bohol:\n- מגרש: 61,500 מ\"ר\n- 3 קומות\n- התחלת בנייה: נובמבר 2025\n- פתיחה מתוכננת: 2028\n\nSM לא בונה איפה שאין שוק. SM בונה איפה שיש Critical Mass של אוכלוסיה, תיירות וצריכה.\n\nבשילוב עם Island City Mall ו-Alturas Mall הקיימים, בוהול הופכת לכלכלת צריכה מפותחת - לא רק אי תיירותי.\n\nלמשקיע: De-risked province. שירותים עירוניים 15 דקות מהווילה.\n\nמקור: Facebook/BoholAffordableTours, SM Supermalls",
+        "image_path": "",
+        "platform": "Facebook Group IL",
+        "scheduled_time": "2026-04-17T11:00:00+02:00",
+        "language": "he"
+      }
+    ],
+    "ads": [
+      {
+        "id": "ADS-0004",
+        "priority": "HIGH",
+        "type": "ad_management",
+        "status": "PENDING",
+        "description": "Day 14 ad management - CONSIDERATION phase (PH)",
+        "instructions": "Ensure CONSIDERATION ads are active for PH market. Daily budget: USD 80. Monitor CTR and CPC. Pause underperformers (CTR < 1%).",
+        "ad_files": [
+          "assets/ads/META_PH_CONSIDERATION_C1.txt",
+          "assets/ads/META_PH_CONSIDERATION_C2.txt"
+        ],
+        "daily_budget_usd": 80,
+        "market": "PH"
+      },
+      {
+        "id": "ADS-0005",
+        "priority": "MEDIUM",
+        "type": "google_ads",
+        "status": "PENDING",
+        "description": "Day 14 Google Search Ads (PH)",
+        "instructions": "Review and optimize Google Search Ads for PH. Check keyword bids and quality scores.",
+        "ad_file": "assets/ads/GOOGLE_PH_SEARCH_ADS.txt",
+        "market": "PH"
+      },
+      {
+        "id": "ADS-0006",
+        "priority": "HIGH",
+        "type": "retargeting",
+        "status": "PENDING",
+        "description": "Day 14 retargeting audience update",
+        "instructions": "Update retargeting audiences based on website visitors and Facebook engagement from the past 7 days. Create lookalike audiences if retargeting pool > 500."
+      }
+    ],
+    "email": [
+      {
+        "id": "EML-0007",
+        "priority": "HIGH",
+        "type": "email_nurture",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 14 email - nurture (PH)",
+        "instructions": "Send nurture email to PH lead list via Brevo. Subject: Panglao Prime Villas - Your Investment Breakdown. Include villa pricing from FX data and CTA to reservation form. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "Panglao Prime Villas - Your Investment Breakdown",
+        "language": "en",
+        "villa_d_price": "PHP 28,000,000",
+        "villa_c_price": "PHP 30,000,000"
+      },
+      {
+        "id": "EML-0008",
+        "priority": "HIGH",
+        "type": "email_nurture",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 14 email - nurture (IL)",
+        "instructions": "Send nurture email to IL lead list via Brevo. Subject: פנגלאו פריים וילות - פירוט ההשקעה. Include villa pricing in ILS and CTA to WhatsApp. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "פנגלאו פריים וילות - פירוט ההשקעה",
+        "language": "he",
+        "villa_d_price": "₪1,420,888",
+        "villa_c_price": "₪1,522,380"
+      }
+    ],
+    "whatsapp": [
+      {
+        "id": "WA-0009",
+        "priority": "HIGH",
+        "type": "whatsapp_broadcast",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp broadcast",
+        "instructions": "Send WhatsApp broadcast via WATI to all warm leads. Include personalized villa pricing and virtual tour link. Segment: leads who clicked ads or opened emails in last 7 days.",
+        "message_en": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.\n\nVilla D: PHP 28,000,000 | Villa C: PHP 30,000,000\nReserve with just PHP 200,000.\nReply YES for a virtual tour.",
+        "message_he": "Aboitiz InfraCapital - חברת תשתיות ענקית עם אופק 30 שנה בשדה התעופה. גשר שלישי ממומן ע\"י צרפת. עיר נופש ב-25 מיליארד. SM בדרך. כל התשתיות בו-זמנית.\n\nVilla D: ₪1,420,888 | Villa C: ₪1,522,380\nהזמנו עם ₪10,149 בלבד.\nהשיבו כן לסיור וירטואלי."
+      },
+      {
+        "id": "WA-0010",
+        "priority": "MEDIUM",
+        "type": "whatsapp_followup",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp follow-up with responders",
+        "instructions": "Follow up with leads who replied to the broadcast. Send virtual tour link and offer to schedule a call with sales team.",
+        "scheduled_time": "2026-04-17T16:00:00+08:00"
+      }
+    ]
+  },
+  {
+    "day": 15,
+    "content": [
+      {
+        "id": "CNT-0001",
+        "priority": "HIGH",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 Facebook post (IL market)",
+        "instructions": "Publish to Facebook page. Market: IL. Use the provided image and copy. Schedule for optimal engagement time.",
+        "copy": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD1 ENHANCED.png",
+        "scheduled_time": "2026-04-17T18:00:00+08:00",
+        "hook_used": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.",
+        "language": "he"
+      },
+      {
+        "id": "VID-0002",
+        "priority": "HIGH",
+        "type": "facebook_video",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 VIDEO post (IL market)",
+        "instructions": "Upload video to Facebook page. Market: IL. Use the provided video file and copy text as the post caption.",
+        "copy": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.\n\nצפו בסיור המלא בווילה.\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "video_path": "20260416 BLUEEVEREST 2 Villas Bohol.mp4",
+        "image_path": "",
+        "scheduled_time": "2026-04-17T20:00:00+08:00",
+        "hook_used": "שדה תעופה בוהול: 2.22 מיליון נוסעים היום, קיבולת מתוכננת של כמעט 4 מיליון עד 2030. Aboitiz מחויבת לתוכנית מודרניזציה ל-30 שנה. התשתית נבנית לעשור הבא.",
+        "language": "he"
+      },
+      {
+        "id": "CNT-0003",
+        "priority": "MEDIUM",
+        "type": "facebook_post",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 15 Facebook post (PH market, secondary)",
+        "instructions": "Publish secondary post for PH market. Schedule for alternate time slot.",
+        "copy": "Villa A: Sold. Villa B: Sold. Villa C and D: Your last chance.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+        "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/AERIAL 1 ENHANCED.png",
+        "scheduled_time": "2026-04-17T14:00:00+08:00",
+        "hook_used": "Villa A: Sold. Villa B: Sold. Villa C and D: Your last chance.",
+        "language": "en"
+      },
+      {
+        "id": "EDU-0004",
+        "priority": "MEDIUM",
+        "type": "facebook_group_edu",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 educational post for Israeli FB group",
+        "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+        "copy": "למה עכשיו? Timing של השקעה בפנגלאו\n\nמה כבר קרה (Proof of Concept):\n- תיירות בשיא: 1.43 מיליון\n- שדה תעופה מעל קיבולת: 2.22 מיליון נוסעים\n- גשר שלישי ממומן\n- Marriott + MGallery בבנייה\n- SM הכריז על קניון\n\nמה עוד לא קרה (Full Pricing):\n- Panglao Shores עדיין בשלבים ראשונים\n- SM עדיין לא פתוח\n- שדה התעופה עדיין לא הורחב\n- מחירים עדיין מתחת לבורקאי\n\nאתה נכנס בין הוכחת הקונספט לבין התמחור המלא. בדיוק איפה שכסף חכם נכנס.\n\nשאלות? WhatsApp: +639542555553",
+        "image_path": "",
+        "platform": "Facebook Group IL",
+        "scheduled_time": "2026-04-17T11:00:00+02:00",
+        "language": "he"
+      }
+    ],
+    "ads": [
+      {
+        "id": "ADS-0005",
+        "priority": "HIGH",
+        "type": "ad_management",
+        "status": "PENDING",
+        "description": "Day 15 ad management - CONVERSION phase (IL)",
+        "instructions": "Ensure CONVERSION ads are active for IL market. Daily budget: USD 120. Monitor CTR and CPC. Pause underperformers (CTR < 1%).",
+        "ad_files": [
+          "assets/ads/META_IL_CONVERSION_Conv1.txt"
+        ],
+        "daily_budget_usd": 120,
+        "market": "IL"
+      },
+      {
+        "id": "ADS-0006",
+        "priority": "MEDIUM",
+        "type": "google_ads",
+        "status": "PENDING",
+        "description": "Day 15 Google Search Ads (IL)",
+        "instructions": "Review and optimize Google Search Ads for IL. Check keyword bids and quality scores.",
+        "ad_file": "assets/ads/GOOGLE_IL_SEARCH_ADS.txt",
+        "market": "IL"
+      },
+      {
+        "id": "ADS-0007",
+        "priority": "HIGH",
+        "type": "retargeting",
+        "status": "PENDING",
+        "description": "Day 15 retargeting audience update",
+        "instructions": "Update retargeting audiences based on website visitors and Facebook engagement from the past 7 days. Create lookalike audiences if retargeting pool > 500."
+      }
+    ],
+    "email": [
+      {
+        "id": "EML-0008",
+        "priority": "HIGH",
+        "type": "email_conversion",
+        "status": "PENDING",
+        "market": "PH",
+        "description": "Day 15 email - conversion (PH)",
+        "instructions": "Send conversion email to PH lead list via Brevo. Subject: Last 2 Villas Available - Schedule Your Virtual Tour. Include villa pricing from FX data and CTA to reservation form. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "Last 2 Villas Available - Schedule Your Virtual Tour",
+        "language": "en",
+        "villa_d_price": "PHP 28,000,000",
+        "villa_c_price": "PHP 30,000,000"
+      },
+      {
+        "id": "EML-0009",
+        "priority": "HIGH",
+        "type": "email_conversion",
+        "status": "PENDING",
+        "market": "IL",
+        "description": "Day 15 email - conversion (IL)",
+        "instructions": "Send conversion email to IL lead list via Brevo. Subject: 2 וילות אחרונות - קבעו סיור וירטואלי. Include villa pricing in ILS and CTA to WhatsApp. ATTACH PDF: PANGLAO PRIME VILLAS MARKETING 030326.pdf",
+        "subject": "2 וילות אחרונות - קבעו סיור וירטואלי",
+        "language": "he",
+        "villa_d_price": "₪1,420,888",
+        "villa_c_price": "₪1,522,380"
+      }
+    ],
+    "whatsapp": [
+      {
+        "id": "WA-0009",
+        "priority": "HIGH",
+        "type": "whatsapp_broadcast",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp broadcast",
+        "instructions": "Send WhatsApp broadcast via WATI to all warm leads. Include personalized villa pricing and virtual tour link. Segment: leads who clicked ads or opened emails in last 7 days.",
+        "message_en": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.\n\nVilla D: PHP 28,000,000 | Villa C: PHP 30,000,000\nReserve with just PHP 200,000.\nReply YES for a virtual tour.",
+        "message_he": "Aboitiz InfraCapital - חברת תשתיות ענקית עם אופק 30 שנה בשדה התעופה. גשר שלישי ממומן ע\"י צרפת. עיר נופש ב-25 מיליארד. SM בדרך. כל התשתיות בו-זמנית.\n\nVilla D: ₪1,420,888 | Villa C: ₪1,522,380\nהזמנו עם ₪10,149 בלבד.\nהשיבו כן לסיור וירטואלי."
+      },
+      {
+        "id": "WA-0010",
+        "priority": "MEDIUM",
+        "type": "whatsapp_followup",
+        "status": "PENDING",
+        "description": "Day 14 WhatsApp follow-up with responders",
+        "instructions": "Follow up with leads who replied to the broadcast. Send virtual tour link and offer to schedule a call with sales team.",
+        "scheduled_time": "2026-04-17T16:00:00+08:00"
+      }
+    ]
+  }
+]

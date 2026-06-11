@@ -1,0 +1,60 @@
+=== META_IL_AWARENESS_COMPOUND_A2.txt ===
+Platform: Meta (Facebook + Instagram)
+Market: Israel
+Funnel Stage: Awareness
+Campaign: IL-P2-AWR
+Objective: Brand Awareness / Reach
+Audience: Israel, age 30-62, Hebrew, interests: Real estate investment, Airbnb host, Business owners, Philippines travel
+Placements: Facebook Feed, Instagram Feed, Instagram Reels
+Schedule: Sunday-Thursday, 20:00-23:00 Israel time
+
+---
+
+PRIMARY TEXT:
+
+שלב 1 הוכיח את המודל. המספרים מדברים.
+
+PHP 395,000 הכנסה חודשית לכל וילה - מאומת באירביאנבי.
+65% תפוסה ממוצעת.
+17-25% תשואה שנתית.
+
+וילות A ו-B נמכרו. הביצועים שלהן אימתו את התחזית.
+עכשיו אנחנו מרחיבים: 4 וילות חדשות מצטרפות לקומפלקס.
+
+הוילות הזמינות היום:
+Villa C: 1,650,000 ש"ח
+Villa D: 1,535,000 ש"ח
+וילות E, F, G, H: [PRICE_PLACEHOLDER] ש"ח
+
+כל וילה: 4 חדרי שינה, 263.78 מ"ר, 3 קומות + גג, בריכה פרטית + ג'קוזי על הגג.
+מיקום: 60 שניות מחוף פנגלאו, בין JW Marriott ל-Mithi Resort.
+
+3 מסלולים משפטיים לבעלות:
+- Deed of Assignment
+- Leasehold 25+25
+- Domestic Corporation
+
+כשהמספרים עובדים - מרחיבים.
+
+Blue Everest Asset Group Holding Inc.
+
+WhatsApp (שיווק): +639542555553
+WhatsApp (משרד): +639958565865
+
+HEADLINE V1: "PHP 395,000 לחודש. 65% תפוסה. המודל עובד."
+HEADLINE V2: "שלב 1 הוכח. שלב 2 נפתח."
+HEADLINE V3: "17-25% תשואה שנתית - מאומת, לא תחזית."
+
+DESCRIPTION: "65% תפוסה. PHP 395,000 לחודש. הנתונים של שלב 1 הוכיחו את עצמם - עכשיו 4 וילות חדשות."
+
+CTA: Learn More
+
+---
+
+AUDIENCE TARGETING:
+- Geography: Israel
+- Age: 30-62
+- Language: Hebrew
+- Interests: Real estate investment, Airbnb host, Business owners, Luxury travel, Philippines travel, Investment portfolio, Passive income, Stock market, Financial planning
+- Behaviors: Frequent international travelers, Small business owners, Engaged shoppers
+- Exclusions: Previous converters

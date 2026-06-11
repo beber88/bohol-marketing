@@ -1,0 +1,60 @@
+{
+  "date_pht": "2026-05-31",
+  "run_at": "2026-05-31T10:00:00+08:00",
+  "agent": "CONTENT_POST",
+  "mode": "PREPARATION",
+  "phase_guard": {
+    "phase": "PRE_LAUNCH",
+    "simulation": true,
+    "start_date": null,
+    "go_live_date": null,
+    "publishing_allowed": false
+  },
+  "queue_folder": "_queue/2026-05-31/",
+  "queue_folder_exists": false,
+  "tasks_file": "_queue/2026-05-31/tasks_content.json",
+  "tasks_file_exists": false,
+  "tasks_total": 0,
+  "tasks_passed": 0,
+  "tasks_failed": 0,
+  "failures": [],
+  "drafts_ready": [],
+  "published": [],
+  "consecutive_days_no_queue": 7,
+  "last_queue_with_content_tasks": "2026-04-16",
+  "last_queue_folder_seen": "2026-05-25 (tasks_group_joins.json only, no tasks_content.json)",
+  "outstanding_pricing_inconsistency": {
+    "status": "unresolved_168h+",
+    "claude_md": {
+      "villa_d_ils": 1535000,
+      "villa_c_ils": 1650000,
+      "reservation_ils": 9999
+    },
+    "campaign_state_json": {
+      "villa_d_ils": 1450000,
+      "villa_c_ils": 1550000,
+      "reservation_ils": 9999
+    },
+    "skill_guard_numbers": [1420888, 1522380, 9999],
+    "impact": "No IL copy can be validated against a single source of truth until reconciled.",
+    "owner": "Claude Code / human strategy"
+  },
+  "carryover_platform_blockers": [
+    "Brevo and WATI accounts still not created.",
+    "HubSpot not set up.",
+    "Lead-capture Google Sheet not provisioned / not linked.",
+    "Meta Pixel 1599211187973958 and Google Tag AW-18095957436 still not installed on primevilla.ph.",
+    "Google Ads advertiser verification still pending (customer 4031838704).",
+    "campaign_state.json meta_ads.ad_account_id (120244375418610326) does not match live MCP ad account observed (2015125296073673) on 2026-05-26.",
+    "No sales_agent object in campaign_state.json - sales escalation path undefined."
+  ],
+  "actions_taken": [
+    "Read _status/campaign_state.json - confirmed PREPARATION mode (PRE_LAUNCH, simulation=true, start_date=null).",
+    "Checked _queue/2026-05-31/ - folder does not exist.",
+    "Refreshed _status/alert_no_tasks.md for 2026-05-31 (7th consecutive day).",
+    "Wrote this validation result to _completed/2026-05-31/content_validation.json.",
+    "Updated _status/cowork_heartbeat.json with CONTENT_POST checkin, status=preparing.",
+    "No posting actions taken (phase guard active and queue empty)."
+  ],
+  "next_run": "2026-05-31T13:00:00+08:00 (LEAD_CHECK per documented schedule)"
+}

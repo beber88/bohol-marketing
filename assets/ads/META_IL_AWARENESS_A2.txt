@@ -1,0 +1,65 @@
+[SIMULATION - NOT FOR LIVE DEPLOYMENT]
+
+=== META_IL_AWARENESS_A2.txt ===
+Platform: Meta (Facebook + Instagram)
+Market: Israel
+Funnel Stage: Awareness
+Campaign: IL-1
+Objective: Traffic / Brand Awareness
+Budget: $20/day (shared across A1, A2, A3)
+Audience: Israel, age 35-62, Hebrew
+Placements: Facebook Feed, Instagram Feed, Instagram Reels
+Schedule: Sunday-Thursday, 20:00-23:00 Israel time
+
+---
+
+PRIMARY TEXT:
+
+שאלנו ישראלים שרכשו וילה בפנגלאו מה הם היו עושים אחרת.
+
+כולם אמרו: "היינו קונים מוקדם יותר."
+
+PHP 32,500,000.
+(כ-1,366,400 שקל / כ-$465,640, שער יציג 14/04/2026)
+פחות ממחיר דירת 3 חדרים בתל אביב.
+
+מה מקבלים:
+וילה פרטית 3 קומות + גג
+4 חדרים, כולם עם חדר רחצה
+בריכה פרטית (15.08 מ"ר)
+ג'קוזי על הגג עם נוף לים
+מטבח חיצוני
+60 שניות מהחוף
+בין JW Marriott למלון Mithi 5 כוכבים
+
+והכנסה: PHP 395,000 לחודש בממוצע.
+
+3 מסלולים משפטיים לישראלים:
+Deed of Assignment, Leasehold 25+25, תאגיד פיליפיני.
+Blue Everest מלווה משקיעים ישראליים בפיליפינים.
+ליווי משפטי מלא. עברית. מהתחלה עד הסוף.
+
+HEADLINE V1: "מה שישראלים היו עושים אחרת"
+HEADLINE V2: "כ-1.37M שקל. וילה פרטית. 395K פזו לחודש."
+HEADLINE V3: "ליווי ישראלי לרוכשי נדל"ן בפיליפינים"
+
+DESCRIPTION: "וילה 263.78 מ"ר, בריכה פרטית, ג'קוזי עם נוף לים. PHP 200,000 דמי הזמנה."
+
+CTA: הורד מדריך (Download Guide)
+
+---
+
+AUDIENCE TARGETING:
+- Geography: Israel
+- Age: 35-62
+- Language: Hebrew
+- Interests: Real estate investment, נדל"ן, Airbnb host, Business owners, Luxury travel, Philippines travel, Investment portfolio
+- Behaviors: Frequent international travelers, Small business owners, Engaged shoppers
+
+BUDGET RECOMMENDATION: $7/day within the $20/day IL-1 awareness campaign (A/B with A1)
+
+=== FX METADATA ===
+FX date used: 2026-04-14
+PHP-ILS rate: 0.0488
+PHP-USD rate: 0.01663
+Auto-refresh: enabled

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "CNT-0001",
+    "priority": "HIGH",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "PH",
+    "description": "Day 14 Facebook post (PH market)",
+    "instructions": "Publish to Facebook page. Market: PH. Use the provided image and copy. Schedule for optimal engagement time.",
+    "copy": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nVilla C: PHP 30,000,000 (approx. USD 498,900, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD2 ENHANCED.png",
+    "scheduled_time": "2026-04-17T10:00:00+08:00",
+    "hook_used": "PHP 395,000 every month. 17-25% annual ROI. One villa in Panglao.",
+    "language": "en"
+  },
+  {
+    "id": "CNT-0002",
+    "priority": "MEDIUM",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 14 Facebook post (IL market, secondary)",
+    "instructions": "Publish secondary post for IL market. Schedule for alternate time slot.",
+    "copy": "Aboitiz InfraCapital - חברת תשתיות ענקית עם אופק 30 שנה בשדה התעופה. גשר שלישי ממומן ע\"י צרפת. עיר נופש ב-25 מיליארד. SM בדרך. כל התשתיות בו-זמנית.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD1 ENHANCED.png",
+    "scheduled_time": "2026-04-17T20:00:00+08:00",
+    "hook_used": "Aboitiz InfraCapital - חברת תשתיות ענקית עם אופק 30 שנה בשדה התעופה. גשר שלישי ממומן ע\"י צרפת. עיר נופש ב-25 מיליארד. SM בדרך. כל התשתיות בו-זמנית.",
+    "language": "he"
+  },
+  {
+    "id": "EDU-0003",
+    "priority": "MEDIUM",
+    "type": "facebook_group_edu",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 14 educational post for Israeli FB group",
+    "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+    "copy": "SM בונה קניון בבוהול - למה זה חשוב?\n\nSM Supermalls - הרשת הגדולה בפיליפינים - הודיעה על SM Bohol:\n- מגרש: 61,500 מ\"ר\n- 3 קומות\n- התחלת בנייה: נובמבר 2025\n- פתיחה מתוכננת: 2028\n\nSM לא בונה איפה שאין שוק. SM בונה איפה שיש Critical Mass של אוכלוסיה, תיירות וצריכה.\n\nבשילוב עם Island City Mall ו-Alturas Mall הקיימים, בוהול הופכת לכלכלת צריכה מפותחת - לא רק אי תיירותי.\n\nלמשקיע: De-risked province. שירותים עירוניים 15 דקות מהווילה.\n\nמקור: Facebook/BoholAffordableTours, SM Supermalls",
+    "image_path": "",
+    "platform": "Facebook Group IL",
+    "scheduled_time": "2026-04-17T11:00:00+02:00",
+    "language": "he"
+  }
+]

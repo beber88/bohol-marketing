@@ -1,0 +1,59 @@
+=== META_IL_AWARENESS_COMPOUND_A1.txt ===
+Platform: Meta (Facebook + Instagram)
+Market: Israel
+Funnel Stage: Awareness
+Campaign: IL-P2-AWR
+Objective: Brand Awareness / Reach
+Audience: Israel, age 30-62, Hebrew, interests: Real estate investment, Airbnb host, Business owners, Philippines travel
+Placements: Facebook Feed, Instagram Feed, Instagram Reels
+Schedule: Sunday-Thursday, 20:00-23:00 Israel time
+
+---
+
+PRIMARY TEXT:
+
+הפרויקט שגרם לישראלים לבקש עוד.
+
+4 וילות בנינו בפנגלאו. 2 נמכרו תוך חודשים.
+הביקוש הוכיח את עצמו - ועכשיו אנחנו מרחיבים.
+
+4 וילות חדשות (E, F, G, H) מצטרפות לקומפלקס.
+מ-4 ל-8 יחידות. 6 זמינות להשקעה.
+
+הוילות הקיימות:
+Villa C: 1,650,000 ש"ח
+Villa D: 1,535,000 ש"ח
+הוילות החדשות: [PRICE_PLACEHOLDER] ש"ח
+
+הכנסה חודשית: PHP 395,000 לכל וילה - מאומת באירביאנבי.
+תשואה שנתית: 17-25%.
+
+מיקום: בין JW Marriott למלון Mithi Resort, 60 שניות מחוף פנגלאו.
+
+3 מסלולים משפטיים לבעלות ישראלית:
+- Deed of Assignment: בעלות מלאה על המבנה
+- Leasehold 25+25: שליטה מלאה ל-50 שנה
+- Domestic Corporation: תאגיד פיליפיני עם ביטחון מקסימלי
+
+Blue Everest Asset Group Holding Inc.
+
+WhatsApp (שיווק): +639542555553
+WhatsApp (משרד): +639958565865
+
+HEADLINE V1: "מ-4 ל-8 וילות. הביקוש הוכיח את עצמו."
+HEADLINE V2: "4 וילות חדשות בפנגלאו. 6 זמינות."
+HEADLINE V3: "הקומפלקס מתרחב. ישראלים כבר בפנים."
+
+DESCRIPTION: "17-25% תשואה שנתית. 4 וילות חדשות מצטרפות לקומפלקס פנגלאו. 3 מסלולי בעלות לישראלים."
+
+CTA: Learn More
+
+---
+
+AUDIENCE TARGETING:
+- Geography: Israel
+- Age: 30-62
+- Language: Hebrew
+- Interests: Real estate investment, Airbnb host, Business owners, Luxury travel, Philippines travel, Investment portfolio, Passive income
+- Behaviors: Frequent international travelers, Small business owners, Engaged shoppers
+- Exclusions: Previous converters (to avoid wasted spend)

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "CNT-0001",
+    "priority": "HIGH",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 11 Facebook post (IL market)",
+    "instructions": "Publish to Facebook page. Market: IL. Use the provided image and copy. Schedule for optimal engagement time.",
+    "copy": "SM בונה קניון ענק בבוהול, פתיחה ב-2028. SM לא בונה איפה שאין שוק. הפרובינציה הזו כבר ברמת Tier-1.\n\nVilla D: 1,450,000 ש\"ח\nVilla C: 1,550,000 ש\"ח\n3 מסלולים משפטיים לבעלות זרים.\n\nשריינו את הווילה שלכם ב-9,999 ש\"ח בלבד!\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD3 ENHANCED.png",
+    "scheduled_time": "2026-04-17T18:00:00+08:00",
+    "hook_used": "SM בונה קניון ענק בבוהול, פתיחה ב-2028. SM לא בונה איפה שאין שוק. הפרובינציה הזו כבר ברמת Tier-1.",
+    "language": "he"
+  },
+  {
+    "id": "CNT-0002",
+    "priority": "MEDIUM",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "PH",
+    "description": "Day 11 Facebook post (PH market, secondary)",
+    "instructions": "Publish secondary post for PH market. Schedule for alternate time slot.",
+    "copy": "Enter between Proof of Concept (already happened) and Full Pricing (not yet). Tourism record. Airport over capacity. Bridge funded. Marriott building. This is where smart money enters.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/AERIAL 2 ENHANCED.png",
+    "scheduled_time": "2026-04-17T14:00:00+08:00",
+    "hook_used": "Enter between Proof of Concept (already happened) and Full Pricing (not yet). Tourism record. Airport over capacity. Bridge funded. Marriott building. This is where smart money enters.",
+    "language": "en"
+  },
+  {
+    "id": "EDU-0003",
+    "priority": "MEDIUM",
+    "type": "facebook_group_edu",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 11 educational post for Israeli FB group",
+    "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+    "copy": "UNESCO Global Geopark - למה זה חשוב למשקיע?\n\nבוהול היא הגיאופארק הראשון של UNESCO בפיליפינים. 1 מתוך 195 בעולם.\n\nמה זה אומר:\n- הגנה על הנוף והטבע לדורות\n- שיווק בינלאומי מובנה (UNESCO = מותג עולמי)\n- תיירות איכותית ולא המונית\n- Chocolate Hills - תצורה גיאולוגית ייחודית\n- Danajon Reef - שונית מחסום כפולה, היחידה בדרום-מזרח אסיה\n\nלמשקיע: נכס בסביבה מוגנת ברמה עולמית שומר על ערכו לטווח ארוך.\n\nמקור: UNESCO, PPDO Bohol",
+    "image_path": "",
+    "platform": "Facebook Group IL",
+    "scheduled_time": "2026-04-17T11:00:00+02:00",
+    "language": "he"
+  }
+]

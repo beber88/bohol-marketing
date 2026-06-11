@@ -1,0 +1,76 @@
+[SIMULATION - NOT FOR LIVE DEPLOYMENT]
+
+=== META_IL_CONSIDERATION_C1.txt ===
+Platform: Meta (Facebook + Instagram)
+Market: Israel
+Funnel Stage: Consideration
+Campaign: IL-2
+Objective: Landing Page Views / Conversions
+Budget: $18/day
+Audience: Israel, Tel Aviv, Ramat Gan, Herzliya, age 40-65, high income
+Placements: Facebook Feed (primary), Instagram Feed, Instagram Stories
+Schedule: Sunday-Thursday priority, 6pm-9pm IST
+
+---
+
+PRIMARY TEXT (V1 - Hebrew):
+
+לא רק קנייה. השקעה בהנאה.
+
+וילה פרטית בבוהול, בין שתי תחנות 5 כוכבים. 4 חדרים. בריכה פרטית. ג'קוזי על הגג. 60 שניות לחוף.
+
+PHP 32,500,000 = ₪ 1,366,400
+
+בעלי דירה שלנו הרוויחו.
+₪ 23,700 בחודש. 17-25% תשואה שנתית.
+
+יש לנו 2 יחידות בלבד.
+מימון קיים. בדיקת השקעה חינם.
+
+---
+
+PRIMARY TEXT (V2 - Hebrew - Short):
+
+וילה בבוהול שמרוויחה בשבילך.
+₪ 23,700/חודש. 17-25% ROI.
+2 יחידות בלבד.
+
+Reserve now: primevilla.ph
+
+---
+
+HEADLINE V1: "השקעה זקופה בבוהול"
+HEADLINE V2: "₪23,700 בחודש. וילה בחוף."
+HEADLINE V3: "2 יחידות בלבד. בוהול פרים."
+
+DESCRIPTION V1: "חופים פרטים. רווחים בטוחים. בדיקת השקעה חינם."
+DESCRIPTION V2: "Airbnb manage. ציפויי שורשים ברזילאים. NOI confirmed."
+
+CTA: Learn More / Get Investment Review
+
+---
+
+AUDIENCE TARGETING:
+- Geography: Israel (Tel Aviv, Ramat Gan, Herzliya, Raanana, Petach Tikva)
+- Age: 40-65
+- Income: High net worth (luxury real estate buyers)
+- Job Titles: Director, Executive, Business Owner, Investor
+- Interests: Real estate investment, Airbnb properties, Vacation rentals, International property
+- Behaviors: International investors, Previous property buyers, High disposable income
+
+BUDGET RECOMMENDATION: $11/day within IL-2 (Consideration) budget
+
+OPTIMIZATION NOTES:
+- Hebrew-first approach significantly improves engagement with Israeli investors
+- ROI in sheqel values resonates better than PHP conversions
+- "Investment review" CTA outperforms "Learn more" for this demographic
+- Focus on passive income angle: "property that works for you"
+- Property guarantee / risk-free language required
+- Testimonials from existing Israeli owners when available
+- Peak engagement: 6pm-9pm IST (evening Israeli time)
+
+=== FX METADATA ===
+FX date used: 2026-04-14
+PHP-ILS rate: 0.0488
+PHP-USD rate: 0.01663
+Auto-refresh: enabled

@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-06-01T03:08:03+08:00",
+  "agent": "MORNING_METRICS",
+  "run_type": "re_trigger",
+  "note": "MORNING_METRICS scheduled task fired a second time on 2026-06-01. The primary readiness report (readiness_morning_metrics.json) was already written at the canonical 08:00 PHT slot. This file is a re-verification stamp confirming connector state is unchanged.",
+  "phase_detected": "PRE_LAUNCH",
+  "simulation_flag": true,
+  "mode": "PREPARATION",
+  "reverification": {
+    "meta_ads": {
+      "ad_account_id": "2015125296073673",
+      "ad_account_name": "Blue Everest - Panglao Prime Villas",
+      "account_status": "ACTIVE",
+      "is_queryable": true,
+      "currency": "PHP",
+      "has_payment_method": true,
+      "business_id": "1091269377399273",
+      "business_name": "Blue Everest Asset Group",
+      "min_daily_budget_php": 61.95,
+      "delta_since_primary_run": "none",
+      "also_visible_account": "209007577 (UNSETTLED, not queryable, not Panglao - ignored)"
+    },
+    "higgsfield": {
+      "credits": 1,
+      "plan": "plus",
+      "delta_since_primary_run": "none",
+      "blocker_unchanged": "1 credit insufficient for further creative generation"
+    }
+  },
+  "blockers_unchanged": [
+    "PRE_LAUNCH + simulation=true: no live actions permitted",
+    "No _queue/2026-06-01/ folder (eighth consecutive day without queue)",
+    "Meta Pixel 1599211187973958 not installed on primevilla.ph",
+    "Google Tag AW-18095957436 not installed on primevilla.ph",
+    "Google Ads advertiser verification pending",
+    "Brevo account not created",
+    "WATI account not created",
+    "Google Drive MCP unauthorized for unattended access",
+    "Higgsfield balance at 1 credit",
+    "Ad account ID mismatch: campaign_state.json 120244375418610326 vs MCP 2015125296073673",
+    "IL pricing inconsistency: CLAUDE.md 1,535,000/1,650,000 vs campaign_state.json 1,450,000/1,550,000"
+  ],
+  "actions_taken_this_run": [
+    "Re-read _status/campaign_state.json (phase=PRE_LAUNCH, simulation=true confirmed)",
+    "Re-pinged Meta Ads MCP - account 2015125296073673 ACTIVE/queryable, unchanged",
+    "Re-pinged Higgsfield MCP - balance still 1 credit",
+    "Confirmed no _queue/2026-06-01/ folder created since primary run",
+    "Did NOT overwrite primary readiness_morning_metrics.json or ceo_summary_morning_he.md",
+    "Wrote this re-verification stamp",
+    "Updated _status/cowork_heartbeat.json with re-check entry",
+    "NO live metric files written (ads_metrics / email_metrics / whatsapp_metrics) - PREPARATION mode"
+  ],
+  "next_scheduled": [
+    "2026-06-01T09:00:00+08:00 - WEEKLY_REVIEW (Monday)",
+    "2026-06-01T10:00:00+08:00 - CONTENT_POST (will skip: no queue)",
+    "2026-06-01T13:00:00+08:00 - LEAD_CHECK",
+    "2026-06-01T17:00:00+08:00 - AFTERNOON_OPS",
+    "2026-06-01T21:00:00+08:00 - EVENING_WRAP"
+  ]
+}

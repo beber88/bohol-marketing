@@ -1,0 +1,23 @@
+{
+  "last_checkin": "2026-06-10T09:00:00+08:00",
+  "status": "operational",
+  "fixes_applied": [
+    "CRITICAL: Currency conflict RESOLVED - campaign_state.json now says ILS_ONLY for Israeli market, matching CLAUDE.md Rule 1",
+    "Stale villa prices FIXED - all files updated from PHP 28M/30M to PHP 32.5M/35M",
+    "Brand Guard hold on posts 3-50 LIFTED - currency rule now consistent",
+    "Community agent tracker FIXED - pointers corrected, next post: #21 (Jun 10)",
+    "IMAGE_MAP.md CONFIRMED populated - 50 posts mapped to 10 images",
+    "ALL_POST_COPY_V3.json FIXED - prices, shekel amounts, and FX metadata updated",
+    "CAMPAIGN-ISRAEL.md FIXED - prices and shekel amounts updated",
+    "CAMPAIGN-PHILIPPINES.md FIXED - prices updated",
+    "META-GOOGLE-ADS.md FIXED - prices updated",
+    "brand-guard-rules.md FIXED - Rule 1 now correctly differentiates IL (shekels) vs PH (PHP) vs INTL (PHP+USD)"
+  ],
+  "remaining_blockers": [
+    "WATI not setup (WhatsApp automation)",
+    "Meta App in Development mode (webhooks only from test accounts)",
+    "Zero leads despite 444K impressions (form endpoint or tracking issue)",
+    "Google Ads ads pending review"
+  ],
+  "issues": []
+}

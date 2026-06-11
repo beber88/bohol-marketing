@@ -1,0 +1,10 @@
+Automation Name,Trigger Type,Keywords,Response Template,Assign To,Tag Lead
+Initial Inquiry (EN),Keyword,hi;hello;inquiry;interested;villas;bohol;panglao;villa,ppv_welcome,Sales Team,new_lead
+Initial Inquiry (HE),Keyword,שלום;היי;מעוניין;וילה;בוהול;השקעה;עברית,ppv_welcome_he,Sales Team,new_lead_il
+Investment Questions,Keyword,investment;price;cost;roi;returns;income;money,ppv_investment_overview,Sales Team,investment_interest
+Site Visit Request,Keyword,visit;tour;see;schedule;view;come,ppv_site_visit,Sales Team,site_visit_request
+Financing Questions,Keyword,financing;loan;payment;bdo;mortgage;installment;מימון,ppv_financing,Sales Team,financing_interest
+Follow Up (48h No Response),Time-Based,no_reply_48h,ppv_follow_up,Sales Team,follow_up
+Urgency Trigger,Manual,agent_trigger,ppv_urgency,Sales Team,hot_lead
+VIP Fast-Track,Manual,qualified_high_intent,ppv_vip_fasttrack,VIP Sales,vip_lead
+Closing Process,Manual,closing_initiated,ppv_closing,Closing Team,closing

@@ -1,0 +1,174 @@
+{
+  "campaign_era": "compound_expansion",
+  "naming_convention": "[MARKET]-P2-[FUNNEL_STAGE]",
+  "total_campaigns": 8,
+  "note": "Phase 1 campaigns (IL-1, PH-1) remain active until their natural end. Phase 2 campaigns run in parallel.",
+
+  "meta_campaigns": [
+    {
+      "id": "IL-P2-AWR",
+      "name": "IL-P2 Awareness - Panglao Prime Villas Compound",
+      "market": "IL",
+      "funnel_stage": "awareness",
+      "objective": "OUTCOME_TRAFFIC",
+      "special_ad_category": "HOUSING",
+      "daily_budget_placeholder": "[BUDGET_TBD]",
+      "recommended_daily_budget_usd": 20,
+      "schedule": "Sunday-Thursday, 20:00-23:00 Israel time",
+      "ad_sets": [
+        {
+          "name": "IL-P2-AWR-A1 Compound Expansion Hook",
+          "ad_file": "copy/meta_il/META_IL_AWARENESS_COMPOUND_A1.txt",
+          "targeting": "Israel, age 35-62, Hebrew, interests: Real estate, Airbnb, Business owners, Luxury travel, Philippines"
+        },
+        {
+          "name": "IL-P2-AWR-A2 Phase 1 Proven Hook",
+          "ad_file": "copy/meta_il/META_IL_AWARENESS_COMPOUND_A2.txt",
+          "targeting": "Same as A1 - A/B test creative"
+        }
+      ],
+      "placements": ["Facebook Feed", "Instagram Feed", "Instagram Reels"],
+      "status": "READY_PENDING_RENDERS"
+    },
+    {
+      "id": "IL-P2-CON",
+      "name": "IL-P2 Consideration - Compound Advantage",
+      "market": "IL",
+      "funnel_stage": "consideration",
+      "objective": "OUTCOME_LEADS",
+      "special_ad_category": "HOUSING",
+      "daily_budget_placeholder": "[BUDGET_TBD]",
+      "recommended_daily_budget_usd": 15,
+      "schedule": "Sunday-Thursday, all hours",
+      "ad_sets": [
+        {
+          "name": "IL-P2-CON-B1 Compound vs Standalone",
+          "ad_file": "copy/meta_il/META_IL_CONSIDERATION_COMPOUND_B1.txt",
+          "targeting": "Retarget: website visitors + ad engagers + 1% Lookalike IL"
+        }
+      ],
+      "placements": ["Facebook Feed", "Instagram Feed"],
+      "status": "READY_PENDING_RENDERS"
+    },
+    {
+      "id": "IL-P2-CVR",
+      "name": "IL-P2 Conversion - Reserve Phase 2",
+      "market": "IL",
+      "funnel_stage": "conversion",
+      "objective": "OUTCOME_LEADS",
+      "special_ad_category": "HOUSING",
+      "daily_budget_placeholder": "[BUDGET_TBD]",
+      "recommended_daily_budget_usd": 10,
+      "schedule": "Daily, all hours",
+      "ad_sets": [
+        {
+          "name": "IL-P2-CVR-C1 Reserve Phase 2",
+          "ad_file": "copy/meta_il/META_IL_CONVERSION_COMPOUND_C1.txt",
+          "targeting": "Hot retarget: 2+ min visitors, lead form viewers, WhatsApp engagers"
+        }
+      ],
+      "placements": ["Facebook Feed"],
+      "status": "READY_PENDING_PRICES"
+    },
+    {
+      "id": "PH-P2-AWR",
+      "name": "PH-P2 Awareness - Panglao Prime Villas Compound",
+      "market": "PH",
+      "funnel_stage": "awareness",
+      "objective": "OUTCOME_TRAFFIC",
+      "special_ad_category": "HOUSING",
+      "daily_budget_placeholder": "[BUDGET_TBD]",
+      "recommended_daily_budget_usd": 15,
+      "schedule": "Tuesday-Thursday priority, 7pm-11pm PHT",
+      "ad_sets": [
+        {
+          "name": "PH-P2-AWR-1A Compound Growing Hook",
+          "ad_file": "copy/meta_ph/META_PH_AWARENESS_COMPOUND_1A.txt",
+          "targeting": "Metro Manila, Cebu, Davao, age 38-58, job titles: CEO/President/Business Owner"
+        },
+        {
+          "name": "PH-P2-AWR-1B Phase 1 Results Hook",
+          "ad_file": "copy/meta_ph/META_PH_AWARENESS_COMPOUND_1B.txt",
+          "targeting": "Same as 1A - A/B test creative"
+        }
+      ],
+      "placements": ["Facebook Feed", "Instagram Feed", "Instagram Reels"],
+      "status": "READY_PENDING_RENDERS"
+    },
+    {
+      "id": "PH-P2-CON",
+      "name": "PH-P2 Consideration - Compound Economics",
+      "market": "PH",
+      "funnel_stage": "consideration",
+      "objective": "OUTCOME_LEADS",
+      "special_ad_category": "HOUSING",
+      "daily_budget_placeholder": "[BUDGET_TBD]",
+      "recommended_daily_budget_usd": 10,
+      "schedule": "Tuesday-Thursday, all hours",
+      "ad_sets": [
+        {
+          "name": "PH-P2-CON-2A Compound Economics + BDO",
+          "ad_file": "copy/meta_ph/META_PH_CONSIDERATION_COMPOUND_2A.txt",
+          "targeting": "Retarget: website visitors + ad engagers + 1% Lookalike PH"
+        }
+      ],
+      "placements": ["Facebook Feed", "Instagram Feed"],
+      "status": "READY_PENDING_RENDERS"
+    },
+    {
+      "id": "PH-P2-CVR",
+      "name": "PH-P2 Conversion - Reserve Now",
+      "market": "PH",
+      "funnel_stage": "conversion",
+      "objective": "OUTCOME_LEADS",
+      "special_ad_category": "HOUSING",
+      "daily_budget_placeholder": "[BUDGET_TBD]",
+      "recommended_daily_budget_usd": 8,
+      "schedule": "Daily, all hours",
+      "ad_sets": [
+        {
+          "name": "PH-P2-CVR-3A Reserve Phase 2",
+          "ad_file": "copy/meta_ph/META_PH_CONVERSION_COMPOUND_3A.txt",
+          "targeting": "Hot retarget: 2+ min visitors, lead form viewers, WhatsApp engagers"
+        }
+      ],
+      "placements": ["Facebook Feed", "Instagram Reels"],
+      "status": "READY_PENDING_PRICES"
+    }
+  ],
+
+  "google_campaigns": [
+    {
+      "id": "G-IL-P2",
+      "name": "Panglao PV Compound - Israel Search",
+      "market": "IL",
+      "type": "Search",
+      "daily_budget_placeholder": "[BUDGET_TBD]",
+      "recommended_daily_budget_usd": 15,
+      "ad_file": "copy/google_il/GOOGLE_IL_COMPOUND_SEARCH_ADS.txt",
+      "status": "READY_PENDING_PRICES"
+    },
+    {
+      "id": "G-PH-P2",
+      "name": "Panglao PV Compound - Philippines Search",
+      "market": "PH",
+      "type": "Search",
+      "daily_budget_placeholder": "[BUDGET_TBD]",
+      "recommended_daily_budget_usd": 10,
+      "ad_file": "copy/google_ph/GOOGLE_PH_COMPOUND_SEARCH_ADS.txt",
+      "status": "READY_PENDING_PRICES"
+    }
+  ],
+
+  "budget_summary": {
+    "recommended_total_daily_usd": 103,
+    "recommended_30_day_usd": 3090,
+    "breakdown": {
+      "meta_il": 45,
+      "meta_ph": 33,
+      "google_il": 15,
+      "google_ph": 10
+    },
+    "note": "Budget subject to Bar's approval. Can scale up or down per campaign performance."
+  }
+}

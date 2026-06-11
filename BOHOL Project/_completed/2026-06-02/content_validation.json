@@ -1,0 +1,52 @@
+{
+  "agent": "CONTENT_POST",
+  "run_timestamp": "2026-06-02T10:00:00+08:00",
+  "scheduled_slot": "2026-06-02T10:00:00+08:00",
+  "mode": "PREPARATION",
+  "phase": "PRE_LAUNCH",
+  "simulation": true,
+  "start_date": null,
+  "queue_folder": "_queue/2026-06-02/",
+  "queue_folder_exists": false,
+  "tasks_content_path_checked": "_queue/2026-06-02/tasks_content.json",
+  "tasks_content_present": false,
+  "tasks_total": 0,
+  "tasks_passed": 0,
+  "tasks_failed": 0,
+  "failures": [],
+  "drafts_ready": [],
+  "publishing_blocked_reason": "PREPARATION mode forced by phase=PRE_LAUNCH, simulation=true, start_date=null. Even if tasks were present, no publishing would occur.",
+  "no_queue_reason": "No tasks_content.json produced for today. This is the 9th consecutive day without a fresh content queue. Last actual tasks_content.json was 2026-04-16.",
+  "actions_taken": [
+    "Read _status/campaign_state.json and confirmed PREPARATION mode.",
+    "Checked _queue/2026-06-02/tasks_content.json -> not found.",
+    "Wrote this validation file.",
+    "Updated _status/cowork_heartbeat.json with agent=CONTENT_POST, status=preparing.",
+    "Did NOT publish anything."
+  ],
+  "actions_not_taken": [
+    "No Facebook page post.",
+    "No Facebook group post.",
+    "No Meta ad creative submission.",
+    "No image upload.",
+    "No copy modification."
+  ],
+  "rules_applied": [
+    "Phase guard: NEVER post in preparation mode.",
+    "BluePrint Building Group: completely off-limits.",
+    "Copy must be exact from task files (none today)."
+  ],
+  "blockers_inherited_from_morning_metrics": [
+    "IL fixed pricing inconsistency: CLAUDE.md (1,535,000 / 1,650,000) vs campaign_state.json (1,450,000 / 1,550,000) vs SKILL.md rule #4 (1,420,888 / 1,522,380). Validator cannot reliably enforce rule #3 (every post has at least one approved number) until reconciled.",
+    "Meta ad account ID mismatch: campaign_state.json 120244375418610326 vs live MCP 2015125296073673.",
+    "Meta Pixel 1599211187973958 and Google Tag AW-18095957436 / GT-PZZMF859 still not installed on primevilla.ph.",
+    "Brevo, WATI, HubSpot accounts not created; Google Sheets lead-capture not provisioned.",
+    "Google Ads advertiser verification pending for customer 4031838704."
+  ],
+  "request_for_claude_code": [
+    "Resolve IL pricing reconciliation so future tasks_content.json can be validated.",
+    "Confirm canonical Meta ad account ID and update campaign_state.json.",
+    "Either resume queuing daily content stubs (with phase guard relying on simulation=true) or switch CONTENT_POST cron to weekly until launch."
+  ],
+  "next_run": "2026-06-03T10:00:00+08:00 (CONTENT_POST)"
+}

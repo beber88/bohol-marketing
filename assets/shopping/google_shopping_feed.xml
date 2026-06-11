@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+<channel>
+  <title>Panglao Prime Villas - Investment Property Feed</title>
+  <link>https://primevilla.ph</link>
+  <description>Luxury villa investments in Bohol, Philippines - 17-25% annual ROI, managed Airbnb income</description>
+
+  <!-- VILLA C - PHP 30M -->
+  <item>
+    <g:id>villa-c-bohol-30m</g:id>
+    <title>Panglao Prime Villa C - Luxury 4-BR Investment Property</title>
+    <description>PHP 30,000,000 luxury villa in Panglao, Bohol. Fully managed Airbnb property generating PHP 395,000+ monthly income. 17-25% annual ROI guaranteed. Legal ownership via Deed of Assignment, Leasehold, or Corporation structures.</description>
+    <g:price>30000000 PHP</g:price>
+    <g:availability>limited</g:availability>
+    <link>https://primevilla.ph/villa-c</link>
+    <g:image_link>https://primevilla.ph/assets/villa-c-hero.jpg</g:image_link>
+    <g:additional_image_link>https://primevilla.ph/assets/villa-c-pool.jpg</g:additional_image_link>
+    <g:additional_image_link>https://primevilla.ph/assets/villa-c-bedroom.jpg</g:additional_image_link>
+    <g:additional_image_link>https://primevilla.ph/assets/villa-c-kitchen.jpg</g:additional_image_link>
+
+    <!-- Product Type (Real Estate Investment) -->
+    <g:product_type>Real Estate > Residential Property > Investment Property</g:product_type>
+
+    <!-- Location Details -->
+    <g:location>Panglao Island, Bohol, Philippines</g:location>
+    <g:country>PH</g:country>
+    <g:region>Bohol</region>
+    <g:postal_code>6314</g:postal_code>
+
+    <!-- Property Details -->
+    <g:property_type>Residential Villa</g:property_type>
+    <g:bedrooms>4</g:bedrooms>
+    <g:bathrooms>3</g:bathrooms>
+    <g:property_size_sqft>2500</g:property_size_sqft>
+    <g:lot_size_sqft>5000</lot_size_sqft>
+
+    <!-- Investment Details -->
+    <g:annual_revenue>4740000</g:annual_revenue>
+    <g:annual_revenue_currency>PHP</g:annual_revenue_currency>
+    <g:occupancy_rate>65%</g:occupancy_rate>
+    <g:roi_percent>17-25%</g:roi_percent>
+    <g:roi_annual_guaranteed>Yes</g:roi_annual_guaranteed>
+    <g:management_included>Yes</g:management_included>
+
+    <!-- Financing -->
+    <g:financing_available>Yes</g:financing_available>
+    <g:financing_options>BDO Bank (PH residents), Israeli Bank Mortgages, Corporate Investment</g:financing_options>
+    <g:down_payment_percent>25</g:down_payment_percent>
+    <g:min_investment_amount>7500000</g:min_investment_amount>
+
+    <!-- Target Markets -->
+    <g:target_market>Israeli Investors, Philippine High-Income Locals, OFW Returnees</g:target_market>
+    <g:legal_structures>Deed of Assignment, Leasehold 25+25, Philippine Corporation</g:legal_structures>
+
+    <!-- Contact -->
+    <g:contact_whatsapp>+639542555553</g:contact_whatsapp>
+    <g:contact_email>ceo@blue-everest.com</g:contact_email>
+    <g:website>https://primevilla.ph/villa-c</g:website>
+
+    <!-- Additional Fields -->
+    <g:item_group_id>panglao-villas-30m</g:item_group_id>
+    <g:identifier_exists>false</g:identifier_exists>
+    <g:mpn>VILLA-C-PANGLAO-2026</g:mpn>
+    <g:brand>Panglao Prime Villas</g:brand>
+  </item>
+
+  <!-- VILLA D - PHP 28M -->
+  <item>
+    <g:id>villa-d-bohol-28m</g:id>
+    <title>Panglao Prime Villa D - Luxury 4-BR Investment Property</title>
+    <description>PHP 28,000,000 luxury villa in Panglao, Bohol. Fully managed Airbnb property generating PHP 395,000+ monthly income. 17-25% annual ROI guaranteed. Legal ownership via Deed of Assignment, Leasehold, or Corporation structures. Premium beachfront access.</description>
+    <g:price>28000000 PHP</g:price>
+    <g:availability>limited</g:availability>
+    <link>https://primevilla.ph/villa-d</link>
+    <g:image_link>https://primevilla.ph/assets/villa-d-hero.jpg</g:image_link>
+    <g:additional_image_link>https://primevilla.ph/assets/villa-d-sunset.jpg</g:additional_image_link>
+    <g:additional_image_link>https://primevilla.ph/assets/villa-d-exterior.jpg</g:additional_image_link>
+    <g:additional_image_link>https://primevilla.ph/assets/villa-d-interior.jpg</g:additional_image_link>
+
+    <!-- Product Type (Real Estate Investment) -->
+    <g:product_type>Real Estate > Residential Property > Investment Property</g:product_type>
+
+    <!-- Location Details -->
+    <g:location>Panglao Island, Bohol, Philippines</g:location>
+    <g:country>PH</g:country>
+    <g:region>Bohol</g:region>
+    <g:postal_code>6314</g:postal_code>
+
+    <!-- Property Details -->
+    <g:property_type>Residential Villa</g:property_type>
+    <g:bedrooms>4</g:bedrooms>
+    <g:bathrooms>3</g:bathrooms>
+    <g:property_size_sqft>2400</g:property_size_sqft>
+    <g:lot_size_sqft>4800</lot_size_sqft>
+
+    <!-- Investment Details -->
+    <g:annual_revenue>4740000</g:annual_revenue>
+    <g:annual_revenue_currency>PHP</g:annual_revenue_currency>
+    <g:occupancy_rate>65%</g:occupancy_rate>
+    <g:roi_percent>17-25%</g:roi_percent>
+    <g:roi_annual_guaranteed>Yes</g:roi_annual_guaranteed>
+    <g:management_included>Yes</g:management_included>
+
+    <!-- Financing -->
+    <g:financing_available>Yes</g:financing_available>
+    <g:financing_options>BDO Bank (PH residents), Israeli Bank Mortgages, Corporate Investment</g:financing_options>
+    <g:down_payment_percent>25</g:down_payment_percent>
+    <g:min_investment_amount>7000000</g:min_investment_amount>
+
+    <!-- Target Markets -->
+    <g:target_market>Israeli Investors, Philippine High-Income Locals, International Investors</g:target_market>
+    <g:legal_structures>Deed of Assignment, Leasehold 25+25, Philippine Corporation</g:legal_structures>
+
+    <!-- Contact -->
+    <g:contact_whatsapp>+639542555553</g:contact_whatsapp>
+    <g:contact_email>ceo@blue-everest.com</g:contact_email>
+    <g:website>https://primevilla.ph/villa-d</g:website>
+
+    <!-- Additional Fields -->
+    <g:item_group_id>panglao-villas-28m</g:item_group_id>
+    <g:identifier_exists>false</g:identifier_exists>
+    <g:mpn>VILLA-D-PANGLAO-2026</g:mpn>
+    <g:brand>Panglao Prime Villas</g:brand>
+  </item>
+
+  <!-- INVESTMENT FINANCING PACKAGE -->
+  <item>
+    <g:id>financing-package-investment</g:id>
+    <title>Panglao Villa Investment - Financing + Legal Support Package</title>
+    <description>Complete investment package including property, full Airbnb management (65% occupancy guarantee), financing assistance (BDO, Israeli mortgages), and legal support. Turn-key passive income solution: PHP 395,000/month guaranteed.</description>
+    <g:price>0 PHP</g:price>
+    <g:availability>in stock</g:availability>
+    <link>https://primevilla.ph/financing</link>
+    <g:image_link>https://primevilla.ph/assets/package-hero.jpg</g:image_link>
+
+    <g:product_type>Real Estate > Services > Investment Advisory</g:product_type>
+    <g:service_type>Real Estate Investment Services</g:service_type>
+    <g:service_includes>Real Estate Purchase, Property Management, Financing Coordination, Legal Documentation</g:service_includes>
+
+    <!-- Market Focus -->
+    <g:target_market>Israeli Investors (Hebrew support), Philippine Residents (BDO financing), International Investors</g:target_market>
+    <g:languages>Hebrew, English, Tagalog</g:languages>
+
+    <!-- Contact -->
+    <g:contact_whatsapp>+639542555553</g:contact_whatsapp>
+    <g:website>https://primevilla.ph/financing</g:website>
+  </item>
+
+</channel>
+</rss>

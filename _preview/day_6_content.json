@@ -1,0 +1,30 @@
+[
+  {
+    "id": "CNT-0001",
+    "priority": "HIGH",
+    "type": "facebook_post",
+    "status": "PENDING",
+    "market": "PH",
+    "description": "Day 6 Facebook post (PH market)",
+    "instructions": "Publish to Facebook page. Market: PH. Use the provided image and copy. Schedule for optimal engagement time.",
+    "copy": "Bohol airport handled 2.22 million passengers in 2025 - exceeding its 2M design capacity. 12 daily flights from Manila. Direct flights from Korea.\n\nVilla D: PHP 28,000,000 (approx. USD 465,640, rate 14/04/2026)\nVilla C: PHP 30,000,000 (approx. USD 498,900, rate 14/04/2026)\nMonthly rental income: PHP 395,000\nBDO Bank financing available.\n\nReserve with PHP 200,000 today.\nWhatsApp: +639542555553\nOffice: +639958565865",
+    "image_path": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/PD2 ENHANCED.png",
+    "scheduled_time": "2026-04-17T10:00:00+08:00",
+    "hook_used": "Bohol airport handled 2.22 million passengers in 2025 - exceeding its 2M design capacity. 12 daily flights from Manila. Direct flights from Korea.",
+    "language": "en"
+  },
+  {
+    "id": "EDU-0002",
+    "priority": "MEDIUM",
+    "type": "facebook_group_edu",
+    "status": "PENDING",
+    "market": "IL",
+    "description": "Day 6 educational post for Israeli FB group",
+    "instructions": "Post to Facebook group: נדל\"ן והשקעות בפיליפינים (https://www.facebook.com/groups/investment.ph.il/). This is an EDUCATIONAL post - value first, soft sell. Do NOT include images unless specified. Text-only knowledge post.",
+    "copy": "JW Marriott נבנה בפנגלאו - מה זה אומר למשקיעים?\n\nAppleOne בונה את JW Marriott Panglao Island Resort & Residences על 7 הקטר בחזית ים.\n\n80 חדרי ריזורט + 70 יחידות residences ממותגות.\n\nבמקביל, South Palms Resort הופך ל-MGallery הראשון בפיליפינים (Accor) - 188 חדרים.\n\nכש-Marriott ו-Accor נכנסים, זה כבר לא אי קטן. זה מותג יעד.\n\nמשמעות למשקיע: עליית ערך נדל\"ן, ADR גבוה יותר, ביקוש בינלאומי יציב.\n\nמקור: AppleOne, Marriott Residences, Hospitality News PH",
+    "image_path": "",
+    "platform": "Facebook Group IL",
+    "scheduled_time": "2026-04-17T11:00:00+02:00",
+    "language": "he"
+  }
+]

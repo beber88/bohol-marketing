@@ -1,0 +1,84 @@
+=== GOOGLE_IL_COMPOUND_SEARCH_ADS.txt ===
+Platform: Google Ads (Search)
+Market: Israel
+Campaign: G-IL-P2
+Type: Responsive Search Ads
+Daily Budget: [BUDGET_PLACEHOLDER] (recommend $15/day)
+Bid Strategy: Maximize conversions
+
+---
+
+KEYWORDS (Broad match + Phrase match):
+
+Primary:
+- villa compound bohol
+- luxury villa philippines investment
+- panglao villa project
+- buy villa compound philippines
+- השקעה בפיליפינים
+- וילה בפנגלאו
+- וילה יוקרה בוהול
+- קומפלקס וילות פיליפינים
+
+Secondary:
+- bohol real estate investment
+- panglao beach villa
+- airbnb villa investment philippines
+- luxury property southeast asia
+- נדלן בפיליפינים
+- השקעת נדלן באסיה
+
+Negative keywords:
+- rent
+- hotel booking
+- cheap
+- free
+- jobs
+
+---
+
+RESPONSIVE SEARCH AD: IL-P2-RSA-1
+
+HEADLINES (15 - Google will test combinations):
+H1: קומפלקס וילות יוקרה בפנגלאו
+H2: 8 וילות - שכונה פרטית בבוהול
+H3: שלב 2 נפתח - וילות חדשות
+H4: PHP 395,000 לחודש - מאומת
+H5: 17-25% תשואה שנתית
+H6: בין Marriott ל-Mithi Resort
+H7: שלב 1 מוכח - הצטרף לשלב 2
+H8: 3 מסלולים משפטיים לישראלים
+H9: 60 שניות מחוף פנגלאו
+H10: 4 חדרי שינה + בריכה פרטית
+H11: הזמן וילה מ-9,999 ש"ח
+H12: Blue Everest - ליווי ישראלי
+H13: 263.78 מ"ר של יוקרה
+H14: וילות מ-[PRICE_PLACEHOLDER] ש"ח
+H15: קומפלקס הוילות הגדל בפנגלאו
+
+DESCRIPTIONS (4):
+D1: פנגלאו פריים וילאס: קומפלקס של 8 וילות יוקרה בין שני מלונות 5 כוכבים. שלב 1 מוכח. שלב 2 נפתח. הזמינו היום.
+D2: הכנסה חודשית מאומתת PHP 395,000 לוילה. ניהול קומפלקס משותף מוריד עלויות. 17-25% תשואה שנתית.
+D3: קומפלקס פרטי: ביטחון, גינון ואחזקה משותפים. ערך מכירה חוזרת גבוה יותר מוילות בודדות.
+D4: Deed of Assignment, חכירה 25+25, תאגיד מקומי. ליווי מלא מ-Blue Everest. תהליך חתימה מרחוק.
+
+SITELINKS:
+1. וילות זמינות | ראו את כל 6 הוילות הזמינות בקומפלקס
+2. חישוב תשואה | 17-25% ROI שנתי, הכנסה PHP 395,000 לחודש
+3. תהליך הרכישה | 3 מסלולים משפטיים לישראלים
+4. צרו קשר | WhatsApp: +639542555553
+
+CALLOUT EXTENSIONS:
+- 65% תפוסה מאומתת
+- ליווי בעברית
+- 60 שניות מהחוף
+- בריכה פרטית + ג'קוזי
+
+---
+
+AUDIENCE TARGETING:
+- Geography: Israel
+- Language: Hebrew, English
+- Demographics: Age 30-65, Household income top 30%
+- In-market audiences: Real estate, Investment properties, International travel
+- Custom intent: "buy villa Philippines", "real estate investment Asia", "Airbnb investment", "השקעה בנדלן בחול"

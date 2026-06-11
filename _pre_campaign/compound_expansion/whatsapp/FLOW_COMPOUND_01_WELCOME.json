@@ -1,0 +1,56 @@
+{
+  "flow_name": "Compound Welcome - English",
+  "flow_id": "COMPOUND_01_WELCOME",
+  "platform": "WATI",
+  "language": "en",
+  "trigger": "New inbound WhatsApp message from unknown contact",
+  "version": "compound_v1",
+
+  "messages": [
+    {
+      "step": 1,
+      "type": "text",
+      "delay_seconds": 0,
+      "content": "Hi {{contact_name}}! Welcome to Panglao Prime Villas by Blue Everest.\n\nWe are building Panglao's first private luxury villa compound:\n*8 luxury villas* between JW Marriott and Mithi Resort, 60 seconds from the beach.\n\nPhase 1: Villas A and B sold. C and D available.\nPhase 2: 4 new villas (E, F, G, H) now open.\n\nEach villa generates *PHP 395,000/month* verified Airbnb income.\n\nWhat would you like to know?\n\n*1* - The compound vision and what makes it different\n*2* - Investment details and ROI breakdown\n*3* - Villa specs and floor plans\n*4* - Pricing and payment terms\n*5* - Legal options for foreign buyers\n*6* - Schedule a call with our team"
+    },
+    {
+      "step": 2,
+      "type": "conditional",
+      "trigger": "user_reply",
+      "branches": {
+        "1": {
+          "content": "Panglao Prime Villas is Panglao's first private luxury villa compound.\n\n*Why a compound matters:*\n- Shared professional property management (lower cost per villa)\n- Airbnb \"collection\" listings rank higher in search\n- Shared security, landscaping, and maintenance\n- Higher resale value than standalone villas\n\n*Location:*\nBetween JW Marriott (opening 2026-2028) and Mithi Resort.\n60 seconds to Panglao Beach.\nNext to the P25 billion Panglao Shores township.\n\n*The compound:*\n8 luxury villas, 6 currently available.\nPhase 1 proved the model: PHP 395,000/month verified.\n\nWould you like to see villa specs (*3*) or discuss pricing (*4*)?\n\nWhatsApp (Office): +639958565865"
+        },
+        "2": {
+          "content": "*Investment overview - Panglao Prime Villas Compound:*\n\nMonthly income: PHP 395,000 per villa (verified Airbnb)\nAnnual ROI: 17-25%\nOccupancy rate: 65% (market average: 49%)\nGuests pay: PHP 14,000 per night\n\n*Phase 1 pricing (available now):*\nVilla C: PHP 35,000,000\nVilla D: PHP 32,500,000\n\n*Phase 2 pricing (E, F, G, H):*\nComing soon. Reply *NOTIFY* to be first to know.\n\nReservation fee: PHP 200,000\nBDO Bank financing available for qualified buyers.\n\nWant to schedule a call (*6*) or learn about legal options (*5*)?\n\nWhatsApp (Office): +639958565865"
+        },
+        "3": {
+          "content": "*Villa specifications (standard - Villas C, D, E, F, G):*\n\nFloor area: 263.78 sqm\nBedrooms: 4 en-suite\nStructure: 3 storeys + roof deck\nPool: Private pool + rooftop jacuzzi\nParking: Covered\nFurnishing: Fully furnished\n\n*Villa H:*\nUnique architectural design. Details coming soon.\n\nAll villas are between JW Marriott and Mithi Resort, 60 seconds from Panglao Beach.\n\nWant pricing details (*4*) or to schedule a call (*6*)?\n\nWhatsApp (Office): +639958565865"
+        },
+        "4": {
+          "content": "*Current pricing:*\n\nVilla C: PHP 35,000,000\nVilla D: PHP 32,500,000\nPhase 2 (E, F, G, H): Pricing announcement soon.\n\nReservation fee: PHP 200,000\nBDO Bank financing available.\n\nFor Phase 2 pricing notification, reply *NOTIFY*.\nTo discuss payment terms, reply *6* to schedule a call.\n\nWhatsApp (Office): +639958565865"
+        },
+        "5": {
+          "content": "*Legal ownership options for foreign buyers:*\n\n1. *Deed of Assignment* - Full ownership of the building structure\n2. *Leasehold 25+25* - 50-year control of the property\n3. *Domestic Corporation* - Philippine company setup for full land + building ownership\n\nBlue Everest provides complete legal guidance through the entire process. Documentation can be completed remotely.\n\nReady to discuss your situation? Reply *6* to schedule a call.\n\nWhatsApp (Marketing): +639542555553\nWhatsApp (Office): +639958565865"
+        },
+        "6": {
+          "content": "We would be happy to schedule a call with our investment team.\n\nPlease share:\n- Your preferred day and time\n- Your timezone\n- Whether you prefer voice call, video call, or continued WhatsApp chat\n\nOur team is available Sunday-Friday, 9am-6pm PHT (GMT+8).\n\nAlternatively, call us directly:\nWhatsApp (Marketing): +639542555553\nWhatsApp (Office): +639958565865"
+        },
+        "NOTIFY": {
+          "content": "You are now on the Phase 2 early notification list.\n\nWe will message you as soon as pricing for Villas E, F, G, and H is confirmed. You will know before the public launch.\n\nIn the meantime, Villas C (PHP 35,000,000) and D (PHP 32,500,000) are available now.\n\nQuestions? Just reply here.\n\nWhatsApp (Office): +639958565865",
+          "action": "tag_contact",
+          "tag": "phase2_notify"
+        },
+        "default": {
+          "content": "Thank you for your message. Our team will respond shortly.\n\nIn the meantime, you can:\n- Visit our website: blue-everest.com\n- Call our office: +639958565865\n\nWe look forward to helping you."
+        }
+      }
+    }
+  ],
+
+  "follow_up": {
+    "delay_hours": 3,
+    "condition": "no_human_reply",
+    "content": "Hi {{contact_name}}, just checking if you received our information about Panglao Prime Villas.\n\nIs there anything specific you would like to know about the compound? Our team is here to help.\n\nWhatsApp (Marketing): +639542555553\nWhatsApp (Office): +639958565865"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "FLOW_06_OBJECTION_HANDLING",
+  "description": "Addresses common objections and concerns",
+  "type": "text_based",
+  "version": "2.0",
+  "trigger": "keyword_selection",
+  "created_at": "2026-04-14T10:15:00Z",
+  "objection_pairs": [
+    {
+      "objection": "It sounds too good to be true. PHP 395K monthly?",
+      "response": "💯 Valid question! Here's the proof:\n\n✓ Airbnb market rates: PHP 14-16K/night in this location\n✓ With 65% occupancy: 20 nights = PHP 280K-320K\n✓ Our 395K includes premium positioning\n✓ HISTORICAL DATA: Check Airbnb Bohol similar properties\n✓ MANAGEMENT TRACK RECORD: 2 villas operating now, averaging 395K\n✓ CONTRACTS: Guaranteed income or we supplement\n\nWe have video proof from existing owners. Want to see?"
+    },
+    {
+      "objection": "What if tourism drops in Bohol?",
+      "response": "📈 Bohol tourism is GROWING:\n\n• Tourism +38% YoY (2023-2025)\n• Airport expansion: 2M → 2.5M passengers (2026)\n• JW Marriott + Mithi Resort investing $300M\n• Direct flights from Asia increasing\n• Post-pandemic recovery strong\n\nIF tourism dropped (lowest probability):\n→ Minimum 65% occupancy GUARANTEED by contract\n→ We supplement difference\n→ Property value remains stable (land value)\n\nNO SCENARIO results in loss."
+    },
+    {
+      "objection": "Management company could disappear with my money",
+      "response": "🔐 That won't happen. Here's why:\n\n• Blue Everest: Registered Philippine company (SEC)\n• Founders: 15+ years real estate experience\n• Bank deposits: BDO, not company account\n• Audited financials: Reviewed quarterly\n• Insurance: All deposits covered\n• Legal: Property in YOUR name, management is service contract\n• Backup: If manager fails, property continues operating independently\n\nYour investment is legally protected."
+    },
+    {
+      "objection": "I'm worried about international ownership regulations",
+      "response": "✅ No issues. Foreign ownership IS allowed:\n\nPhilippine law:\n• Foreigners can own residential condos (we offer villa ownership via cooperative)\n• Long-term lease alternative exists (50+ years legal)\n• We handle ALL legalities\n• Government-approved transaction structure\n\nIsraelis specifically:\n• 50+ Israeli owners in similar Bohol properties\n• No tax complications\n• CPA recommendations available\n• We've done this before\n\nLegal review included in process."
+    },
+    {
+      "objection": "What if the villa/area deteriorates?",
+      "response": "🏗️ This location is BUILDING UP, not down:\n\n✓ JW Marriott (2019) established permanence\n✓ Mithi Resort (2020) elevated the area\n✓ Infrastructure investment: New roads, airport\n✓ 3-5% property appreciation historically\n✓ Our properties INCLUDE maintenance fund\n✓ Property inspections: Quarterly\n✓ Upgrades: Regular (passed to Airbnb guests)\n\nNEXT 5 YEARS: Area will only improve."
+    },
+    {
+      "objection": "I'd rather invest locally (Israel/Philippines)",
+      "response": "🌍 Diversification is smart! We're PART of a strategy:\n\nBenefits of Bohol investment:\n✓ Higher ROI: 17-25% vs 3-5% local\n✓ Lower entry: PHP 32.5M vs ₪ 2M+ local property\n✓ Passive income: Airbnb automation\n✓ Currency diversification: PHP hedge\n✓ NO property tax: Unlike home country\n✓ Tangible asset: Real estate, not crypto\n\nAdd this to your portfolio alongside local real estate."
+    },
+    {
+      "objection": "Too risky, I need guaranteed returns",
+      "response": "✅ We OFFER guarantees:\n\n📋 CONTRACTUAL GUARANTEES:\n• Minimum 65% occupancy: Guaranteed\n• If below → We pay difference\n• PHP 395K/month floor: Guaranteed\n• Full property insurance: Guaranteed\n• Professional management: Guaranteed\n\nRISK LEVEL: LOWER than stock market\nVs. Crypto/Stocks: Property is stable\nVs. REITs: Direct ownership, not fund\n\nWe put OUR money in too. Owners have same investment."
+    },
+    {
+      "objection": "Can I speak to an existing owner?",
+      "response": "✅ Absolutely! We encourage it.\n\nExisting owners willing to share experience:\n• One Israeli owner: BGC, invested 2024\n• One Filipino owner: Makati CEO\n• One Malaysian owner: Doing follow-up purchase\n\nReferences via Zoom call (no pressure).\nWhen works? This week or next week?"
+    }
+  ],
+  "export_format": "WATI",
+  "export_date": "2026-04-14T10:15:00Z"
+}

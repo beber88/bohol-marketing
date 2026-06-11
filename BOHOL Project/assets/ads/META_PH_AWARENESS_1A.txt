@@ -1,0 +1,92 @@
+[SIMULATION - NOT FOR LIVE DEPLOYMENT]
+
+=== META_PH_AWARENESS_1A.txt ===
+Platform: Meta (Facebook + Instagram)
+Market: Philippines
+Funnel Stage: Awareness
+Campaign: PH-1
+Objective: Reach / Brand Awareness
+Budget: $15/day (shared across 1A and 1B)
+Audience: Metro Manila (BGC, Makati, Alabang, Ortigas, San Juan), Cebu City, Davao, age 38-58
+Placements: Facebook Feed (primary), Instagram Feed, Instagram Reels
+Schedule: Tuesday-Thursday priority, 7pm-11pm PHT
+
+---
+
+PRIMARY TEXT (V1 - English):
+
+Every time you book a villa in Bohol, you're making someone else rich.
+
+What if that someone was you?
+
+Panglao Prime Villas: 2 remaining luxury villas between JW Marriott and Mithi Resort.
+
+Private pool. 4 bedrooms. Rooftop jacuzzi with full sea view.
+60 seconds to Panglao Beach.
+
+Your guests pay PHP 14,000 per night.
+You collect PHP 395,000 every month.
+
+From PHP 32,500,000. Reserve with PHP 200,000.
+BDO Bank financing available for qualified buyers.
+
+---
+
+PRIMARY TEXT (V2 - Tagalog):
+
+Ilang beses ka na nag-book ng villa sa Bohol?
+
+Isipin mo na lang kung ikaw ang may-ari.
+
+PHP 395,000 bawat buwan mula sa Airbnb.
+Hindi ka na kailangang mag-check in. Mag-check in na lang ang iyong mga guests.
+
+Panglao Prime Villas. 2 villas na lang ang natitira.
+Mula PHP 32,500,000. Reserve ngayon.
+BDO Bank financing available.
+
+---
+
+PRIMARY TEXT (V3 - Short):
+
+You vacation here. Others own it.
+PHP 395,000/month. Private pool. 60 seconds to Panglao Beach.
+Only 2 luxury villas left.
+BDO Bank financing available.
+
+---
+
+HEADLINE V1: "Stop Renting. Start Owning."
+HEADLINE V2: "PHP 395K/Month. Your Panglao Villa."
+HEADLINE V3: "2 Luxury Villas Left in Panglao"
+HEADLINE V4 (Tagalog): "Maging May-ari, Hindi Bisita"
+
+DESCRIPTION V1: "17-25% annual ROI. Reserve with PHP 200,000. BDO Bank financing available."
+DESCRIPTION V2: "Between JW Marriott and Mithi Resort. Last 2 units. 263.78 sqm floor area."
+
+CTA: Learn More
+
+---
+
+AUDIENCE TARGETING:
+- Geography: Metro Manila (BGC, Makati, Alabang, Ortigas, San Juan), Cebu City, Davao
+- Age: 38-58 (primary Manila), 35-55 (secondary Cebu)
+- Job Titles: CEO, President, Managing Director, Business Owner, Entrepreneur
+- Interests: Real estate Philippines, Investment properties, Bohol travel
+- Behaviors: Frequent domestic travelers, Luxury travel intent, High net worth signals, Real estate buyers
+- Lookalike: 1% from primevilla.ph visitors (when traffic accumulates)
+
+BUDGET RECOMMENDATION: $9/day within the $15/day PH-1 awareness campaign (A/B with 1B)
+
+OPTIMIZATION NOTES:
+- Facebook performs better than Instagram for 38+ Filipino professionals
+- Test English V1 vs Tagalog V2 as separate ad sets
+- BDO financing mention significantly increases qualified leads locally
+- Peak engagement: 7pm-11pm PHT
+- Best days: Tuesday, Wednesday, Thursday
+
+=== FX METADATA ===
+FX date used: 2026-04-14
+PHP-ILS rate: 0.0488
+PHP-USD rate: 0.01663
+Auto-refresh: enabled

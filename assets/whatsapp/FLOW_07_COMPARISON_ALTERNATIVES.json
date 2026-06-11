@@ -1,0 +1,37 @@
+{
+  "name": "FLOW_07_COMPARISON_ALTERNATIVES",
+  "description": "Compares villa investment to alternative investments",
+  "type": "text_based",
+  "version": "2.0",
+  "trigger": "lead_qualification",
+  "created_at": "2026-04-14T10:30:00Z",
+  "comparisons": [
+    {
+      "alternative": "Airbnb property back home",
+      "panglao_advantage": "✅ Panglao:\n• Lower acquisition: PHP 32.5M vs local 100M+\n• Higher returns: 20-25% vs 5-8% home ROI\n• Easier scaling: Proven model\n• Tax benefits: No annual property tax\n• Appreciation: 3-5% annually\n• Geographic diversification"
+    },
+    {
+      "alternative": "Stock market / Mutual funds",
+      "panglao_advantage": "✅ Panglao:\n• Tangible asset (not digital)\n• Stable income: Monthly, not volatile\n• Less affected by markets\n• 17-25% vs 8-12% stock average\n• You own real thing, not fund share\n• Inflation hedge: Real estate appreciates"
+    },
+    {
+      "alternative": "Crypto / Digital assets",
+      "panglao_advantage": "✅ Panglao:\n• Regulated: Not speculative\n• Guaranteed income: Not asset appreciation only\n• Insurable: Property covered\n• Legal clarity: Clear ownership\n• Sleep-at-night certainty\n• 25% guaranteed vs 200% maybe"
+    },
+    {
+      "alternative": "Local condo / residential",
+      "panglao_advantage": "✅ Panglao:\n• Income-generating (vs residential expense)\n• Higher ROI: 20% vs 3-5% appreciation\n• Managed for you (vs tenant headaches)\n• Better price point: Same capital = more units\n• Tourism growth market (vs saturated residential)\n• Competitive advantage: Proven manager"
+    },
+    {
+      "alternative": "REIT (Real Estate Investment Trust)",
+      "panglao_advantage": "✅ Panglao:\n• DIRECT ownership: You own the property\n• No management fees (beyond operational)\n• CONTROL: You decide → We execute\n• Higher transparency: Monthly statements\n• Exit strategy: Sell property directly\n• Better ROI: No fund middleman margin"
+    },
+    {
+      "alternative": "Corporate bonds / Fixed income",
+      "panglao_advantage": "✅ Panglao:\n• Better returns: 17-25% vs 3-5% bonds\n• Monthly vs annual/maturity payments\n• Inflation protection: Real estate hedges\n• Tangible security: Property backing\n• Appreciation potential: Bonds don't grow\n• More exciting: Real business, not paper"
+    }
+  ],
+  "closing_statement": "💡 Bottom line:\n\nWant your money to:\n• Grow passively? ✅ Panglao\n• Generate steady income? ✅ Panglao\n• Diversify internationally? ✅ Panglao\n• Sleep well at night? ✅ Panglao\n\nCompare directly with other options, but come back to us.\nWe're confident.",
+  "export_format": "WATI",
+  "export_date": "2026-04-14T10:30:00Z"
+}

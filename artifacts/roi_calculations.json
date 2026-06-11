@@ -1,0 +1,281 @@
+{
+  "generated_at": 1776233115.477886,
+  "scenarios": [
+    {
+      "scenario": "Single Villa - Cash Purchase",
+      "initial_investment": 28000000,
+      "down_payment": 28000000,
+      "loan_amount": 0,
+      "monthly_payment": 0,
+      "net_monthly_cashflow": 395000,
+      "scenarios": {
+        "Year_1": {
+          "cumulative_income": 4740000,
+          "property_value": 29120000,
+          "total_wealth": 33860000,
+          "roi_percent": 20.9,
+          "annual_income": 4740000
+        },
+        "Year_2": {
+          "cumulative_income": 9480000,
+          "property_value": 30284800,
+          "total_wealth": 39764800,
+          "roi_percent": 42.0,
+          "annual_income": 4740000
+        },
+        "Year_3": {
+          "cumulative_income": 14220000,
+          "property_value": 31496192,
+          "total_wealth": 45716192,
+          "roi_percent": 63.3,
+          "annual_income": 4740000
+        },
+        "Year_4": {
+          "cumulative_income": 18960000,
+          "property_value": 32756040,
+          "total_wealth": 51716040,
+          "roi_percent": 84.7,
+          "annual_income": 4740000
+        },
+        "Year_5": {
+          "cumulative_income": 23700000,
+          "property_value": 34066281,
+          "total_wealth": 57766281,
+          "roi_percent": 106.3,
+          "annual_income": 4740000
+        },
+        "Year_6": {
+          "cumulative_income": 28440000,
+          "property_value": 35428933,
+          "total_wealth": 63868933,
+          "roi_percent": 128.1,
+          "annual_income": 4740000
+        },
+        "Year_7": {
+          "cumulative_income": 33180000,
+          "property_value": 36846090,
+          "total_wealth": 70026090,
+          "roi_percent": 150.1,
+          "annual_income": 4740000
+        },
+        "Year_8": {
+          "cumulative_income": 37920000,
+          "property_value": 38319933,
+          "total_wealth": 76239933,
+          "roi_percent": 172.3,
+          "annual_income": 4740000
+        },
+        "Year_9": {
+          "cumulative_income": 42660000,
+          "property_value": 39852731,
+          "total_wealth": 82512731,
+          "roi_percent": 194.7,
+          "annual_income": 4740000
+        },
+        "Year_10": {
+          "cumulative_income": 47400000,
+          "property_value": 41446840,
+          "total_wealth": 88846840,
+          "roi_percent": 217.3,
+          "annual_income": 4740000
+        }
+      }
+    },
+    {
+      "scenario": "Single Villa - 70% Financed",
+      "initial_investment": 28000000,
+      "down_payment": 8400000,
+      "loan_amount": 19600000,
+      "monthly_gross_income": 395000,
+      "monthly_loan_payment": 165396,
+      "net_monthly_cashflow": 229604,
+      "loan_term_years": 15,
+      "interest_rate": "6.0%",
+      "scenarios": {
+        "Year_1": {
+          "cumulative_income": 4740000,
+          "cumulative_payments": 1984751,
+          "net_cashflow": 2755249,
+          "loan_balance": 18768633,
+          "property_value": 29120000,
+          "total_wealth": 12275249,
+          "roi_percent": 46.1
+        },
+        "Year_2": {
+          "cumulative_income": 9480000,
+          "cumulative_payments": 3969503,
+          "net_cashflow": 5510497,
+          "loan_balance": 17885990,
+          "property_value": 30284800,
+          "total_wealth": 16195297,
+          "roi_percent": 92.8
+        },
+        "Year_3": {
+          "cumulative_income": 14220000,
+          "cumulative_payments": 5954254,
+          "net_cashflow": 8265746,
+          "loan_balance": 16948906,
+          "property_value": 31496192,
+          "total_wealth": 20161938,
+          "roi_percent": 140.0
+        },
+        "Year_4": {
+          "cumulative_income": 18960000,
+          "cumulative_payments": 7939005,
+          "net_cashflow": 11020995,
+          "loan_balance": 15954026,
+          "property_value": 32756040,
+          "total_wealth": 24177035,
+          "roi_percent": 187.8
+        },
+        "Year_5": {
+          "cumulative_income": 23700000,
+          "cumulative_payments": 9923756,
+          "net_cashflow": 13776244,
+          "loan_balance": 14897783,
+          "property_value": 34066281,
+          "total_wealth": 28242525,
+          "roi_percent": 236.2
+        },
+        "Year_6": {
+          "cumulative_income": 28440000,
+          "cumulative_payments": 11908508,
+          "net_cashflow": 16531492,
+          "loan_balance": 13776394,
+          "property_value": 35428933,
+          "total_wealth": 32360425,
+          "roi_percent": 285.2
+        },
+        "Year_7": {
+          "cumulative_income": 33180000,
+          "cumulative_payments": 13893259,
+          "net_cashflow": 19286741,
+          "loan_balance": 12585840,
+          "property_value": 36846090,
+          "total_wealth": 36532831,
+          "roi_percent": 334.9
+        },
+        "Year_8": {
+          "cumulative_income": 37920000,
+          "cumulative_payments": 15878010,
+          "net_cashflow": 22041990,
+          "loan_balance": 11321855,
+          "property_value": 38319933,
+          "total_wealth": 40761923,
+          "roi_percent": 385.3
+        },
+        "Year_9": {
+          "cumulative_income": 42660000,
+          "cumulative_payments": 17862761,
+          "net_cashflow": 24797239,
+          "loan_balance": 9979911,
+          "property_value": 39852731,
+          "total_wealth": 45049969,
+          "roi_percent": 436.3
+        },
+        "Year_10": {
+          "cumulative_income": 47400000,
+          "cumulative_payments": 19847513,
+          "net_cashflow": 27552487,
+          "loan_balance": 8555198,
+          "property_value": 41446840,
+          "total_wealth": 49399327,
+          "roi_percent": 488.1
+        }
+      }
+    },
+    {
+      "scenario": "Dual Villas - 70% Financed",
+      "initial_investment": 56000000,
+      "bulk_discount": 800000,
+      "effective_investment": 55200000,
+      "down_payment": 16560000,
+      "loan_amount": 38640000,
+      "monthly_gross_income": 790000,
+      "monthly_loan_payment": 326066,
+      "net_monthly_cashflow": 463934,
+      "scenarios": {
+        "Year_1": {
+          "cumulative_income": 9480000,
+          "cumulative_payments": 3912795,
+          "net_cashflow": 5567205,
+          "property_value": 58240000,
+          "total_wealth": 25167205,
+          "roi_percent": 52.0
+        },
+        "Year_2": {
+          "cumulative_income": 18960000,
+          "cumulative_payments": 7825591,
+          "net_cashflow": 11134409,
+          "property_value": 60569600,
+          "total_wealth": 33064009,
+          "roi_percent": 99.7
+        },
+        "Year_3": {
+          "cumulative_income": 28440000,
+          "cumulative_payments": 11738386,
+          "net_cashflow": 16701614,
+          "property_value": 62992384,
+          "total_wealth": 41053998,
+          "roi_percent": 147.9
+        },
+        "Year_4": {
+          "cumulative_income": 37920000,
+          "cumulative_payments": 15651181,
+          "net_cashflow": 22268819,
+          "property_value": 65512079,
+          "total_wealth": 49140898,
+          "roi_percent": 196.7
+        },
+        "Year_5": {
+          "cumulative_income": 47400000,
+          "cumulative_payments": 19563977,
+          "net_cashflow": 27836023,
+          "property_value": 68132563,
+          "total_wealth": 57328586,
+          "roi_percent": 246.2
+        },
+        "Year_6": {
+          "cumulative_income": 56880000,
+          "cumulative_payments": 23476772,
+          "net_cashflow": 33403228,
+          "property_value": 70857865,
+          "total_wealth": 65621093,
+          "roi_percent": 296.3
+        },
+        "Year_7": {
+          "cumulative_income": 66360000,
+          "cumulative_payments": 27389567,
+          "net_cashflow": 38970433,
+          "property_value": 73692180,
+          "total_wealth": 74022612,
+          "roi_percent": 347.0
+        },
+        "Year_8": {
+          "cumulative_income": 75840000,
+          "cumulative_payments": 31302363,
+          "net_cashflow": 44537637,
+          "property_value": 76639867,
+          "total_wealth": 82537504,
+          "roi_percent": 398.4
+        },
+        "Year_9": {
+          "cumulative_income": 85320000,
+          "cumulative_payments": 35215158,
+          "net_cashflow": 50104842,
+          "property_value": 79705461,
+          "total_wealth": 91170303,
+          "roi_percent": 450.5
+        },
+        "Year_10": {
+          "cumulative_income": 94800000,
+          "cumulative_payments": 39127953,
+          "net_cashflow": 55672047,
+          "property_value": 82893680,
+          "total_wealth": 99925727,
+          "roi_percent": 503.4
+        }
+      }
+    }
+  ]
+}

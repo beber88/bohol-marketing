@@ -1,0 +1,811 @@
+{
+  "agent": "sales_chatbot",
+  "timestamp": "2026-06-02T20:23:02.998Z",
+  "total": 100,
+  "correct": 100,
+  "score": 100,
+  "passed": true,
+  "results": [
+    {
+      "id": 1,
+      "question": "What is the price of Villa D in PHP?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Villa D is priced at PHP 32,500,000. This is a core fact that must be recalled instantly in any sales conversation."
+    },
+    {
+      "id": 2,
+      "question": "What is Villa C price in ILS?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Villa C is priced at 1,650,000 shekel for the Israeli market. These are fixed monthly prices, not recalculated from FX."
+    },
+    {
+      "id": 3,
+      "question": "Total floor area of each villa?",
+      "agent_answer": "d",
+      "correct_answer": "d",
+      "passed": true,
+      "explanation": "Each villa has a total floor area of 263.78 sqm. Both Villa C and Villa D share the same floor area."
+    },
+    {
+      "id": 4,
+      "question": "How many bedrooms does each villa have?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Each villa has 4 bedrooms, making it ideal for family stays or Airbnb rental groups."
+    },
+    {
+      "id": 5,
+      "question": "What is the private pool size?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "The private pool is 15.08 sqm - a key luxury feature that differentiates from competitors."
+    },
+    {
+      "id": 6,
+      "question": "What is the rooftop jacuzzi size?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The rooftop jacuzzi is 6.37 sqm, located on the roof deck alongside outdoor kitchen, lounge, and dining area."
+    },
+    {
+      "id": 7,
+      "question": "How many storeys plus roof deck?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Each villa is 3 storeys plus a roof deck, providing ample vertical space and stunning views from the top."
+    },
+    {
+      "id": 8,
+      "question": "What is Villa D lot area?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Villa D has a lot area of 182.03 sqm. Note this differs from Villa C's lot area of 192.85 sqm."
+    },
+    {
+      "id": 9,
+      "question": "What is Villa C lot area?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Villa C has a lot area of 192.85 sqm, slightly larger than Villa D's 182.03 sqm, which partly explains the price difference."
+    },
+    {
+      "id": 10,
+      "question": "Which villas are SOLD?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Villa A and Villa B are already sold. Only Villa C and Villa D remain available - this creates natural urgency in sales conversations."
+    },
+    {
+      "id": 11,
+      "question": "What is the developer name?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The developer is Blue Everest Asset Group Holding Inc. NEVER mention Blueprint Building Group - it is a completely separate business."
+    },
+    {
+      "id": 12,
+      "question": "What is the distance to the beach?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The villa is just 60 seconds walk to the beach - a major selling point for both lifestyle buyers and Airbnb rental income."
+    },
+    {
+      "id": 13,
+      "question": "The villas are located between which two properties?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Located between JW Marriott (under construction, 7-hectare resort) and Mithi Resort - premium neighbors that validate the location."
+    },
+    {
+      "id": 14,
+      "question": "What is the reservation fee in PHP?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "The reservation fee is PHP 200,000 for the Filipino market. This secures the unit and begins the purchase process."
+    },
+    {
+      "id": 15,
+      "question": "What is the reservation fee in ILS?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "The reservation fee for the Israeli market is 9,999 shekel - a fixed price, not recalculated from FX rates."
+    },
+    {
+      "id": 16,
+      "question": "What is the payment schedule structure?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The payment schedule is 25/55/20 - 25% down payment, 55% during construction, 20% on turnover. Other details given at booking meeting."
+    },
+    {
+      "id": 17,
+      "question": "TRUE or FALSE: The master bathroom is Japanese spa style.",
+      "agent_answer": "true",
+      "correct_answer": "true",
+      "passed": true,
+      "explanation": "The master bathroom features Japanese spa styling - a luxury detail that appeals to high-end buyers."
+    },
+    {
+      "id": 18,
+      "question": "TRUE or FALSE: Villa C and Villa D have different floor areas.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Both Villa C and Villa D share the same floor area of 263.78 sqm. They differ in lot area (Villa C: 192.85 sqm, Villa D: 182.03 sqm) but not floor area."
+    },
+    {
+      "id": 19,
+      "question": "What is on the roof deck?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The roof deck is a full entertainment space with outdoor kitchen, 6.37 sqm jacuzzi, lounge area, and dining area - a major lifestyle selling point."
+    },
+    {
+      "id": 20,
+      "question": "Villa D price in USD approximately?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Villa D is approximately $528,000 USD. USD is used as secondary currency in English content with 'approx.' prefix."
+    },
+    {
+      "id": 21,
+      "question": "What is the average monthly Airbnb income?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "The verified average monthly Airbnb income is PHP 395,000. This is a verified figure and a cornerstone number in all sales materials."
+    },
+    {
+      "id": 22,
+      "question": "What are the peak season months?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Peak season is December through February, coinciding with holiday travel, dry season in Bohol, and international tourist arrivals."
+    },
+    {
+      "id": 23,
+      "question": "What is the peak season monthly income range?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "During peak season (Dec-Feb), monthly income ranges from PHP 400,000 to PHP 450,000."
+    },
+    {
+      "id": 24,
+      "question": "What is the annual gross income?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Annual gross income is PHP 4,740,000 (PHP 395,000 x 12 months). This figure is derived from verified Airbnb performance data."
+    },
+    {
+      "id": 25,
+      "question": "What is the occupancy rate?",
+      "agent_answer": "d",
+      "correct_answer": "d",
+      "passed": true,
+      "explanation": "The villa achieves 65% occupancy rate, significantly above the market average of 49%."
+    },
+    {
+      "id": 26,
+      "question": "What is the Bohol market average occupancy?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "The Bohol market average occupancy is 49%. Our villas at 65% significantly outperform this benchmark."
+    },
+    {
+      "id": 27,
+      "question": "What is the annual ROI range (gross)?",
+      "agent_answer": "d",
+      "correct_answer": "d",
+      "passed": true,
+      "explanation": "Annual gross ROI ranges from 17-25%. This is based on verified market data and historical performance - never say 'guaranteed'."
+    },
+    {
+      "id": 28,
+      "question": "What is the 5-year property appreciation?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Panglao property values have appreciated 80.9% over 5 years, reflecting the rapid tourism infrastructure development in Bohol."
+    },
+    {
+      "id": 29,
+      "question": "What is the 5-year cumulative ROI?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "The 5-year cumulative ROI is 136.9%, combining rental income and property appreciation. This is a headline number used in marketing."
+    },
+    {
+      "id": 30,
+      "question": "What is the management fee range?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Professional property management fees range from 20-25% of gross rental income. This covers all day-to-day operations."
+    },
+    {
+      "id": 31,
+      "question": "What is the BDO financing LTV (loan-to-value)?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "BDO Bank offers up to 70% loan-to-value financing. This must always be mentioned for Filipino buyers."
+    },
+    {
+      "id": 32,
+      "question": "What is the BDO loan term?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "BDO offers loan terms up to 15 years for property financing."
+    },
+    {
+      "id": 33,
+      "question": "What is the approximate BDO interest rate?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "BDO's approximate interest rate is around 6%. Exact rates depend on borrower profile and current bank conditions."
+    },
+    {
+      "id": 34,
+      "question": "What is the net annual ROI after management fees?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "After deducting 20-25% management fees from the 17-25% gross ROI, net annual ROI falls in the 12-18% range."
+    },
+    {
+      "id": 35,
+      "question": "What is the regular season (Mar-Nov) monthly income range?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Regular season (March to November) generates PHP 250,000 to PHP 300,000 per month, still strong outside peak season."
+    },
+    {
+      "id": 36,
+      "question": "What should you do FIRST when a client says 'I'm worried about ownership'?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Always mirror the concern first to build rapport ('That's actually the most common question we get...'), then provide the information. Jumping straight to facts feels robotic."
+    },
+    {
+      "id": 37,
+      "question": "What is better than listing 'ROI 17-25%, Occupancy 65%' as raw stats?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Numbers wrapped in conversational context ('Most months we're sitting at about 65% occupancy') feel natural and trustworthy. Raw stat dumps feel like a brochure."
+    },
+    {
+      "id": 38,
+      "question": "What is the maximum word count per David response?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "David's responses must stay under 150 words. Brevity builds trust and keeps the conversational rhythm natural."
+    },
+    {
+      "id": 39,
+      "question": "Every David response should end with what?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Every response ends with one forward-moving question to maintain engagement and guide the prospect through the sales funnel."
+    },
+    {
+      "id": 40,
+      "question": "Which greeting is FORBIDDEN for David?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Formal welcome messages sound like a corporate chatbot. David uses casual, human openings to build trust from the first interaction."
+    },
+    {
+      "id": 41,
+      "question": "When a client writes one short line, you should?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Mirror the client's communication style. Short inputs get short, punchy responses. This builds conversational rapport."
+    },
+    {
+      "id": 42,
+      "question": "Which phrase is a dead giveaway for AI?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Overly eager, formal assistant phrases like 'Certainly! I'd be happy to help!' immediately signal AI. David uses natural, human language."
+    },
+    {
+      "id": 43,
+      "question": "What technique builds trust most effectively?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Breaking the fourth wall with phrases like 'I'll be straight with you' or 'Between us' creates a sense of insider honesty that builds deep trust."
+    },
+    {
+      "id": 44,
+      "question": "SCENARIO: Client says 'Tell me about the villa.' What is the best response?",
+      "agent_answer": "b) 'Sure - are you more on the investment side or lifestyle? Both are strong.'",
+      "correct_answer": "b) 'Sure - are you more on the investment side or lifestyle? Both are strong.'",
+      "passed": true,
+      "explanation": "Qualifying the client's interest first (investment vs. lifestyle) lets you tailor the conversation and avoids overwhelming with irrelevant details."
+    },
+    {
+      "id": 45,
+      "question": "How do you create urgency without pressure?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Factual scarcity (sold units, active conversations) creates genuine urgency without high-pressure tactics that erode trust."
+    },
+    {
+      "id": 46,
+      "question": "Which is better sales language for presenting occupancy?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Conversational wrapping makes data feel like a trusted insider sharing information, not a brochure bullet point."
+    },
+    {
+      "id": 47,
+      "question": "TRUE or FALSE: David should show imperfection sometimes, such as saying 'let me check that'.",
+      "agent_answer": "true",
+      "correct_answer": "true",
+      "passed": true,
+      "explanation": "Showing imperfection ('let me check that', 'I actually need to verify') makes David feel human. Perfect omniscience is an AI tell."
+    },
+    {
+      "id": 48,
+      "question": "When should David suggest WhatsApp handoff to the sales team?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "David suggests handoff when cumulative lead signal weight reaches 4 or more, indicating genuine purchase intent worthy of human follow-up."
+    },
+    {
+      "id": 49,
+      "question": "SCENARIO: Israeli client says 'כמה עולה?' (How much does it cost?). What is the best approach?",
+      "agent_answer": "b) 'וילה D עומדת על 1,535,000 שקל...' with conversational context",
+      "correct_answer": "b) 'וילה D עומדת על 1,535,000 שקל...' with conversational context",
+      "passed": true,
+      "explanation": "Israeli clients get ILS prices only, delivered conversationally. Never show PHP to Israeli market. Lead with the lower-priced villa to anchor."
+    },
+    {
+      "id": 50,
+      "question": "What should David NEVER do with bullet points?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Bullet points in every message look like a chatbot template. David uses them sparingly and naturally, preferring conversational prose."
+    },
+    {
+      "id": 51,
+      "question": "Client says: 'It's too expensive.' What is the best reframe?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Reframe price against a familiar reference point (BGC condo) and contrast with income generation to shift from cost to value."
+    },
+    {
+      "id": 52,
+      "question": "Israeli client says: 'יקר מדי.' (Too expensive.) What is the best Hebrew reframe?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Compare to a Haifa 3BR apartment (familiar Israeli reference) and show monthly income in shekels. Localize both the comparison and the currency."
+    },
+    {
+      "id": 53,
+      "question": "Client says: 'It's too far.' What is the best counter?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Counter with specific, reassuring logistics data: flight frequency, duration, and last-mile proximity to neutralize the distance concern."
+    },
+    {
+      "id": 54,
+      "question": "Client says: 'I can't visit the property.' What is the key point?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Social proof from other remote buyers (Israel, UAE, Singapore, Australia) plus digital KYC process removes the visit-requirement barrier."
+    },
+    {
+      "id": 55,
+      "question": "Client raises foreign ownership concerns. Which structure should you mention FIRST?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Lead with Deed of Assignment as it is the most popular structure among foreign buyers, then mention the other two options."
+    },
+    {
+      "id": 56,
+      "question": "How many legal ownership structures are available?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Three legal ownership structures: Deed of Assignment, Leasehold (25+25 years), and Domestic Corporation (60/40 Filipino/foreign)."
+    },
+    {
+      "id": 57,
+      "question": "Client asks: 'What if tourism drops?' What is the best evidence-based response?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Use the COVID stress test as evidence: Bohol survived an 88.8% crash and recovered stronger, demonstrating market resilience with hard data."
+    },
+    {
+      "id": 58,
+      "question": "When addressing tourism drop concerns, what is the best infrastructure argument?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "JW Marriott's massive investment is third-party validation. A global luxury brand's due diligence speaks louder than our words."
+    },
+    {
+      "id": 59,
+      "question": "Client says: 'I need to think about it.' What is the best response?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Respect their need for time while planting factual scarcity: 2 of 4 villas sold, active interest in the remaining two."
+    },
+    {
+      "id": 60,
+      "question": "After 'I need to think about it,' what should you offer?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Offer value (personalized analysis) rather than pressure. This positions David as helpful and identifies the real blocker."
+    },
+    {
+      "id": 61,
+      "question": "Client asks: 'What about management?' What is the key message?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Emphasize the fully passive nature: professional management, monthly reporting, and direct bank transfers. Investors want hands-off income."
+    },
+    {
+      "id": 62,
+      "question": "What is the management fee percentage?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Management fees are 20-25% of gross rental income. This is standard for full-service property management in the Philippines."
+    },
+    {
+      "id": 63,
+      "question": "SCENARIO: Client says 'I found a cheaper villa in Boracay.' What is the best response?",
+      "agent_answer": "b) Compare: Boracay PHP 55-70K/sqm (saturated) vs. Panglao 27-49K/sqm (growing, UNESCO Geopark)",
+      "correct_answer": "b) Compare: Boracay PHP 55-70K/sqm (saturated) vs. Panglao 27-49K/sqm (growing, UNESCO Geopark)",
+      "passed": true,
+      "explanation": "Use data-driven comparison: Boracay is more expensive per sqm and saturated, while Panglao is in the growth phase with UNESCO Geopark status."
+    },
+    {
+      "id": 64,
+      "question": "SCENARIO: Client asks 'Can I guarantee 17% returns?' What is the correct response?",
+      "agent_answer": "b) 'Based on verified market data, historical performance shows 17-25% gross. We never guarantee returns.'",
+      "correct_answer": "b) 'Based on verified market data, historical performance shows 17-25% gross. We never guarantee returns.'",
+      "passed": true,
+      "explanation": "NEVER use the word 'guaranteed' with returns. Always frame as 'based on verified market data' and 'historical performance'. This is a compliance requirement."
+    },
+    {
+      "id": 65,
+      "question": "What word must NEVER be used when discussing investment returns?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "The word 'guaranteed' is strictly forbidden when discussing returns. This is a hard compliance rule to avoid misleading investors."
+    },
+    {
+      "id": 66,
+      "question": "What is the most popular ownership structure for foreign buyers?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Deed of Assignment is the most popular structure among foreign buyers as it provides ownership of the villa structure without the complexity of corporate setup."
+    },
+    {
+      "id": 67,
+      "question": "What is the leasehold duration?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Leasehold is structured as 25 years plus 25 years renewable, giving a total of 50 years of secured use."
+    },
+    {
+      "id": 68,
+      "question": "What is the Domestic Corporation ownership ratio?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Philippine law requires 60% Filipino / 40% foreign ownership in a domestic corporation. This allows indirect land ownership through the corporate entity."
+    },
+    {
+      "id": 69,
+      "question": "Israel-Philippines double tax treaty has been in effect since what year?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "The Israel-Philippines double tax treaty has been in effect since 1997, preventing double taxation on investment income."
+    },
+    {
+      "id": 70,
+      "question": "TRUE or FALSE: The entire purchase can be completed remotely with digital KYC.",
+      "agent_answer": "true",
+      "correct_answer": "true",
+      "passed": true,
+      "explanation": "The entire purchase process can be completed remotely using digital KYC (Know Your Customer) verification. Buyers from Israel, UAE, Singapore, and Australia have done so."
+    },
+    {
+      "id": 71,
+      "question": "TRUE or FALSE: Foreigners can directly own land in the Philippines.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Foreigners cannot directly own land in the Philippines under the constitution. This is why three alternative ownership structures exist (Deed of Assignment, Leasehold, Domestic Corporation)."
+    },
+    {
+      "id": 72,
+      "question": "Which ownership structure allows land ownership?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Only the Domestic Corporation structure allows land ownership, because the corporation is a Philippine entity (60% Filipino owned) and can hold title to land."
+    },
+    {
+      "id": 73,
+      "question": "A Deed of Assignment gives ownership of what?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "A Deed of Assignment transfers ownership of the villa structure (building/improvements) but not the land it sits on."
+    },
+    {
+      "id": 74,
+      "question": "A Leasehold gives control for how many total years?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Leasehold provides 25 years initial term plus 25 years renewal, totaling 50 years of secured property control."
+    },
+    {
+      "id": 75,
+      "question": "From which countries have buyers completed remote purchases?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Buyers from Israel, UAE, USA, Singapore, and Australia have all completed purchases remotely, demonstrating the viability of the digital KYC process."
+    },
+    {
+      "id": 76,
+      "question": "Hebrew content must use which currency?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Hebrew content shows ONLY ILS (Israeli New Shekel). No PHP, no USD. This is a hard rule for the Israeli market."
+    },
+    {
+      "id": 77,
+      "question": "English content uses which primary currency?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "English content uses PHP as the primary currency. USD can be used as secondary with 'approx.' prefix and rate date. No ILS in English content."
+    },
+    {
+      "id": 78,
+      "question": "The Hebrew register should be?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Hebrew should be formal but warm, peer-to-peer professional. No slang. This builds trust with Israeli investors who expect professionalism."
+    },
+    {
+      "id": 79,
+      "question": "How should Villa D price be displayed in Hebrew?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Villa D in Hebrew is displayed as '1,535,000 ש\"ח' (shekel). Never use PHP or USD in Hebrew content."
+    },
+    {
+      "id": 80,
+      "question": "When is Hebrew language mode detected?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Hebrew is detected when more than 20% of the message characters are Hebrew. This prevents false triggers from a single Hebrew character."
+    },
+    {
+      "id": 81,
+      "question": "Korean tourists make up what percentage of Bohol foreign arrivals?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Korean tourists make up 42% of Bohol's foreign arrivals - a significant fact when discussing rental demand and Airbnb income potential."
+    },
+    {
+      "id": 82,
+      "question": "For Filipino buyers, what financing must always be mentioned?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "BDO Bank financing must always be mentioned for Filipino buyers. This is a hard content rule."
+    },
+    {
+      "id": 83,
+      "question": "TRUE or FALSE: Israeli content may include PHP prices alongside ILS.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Israeli content shows ONLY shekels. No PHP, no USD, no other currencies. This is a strict rule."
+    },
+    {
+      "id": 84,
+      "question": "SCENARIO: A message contains Hangul (Korean) characters. What language should David respond in?",
+      "agent_answer": "c) Korean",
+      "correct_answer": "c) Korean",
+      "passed": true,
+      "explanation": "If a message contains Korean characters, respond in Korean. With 42% of Bohol's foreign tourists being Korean, this is a valuable market to engage natively."
+    },
+    {
+      "id": 85,
+      "question": "What colloquial Hebrew opener builds trust?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Colloquial Israeli openers like 'תשמע' (listen) create immediate peer-to-peer rapport. Overly formal greetings feel distant and corporate."
+    },
+    {
+      "id": 86,
+      "question": "What is the reservation intent signal weight?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Reservation intent carries a signal weight of 3 - the highest tier, indicating strong purchase intent requiring immediate attention."
+    },
+    {
+      "id": 87,
+      "question": "What is the contact request signal weight?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "A contact request ('call me', 'send me your number') carries weight 3 - the highest tier alongside reservation intent."
+    },
+    {
+      "id": 88,
+      "question": "What is the budget mention signal weight?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Budget mentions carry a signal weight of 2 - mid-tier, indicating financial readiness but not yet decisive action."
+    },
+    {
+      "id": 89,
+      "question": "At what total signal weight should David suggest a handoff to the sales team?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "When cumulative signal weight reaches 4 or more, David should suggest a WhatsApp handoff to the human sales team."
+    },
+    {
+      "id": 90,
+      "question": "Which two signals have the highest weight (3)?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "Reservation intent and contact request both carry weight 3 - these are the strongest buying signals indicating immediate action readiness."
+    },
+    {
+      "id": 91,
+      "question": "What is the legal question signal weight?",
+      "agent_answer": "a",
+      "correct_answer": "a",
+      "passed": true,
+      "explanation": "Legal questions carry a weight of 1 - the lowest tier. They indicate interest but are typically early-stage research behavior."
+    },
+    {
+      "id": 92,
+      "question": "SCENARIO: Client asks 'how do I reserve?' and 'call me.' What is the total signal weight?",
+      "agent_answer": "c) 6",
+      "correct_answer": "c) 6",
+      "passed": true,
+      "explanation": "Reservation intent (weight 3) + contact request (weight 3) = total weight 6. This far exceeds the 4+ threshold, requiring immediate handoff."
+    },
+    {
+      "id": 93,
+      "question": "SCENARIO: Client mentions their budget and asks about ROI. What is the total signal weight?",
+      "agent_answer": "b) 3",
+      "correct_answer": "b) 3",
+      "passed": true,
+      "explanation": "Budget mention (weight 2) + ROI inquiry (weight 1) = total weight 3. This is below the 4+ threshold, so continue nurturing, no handoff yet."
+    },
+    {
+      "id": 94,
+      "question": "What should David say when suggesting a handoff?",
+      "agent_answer": "b",
+      "correct_answer": "b",
+      "passed": true,
+      "explanation": "The handoff is positioned as low-pressure ('no presentation, just answers') with a specific time commitment (15 min) to reduce friction."
+    },
+    {
+      "id": 95,
+      "question": "SCENARIO: Client visited the site, asked about pricing, and wants to reserve. Should David suggest handoff?",
+      "agent_answer": "b) Yes - signal weight is 7 (site visit 2 + pricing/budget 2 + reservation 3)",
+      "correct_answer": "b) Yes - signal weight is 7 (site visit 2 + pricing/budget 2 + reservation 3)",
+      "passed": true,
+      "explanation": "Site visit (weight 2) + pricing/budget inquiry (weight 2) + reservation intent (weight 3) = total weight 7. This massively exceeds the 4+ threshold."
+    },
+    {
+      "id": 96,
+      "question": "TRUE or FALSE: David may mention Blueprint Building Group if asked about construction.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "NEVER mention Blueprint Building Group. It is a completely separate business. The villa campaign operates ONLY through Blue Everest Asset Group. This rule is permanent and absolute."
+    },
+    {
+      "id": 97,
+      "question": "Which word is FORBIDDEN in any David response?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "'Incredible' is on the forbidden words list along with 'amazing', 'dream home', and 'once in a lifetime'. These are banned in all languages."
+    },
+    {
+      "id": 98,
+      "question": "TRUE or FALSE: Em dashes are allowed in responses.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "Em dashes, en dashes, and Hebrew maqaf are all forbidden. Use regular hyphens (-), colons (:), or commas (,) instead."
+    },
+    {
+      "id": 99,
+      "question": "Which WhatsApp numbers must appear in CTAs?",
+      "agent_answer": "c",
+      "correct_answer": "c",
+      "passed": true,
+      "explanation": "Every CTA must include BOTH WhatsApp numbers: Marketing (+639542555553) and Office (+639958565865). This is a hard content rule."
+    },
+    {
+      "id": 100,
+      "question": "TRUE or FALSE: David may say 'guaranteed returns of 17%'.",
+      "agent_answer": "false",
+      "correct_answer": "false",
+      "passed": true,
+      "explanation": "NEVER use 'guaranteed' with returns. Always use 'based on verified market data' or 'historical performance shows'. This is a strict compliance requirement to avoid misleading investors."
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,401 @@
+{
+  "version": "1.0",
+  "created": "2026-05-24",
+  "notes": "Run max 5 queries per session, 15-30s delays between queries, spread across multiple days.",
+  "segments": {
+    "israeli_investors": {
+      "label": "Israeli Investors",
+      "priority": "high",
+      "queries": [
+        {
+          "query": "השקעות נדל\"ן פיליפינים",
+          "translation": "real estate investments Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "ישראלים בפיליפינים",
+          "translation": "Israelis in the Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "נדל\"ן בחו\"ל ישראלים",
+          "translation": "real estate abroad Israelis",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "השקעות בחו\"ל",
+          "translation": "investments abroad",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "ישראלים משקיעים באסיה",
+          "translation": "Israelis investing in Asia",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "נדל\"ן דרום מזרח אסיה",
+          "translation": "real estate Southeast Asia",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "קהילת ישראלים בפיליפינים",
+          "translation": "Israeli community in the Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "ישראלים בבאלי",
+          "translation": "Israelis in Bali (overlaps with PH groups)",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "השקעות נדל\"ן באסיה",
+          "translation": "real estate investments in Asia",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "ישראלים בתאילנד נדל\"ן",
+          "translation": "Israelis in Thailand real estate (overlap)",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        }
+      ]
+    },
+    "ph_investors": {
+      "label": "Filipino Investors",
+      "priority": "high",
+      "queries": [
+        {
+          "query": "Philippines real estate investment",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Bohol real estate for sale",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Panglao property",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Philippine property investors",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "OFW investment Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Airbnb investors Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Passive income Philippines real estate",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Buy and sell property Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Bohol buy and sell",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Visayas real estate",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Property investment club Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Condo investment Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Villa for sale Bohol",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Filipino investors group",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Panglao Bohol community",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        }
+      ]
+    },
+    "foreign_investors_chinese": {
+      "label": "Chinese Investors",
+      "priority": "medium",
+      "queries": [
+        {
+          "query": "菲律宾房地产投资",
+          "translation": "Philippines real estate investment",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "菲律宾买房",
+          "translation": "buy house in Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Chinese investors Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "华人菲律宾投资",
+          "translation": "Chinese investment in Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Philippines property Chinese buyers",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        }
+      ]
+    },
+    "foreign_investors_korean": {
+      "label": "Korean Investors",
+      "priority": "medium",
+      "queries": [
+        {
+          "query": "필리핀 부동산 투자",
+          "translation": "Philippines real estate investment",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "필리핀 한인",
+          "translation": "Korean community Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Korean investors Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "보홀 부동산",
+          "translation": "Bohol real estate",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Philippines property Korean",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        }
+      ]
+    },
+    "foreign_investors_european": {
+      "label": "European / Western Investors",
+      "priority": "medium",
+      "queries": [
+        {
+          "query": "British expats Philippines property",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "European investors Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "American expats Philippines real estate",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Australian investors Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "German investors Philippines property",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        }
+      ]
+    },
+    "expats_ph": {
+      "label": "Expats in Philippines",
+      "priority": "medium",
+      "queries": [
+        {
+          "query": "Expats Philippines real estate",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Retire in Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Philippines expat investors",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Bohol expats",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Philippines buy property foreigner",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Digital nomad Philippines property",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Retire cheap Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Foreigners living in Philippines",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        }
+      ]
+    },
+    "real_estate_global": {
+      "label": "Global Real Estate / STR Investors",
+      "priority": "low",
+      "queries": [
+        {
+          "query": "Real estate investing worldwide",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "International property investment",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Tropical real estate investment",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Southeast Asia real estate investment",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Luxury villa investment",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Airbnb real estate investors",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Short term rental investors",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        },
+        {
+          "query": "Asia Pacific real estate",
+          "status": "not_run",
+          "results_count": null,
+          "last_run": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,79 @@
+[SIMULATION - NOT FOR LIVE DEPLOYMENT]
+
+=== META_IL_AWARENESS_A3.txt ===
+Platform: Meta (Instagram Reels)
+Market: Israel
+Funnel Stage: Awareness
+Campaign: IL-1
+Format: Reel / Video Script (15 seconds, Hebrew)
+Budget: $20/day (shared across A1, A2, A3)
+Audience: Israel, age 35-62, Hebrew
+Schedule: Sunday-Thursday, 20:00-23:00 Israel time
+
+---
+
+REEL SCRIPT:
+
+[0-3 שניות] מסך שחור, טקסט מופיע:
+"PHP 32,500,000"
+"= כ-1,366,400 שקל"
+(שער יציג 14/04/2026)
+
+[3-6 שניות] חתך לוילה - בריכה, נוף לים, חזית הזכוכית
+קריינות/טקסט: "וילה פרטית. 4 חדרים. בריכה. ג'קוזי עם נוף לים."
+
+[6-10 שניות] גרף הכנסות
+טקסט: "PHP 395,000 לחודש. מאומת. מאירביאנבי."
+
+[10-13 שניות] מפה - האתר בין מריוט למיתי ריזורט
+טקסט: "בין 2 מלונות 5 כוכבים. 60 שניות מהחוף."
+
+[13-15 שניות] לוגו Blue Everest
+טקסט: "ישראלים כבר השקיעו. אנחנו מלווים אותך."
+"3 מסלולים משפטיים לישראליים"
+primevilla.ph
+
+---
+
+CAPTION (כיתוב):
+
+PHP 32.5M = כ-1.37M שקל. פחות מדירה בת"א.
+(שער יציג 14/04/2026)
+הכנסה: PHP 395,000 לחודש מאירביאנבי.
+ליווי ישראלי מלא - מהתחלה עד מסירת מפתח.
+3 מסלולים: Deed of Assignment, Leasehold 25+25, תאגיד.
+נותרו 2 וילות בלבד.
+לפרטים: primevilla.ph או WhatsApp +639542555553
+
+---
+
+HEADLINE V1: "PHP 32.5M = כ-1.37M שקל. וילה פרטית בפנגלאו."
+HEADLINE V2: "ישראלים כבר השקיעו. 2 וילות נותרו."
+HEADLINE V3: "17-25% ROI שנתי. ליווי ישראלי."
+
+CTA: למידע נוסף (Learn More)
+
+---
+
+AUDIENCE TARGETING:
+- Geography: Israel
+- Age: 35-62
+- Language: Hebrew
+- Interests: Real estate investment, נדל"ן, Airbnb host, Business owners
+- Placements: Instagram Reels (primary), Facebook Feed (secondary)
+
+BUDGET RECOMMENDATION: $6/day within the $20/day IL-1 awareness campaign
+
+PRODUCTION NOTES:
+- Use villa renders from /EXTERIOR - D5/ folder
+- Pool and rooftop shots are priority
+- Map graphic needed showing Marriott-SITE-Mithi layout
+- Income chart: simple bar graph, PHP 395K highlighted
+- All text overlay: white on dark, RTL aligned
+- Logo: Blue Everest logo at end frame
+
+=== FX METADATA ===
+FX date used: 2026-04-14
+PHP-ILS rate: 0.0488
+PHP-USD rate: 0.01663
+Auto-refresh: enabled

@@ -1,0 +1,73 @@
+{
+  "version": "1.0",
+  "created": "2026-05-24",
+  "notes": "Pre-written answers for 'Why do you want to join?' prompts on closed Facebook groups. Use the template matching the group's primary language. Adapt slightly to match each group's focus.",
+  "templates": {
+    "hebrew": {
+      "language": "he",
+      "for_segments": ["israeli_investors"],
+      "answers": [
+        {
+          "context": "General Israeli investor group",
+          "answer": "שלום, אנחנו Blue Everest Asset Group, חברת פיתוח נדל\"ן שפועלת בפיליפינים עם פרויקטים בפנגלאו, בוהול. אנחנו מחפשים לשתף מידע על השקעות נדל\"ן באזור ולהתחבר עם משקיעים ישראלים שמתעניינים בשוק האסייתי."
+        },
+        {
+          "context": "Israel-Philippines specific group",
+          "answer": "אנחנו Blue Everest Asset Group, חברה שמפתחת פרויקטי וילות יוקרה בפנגלאו, בוהול. פועלים בפיליפינים ומחפשים לתרום לקהילה עם תובנות על שוק הנדל\"ן המקומי ולהכיר משקיעים ישראלים פעילים באזור."
+        }
+      ]
+    },
+    "english": {
+      "language": "en",
+      "for_segments": ["ph_investors", "foreign_investors_european", "expats_ph", "real_estate_global"],
+      "answers": [
+        {
+          "context": "Philippines real estate investor group",
+          "answer": "We are Blue Everest Asset Group Holding Inc., a licensed real estate developer in the Philippines with active projects in Panglao, Bohol. We'd like to join this community to share market insights from the Bohol region and connect with fellow property investors."
+        },
+        {
+          "context": "Expat or retirement group",
+          "answer": "Blue Everest Asset Group is a Philippine-registered developer building luxury villas in Panglao, Bohol. We're interested in joining to share information about property ownership options for foreigners in the Philippines and to learn from the community's experiences."
+        },
+        {
+          "context": "Global real estate investment group",
+          "answer": "We represent Blue Everest Asset Group, a real estate developer in the Philippines specializing in luxury investment villas in Panglao, Bohol - one of Southeast Asia's fastest-growing tourism destinations. We'd like to contribute data-driven insights about the Philippine property market."
+        },
+        {
+          "context": "Airbnb / STR investor group",
+          "answer": "Blue Everest Asset Group develops luxury villas in Panglao, Bohol (Philippines) with verified Airbnb rental income. We'd like to join this community to share our STR data and operational insights from the Philippine market."
+        }
+      ]
+    },
+    "tagalog": {
+      "language": "tl",
+      "for_segments": ["ph_investors"],
+      "answers": [
+        {
+          "context": "Filipino investor or buy-and-sell group",
+          "answer": "Magandang araw! Kami po ang Blue Everest Asset Group Holding Inc., isang licensed real estate developer sa Pilipinas. May mga luxury villa projects po kami sa Panglao, Bohol. Gusto po naming sumali para magbahagi ng investment opportunities at makatulong sa mga kapwa Pilipinong investor."
+        }
+      ]
+    },
+    "chinese": {
+      "language": "zh",
+      "for_segments": ["foreign_investors_chinese"],
+      "answers": [
+        {
+          "context": "Chinese investors Philippines group",
+          "answer": "We are Blue Everest Asset Group, a licensed Philippine real estate developer with luxury villa projects in Panglao, Bohol. We'd like to join this community to share information about Philippine property investment opportunities. 我们是Blue Everest资产集团,菲律宾注册的房地产开发商,在邦劳岛(薄荷省)开发豪华别墅项目。"
+        }
+      ]
+    },
+    "korean": {
+      "language": "ko",
+      "for_segments": ["foreign_investors_korean"],
+      "answers": [
+        {
+          "context": "Korean investors Philippines group",
+          "answer": "We are Blue Everest Asset Group, a licensed real estate developer in the Philippines with luxury villa projects in Panglao, Bohol - a popular destination for Korean travelers. We'd like to join to share property investment insights. 저희는 Blue Everest Asset Group으로 필리핀 팡라오에서 럭셔리 빌라를 개발하고 있습니다."
+        }
+      ]
+    }
+  }
+}

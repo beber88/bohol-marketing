@@ -1,0 +1,25 @@
+[
+  {
+    "id": "ADS-0003",
+    "priority": "HIGH",
+    "type": "ad_setup",
+    "status": "PENDING",
+    "description": "Upload ad creatives to Meta Ads Manager",
+    "instructions": "Upload all 13 ad copy files from assets/ads/ to Meta Ads Manager. Create ad sets for IL and PH audiences. Do not publish yet.",
+    "ad_files": [
+      "assets/ads/GOOGLE_IL_SEARCH_ADS.txt",
+      "assets/ads/GOOGLE_PH_SEARCH_ADS.txt",
+      "assets/ads/META_IL_AWARENESS_A1.txt",
+      "assets/ads/META_IL_AWARENESS_A2.txt",
+      "assets/ads/META_IL_AWARENESS_A3.txt",
+      "assets/ads/META_IL_CONSIDERATION_C1.txt",
+      "assets/ads/META_IL_CONSIDERATION_C2.txt",
+      "assets/ads/META_IL_CONVERSION_Conv1.txt",
+      "assets/ads/META_PH_AWARENESS_1A.txt",
+      "assets/ads/META_PH_AWARENESS_1B.txt",
+      "assets/ads/META_PH_CONSIDERATION_C1.txt",
+      "assets/ads/META_PH_CONSIDERATION_C2.txt",
+      "assets/ads/META_PH_CONVERSION_Conv1.txt"
+    ]
+  }
+]

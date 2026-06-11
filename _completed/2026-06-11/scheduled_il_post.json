@@ -1,0 +1,41 @@
+{
+  "run": "panglao-israel-daily-10am-il",
+  "date": "2026-06-11",
+  "market": "IL",
+  "language": "HE",
+  "platform": "Facebook Group",
+  "group": "נדל\"ן והשקעות בפיליפינים | Philippines Real Estate & Investments",
+  "group_url": "https://www.facebook.com/groups/investment.ph.il/",
+  "status": "NOT_PUBLISHED",
+  "simulation": false,
+  "post_number": 37,
+  "post_title": "סקר: מה מונע מכם להשקיע?",
+  "category": "CONNECT",
+  "source_file": "_queue/community-agent/posts/post_37_poll.md",
+  "calendar_match": "Wed Jun 11 -> POST 37 (per _queue/community-agent/calendar.md WEEK 2)",
+  "image": "EXTERIOR - D5/LATEST RENDERS - EXTERIOR/REAR 1 ENHANCED.png",
+  "image_note": "IMAGE_MAP.md maps Post 37 to 'EXTERIOR - D5/LATEST RENDERS - EXTERIOR/REAR 1_AI ENHANCED.png'. Actual file on disk is 'REAR 1 ENHANCED.png' (no _AI suffix) in the LATEST RENDERS - EXTERIOR folder. Verified present, 14.8 MB.",
+  "blocked_reason": "Browser disambiguation required, no user present (unattended scheduled run). Three Chrome extensions connected with ambiguous identities: 'Blue Everest' (2935dc6d-141f-4c19-83ce-33e219d2bf40), 'BLUE EVEREST' (6627a787-3526-45d1-837a-083e2cb7cfe0), and 'פייסבוק' (97c7d8e5-f744-4905-a49f-ab898970182a). The browser MCP mandates explicit user browser selection and forbids auto-picking. Guessing risks posting to the wrong account and could violate CLAUDE.md Rule 6 (never touch Blueprint). Same block as the 2026-06-11 PH run and the 06-09/06-10 runs.",
+  "copy": "סקר: מה מונע מכם להשקיע בנדל\"ן בפיליפינים? 🇵🇭\n\nאנחנו רוצים לשמוע אתכם, לא רק לדבר אליכם.\n\nהרבה ישראלים מתעניינים בנדל\"ן בפיליפינים, קוראים, שואלים, משווים. אבל בין עניין לפעולה יש פער. אנחנו רוצים להבין מה עומד באמצע.\n\nעובדה אחת שכדאי לדעת לפני שמצביעים: מס רווח הון בפיליפינים עומד על 6% בלבד, לעומת עד 25% בישראל. זה לא הכל, אבל זו נקודת התחלה שמשנה את החישוב.\n\nבחרו את התשובה שהכי מתארת אתכם:\n\n1️⃣ לא מבין את האפשרויות המשפטיות\nהבעלות, הרישום, החוזים - לא ברור לי מה מותר ומה לא כשמדובר בזרים.\n\n2️⃣ רחוק מדי, לא מכיר את השוק\nפיליפינים נשמע רחוק, אין לי מושג מה קורה שם ביום יום.\n\n3️⃣ סיכון מטבע מדאיג אותי\nהפזו הפיליפיני, שער החליפין, תנודתיות - זה מרתיע.\n\n4️⃣ כבר מושקע במקום אחר\nיש לי נכסים ביוון, פורטוגל, דובאי, או בישראל ואני לא מחפש כרגע.\n\n5️⃣ תקציב - מחפש נקודת כניסה נמוכה יותר\nרוצה להשקיע אבל לא בטוח שיש לי מספיק הון לנכס בפיליפינים.\n\n6️⃣ צריך עוד מידע ונתונים\nלא שוללים, אבל רוצים לראות עוד מספרים, ניתוחים, תיקי עבודה.\n\n7️⃣ שום דבר - מתכנן להשקיע\nכבר בתהליך בדיקה או מוכן לפעול.\n\nהצביעו בתגובות עם המספר שלכם (1-7).\n\nאנחנו מתחייבים: הנושא שיקבל הכי הרבה קולות יקבל פוסט מפורט ומעמיק תוך 48 שעות. עם נתונים, מקורות, ותשובות ממשיות.\n\nאם יש סיבה שלא ברשימה, כתבו אותה. כל תגובה עוזרת לנו להבין מה באמת חשוב לכם.\n\nזה לא סקר שנעלם. זה כלי שעוזר לנו לתת לכם בדיוק את המידע שאתם צריכים.\n\nWhatsApp (שיווק): +639542555553\nWhatsApp (משרד): +639958565865",
+  "copy_source": "_queue/community-agent/posts/post_37_poll.md (Hebrew Copy section, verbatim, unmodified)",
+  "rule_checks_on_prepared_copy": {
+    "ils_only_no_php_usd_in_he_content": true,
+    "specific_number_present": "6%, 25%, 1-7",
+    "both_whatsapp_numbers": true,
+    "legal_ownership_solutions_referenced": "Indirectly via option 1 (האפשרויות המשפטיות: הבעלות, הרישום, החוזים) covering ownership/registration/contracts",
+    "no_long_dashes": true,
+    "no_forbidden_words": true,
+    "formal_warm_hebrew": true,
+    "approved_copy_used_verbatim": true,
+    "did_not_touch_blueprint": true,
+    "one_post_only": true
+  },
+  "connected_browsers": [
+    {"name": "Blue Everest", "deviceId": "2935dc6d-141f-4c19-83ce-33e219d2bf40", "note": "Device that published successfully on 06-03/04/05/08"},
+    {"name": "BLUE EVEREST", "deviceId": "6627a787-3526-45d1-837a-083e2cb7cfe0", "note": "Returned 'Permission denied by user' on 06-07"},
+    {"name": "פייסבוק", "deviceId": "97c7d8e5-f744-4905-a49f-ab898970182a"}
+  ],
+  "screenshot_path": null,
+  "post_link": null,
+  "timestamp": "2026-06-11T15:00:00+08:00"
+}
