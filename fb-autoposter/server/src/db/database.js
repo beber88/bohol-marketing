@@ -1,18 +1,17 @@
 const Database = require('better-sqlite3');
 const path = require('path');
 
-// In production (Railway), use data-seed path (not volume-mounted)
-// Locally, use data/ as before
+// Always use data/. On Railway this path is volume-mounted, while data-seed/
+// is only the immutable bootstrap copy baked into the deploy image.
 const IS_RAILWAY = process.env.RAILWAY_PROJECT_ID;
-const DB_PATH = IS_RAILWAY
-  ? path.join(__dirname, '../../data-seed/fb-autoposter.db')
-  : path.join(__dirname, '../../data/fb-autoposter.db');
+const DB_PATH = path.join(__dirname, '../../data/fb-autoposter.db');
 
 let db;
 
 function getDb() {
   if (!db) {
     db = new Database(DB_PATH);
+    db.pragma('busy_timeout = 5000');
     db.pragma('journal_mode = WAL');
     db.pragma('foreign_keys = ON');
     initSchema();

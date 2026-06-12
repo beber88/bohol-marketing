@@ -28,7 +28,7 @@ const DELAY_MAX = 600; // 10 minutes maximum
 
 // Check how many we already posted today
 const today = new Date().toISOString().split('T')[0];
-const todayCount = db.prepare("SELECT COUNT(*) as c FROM post_logs WHERE status = 'success' AND posted_at >= ?").get(today + 'T00:00:00').c;
+const todayCount = db.prepare("SELECT COUNT(*) as c FROM post_logs WHERE status = 'success' AND posted_at >= ?").get(today + ' 00:00:00').c;
 const remainingToday = Math.max(0, DAILY_MAX - todayCount);
 
 if (remainingToday === 0) {
@@ -140,6 +140,8 @@ console.log('');
     } else {
       failed++;
       console.log('  ✗ ' + (result.error || '').slice(0, 60));
+      // Log failures too so we don't retry these groups
+      db.prepare("INSERT INTO post_logs (id, post_id, group_id, status, error, step) VALUES (?, ?, ?, 'error', ?, ?)").run(uuidv4(), usePost.id, g.id, (result.error || '').slice(0, 200), result.step || null);
     }
 
     // WAIT 5-10 minutes between SUCCESSFUL posts only (skip failures fast)

@@ -81,10 +81,11 @@ function authGuard(app) {
     const submitted = req.body?.password;
     if (submitted === password) {
       const token = createSessionToken(password);
+      const isProd = process.env.NODE_ENV === 'production';
       res.cookie(COOKIE_NAME, token, {
         httpOnly: true,
-        secure: false,
-        sameSite: 'lax',
+        secure: isProd,
+        sameSite: isProd ? 'none' : 'lax',
         maxAge: SESSION_MAX_AGE,
         path: '/',
       });

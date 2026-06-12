@@ -28,6 +28,49 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // For login form POST
 
+app.get('/api/public/summary', (req, res) => {
+  try {
+    const { getDb } = require('./db/database');
+    const db = getDb();
+    const today = new Date().toISOString().split('T')[0];
+    const dayStart = today + ' 00:00:00';
+    const totalGroups = db.prepare('SELECT COUNT(*) as c FROM groups').get().c;
+    const campaigns = db.prepare('SELECT COUNT(*) as c FROM campaigns').get().c;
+    const templates = db.prepare('SELECT COUNT(*) as c FROM posts').get().c;
+    const success = db.prepare("SELECT COUNT(*) as c FROM post_logs WHERE status = 'success'").get().c;
+    const failed = db.prepare("SELECT COUNT(*) as c FROM post_logs WHERE status = 'error'").get().c;
+    const successToday = db.prepare("SELECT COUNT(*) as c FROM post_logs WHERE status = 'success' AND posted_at >= ?").get(dayStart).c;
+    const failedToday = db.prepare("SELECT COUNT(*) as c FROM post_logs WHERE status = 'error' AND posted_at >= ?").get(dayStart).c;
+    const remaining = db.prepare(`
+      SELECT COUNT(*) as c
+      FROM groups
+      WHERE (is_blocked = 0 OR is_blocked IS NULL)
+        AND fb_group_id NOT LIKE 'usa-%'
+        AND fb_group_id NOT IN (
+          SELECT DISTINCT g2.fb_group_id
+          FROM post_logs pl
+          JOIN groups g2 ON g2.id = pl.group_id
+        )
+    `).get().c;
+    const byMarket = db.prepare(`
+      SELECT market, COUNT(*) as total
+      FROM groups
+      GROUP BY market
+      ORDER BY total DESC
+    `).all();
+
+    res.json({
+      ok: true,
+      generatedAt: new Date().toISOString(),
+      totals: { campaigns, totalGroups, templates, success, failed, remaining },
+      today: { success: successToday, failed: failedToday },
+      byMarket,
+    });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e.message });
+  }
+});
+
 // Password authentication (requires AUTOPOSTER_PASSWORD env var)
 authGuard(app);
 
