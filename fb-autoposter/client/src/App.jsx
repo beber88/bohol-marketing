@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ProfileProvider } from './context/ProfileContext';
 import LoginPage from './pages/LoginPage';
+import OverviewPage from './pages/OverviewPage';
 import CampaignsPage from './pages/CampaignsPage';
 import CampaignDetailPage from './pages/CampaignDetailPage';
 import GroupsLibraryPage from './pages/GroupsLibraryPage';
@@ -12,7 +13,8 @@ export default function App() {
     <BrowserRouter>
       <ProfileProvider>
         <Routes>
-          <Route path="/" element={<Navigate to="/campaigns" replace />} />
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="/dashboard" element={<OverviewPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/campaigns" element={<CampaignsPage />} />
           <Route path="/campaigns/:id" element={<CampaignDetailPage />} />

@@ -1,0 +1,11 @@
+node_modules
+server/node_modules
+client/node_modules
+client/dist
+server/data
+server/uploads
+.DS_Store
+__MACOSX
+*.zip
+design-system
+.claude

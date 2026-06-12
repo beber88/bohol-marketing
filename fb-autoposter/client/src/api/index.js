@@ -83,6 +83,10 @@ export const reports = {
   daily: (date) => api.get('/reports/daily', { params: { date } }),
 };
 
+export const overview = {
+  get: () => api.get('/overview'),
+};
+
 export const queueBridge = {
   today: () => api.get('/queue/today'),
   complete: (task_id, results) => api.post('/queue/complete', { task_id, results }),

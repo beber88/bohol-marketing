@@ -27,7 +27,7 @@ export default function AppHeader({ title, backTo, action }) {
           )}
           <div
             className="flex items-center gap-2.5 cursor-pointer group"
-            onClick={() => navigate('/campaigns')}
+            onClick={() => navigate('/dashboard')}
           >
             <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center shadow-sm group-hover:bg-brand-700 transition-colors">
               <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,6 +45,18 @@ export default function AppHeader({ title, backTo, action }) {
 
         {/* Left: actions + nav + agent switcher */}
         <div className="flex items-center gap-3">
+          <button
+            onClick={() => navigate('/dashboard')}
+            className="text-xs font-medium text-brand-500 hover:text-brand-700 hover:bg-brand-50 px-2.5 py-1.5 rounded-lg transition-colors hidden sm:block"
+          >
+            דשבורד
+          </button>
+          <button
+            onClick={() => navigate('/campaigns')}
+            className="text-xs font-medium text-brand-500 hover:text-brand-700 hover:bg-brand-50 px-2.5 py-1.5 rounded-lg transition-colors hidden sm:block"
+          >
+            קמפיינים
+          </button>
           <button
             onClick={() => navigate('/reports')}
             className="text-xs font-medium text-brand-500 hover:text-brand-700 hover:bg-brand-50 px-2.5 py-1.5 rounded-lg transition-colors hidden sm:block"

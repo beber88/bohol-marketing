@@ -79,6 +79,7 @@ app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 // API routes
 app.use('/api/profiles', require('./routes/profiles'));
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/overview', require('./routes/overview'));
 app.use('/api/campaigns', require('./routes/campaigns'));
 app.use('/api/posts', require('./routes/posts'));
 app.use('/api/groups', require('./routes/groups'));
