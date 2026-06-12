@@ -1,0 +1,7 @@
+node_modules
+.next
+.vercel
+.git
+public/videos
+public/google-ads-*.csv
+public/dashboard.html

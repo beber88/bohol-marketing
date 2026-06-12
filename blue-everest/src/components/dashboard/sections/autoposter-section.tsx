@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Share2, ExternalLink, RefreshCw } from "lucide-react";
 
-const AUTOPOSTER_URL = process.env.NEXT_PUBLIC_AUTOPOSTER_URL || "http://localhost:3001";
+const AUTOPOSTER_URL = process.env.NEXT_PUBLIC_AUTOPOSTER_URL || "https://fb-autoposter-production-5509.up.railway.app";
 
 export function AutoposterSection() {
   const [loading, setLoading] = useState(true);
