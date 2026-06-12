@@ -40,6 +40,7 @@ export function AgentsSection() {
   const [runs, setRuns] = useState<AgentRun[]>([]);
   const [loading, setLoading] = useState(true);
   const [dispatching, setDispatching] = useState(false);
+  const [runningWorkday, setRunningWorkday] = useState(false);
 
   const fetchRuns = () => {
     setLoading(true);
@@ -61,6 +62,16 @@ export function AgentsSection() {
       });
       setTimeout(() => { fetchRuns(); setDispatching(false); }, 3000);
     } catch { setDispatching(false); }
+  };
+
+  const handleWorkday = async () => {
+    setRunningWorkday(true);
+    try {
+      await fetch("/api/cron/agent-workday");
+      fetchRuns();
+    } finally {
+      setRunningWorkday(false);
+    }
   };
 
   // Aggregate stats per agent
@@ -109,6 +120,14 @@ export function AgentsSection() {
           >
             {dispatching ? <Loader2 size={14} className="animate-spin" /> : <Play size={14} />}
             {dispatching ? "Running..." : "Dispatch CMO"}
+          </button>
+          <button
+            onClick={handleWorkday}
+            disabled={runningWorkday}
+            className="flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-200 hover:bg-emerald-500/15 disabled:opacity-50"
+          >
+            {runningWorkday ? <Loader2 size={14} className="animate-spin" /> : <Zap size={14} />}
+            {runningWorkday ? "Working..." : "Run Workday"}
           </button>
         </div>
       </div>

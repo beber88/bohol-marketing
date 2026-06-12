@@ -156,10 +156,10 @@ const CIALDINI_PRINCIPLES = [
 
 const MARKET_CONSTRAINTS: Record<string, string> = {
   IL: [
-    'MANDATORY: All property prices and monetary amounts use PHP ONLY. Villa D: PHP 32,500,000. Villa C: PHP 35,000,000. Reservation: PHP 200,000. Rental income: PHP 395,000/month.',
-    'MANDATORY: Mention at least one legal ownership solution (Deed of Assignment, Leasehold 25+25, Domestic Corporation).',
+    'MANDATORY: Israeli content uses fixed shekel prices ONLY. Villa D: 1,535,000 ש"ח. Villa C: 1,650,000 ש"ח. Reservation: 9,999 ש"ח.',
+    'MANDATORY: Mention all 3 legal ownership solutions: Deed of Assignment, Leasehold 25+25, Domestic Corporation.',
     'MANDATORY: Both WhatsApp numbers: +639542555553 (Marketing) and +639958565865 (Office).',
-    'NEVER use ILS, USD, EUR, or other currency conversions.',
+    'NEVER use PHP, USD, EUR, or any currency conversion for Israeli-market prices.',
     'NEVER describe the developer as Israeli. Blue Everest is a Philippine company.',
   ].join('\n'),
   PH: [
@@ -248,7 +248,7 @@ export class CopywriterAgent extends BaseAgent {
       }
 
       // Step 5: Normalize the parsed output
-      const copyOutput = this.normalizeLLMResponse(parsed, awarenessLevel);
+      const copyOutput = this.normalizeLLMResponse(parsed, awarenessLevel, market);
 
       // Step 6: Run brand guard on the combined content
       const combinedContent = [
@@ -291,7 +291,8 @@ export class CopywriterAgent extends BaseAgent {
         if (retryParsed) {
           const retryCopy = this.normalizeLLMResponse(
             retryParsed,
-            awarenessLevel
+            awarenessLevel,
+            market
           );
           const retryCombined = [
             retryCopy.headline,
@@ -483,8 +484,8 @@ export class CopywriterAgent extends BaseAgent {
       'Developer: Blue Everest Asset Group Holding Inc.',
       '',
       'KEY FACTS:',
-      '- Villa C: PHP 35,000,000 / PHP 35,000,000',
-      '- Villa D: PHP 32,500,000 / PHP 32,500,000',
+      '- Villa C: PHP 35,000,000. Israeli market fixed price: 1,650,000 ש"ח',
+      '- Villa D: PHP 32,500,000. Israeli market fixed price: 1,535,000 ש"ח',
       '- Monthly Airbnb income: PHP 395,000 (verified)',
       '- Annual ROI: 17-25%',
       '- Reservation deposit: 9,999 (ILS for Israel, PHP for PH)',
@@ -497,7 +498,8 @@ export class CopywriterAgent extends BaseAgent {
       '- ALWAYS include at least one specific number.',
       '- NEVER describe the developer as Israeli. Blue Everest is a Philippine company.',
       '- NEVER mention Blueprint Building Group.',
-      '- All markets: property prices and monetary amounts in PHP ONLY.',
+      '- Israeli market: fixed shekel prices only. No PHP, USD, dollar, peso, or currency conversions.',
+      '- Filipino market: property prices and monetary amounts in PHP only.',
       '- Filipino market: mention BDO financing.',
       '- Both WhatsApp numbers in every CTA: +639542555553 (Marketing), +639958565865 (Office).',
       '',
@@ -512,7 +514,8 @@ export class CopywriterAgent extends BaseAgent {
    */
   private normalizeLLMResponse(
     raw: CopywriterLLMResponse,
-    awarenessLevel: string
+    awarenessLevel: string,
+    market: string
   ): CopywriterOutput {
     const variants: Array<{ headline: string; body: string; cta: string }> =
       [];
@@ -520,9 +523,9 @@ export class CopywriterAgent extends BaseAgent {
       for (const v of raw.variants) {
         if (v && typeof v === 'object') {
           variants.push({
-            headline: String(v.headline ?? ''),
-            body: String(v.body ?? ''),
-            cta: String(v.cta ?? ''),
+            headline: this.sanitizeForMarket(String(v.headline ?? ''), market),
+            body: this.sanitizeForMarket(String(v.body ?? ''), market),
+            cta: this.sanitizeForMarket(String(v.cta ?? ''), market),
           });
         }
       }
@@ -540,9 +543,9 @@ export class CopywriterAgent extends BaseAgent {
     }
 
     return {
-      headline: String(raw.headline ?? ''),
-      body: String(raw.body ?? ''),
-      cta: String(raw.cta ?? ''),
+      headline: this.sanitizeForMarket(String(raw.headline ?? ''), market),
+      body: this.sanitizeForMarket(String(raw.body ?? ''), market),
+      cta: this.sanitizeForMarket(String(raw.cta ?? ''), market),
       imageSuggestion: raw.imageSuggestion
         ? String(raw.imageSuggestion)
         : undefined,
@@ -551,6 +554,27 @@ export class CopywriterAgent extends BaseAgent {
       cialdiniPrinciples,
       brandGuardResult: { passed: true, violations: [], suggestions: [] },
     };
+  }
+
+  private sanitizeForMarket(value: string, market: string): string {
+    const clean = value.replace(/[\u2010-\u2015\u05BE]/g, '-').trim();
+    if (market !== 'IL') return clean;
+
+    const replaced = clean
+      .replace(/PHP\s?35,?000,?000/gi, '1,650,000 ש"ח')
+      .replace(/PHP\s?32,?500,?000/gi, '1,535,000 ש"ח')
+      .replace(/PHP\s?200,?000/gi, '9,999 ש"ח');
+
+    const withoutForeignCurrencySentences = replaced
+      .split(/(?<=[.!?])\s+|\n+/)
+      .filter((sentence) => !/\b(?:PHP|USD|EUR|NIS|ILS)\b|[$€₪]|פזו|פסו|דולר|יורו|אירו/i.test(sentence))
+      .join('\n')
+      .trim();
+
+    return withoutForeignCurrencySentences || replaced
+      .replace(/\b(?:PHP|USD|EUR|NIS|ILS)\b/gi, '')
+      .replace(/[$€₪]|פזו|פסו|דולר|יורו|אירו/gi, '')
+      .trim();
   }
 
   /**

@@ -28,9 +28,9 @@ export async function GET(request: Request) {
       .order('created_at', { ascending: false })
       .range(offset, offset + limit - 1);
 
-    if (agentName) query = query.eq('agent_name', agentName);
-    if (status === 'success') query = query.eq('success', true);
-    if (status === 'failed') query = query.eq('success', false);
+    if (agentName) query = query.eq('agent_id', agentName);
+    if (status === 'success') query = query.in('status', ['complete', 'success']);
+    if (status === 'failed') query = query.eq('status', 'failed');
     if (dateFrom) query = query.gte('created_at', dateFrom);
     if (dateTo) query = query.lte('created_at', dateTo);
 
@@ -51,12 +51,12 @@ export async function GET(request: Request) {
     if (data) {
       for (const run of data) {
         const r = run as Record<string, unknown>;
-        totalCost += (r.cost_usd as number) ?? 0;
+        totalCost += (r.total_cost_usd as number) ?? (r.cost_usd as number) ?? 0;
         totalTokensIn += (r.tokens_input as number) ?? 0;
-        totalTokensOut += (r.tokens_output as number) ?? 0;
-        if (r.success) {
+        totalTokensOut += (r.tokens_output as number) ?? (r.total_tokens as number) ?? 0;
+        if (r.status === 'complete' || r.status === 'success') {
           successCount++;
-        } else {
+        } else if (r.status === 'failed') {
           failedCount++;
         }
       }

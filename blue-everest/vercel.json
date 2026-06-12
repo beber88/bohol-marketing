@@ -1,2 +1,24 @@
 {
+  "crons": [
+    {
+      "path": "/api/cron/daily-automation",
+      "schedule": "0 0 * * *"
+    },
+    {
+      "path": "/api/cron/agent-workday",
+      "schedule": "0 2 * * *"
+    },
+    {
+      "path": "/api/cron/daily-automation",
+      "schedule": "0 5 * * *"
+    },
+    {
+      "path": "/api/cron/daily-automation",
+      "schedule": "0 9 * * *"
+    },
+    {
+      "path": "/api/cron/daily-automation",
+      "schedule": "0 13 * * *"
+    }
+  ]
 }
