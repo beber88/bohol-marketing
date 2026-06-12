@@ -2,7 +2,7 @@
 **/.next
 **/.vercel
 **/.git
-**/data
+fb-autoposter/server/data
 fb-autoposter
 langgraph-worker
 primevilla-source
