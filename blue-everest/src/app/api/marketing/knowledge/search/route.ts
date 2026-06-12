@@ -2,15 +2,47 @@
 // Semantic search over knowledge base using pgvector similarity
 
 import { createSupabaseAdmin } from '@/lib/connectors/supabase';
+import { PROJECT_KNOWLEDGE_ENTRIES } from '@/lib/knowledge/project-library';
+
+function localSearch(query: string, limit: number, filters: { contentType?: string | null; language?: string | null; category?: string | null }) {
+  const tokens = query
+    .toLowerCase()
+    .split(/[^a-z0-9\u0590-\u05FF]+/i)
+    .map((token) => token.trim())
+    .filter((token) => token.length >= 3);
+  return PROJECT_KNOWLEDGE_ENTRIES
+    .filter((entry) => !filters.contentType || entry.content_type === filters.contentType)
+    .filter((entry) => !filters.language || entry.language === filters.language)
+    .filter((entry) => !filters.category || entry.category === filters.category)
+    .map((entry, index) => ({
+      id: `local-${index + 1}`,
+      title: entry.title,
+      content: entry.content,
+      content_type: entry.content_type,
+      language: entry.language,
+      category: entry.category,
+      summary: entry.summary,
+      metadata: { source: entry.source, category: entry.category, summary: entry.summary, fallback: true },
+      score: tokens.reduce((sum, token) => (
+        [entry.title, entry.summary, entry.content].join(' ').toLowerCase().includes(token) ? sum + 1 : sum
+      ), 0),
+    }))
+    .filter((entry) => entry.score > 0 || tokens.length === 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit);
+}
 
 export async function POST(request: Request) {
   try {
     const supabase = createSupabaseAdmin();
     if (!supabase) {
-      return Response.json(
-        { error: 'Database not configured' },
-        { status: 503 }
-      );
+      const body = await request.json();
+      const results = localSearch(String(body.query ?? ''), body.limit ?? 10, {
+        contentType: body.contentType ?? null,
+        language: body.language ?? null,
+        category: body.category ?? null,
+      });
+      return Response.json({ results, searchType: 'local_fallback', query: body.query ?? '' });
     }
 
     const body = await request.json();
@@ -78,17 +110,16 @@ export async function POST(request: Request) {
     let textQuery = supabase
       .from('knowledge_base')
       .select(
-        'id, title, content, content_type, language, category, summary, created_at'
+        'id, title, content, content_type, language, metadata, created_at'
       )
       .or(
-        `content.ilike.%${searchQuery}%,title.ilike.%${searchQuery}%,summary.ilike.%${searchQuery}%`
+        `content.ilike.%${searchQuery}%,title.ilike.%${searchQuery}%`
       )
       .order('created_at', { ascending: false })
       .limit(limit);
 
     if (contentType) textQuery = textQuery.eq('content_type', contentType);
     if (language) textQuery = textQuery.eq('language', language);
-    if (category) textQuery = textQuery.eq('category', category);
 
     const { data: textResults, error: textError } = await textQuery;
 
@@ -100,8 +131,20 @@ export async function POST(request: Request) {
       return Response.json({ error: textError.message }, { status: 500 });
     }
 
+    const results = (textResults ?? [])
+      .map((entry) => {
+        const metadata = (entry.metadata ?? {}) as Record<string, unknown>;
+        return { ...entry, category: metadata.category ?? null, summary: metadata.summary ?? null };
+      })
+      .filter((entry) => !category || entry.category === category);
+
+    if (results.length === 0) {
+      const fallback = localSearch(searchQuery, limit, { contentType, language, category });
+      return Response.json({ results: fallback, searchType: 'local_fallback', query: searchQuery });
+    }
+
     return Response.json({
-      results: textResults,
+      results,
       searchType: 'text_fallback',
       query: searchQuery,
       note: 'Vector search unavailable. Using text-based fallback. Ensure embeddings are generated and match_knowledge RPC function exists.',

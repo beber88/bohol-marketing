@@ -5,6 +5,10 @@
       "schedule": "0 0 * * *"
     },
     {
+      "path": "/api/cron/agent-training",
+      "schedule": "30 0 * * *"
+    },
+    {
       "path": "/api/cron/agent-workday",
       "schedule": "0 2 * * *"
     },

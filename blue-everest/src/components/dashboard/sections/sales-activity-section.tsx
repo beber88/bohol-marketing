@@ -27,128 +27,12 @@ interface AgentConversation {
   startedAt: string;
   lastMessageAt: string;
   summary: string | null;
+  followupScript?: string;
+  whatsappLink?: string | null;
+  canContact?: boolean;
 }
 
-/* -- mock data (replaced by Supabase in production) ---------- */
-
-const MOCK_CONVERSATIONS: AgentConversation[] = [
-  {
-    id: "conv-001",
-    agent: "david_chatbot",
-    agentLabel: "David (Website Chat)",
-    clientName: null,
-    clientPhone: null,
-    clientOrigin: "Israel",
-    language: "he",
-    channel: "website_chat",
-    messages: [
-      { role: "user", content: "היי, ראיתי את הוילות שלכם בפנגלאו. כמה עולה וילה D?", timestamp: "2026-05-25T20:12:00Z" },
-      { role: "assistant", content: "וילה D עומדת על PHP 32,500,000. מדובר בווילה עם בריכה פרטית, ג'קוזי על הגג ו-4 חדרים. ההכנסה החודשית המאומתת מ-Airbnb היא PHP 395,000. מאיפה אתה בארץ?", timestamp: "2026-05-25T20:12:08Z" },
-      { role: "user", content: "מתל אביב. מה הסיפור עם הבעלות? אני יכול לקנות כזר?", timestamp: "2026-05-25T20:13:15Z" },
-      { role: "assistant", content: "כן, בהחלט. יש 3 מסלולים משפטיים מוכחים. Deed of Assignment - הכי פופולרי, בעלות מלאה על המבנה, פשוט ומהיר. Leasehold 25+25 שנותן שליטה ל-50 שנה. ותאגיד מקומי 60/40 לביטחון מקסימלי. יש גם הסכם מס כפל ישראל-פיליפינים מ-97. התהליך אפשרי מרחוק. רוצה שאכין לך ניתוח תשואה אישי?", timestamp: "2026-05-25T20:13:25Z" },
-    ],
-    leadScore: 65,
-    leadStatus: "warm",
-    signals: ["budget_mention", "legal_question"],
-    handedOff: false,
-    handoffReason: null,
-    startedAt: "2026-05-25T20:12:00Z",
-    lastMessageAt: "2026-05-25T20:13:25Z",
-    summary: "Israeli from Tel Aviv asking about Villa D pricing and foreign ownership structures",
-  },
-  {
-    id: "conv-002",
-    agent: "david_chatbot",
-    agentLabel: "David (Website Chat)",
-    clientName: null,
-    clientPhone: null,
-    clientOrigin: "Philippines",
-    language: "en",
-    channel: "website_chat",
-    messages: [
-      { role: "user", content: "How much is Villa C? Is BDO financing available?", timestamp: "2026-05-25T14:30:00Z" },
-      { role: "assistant", content: "Villa C is PHP 35,000,000 - the slightly larger lot at 192.85 sqm. And yes, BDO financing is available for qualified Filipino buyers. Up to 70% loan-to-value, 15-year terms, around 6% interest. The payment structure is 25% down, 55% over 24 months during construction, and 20% on turnover. Have you been to Panglao before?", timestamp: "2026-05-25T14:30:12Z" },
-      { role: "user", content: "Yes I visited last month. I want to reserve Villa C. What's the process?", timestamp: "2026-05-25T14:31:45Z" },
-      { role: "assistant", content: "Great, you already know the area. The reservation is PHP 200,000 to secure Villa C. After that, it is 25% down on signing. I recommend speaking with our team directly to walk through the exact schedule. WhatsApp: +639542555553 (Marketing) / +639958565865 (Office).", timestamp: "2026-05-25T14:32:00Z" },
-    ],
-    leadScore: 92,
-    leadStatus: "very_hot",
-    signals: ["budget_mention", "reservation_intent", "visit_intent", "financing_question"],
-    handedOff: true,
-    handoffReason: "Reservation intent - wants to reserve Villa C. BDO financing. Visited property.",
-    startedAt: "2026-05-25T14:30:00Z",
-    lastMessageAt: "2026-05-25T14:32:00Z",
-    summary: "Filipino buyer wants to reserve Villa C with BDO financing. Already visited site.",
-  },
-  {
-    id: "conv-003",
-    agent: "whatsapp_agent",
-    agentLabel: "WhatsApp Agent",
-    clientName: "Park Jihoon",
-    clientPhone: "+82-10-****-5531",
-    clientOrigin: "South Korea",
-    language: "en",
-    channel: "whatsapp",
-    messages: [
-      { role: "user", content: "Hi, I saw your ad on Facebook. I'm Korean living in Seoul. My family visits Panglao every year. How much for a villa?", timestamp: "2026-05-25T11:00:00Z" },
-      { role: "assistant", content: "Great to hear from you. Villa D is PHP 32,500,000 and Villa C is PHP 35,000,000. Since you already know Panglao, you know the area is growing fast. 42% of foreign tourists to Bohol are Korean, and monthly rental income is around PHP 395,000 on average. Would you like me to send you the full investment deck? WhatsApp: +639542555553 (Marketing) / +639958565865 (Office).", timestamp: "2026-05-25T11:00:30Z" },
-    ],
-    leadScore: 55,
-    leadStatus: "warm",
-    signals: ["budget_mention", "visit_intent"],
-    handedOff: false,
-    handoffReason: null,
-    startedAt: "2026-05-25T11:00:00Z",
-    lastMessageAt: "2026-05-25T11:00:30Z",
-    summary: "Korean family from Seoul, annual Panglao visitors, asking about pricing",
-  },
-  {
-    id: "conv-004",
-    agent: "whatsapp_agent",
-    agentLabel: "WhatsApp Agent",
-    clientName: "Sarah M.",
-    clientPhone: "+971-50-****-2209",
-    clientOrigin: "UAE",
-    language: "en",
-    channel: "whatsapp",
-    messages: [
-      { role: "user", content: "Hello, I'm an OFW based in Dubai. Looking for passive income investment in PH. Is this project legit?", timestamp: "2026-05-24T08:15:00Z" },
-      { role: "assistant", content: "Hello Sarah, Blue Everest Asset Group is a registered Philippine developer. The villas are in Panglao between JW Marriott and Mithi Resort. For an OFW in Dubai, the PHP 395,000/month verified rental income can be reviewed alongside your UAE tax position with your adviser. BDO financing is available for qualified Filipino buyers. Where in the Philippines are you originally from?", timestamp: "2026-05-24T08:15:45Z" },
-      { role: "user", content: "From Cebu. Can I do BDO financing even if I'm OFW?", timestamp: "2026-05-24T08:20:00Z" },
-      { role: "assistant", content: "Yes! BDO serves OFWs - up to 70% LTV, 15-year terms. Being from Cebu you know the Visayas well. Panglao is a short hop from Cebu. Villa D is PHP 32.5M. Want me to have our team prepare a financing scenario for you?", timestamp: "2026-05-24T08:20:30Z" },
-    ],
-    leadScore: 72,
-    leadStatus: "hot",
-    signals: ["financing_question", "roi_interest", "budget_mention"],
-    handedOff: false,
-    handoffReason: null,
-    startedAt: "2026-05-24T08:15:00Z",
-    lastMessageAt: "2026-05-24T08:20:30Z",
-    summary: "OFW from Cebu based in Dubai, interested in BDO financing for passive income",
-  },
-  {
-    id: "conv-005",
-    agent: "email_nurture",
-    agentLabel: "Email Nurture",
-    clientName: "James T.",
-    clientPhone: null,
-    clientOrigin: "Australia",
-    language: "en",
-    channel: "email",
-    messages: [
-      { role: "user", content: "Downloaded the investment report. The ROI numbers look good but I'm concerned about property management from Australia. How does that work?", timestamp: "2026-05-23T06:00:00Z" },
-      { role: "assistant", content: "James, the management model is fully hands-off. A professional Airbnb management company handles guest communication, cleaning, maintenance, pricing optimization and reviews. You receive a monthly report and a bank transfer. The fee is 20-25% of gross rental. You can block personal dates anytime you want to visit. For remote ownership, our team walks through reporting, access and handoff before reservation.", timestamp: "2026-05-23T09:00:00Z" },
-    ],
-    leadScore: 45,
-    leadStatus: "warm",
-    signals: ["roi_interest", "comparison"],
-    handedOff: false,
-    handoffReason: null,
-    startedAt: "2026-05-23T06:00:00Z",
-    lastMessageAt: "2026-05-23T09:00:00Z",
-    summary: "Australian investor concerned about remote property management",
-  },
-];
+/* -- live data comes from /api/marketing/sales/queue ---------- */
 
 /* -- helpers ------------------------------------------------- */
 
@@ -194,38 +78,24 @@ export function SalesActivitySection() {
   const [replyText, setReplyText] = useState("");
   const [sendingReply, setSendingReply] = useState(false);
 
-  useEffect(() => {
-    // In production, fetch from Supabase conversations table
-    const timer = setTimeout(() => {
-      setConversations(MOCK_CONVERSATIONS);
-      setLoading(false);
+  const fetchSalesQueue = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch("/api/marketing/sales/queue?limit=50");
+      const data = await res.json();
+      setConversations(data.leads || []);
+    } catch {
+      setConversations([]);
+    }
+    setLoading(false);
+  };
 
-      // Auto-create leads from all conversations
-      for (const conv of MOCK_CONVERSATIONS) {
-        fetch("/api/marketing/leads", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            full_name: conv.clientName || `Lead from ${conv.clientOrigin || "unknown"}`,
-            phone: conv.clientPhone || "",
-            nationality: conv.clientOrigin || "",
-            source: conv.channel === "whatsapp" ? "whatsapp" : "website",
-            lead_score: conv.leadScore,
-            lead_status: conv.leadStatus === "very_hot" ? "hot" : conv.leadStatus,
-            funnel_stage: conv.handedOff ? "contacted" : "new",
-            notes: `[Auto-created from ${conv.agentLabel}] ${conv.summary || ""}`,
-            conversation_id: conv.id,
-          }),
-        }).catch(() => {}); // Silent - don't block UI
-      }
-    }, 400);
-    return () => clearTimeout(timer);
-  }, []);
+  useEffect(() => { fetchSalesQueue(); }, []);
 
   const sendReply = async (convId: string) => {
     if (!replyText.trim()) return;
     setSendingReply(true);
-    // Add the reply to the conversation locally
+    const current = conversations.find((c) => c.id === convId);
     setConversations((prev) =>
       prev.map((c) =>
         c.id === convId
@@ -233,13 +103,15 @@ export function SalesActivitySection() {
           : c
       )
     );
-    // In production: send via WhatsApp/email API
     try {
-      await fetch("/api/marketing/chat", {
+      await fetch("/api/marketing/sales/queue", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ conversationId: convId, message: replyText, sender: "ceo" }),
+        body: JSON.stringify({ leadId: convId, message: replyText }),
       });
+      if (current?.whatsappLink) {
+        window.open(current.whatsappLink, "_blank", "noopener,noreferrer");
+      }
     } catch {}
     setReplyText("");
     setSendingReply(false);
@@ -276,7 +148,7 @@ export function SalesActivitySection() {
           <Headset size={18} className="text-[#89AACC]" /> Sales Agent Activity
         </h2>
         <button
-          onClick={() => setLoading(true)}
+          onClick={fetchSalesQueue}
           className="p-2 rounded-lg hover:bg-white/5 text-muted hover:text-white transition-colors"
         >
           <RefreshCw size={16} />
@@ -404,6 +276,27 @@ export function SalesActivitySection() {
                     </div>
                   )}
 
+                  {conv.followupScript && (
+                    <div className="mx-5 mt-3 rounded-lg bg-[#89AACC]/10 border border-[#4E85BF]/20 px-4 py-3">
+                      <p className="text-xs font-semibold text-[#89AACC]">Prepared follow-up script</p>
+                      <p className="mt-2 whitespace-pre-wrap text-xs leading-relaxed text-text-primary" dir={conv.language === "he" ? "rtl" : "ltr"}>
+                        {conv.followupScript}
+                      </p>
+                      {conv.whatsappLink ? (
+                        <a
+                          href={conv.whatsappLink}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-green-500/10 border border-green-500/20 px-3 py-1.5 text-xs font-semibold text-green-400 hover:bg-green-500/20"
+                        >
+                          <Phone size={12} /> Open WhatsApp
+                        </a>
+                      ) : (
+                        <p className="mt-2 text-[11px] text-amber-400">No valid phone yet. Agent must collect phone/email before live follow-up.</p>
+                      )}
+                    </div>
+                  )}
+
                   {/* Messages */}
                   <div className="px-5 py-4 space-y-3 max-h-[400px] overflow-y-auto">
                     {conv.messages.map((msg, i) => (
@@ -442,7 +335,7 @@ export function SalesActivitySection() {
                       }`}>{conv.leadStatus}</span></div>
                     </div>
                     <p className="text-[10px] text-emerald-400 mt-2 flex items-center gap-1">
-                      <CheckCircle2 size={10} /> Auto-created as lead in pipeline
+                      <CheckCircle2 size={10} /> Real lead from Supabase pipeline
                     </p>
                   </div>
 
@@ -461,7 +354,7 @@ export function SalesActivitySection() {
                       disabled={sendingReply || !replyText.trim()}
                       className="shrink-0 rounded-lg bg-gradient-to-r from-[#89AACC] to-[#4E85BF] px-4 py-2 text-sm font-semibold text-white hover:opacity-90 disabled:opacity-40"
                     >
-                      Send
+                      Log / Open WhatsApp
                     </button>
                   </div>
                 </div>

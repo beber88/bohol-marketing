@@ -2,15 +2,32 @@
 // Knowledge base CRUD - list and add knowledge entries
 
 import { createSupabaseAdmin } from '@/lib/connectors/supabase';
+import { PROJECT_KNOWLEDGE_ENTRIES } from '@/lib/knowledge/project-library';
+
+function fallbackEntries(category?: string | null, language?: string | null, contentType?: string | null) {
+  return PROJECT_KNOWLEDGE_ENTRIES
+    .filter((entry) => !category || entry.category === category)
+    .filter((entry) => !language || entry.language === language)
+    .filter((entry) => !contentType || entry.content_type === contentType)
+    .map((entry, index) => ({
+      id: `local-${index + 1}`,
+      title: entry.title,
+      content_type: entry.content_type,
+      language: entry.language,
+      summary: entry.summary,
+      category: entry.category,
+      metadata: { source: entry.source, category: entry.category, summary: entry.summary, fallback: true },
+      created_at: null,
+      updated_at: null,
+    }));
+}
 
 export async function GET(request: Request) {
   try {
     const supabase = createSupabaseAdmin();
     if (!supabase) {
-      return Response.json(
-        { error: 'Database not configured' },
-        { status: 503 }
-      );
+      const entries = fallbackEntries(null, null, null);
+      return Response.json({ entries, total: entries.length, source: 'local_fallback' });
     }
 
     const { searchParams } = new URL(request.url);
@@ -22,7 +39,7 @@ export async function GET(request: Request) {
 
     let query = supabase
       .from('knowledge_base')
-      .select('id, title, content_type, language, category, summary, created_at, updated_at', {
+      .select('id, title, content_type, language, metadata, created_at, updated_at', {
         count: 'exact',
       })
       .order('created_at', { ascending: false })
@@ -30,7 +47,6 @@ export async function GET(request: Request) {
 
     if (contentType) query = query.eq('content_type', contentType);
     if (language) query = query.eq('language', language);
-    if (category) query = query.eq('category', category);
 
     const { data, error, count } = await query;
 
@@ -39,7 +55,19 @@ export async function GET(request: Request) {
       return Response.json({ error: error.message }, { status: 500 });
     }
 
-    return Response.json({ entries: data, total: count });
+    const entries = (data ?? [])
+      .map((entry) => {
+        const metadata = (entry.metadata ?? {}) as Record<string, unknown>;
+        return { ...entry, category: metadata.category ?? null, summary: metadata.summary ?? null };
+      })
+      .filter((entry) => !category || entry.category === category);
+
+    if (entries.length === 0) {
+      const fallback = fallbackEntries(category, language, contentType);
+      return Response.json({ entries: fallback, total: fallback.length, source: 'local_fallback' });
+    }
+
+    return Response.json({ entries, total: category ? entries.length : count, source: 'supabase' });
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown error';
     console.error('[api/marketing/knowledge] GET exception:', message);
@@ -81,13 +109,12 @@ export async function POST(request: Request) {
       content: body.content,
       content_type: body.content_type,
       language: body.language ?? 'en',
-      category: body.category ?? null,
-      summary: body.summary ?? null,
-      source: body.source ?? 'manual',
-      metadata: body.metadata ?? null,
-      // Embedding will be null until the embedding pipeline processes it
-      embedding: null,
-      embedded_at: null,
+      metadata: {
+        ...(body.metadata ?? {}),
+        category: body.category ?? null,
+        source: body.source ?? 'manual',
+        summary: body.summary ?? null,
+      },
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
     };
@@ -95,7 +122,7 @@ export async function POST(request: Request) {
     const { data, error } = await supabase
       .from('knowledge_base')
       .insert(entry)
-      .select('id, title, content_type, language, category, created_at')
+      .select('id, title, content_type, language, metadata, created_at')
       .single();
 
     if (error) {
