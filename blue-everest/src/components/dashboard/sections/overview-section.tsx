@@ -7,6 +7,7 @@ import {
   BarChart3, PenTool, Brain, Phone, FileText, Eye,
   Map, MessageSquare,
 } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 import { BLOCKERS, COMPLETED_ITEMS, BUDGET, CAMPAIGNS } from "@/lib/data/dashboard-data";
 import { useTranslation } from "@/lib/i18n";
 
@@ -49,11 +50,117 @@ const MARKET_GROUPS = [
   { label: "Nurture", prefix: "WA,EM", color: "border-teal-500/30 bg-teal-500/5", badge: "bg-teal-500/20 text-teal-400" },
 ];
 
+type OpsState = {
+  salesTotal: number;
+  salesContactable: number;
+  facebookLeads: number;
+  inboxTotal: number;
+  openThreads: number;
+  facebookInbox: number;
+  knowledgeTotal: number;
+  agentRuns: number;
+  agentSuccessRate: number;
+  contentTotal: number;
+  approvedContent: number;
+  watiConfigured: boolean;
+  loaded: boolean;
+};
+
+const EMPTY_OPS: OpsState = {
+  salesTotal: 0,
+  salesContactable: 0,
+  facebookLeads: 0,
+  inboxTotal: 0,
+  openThreads: 0,
+  facebookInbox: 0,
+  knowledgeTotal: 0,
+  agentRuns: 0,
+  agentSuccessRate: 0,
+  contentTotal: 0,
+  approvedContent: 0,
+  watiConfigured: false,
+  loaded: false,
+};
+
 export function OverviewSection() {
   const { locale } = useTranslation();
   const isHe = locale === "he";
   const budgetTotal = BUDGET.totalUsd;
   const pct = Math.min((BUDGET.spentUsd / budgetTotal) * 100, 100);
+  const [ops, setOps] = useState<OpsState>(EMPTY_OPS);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadOps() {
+      try {
+        const [salesRes, inboxRes, knowledgeRes, agentsRes, contentRes] = await Promise.all([
+          fetch("/api/marketing/sales/queue?limit=50", { cache: "no-store" }),
+          fetch("/api/marketing/inbox?limit=100", { cache: "no-store" }),
+          fetch("/api/marketing/knowledge?limit=50", { cache: "no-store" }),
+          fetch("/api/marketing/agents?limit=50", { cache: "no-store" }),
+          fetch("/api/marketing/content?limit=50", { cache: "no-store" }),
+        ]);
+
+        const [sales, inbox, knowledge, agents, content] = await Promise.all([
+          salesRes.ok ? salesRes.json() : Promise.resolve({}),
+          inboxRes.ok ? inboxRes.json() : Promise.resolve({}),
+          knowledgeRes.ok ? knowledgeRes.json() : Promise.resolve({}),
+          agentsRes.ok ? agentsRes.json() : Promise.resolve({}),
+          contentRes.ok ? contentRes.json() : Promise.resolve({}),
+        ]);
+
+        if (cancelled) return;
+
+        const leads = Array.isArray(sales.leads) ? sales.leads : [];
+        const contentItems = Array.isArray(content.content) ? content.content : [];
+
+        setOps({
+          salesTotal: Number(sales.total ?? leads.length ?? 0),
+          salesContactable: leads.filter((lead: { canContact?: boolean }) => lead.canContact).length,
+          facebookLeads: leads.filter((lead: { channel?: string }) => String(lead.channel ?? "").startsWith("facebook")).length,
+          inboxTotal: Number(inbox.total ?? 0),
+          openThreads: Number(inbox.summary?.openThreads ?? 0),
+          facebookInbox:
+            Number(inbox.summary?.byChannel?.facebook_dm ?? 0) +
+            Number(inbox.summary?.byChannel?.facebook_comment ?? 0),
+          knowledgeTotal: Number(knowledge.total ?? knowledge.entries?.length ?? 0),
+          agentRuns: Number(agents.total ?? agents.runs?.length ?? 0),
+          agentSuccessRate: Number(agents.summary?.successRate ?? 0),
+          contentTotal: Number(content.total ?? contentItems.length ?? 0),
+          approvedContent: contentItems.filter((item: { brand_check_passed?: boolean; status?: string }) =>
+            item.brand_check_passed || item.status === "approved" || item.status === "published"
+          ).length,
+          watiConfigured: Boolean(sales.blockers?.watiConfigured),
+          loaded: true,
+        });
+      } catch {
+        if (!cancelled) setOps({ ...EMPTY_OPS, loaded: true });
+      }
+    }
+
+    loadOps();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const commandTasks = useMemo(() => {
+    const tasks = isHe
+      ? [
+          `${ops.salesContactable} לידים זמינים לטיפול עכשיו, כולל Facebook אם יש PSID.`,
+          `${ops.openThreads} שיחות פתוחות דורשות בדיקת אדם או סוכן.`,
+          "אם אין אירועי Facebook נכנסים, לבדוק Meta webhook, App Mode והרשאות Page Messaging.",
+          "WATI לא חוסם את האתר, הצ׳אט או Facebook. הוא נדרש רק לשליחה אוטומטית ב-WhatsApp.",
+        ]
+      : [
+          `${ops.salesContactable} leads are contactable now, including Facebook leads with PSID.`,
+          `${ops.openThreads} open conversations need human or agent review.`,
+          "If Facebook events are not arriving, verify Meta webhook, App Mode and Page Messaging permissions.",
+          "WATI does not block website chat or Facebook. It is only needed for automated WhatsApp sends.",
+        ];
+    return tasks;
+  }, [isHe, ops.openThreads, ops.salesContactable]);
 
   return (
     <section className="space-y-6">
@@ -82,6 +189,78 @@ export function OverviewSection() {
         <span className="text-xs text-muted ml-auto">
           {new Date().toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" })}
         </span>
+      </div>
+
+      {/* 2. Live Command Center */}
+      <div className="rounded-2xl border border-[#4E85BF]/25 bg-[#07111d] p-5">
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h2 className="font-display text-lg font-semibold">
+              {isHe ? "חדר פיקוד שיווק ומכירות" : "Marketing & Sales Command Center"}
+            </h2>
+            <p className="mt-1 text-xs text-muted">
+              {isHe
+                ? "תמונה חיה של לידים, Facebook Inbox, ידע, תוכן וסוכנים. המערכת ממשיכה לעבוד גם בלי WATI."
+                : "Live view of leads, Facebook Inbox, knowledge, content and agents. The system keeps working without WATI."}
+            </p>
+          </div>
+          <span className={`rounded-full px-3 py-1 text-xs font-bold ${
+            ops.watiConfigured ? "bg-emerald-500/20 text-emerald-400" : "bg-amber-500/20 text-amber-400"
+          }`}>
+            {ops.watiConfigured ? "WATI Connected" : "WATI Optional / Not Blocking"}
+          </span>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3 lg:grid-cols-6">
+          {[
+            { label: isHe ? "לידים לתור מכירות" : "Sales Queue", value: ops.loaded ? ops.salesTotal : "...", icon: Users, color: "text-emerald-400" },
+            { label: isHe ? "לידים מפייסבוק" : "Facebook Leads", value: ops.loaded ? ops.facebookLeads : "...", icon: MessageCircle, color: "text-blue-400" },
+            { label: isHe ? "שיחות פתוחות" : "Open Threads", value: ops.loaded ? ops.openThreads : "...", icon: MessageSquare, color: "text-amber-400" },
+            { label: isHe ? "אירועי Inbox" : "Inbox Events", value: ops.loaded ? ops.inboxTotal : "...", icon: Mail, color: "text-purple-400" },
+            { label: isHe ? "בסיס ידע" : "Knowledge Base", value: ops.loaded ? ops.knowledgeTotal : "...", icon: Brain, color: "text-[#89AACC]" },
+            { label: isHe ? "ריצות סוכנים" : "Agent Runs", value: ops.loaded ? ops.agentRuns : "...", icon: Bot, color: "text-green-400" },
+          ].map((item) => {
+            const Icon = item.icon;
+            return (
+              <div key={item.label} className="rounded-xl border border-white/10 bg-white/[0.03] p-3">
+                <Icon size={16} className={item.color} />
+                <p className="mt-2 font-display text-2xl font-bold">{item.value}</p>
+                <p className="mt-1 text-[11px] text-muted">{item.label}</p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-4 grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <h3 className="text-sm font-semibold">{isHe ? "מה צריך לזוז עכשיו" : "What Needs To Move Now"}</h3>
+            <div className="mt-3 grid gap-2">
+              {commandTasks.map((task) => (
+                <div key={task} className="flex items-start gap-2 text-xs text-muted">
+                  <CheckCircle2 size={14} className="mt-0.5 shrink-0 text-emerald-400" />
+                  <span>{task}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <h3 className="text-sm font-semibold">{isHe ? "מדדי מנוע" : "Engine Health"}</h3>
+            <div className="mt-3 space-y-2 text-xs text-muted">
+              <div className="flex justify-between gap-3">
+                <span>{isHe ? "Facebook Inbox" : "Facebook Inbox"}</span>
+                <span className="font-semibold text-blue-400">{ops.facebookInbox}</span>
+              </div>
+              <div className="flex justify-between gap-3">
+                <span>{isHe ? "תוכן מאושר" : "Approved Content"}</span>
+                <span className="font-semibold text-emerald-400">{ops.approvedContent}/{ops.contentTotal}</span>
+              </div>
+              <div className="flex justify-between gap-3">
+                <span>{isHe ? "הצלחת סוכנים" : "Agent Success"}</span>
+                <span className="font-semibold text-emerald-400">{ops.agentSuccessRate}%</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* 2. KPI Cards */}

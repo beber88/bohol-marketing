@@ -1,4 +1,5 @@
 import { createSupabaseAdmin } from '@/lib/connectors/supabase';
+import { sendMessengerMessage } from '@/lib/connectors/meta-graph';
 
 export const dynamic = 'force-dynamic';
 
@@ -62,6 +63,14 @@ function waLink(phone: unknown, text: string) {
   return `https://wa.me/${normalized.replace(/^\+/, '')}?text=${encodeURIComponent(text)}`;
 }
 
+function inferChannel(source: unknown) {
+  if (source === 'meta_messenger') return 'facebook_dm';
+  if (source === 'meta_comment') return 'facebook_comment';
+  if (source === 'chatbot') return 'website_chat';
+  if (source === 'facebook') return 'facebook';
+  return 'whatsapp';
+}
+
 export async function GET(request: Request) {
   const supabase = createSupabaseAdmin();
   if (!supabase) return Response.json({ error: 'Supabase not configured' }, { status: 503 });
@@ -84,27 +93,35 @@ export async function GET(request: Request) {
     const script = buildScript(lead as LeadRow, market);
     const phone = lead.whatsapp ?? lead.phone;
     const messages = getMessages(lead as LeadRow);
-    const canContact = Boolean(waLink(phone, script) || lead.email);
+    const raw = (lead.raw_data as Record<string, unknown> | null) ?? {};
+    const facebookPsid = typeof raw.meta_psid === 'string' ? raw.meta_psid : null;
+    const channel = inferChannel(lead.source);
+    const canContact = Boolean(waLink(phone, script) || lead.email || facebookPsid);
     return {
       id: lead.id,
-      agent: messages.length > 0 ? 'david_chatbot' : 'whatsapp_agent',
-      agentLabel: messages.length > 0 ? 'David (Website Chat)' : 'Sales Follow-up Agent',
+      agent: channel.startsWith('facebook') ? 'facebook_sales_agent' : messages.length > 0 ? 'david_chatbot' : 'sales_followup_agent',
+      agentLabel: channel.startsWith('facebook') ? 'Facebook Sales Agent' : messages.length > 0 ? 'David (Website Chat)' : 'Sales Follow-up Agent',
       clientName: lead.full_name,
       clientPhone: phone,
       clientOrigin: lead.nationality ?? market,
       language: lead.preferred_language ?? (market === 'IL' ? 'he' : 'en'),
-      channel: lead.source === 'meta_messenger' ? 'facebook_dm' : lead.source === 'chatbot' ? 'website_chat' : 'whatsapp',
+      channel,
       messages,
       leadScore: lead.lead_score ?? 0,
       leadStatus: lead.lead_status ?? 'warm',
-      signals: ((lead.raw_data as Record<string, unknown> | null)?.signals as string[] | undefined) ?? [],
+      signals: (raw.signals as string[] | undefined) ?? (raw.detected_signals as string[] | undefined) ?? [],
       handedOff: canContact && ['hot', 'very_hot'].includes(String(lead.lead_status)),
-      handoffReason: canContact ? 'Follow-up script ready for human or WATI send.' : 'Missing phone/email, collect contact details first.',
+      handoffReason: canContact
+        ? channel === 'facebook_dm'
+          ? 'Facebook follow-up can be sent through the Meta Messenger API. WATI is not required.'
+          : 'Follow-up script ready for human, email or WATI send.'
+        : 'Missing phone/email/Facebook PSID, collect contact details first.',
       startedAt: lead.first_contact_at ?? lead.created_at,
       lastMessageAt: lead.last_contact_at ?? lead.updated_at ?? lead.created_at,
       summary: `${market} ${lead.lead_status} lead from ${lead.source}. Score ${lead.lead_score ?? 0}.`,
       followupScript: script,
       whatsappLink: waLink(phone, script),
+      facebookContactReady: Boolean(facebookPsid),
       canContact,
     };
   });
@@ -128,17 +145,40 @@ export async function POST(request: Request) {
   const body = await request.json();
   const leadId = String(body.leadId ?? '');
   const message = String(body.message ?? '').trim();
+  const channel = String(body.channel ?? '').trim();
   if (!leadId || !message) return Response.json({ error: 'leadId and message are required' }, { status: 400 });
+
+  const { data: lead } = await supabase
+    .from('leads')
+    .select('id, source, raw_data')
+    .eq('id', leadId)
+    .maybeSingle();
+
+  const raw = (lead?.raw_data as Record<string, unknown> | null) ?? {};
+  const facebookPsid = typeof raw.meta_psid === 'string' ? raw.meta_psid : null;
+  const shouldSendFacebook =
+    facebookPsid && (channel === 'facebook_dm' || lead?.source === 'meta_messenger');
+
+  let liveSend = false;
+  let sendResult: boolean | null = null;
+
+  if (shouldSendFacebook) {
+    sendResult = await sendMessengerMessage(facebookPsid, message);
+    liveSend = sendResult;
+  }
 
   const { error } = await supabase.from('lead_activities').insert({
     lead_id: leadId,
-    activity_type: 'sales_followup_logged',
+    activity_type: shouldSendFacebook ? 'facebook_sales_followup_sent' : 'sales_followup_logged',
     description: message.slice(0, 1000),
-    channel: 'sales_queue',
+    channel: shouldSendFacebook ? 'meta_messenger' : 'sales_queue',
     metadata: {
       source: 'dashboard_sales_activity',
-      live_send: false,
-      reason: 'Logged from dashboard. Live sending requires WATI or human WhatsApp action.',
+      live_send: liveSend,
+      send_result: sendResult,
+      reason: shouldSendFacebook
+        ? 'Sent through Meta Messenger API from the dashboard sales queue.'
+        : 'Logged from dashboard. Live sending requires WATI, email integration or human WhatsApp action.',
     },
     performed_by: 'sales_agent',
     created_at: new Date().toISOString(),
