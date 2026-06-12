@@ -11,7 +11,7 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY blue-everest/ .
-RUN npm run build
+RUN npx next build --no-turbopack
 
 # Stage 3: Production runner
 FROM base AS runner
