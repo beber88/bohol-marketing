@@ -31,6 +31,17 @@ interface Lead {
     signals?: string[];
     chatbot_session_id?: string;
     last_message_at?: string;
+    meta_psid?: string;
+    messenger_analysis?: {
+      language?: string;
+      languageLabel?: string;
+      urgency?: string;
+      summary?: string;
+      nextBestAction?: string;
+      recommendedReply?: string;
+      missingData?: string[];
+      signals?: string[];
+    };
   };
   notes: string;
   created_at: string;
@@ -405,6 +416,8 @@ export function LeadPipelineSection() {
   const [editingContact, setEditingContact] = useState<string | null>(null);
   const [editForm, setEditForm] = useState({ full_name: "", email: "", phone: "" });
   const [saving, setSaving] = useState(false);
+  const [syncingMessenger, setSyncingMessenger] = useState(false);
+  const [syncResult, setSyncResult] = useState<string | null>(null);
 
   const startEditContact = (lead: Lead) => {
     setEditingContact(lead.id);
@@ -444,6 +457,28 @@ export function LeadPipelineSection() {
   }, []);
 
   useEffect(() => { fetchLeads(); }, [fetchLeads]);
+
+  const syncMessenger = async () => {
+    setSyncingMessenger(true);
+    setSyncResult(null);
+    try {
+      const res = await fetch("/api/marketing/messenger/sync", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ limit: 50, messageLimit: 50 }),
+      });
+      const data = await res.json();
+      if (!res.ok || data.ok === false) {
+        setSyncResult(data.error || "Messenger sync failed");
+      } else {
+        setSyncResult(`Messenger synced: ${data.conversationsRead} conversations, ${data.imported} new, ${data.updated} updated, ${data.activitiesInserted} messages logged.`);
+        fetchLeads();
+      }
+    } catch {
+      setSyncResult("Messenger sync failed");
+    }
+    setSyncingMessenger(false);
+  };
 
   const funnelData = FUNNEL_STAGES.map((stage) => ({
     ...stage,
@@ -487,10 +522,24 @@ export function LeadPipelineSection() {
         <div className="flex items-center gap-3">
           <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-muted">{total} total</span>
           {hotLeads.length > 0 && <span className="rounded-full bg-red-500/10 px-3 py-1 text-xs text-red-400 animate-pulse">{hotLeads.length} HOT</span>}
+          <button onClick={syncMessenger} disabled={syncingMessenger} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 hover:bg-blue-500/20 text-xs font-bold transition-colors disabled:opacity-50">
+            {syncingMessenger ? <Loader2 size={14} className="animate-spin" /> : <MessageCircle size={14} />}
+            {syncingMessenger ? "Syncing..." : "Sync Messenger"}
+          </button>
           <button onClick={() => setShowAddModal(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/20 text-xs font-bold transition-colors"><Plus size={14} /> Add Lead</button>
           <button onClick={fetchLeads} className="p-2 rounded-lg hover:bg-white/5 text-muted hover:text-white transition-colors"><RefreshCw size={16} /></button>
         </div>
       </div>
+
+      {syncResult && (
+        <div className={`rounded-xl border px-4 py-3 text-xs ${
+          syncResult.includes("failed") || syncResult.includes("not configured")
+            ? "border-red-500/20 bg-red-500/10 text-red-300"
+            : "border-emerald-500/20 bg-emerald-500/10 text-emerald-300"
+        }`}>
+          {syncResult}
+        </div>
+      )}
 
       {/* Funnel */}
       <div className="bg-surface rounded-2xl border border-stroke p-6">
@@ -521,6 +570,8 @@ export function LeadPipelineSection() {
               const hasConversation = conversations.length > 0;
               const signals = lead.raw_data?.signals || [];
               const sessionId = lead.raw_data?.chatbot_session_id;
+              const messengerAnalysis = lead.raw_data?.messenger_analysis;
+              const hasFacebookContact = Boolean(lead.raw_data?.meta_psid);
 
               return (
                 <div key={lead.id} className="border-b border-stroke/50">
@@ -547,7 +598,8 @@ export function LeadPipelineSection() {
                     <div className="flex items-center gap-2 text-muted min-w-[80px]">
                       {lead.phone && <Phone size={12} className="text-emerald-400" />}
                       {lead.email && <Mail size={12} className="text-emerald-400" />}
-                      {!lead.phone && !lead.email && (
+                      {hasFacebookContact && <MessageCircle size={12} className="text-blue-400" />}
+                      {!lead.phone && !lead.email && !hasFacebookContact && (
                         <span className="rounded-full bg-red-500/10 px-2 py-0.5 text-[9px] font-bold text-red-400">NO CONTACT</span>
                       )}
                       {lead.nationality && <><Globe size={12} /><span className="text-xs">{lead.nationality}</span></>}
@@ -634,6 +686,47 @@ export function LeadPipelineSection() {
                             {saving ? <Loader2 size={12} className="animate-spin" /> : <Check size={12} />}
                             {saving ? "Saving..." : "Save Contact"}
                           </button>
+                        </div>
+                      )}
+
+                      {/* Messenger analysis */}
+                      {messengerAnalysis && (
+                        <div className="rounded-xl border border-blue-500/20 bg-blue-500/5 p-4 space-y-3">
+                          <div className="flex flex-wrap items-center justify-between gap-2">
+                            <label className="text-[10px] font-semibold text-blue-300 uppercase tracking-wider">Messenger CRM Analysis</label>
+                            <div className="flex gap-2">
+                              <span className="rounded-full bg-white/5 px-2.5 py-0.5 text-[10px] font-bold text-blue-200">
+                                {messengerAnalysis.languageLabel || messengerAnalysis.language || "Language set"}
+                              </span>
+                              <span className="rounded-full bg-amber-500/10 px-2.5 py-0.5 text-[10px] font-bold text-amber-300">
+                                {messengerAnalysis.urgency || "medium"}
+                              </span>
+                            </div>
+                          </div>
+                          {messengerAnalysis.summary && (
+                            <p className="text-xs leading-relaxed text-text-primary">{messengerAnalysis.summary}</p>
+                          )}
+                          {messengerAnalysis.nextBestAction && (
+                            <div className="rounded-lg bg-black/20 border border-stroke px-3 py-2">
+                              <p className="text-[9px] text-muted uppercase">Next best action</p>
+                              <p className="mt-1 text-xs text-emerald-300">{messengerAnalysis.nextBestAction}</p>
+                            </div>
+                          )}
+                          {messengerAnalysis.recommendedReply && (
+                            <div className="rounded-lg bg-black/20 border border-stroke px-3 py-2">
+                              <p className="text-[9px] text-muted uppercase">Recommended reply</p>
+                              <p className="mt-1 whitespace-pre-wrap text-xs leading-relaxed text-text-primary">{messengerAnalysis.recommendedReply}</p>
+                            </div>
+                          )}
+                          {Array.isArray(messengerAnalysis.missingData) && messengerAnalysis.missingData.length > 0 && (
+                            <div className="flex flex-wrap gap-1.5">
+                              {messengerAnalysis.missingData.map((item) => (
+                                <span key={item} className="rounded-full bg-amber-500/10 px-2.5 py-0.5 text-[10px] font-medium text-amber-300">
+                                  Missing: {item}
+                                </span>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       )}
 
