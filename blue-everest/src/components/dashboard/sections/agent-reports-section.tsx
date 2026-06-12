@@ -7,7 +7,7 @@ import {
   BarChart3, Shield, Mail, Phone, RefreshCw, Loader2,
 } from "lucide-react";
 
-/* ── Types ─────────────────────────────────────── */
+/* -- Types --------------------------------------- */
 
 interface AgentRun {
   id: string;
@@ -55,7 +55,7 @@ interface AgentDailyReport {
   costToday: number;
 }
 
-/* ── Agent Metadata ───────────────────────────── */
+/* -- Agent Metadata ----------------------------- */
 
 const AGENT_META: Record<string, { displayName: string; icon: typeof Bot }> = {
   cmo_orchestrator: { displayName: "CMO Orchestrator", icon: Bot },
@@ -70,7 +70,7 @@ const AGENT_META: Record<string, { displayName: string; icon: typeof Bot }> = {
   sales_chatbot: { displayName: "David (Sales)", icon: MessageCircle },
 };
 
-/* ── Helper: Build reports from real data ─────── */
+/* -- Helper: Build reports from real data ------- */
 
 function buildReports(runs: AgentRun[], leads: Lead[]): AgentDailyReport[] {
   const today = new Date().toISOString().slice(0, 10);
@@ -212,7 +212,7 @@ function buildReports(runs: AgentRun[], leads: Lead[]): AgentDailyReport[] {
   return reports;
 }
 
-/* ── Component ─────────────────────────────────── */
+/* -- Component ----------------------------------- */
 
 export function AgentReportsSection() {
   const [reports, setReports] = useState<AgentDailyReport[]>([]);

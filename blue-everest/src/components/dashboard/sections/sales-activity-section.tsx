@@ -7,7 +7,7 @@ import {
   AlertTriangle, CheckCircle2, Zap, UserPlus,
 } from "lucide-react";
 
-/* ── types ─────────────────────────────────────────────────── */
+/* -- types --------------------------------------------------- */
 
 interface AgentConversation {
   id: string;
@@ -29,7 +29,7 @@ interface AgentConversation {
   summary: string | null;
 }
 
-/* ── mock data (replaced by Supabase in production) ────────── */
+/* -- mock data (replaced by Supabase in production) ---------- */
 
 const MOCK_CONVERSATIONS: AgentConversation[] = [
   {
@@ -150,7 +150,7 @@ const MOCK_CONVERSATIONS: AgentConversation[] = [
   },
 ];
 
-/* ── helpers ───────────────────────────────────────────────── */
+/* -- helpers ------------------------------------------------- */
 
 const AGENT_COLORS: Record<string, string> = {
   david_chatbot: "text-[#89AACC]",
@@ -183,7 +183,7 @@ function timeAgo(dateStr: string): string {
   return `${days}d ago`;
 }
 
-/* ── component ─────────────────────────────────────────────── */
+/* -- component ----------------------------------------------- */
 
 export function SalesActivitySection() {
   const [conversations, setConversations] = useState<AgentConversation[]>([]);
@@ -481,7 +481,7 @@ export function SalesActivitySection() {
   );
 }
 
-/* ── Convert to Lead Form ──────────────────────────────────── */
+/* -- Convert to Lead Form ------------------------------------ */
 
 function ConvertToLeadForm({ conversation }: { conversation: AgentConversation }) {
   const [open, setOpen] = useState(false);

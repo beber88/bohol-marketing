@@ -61,7 +61,7 @@ const STATUS_COLORS: Record<string, string> = {
   very_hot: "text-red-400 bg-red-500/10",
 };
 
-/* ── Takeover Chat Panel ──────────────────────── */
+/* -- Takeover Chat Panel ------------------------ */
 
 function TakeoverPanel({
   lead,
@@ -260,9 +260,9 @@ function TakeoverPanel({
   );
 }
 
-/* ── Main Component ───────────────────────────── */
+/* -- Main Component ----------------------------- */
 
-/* ── Add Lead Modal ──────────────────────── */
+/* -- Add Lead Modal ------------------------ */
 
 function AddLeadModal({ onClose, onAdded }: { onClose: () => void; onAdded: () => void }) {
   const [form, setForm] = useState({ full_name: "", email: "", phone: "", nationality: "", source: "manual", villa_interest: "", purpose: "", notes: "" });

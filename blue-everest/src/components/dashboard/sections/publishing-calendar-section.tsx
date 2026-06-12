@@ -8,7 +8,7 @@ import {
 import { POSTS } from "@/lib/data/posts-data";
 import type { Post, Market, Distribution } from "@/lib/data/dashboard-types";
 
-/* ── Constants ─────────────────────────────────────────────── */
+/* -- Constants ----------------------------------------------- */
 
 const MARKET_LABELS: Record<string, string> = {
   IL: "Israel", PH: "Philippines", KR: "Korea", CN: "China",
@@ -28,7 +28,7 @@ const MONTHS = ["January", "February", "March", "April", "May", "June", "July", 
 
 type ViewMode = "day" | "week" | "month" | "year";
 
-/* ── Helpers ───────────────────────────────────────────────── */
+/* -- Helpers ------------------------------------------------- */
 
 function getPostDate(post: Post): Date {
   if (post.calendarDate) return new Date(post.calendarDate + "T12:00:00");
@@ -64,7 +64,7 @@ function getFirstDayOfMonth(year: number, month: number): number {
   return new Date(year, month, 1).getDay();
 }
 
-/* ── Component ─────────────────────────────────────────────── */
+/* -- Component ----------------------------------------------- */
 
 export function PublishingCalendarSection() {
   const [view, setView] = useState<ViewMode>("month");
@@ -84,7 +84,7 @@ export function PublishingCalendarSection() {
   const paidDist = POSTS.reduce((n, p) => n + (p.distribution?.filter((d) => d.type === "paid").length || 0), 0);
   const freeDist = POSTS.reduce((n, p) => n + (p.distribution?.filter((d) => d.type !== "paid").length || 0), 0);
 
-  /* ── Navigation ────────────────────────────────────────── */
+  /* -- Navigation ------------------------------------------ */
   const navigate = (dir: -1 | 1) => {
     const d = new Date(currentDate);
     if (view === "day") d.setDate(d.getDate() + dir);
@@ -105,7 +105,7 @@ export function PublishingCalendarSection() {
     return `${currentDate.getFullYear()}`;
   };
 
-  /* ── Render ────────────────────────────────────────────── */
+  /* -- Render ---------------------------------------------- */
   return (
     <section className="space-y-6">
       {/* Header */}
@@ -152,7 +152,7 @@ export function PublishingCalendarSection() {
   );
 }
 
-/* ── Stat Card ─────────────────────────────────────────────── */
+/* -- Stat Card ----------------------------------------------- */
 function Stat({ label, value, color }: { label: string; value: number; color?: string }) {
   return (
     <div className="bg-surface rounded-xl border border-stroke p-3 text-center">
@@ -162,7 +162,7 @@ function Stat({ label, value, color }: { label: string; value: number; color?: s
   );
 }
 
-/* ── Month View ────────────────────────────────────────────── */
+/* -- Month View ---------------------------------------------- */
 function MonthView({ currentDate, posts, onSelectPost, onSelectDay }: {
   currentDate: Date; posts: (Post & { _date: Date })[]; onSelectPost: (p: Post) => void; onSelectDay: (d: Date) => void;
 }) {
@@ -209,7 +209,7 @@ function MonthView({ currentDate, posts, onSelectPost, onSelectDay }: {
   );
 }
 
-/* ── Week View ─────────────────────────────────────────────── */
+/* -- Week View ----------------------------------------------- */
 function WeekView({ currentDate, posts, onSelectPost }: {
   currentDate: Date; posts: (Post & { _date: Date })[]; onSelectPost: (p: Post) => void;
 }) {
@@ -255,7 +255,7 @@ function WeekView({ currentDate, posts, onSelectPost }: {
   );
 }
 
-/* ── Day View ──────────────────────────────────────────────── */
+/* -- Day View ------------------------------------------------ */
 function DayView({ currentDate, posts, onSelectPost }: {
   currentDate: Date; posts: (Post & { _date: Date })[]; onSelectPost: (p: Post) => void;
 }) {
@@ -299,7 +299,7 @@ function DayView({ currentDate, posts, onSelectPost }: {
   );
 }
 
-/* ── Year View (heatmap) ───────────────────────────────────── */
+/* -- Year View (heatmap) ------------------------------------- */
 function YearView({ currentDate, posts, onSelectMonth }: {
   currentDate: Date; posts: (Post & { _date: Date })[]; onSelectMonth: (m: number) => void;
 }) {
@@ -324,7 +324,7 @@ function YearView({ currentDate, posts, onSelectMonth }: {
   );
 }
 
-/* ── Post Detail Modal ─────────────────────────────────────── */
+/* -- Post Detail Modal --------------------------------------- */
 function PostDetailModal({ post, onClose }: { post: Post; onClose: () => void }) {
   const dist = post.distribution || [];
   const freeDist = dist.filter((d) => d.type !== "paid");

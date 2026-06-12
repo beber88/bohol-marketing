@@ -329,7 +329,7 @@ export class BrandGuardAgent extends BaseAgent {
     const violations: BrandViolation[] = [];
     const suggestions: string[] = [];
 
-    // ── Rule 1: CURRENCY FORMAT ──
+    // -- Rule 1: CURRENCY FORMAT --
     {
       const forbiddenCurrency =
         market === 'IL'
@@ -368,7 +368,7 @@ export class BrandGuardAgent extends BaseAgent {
       }
     }
 
-    // ── Rule 2: NO LONG DASHES ──
+    // -- Rule 2: NO LONG DASHES --
     const dashMatches = content.match(LONG_DASH_RE);
     if (dashMatches) {
       violations.push({
@@ -379,7 +379,7 @@ export class BrandGuardAgent extends BaseAgent {
       });
     }
 
-    // ── Rule 3: SPECIFIC NUMBER ──
+    // -- Rule 3: SPECIFIC NUMBER --
     const hasApprovedNumber = APPROVED_NUMBERS.some((num) =>
       content.includes(num)
     );
@@ -402,7 +402,7 @@ export class BrandGuardAgent extends BaseAgent {
       }
     }
 
-    // ── Rule 4: BOTH WHATSAPP NUMBERS ──
+    // -- Rule 4: BOTH WHATSAPP NUMBERS --
     let ctaCount = 0;
     const matchedCTAs: string[] = [];
     for (const pattern of CTA_PATTERNS) {
@@ -442,7 +442,7 @@ export class BrandGuardAgent extends BaseAgent {
       });
     }
 
-    // ── Rule 5: FORBIDDEN WORDS ──
+    // -- Rule 5: FORBIDDEN WORDS --
     const foundForbiddenEn = containsAny(content, FORBIDDEN_EN);
     if (foundForbiddenEn) {
       violations.push({
@@ -475,7 +475,7 @@ export class BrandGuardAgent extends BaseAgent {
       }
     }
 
-    // ── Rule 6: ISRAELI LEGAL (IL market only) ──
+    // -- Rule 6: ISRAELI LEGAL (IL market only) --
     if (market === 'IL') {
       const lower = content.toLowerCase();
       const missingSolutions = IL_LEGAL_SOLUTIONS.filter((solution) =>
@@ -494,7 +494,7 @@ export class BrandGuardAgent extends BaseAgent {
       }
     }
 
-    // ── Rule 7: BDO FINANCING (PH market only) ──
+    // -- Rule 7: BDO FINANCING (PH market only) --
     if (market === 'PH') {
       const hasBDO = /\bBDO\b/i.test(content);
       if (!hasBDO) {
@@ -510,7 +510,7 @@ export class BrandGuardAgent extends BaseAgent {
       }
     }
 
-    // ── Rule 8: HEBREW REGISTER (Hebrew content only) ──
+    // -- Rule 8: HEBREW REGISTER (Hebrew content only) --
     if (language === 'he') {
       const foundSlang = containsAny(content, HEBREW_SLANG, false);
       if (foundSlang) {
@@ -523,7 +523,7 @@ export class BrandGuardAgent extends BaseAgent {
       }
     }
 
-    // ── Rule 9: MOBILE FIRST (paragraph length check) ──
+    // -- Rule 9: MOBILE FIRST (paragraph length check) --
     const paragraphs = content.split(/\n\s*\n/).filter((p) => p.trim());
     const longParagraphs = paragraphs.filter(
       (p) => p.trim().length > 300
@@ -539,7 +539,7 @@ export class BrandGuardAgent extends BaseAgent {
       );
     }
 
-    // ── Rule 10: FX METADATA ──
+    // -- Rule 10: FX METADATA --
     // Content that contains currency conversions should include FX metadata
     const hasCurrencyConversion = false;
     if (hasCurrencyConversion) {
@@ -561,10 +561,10 @@ export class BrandGuardAgent extends BaseAgent {
       }
     }
 
-    // ── Rule 11: FILE NAMING - not applicable for content validation ──
+    // -- Rule 11: FILE NAMING - not applicable for content validation --
     // Skipped intentionally.
 
-    // ── Rule 12: BLUEPRINT SEPARATION ──
+    // -- Rule 12: BLUEPRINT SEPARATION --
     const blueprintMentions = content.match(
       /Blueprint\s*Building\s*Group/gi
     );
@@ -597,7 +597,7 @@ export class BrandGuardAgent extends BaseAgent {
       }
     }
 
-    // ── Determine pass/fail ──
+    // -- Determine pass/fail --
     const hasErrors = violations.some((v) => v.severity === 'error');
     const passed = !hasErrors;
 

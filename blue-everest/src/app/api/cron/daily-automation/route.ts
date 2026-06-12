@@ -29,7 +29,7 @@ export async function GET(request: Request) {
   const supabase = createSupabaseAdmin();
   const now = new Date().toISOString();
 
-  // ── TASK 1: Pull Meta Ads metrics ──
+  // -- TASK 1: Pull Meta Ads metrics --
   try {
     const token = process.env.META_PAGE_ACCESS_TOKEN || process.env.META_ACCESS_TOKEN;
     const adAccountId = process.env.META_AD_ACCOUNT_ID || '2015125296073673';
@@ -91,7 +91,7 @@ export async function GET(request: Request) {
     results.push({ task: 'meta_metrics', status: 'failed', details: err instanceof Error ? err.message : 'Unknown error' });
   }
 
-  // ── TASK 2: Run AI agents (dispatch CMO for daily review) ──
+  // -- TASK 2: Run AI agents (dispatch CMO for daily review) --
   try {
     const anthropicKey = process.env.ANTHROPIC_API_KEY;
     if (!anthropicKey) {
@@ -123,7 +123,7 @@ export async function GET(request: Request) {
     results.push({ task: 'agent_dispatch', status: 'failed', details: err instanceof Error ? err.message : 'Unknown error' });
   }
 
-  // ── TASK 3: Check for scheduled posts to publish ──
+  // -- TASK 3: Check for scheduled posts to publish --
   try {
     if (!supabase) {
       results.push({ task: 'auto_publish', status: 'skipped', details: 'No Supabase' });
@@ -179,7 +179,7 @@ export async function GET(request: Request) {
     results.push({ task: 'auto_publish', status: 'failed', details: err instanceof Error ? err.message : 'Unknown error' });
   }
 
-  // ── TASK 4: Check for new leads and score them ──
+  // -- TASK 4: Check for new leads and score them --
   try {
     if (!supabase) {
       results.push({ task: 'lead_check', status: 'skipped', details: 'No Supabase' });
@@ -210,7 +210,7 @@ export async function GET(request: Request) {
     results.push({ task: 'lead_check', status: 'failed', details: err instanceof Error ? err.message : 'Unknown error' });
   }
 
-  // ── Log this cron run as an agent_run ──
+  // -- Log this cron run as an agent_run --
   if (supabase) {
     try {
       await supabase.from('agent_runs').insert({

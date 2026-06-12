@@ -449,14 +449,14 @@ export async function POST(request: Request) {
       reply
     );
 
-    // ── Extract contact info from all user messages ──
+    // -- Extract contact info from all user messages --
     const allUserMessages = [
       ...conversationHistory.filter(m => m.role === 'user').map(m => m.content),
       userMessage,
     ];
     const contactInfo = extractContactInfo(allUserMessages);
 
-    // ── Append contact collection prompt if score >= 40 and missing contact ──
+    // -- Append contact collection prompt if score >= 40 and missing contact --
     if (qualification.score >= 40) {
       const contactPrompt = buildContactPrompt(lang, !!contactInfo.name, !!contactInfo.phone, !!contactInfo.email);
       if (contactPrompt) {
@@ -464,7 +464,7 @@ export async function POST(request: Request) {
       }
     }
 
-    // ── Persist conversation and lead to Supabase ──
+    // -- Persist conversation and lead to Supabase --
     const now = new Date().toISOString();
     const fullHistory: ChatMessage[] = [
       ...conversationHistory,

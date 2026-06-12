@@ -1,7 +1,7 @@
 import type { Post } from "./dashboard-types";
 
 export const POSTS: Post[] = [
-  // ── Israeli Market ─────────────────────────────────────────────
+  // -- Israeli Market ---------------------------------------------
 
   {
     id: "META_IL_AWARENESS_A1",
@@ -254,7 +254,7 @@ Schedule: primevilla.ph או WhatsApp`,
     ],
   },
 
-  // ── Philippine Market ──────────────────────────────────────────
+  // -- Philippine Market ------------------------------------------
 
   {
     id: "META_PH_AWARENESS_1A",
@@ -518,7 +518,7 @@ WhatsApp (Office): +639958565865`,
     ],
   },
 
-  // ── Google Search ──────────────────────────────────────────────
+  // -- Google Search ----------------------------------------------
 
   {
     id: "GOOGLE_IL_SEARCH",
@@ -603,7 +603,7 @@ Luxury 4-bedroom villas in Bohol between JW Marriott and Mithi Resort. 60 second
     ],
   },
 
-  // ── AI-Generated Content (by CMO + Copywriter agents) ────────────
+  // -- AI-Generated Content (by CMO + Copywriter agents) ------------
 
   {
     id: "AI_IL_GROUP_TOURISM",
@@ -991,7 +991,7 @@ WhatsApp: +639542555553 / +639958565865`,
     ],
   },
 
-  // ── Video Posts (Google Drive embed) ──────────────────────────────
+  // -- Video Posts (Google Drive embed) ------------------------------
 
   {
     id: "VIDEO_OVERVIEW",
@@ -1369,7 +1369,7 @@ WhatsApp: +639542555553 / +639958565865`,
     ],
   },
 
-  // ── Korean Market (42% of Bohol foreign tourists) ───────────────
+  // -- Korean Market (42% of Bohol foreign tourists) ---------------
 
   {
     id: "META_KR_AWARENESS",
@@ -1451,7 +1451,7 @@ WhatsApp: +639542555553 / +639958565865`,
     ],
   },
 
-  // ── Chinese Market ──────────────────────────────────────────────
+  // -- Chinese Market ----------------------------------------------
 
   {
     id: "META_CN_AWARENESS",
@@ -1491,7 +1491,7 @@ WhatsApp: +639542555553 / +639958565865`,
     ],
   },
 
-  // ── Singapore Market ────────────────────────────────────────────
+  // -- Singapore Market --------------------------------------------
 
   {
     id: "META_SG_AWARENESS",
@@ -1538,7 +1538,7 @@ WhatsApp: +639542555553 / +639958565865`,
     ],
   },
 
-  // ── Hong Kong Market ────────────────────────────────────────────
+  // -- Hong Kong Market --------------------------------------------
 
   {
     id: "META_HK_AWARENESS",
@@ -1583,7 +1583,7 @@ WhatsApp: +639542555553 / +639958565865`,
     ],
   },
 
-  // ── US Market ───────────────────────────────────────────────────
+  // -- US Market ---------------------------------------------------
 
   {
     id: "META_US_AWARENESS",
@@ -1631,7 +1631,7 @@ WhatsApp: +639542555553 / +639958565865`,
     ],
   },
 
-  // ── European Market (UK/DE/FR) ──────────────────────────────────
+  // -- European Market (UK/DE/FR) ----------------------------------
 
   {
     id: "META_EU_AWARENESS",
@@ -1675,7 +1675,7 @@ WhatsApp: +639542555553 / +639958565865`,
     ],
   },
 
-  // ── UAE / Gulf Market ───────────────────────────────────────────
+  // -- UAE / Gulf Market -------------------------------------------
 
   {
     id: "META_UAE_AWARENESS",
@@ -1720,7 +1720,7 @@ WhatsApp: +639542555553 / +639958565865`,
     ],
   },
 
-  // ── Australia Market ────────────────────────────────────────────
+  // -- Australia Market --------------------------------------------
 
   {
     id: "META_AU_AWARENESS",

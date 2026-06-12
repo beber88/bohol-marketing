@@ -8,7 +8,7 @@ import {
 import { POSTS } from "@/lib/data/posts-data";
 import type { Post, Distribution } from "@/lib/data/dashboard-types";
 
-/* ── Helpers ──────────────────────────────────────────────────────── */
+/* -- Helpers -------------------------------------------------------- */
 
 function getToday(): string {
   const d = new Date();
@@ -31,7 +31,7 @@ function platformIcon(platform: string) {
   return "🔗";
 }
 
-/* ── Types ────────────────────────────────────────────────────────── */
+/* -- Types ---------------------------------------------------------- */
 
 interface TargetStatus {
   done: boolean;
@@ -41,7 +41,7 @@ interface TargetStatus {
 
 type DoneMap = Record<string, Record<string, TargetStatus>>;
 
-/* ── Component ────────────────────────────────────────────────────── */
+/* -- Component ------------------------------------------------------ */
 
 export function TodaysPostsSection() {
   const today = getToday();
@@ -65,7 +65,7 @@ export function TodaysPostsSection() {
 
   const isDone = (postId: string, targetKey: string) => doneMap[postId]?.[targetKey]?.done ?? false;
 
-  /* ── Copy & Open flow (same as community agent) ──────────────── */
+  /* -- Copy & Open flow (same as community agent) ---------------- */
   const copyAndOpen = useCallback((post: Post, dist: Distribution) => {
     navigator.clipboard.writeText(post.primaryText);
     // Open image in new tab
@@ -83,7 +83,7 @@ export function TodaysPostsSection() {
     setTimeout(() => setCopiedKey(null), 3000);
   }, []);
 
-  /* ── Auto-publish to page ────────────────────────────────────── */
+  /* -- Auto-publish to page -------------------------------------- */
   const autoPublishToPage = useCallback(async (post: Post) => {
     setPublishing(post.id);
     setPublishError(null);
@@ -113,7 +113,7 @@ export function TodaysPostsSection() {
     setPublishing(null);
   }, [markDone]);
 
-  /* ── Stats ───────────────────────────────────────────────────── */
+  /* -- Stats ----------------------------------------------------- */
   const totalTargets = todaysPosts.reduce((sum, p) => sum + (p.distribution?.length || 0), 0);
   const completedTargets = todaysPosts.reduce((sum, p) => {
     return sum + (p.distribution?.filter((d) => isDone(p.id, d.target)).length || 0);

@@ -10,7 +10,7 @@ import {
 import { useTranslation } from "@/lib/i18n";
 import { COMMUNITY_POSTS, type CommunityPost, type CommunityCategory, type CommunityPostStatus } from "@/lib/data/community-posts-data";
 
-/* ── Category config ──────────────────────────────────────────────── */
+/* -- Category config ------------------------------------------------ */
 
 const CATEGORY_CONFIG = {
   EDUCATE: { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", icon: BookOpen, label: "Educate", labelHe: "למד" },
@@ -19,7 +19,7 @@ const CATEGORY_CONFIG = {
   CONVERT: { color: "text-rose-400", bg: "bg-rose-500/10", border: "border-rose-500/20", icon: Target, label: "Convert", labelHe: "המר" },
 };
 
-/* ── Edit form ────────────────────────────────────────────────────── */
+/* -- Edit form ------------------------------------------------------ */
 
 interface EditForm {
   postId: number;
@@ -30,7 +30,7 @@ interface EditForm {
   notes: string;
 }
 
-/* ── Publish modal state ──────────────────────────────────────────── */
+/* -- Publish modal state -------------------------------------------- */
 
 interface PublishState {
   post: CommunityPost | null;
@@ -39,7 +39,7 @@ interface PublishState {
   results: Record<string, { success: boolean; postId?: string; error?: string; fallback?: string }> | null;
 }
 
-/* ── Response tester state ────────────────────────────────────────── */
+/* -- Response tester state ------------------------------------------ */
 
 interface ResponseTest {
   input: string;
@@ -48,7 +48,7 @@ interface ResponseTest {
   mode: "comment" | "inbox";
 }
 
-/* ── Component ────────────────────────────────────────────────────── */
+/* -- Component ------------------------------------------------------ */
 
 export function CommunityAgentSection() {
   const { t } = useTranslation();
@@ -65,7 +65,7 @@ export function CommunityAgentSection() {
   const [responseTest, setResponseTest] = useState<ResponseTest>({ input: "", output: "", loading: false, mode: "comment" });
   const [publishState, setPublishState] = useState<PublishState>({ post: null, channels: { group: true, page: false }, publishing: false, results: null });
 
-  /* ── Filtering ───────────────────────────────────────────────── */
+  /* -- Filtering ------------------------------------------------- */
 
   const filtered = useMemo(() => posts.filter((p) => {
     if (catFilter !== "all" && p.category !== catFilter) return false;
@@ -80,7 +80,7 @@ export function CommunityAgentSection() {
   const displayed = useMemo(() => showAll ? filtered : filtered.slice(0, 12), [filtered, showAll]);
   const now = new Date();
 
-  /* ── Stats ───────────────────────────────────────────────────── */
+  /* -- Stats ----------------------------------------------------- */
 
   const published = posts.filter((p) => p.status === "published").length;
   const ready = posts.filter((p) => p.status === "ready").length;
@@ -98,7 +98,7 @@ export function CommunityAgentSection() {
     return { category: cat, total: cp.length, published: pub, pct: Math.round((cp.length / posts.length) * 100) };
   });
 
-  /* ── Edit handlers ───────────────────────────────────────────── */
+  /* -- Edit handlers --------------------------------------------- */
 
   const openEdit = useCallback((post: CommunityPost) => {
     setEditForm({
@@ -123,7 +123,7 @@ export function CommunityAgentSection() {
     setEditForm(null);
   }, [editForm]);
 
-  /* ── Copy to clipboard ───────────────────────────────────────── */
+  /* -- Copy to clipboard ----------------------------------------- */
 
   const copyPost = useCallback((post: CommunityPost) => {
     const text = `${post.hebrewCopy}\n\n---\n\n${post.englishCopy}`;
@@ -132,7 +132,7 @@ export function CommunityAgentSection() {
     setTimeout(() => setCopiedId(null), 2000);
   }, []);
 
-  /* ── Publish handlers ─────────────────────────────────────────── */
+  /* -- Publish handlers ------------------------------------------- */
   // Meta deprecated publish_to_groups API. Group posts are MANUAL ONLY.
   // Flow: Copy text -> Open group -> Paste -> Upload image -> Mark as published.
 
@@ -160,7 +160,7 @@ export function CommunityAgentSection() {
     }).catch(() => {});
   }, []);
 
-  /* ── Response tester ─────────────────────────────────────────── */
+  /* -- Response tester ------------------------------------------- */
 
   const testResponse = useCallback(async () => {
     if (!responseTest.input.trim()) return;
@@ -178,7 +178,7 @@ export function CommunityAgentSection() {
     }
   }, [responseTest.input, responseTest.mode]);
 
-  /* ── Calendar data ───────────────────────────────────────────── */
+  /* -- Calendar data --------------------------------------------- */
 
   const calendarWeeks: { weekLabel: string; posts: CommunityPost[] }[] = [];
   const sortedByDate = [...posts].sort((a, b) => new Date(a.scheduled).getTime() - new Date(b.scheduled).getTime());

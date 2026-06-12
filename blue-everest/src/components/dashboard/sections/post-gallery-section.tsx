@@ -8,7 +8,7 @@ import { useTranslation } from "@/lib/i18n";
 import { StatusBadge } from "@/components/dashboard/cards/status-badge";
 import type { Post, Market, Phase, PostStatus } from "@/lib/data/dashboard-types";
 
-/* ── Filter option types ──────────────────────────────────────────── */
+/* -- Filter option types -------------------------------------------- */
 
 type MarketFilter = "ALL" | Market | "VIDEO";
 type PhaseFilter = "ALL" | Phase;
@@ -19,7 +19,7 @@ interface FilterOption<T> {
   label: string;
 }
 
-/* ── Available images for the editor ─────────────────────────────── */
+/* -- Available images for the editor ------------------------------- */
 
 const AVAILABLE_IMAGES: Record<string, { label: string; images: string[] }> = {
   exterior: {
@@ -80,7 +80,7 @@ const AVAILABLE_IMAGES: Record<string, { label: string; images: string[] }> = {
   },
 };
 
-/* ── Edit form state ─────────────────────────────────────────────── */
+/* -- Edit form state ----------------------------------------------- */
 
 interface EditForm {
   postId: string;
@@ -92,7 +92,7 @@ interface EditForm {
   imagePrompt: string;
 }
 
-/* ── AI Image Generation state ─────────────────────────────────── */
+/* -- AI Image Generation state ----------------------------------- */
 
 interface GenerationState {
   loading: boolean;
@@ -101,7 +101,7 @@ interface GenerationState {
   error: string | null;
 }
 
-/* ── Component ────────────────────────────────────────────────────── */
+/* -- Component ------------------------------------------------------ */
 
 export function PostGallerySection() {
   const { t } = useTranslation();
@@ -114,7 +114,7 @@ export function PostGallerySection() {
   const [editForm, setEditForm] = useState<EditForm | null>(null);
   const [imageCategory, setImageCategory] = useState("exterior");
 
-  /* ── Filter options (translated) ─────────────────────────────── */
+  /* -- Filter options (translated) ------------------------------- */
 
   const marketOptions: FilterOption<MarketFilter>[] = [
     { value: "ALL", label: t.dashboard.posts.allMarkets },
@@ -147,7 +147,7 @@ export function PostGallerySection() {
     { value: "paused", label: t.dashboard.posts.paused },
   ];
 
-  /* ── Filtering logic ─────────────────────────────────────────── */
+  /* -- Filtering logic ------------------------------------------- */
 
   const filtered = posts.filter((p) => {
     if (marketFilter === "VIDEO") {
@@ -160,7 +160,7 @@ export function PostGallerySection() {
     return true;
   });
 
-  /* ── Expand / collapse toggle ────────────────────────────────── */
+  /* -- Expand / collapse toggle ---------------------------------- */
 
   function toggleExpand(id: string) {
     setExpandedPosts((prev) => {
@@ -171,7 +171,7 @@ export function PostGallerySection() {
     });
   }
 
-  /* ── Edit handlers ──────────────────────────────────────────── */
+  /* -- Edit handlers -------------------------------------------- */
 
   const [saving, setSaving] = useState(false);
   const [genState, setGenState] = useState<GenerationState>({
@@ -263,7 +263,7 @@ export function PostGallerySection() {
 
   const cancelEdit = useCallback(() => setEditForm(null), []);
 
-  /* ── Market badge color ──────────────────────────────────────── */
+  /* -- Market badge color ---------------------------------------- */
 
   function marketBadgeClass(market: Market): string {
     const colors: Record<string, string> = {
@@ -303,11 +303,11 @@ export function PostGallerySection() {
     }
   }
 
-  /* ── Render ──────────────────────────────────────────────────── */
+  /* -- Render ---------------------------------------------------- */
 
   return (
     <div className="space-y-6">
-      {/* ── Filter Bar ─────────────────────────────────────────── */}
+      {/* -- Filter Bar ------------------------------------------- */}
       <div className="space-y-3">
         <FilterRow
           options={marketOptions}
@@ -326,12 +326,12 @@ export function PostGallerySection() {
         />
       </div>
 
-      {/* ── Post count ─────────────────────────────────────────── */}
+      {/* -- Post count ------------------------------------------- */}
       <p className="text-sm text-muted">
         Showing {filtered.length} of {posts.length} posts
       </p>
 
-      {/* ── Post Grid ──────────────────────────────────────────── */}
+      {/* -- Post Grid -------------------------------------------- */}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
         {filtered.map((post) => {
           const isExpanded = expandedPosts.has(post.id);
@@ -348,7 +348,7 @@ export function PostGallerySection() {
               key={post.id}
               className="group overflow-hidden rounded-xl border border-stroke transition-all duration-300 hover:border-[#4E85BF]/40"
             >
-              {/* ── Media area ─────────────────────────────── */}
+              {/* -- Media area ------------------------------- */}
               <div className="relative aspect-[4/3] overflow-hidden rounded-t-xl bg-black">
                 {isVideo && hasDriveVideo ? (
                   <iframe
@@ -404,7 +404,7 @@ export function PostGallerySection() {
                 )}
               </div>
 
-              {/* ── Card body ───────────────────────────────── */}
+              {/* -- Card body --------------------------------- */}
               <div className="space-y-3 border border-t-0 border-stroke bg-surface p-4 rounded-b-xl">
                 {/* Platform + language */}
                 <div className="flex items-center gap-2 text-xs text-muted">
@@ -491,7 +491,7 @@ export function PostGallerySection() {
         })}
       </div>
 
-      {/* ── Quick Regenerate Dialog ────────────────────────────── */}
+      {/* -- Quick Regenerate Dialog ------------------------------ */}
       {regenPostId && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
@@ -554,7 +554,7 @@ export function PostGallerySection() {
         </div>
       )}
 
-      {/* ── Edit Modal ─────────────────────────────────────────── */}
+      {/* -- Edit Modal ------------------------------------------- */}
       {editForm && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
@@ -773,7 +773,7 @@ export function PostGallerySection() {
   );
 }
 
-/* ── Filter Row (reusable pill buttons) ───────────────────────────── */
+/* -- Filter Row (reusable pill buttons) ----------------------------- */
 
 function FilterRow<T extends string>({
   options,
