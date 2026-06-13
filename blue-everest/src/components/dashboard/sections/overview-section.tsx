@@ -8,7 +8,7 @@ import {
   Map, MessageSquare,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
-import { BLOCKERS, COMPLETED_ITEMS, BUDGET, CAMPAIGNS } from "@/lib/data/dashboard-data";
+import { COMPLETED_ITEMS, BUDGET, CAMPAIGNS } from "@/lib/data/dashboard-data";
 import { useTranslation } from "@/lib/i18n";
 
 const VIDEOS = [
@@ -63,6 +63,19 @@ type OpsState = {
   contentTotal: number;
   approvedContent: number;
   watiConfigured: boolean;
+  readyForLiveAction: boolean;
+  readyForLeadCapture: boolean;
+  readyForFullAutomation: boolean;
+  liveBlockers: string[];
+  liveWarnings: string[];
+  systems: {
+    supabaseConfigured?: boolean;
+    supabaseServiceRoleConfigured?: boolean;
+    metaConfigured?: boolean;
+    metaWebhookVerifyTokenConfigured?: boolean;
+    watiConfigured?: boolean;
+    simulation?: boolean | string;
+  };
   loaded: boolean;
 };
 
@@ -79,6 +92,12 @@ const EMPTY_OPS: OpsState = {
   contentTotal: 0,
   approvedContent: 0,
   watiConfigured: false,
+  readyForLiveAction: false,
+  readyForLeadCapture: false,
+  readyForFullAutomation: false,
+  liveBlockers: [],
+  liveWarnings: [],
+  systems: {},
   loaded: false,
 };
 
@@ -94,20 +113,22 @@ export function OverviewSection() {
 
     async function loadOps() {
       try {
-        const [salesRes, inboxRes, knowledgeRes, agentsRes, contentRes] = await Promise.all([
+        const [salesRes, inboxRes, knowledgeRes, agentsRes, contentRes, readinessRes] = await Promise.all([
           fetch("/api/marketing/sales/queue?limit=50", { cache: "no-store" }),
           fetch("/api/marketing/inbox?limit=100", { cache: "no-store" }),
           fetch("/api/marketing/knowledge?limit=50", { cache: "no-store" }),
           fetch("/api/marketing/agents?limit=50", { cache: "no-store" }),
           fetch("/api/marketing/content?limit=50", { cache: "no-store" }),
+          fetch("/api/cron/morning-readiness", { cache: "no-store" }),
         ]);
 
-        const [sales, inbox, knowledge, agents, content] = await Promise.all([
+        const [sales, inbox, knowledge, agents, content, readiness] = await Promise.all([
           salesRes.ok ? salesRes.json() : Promise.resolve({}),
           inboxRes.ok ? inboxRes.json() : Promise.resolve({}),
           knowledgeRes.ok ? knowledgeRes.json() : Promise.resolve({}),
           agentsRes.ok ? agentsRes.json() : Promise.resolve({}),
           contentRes.ok ? contentRes.json() : Promise.resolve({}),
+          readinessRes.ok ? readinessRes.json() : Promise.resolve({}),
         ]);
 
         if (cancelled) return;
@@ -131,7 +152,13 @@ export function OverviewSection() {
           approvedContent: contentItems.filter((item: { brand_check_passed?: boolean; status?: string }) =>
             item.brand_check_passed || item.status === "approved" || item.status === "published"
           ).length,
-          watiConfigured: Boolean(sales.blockers?.watiConfigured),
+          watiConfigured: Boolean(sales.blockers?.watiConfigured || readiness.systems?.watiConfigured),
+          readyForLiveAction: Boolean(readiness.readyForLiveAction),
+          readyForLeadCapture: Boolean(readiness.readyForLeadCapture),
+          readyForFullAutomation: Boolean(readiness.readyForFullAutomation),
+          liveBlockers: Array.isArray(readiness.blockers) ? readiness.blockers : [],
+          liveWarnings: Array.isArray(readiness.warnings) ? readiness.warnings : [],
+          systems: readiness.systems ?? {},
           loaded: true,
         });
       } catch {
@@ -166,8 +193,12 @@ export function OverviewSection() {
     <section className="space-y-6">
       {/* 1. Hero Status Bar */}
       <div className="bg-surface rounded-2xl border border-stroke p-4 flex flex-wrap items-center gap-4">
-        <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 text-sm font-bold text-amber-400">
-          PRE-LAUNCH
+        <span className={`rounded-full border px-4 py-1.5 text-sm font-bold ${
+          ops.readyForLiveAction
+            ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
+            : "border-amber-500/30 bg-amber-500/10 text-amber-400"
+        }`}>
+          {ops.readyForLiveAction ? "LIVE" : "PARTIAL"}
         </span>
         <div className="flex items-center gap-2 flex-1 min-w-[200px]">
           <CircleDollarSign size={16} className="text-emerald-400" />
@@ -390,20 +421,73 @@ export function OverviewSection() {
         </div>
       </div>
 
-      {/* 6. Blockers + Completed */}
+      {/* 6. Live Readiness + Completed */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <AlertTriangle className="h-4 w-4 text-red-400" />
-            <h3 className="text-sm font-semibold text-red-400">{isHe ? "חסמים" : "Blockers"}</h3>
-            <span className="rounded-full bg-red-500/20 px-2 py-0.5 text-[10px] font-bold text-red-400">{BLOCKERS.length}</span>
+            {ops.liveBlockers.length > 0 ? (
+              <AlertTriangle className="h-4 w-4 text-red-400" />
+            ) : (
+              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+            )}
+            <h3 className={`text-sm font-semibold ${ops.liveBlockers.length > 0 ? "text-red-400" : "text-emerald-400"}`}>
+              {isHe ? "תקינות וסנכרון מערכת" : "System Readiness"}
+            </h3>
+            <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
+              ops.liveBlockers.length > 0 ? "bg-red-500/20 text-red-400" : "bg-emerald-500/20 text-emerald-400"
+            }`}>
+              {ops.liveBlockers.length > 0 ? ops.liveBlockers.length : "OK"}
+            </span>
           </div>
-          {BLOCKERS.map(item => (
-            <div key={item.title} className="rounded-xl border border-red-500/20 bg-red-500/5 p-4">
-              <p className="text-sm font-medium">{isHe && item.titleHe ? item.titleHe : item.title}</p>
-              <p className="mt-1 text-xs text-muted">{isHe && item.descriptionHe ? item.descriptionHe : item.description}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            {[
+              { label: "Live", value: ops.readyForLiveAction },
+              { label: "Leads", value: ops.readyForLeadCapture },
+              { label: "Full Auto", value: ops.readyForFullAutomation },
+            ].map((item) => (
+              <div key={item.label} className={`rounded-lg border px-3 py-2 ${
+                item.value ? "border-emerald-500/20 bg-emerald-500/5" : "border-amber-500/20 bg-amber-500/5"
+              }`}>
+                <p className="text-[10px] text-muted">{item.label}</p>
+                <p className={`text-xs font-bold ${item.value ? "text-emerald-400" : "text-amber-400"}`}>
+                  {item.value ? "Ready" : "Partial"}
+                </p>
+              </div>
+            ))}
+          </div>
+          {ops.liveBlockers.length === 0 ? (
+            <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-4">
+              <p className="text-sm font-medium text-emerald-300">
+                {isHe ? "אין חסמים קריטיים לפעילות האתר, CRM, Messenger וסוכני המכירות." : "No critical blockers for website, CRM, Messenger and sales agents."}
+              </p>
+              <p className="mt-1 text-xs text-muted">
+                {isHe ? "אזהרות למטה הן רכיבי אוטומציה חלקיים, לא חסמי מערכת." : "Warnings below are partial automation gaps, not system blockers."}
+              </p>
+            </div>
+          ) : ops.liveBlockers.map((item) => (
+            <div key={item} className="rounded-xl border border-red-500/20 bg-red-500/5 p-4">
+              <p className="text-sm font-medium text-red-300">{item}</p>
             </div>
           ))}
+          {ops.liveWarnings.map((item) => (
+            <div key={item} className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
+              <p className="text-sm font-medium text-amber-300">{isHe ? "אזהרה" : "Warning"}</p>
+              <p className="mt-1 text-xs text-muted">{item}</p>
+            </div>
+          ))}
+          <div className="grid grid-cols-2 gap-2 text-[11px] text-muted">
+            {[
+              ["Supabase", ops.systems.supabaseConfigured],
+              ["Meta", ops.systems.metaConfigured],
+              ["Meta Webhook", ops.systems.metaWebhookVerifyTokenConfigured],
+              ["WATI", ops.systems.watiConfigured],
+            ].map(([label, value]) => (
+              <div key={String(label)} className="flex items-center justify-between rounded-lg border border-stroke bg-white/[0.02] px-3 py-2">
+                <span>{label}</span>
+                <span className={value ? "text-emerald-400" : "text-amber-400"}>{value ? "on" : "partial"}</span>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="space-y-3">
           <div className="flex items-center gap-2">
