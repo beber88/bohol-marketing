@@ -34,9 +34,9 @@ interface MetaCampaign {
   campaign_name: string;
   impressions: number;
   clicks: number;
-  ctr: number;
-  cpc: number;
-  spend: number;
+  ctr: number | null;
+  cpc: number | null;
+  spend: number | null;
   reach: number;
   leads: number;
   link_clicks: number;
@@ -48,9 +48,9 @@ interface MetaAdSet {
   campaign_id: string;
   impressions: number;
   clicks: number;
-  ctr: number;
-  cpc: number;
-  spend: number;
+  ctr: number | null;
+  cpc: number | null;
+  spend: number | null;
   reach: number;
 }
 
@@ -60,9 +60,9 @@ interface MetaTotals {
   spend: number;
   reach: number;
   leads: number;
-  ctr: number;
-  cpc: number;
-  cpl: number;
+  ctr: number | null;
+  cpc: number | null;
+  cpl: number | null;
 }
 
 // --- Constants ---
@@ -86,6 +86,22 @@ const STATUS_COLORS: Record<string, string> = {
   error: "bg-red-500/20 text-red-400",
   unsettled: "bg-red-500/20 text-red-400",
 };
+
+function safeNumber(value: number | null | undefined): number {
+  return Number.isFinite(value) ? Number(value) : 0;
+}
+
+function formatInt(value: number | null | undefined): string {
+  return safeNumber(value).toLocaleString();
+}
+
+function formatPhp(value: number | null | undefined, digits = 0): string {
+  return `₱${safeNumber(value).toFixed(digits)}`;
+}
+
+function formatPct(value: number | null | undefined, digits = 2): string {
+  return `${safeNumber(value).toFixed(digits)}%`;
+}
 
 // --- Known Meta Campaigns (from campaign_state.json) ---
 
@@ -170,7 +186,7 @@ export function CampaignsSection() {
     }
   };
 
-  const totalSpendUsd = metaTotals ? metaTotals.spend * PHP_TO_USD : 0;
+  const totalSpendUsd = metaTotals ? safeNumber(metaTotals.spend) * PHP_TO_USD : 0;
   const budgetPct = Math.min((totalSpendUsd / TOTAL_BUDGET) * 100, 100);
   const isOverBudget = totalSpendUsd > TOTAL_BUDGET;
 
@@ -247,10 +263,10 @@ export function CampaignsSection() {
       {/* Totals cards */}
       {metaTotals && (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          <MetricCard icon={<Eye size={14} />} label="Impressions" value={metaTotals.impressions.toLocaleString()} />
-          <MetricCard icon={<MousePointer size={14} />} label="Clicks" value={metaTotals.clicks.toLocaleString()} sub={`${metaTotals.ctr.toFixed(2)}% CTR`} />
-          <MetricCard icon={<DollarSign size={14} />} label="Spend (PHP)" value={`₱${metaTotals.spend.toLocaleString()}`} sub={`$${totalSpendUsd.toFixed(2)} USD`} />
-          <MetricCard icon={<Target size={14} />} label="Reach" value={metaTotals.reach.toLocaleString()} sub={`${metaTotals.leads} leads`} />
+          <MetricCard icon={<Eye size={14} />} label="Impressions" value={formatInt(metaTotals.impressions)} />
+          <MetricCard icon={<MousePointer size={14} />} label="Clicks" value={formatInt(metaTotals.clicks)} sub={`${formatPct(metaTotals.ctr)} CTR`} />
+          <MetricCard icon={<DollarSign size={14} />} label="Spend (PHP)" value={`₱${safeNumber(metaTotals.spend).toLocaleString()}`} sub={`$${totalSpendUsd.toFixed(2)} USD`} />
+          <MetricCard icon={<Target size={14} />} label="Reach" value={formatInt(metaTotals.reach)} sub={`${formatInt(metaTotals.leads)} leads`} />
         </div>
       )}
 
@@ -265,7 +281,7 @@ export function CampaignsSection() {
           const live = metaCampaigns.find((mc) => mc.campaign_id === kc.id);
           const adSets = metaAdSets.filter((as) => as.campaign_id === kc.id);
           const hasData = !!live;
-          const noDelivery = hasData && live.impressions === 0;
+          const noDelivery = hasData && safeNumber(live.impressions) === 0;
 
           return (
             <div key={kc.id} className="bg-surface rounded-xl border border-stroke p-4 mb-3">
@@ -304,10 +320,10 @@ export function CampaignsSection() {
               {/* Campaign metrics */}
               {hasData ? (
                 <div className="grid grid-cols-4 gap-2 mb-3 text-center">
-                  <MiniStat label="Impressions" value={live.impressions.toLocaleString()} />
-                  <MiniStat label="Clicks" value={live.clicks.toLocaleString()} />
-                  <MiniStat label="CTR" value={`${live.ctr.toFixed(2)}%`} />
-                  <MiniStat label="Spend" value={`₱${live.spend.toFixed(0)}`} />
+                  <MiniStat label="Impressions" value={formatInt(live.impressions)} />
+                  <MiniStat label="Clicks" value={formatInt(live.clicks)} />
+                  <MiniStat label="CTR" value={formatPct(live.ctr)} />
+                  <MiniStat label="Spend" value={formatPhp(live.spend)} />
                 </div>
               ) : (
                 <p className="text-xs text-muted mb-3">No metrics data yet - campaign may not be delivering</p>
@@ -322,10 +338,10 @@ export function CampaignsSection() {
                       <div key={as.adset_id} className="flex items-center justify-between bg-white/3 rounded-lg px-3 py-1.5 text-[11px]">
                         <span className="text-muted">{known?.name || as.adset_name}</span>
                         <div className="flex items-center gap-3 text-muted">
-                          <span>{as.impressions.toLocaleString()} imp</span>
-                          <span>{as.clicks} clicks</span>
-                          <span>{as.ctr.toFixed(2)}%</span>
-                          <span>₱{as.spend.toFixed(0)}</span>
+                          <span>{formatInt(as.impressions)} imp</span>
+                          <span>{formatInt(as.clicks)} clicks</span>
+                          <span>{formatPct(as.ctr)}</span>
+                          <span>{formatPhp(as.spend)}</span>
                         </div>
                       </div>
                     );
