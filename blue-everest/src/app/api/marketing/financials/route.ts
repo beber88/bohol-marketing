@@ -3,6 +3,11 @@
 
 import { createSupabaseAdmin } from '@/lib/connectors/supabase';
 
+const FINANCIAL_FX = {
+  date: 'Jun 8, 2026',
+  phpToUsd: 0.016234,
+} as const;
+
 interface CategoryTotals {
   ai_compute: number;
   advertising: number;
@@ -37,6 +42,7 @@ export async function GET(request: Request) {
     const byProvider: Record<string, number> = {};
     const agentBreakdown: AgentCostEntry[] = [];
     const dataIssues: string[] = [];
+    const fxRates = FINANCIAL_FX;
 
     if (!supabase) {
       dataIssues.push('Supabase credentials are not configured');
@@ -102,7 +108,8 @@ export async function GET(request: Request) {
 
     const { data: metrics, error: metricsErr } = await metricsQuery;
 
-    let adTotal = 0;
+    let adTotalUsd = 0;
+    let adTotalPhp = 0;
     let totalLeads = 0;
     let totalConversions = 0;
 
@@ -123,9 +130,11 @@ export async function GET(request: Request) {
           for (const m of fallbackMetrics) {
             const row = m as Record<string, unknown>;
             const spendCents = (row.spend_cents as number) ?? 0;
-            const spendUsd = spendCents / 100;
+            const spendPhp = spendCents / 100;
+            const spendUsd = spendPhp * fxRates.phpToUsd;
             const channel = (row.channel as string) ?? 'unknown';
-            adTotal += spendUsd;
+            adTotalPhp += spendPhp;
+            adTotalUsd += spendUsd;
 
             const provider = channel.toLowerCase().includes('meta') || channel.toLowerCase().includes('facebook')
               ? 'meta'
@@ -135,7 +144,8 @@ export async function GET(request: Request) {
 
             byProvider[provider] = (byProvider[provider] ?? 0) + spendUsd;
           }
-          totals.advertising = round(adTotal);
+          totals.advertising = round(adTotalUsd);
+          dataIssues.push(`performance_metrics spend_cents interpreted as PHP cents and converted to USD using PHP/USD ${fxRates.phpToUsd} (${fxRates.date})`);
           dataIssues.push('performance_metrics leads/conversions columns are not present; lead totals are counted from leads table');
         }
       } else {
@@ -145,10 +155,12 @@ export async function GET(request: Request) {
       for (const m of metrics) {
         const row = m as Record<string, unknown>;
         const spendCents = (row.spend_cents as number) ?? 0;
-        const spendUsd = spendCents / 100;
+        const spendPhp = spendCents / 100;
+        const spendUsd = spendPhp * fxRates.phpToUsd;
         const channel = (row.channel as string) ?? 'unknown';
 
-        adTotal += spendUsd;
+        adTotalPhp += spendPhp;
+        adTotalUsd += spendUsd;
         totalLeads += (row.leads as number) ?? 0;
         totalConversions += (row.conversions as number) ?? 0;
 
@@ -160,7 +172,10 @@ export async function GET(request: Request) {
 
         byProvider[provider] = (byProvider[provider] ?? 0) + spendUsd;
       }
-      totals.advertising = round(adTotal);
+      totals.advertising = round(adTotalUsd);
+      if (adTotalPhp > 0) {
+        dataIssues.push(`performance_metrics spend_cents interpreted as PHP cents and converted to USD using PHP/USD ${fxRates.phpToUsd} (${fxRates.date})`);
+      }
     }
 
     const { count: leadsCount, error: leadsCountErr } = await supabase

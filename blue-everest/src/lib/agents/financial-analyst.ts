@@ -146,6 +146,10 @@ Respond with valid JSON matching the financial_report schema.`;
         '@/lib/connectors/supabase'
       );
       const supabase = createSupabaseAdmin();
+      const fxRates = {
+        date: 'Jun 8, 2026',
+        phpToUsd: 0.016234,
+      } as const;
       if (!supabase) {
         dataQualityIssues.push('Supabase client unavailable - cannot collect cost data');
         return { byCategory, byProvider, agentBreakdown, adSpendTotal, totalLeads, totalConversions, dataQualityIssues };
@@ -203,7 +207,8 @@ Respond with valid JSON matching the financial_report schema.`;
             for (const m of fallbackMetrics) {
               const row = m as Record<string, unknown>;
               const spendCents = (row.spend_cents as number) ?? 0;
-              const spendUsd = spendCents / 100;
+              const spendPhp = spendCents / 100;
+              const spendUsd = spendPhp * fxRates.phpToUsd;
               const channel = (row.channel as string) ?? 'unknown';
 
               adSpendTotal += spendUsd;
@@ -217,6 +222,7 @@ Respond with valid JSON matching the financial_report schema.`;
               byProvider[provider] = (byProvider[provider] ?? 0) + spendUsd;
             }
             byCategory.advertising = Math.round(adSpendTotal * 100) / 100;
+            dataQualityIssues.push(`performance_metrics spend_cents interpreted as PHP cents and converted to USD using PHP/USD ${fxRates.phpToUsd} (${fxRates.date})`);
             dataQualityIssues.push('performance_metrics leads/conversions columns are not present; lead totals are counted from leads table');
           }
         } else {
@@ -226,7 +232,8 @@ Respond with valid JSON matching the financial_report schema.`;
         for (const m of metrics) {
           const row = m as Record<string, unknown>;
           const spendCents = (row.spend_cents as number) ?? 0;
-          const spendUsd = spendCents / 100;
+          const spendPhp = spendCents / 100;
+          const spendUsd = spendPhp * fxRates.phpToUsd;
           const channel = (row.channel as string) ?? 'unknown';
 
           adSpendTotal += spendUsd;
@@ -243,6 +250,9 @@ Respond with valid JSON matching the financial_report schema.`;
           byProvider[provider] = (byProvider[provider] ?? 0) + spendUsd;
         }
         byCategory.advertising = Math.round(adSpendTotal * 100) / 100;
+        if (adSpendTotal > 0) {
+          dataQualityIssues.push(`performance_metrics spend_cents interpreted as PHP cents and converted to USD using PHP/USD ${fxRates.phpToUsd} (${fxRates.date})`);
+        }
       }
 
       // 3. Operational costs - infrastructure, tools, subscriptions
