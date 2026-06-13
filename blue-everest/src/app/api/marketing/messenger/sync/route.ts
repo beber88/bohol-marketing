@@ -252,7 +252,7 @@ export async function POST(request: Request) {
     updated,
     activitiesInserted,
     conversationsRead: result.conversations.length,
-    next: result.next,
+    nextCursor: result.nextCursor,
     analyses,
   });
 }

@@ -6,8 +6,6 @@
 import { createSupabaseAdmin } from '@/lib/connectors/supabase';
 import { quickScore } from '@/lib/agents/crm-lead-scorer';
 import type { LeadData } from '@/lib/agents/crm-lead-scorer';
-import { salesChatbot } from '@/lib/agents/sales-chatbot';
-import type { ChatMessage, ChatResponse } from '@/lib/agents/sales-chatbot';
 import { getOrCreatePanglaoProjectId } from '@/lib/marketing/project';
 import {
   getUserProfile,
@@ -15,10 +13,25 @@ import {
   replyToComment,
   sendPrivateReply,
 } from '@/lib/connectors/meta-graph';
+import {
+  buildSalesOsResponse,
+  type SalesOsChannel,
+  type SalesOsMessage,
+} from '@/lib/sales-os/blue-everest-agent';
+import { getServerEnv } from '@/lib/server-env';
 import type { SupabaseClient } from '@supabase/supabase-js';
 
 // Our own page ID - do not reply to our own messages
-const OWN_PAGE_ID = process.env.META_PAGE_ID ?? '1091251924067685';
+const OWN_PAGE_ID = getServerEnv('META_PAGE_ID') || '1091251924067685';
+
+type MetaChatResponse = {
+  message: string;
+  language: 'en' | 'he';
+  sources: string[];
+  leadSignals: string[];
+  suggestHandoff: boolean;
+  handoffReason?: string;
+};
 
 // -------------------------------------------------------------------------
 // GET: Meta webhook verification
@@ -31,7 +44,7 @@ export async function GET(request: Request) {
     const token = searchParams.get('hub.verify_token');
     const challenge = searchParams.get('hub.challenge');
 
-    const verifyToken = process.env.META_WEBHOOK_VERIFY_TOKEN;
+    const verifyToken = getServerEnv('META_WEBHOOK_VERIFY_TOKEN');
 
     if (!verifyToken) {
       console.error(
@@ -375,7 +388,7 @@ async function processComment(
 
   // 3. Generate AI response based on comment context
   if (ctx.message.trim() && lead) {
-    const chatResponse = await generateAIResponse(ctx.message, []);
+    const chatResponse = await generateAIResponse(ctx.message, [], 'facebook_comment');
 
     if (chatResponse) {
       // 4a. Reply to the comment publicly
@@ -615,27 +628,27 @@ async function updateLeadFromSignals(
  */
 async function generateAIResponse(
   messageText: string,
-  conversationHistory: ChatMessage[]
-): Promise<ChatResponse | null> {
+  conversationHistory: SalesOsMessage[],
+  channel: SalesOsChannel = 'facebook_dm'
+): Promise<MetaChatResponse | null> {
   try {
-    const result = await salesChatbot.execute({
-      query: messageText,
-      context: {
-        messages: conversationHistory,
-        channel: 'facebook',
-      },
-      trigger: 'meta_webhook',
+    const salesOs = buildSalesOsResponse({
+      message: messageText,
+      history: conversationHistory,
+      channel,
     });
 
-    if (result.success && result.data) {
-      return result.data as ChatResponse;
-    }
-
-    console.warn('[webhooks/meta] Sales chatbot failed:', result.error);
-    return null;
+    return {
+      message: salesOs.reply,
+      language: salesOs.language,
+      sources: ['blue-everest-sales-os'],
+      leadSignals: salesOs.leadSignals,
+      suggestHandoff: salesOs.shouldEscalate,
+      handoffReason: salesOs.nextBestAction,
+    };
   } catch (err) {
     console.warn(
-      '[webhooks/meta] AI response error:',
+      '[webhooks/meta] Sales OS response error:',
       err instanceof Error ? err.message : err
     );
     return null;
@@ -648,7 +661,7 @@ async function generateAIResponse(
 async function loadConversationHistory(
   supabase: SupabaseClient,
   leadId: string
-): Promise<ChatMessage[]> {
+): Promise<SalesOsMessage[]> {
   const { data: activities } = await supabase
     .from('lead_activities')
     .select('activity_type, metadata, created_at')
@@ -669,7 +682,7 @@ async function loadConversationHistory(
       role: isUser ? 'user' : 'assistant',
       content: (meta.text as string) ?? '',
       timestamp: a.created_at as string,
-    } as ChatMessage;
+    } as SalesOsMessage;
   });
 }
 
@@ -683,7 +696,7 @@ function buildPrivateFollowup(name: string, language: 'en' | 'he'): string {
   if (language === 'he') {
     return `שלום ${firstName}! ראינו שהגבת על הפוסט שלנו.
 
-וילה פרטית בפנגלאו, בוהול מ-1,535,000 ₪, עם הכנסה חודשית מאומתת של PHP 395,000 ותשואה של 17-25%.
+וילה פרטית בפנגלאו, בוהול מ-1,535,000 ש"ח, עם מודל הכנסה חודשית מאומתת ותשואה של 17-25%.
 
 3 פתרונות בעלות חוקיים לישראלים: Deed of Assignment, חכירה 25+25, תאגיד מקומי.
 

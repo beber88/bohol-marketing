@@ -1,14 +1,16 @@
 // src/lib/connectors/meta-graph.ts
 // Meta Graph API helper for sending messages, replying to comments, and fetching profiles.
 
+import { getServerEnv } from '@/lib/server-env';
+
 const META_API_VERSION = 'v20.0';
 const BASE_URL = `https://graph.facebook.com/${META_API_VERSION}`;
 
 export function getPageToken(): string | null {
   return (
-    process.env.META_PAGE_ACCESS_TOKEN ??
-    process.env.META_ACCESS_TOKEN ??
-    process.env.FACEBOOK_PAGE_ACCESS_TOKEN ??
+    getServerEnv('META_PAGE_ACCESS_TOKEN') ||
+    getServerEnv('META_ACCESS_TOKEN') ||
+    getServerEnv('FACEBOOK_PAGE_ACCESS_TOKEN') ||
     null
   );
 }
@@ -65,7 +67,7 @@ export async function fetchPageConversations(options: {
   limit?: number;
   messageLimit?: number;
   after?: string | null;
-} = {}): Promise<{ conversations: MetaConversation[]; next?: string; tokenConfigured: boolean }> {
+} = {}): Promise<{ conversations: MetaConversation[]; nextCursor?: string; tokenConfigured: boolean }> {
   const token = getPageToken();
   if (!token) {
     return { conversations: [], tokenConfigured: false };
@@ -112,11 +114,11 @@ export async function fetchPageConversations(options: {
     };
   });
 
-  return {
-    conversations,
-    next: payload.paging?.next,
-    tokenConfigured: true,
-  };
+  const nextCursor = payload.paging?.next
+    ? new URL(payload.paging.next).searchParams.get('after') ?? undefined
+    : undefined;
+
+  return { conversations, nextCursor, tokenConfigured: true };
 }
 
 // -------------------------------------------------------------------------
