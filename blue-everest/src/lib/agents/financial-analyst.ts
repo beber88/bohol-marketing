@@ -192,7 +192,36 @@ Respond with valid JSON matching the financial_report schema.`;
         .select('channel, spend_cents, leads, conversions');
 
       if (metricsErr) {
-        dataQualityIssues.push(`performance_metrics query failed: ${metricsErr.message}`);
+        if (this.isMissingColumnError(metricsErr.message, ['leads', 'conversions'])) {
+          const { data: fallbackMetrics, error: fallbackMetricsErr } = await supabase
+            .from('performance_metrics')
+            .select('channel, spend_cents');
+
+          if (fallbackMetricsErr) {
+            dataQualityIssues.push(`performance_metrics query failed: ${fallbackMetricsErr.message}`);
+          } else if (fallbackMetrics) {
+            for (const m of fallbackMetrics) {
+              const row = m as Record<string, unknown>;
+              const spendCents = (row.spend_cents as number) ?? 0;
+              const spendUsd = spendCents / 100;
+              const channel = (row.channel as string) ?? 'unknown';
+
+              adSpendTotal += spendUsd;
+
+              const provider = channel.toLowerCase().includes('meta') || channel.toLowerCase().includes('facebook')
+                ? 'meta'
+                : channel.toLowerCase().includes('google')
+                  ? 'google'
+                  : channel;
+
+              byProvider[provider] = (byProvider[provider] ?? 0) + spendUsd;
+            }
+            byCategory.advertising = Math.round(adSpendTotal * 100) / 100;
+            dataQualityIssues.push('performance_metrics leads/conversions columns are not present; lead totals are counted from leads table');
+          }
+        } else {
+          dataQualityIssues.push(`performance_metrics query failed: ${metricsErr.message}`);
+        }
       } else if (metrics) {
         for (const m of metrics) {
           const row = m as Record<string, unknown>;
@@ -333,6 +362,11 @@ Respond with valid JSON matching the financial_report schema.`;
       totalConversions,
       dataQualityIssues,
     };
+  }
+
+  private isMissingColumnError(message: string, columns: string[]): boolean {
+    const lower = message.toLowerCase();
+    return columns.some((column) => lower.includes(`.${column}`) || lower.includes(` ${column} `) || lower.includes(`'${column}'`));
   }
 
   private async persistSnapshot(

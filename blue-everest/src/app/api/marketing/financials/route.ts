@@ -102,13 +102,46 @@ export async function GET(request: Request) {
 
     const { data: metrics, error: metricsErr } = await metricsQuery;
 
+    let adTotal = 0;
     let totalLeads = 0;
     let totalConversions = 0;
 
     if (metricsErr) {
-      dataIssues.push(`performance_metrics: ${metricsErr.message}`);
+      if (isMissingColumnError(metricsErr.message, ['leads', 'conversions'])) {
+        let fallbackMetricsQuery = supabase
+          .from('performance_metrics')
+          .select('channel, spend_cents, date');
+
+        if (dateFrom) fallbackMetricsQuery = fallbackMetricsQuery.gte('date', dateFrom);
+        if (dateTo) fallbackMetricsQuery = fallbackMetricsQuery.lte('date', dateTo);
+
+        const { data: fallbackMetrics, error: fallbackMetricsErr } = await fallbackMetricsQuery;
+
+        if (fallbackMetricsErr) {
+          dataIssues.push(`performance_metrics: ${fallbackMetricsErr.message}`);
+        } else if (fallbackMetrics) {
+          for (const m of fallbackMetrics) {
+            const row = m as Record<string, unknown>;
+            const spendCents = (row.spend_cents as number) ?? 0;
+            const spendUsd = spendCents / 100;
+            const channel = (row.channel as string) ?? 'unknown';
+            adTotal += spendUsd;
+
+            const provider = channel.toLowerCase().includes('meta') || channel.toLowerCase().includes('facebook')
+              ? 'meta'
+              : channel.toLowerCase().includes('google')
+                ? 'google'
+                : channel;
+
+            byProvider[provider] = (byProvider[provider] ?? 0) + spendUsd;
+          }
+          totals.advertising = round(adTotal);
+          dataIssues.push('performance_metrics leads/conversions columns are not present; lead totals are counted from leads table');
+        }
+      } else {
+        dataIssues.push(`performance_metrics: ${metricsErr.message}`);
+      }
     } else if (metrics) {
-      let adTotal = 0;
       for (const m of metrics) {
         const row = m as Record<string, unknown>;
         const spendCents = (row.spend_cents as number) ?? 0;
@@ -128,6 +161,16 @@ export async function GET(request: Request) {
         byProvider[provider] = (byProvider[provider] ?? 0) + spendUsd;
       }
       totals.advertising = round(adTotal);
+    }
+
+    const { count: leadsCount, error: leadsCountErr } = await supabase
+      .from('leads')
+      .select('*', { count: 'exact', head: true });
+
+    if (leadsCountErr) {
+      dataIssues.push(`leads count: ${leadsCountErr.message}`);
+    } else if (typeof leadsCount === 'number') {
+      totalLeads = Math.max(totalLeads, leadsCount);
     }
 
     // 3. Operational costs
@@ -226,6 +269,11 @@ export async function GET(request: Request) {
 
 function round(n: number): number {
   return Math.round(n * 100) / 100;
+}
+
+function isMissingColumnError(message: string, columns: string[]): boolean {
+  const lower = message.toLowerCase();
+  return columns.some((column) => lower.includes(`.${column}`) || lower.includes(` ${column} `) || lower.includes(`'${column}'`));
 }
 
 function buildFinancialResponse({
