@@ -1,5 +1,6 @@
 import { createSupabaseAdmin } from '@/lib/connectors/supabase';
 import { sendMessengerMessage } from '@/lib/connectors/meta-graph';
+import { buildSalesOsResponse } from '@/lib/sales-os/blue-everest-agent';
 
 export const dynamic = 'force-dynamic';
 
@@ -38,23 +39,29 @@ function getMessages(lead: LeadRow): ConversationMessage[] {
 
 function buildScript(lead: LeadRow, market: 'IL' | 'PH' | 'INTL') {
   const name = String(lead.full_name ?? '').trim() || 'there';
-  if (market === 'IL') {
-    return [
-      `שלום ${name}, כאן Blue Everest לגבי Panglao Prime Villas.`,
-      'ראיתי שהתעניינת בוילות בפנגלאו. נותרו 2 וילות: Villa D ב-1,535,000 ש"ח ו-Villa C ב-1,650,000 ש"ח.',
-      'לרוכשים ישראלים יש 3 פתרונות בעלות: Deed of Assignment, Leasehold 25+25, Domestic Corporation.',
-      'אפשר לתאם שיחה קצרה כדי להבין תקציב, מסגרת זמן ואיזה מבנה בעלות מתאים לך?',
-      'WhatsApp שיווק: +639542555553 | WhatsApp משרד: +639958565865',
-    ].join('\n');
-  }
+  const raw = (lead.raw_data as Record<string, unknown> | null) ?? {};
+  const messages = getMessages(lead);
+  const latestMessage = [...messages].reverse().find((message) => message.role === 'user')?.content;
+  const response = buildSalesOsResponse({
+    message:
+      latestMessage ??
+      (market === 'IL'
+        ? 'הלקוח התעניין בפרויקט ורוצה המשך טיפול'
+        : 'The lead asked about the project and needs follow-up'),
+    history: messages
+      .filter((message) => message.content)
+      .map((message) => ({
+        role: message.role === 'assistant' ? 'assistant' : 'user',
+        content: message.content,
+        timestamp: message.timestamp,
+      })),
+    preferredLanguage:
+      market === 'IL' || lead.preferred_language === 'he' || raw.language === 'he' ? 'he' : 'en',
+    leadName: name === 'there' ? null : name,
+    channel: inferChannel(lead.source) === 'facebook_dm' ? 'facebook_dm' : 'crm',
+  });
 
-  return [
-    `Hi ${name}, this is Blue Everest regarding Panglao Prime Villas.`,
-    'You asked about the remaining villas in Panglao. Villa D is PHP 32,500,000 and Villa C is PHP 35,000,000.',
-    'The verified Airbnb income model is PHP 395,000 per month, and BDO Bank financing is available for eligible Filipino buyers.',
-    'Can we schedule a short call to confirm budget, timeline and villa preference?',
-    'WhatsApp Marketing: +639542555553 | WhatsApp Office: +639958565865',
-  ].join('\n');
+  return response.reply;
 }
 
 function waLink(phone: unknown, text: string) {

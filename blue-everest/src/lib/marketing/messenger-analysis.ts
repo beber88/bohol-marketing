@@ -1,3 +1,5 @@
+import { buildSalesOsResponse } from '@/lib/sales-os/blue-everest-agent';
+
 export type CampaignLanguage = 'en' | 'he';
 
 export type NormalizedMessage = {
@@ -141,21 +143,6 @@ function buildNextAction(language: CampaignLanguage, signals: string[], missingD
   return 'Ask one qualification question and move the conversation toward WhatsApp or a call.';
 }
 
-function buildRecommendedReply(language: CampaignLanguage, signals: string[]) {
-  if (language === 'he') {
-    if (signals.includes('legal_ownership')) {
-      return 'שלום, תודה על ההודעה. למשקיע ישראלי יש 3 פתרונות בעלות אפשריים: Deed of Assignment, Leasehold 25+25, Domestic Corporation. כרגע נותרו 2 וילות: Villa D ב-1,535,000 ש"ח ו-Villa C ב-1,650,000 ש"ח. כדי לכוון אותך נכון, האם המטרה שלך היא הכנסה משכירות, שימוש עצמי או שילוב של שניהם?';
-    }
-    return 'שלום, תודה על ההודעה. כרגע נותרו 2 וילות בפנגלאו: Villa D ב-1,535,000 ש"ח ו-Villa C ב-1,650,000 ש"ח. למשקיע ישראלי קיימים 3 פתרונות בעלות: Deed of Assignment, Leasehold 25+25, Domestic Corporation. האם תרצה שנתאם שיחה קצרה כדי להבין תקציב, לוח זמנים ומבנה בעלות מתאים?';
-  }
-
-  if (signals.includes('financing')) {
-    return 'Hi, thanks for your message. For Filipino buyers, BDO Bank financing may be available, with Villa D at PHP 32,500,000 and Villa C at PHP 35,000,000. The verified Airbnb income model is PHP 395,000 per month. Can I ask your target timeline and whether you prefer Villa C or Villa D?';
-  }
-
-  return 'Hi, thanks for your message. Panglao Prime Villas has 2 villas left: Villa D at PHP 32,500,000 and Villa C at PHP 35,000,000. The verified Airbnb income model is PHP 395,000 per month, with 17-25% gross ROI. Can I ask your target timeline and whether this is mainly for investment, family use or both?';
-}
-
 export function analyzeMessengerConversation(options: {
   messages: NormalizedMessage[];
   participantName?: string | null;
@@ -186,6 +173,16 @@ export function analyzeMessengerConversation(options: {
   const boundedScore = Math.min(score, 140);
   const status = statusFromScore(boundedScore);
   const missingData = buildMissingData(options.hasContact, language);
+  const latestUserMessage =
+    [...options.messages].reverse().find((message) => message.role === 'user')?.content ??
+    (language === 'he' ? 'הלקוח פנה במסנג׳ר' : 'The customer contacted us on Messenger');
+  const salesOs = buildSalesOsResponse({
+    message: latestUserMessage,
+    history: options.messages,
+    preferredLanguage: language,
+    leadName: options.participantName ?? null,
+    channel: 'facebook_dm',
+  });
 
   return {
     language,
@@ -196,8 +193,8 @@ export function analyzeMessengerConversation(options: {
     urgency: urgencyFromStatus(status),
     signals,
     summary: buildSummary(language, status, signals, options.messages.length),
-    nextBestAction: buildNextAction(language, signals, missingData),
-    recommendedReply: buildRecommendedReply(language, signals),
+    nextBestAction: salesOs.nextBestAction || buildNextAction(language, signals, missingData),
+    recommendedReply: salesOs.reply,
     missingData,
   };
 }
