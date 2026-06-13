@@ -1,6 +1,7 @@
 import { createSupabaseAdmin } from '@/lib/connectors/supabase';
 import { sendMessengerMessage } from '@/lib/connectors/meta-graph';
 import { buildSalesOsResponse } from '@/lib/sales-os/blue-everest-agent';
+import { SITE_CONFIG } from '@/lib/config';
 import { hasServerEnv } from '@/lib/server-env';
 
 export const dynamic = 'force-dynamic';
@@ -67,7 +68,7 @@ function buildScript(lead: LeadRow, market: 'IL' | 'PH' | 'INTL') {
 
 function waLink(phone: unknown, text: string) {
   const normalized = normalizePhone(phone);
-  if (!normalized || normalized.length < 8) return null;
+  if (!normalized || normalized.length < 8) return SITE_CONFIG.whatsappLinks.marketing;
   return `https://wa.me/${normalized.replace(/^\+/, '')}?text=${encodeURIComponent(text)}`;
 }
 

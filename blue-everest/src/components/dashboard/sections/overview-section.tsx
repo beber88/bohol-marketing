@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { COMPLETED_ITEMS, BUDGET, CAMPAIGNS } from "@/lib/data/dashboard-data";
+import { SITE_CONFIG } from "@/lib/config";
 import { useTranslation } from "@/lib/i18n";
 
 const VIDEOS = [
@@ -539,10 +540,10 @@ export function OverviewSection() {
           <p className="text-xs text-muted mt-0.5">Villa C: PHP 35,000,000 - Villa D: PHP 32,500,000 - 2 remaining</p>
         </div>
         <div className="flex gap-3">
-          <a href="https://wa.me/639542555553" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 rounded-full bg-green-600/20 px-3 py-1.5 text-xs text-green-400 hover:bg-green-600/30">
+          <a href={SITE_CONFIG.whatsappLinks.marketing} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 rounded-full bg-green-600/20 px-3 py-1.5 text-xs text-green-400 hover:bg-green-600/30">
             <Phone size={12} /> Marketing
           </a>
-          <a href="https://wa.me/639958565865" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 rounded-full bg-green-600/20 px-3 py-1.5 text-xs text-green-400 hover:bg-green-600/30">
+          <a href={SITE_CONFIG.whatsappLinks.office} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 rounded-full bg-green-600/20 px-3 py-1.5 text-xs text-green-400 hover:bg-green-600/30">
             <Phone size={12} /> Office
           </a>
         </div>

@@ -5,6 +5,7 @@ import {
   AlertTriangle, Users, Heart, Bookmark, MessageSquare,
   MousePointer, ExternalLink, RefreshCw, Loader2, Target,
 } from "lucide-react";
+import { SITE_CONFIG } from "@/lib/config";
 
 interface AdEngagement {
   ad_id: string;
@@ -199,7 +200,7 @@ export function LeadRecoverySection() {
           </a>
 
           <a
-            href="https://wa.me/639542555553"
+            href={SITE_CONFIG.whatsappLinks.marketing}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 p-3 rounded-lg border border-stroke hover:border-[#25D366]/50 hover:bg-[#25D366]/5 transition-colors no-underline"

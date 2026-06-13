@@ -2,6 +2,7 @@ import type {
   Campaign, FunnelStage, DailySpend, PlatformInfo,
   DriveAsset, ActionItem, KpiTarget, CalendarPost,
 } from "./dashboard-types";
+import { SITE_CONFIG } from "@/lib/config";
 
 export const CAMPAIGNS: Campaign[] = [
   {
@@ -176,8 +177,8 @@ export const PLATFORMS: PlatformInfo[] = [
   { name: "Meta Pixel", id: "1599211187973958", status: "installed", url: "https://business.facebook.com/events_manager2", actionNeeded: "Verify events firing" },
   { name: "Google Analytics", id: "G-04NZJT2C4V", status: "installed", url: "https://analytics.google.com", actionNeeded: "Verify real-time data" },
   { name: "Website", id: "primevilla.ph", status: "active", url: "https://primevilla.ph" },
-  { name: "WhatsApp Marketing", id: "+639542555553", status: "active", url: "https://wa.me/639542555553" },
-  { name: "WhatsApp Office", id: "+639958565865", status: "active", url: "https://wa.me/639958565865" },
+  { name: "WhatsApp Marketing", id: "+639542555553", status: "active", url: SITE_CONFIG.whatsappLinks.marketing },
+  { name: "WhatsApp Office", id: "+639958565865", status: "active", url: SITE_CONFIG.whatsappLinks.office },
   { name: "360 Virtual Tour", id: "kuula.co/share/collection/7HMGx", status: "active", url: "https://kuula.co/share/collection/7HMGx?logo=1&info=0&logosize=96&fs=1&vr=0&initload=0&thumbs=1&margin=10" },
   { name: "Lead Sheet", id: "PRIMEVILLA LIVE SITE", status: "active", url: "https://docs.google.com/spreadsheets/d/1oVnbkLNM_DgOAd7EZQVxxaPD0TwNGqqsD7Ezmp0bXSo/edit" },
   { name: "Google Ads", id: "4031838704", status: "active", url: "https://ads.google.com" },
@@ -294,8 +295,8 @@ export const BUSINESS_LINKS = [
   { type: "Company", name: "blue-everest.com", url: "https://blue-everest.com", status: "active" as const },
   { type: "Facebook", name: "Blue Everest Asset Group", url: "https://www.facebook.com/BlueEverestGroup", status: "active" as const },
   { type: "FB Group", name: "Investment PH-IL", url: "https://www.facebook.com/groups/investment.ph.il/", status: "active" as const },
-  { type: "WhatsApp", name: "+639542555553", url: "https://wa.me/639542555553", status: "active" as const },
-  { type: "WhatsApp", name: "+639958565865", url: "https://wa.me/639958565865", status: "active" as const },
+  { type: "WhatsApp", name: "+639542555553", url: SITE_CONFIG.whatsappLinks.marketing, status: "active" as const },
+  { type: "WhatsApp", name: "+639958565865", url: SITE_CONFIG.whatsappLinks.office, status: "active" as const },
   { type: "360 Tour", name: "Kuula Collection", url: "https://kuula.co/share/collection/7HMGx?logo=1&info=0&logosize=96&fs=1&vr=0&initload=0&thumbs=1&margin=10", status: "active" as const },
   { type: "Email", name: "ceo@blue-everest.com", url: "mailto:ceo@blue-everest.com", status: "active" as const },
 ];

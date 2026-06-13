@@ -6,6 +6,7 @@ import {
   MessageCircle, ChevronDown, ChevronUp, ExternalLink, Copy, Check,
   UserCheck, Bot, Send, ArrowLeftRight, Plus, Upload, X,
 } from "lucide-react";
+import { SITE_CONFIG } from "@/lib/config";
 
 interface ConversationMessage {
   role: string;
@@ -628,7 +629,7 @@ export function LeadPipelineSection() {
                       <div className="flex gap-2 flex-wrap">
                         {(lead.lead_status === "hot" || lead.lead_status === "very_hot") && (
                           <a
-                            href={`https://wa.me/639958565865?text=${encodeURIComponent(`Hi, following up on a HOT lead (score ${lead.lead_score})${lead.full_name ? ` - ${lead.full_name}` : ""}. Check the dashboard for conversation details.`)}`}
+                            href={SITE_CONFIG.whatsappLinks.marketing}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 text-xs font-semibold text-emerald-400 hover:bg-emerald-500/20 transition-colors"

@@ -5,6 +5,7 @@ import { randomUUID } from 'crypto';
 import { createSupabaseAdmin } from '@/lib/connectors/supabase';
 import { getOrCreatePanglaoProjectId } from '@/lib/marketing/project';
 import { buildSalesOsResponse } from '@/lib/sales-os/blue-everest-agent';
+import { SITE_CONFIG } from '@/lib/config';
 
 interface ChatMessage {
   role: 'user' | 'assistant';
@@ -271,7 +272,7 @@ function buildSalesHandoff(params: {
     priority: params.qualification.status === 'hot' ? 'high' : params.qualification.status === 'warm' ? 'medium' : 'low',
     alertText,
     whatsapp: {
-      marketing: `https://wa.me/639542555553?text=${encodeURIComponent(alertText)}`,
+      marketing: SITE_CONFIG.whatsappLinks.marketing,
       office: `https://wa.me/639958565865?text=${encodeURIComponent(alertText)}`,
     },
   };

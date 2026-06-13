@@ -10,7 +10,7 @@ export const SITE_CONFIG = {
     office: "+639958565865",
   },
   whatsappLinks: {
-    marketing: "https://wa.me/639542555553",
+    marketing: "https://wa.me/message/5T6FVMO63HG3A1",
     office: "https://wa.me/639958565865",
   },
 } as const;
