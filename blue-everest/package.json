@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "qa:agents:local": "npx tsx tests/agent-exams/run-exams.ts",
-    "qa:community": "npx tsx tests/brand-guard/audit-community-posts.ts"
+    "qa:community": "npx tsx tests/brand-guard/audit-community-posts.ts",
+    "qa:whatsapp": "npx tsx scripts/verify-whatsapp-handoff.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.98.0",
