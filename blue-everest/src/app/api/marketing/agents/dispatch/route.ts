@@ -13,6 +13,8 @@ import { analyticsReporter } from '@/lib/agents/analytics-reporter';
 import { brandGuard } from '@/lib/agents/brand-guard';
 import { salesChatbot } from '@/lib/agents/sales-chatbot';
 import { financialAnalyst } from '@/lib/agents/financial-analyst';
+import { portalDistributionManager } from '@/lib/agents/portal-distribution-manager';
+import { partnershipManager } from '@/lib/agents/partnership-manager';
 import type { AgentName } from '@/lib/agents/types';
 
 const AGENTS = {
@@ -27,6 +29,8 @@ const AGENTS = {
   brand_guard: brandGuard,
   sales_chatbot: salesChatbot,
   financial_analyst: financialAnalyst,
+  portal_distribution_manager: portalDistributionManager,
+  partnership_manager: partnershipManager,
 } as const;
 
 function isAgentName(value: unknown): value is AgentName {

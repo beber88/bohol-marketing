@@ -12,7 +12,9 @@ export type AgentName =
   | 'analytics_reporter'
   | 'brand_guard'
   | 'sales_chatbot'
-  | 'financial_analyst';
+  | 'financial_analyst'
+  | 'portal_distribution_manager'
+  | 'partnership_manager';
 
 export type ModelTier = 'sonnet' | 'haiku' | 'council';
 

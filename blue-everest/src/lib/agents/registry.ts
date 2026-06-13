@@ -103,6 +103,24 @@ export const AGENT_SPECS: Record<AgentName, AgentSpec> = {
     promptFile: 'financial-analyst-system.md',
     defaultModel: 'claude-sonnet-4-20250514',
   },
+  portal_distribution_manager: {
+    name: 'portal_distribution_manager',
+    displayName: 'Portal Distribution Manager',
+    description:
+      'Analyzes portal requirements, adapts property listings for each portal format, manages distribution schedules, tracks listing freshness, and compares portal performance across Philippine and international real estate portals.',
+    modelTier: 'sonnet',
+    promptFile: 'portal-distribution-manager-system.md',
+    defaultModel: 'claude-sonnet-4-20250514',
+  },
+  partnership_manager: {
+    name: 'partnership_manager',
+    displayName: 'Partnership Manager',
+    description:
+      'Manages referral partner database across hotels, resorts, brokers, lawyers, and OFW communities. Generates partnership proposals, tracks referral commissions, and creates partner-specific marketing materials.',
+    modelTier: 'haiku',
+    promptFile: 'partnership-manager-system.md',
+    defaultModel: 'claude-haiku-4-5-20251001',
+  },
 } as const;
 
 const MODEL_MAP: Record<ModelTier, string> = {
