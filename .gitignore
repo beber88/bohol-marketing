@@ -30,11 +30,13 @@ __MACOSX/
 *.swp
 *.swo
 
-# Large image folders (renders)
-BOHOL Project/EXTERIOR*/
-BOHOL Project/INTERIOR*/
-EXTERIOR*/
-INTERIOR*/
+# Large image folders (renders) - only top-level, NOT blue-everest/public/images/
+/BOHOL Project/EXTERIOR*/
+/BOHOL Project/INTERIOR*/
+/EXTERIOR*/
+/INTERIOR*/
+!blue-everest/public/images/exterior/
+!blue-everest/public/images/interior/
 
 # Autoposter data (browser profiles, DB, uploads)
 fb-autoposter/server/data/

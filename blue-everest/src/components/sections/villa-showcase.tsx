@@ -13,13 +13,13 @@ export function VillaShowcase() {
     {
       ...t.villaShowcase.villaC,
       href: "/panglao-prime-villas/villa-c",
-      image: "/images/exterior/villa-front-1.webp",
+      image: "/images/exterior/front-1.webp",
       available: true,
     },
     {
       ...t.villaShowcase.villaD,
       href: "/panglao-prime-villas/villa-d",
-      image: "/images/exterior/villa-front-2.webp",
+      image: "/images/exterior/front-2.webp",
       available: true,
     },
   ];
