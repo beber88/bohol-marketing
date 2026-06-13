@@ -4,6 +4,7 @@
 import { randomUUID } from 'crypto';
 import { createSupabaseAdmin } from '@/lib/connectors/supabase';
 import { getOrCreatePanglaoProjectId } from '@/lib/marketing/project';
+import { buildSalesOsResponse } from '@/lib/sales-os/blue-everest-agent';
 
 interface ChatMessage {
   role: 'user' | 'assistant';
@@ -384,77 +385,27 @@ export async function POST(request: Request) {
       }
     }
 
-    // Try Claude API first, fall back to smart response
-    const apiKey = process.env.ANTHROPIC_API_KEY;
-    let reply: string;
-
-    if (apiKey) {
-      // LLM-powered path
-      try {
-        const Anthropic = (await import('@anthropic-ai/sdk')).default;
-        const anthropic = new Anthropic({ apiKey });
-
-        let systemPrompt: string;
-        try {
-          const { promises: fs } = await import('fs');
-          const path = await import('path');
-          const promptPath = path.resolve(process.cwd(), 'src', 'prompts', 'sales-agent-system.md');
-          systemPrompt = await fs.readFile(promptPath, 'utf-8');
-        } catch {
-          systemPrompt = 'You are a sales consultant for Panglao Prime Villas. Be helpful and professional.';
-        }
-
-        const messages = conversationHistory.slice(-20).map(m => ({ role: m.role as 'user' | 'assistant', content: m.content }));
-        messages.push({ role: 'user', content: userMessage });
-
-        const llmResponse = await anthropic.messages.create({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1024,
-          temperature: 0.6,
-          system: systemPrompt,
-          messages,
-        });
-
-        let rawReply = llmResponse.content
-          .filter(b => b.type === 'text')
-          .map(b => ('text' in b ? b.text : ''))
-          .join('\n');
-
-        // If Claude returned JSON (old prompt behavior), extract just the message
-        if (rawReply.trim().startsWith('{') || rawReply.includes('"message"')) {
-          try {
-            const jsonMatch = rawReply.match(/\{[\s\S]*\}/);
-            if (jsonMatch) {
-              const parsed = JSON.parse(jsonMatch[0]);
-              rawReply = parsed.message || parsed.reply || rawReply;
-            }
-          } catch {
-            // Not valid JSON, use as-is
-          }
-        }
-        // Strip any markdown code blocks
-        rawReply = rawReply.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
-        reply = rawReply;
-      } catch (llmError) {
-        console.warn('[chat] LLM failed, using smart response:', llmError);
-        reply = buildResponse(userMessage, conversationHistory, lang);
-      }
-    } else {
-      // Smart rule-based path (no API key)
-      reply = buildResponse(userMessage, conversationHistory, lang);
-    }
-
-    const qualification = analyzeConversation(
-      [...conversationHistory, { role: 'user', content: userMessage }],
-      reply
-    );
-
     // -- Extract contact info from all user messages --
     const allUserMessages = [
       ...conversationHistory.filter(m => m.role === 'user').map(m => m.content),
       userMessage,
     ];
     const contactInfo = extractContactInfo(allUserMessages);
+
+    const salesOs = buildSalesOsResponse({
+      message: userMessage,
+      history: conversationHistory,
+      channel: 'website_chat',
+      preferredLanguage: lang,
+      leadName: contactInfo.name,
+    });
+
+    let reply = salesOs.reply;
+
+    const qualification = analyzeConversation(
+      [...conversationHistory, { role: 'user', content: userMessage }],
+      reply
+    );
 
     // -- Append contact collection prompt if score >= 40 and missing contact --
     if (qualification.score >= 40) {
@@ -512,6 +463,13 @@ export async function POST(request: Request) {
                 lead_score: qualification.score,
                 lead_status: qualification.status,
                 signals: qualification.signals,
+                sales_os: {
+                  intent: salesOs.intent,
+                  next_best_action: salesOs.nextBestAction,
+                  crm_summary: salesOs.crmSummary,
+                  confidence: salesOs.confidence,
+                  should_escalate: salesOs.shouldEscalate,
+                },
                 last_message_at: now,
               },
             })
@@ -528,6 +486,13 @@ export async function POST(request: Request) {
                 conversations: fullHistory,
                 last_message_at: now,
                 signals: qualification.signals,
+                sales_os: {
+                  intent: salesOs.intent,
+                  next_best_action: salesOs.nextBestAction,
+                  crm_summary: salesOs.crmSummary,
+                  confidence: salesOs.confidence,
+                  should_escalate: salesOs.shouldEscalate,
+                },
               },
               last_contact_at: now,
               updated_at: now,
@@ -561,6 +526,13 @@ export async function POST(request: Request) {
                   conversations: fullHistory,
                   last_message_at: now,
                   signals: qualification.signals,
+                  sales_os: {
+                    intent: salesOs.intent,
+                    next_best_action: salesOs.nextBestAction,
+                    crm_summary: salesOs.crmSummary,
+                    confidence: salesOs.confidence,
+                    should_escalate: salesOs.shouldEscalate,
+                  },
                 },
                 first_contact_at: now,
                 last_contact_at: now,
@@ -589,6 +561,13 @@ export async function POST(request: Request) {
                 lead_score: qualification.score,
                 lead_status: qualification.status,
                 signals: qualification.signals,
+                sales_os: {
+                  intent: salesOs.intent,
+                  next_best_action: salesOs.nextBestAction,
+                  crm_summary: salesOs.crmSummary,
+                  confidence: salesOs.confidence,
+                  should_escalate: salesOs.shouldEscalate,
+                },
               },
             });
 
@@ -628,6 +607,13 @@ export async function POST(request: Request) {
                 lead_score: qualification.score,
                 lead_status: qualification.status,
                 signals: qualification.signals,
+                sales_os: {
+                  intent: salesOs.intent,
+                  next_best_action: salesOs.nextBestAction,
+                  crm_summary: salesOs.crmSummary,
+                  confidence: salesOs.confidence,
+                  should_escalate: salesOs.shouldEscalate,
+                },
               },
             });
           }
@@ -691,6 +677,13 @@ export async function POST(request: Request) {
       reply,
       sessionId,
       language: lang,
+      salesOs: {
+        intent: salesOs.intent,
+        nextBestAction: salesOs.nextBestAction,
+        crmSummary: salesOs.crmSummary,
+        leadSignals: salesOs.leadSignals,
+        shouldEscalate: salesOs.shouldEscalate,
+      },
       leadQualification: qualification,
       salesHandoff,
       suggestedActions: qualification.status === 'hot'

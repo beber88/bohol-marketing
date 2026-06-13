@@ -7,6 +7,7 @@ import { join, resolve } from 'path';
 import { quickValidate } from '@/lib/agents/brand-guard';
 import { createSupabaseAdmin } from '@/lib/connectors/supabase';
 import { COMMUNITY_POSTS } from '@/lib/data/community-posts-data';
+import { whatsappCloudStatus } from '@/lib/connectors/whatsapp-cloud';
 
 const MANILA_TIME_ZONE = 'Asia/Manila';
 const STATUS_FILE = join(process.cwd(), 'public', 'data', 'community-agent-status.json');
@@ -93,8 +94,12 @@ export async function GET(request: Request) {
   }
 
   const watiConfigured = Boolean(process.env.WATI_API_KEY);
+  const whatsappCloud = whatsappCloudStatus();
   if (!watiConfigured) {
     warnings.push('WATI API key is not configured, WhatsApp sales alerts and flows are not live.');
+  }
+  if (!whatsappCloud.configured) {
+    warnings.push('WhatsApp Cloud API is not fully configured, official WhatsApp bot sending is not live yet.');
   }
 
   const campaignState = await readJsonFile<Record<string, unknown>>(LOCAL_CAMPAIGN_STATE_FILE);
@@ -108,7 +113,12 @@ export async function GET(request: Request) {
     timezone: MANILA_TIME_ZONE,
     readyForLiveAction: blockers.length === 0,
     readyForLeadCapture: blockers.length === 0 && Boolean(supabase) && metaConfigured,
-    readyForFullAutomation: blockers.length === 0 && Boolean(supabase) && metaConfigured && watiConfigured && metaWebhookVerifyTokenConfigured,
+    readyForFullAutomation:
+      blockers.length === 0 &&
+      Boolean(supabase) &&
+      metaConfigured &&
+      (watiConfigured || whatsappCloud.configured) &&
+      metaWebhookVerifyTokenConfigured,
     blockers,
     warnings,
     community: {
@@ -138,6 +148,8 @@ export async function GET(request: Request) {
       metaConfigured,
       metaWebhookVerifyTokenConfigured,
       watiConfigured,
+      whatsappCloudConfigured: whatsappCloud.configured,
+      whatsappCloudPhoneNumberIdConfigured: whatsappCloud.phoneNumberIdConfigured,
       simulation: simulation ?? 'unknown',
     },
   });

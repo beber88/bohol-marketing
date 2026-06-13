@@ -74,6 +74,7 @@ type OpsState = {
     metaConfigured?: boolean;
     metaWebhookVerifyTokenConfigured?: boolean;
     watiConfigured?: boolean;
+    whatsappCloudConfigured?: boolean;
     simulation?: boolean | string;
   };
   loaded: boolean;
@@ -480,6 +481,7 @@ export function OverviewSection() {
               ["Supabase", ops.systems.supabaseConfigured],
               ["Meta", ops.systems.metaConfigured],
               ["Meta Webhook", ops.systems.metaWebhookVerifyTokenConfigured],
+              ["WhatsApp Cloud", ops.systems.whatsappCloudConfigured],
               ["WATI", ops.systems.watiConfigured],
             ].map(([label, value]) => (
               <div key={String(label)} className="flex items-center justify-between rounded-lg border border-stroke bg-white/[0.02] px-3 py-2">
