@@ -2,16 +2,18 @@
 
 import { useState } from "react";
 import { useTranslation } from "@/lib/i18n";
+import { ConversationsInboxSection } from "./conversations-inbox-section";
 import { SalesActivitySection } from "./sales-activity-section";
 import { ChatMonitorSection } from "./chat-monitor-section";
 
-type Tab = "salesAgents" | "chatbot";
+type Tab = "inbox" | "salesAgents" | "chatbot";
 
 export function ConversationsSection() {
   const { t } = useTranslation();
-  const [tab, setTab] = useState<Tab>("salesAgents");
+  const [tab, setTab] = useState<Tab>("inbox");
 
   const tabs: { id: Tab; label: string }[] = [
+    { id: "inbox", label: "Conversations OS" },
     { id: "salesAgents", label: t.dashboard.tabs.salesAgents },
     { id: "chatbot", label: t.dashboard.tabs.chatbot },
   ];
@@ -33,6 +35,7 @@ export function ConversationsSection() {
           </button>
         ))}
       </div>
+      {tab === "inbox" && <ConversationsInboxSection />}
       {tab === "salesAgents" && <SalesActivitySection />}
       {tab === "chatbot" && <ChatMonitorSection />}
     </div>

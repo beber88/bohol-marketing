@@ -9,7 +9,6 @@ import type { LeadData } from '@/lib/agents/crm-lead-scorer';
 import { getOrCreatePanglaoProjectId } from '@/lib/marketing/project';
 import {
   getUserProfile,
-  sendMessengerMessage,
   replyToComment,
   sendPrivateReply,
 } from '@/lib/connectors/meta-graph';
@@ -207,14 +206,14 @@ async function processMessagingEvent(
       );
 
       if (chatResponse) {
-        // 4. Send response via Messenger
-        const sent = await sendMessengerMessage(senderId, chatResponse.message);
-
-        // 5. Log the outbound activity
+        // 4. Log the suggested outbound activity. Live sending is approved
+        // from the Conversations OS inbox so the business does not auto-send
+        // unreviewed sales replies from webhook delivery.
         await supabase.from('lead_activities').insert({
           lead_id: lead.id,
-          activity_type: 'meta_dm_sent',
+          activity_type: 'meta_dm_reply_suggested',
           channel: 'meta_messenger',
+          description: chatResponse.message.slice(0, 1000),
           metadata: {
             page_id: pageId,
             recipient_id: senderId,
@@ -224,12 +223,15 @@ async function processMessagingEvent(
             lead_signals: chatResponse.leadSignals,
             suggest_handoff: chatResponse.suggestHandoff,
             handoff_reason: chatResponse.handoffReason ?? null,
-            sent_successfully: sent,
+            sent_successfully: false,
+            human_approval_required: true,
+            approved_send_endpoint: `/api/marketing/conversations/${lead.id}/send`,
           },
+          performed_by: 'sales_os_david',
           created_at: new Date().toISOString(),
         });
 
-        // 6. Update lead score based on new signals
+        // 5. Update lead score based on new signals
         if (chatResponse.leadSignals.length > 0) {
           await updateLeadFromSignals(
             supabase,

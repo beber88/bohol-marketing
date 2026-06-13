@@ -1,7 +1,6 @@
 import { createSupabaseAdmin } from '@/lib/connectors/supabase';
 import {
   normalizeWhatsAppPhone,
-  sendWhatsAppCloudText,
   whatsappCloudStatus,
 } from '@/lib/connectors/whatsapp-cloud';
 import { buildSalesOsResponse } from '@/lib/sales-os/blue-everest-agent';
@@ -158,10 +157,7 @@ async function processMessage(
   const updatedConversation = [
     ...history,
     { role: 'user' as const, content: text, timestamp: message.timestamp ? new Date(Number(message.timestamp) * 1000).toISOString() : now },
-    { role: 'assistant' as const, content: salesOs.reply, timestamp: now },
   ];
-
-  const sendResult = await sendWhatsAppCloudText(from, salesOs.reply);
 
   await supabase.from('lead_activities').insert([
     {
@@ -179,13 +175,13 @@ async function processMessage(
     },
     {
       lead_id: lead.id,
-      activity_type: 'whatsapp_cloud_reply_sent',
+      activity_type: 'whatsapp_cloud_reply_suggested',
       description: salesOs.reply.slice(0, 1000),
       channel: 'whatsapp',
       metadata: {
-        live_send: sendResult.ok,
-        send_status: sendResult.status,
-        send_error: sendResult.error ?? null,
+        live_send: false,
+        human_approval_required: true,
+        approved_send_endpoint: `/api/marketing/conversations/${lead.id}/send`,
         sales_os: {
           intent: salesOs.intent,
           next_best_action: salesOs.nextBestAction,
@@ -229,7 +225,8 @@ async function processMessage(
     leadId: lead.id,
     language: salesOs.language,
     intent: salesOs.intent,
-    sent: sendResult.ok,
+    sent: false,
+    humanApprovalRequired: true,
   };
 }
 
