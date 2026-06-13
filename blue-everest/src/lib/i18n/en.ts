@@ -307,6 +307,7 @@ export const en: Translations = {
       settings: "Settings",
       content: "Content & Publishing",
       conversations: "Conversations",
+      financials: "Financials",
     },
     overview: {
       campaignDay: "Campaign Day",

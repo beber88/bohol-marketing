@@ -11,7 +11,8 @@ export type AgentName =
   | 'crm_lead_scorer'
   | 'analytics_reporter'
   | 'brand_guard'
-  | 'sales_chatbot';
+  | 'sales_chatbot'
+  | 'financial_analyst';
 
 export type ModelTier = 'sonnet' | 'haiku' | 'council';
 

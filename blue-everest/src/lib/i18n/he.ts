@@ -307,6 +307,7 @@ export const he: Translations = {
       settings: "הגדרות",
       content: "תוכן ופרסום",
       conversations: "שיחות",
+      financials: "פיננסים",
     },
     overview: {
       campaignDay: "יום קמפיין",

@@ -5,7 +5,9 @@ import { copywriter } from '@/lib/agents/copywriter';
 import { emailNurture } from '@/lib/agents/email-nurture';
 import { performanceAds } from '@/lib/agents/performance-ads';
 import { whatsappAgent } from '@/lib/agents/whatsapp-agent';
+import { financialAnalyst } from '@/lib/agents/financial-analyst';
 import { createSupabaseAdmin } from '@/lib/connectors/supabase';
+import { seedProjectKnowledge } from '@/lib/knowledge/project-library';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 300;
@@ -150,6 +152,21 @@ export async function GET(request: Request) {
   const today = phtDate();
   const steps: WorkdayStep[] = [];
   const supabase = createSupabaseAdmin();
+
+  if (supabase) {
+    try {
+      const seeded = await seedProjectKnowledge(supabase);
+      steps.push({
+        step: 'agent_training',
+        status: seeded.some((item) => item.action === 'failed') ? 'failed' : 'success',
+        details: `Knowledge training refreshed: ${seeded.filter((item) => item.action !== 'failed').length}/${seeded.length} entries ready`,
+      });
+    } catch (err) {
+      steps.push({ step: 'agent_training', status: 'failed', details: err instanceof Error ? err.message : 'Unknown error' });
+    }
+  } else {
+    steps.push({ step: 'agent_training', status: 'skipped', details: 'Supabase not configured' });
+  }
 
   const { campaigns, error: metaError } = await fetchMetaCampaigns();
   steps.push({
@@ -420,6 +437,22 @@ export async function GET(request: Request) {
     } catch (err) {
       steps.push({ step: 'sales_followup_draft', status: 'failed', details: err instanceof Error ? err.message : 'Unknown error' });
     }
+  }
+
+  // Financial snapshot
+  try {
+    const financial = await financialAnalyst.execute({
+      trigger: 'daily_cron',
+      context: { ...context, workdaySource: 'agent_workday' },
+      query: 'Generate daily financial snapshot with cost breakdown across all categories and savings recommendations.',
+    });
+    steps.push({
+      step: 'financial_analyst',
+      status: financial.success ? 'success' : 'failed',
+      details: financial.success ? summarizeAgentData(financial.data) : financial.error ?? 'failed',
+    });
+  } catch (err) {
+    steps.push({ step: 'financial_analyst', status: 'failed', details: err instanceof Error ? err.message : 'Unknown error' });
   }
 
   steps.push({

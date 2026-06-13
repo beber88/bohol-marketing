@@ -211,6 +211,7 @@ export interface Translations {
       settings: string;
       content: string;
       conversations: string;
+      financials: string;
     };
     overview: {
       campaignDay: string;

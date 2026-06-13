@@ -12,6 +12,7 @@ import { crmLeadScorer } from '@/lib/agents/crm-lead-scorer';
 import { analyticsReporter } from '@/lib/agents/analytics-reporter';
 import { brandGuard } from '@/lib/agents/brand-guard';
 import { salesChatbot } from '@/lib/agents/sales-chatbot';
+import { financialAnalyst } from '@/lib/agents/financial-analyst';
 import type { AgentName } from '@/lib/agents/types';
 
 const AGENTS = {
@@ -25,6 +26,7 @@ const AGENTS = {
   analytics_reporter: analyticsReporter,
   brand_guard: brandGuard,
   sales_chatbot: salesChatbot,
+  financial_analyst: financialAnalyst,
 } as const;
 
 function isAgentName(value: unknown): value is AgentName {
@@ -100,11 +102,20 @@ export async function POST(request: Request) {
           }
         }
 
+        // Fetch latest financial snapshot for cost-aware decisions
+        const { data: latestFinancial } = await supabase
+          .from('financial_snapshots')
+          .select('total_cost_usd, breakdown_by_category, savings_recommendations')
+          .order('snapshot_date', { ascending: false })
+          .limit(1)
+          .maybeSingle();
+
         enrichedContext = {
           ...enrichedContext,
           activeCampaigns: activeCampaigns ?? 0,
           leadCounts: leadsByStatus,
           totalSpend: Math.round(totalSpend * 100) / 100,
+          financialSummary: latestFinancial ?? null,
         };
       } catch {
         // Non-critical: proceed without enrichment

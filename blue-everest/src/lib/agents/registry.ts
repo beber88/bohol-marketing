@@ -94,6 +94,15 @@ export const AGENT_SPECS: Record<AgentName, AgentSpec> = {
     promptFile: 'sales-agent-system.md',
     defaultModel: 'claude-sonnet-4-20250514',
   },
+  financial_analyst: {
+    name: 'financial_analyst',
+    displayName: 'Financial Analyst',
+    description:
+      'Tracks all operational costs across advertising, AI compute, infrastructure, and tools. Produces financial maps, savings recommendations, ROI analysis, and budget-vs-actual reporting.',
+    modelTier: 'sonnet',
+    promptFile: 'financial-analyst-system.md',
+    defaultModel: 'claude-sonnet-4-20250514',
+  },
 } as const;
 
 const MODEL_MAP: Record<ModelTier, string> = {

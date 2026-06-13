@@ -27,6 +27,7 @@ const AGENT_ICONS: Record<string, typeof Bot> = {
   performance_ads: TrendingUp, email_nurture: Mail, whatsapp_agent: MessageSquare,
   crm_lead_scorer: Users, analytics_reporter: BarChart3, brand_guard: Shield,
   sales_chatbot: MessageCircle,
+  financial_analyst: DollarSign,
 };
 
 const AGENT_NAMES: Record<string, string> = {
@@ -34,6 +35,7 @@ const AGENT_NAMES: Record<string, string> = {
   performance_ads: "Ads", email_nurture: "Email", whatsapp_agent: "WhatsApp",
   crm_lead_scorer: "CRM", analytics_reporter: "Analytics", brand_guard: "Brand Guard",
   sales_chatbot: "Chatbot",
+  financial_analyst: "Financial",
 };
 
 export function AgentsSection() {
@@ -141,7 +143,7 @@ export function AgentsSection() {
         </div>
         <div className="bg-surface rounded-xl border border-stroke p-4 text-center">
           <Activity className="mx-auto mb-1.5 text-emerald-400" size={18} />
-          <p className="font-display text-2xl font-bold">10</p>
+          <p className="font-display text-2xl font-bold">{Object.keys(AGENT_NAMES).length}</p>
           <p className="text-[10px] text-muted">Agents Ready</p>
         </div>
         <div className="bg-surface rounded-xl border border-stroke p-4 text-center">

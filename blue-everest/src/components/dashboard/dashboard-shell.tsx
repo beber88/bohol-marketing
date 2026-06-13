@@ -17,6 +17,8 @@ import { ConversationsSection } from "./sections/conversations-section";
 import { CommunityAgentSection } from "./sections/community-agent-section";
 import { LeadRecoverySection } from "./sections/lead-recovery-section";
 import { AutoposterSection } from "./sections/autoposter-section";
+import { FinancialsSection } from "./sections/financials-section";
+import { DashboardSectionBoundary } from "./dashboard-section-boundary";
 
 export function DashboardShell() {
   const { t, dir } = useTranslation();
@@ -48,6 +50,7 @@ export function DashboardShell() {
       case "knowledge": return <KnowledgeSection />;
       case "communityAgent": return <CommunityAgentSection />;
       case "autoposter": return <AutoposterSection />;
+      case "financials": return <FinancialsSection />;
       case "settings": return <SettingsSection />;
       default: return <OverviewSection />;
     }
@@ -113,7 +116,9 @@ export function DashboardShell() {
         {/* Section content */}
         <main className="flex-1 overflow-y-auto p-3 sm:p-6">
           <div className="mx-auto max-w-[1200px]">
-            {renderSection()}
+            <DashboardSectionBoundary sectionId={activeSection} key={activeSection}>
+              {renderSection()}
+            </DashboardSectionBoundary>
           </div>
         </main>
       </div>

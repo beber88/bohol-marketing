@@ -59,6 +59,43 @@ export async function logCost(params: CostLogParams): Promise<void> {
 }
 
 /**
+ * Log an operational cost (infrastructure, tools, subscriptions - non-LLM costs).
+ * Always writes to Supabase operational_costs table.
+ */
+export async function logOperationalCost(params: {
+  category: string;
+  provider: string;
+  description: string;
+  amountUsd: number;
+  periodStart: string;
+  periodEnd: string;
+  isRecurring?: boolean;
+  recurrenceInterval?: string;
+  source?: string;
+}): Promise<void> {
+  try {
+    const { createSupabaseAdmin } = await import('@/lib/connectors/supabase');
+    const supabase = createSupabaseAdmin();
+    if (supabase) {
+      await supabase.from('operational_costs').insert({
+        cost_category: params.category,
+        provider: params.provider,
+        description: params.description,
+        amount_usd: params.amountUsd,
+        period_start: params.periodStart,
+        period_end: params.periodEnd,
+        is_recurring: params.isRecurring ?? false,
+        recurrence_interval: params.recurrenceInterval ?? null,
+        source: params.source ?? 'manual',
+        created_at: new Date().toISOString(),
+      });
+    }
+  } catch {
+    console.error('[cost] Failed to log operational cost');
+  }
+}
+
+/**
  * Calculate the USD cost of an LLM call given the model and token counts.
  * Uses known pricing tables. Falls back to sonnet pricing for unknown models.
  */

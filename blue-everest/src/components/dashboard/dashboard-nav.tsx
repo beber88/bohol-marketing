@@ -3,7 +3,7 @@
 import {
   LayoutDashboard, Megaphone, FileText, Users, Users2,
   Wallet, Settings, Bot, BookOpen, MessageSquare,
-  Share2,
+  Share2, DollarSign,
 } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
 
@@ -42,6 +42,7 @@ const GROUPED_SECTIONS: NavGroup[] = [
     items: [
       { id: "agents", icon: Bot },
       { id: "budget", icon: Wallet },
+      { id: "financials", icon: DollarSign },
       { id: "knowledge", icon: BookOpen },
       { id: "settings", icon: Settings },
     ],
