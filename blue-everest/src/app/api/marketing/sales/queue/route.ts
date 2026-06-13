@@ -1,6 +1,7 @@
 import { createSupabaseAdmin } from '@/lib/connectors/supabase';
 import { sendMessengerMessage } from '@/lib/connectors/meta-graph';
 import { buildSalesOsResponse } from '@/lib/sales-os/blue-everest-agent';
+import { hasServerEnv } from '@/lib/server-env';
 
 export const dynamic = 'force-dynamic';
 
@@ -137,8 +138,8 @@ export async function GET(request: Request) {
     leads,
     total: leads.length,
     blockers: {
-      watiConfigured: Boolean(process.env.WATI_API_KEY),
-      note: process.env.WATI_API_KEY
+      watiConfigured: hasServerEnv('WATI_API_KEY'),
+      note: hasServerEnv('WATI_API_KEY')
         ? 'WATI key is configured. Live sending still depends on approved templates and WATI account status.'
         : 'WATI is not configured, so this queue prepares scripts and WhatsApp links but does not auto-send.',
     },

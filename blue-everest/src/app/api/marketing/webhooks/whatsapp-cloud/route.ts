@@ -6,6 +6,7 @@ import {
 } from '@/lib/connectors/whatsapp-cloud';
 import { buildSalesOsResponse } from '@/lib/sales-os/blue-everest-agent';
 import { getOrCreatePanglaoProjectId } from '@/lib/marketing/project';
+import { getServerEnv } from '@/lib/server-env';
 import type { SupabaseClient } from '@supabase/supabase-js';
 
 export const dynamic = 'force-dynamic';
@@ -25,8 +26,8 @@ type WhatsAppMessage = {
 
 function verifyToken() {
   return (
-    process.env.WHATSAPP_WEBHOOK_VERIFY_TOKEN ??
-    process.env.META_WEBHOOK_VERIFY_TOKEN ??
+    getServerEnv('WHATSAPP_WEBHOOK_VERIFY_TOKEN') ||
+    getServerEnv('META_WEBHOOK_VERIFY_TOKEN') ||
     null
   );
 }

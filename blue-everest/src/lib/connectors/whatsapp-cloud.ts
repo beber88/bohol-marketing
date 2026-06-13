@@ -1,19 +1,21 @@
+import { getServerEnv } from '@/lib/server-env';
+
 const META_API_VERSION = 'v20.0';
 const BASE_URL = `https://graph.facebook.com/${META_API_VERSION}`;
 
 function getAccessToken() {
   return (
-    process.env.WHATSAPP_CLOUD_ACCESS_TOKEN ??
-    process.env.META_PAGE_ACCESS_TOKEN ??
-    process.env.META_ACCESS_TOKEN ??
+    getServerEnv('WHATSAPP_CLOUD_ACCESS_TOKEN') ||
+    getServerEnv('META_PAGE_ACCESS_TOKEN') ||
+    getServerEnv('META_ACCESS_TOKEN') ||
     null
   );
 }
 
 function getPhoneNumberId() {
   return (
-    process.env.WHATSAPP_PHONE_NUMBER_ID ??
-    process.env.META_WHATSAPP_PHONE_NUMBER_ID ??
+    getServerEnv('WHATSAPP_PHONE_NUMBER_ID') ||
+    getServerEnv('META_WHATSAPP_PHONE_NUMBER_ID') ||
     null
   );
 }

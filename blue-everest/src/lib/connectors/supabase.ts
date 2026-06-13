@@ -2,6 +2,7 @@
 // Supabase client setup for Blue Everest marketing platform
 
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
+import { getServerEnv } from '@/lib/server-env';
 
 /**
  * Placeholder for generated Supabase types.
@@ -28,8 +29,8 @@ let adminClient: SupabaseClient | null = null;
 export function createSupabaseClient(): SupabaseClient | null {
   if (anonClient) return anonClient;
 
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const url = getServerEnv('NEXT_PUBLIC_SUPABASE_URL');
+  const anonKey = getServerEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY');
 
   if (!url || !anonKey) {
     console.warn(
@@ -56,8 +57,8 @@ export function createSupabaseClient(): SupabaseClient | null {
 export function createSupabaseAdmin(): SupabaseClient | null {
   if (adminClient) return adminClient;
 
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const url = getServerEnv('NEXT_PUBLIC_SUPABASE_URL');
+  const serviceRoleKey = getServerEnv('SUPABASE_SERVICE_ROLE_KEY');
 
   // If service role key available, use it (bypasses RLS)
   if (url && serviceRoleKey) {
@@ -68,7 +69,7 @@ export function createSupabaseAdmin(): SupabaseClient | null {
   }
 
   // Fallback: use anon key (works with RLS policies we set up)
-  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const anonKey = getServerEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY');
   if (url && anonKey) {
     adminClient = createClient(url, anonKey, {
       auth: { autoRefreshToken: false, persistSession: false },

@@ -2,6 +2,8 @@
 // WATI WhatsApp Business API connector for Blue Everest marketing platform.
 // Handles template messages, text messages, contacts, flows, and broadcasts.
 
+import { getServerEnv } from '@/lib/server-env';
+
 const WATI_BASE_URL = 'https://live-mt-server.wati.io/api/v2';
 
 // ---------------------------------------------------------------------------
@@ -29,7 +31,7 @@ export class WatiConnector {
   private apiKey: string;
 
   constructor() {
-    this.apiKey = process.env.WATI_API_KEY || '';
+    this.apiKey = getServerEnv('WATI_API_KEY');
   }
 
   // ---- Messages ----

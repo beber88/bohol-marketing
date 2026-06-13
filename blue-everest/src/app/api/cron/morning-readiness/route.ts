@@ -8,6 +8,7 @@ import { quickValidate } from '@/lib/agents/brand-guard';
 import { createSupabaseAdmin } from '@/lib/connectors/supabase';
 import { COMMUNITY_POSTS } from '@/lib/data/community-posts-data';
 import { whatsappCloudStatus } from '@/lib/connectors/whatsapp-cloud';
+import { hasServerEnv } from '@/lib/server-env';
 
 const MANILA_TIME_ZONE = 'Asia/Manila';
 const STATUS_FILE = join(process.cwd(), 'public', 'data', 'community-agent-status.json');
@@ -75,25 +76,25 @@ export async function GET(request: Request) {
   if (!supabase) {
     blockers.push('Supabase service role is not configured, leads and conversations cannot be persisted.');
   }
-  const supabaseServiceRoleConfigured = Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY);
+  const supabaseServiceRoleConfigured = hasServerEnv('SUPABASE_SERVICE_ROLE_KEY');
   if (supabase && !supabaseServiceRoleConfigured) {
     warnings.push('SUPABASE_SERVICE_ROLE_KEY is not configured, admin operations rely on anon/RLS permissions.');
   }
 
   const metaConfigured = Boolean(
-    process.env.META_ACCESS_TOKEN ||
-    process.env.META_PAGE_ACCESS_TOKEN ||
-    process.env.FACEBOOK_PAGE_ACCESS_TOKEN
+    hasServerEnv('META_ACCESS_TOKEN') ||
+    hasServerEnv('META_PAGE_ACCESS_TOKEN') ||
+    hasServerEnv('FACEBOOK_PAGE_ACCESS_TOKEN')
   );
   if (!metaConfigured) {
     warnings.push('Meta access token is not configured, live page publishing is unavailable.');
   }
-  const metaWebhookVerifyTokenConfigured = Boolean(process.env.META_WEBHOOK_VERIFY_TOKEN);
+  const metaWebhookVerifyTokenConfigured = hasServerEnv('META_WEBHOOK_VERIFY_TOKEN');
   if (!metaWebhookVerifyTokenConfigured) {
     warnings.push('META_WEBHOOK_VERIFY_TOKEN is not configured, direct Meta Lead Ads webhook verification is not live.');
   }
 
-  const watiConfigured = Boolean(process.env.WATI_API_KEY);
+  const watiConfigured = hasServerEnv('WATI_API_KEY');
   const whatsappCloud = whatsappCloudStatus();
   if (!watiConfigured) {
     warnings.push('WATI API key is not configured, WhatsApp sales alerts and flows are not live.');
