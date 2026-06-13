@@ -1,6 +1,7 @@
 import { createSupabaseAdmin } from '@/lib/connectors/supabase';
 import { sendMessengerMessage } from '@/lib/connectors/meta-graph';
 import { sendWhatsAppCloudText } from '@/lib/connectors/whatsapp-cloud';
+import { wati } from '@/lib/connectors/wati';
 import { getConversationThread } from '@/lib/marketing/conversations-os';
 
 export const dynamic = 'force-dynamic';
@@ -54,12 +55,34 @@ export async function POST(
       providerStatus = { ok: liveSend };
       activityType = liveSend ? 'meta_dm_sent' : 'meta_dm_send_failed';
     } else if (thread.channel === 'whatsapp') {
-      provider = 'whatsapp_cloud';
       const phone = String(lead?.whatsapp ?? lead?.phone ?? '');
-      const result = await sendWhatsAppCloudText(phone, message);
-      liveSend = result.ok;
-      providerStatus = result;
-      activityType = liveSend ? 'whatsapp_cloud_reply_sent' : 'whatsapp_cloud_reply_logged';
+      const cloudResult = await sendWhatsAppCloudText(phone, message);
+      if (cloudResult.ok) {
+        provider = 'whatsapp_cloud';
+        liveSend = true;
+        providerStatus = cloudResult;
+        activityType = 'whatsapp_cloud_reply_sent';
+      } else {
+        provider = 'wati';
+        try {
+          const watiResult = await wati.sendTextMessage(phone, message);
+          liveSend = Boolean(watiResult.result);
+          providerStatus = {
+            ok: liveSend,
+            cloudFallbackReason: cloudResult.error ?? cloudResult.status,
+            wati: watiResult,
+          };
+          activityType = liveSend ? 'wati_reply_sent' : 'wati_reply_logged';
+        } catch (err) {
+          liveSend = false;
+          providerStatus = {
+            ok: false,
+            cloudFallbackReason: cloudResult.error ?? cloudResult.status,
+            watiError: err instanceof Error ? err.message : 'Unknown WATI error',
+          };
+          activityType = 'whatsapp_reply_logged';
+        }
+      }
     } else if (thread.channel === 'website_chat') {
       provider = 'website_chat';
       activityType = 'website_chat_human_reply_logged';

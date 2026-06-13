@@ -50,7 +50,7 @@ type Thread = {
   suggestedReply: string;
   signals: string[];
   canSendLive: boolean;
-  provider: "meta_messenger" | "whatsapp_cloud" | "website_chat" | "log_only";
+  provider: "meta_messenger" | "whatsapp_cloud" | "wati" | "website_chat" | "log_only";
   blockers: string[];
 };
 
@@ -66,6 +66,7 @@ type InboxResponse = {
   providers: {
     metaMessenger: { configured: boolean };
     whatsAppCloud: { configured: boolean };
+    wati: { configured: boolean };
     supabaseServiceRoleConfigured: boolean;
     watiRequired: boolean;
   };
@@ -403,7 +404,7 @@ export function ConversationsInboxSection() {
                     Approve and send/log
                   </button>
                   <span className="text-xs text-muted">
-                    {selected.canSendLive ? "Live provider ready." : "No live provider. CRM log only."}
+                    {selected.canSendLive ? `Live provider ready: ${selected.provider}.` : "No live provider. CRM log only."}
                   </span>
                 </div>
               </div>
@@ -457,7 +458,7 @@ export function ConversationsInboxSection() {
             <div className="space-y-2 text-xs">
               <div className="flex justify-between"><span className="text-muted">Messenger</span><span className={data?.providers.metaMessenger.configured ? "text-emerald-300" : "text-amber-300"}>{data?.providers.metaMessenger.configured ? "Ready" : "Missing token"}</span></div>
               <div className="flex justify-between"><span className="text-muted">WhatsApp Cloud</span><span className={data?.providers.whatsAppCloud.configured ? "text-emerald-300" : "text-amber-300"}>{data?.providers.whatsAppCloud.configured ? "Ready" : "Not connected"}</span></div>
-              <div className="flex justify-between"><span className="text-muted">WATI</span><span className="text-emerald-300">Optional</span></div>
+              <div className="flex justify-between"><span className="text-muted">WATI fallback</span><span className={data?.providers.wati.configured ? "text-emerald-300" : "text-muted"}>{data?.providers.wati.configured ? "Ready" : "Optional"}</span></div>
             </div>
             {selected?.blockers.length ? (
               <div className="mt-3 space-y-2">

@@ -6,6 +6,7 @@ const BASE_URL = `https://graph.facebook.com/${META_API_VERSION}`;
 function getAccessToken() {
   return (
     getServerEnv('WHATSAPP_CLOUD_ACCESS_TOKEN') ||
+    getServerEnv('WHATSAPP_ACCESS_TOKEN') ||
     getServerEnv('META_PAGE_ACCESS_TOKEN') ||
     getServerEnv('META_ACCESS_TOKEN') ||
     null
@@ -15,6 +16,7 @@ function getAccessToken() {
 function getPhoneNumberId() {
   return (
     getServerEnv('WHATSAPP_PHONE_NUMBER_ID') ||
+    getServerEnv('WHATSAPP_BUSINESS_PHONE_NUMBER_ID') ||
     getServerEnv('META_WHATSAPP_PHONE_NUMBER_ID') ||
     null
   );
@@ -43,7 +45,7 @@ export async function sendWhatsAppCloudText(
     return {
       ok: false,
       status: 503,
-      error: 'WhatsApp Cloud API is not configured. Set WHATSAPP_CLOUD_ACCESS_TOKEN and WHATSAPP_PHONE_NUMBER_ID.',
+      error: 'WhatsApp Cloud API is not configured. Set WHATSAPP_ACCESS_TOKEN and WHATSAPP_PHONE_NUMBER_ID.',
     };
   }
 

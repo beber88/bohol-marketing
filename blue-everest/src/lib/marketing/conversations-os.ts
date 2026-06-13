@@ -32,7 +32,7 @@ export type ConversationThread = {
   suggestedReply: string;
   signals: string[];
   canSendLive: boolean;
-  provider: 'meta_messenger' | 'whatsapp_cloud' | 'website_chat' | 'log_only';
+  provider: 'meta_messenger' | 'whatsapp_cloud' | 'wati' | 'website_chat' | 'log_only';
   blockers: string[];
 };
 
@@ -64,7 +64,7 @@ export function normalizeConversationChannel(source: unknown, metadata?: Record<
 
 export function providerForChannel(channel: ConversationChannel) {
   if (channel === 'facebook_dm') return 'meta_messenger' as const;
-  if (channel === 'whatsapp') return 'whatsapp_cloud' as const;
+  if (channel === 'whatsapp') return whatsappCloudStatus().configured ? 'whatsapp_cloud' as const : 'wati' as const;
   if (channel === 'website_chat') return 'website_chat' as const;
   return 'log_only' as const;
 }
@@ -79,7 +79,12 @@ export function providerStatus() {
     whatsAppCloud: {
       ...whatsApp,
       configured: whatsApp.configured,
-      requiredEnv: ['WHATSAPP_CLOUD_ACCESS_TOKEN', 'WHATSAPP_PHONE_NUMBER_ID', 'WHATSAPP_WEBHOOK_VERIFY_TOKEN'],
+      requiredEnv: ['WHATSAPP_ACCESS_TOKEN', 'WHATSAPP_PHONE_NUMBER_ID', 'WHATSAPP_WEBHOOK_VERIFY_TOKEN'],
+      acceptedAliases: ['WHATSAPP_CLOUD_ACCESS_TOKEN', 'WHATSAPP_BUSINESS_PHONE_NUMBER_ID', 'META_WHATSAPP_PHONE_NUMBER_ID'],
+    },
+    wati: {
+      configured: hasServerEnv('WATI_API_KEY'),
+      mode: 'fallback_provider_for_whatsapp_until_cloud_phone_number_id_is_available',
     },
     supabaseServiceRoleConfigured: hasServerEnv('SUPABASE_SERVICE_ROLE_KEY'),
     watiRequired: false,
@@ -138,7 +143,12 @@ function inferStatus(lead: LeadRow, messages: SalesOsMessage[], agentMode: 'auto
 function channelCanSend(channel: ConversationChannel, lead: LeadRow) {
   const raw = asRecord(lead.raw_data);
   if (channel === 'facebook_dm') return Boolean(asString(raw.meta_psid) && hasMetaPageToken());
-  if (channel === 'whatsapp') return Boolean((asString(lead.whatsapp) || asString(lead.phone)) && whatsappCloudStatus().configured);
+  if (channel === 'whatsapp') {
+    return Boolean(
+      (asString(lead.whatsapp) || asString(lead.phone)) &&
+        (whatsappCloudStatus().configured || hasServerEnv('WATI_API_KEY'))
+    );
+  }
   if (channel === 'website_chat') return true;
   return false;
 }
@@ -152,7 +162,12 @@ function blockersFor(channel: ConversationChannel, lead: LeadRow) {
   }
   if (channel === 'whatsapp') {
     if (!asString(lead.whatsapp) && !asString(lead.phone)) blockers.push('Missing WhatsApp phone number.');
-    if (!whatsappCloudStatus().configured) blockers.push('WhatsApp Cloud API is not configured. WATI is not required.');
+    if (!whatsappCloudStatus().configured && !hasServerEnv('WATI_API_KEY')) {
+      blockers.push('WhatsApp Cloud API is not configured and WATI fallback is missing.');
+    }
+    if (!whatsappCloudStatus().configured && hasServerEnv('WATI_API_KEY')) {
+      blockers.push('WhatsApp Cloud phone number ID is missing. WATI fallback will be used for approved live sends.');
+    }
   }
   if (channel === 'facebook_comment') blockers.push('Public comments need a separate approved reply action.');
   if (channel === 'email') blockers.push('Email sending is not connected to this live inbox yet.');
