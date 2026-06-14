@@ -13,8 +13,63 @@ import {
   CheckCircle,
   XCircle,
   AlertTriangle,
+  Image as ImageIcon,
 } from "lucide-react";
 import { StatusBadge } from "../cards/status-badge";
+
+/* ------------------------------------------------------------------ */
+/*  Hebrew labels                                                      */
+/* ------------------------------------------------------------------ */
+
+const L = {
+  title: "מודעות פורטלים",
+  subtitle: "ניהול מודעות נכסים בכל הפורטלים",
+  distributeAll: "הפצה לכולם",
+  selectProperty: "בחר נכס להפצה",
+  allPortals: "כל הפורטלים",
+  allProperties: "כל הנכסים",
+  allStatuses: "כל הסטטוסים",
+  total: 'סה"כ',
+  active: "מפורסמות",
+  pending: "ממתינות",
+  errors: "שגיאות",
+  property: "נכס",
+  portal: "פורטל",
+  status: "סטטוס",
+  titleCol: "כותרת",
+  views: "צפיות",
+  inquiries: "פניות",
+  leads: "לידים",
+  updated: "עודכן",
+  images: "תמונות הנכס",
+  adaptedTitle: "כותרת מותאמת",
+  adaptedDesc: "תיאור מותאם",
+  notAdapted: 'טרם הותאם - לחץ "התאם" ליצירת תוכן',
+  brandGuard: "שומר מותג",
+  notChecked: "לא נבדק",
+  passed: "עבר",
+  failed: "נכשל",
+  lastError: "שגיאה אחרונה",
+  adapt: "התאם",
+  submit: "פרסם",
+  refresh: "רענן",
+  viewOnPortal: "צפה בפורטל",
+  noListings: "אין מודעות שתואמות למסנן.",
+  noListingsHint: "נסה לשנות את המסנן או הפץ נכס ליצירת מודעות.",
+  distributing: "מפיץ...",
+  distributionDone: "ההפצה הושלמה",
+  cancel: "ביטול",
+  close: "סגור",
+  succeeded: "הצליחו",
+  failedCount: "נכשלו",
+  readyGroup: "מוכנות לפרסום",
+  pendingGroup: "ממתינות לבדיקה",
+  activeGroup: "מפורסמות",
+  errorGroup: "שגיאות",
+  created: "נוצר",
+  submitted: "הוגש",
+  published: "פורסם",
+};
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -24,20 +79,27 @@ interface PortalListing {
   id: string;
   property_id: string;
   portal_id: string;
-  adapted_title: string;
-  adapted_description: string;
+  adapted_title: string | null;
+  adapted_description: string | null;
+  adapted_fields: Record<string, unknown>;
   status: string;
   brand_guard_passed: boolean | null;
+  brand_guard_result: Record<string, unknown> | null;
+  external_listing_id: string | null;
   external_url: string | null;
   views: number;
   inquiries: number;
   leads_generated: number;
   submitted_at: string | null;
   published_at: string | null;
+  last_refreshed_at: string | null;
+  expires_at: string | null;
   last_error: string | null;
+  retry_count: number;
   created_at: string;
-  properties: { internal_name: string; slug: string };
-  portals: { name: string; slug: string; tier: string };
+  updated_at: string;
+  properties: { internal_name: string; slug: string; image_urls?: string[] } | null;
+  portals: { name: string; slug: string; tier: number } | null;
 }
 
 interface Property {
@@ -59,36 +121,81 @@ interface DistributeLog {
 }
 
 /* ------------------------------------------------------------------ */
+/*  Status group definitions                                           */
+/* ------------------------------------------------------------------ */
+
+interface StatusGroup {
+  key: string;
+  label: string;
+  match: (listing: PortalListing) => boolean;
+  color: string;
+}
+
+const STATUS_GROUPS: StatusGroup[] = [
+  {
+    key: "ready",
+    label: L.readyGroup,
+    match: (l) => l.status === "brand_guard_passed",
+    color: "text-blue-400",
+  },
+  {
+    key: "pending",
+    label: L.pendingGroup,
+    match: (l) => l.status === "pending_review" || l.status === "draft" || l.status === "submitting",
+    color: "text-amber-400",
+  },
+  {
+    key: "active",
+    label: L.activeGroup,
+    match: (l) => l.status === "active",
+    color: "text-emerald-400",
+  },
+  {
+    key: "error",
+    label: L.errorGroup,
+    match: (l) => l.status === "error" || l.status === "rejected",
+    color: "text-red-400",
+  },
+];
+
+/* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
 
-const TIER_COLORS: Record<string, string> = {
-  premium: "border-amber-500/30 bg-amber-500/10 text-amber-400",
-  standard: "border-blue-500/30 bg-blue-500/10 text-blue-400",
-  free: "border-zinc-500/30 bg-zinc-500/10 text-zinc-400",
+const TIER_COLORS: Record<number, string> = {
+  1: "border-amber-500/30 bg-amber-500/10 text-amber-400",
+  2: "border-blue-500/30 bg-blue-500/10 text-blue-400",
+  3: "border-zinc-500/30 bg-zinc-500/10 text-zinc-400",
 };
 
-function tierBadge(tier: string) {
-  const style = TIER_COLORS[tier] || TIER_COLORS.standard;
+const TIER_LABELS: Record<number, string> = {
+  1: "פרימיום",
+  2: "רגיל",
+  3: "חינם",
+};
+
+function tierBadge(tier: number) {
+  const style = TIER_COLORS[tier] || TIER_COLORS[2];
+  const label = TIER_LABELS[tier] || `רמה ${tier}`;
   return (
     <span
-      className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${style}`}
+      className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-bold tracking-wider ${style}`}
     >
-      {tier}
+      {label}
     </span>
   );
 }
 
-function relativeTime(iso: string | null): string {
-  if (!iso) return "-";
-  const diff = Date.now() - new Date(iso).getTime();
-  const mins = Math.floor(diff / 60_000);
-  if (mins < 1) return "just now";
-  if (mins < 60) return `${mins}m ago`;
-  const hrs = Math.floor(mins / 60);
-  if (hrs < 24) return `${hrs}h ago`;
-  const days = Math.floor(hrs / 24);
-  return `${days}d ago`;
+function relativeTime(dateStr: string | null): string {
+  if (!dateStr) return "-";
+  const diff = Date.now() - new Date(dateStr).getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1) return "עכשיו";
+  if (mins < 60) return `לפני ${mins} דק'`;
+  const hours = Math.floor(mins / 60);
+  if (hours < 24) return `לפני ${hours} שע'`;
+  const days = Math.floor(hours / 24);
+  return `לפני ${days} ימים`;
 }
 
 /* ------------------------------------------------------------------ */
@@ -110,9 +217,7 @@ export function PortalsListingsSection() {
 
   /* --- interaction state --- */
   const [expandedId, setExpandedId] = useState<string | null>(null);
-  const [actionLoading, setActionLoading] = useState<Record<string, string>>(
-    {},
-  );
+  const [actionLoading, setActionLoading] = useState<Record<string, string>>({});
 
   /* --- SSE distribution state --- */
   const [distributing, setDistributing] = useState<{
@@ -138,7 +243,7 @@ export function PortalsListingsSection() {
         fetch("/api/marketing/portals"),
       ]);
 
-      if (!listingsRes.ok) throw new Error("Failed to load listings");
+      if (!listingsRes.ok) throw new Error("טעינת המודעות נכשלה");
 
       const [listingsData, propertiesData, portalsData] = await Promise.all([
         listingsRes.json(),
@@ -150,7 +255,7 @@ export function PortalsListingsSection() {
       setProperties(propertiesData.properties || []);
       setPortals(portalsData.portals || []);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to load data");
+      setError(err instanceof Error ? err.message : "טעינת הנתונים נכשלה");
     } finally {
       setLoading(false);
     }
@@ -166,11 +271,40 @@ export function PortalsListingsSection() {
 
   const filtered = listings.filter((l) => {
     if (filterPortal !== "all" && l.portal_id !== filterPortal) return false;
-    if (filterProperty !== "all" && l.property_id !== filterProperty)
-      return false;
+    if (filterProperty !== "all" && l.property_id !== filterProperty) return false;
     if (filterStatus !== "all" && l.status !== filterStatus) return false;
     return true;
   });
+
+  /* ---------------------------------------------------------------- */
+  /*  Grouped listings by status                                       */
+  /* ---------------------------------------------------------------- */
+
+  function groupListings(items: PortalListing[]) {
+    const grouped: { group: StatusGroup; items: PortalListing[] }[] = [];
+    const assigned = new Set<string>();
+
+    for (const group of STATUS_GROUPS) {
+      const matching = items.filter((l) => group.match(l) && !assigned.has(l.id));
+      if (matching.length > 0) {
+        matching.forEach((l) => assigned.add(l.id));
+        grouped.push({ group, items: matching });
+      }
+    }
+
+    // Catch-all for statuses not in any group
+    const remaining = items.filter((l) => !assigned.has(l.id));
+    if (remaining.length > 0) {
+      grouped.push({
+        group: { key: "other", label: "אחר", match: () => true, color: "text-muted" },
+        items: remaining,
+      });
+    }
+
+    return grouped;
+  }
+
+  const groupedListings = groupListings(filtered);
 
   /* ---------------------------------------------------------------- */
   /*  Stats                                                            */
@@ -247,7 +381,7 @@ export function PortalsListingsSection() {
   };
 
   /* ---------------------------------------------------------------- */
-  /*  SSE distribution                                                 */
+  /*  SSE distribution (POST with ReadableStream)                      */
   /* ---------------------------------------------------------------- */
 
   const handleDistribute = async () => {
@@ -261,8 +395,7 @@ export function PortalsListingsSection() {
       total: 0,
       done: 0,
       logs: [],
-      propertyName: properties.find((p) => p.id === filterProperty)
-        ?.internal_name,
+      propertyName: properties.find((p) => p.id === filterProperty)?.internal_name,
     });
 
     try {
@@ -368,7 +501,7 @@ export function PortalsListingsSection() {
   }
 
   return (
-    <section className="space-y-6">
+    <section dir="rtl" className="space-y-6">
       {/* ---- Header ---- */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
@@ -376,12 +509,10 @@ export function PortalsListingsSection() {
             <List size={20} className="text-white" />
           </div>
           <div>
-            <h2 className="text-lg font-semibold text-text-primary">
-              Portal Listings
+            <h2 className="text-lg font-display font-semibold text-text-primary">
+              {L.title}
             </h2>
-            <p className="text-xs text-muted">
-              Manage property listings across all portals
-            </p>
+            <p className="text-xs text-muted">{L.subtitle}</p>
           </div>
         </div>
 
@@ -396,14 +527,12 @@ export function PortalsListingsSection() {
             }
             className="rounded-lg bg-gradient-to-r from-indigo-500 to-blue-600 px-4 py-2 text-sm font-medium text-white hover:from-indigo-600 hover:to-blue-700 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
             title={
-              filterProperty === "all"
-                ? "Select a property first"
-                : "Distribute to all portals"
+              filterProperty === "all" ? L.selectProperty : L.distributeAll
             }
           >
             <span className="flex items-center gap-1.5">
               <Send size={14} />
-              Distribute All
+              {L.distributeAll}
             </span>
           </button>
 
@@ -413,7 +542,7 @@ export function PortalsListingsSection() {
             onChange={(e) => setFilterPortal(e.target.value)}
             className="bg-surface border border-stroke rounded-lg px-2 py-1 text-xs text-muted"
           >
-            <option value="all">All Portals</option>
+            <option value="all">{L.allPortals}</option>
             {portals.map((p) => (
               <option key={p.id} value={p.id}>
                 {p.name}
@@ -427,7 +556,7 @@ export function PortalsListingsSection() {
             onChange={(e) => setFilterProperty(e.target.value)}
             className="bg-surface border border-stroke rounded-lg px-2 py-1 text-xs text-muted"
           >
-            <option value="all">All Properties</option>
+            <option value="all">{L.allProperties}</option>
             {properties.map((p) => (
               <option key={p.id} value={p.id}>
                 {p.internal_name}
@@ -441,7 +570,7 @@ export function PortalsListingsSection() {
             onChange={(e) => setFilterStatus(e.target.value)}
             className="bg-surface border border-stroke rounded-lg px-2 py-1 text-xs text-muted"
           >
-            <option value="all">All Statuses</option>
+            <option value="all">{L.allStatuses}</option>
             {uniqueStatuses.map((s) => (
               <option key={s} value={s}>
                 {s.replace(/_/g, " ")}
@@ -455,10 +584,7 @@ export function PortalsListingsSection() {
             disabled={loading}
             className="rounded-lg border border-stroke px-3 py-1.5 text-xs font-medium text-muted hover:text-text-primary hover:bg-surface transition-colors"
           >
-            <RefreshCw
-              size={14}
-              className={loading ? "animate-spin" : ""}
-            />
+            <RefreshCw size={14} className={loading ? "animate-spin" : ""} />
           </button>
         </div>
       </div>
@@ -466,13 +592,10 @@ export function PortalsListingsSection() {
       {/* ---- Error banner ---- */}
       {error && (
         <div className="rounded-2xl border border-red-500/30 bg-red-500/10 p-4 flex items-start gap-3">
-          <AlertTriangle
-            size={18}
-            className="text-red-400 shrink-0 mt-0.5"
-          />
+          <AlertTriangle size={18} className="text-red-400 shrink-0 mt-0.5" />
           <div>
             <p className="text-sm font-semibold text-red-400">
-              Failed to load listings
+              {L.lastError}
             </p>
             <p className="text-xs text-red-300/70 mt-1">{error}</p>
           </div>
@@ -481,336 +604,381 @@ export function PortalsListingsSection() {
 
       {/* ---- Stats row ---- */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <StatCard label="Total" value={totalCount} color="text-text-primary" />
-        <StatCard label="Active" value={activeCount} color="text-emerald-400" />
-        <StatCard label="Pending" value={pendingCount} color="text-amber-400" />
-        <StatCard label="Errors" value={errorCount} color="text-red-400" />
+        <StatCard label={L.total} value={totalCount} color="text-text-primary" />
+        <StatCard label={L.active} value={activeCount} color="text-emerald-400" />
+        <StatCard label={L.pending} value={pendingCount} color="text-amber-400" />
+        <StatCard label={L.errors} value={errorCount} color="text-red-400" />
       </div>
 
-      {/* ---- Listings table ---- */}
+      {/* ---- Grouped listings ---- */}
       {filtered.length > 0 ? (
-        <div className="rounded-2xl border border-stroke bg-surface overflow-hidden">
-          {/* Table header */}
-          <div className="hidden md:grid md:grid-cols-[1.4fr_1fr_0.9fr_1.8fr_0.6fr_0.6fr_0.6fr_0.8fr] gap-2 px-5 py-3 border-b border-stroke">
-            <span className="text-xs font-semibold text-muted uppercase tracking-wider">
-              Property
-            </span>
-            <span className="text-xs font-semibold text-muted uppercase tracking-wider">
-              Portal
-            </span>
-            <span className="text-xs font-semibold text-muted uppercase tracking-wider">
-              Status
-            </span>
-            <span className="text-xs font-semibold text-muted uppercase tracking-wider">
-              Title
-            </span>
-            <span className="text-xs font-semibold text-muted uppercase tracking-wider text-right">
-              Views
-            </span>
-            <span className="text-xs font-semibold text-muted uppercase tracking-wider text-right">
-              Inquiries
-            </span>
-            <span className="text-xs font-semibold text-muted uppercase tracking-wider text-right">
-              Leads
-            </span>
-            <span className="text-xs font-semibold text-muted uppercase tracking-wider text-right">
-              Updated
-            </span>
-          </div>
-
-          {/* Table rows */}
-          {filtered.map((listing) => {
-            const isExpanded = expandedId === listing.id;
-            const currentAction = actionLoading[listing.id];
-
-            return (
-              <div key={listing.id}>
-                {/* Main row */}
-                <button
-                  onClick={() =>
-                    setExpandedId(isExpanded ? null : listing.id)
-                  }
-                  className="w-full border-t border-stroke hover:bg-surface/50 cursor-pointer transition-colors"
-                >
-                  {/* Desktop row */}
-                  <div className="hidden md:grid md:grid-cols-[1.4fr_1fr_0.9fr_1.8fr_0.6fr_0.6fr_0.6fr_0.8fr] gap-2 items-center px-5 py-3 text-left">
-                    {/* Property */}
-                    <span className="text-sm font-medium text-text-primary truncate">
-                      {listing.properties.internal_name}
-                    </span>
-
-                    {/* Portal + tier */}
-                    <span className="flex items-center gap-2">
-                      <span className="text-sm text-text-primary truncate">
-                        {listing.portals.name}
-                      </span>
-                      {tierBadge(listing.portals.tier)}
-                    </span>
-
-                    {/* Status */}
-                    <span>
-                      <StatusBadge status={listing.status} type="listing" />
-                    </span>
-
-                    {/* Title */}
-                    <span className="text-xs text-muted truncate">
-                      {listing.adapted_title || "Not adapted yet"}
-                    </span>
-
-                    {/* Views */}
-                    <span className="text-xs text-muted text-right tabular-nums">
-                      {listing.views.toLocaleString()}
-                    </span>
-
-                    {/* Inquiries */}
-                    <span className="text-xs text-muted text-right tabular-nums">
-                      {listing.inquiries.toLocaleString()}
-                    </span>
-
-                    {/* Leads */}
-                    <span className="text-xs text-muted text-right tabular-nums">
-                      {listing.leads_generated.toLocaleString()}
-                    </span>
-
-                    {/* Updated */}
-                    <span className="flex items-center justify-end gap-1">
-                      <span className="text-xs text-muted">
-                        {relativeTime(
-                          listing.published_at || listing.created_at,
-                        )}
-                      </span>
-                      {isExpanded ? (
-                        <ChevronUp size={14} className="text-muted shrink-0" />
-                      ) : (
-                        <ChevronDown
-                          size={14}
-                          className="text-muted shrink-0"
-                        />
-                      )}
-                    </span>
-                  </div>
-
-                  {/* Mobile row */}
-                  <div className="md:hidden flex flex-col gap-1.5 px-5 py-3 text-left">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-text-primary">
-                        {listing.properties.internal_name}
-                      </span>
-                      <StatusBadge status={listing.status} type="listing" />
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs text-muted">
-                        {listing.portals.name}
-                      </span>
-                      {tierBadge(listing.portals.tier)}
-                    </div>
-                    <div className="flex items-center gap-4 text-[11px] text-muted">
-                      <span>{listing.views} views</span>
-                      <span>{listing.inquiries} inquiries</span>
-                      <span>{listing.leads_generated} leads</span>
-                    </div>
-                  </div>
-                </button>
-
-                {/* Expanded detail */}
-                {isExpanded && (
-                  <div className="border-t border-stroke/30 px-5 py-4 space-y-4 bg-white/[0.01]">
-                    {/* Adapted title */}
-                    <div>
-                      <label className="text-[10px] font-semibold text-muted uppercase tracking-wider">
-                        Adapted Title
-                      </label>
-                      <p className="mt-1 text-sm text-text-primary">
-                        {listing.adapted_title || (
-                          <span className="italic text-muted">
-                            Not adapted yet - click Adapt to generate
-                          </span>
-                        )}
-                      </p>
-                    </div>
-
-                    {/* Adapted description */}
-                    <div>
-                      <label className="text-[10px] font-semibold text-muted uppercase tracking-wider">
-                        Adapted Description
-                      </label>
-                      <p className="mt-1 text-xs text-muted leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">
-                        {listing.adapted_description || (
-                          <span className="italic">
-                            Not adapted yet
-                          </span>
-                        )}
-                      </p>
-                    </div>
-
-                    {/* Brand guard result */}
-                    <div>
-                      <label className="text-[10px] font-semibold text-muted uppercase tracking-wider">
-                        Brand Guard
-                      </label>
-                      <div className="mt-1">
-                        {listing.brand_guard_passed === null ? (
-                          <span className="inline-flex items-center gap-1.5 rounded-full border border-zinc-500/30 bg-zinc-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-zinc-400">
-                            Not checked
-                          </span>
-                        ) : listing.brand_guard_passed ? (
-                          <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-400">
-                            <CheckCircle size={12} />
-                            Passed
-                          </span>
-                        ) : (
-                          <span className="inline-flex items-center gap-1.5 rounded-full border border-red-500/30 bg-red-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-red-400">
-                            <XCircle size={12} />
-                            Failed
-                          </span>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Last error */}
-                    {listing.last_error && (
-                      <div className="rounded-lg border border-red-500/20 bg-red-500/10 px-4 py-3 flex items-start gap-2">
-                        <AlertTriangle
-                          size={14}
-                          className="text-red-400 shrink-0 mt-0.5"
-                        />
-                        <div>
-                          <p className="text-[10px] font-semibold text-red-400 uppercase">
-                            Last Error
-                          </p>
-                          <p className="text-xs text-red-300 mt-0.5">
-                            {listing.last_error}
-                          </p>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Timestamps */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                      <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
-                        <p className="text-[9px] text-muted">Created</p>
-                        <p className="text-xs font-medium text-text-primary">
-                          {new Date(listing.created_at).toLocaleDateString()}
-                        </p>
-                      </div>
-                      <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
-                        <p className="text-[9px] text-muted">Submitted</p>
-                        <p className="text-xs font-medium text-text-primary">
-                          {listing.submitted_at
-                            ? new Date(
-                                listing.submitted_at,
-                              ).toLocaleDateString()
-                            : "-"}
-                        </p>
-                      </div>
-                      <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
-                        <p className="text-[9px] text-muted">Published</p>
-                        <p className="text-xs font-medium text-text-primary">
-                          {listing.published_at
-                            ? new Date(
-                                listing.published_at,
-                              ).toLocaleDateString()
-                            : "-"}
-                        </p>
-                      </div>
-                      <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
-                        <p className="text-[9px] text-muted">Portal Slug</p>
-                        <p className="text-xs font-medium text-text-primary">
-                          {listing.portals.slug}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Action buttons */}
-                    <div className="flex flex-wrap gap-2">
-                      {/* Adapt */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleAdapt(listing);
-                        }}
-                        disabled={!!currentAction}
-                        className="rounded-lg bg-[#4E85BF] px-4 py-2 text-sm font-medium text-white hover:bg-[#3d6fa3] disabled:opacity-40 transition-colors flex items-center gap-1.5"
-                      >
-                        {currentAction === "adapt" ? (
-                          <Loader2 size={14} className="animate-spin" />
-                        ) : (
-                          <Sparkles size={14} />
-                        )}
-                        Adapt
-                      </button>
-
-                      {/* Submit */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleSubmit(listing.id);
-                        }}
-                        disabled={
-                          !!currentAction ||
-                          !listing.adapted_title ||
-                          listing.brand_guard_passed === false
-                        }
-                        className="rounded-lg bg-[#4E85BF] px-4 py-2 text-sm font-medium text-white hover:bg-[#3d6fa3] disabled:opacity-40 transition-colors flex items-center gap-1.5"
-                      >
-                        {currentAction === "submit" ? (
-                          <Loader2 size={14} className="animate-spin" />
-                        ) : (
-                          <Send size={14} />
-                        )}
-                        Submit
-                      </button>
-
-                      {/* Refresh */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleRefresh(listing.id);
-                        }}
-                        disabled={!!currentAction}
-                        className="rounded-lg border border-stroke px-3 py-1.5 text-xs font-medium text-muted hover:text-text-primary hover:bg-surface transition-colors flex items-center gap-1.5"
-                      >
-                        {currentAction === "refresh" ? (
-                          <Loader2 size={14} className="animate-spin" />
-                        ) : (
-                          <RefreshCw size={14} />
-                        )}
-                        Refresh
-                      </button>
-
-                      {/* View on Portal */}
-                      {listing.external_url && (
-                        <a
-                          href={listing.external_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="rounded-lg border border-stroke px-3 py-1.5 text-xs font-medium text-muted hover:text-text-primary hover:bg-surface transition-colors flex items-center gap-1.5"
-                        >
-                          <ExternalLink size={14} />
-                          View on Portal
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                )}
+        <div className="space-y-6">
+          {groupedListings.map(({ group, items }) => (
+            <div key={group.key}>
+              {/* Group header */}
+              <div className="flex items-center gap-2 mb-3">
+                <span className={`text-sm font-display font-semibold ${group.color}`}>
+                  {group.label}
+                </span>
+                <span className="text-xs text-muted">({items.length})</span>
+                <div className="flex-1 h-px bg-stroke/50" />
               </div>
-            );
-          })}
+
+              {/* Listings table for group */}
+              <div className="rounded-2xl border border-stroke bg-surface overflow-hidden">
+                {/* Table header */}
+                <div className="hidden md:grid md:grid-cols-[0.4fr_1.2fr_1fr_0.9fr_1.6fr_0.6fr_0.6fr_0.6fr_0.8fr] gap-2 px-5 py-3 border-b border-stroke">
+                  <span className="text-xs font-semibold text-muted uppercase tracking-wider" />
+                  <span className="text-xs font-semibold text-muted uppercase tracking-wider">
+                    {L.property}
+                  </span>
+                  <span className="text-xs font-semibold text-muted uppercase tracking-wider">
+                    {L.portal}
+                  </span>
+                  <span className="text-xs font-semibold text-muted uppercase tracking-wider">
+                    {L.status}
+                  </span>
+                  <span className="text-xs font-semibold text-muted uppercase tracking-wider">
+                    {L.titleCol}
+                  </span>
+                  <span className="text-xs font-semibold text-muted uppercase tracking-wider text-left">
+                    {L.views}
+                  </span>
+                  <span className="text-xs font-semibold text-muted uppercase tracking-wider text-left">
+                    {L.inquiries}
+                  </span>
+                  <span className="text-xs font-semibold text-muted uppercase tracking-wider text-left">
+                    {L.leads}
+                  </span>
+                  <span className="text-xs font-semibold text-muted uppercase tracking-wider text-left">
+                    {L.updated}
+                  </span>
+                </div>
+
+                {/* Table rows */}
+                {items.map((listing) => {
+                  const isExpanded = expandedId === listing.id;
+                  const currentAction = actionLoading[listing.id];
+                  const thumbUrl = listing.properties?.image_urls?.[0];
+
+                  return (
+                    <div key={listing.id}>
+                      {/* Main row */}
+                      <button
+                        onClick={() => setExpandedId(isExpanded ? null : listing.id)}
+                        className="w-full border-t border-stroke hover:bg-surface/50 cursor-pointer transition-colors"
+                      >
+                        {/* Desktop row */}
+                        <div className="hidden md:grid md:grid-cols-[0.4fr_1.2fr_1fr_0.9fr_1.6fr_0.6fr_0.6fr_0.6fr_0.8fr] gap-2 items-center px-5 py-3 text-right">
+                          {/* Thumbnail */}
+                          <span className="flex items-center justify-center">
+                            {thumbUrl ? (
+                              <img
+                                src={thumbUrl}
+                                alt=""
+                                className="w-10 h-10 rounded-lg object-cover border border-stroke"
+                              />
+                            ) : (
+                              <span className="w-10 h-10 rounded-lg bg-white/5 border border-stroke flex items-center justify-center">
+                                <ImageIcon size={16} className="text-muted/40" />
+                              </span>
+                            )}
+                          </span>
+
+                          {/* Property */}
+                          <span className="text-sm font-medium text-text-primary truncate">
+                            {listing.properties?.internal_name || "-"}
+                          </span>
+
+                          {/* Portal + tier */}
+                          <span className="flex items-center gap-2">
+                            <span className="text-sm text-text-primary truncate">
+                              {listing.portals?.name || "-"}
+                            </span>
+                            {listing.portals && tierBadge(listing.portals.tier)}
+                          </span>
+
+                          {/* Status */}
+                          <span>
+                            <StatusBadge status={listing.status} type="listing" />
+                          </span>
+
+                          {/* Title */}
+                          <span className="text-xs text-muted truncate">
+                            {listing.adapted_title || L.notAdapted}
+                          </span>
+
+                          {/* Views */}
+                          <span className="text-xs text-muted text-left tabular-nums">
+                            {listing.views.toLocaleString()}
+                          </span>
+
+                          {/* Inquiries */}
+                          <span className="text-xs text-muted text-left tabular-nums">
+                            {listing.inquiries.toLocaleString()}
+                          </span>
+
+                          {/* Leads */}
+                          <span className="text-xs text-muted text-left tabular-nums">
+                            {listing.leads_generated.toLocaleString()}
+                          </span>
+
+                          {/* Updated */}
+                          <span className="flex items-center justify-start gap-1">
+                            <span className="text-xs text-muted">
+                              {relativeTime(listing.updated_at || listing.published_at || listing.created_at)}
+                            </span>
+                            {isExpanded ? (
+                              <ChevronUp size={14} className="text-muted shrink-0" />
+                            ) : (
+                              <ChevronDown size={14} className="text-muted shrink-0" />
+                            )}
+                          </span>
+                        </div>
+
+                        {/* Mobile row */}
+                        <div className="md:hidden flex flex-col gap-1.5 px-5 py-3 text-right">
+                          <div className="flex items-center justify-between gap-2">
+                            <div className="flex items-center gap-2">
+                              {thumbUrl ? (
+                                <img
+                                  src={thumbUrl}
+                                  alt=""
+                                  className="w-8 h-8 rounded-lg object-cover border border-stroke shrink-0"
+                                />
+                              ) : (
+                                <span className="w-8 h-8 rounded-lg bg-white/5 border border-stroke flex items-center justify-center shrink-0">
+                                  <ImageIcon size={12} className="text-muted/40" />
+                                </span>
+                              )}
+                              <span className="text-sm font-medium text-text-primary">
+                                {listing.properties?.internal_name || "-"}
+                              </span>
+                            </div>
+                            <StatusBadge status={listing.status} type="listing" />
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs text-muted">
+                              {listing.portals?.name || "-"}
+                            </span>
+                            {listing.portals && tierBadge(listing.portals.tier)}
+                          </div>
+                          <div className="flex items-center gap-4 text-[11px] text-muted">
+                            <span>{listing.views} {L.views}</span>
+                            <span>{listing.inquiries} {L.inquiries}</span>
+                            <span>{listing.leads_generated} {L.leads}</span>
+                          </div>
+                        </div>
+                      </button>
+
+                      {/* Expanded detail */}
+                      {isExpanded && (
+                        <div className="border-t border-stroke/30 px-5 py-4 space-y-4 bg-white/[0.01]">
+                          {/* Property images gallery */}
+                          {listing.properties?.image_urls && listing.properties.image_urls.length > 0 && (
+                            <div>
+                              <label className="text-[10px] font-semibold text-muted uppercase tracking-wider">
+                                {L.images}
+                              </label>
+                              <div className="mt-2 flex gap-2 overflow-x-auto pb-2">
+                                {(listing.properties.image_urls as string[]).slice(0, 6).map((url: string, i: number) => (
+                                  <img
+                                    key={i}
+                                    src={url}
+                                    alt=""
+                                    className="w-20 h-20 rounded-lg object-cover shrink-0 border border-stroke"
+                                  />
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Adapted title */}
+                          <div>
+                            <label className="text-[10px] font-semibold text-muted uppercase tracking-wider">
+                              {L.adaptedTitle}
+                            </label>
+                            <p className="mt-1 text-sm text-text-primary">
+                              {listing.adapted_title || (
+                                <span className="italic text-muted">{L.notAdapted}</span>
+                              )}
+                            </p>
+                          </div>
+
+                          {/* Adapted description */}
+                          <div>
+                            <label className="text-[10px] font-semibold text-muted uppercase tracking-wider">
+                              {L.adaptedDesc}
+                            </label>
+                            <p className="mt-1 text-xs text-muted leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">
+                              {listing.adapted_description || (
+                                <span className="italic">{L.notAdapted}</span>
+                              )}
+                            </p>
+                          </div>
+
+                          {/* Brand guard result */}
+                          <div>
+                            <label className="text-[10px] font-semibold text-muted uppercase tracking-wider">
+                              {L.brandGuard}
+                            </label>
+                            <div className="mt-1">
+                              {listing.brand_guard_passed === null ? (
+                                <span className="inline-flex items-center gap-1.5 rounded-full border border-zinc-500/30 bg-zinc-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-zinc-400">
+                                  {L.notChecked}
+                                </span>
+                              ) : listing.brand_guard_passed ? (
+                                <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-400">
+                                  <CheckCircle size={12} />
+                                  {L.passed}
+                                </span>
+                              ) : (
+                                <span className="inline-flex items-center gap-1.5 rounded-full border border-red-500/30 bg-red-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-red-400">
+                                  <XCircle size={12} />
+                                  {L.failed}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Last error */}
+                          {listing.last_error && (
+                            <div className="rounded-lg border border-red-500/20 bg-red-500/10 px-4 py-3 flex items-start gap-2">
+                              <AlertTriangle size={14} className="text-red-400 shrink-0 mt-0.5" />
+                              <div>
+                                <p className="text-[10px] font-semibold text-red-400 uppercase">
+                                  {L.lastError}
+                                </p>
+                                <p className="text-xs text-red-300 mt-0.5">
+                                  {listing.last_error}
+                                </p>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Timestamps */}
+                          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
+                              <p className="text-[9px] text-muted">{L.created}</p>
+                              <p className="text-xs font-medium text-text-primary">
+                                {new Date(listing.created_at).toLocaleDateString("he-IL")}
+                              </p>
+                            </div>
+                            <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
+                              <p className="text-[9px] text-muted">{L.submitted}</p>
+                              <p className="text-xs font-medium text-text-primary">
+                                {listing.submitted_at
+                                  ? new Date(listing.submitted_at).toLocaleDateString("he-IL")
+                                  : "-"}
+                              </p>
+                            </div>
+                            <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
+                              <p className="text-[9px] text-muted">{L.published}</p>
+                              <p className="text-xs font-medium text-text-primary">
+                                {listing.published_at
+                                  ? new Date(listing.published_at).toLocaleDateString("he-IL")
+                                  : "-"}
+                              </p>
+                            </div>
+                            <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
+                              <p className="text-[9px] text-muted">{L.portal}</p>
+                              <p className="text-xs font-medium text-text-primary">
+                                {listing.portals?.slug || "-"}
+                              </p>
+                            </div>
+                          </div>
+
+                          {/* Action buttons */}
+                          <div className="flex flex-wrap gap-2">
+                            {/* Adapt */}
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleAdapt(listing);
+                              }}
+                              disabled={!!currentAction}
+                              className="rounded-lg bg-[#4E85BF] px-4 py-2 text-sm font-medium text-white hover:bg-[#3d6fa3] disabled:opacity-40 transition-colors flex items-center gap-1.5"
+                            >
+                              {currentAction === "adapt" ? (
+                                <Loader2 size={14} className="animate-spin" />
+                              ) : (
+                                <Sparkles size={14} />
+                              )}
+                              {L.adapt}
+                            </button>
+
+                            {/* Submit */}
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleSubmit(listing.id);
+                              }}
+                              disabled={
+                                !!currentAction ||
+                                !listing.adapted_title ||
+                                listing.brand_guard_passed === false
+                              }
+                              className="rounded-lg bg-[#4E85BF] px-4 py-2 text-sm font-medium text-white hover:bg-[#3d6fa3] disabled:opacity-40 transition-colors flex items-center gap-1.5"
+                            >
+                              {currentAction === "submit" ? (
+                                <Loader2 size={14} className="animate-spin" />
+                              ) : (
+                                <Send size={14} />
+                              )}
+                              {L.submit}
+                            </button>
+
+                            {/* Refresh */}
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleRefresh(listing.id);
+                              }}
+                              disabled={!!currentAction}
+                              className="rounded-lg border border-stroke px-3 py-1.5 text-xs font-medium text-muted hover:text-text-primary hover:bg-surface transition-colors flex items-center gap-1.5"
+                            >
+                              {currentAction === "refresh" ? (
+                                <Loader2 size={14} className="animate-spin" />
+                              ) : (
+                                <RefreshCw size={14} />
+                              )}
+                              {L.refresh}
+                            </button>
+
+                            {/* View on Portal */}
+                            {listing.external_url && (
+                              <a
+                                href={listing.external_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="rounded-lg border border-stroke px-3 py-1.5 text-xs font-medium text-muted hover:text-text-primary hover:bg-surface transition-colors flex items-center gap-1.5"
+                              >
+                                <ExternalLink size={14} />
+                                {L.viewOnPortal}
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       ) : (
         <div className="rounded-2xl border border-stroke bg-surface p-12 text-center">
           <List size={40} className="mx-auto mb-4 text-muted/30" />
-          <p className="text-muted">No listings match the current filters.</p>
-          <p className="text-xs text-muted/50 mt-2">
-            Try changing the filter or distribute a property to create listings.
-          </p>
+          <p className="text-muted">{L.noListings}</p>
+          <p className="text-xs text-muted/50 mt-2">{L.noListingsHint}</p>
         </div>
       )}
 
       {/* ---- Distribution overlay (fixed bottom panel) ---- */}
       {distributing && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-stroke bg-[#0d0d1a]/95 backdrop-blur-sm shadow-2xl">
+        <div dir="rtl" className="fixed bottom-0 left-0 right-0 z-50 border-t border-stroke bg-[#0d0d1a]/95 backdrop-blur-sm shadow-2xl">
           <div className="mx-auto max-w-5xl px-6 py-4 space-y-3">
             {/* Header */}
             <div className="flex items-center justify-between">
@@ -823,16 +991,14 @@ export function PortalsListingsSection() {
                 />
                 <div>
                   <p className="text-sm font-semibold text-text-primary">
-                    {distributing.active
-                      ? "Distributing..."
-                      : "Distribution Complete"}
+                    {distributing.active ? L.distributing : L.distributionDone}
                   </p>
                   <p className="text-xs text-muted">
                     {distributing.propertyName
-                      ? `Property: ${distributing.propertyName}`
+                      ? `${L.property}: ${distributing.propertyName}`
                       : ""}
                     {distributing.total > 0 &&
-                      ` - ${distributing.done} / ${distributing.total} portals`}
+                      ` - ${distributing.done} / ${distributing.total}`}
                   </p>
                 </div>
               </div>
@@ -843,14 +1009,14 @@ export function PortalsListingsSection() {
                     onClick={handleCancelDistribute}
                     className="rounded-lg border border-red-500/30 px-3 py-1.5 text-xs font-medium text-red-400 hover:bg-red-500/10 transition-colors"
                   >
-                    Cancel
+                    {L.cancel}
                   </button>
                 ) : (
                   <button
                     onClick={handleCloseDistribute}
                     className="rounded-lg border border-stroke px-3 py-1.5 text-xs font-medium text-muted hover:text-text-primary hover:bg-surface transition-colors"
                   >
-                    Close
+                    {L.close}
                   </button>
                 )}
               </div>
@@ -882,27 +1048,16 @@ export function PortalsListingsSection() {
                     className="flex items-center gap-2 rounded-lg bg-white/[0.03] px-3 py-1.5 text-xs"
                   >
                     {log.status === "ok" || log.status === "success" ? (
-                      <CheckCircle
-                        size={14}
-                        className="text-emerald-400 shrink-0"
-                      />
+                      <CheckCircle size={14} className="text-emerald-400 shrink-0" />
                     ) : log.status === "error" ? (
-                      <XCircle
-                        size={14}
-                        className="text-red-400 shrink-0"
-                      />
+                      <XCircle size={14} className="text-red-400 shrink-0" />
                     ) : (
-                      <Loader2
-                        size={14}
-                        className="text-muted animate-spin shrink-0"
-                      />
+                      <Loader2 size={14} className="text-muted animate-spin shrink-0" />
                     )}
-                    <span className="font-medium text-text-primary">
-                      {log.portal}
-                    </span>
+                    <span className="font-medium text-text-primary">{log.portal}</span>
                     <span className="text-muted">({log.slug})</span>
                     {log.error && (
-                      <span className="text-red-400 ml-auto truncate max-w-[300px]">
+                      <span className="text-red-400 mr-auto truncate max-w-[300px]">
                         {log.error}
                       </span>
                     )}
@@ -916,25 +1071,20 @@ export function PortalsListingsSection() {
               <div className="flex items-center gap-4 text-xs text-muted pt-1 border-t border-stroke/30">
                 <span>
                   <span className="text-emerald-400 font-semibold">
-                    {
-                      distributing.logs.filter(
-                        (l) => l.status === "ok" || l.status === "success",
-                      ).length
-                    }
+                    {distributing.logs.filter(
+                      (l) => l.status === "ok" || l.status === "success",
+                    ).length}
                   </span>{" "}
-                  succeeded
+                  {L.succeeded}
                 </span>
                 <span>
                   <span className="text-red-400 font-semibold">
-                    {
-                      distributing.logs.filter((l) => l.status === "error")
-                        .length
-                    }
+                    {distributing.logs.filter((l) => l.status === "error").length}
                   </span>{" "}
-                  failed
+                  {L.failedCount}
                 </span>
                 <span>
-                  {distributing.done} / {distributing.total} total
+                  {distributing.done} / {distributing.total} {L.total}
                 </span>
               </div>
             )}

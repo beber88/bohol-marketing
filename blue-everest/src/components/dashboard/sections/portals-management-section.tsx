@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
   Settings2, Loader2, RefreshCw, Wifi, WifiOff,
   CheckCircle, XCircle, List, Power, PowerOff, X,
@@ -8,6 +8,77 @@ import {
 } from "lucide-react";
 import { StatusBadge } from "../cards/status-badge";
 
+/* ------------------------------------------------------------------ */
+/*  Hebrew labels — every user-facing string lives here               */
+/* ------------------------------------------------------------------ */
+const L = {
+  title: "ניהול פורטלים",
+  allTiers: "כל הדרגות",
+  tier1: "דרגה 1 - פיליפינים",
+  tier2: "דרגה 2 - יוקרה בינלאומית",
+  tier3: "דרגה 3+",
+  allTypes: "כל הסוגים",
+  propertyPortal: 'פורטל נדל"ן',
+  aggregator: "מאגד",
+  social: "רשתות חברתיות",
+  ads: "פרסומות",
+  video: "וידאו",
+  allMethods: "כל השיטות",
+  apiFeed: "הזנת API",
+  playwright: "אוטומציה",
+  manual: "ידני",
+  connector: "מחבר",
+  noMatch: "אין פורטלים שתואמים למסנן.",
+  testConnection: "בדוק חיבור",
+  testing: "בודק...",
+  activate: "הפעל",
+  deactivate: "השבת",
+  connectionStatus: "סטטוס חיבור",
+  configured: "מוגדר",
+  notConfigured: "לא מוגדר",
+  integration: "אינטגרציה",
+  automation: "אוטומציה",
+  available: "זמין",
+  notAvailable: "לא זמין",
+  slug: "מזהה",
+  tier: "דרגה",
+  type: "סוג",
+  method: "שיטה",
+  fee: "עלות",
+  free: "חינם",
+  notes: "הערות",
+  listings: "מודעות",
+  property: "נכס",
+  status: "סטטוס",
+  created: "נוצר",
+  close: "סגור",
+};
+
+const METHOD_LABELS: Record<string, string> = {
+  api_feed: L.apiFeed,
+  playwright: L.playwright,
+  manual: L.manual,
+  connector: L.connector,
+};
+
+const METHOD_STYLES: Record<string, string> = {
+  api_feed: "border-emerald-500/30 bg-emerald-500/10 text-emerald-400",
+  playwright: "border-amber-500/30 bg-amber-500/10 text-amber-400",
+  manual: "border-zinc-500/30 bg-zinc-500/10 text-zinc-400",
+  connector: "border-blue-500/30 bg-blue-500/10 text-blue-400",
+};
+
+const TYPE_LABELS: Record<string, string> = {
+  property_portal: L.propertyPortal,
+  aggregator: L.aggregator,
+  social: L.social,
+  ads: L.ads,
+  video: L.video,
+};
+
+/* ------------------------------------------------------------------ */
+/*  Types                                                             */
+/* ------------------------------------------------------------------ */
 interface Portal {
   id: string;
   name: string;
@@ -38,60 +109,50 @@ interface PortalListing {
   created_at: string;
 }
 
+/* ------------------------------------------------------------------ */
+/*  Sub-components                                                    */
+/* ------------------------------------------------------------------ */
 function TierBadge({ tier }: { tier: number }) {
-  if (tier === 1) {
-    return (
-      <span className="bg-amber-500/20 text-amber-400 rounded-full px-2 py-0.5 text-[10px] font-semibold">
-        T1
-      </span>
-    );
-  }
-  if (tier === 2) {
-    return (
-      <span className="bg-blue-500/20 text-blue-400 rounded-full px-2 py-0.5 text-[10px] font-semibold">
-        T2
-      </span>
-    );
-  }
+  const styles: Record<number, string> = {
+    1: "bg-amber-500/20 text-amber-400",
+    2: "bg-blue-500/20 text-blue-400",
+  };
+  const cls = styles[tier] ?? "bg-zinc-500/20 text-zinc-400";
   return (
-    <span className="bg-zinc-500/20 text-zinc-400 rounded-full px-2 py-0.5 text-[10px] font-semibold">
+    <span
+      className={`${cls} rounded-full px-2 py-0.5 text-[10px] font-semibold`}
+    >
       T{tier}
     </span>
   );
 }
 
-const METHOD_STYLES: Record<string, string> = {
-  api_feed: "border-emerald-500/30 bg-emerald-500/10 text-emerald-400",
-  playwright: "border-amber-500/30 bg-amber-500/10 text-amber-400",
-  manual: "border-zinc-500/30 bg-zinc-500/10 text-zinc-400",
-  connector: "border-blue-500/30 bg-blue-500/10 text-blue-400",
-};
-
-const METHOD_LABELS: Record<string, string> = {
-  api_feed: "API Feed",
-  playwright: "Playwright",
-  manual: "Manual",
-  connector: "Connector",
-};
-
+/* ------------------------------------------------------------------ */
+/*  Main component                                                    */
+/* ------------------------------------------------------------------ */
 export function PortalsManagementSection() {
   const [portals, setPortals] = useState<Portal[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedPortalId, setSelectedPortalId] = useState<string | null>(null);
+  const [selectedPortalId, setSelectedPortalId] = useState<string | null>(
+    null,
+  );
 
-  // Filters
+  /* Filters */
   const [filterTier, setFilterTier] = useState<string>("all");
   const [filterType, setFilterType] = useState<string>("all");
   const [filterMethod, setFilterMethod] = useState<string>("all");
 
-  // Detail panel state
-  const [testResult, setTestResult] = useState<ConnectionTestResult | null>(null);
+  /* Detail panel state */
+  const [testResult, setTestResult] = useState<ConnectionTestResult | null>(
+    null,
+  );
   const [testing, setTesting] = useState(false);
   const [toggling, setToggling] = useState(false);
   const [listings, setListings] = useState<PortalListing[]>([]);
   const [listingsLoading, setListingsLoading] = useState(false);
 
-  const fetchPortals = async () => {
+  /* ── Data fetching ──────────────────────────────────────────── */
+  const fetchPortals = useCallback(async () => {
     setLoading(true);
     try {
       const res = await fetch("/api/marketing/portals", { cache: "no-store" });
@@ -103,13 +164,13 @@ export function PortalsManagementSection() {
       /* keep defaults */
     }
     setLoading(false);
-  };
+  }, []);
 
   useEffect(() => {
     fetchPortals();
-  }, []);
+  }, [fetchPortals]);
 
-  // Fetch listings when a portal is selected
+  /* Fetch listings when a portal is selected */
   useEffect(() => {
     if (!selectedPortalId) {
       setListings([]);
@@ -121,14 +182,18 @@ export function PortalsManagementSection() {
     fetch(`/api/marketing/portal-listings?portalId=${selectedPortalId}`, {
       cache: "no-store",
     })
-      .then((r) => (r.ok ? r.json() : Promise.resolve({ listings: [] })))
-      .then((d) => setListings(Array.isArray(d.listings) ? d.listings : []))
+      .then((r) => (r.ok ? r.json() : { listings: [] }))
+      .then((d) =>
+        setListings(Array.isArray(d.listings) ? d.listings : []),
+      )
       .catch(() => setListings([]))
       .finally(() => setListingsLoading(false));
   }, [selectedPortalId]);
 
-  const selectedPortal = portals.find((p) => p.id === selectedPortalId) ?? null;
+  const selectedPortal =
+    portals.find((p) => p.id === selectedPortalId) ?? null;
 
+  /* ── Actions ────────────────────────────────────────────────── */
   const testConnection = async () => {
     if (!selectedPortalId) return;
     setTesting(true);
@@ -136,11 +201,10 @@ export function PortalsManagementSection() {
     try {
       const res = await fetch(
         `/api/marketing/portals/${selectedPortalId}/test-connection`,
-        { method: "POST" }
+        { method: "POST" },
       );
       if (res.ok) {
-        const data = await res.json();
-        setTestResult(data);
+        setTestResult(await res.json());
       }
     } catch {
       /* ignore */
@@ -152,11 +216,14 @@ export function PortalsManagementSection() {
     if (!selectedPortal) return;
     setToggling(true);
     try {
-      const res = await fetch(`/api/marketing/portals/${selectedPortal.id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ is_active: !selectedPortal.is_active }),
-      });
+      const res = await fetch(
+        `/api/marketing/portals/${selectedPortal.id}`,
+        {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ is_active: !selectedPortal.is_active }),
+        },
+      );
       if (res.ok) {
         await fetchPortals();
       }
@@ -166,14 +233,16 @@ export function PortalsManagementSection() {
     setToggling(false);
   };
 
-  // Apply filters
+  /* ── Filtering ──────────────────────────────────────────────── */
   const filtered = portals.filter((p) => {
     if (filterTier !== "all" && p.tier !== Number(filterTier)) return false;
     if (filterType !== "all" && p.portal_type !== filterType) return false;
-    if (filterMethod !== "all" && p.integration_method !== filterMethod) return false;
+    if (filterMethod !== "all" && p.integration_method !== filterMethod)
+      return false;
     return true;
   });
 
+  /* ── Loading state ──────────────────────────────────────────── */
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
@@ -183,65 +252,72 @@ export function PortalsManagementSection() {
   }
 
   return (
-    <section className="space-y-6">
-      {/* Header with filters */}
+    <section dir="rtl" className="space-y-6">
+      {/* ── Header with filters ────────────────────────────────── */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h2 className="font-display text-lg font-semibold flex items-center gap-2">
-          <Settings2 size={18} className="text-[#89AACC]" /> Portal Management
+          <Settings2 size={18} className="text-[#89AACC]" />
+          {L.title}
         </h2>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-wrap">
+          {/* Tier filter */}
           <select
             value={filterTier}
             onChange={(e) => setFilterTier(e.target.value)}
             className="bg-surface border border-stroke rounded-lg px-2 py-1 text-xs text-muted"
           >
-            <option value="all">All Tiers</option>
-            <option value="1">Tier 1</option>
-            <option value="2">Tier 2</option>
-            <option value="3">Tier 3+</option>
+            <option value="all">{L.allTiers}</option>
+            <option value="1">{L.tier1}</option>
+            <option value="2">{L.tier2}</option>
+            <option value="3">{L.tier3}</option>
           </select>
 
+          {/* Type filter */}
           <select
             value={filterType}
             onChange={(e) => setFilterType(e.target.value)}
             className="bg-surface border border-stroke rounded-lg px-2 py-1 text-xs text-muted"
           >
-            <option value="all">All Types</option>
-            <option value="property_portal">Property Portal</option>
-            <option value="aggregator">Aggregator</option>
-            <option value="social">Social</option>
-            <option value="ads">Ads</option>
-            <option value="video">Video</option>
+            <option value="all">{L.allTypes}</option>
+            <option value="property_portal">{L.propertyPortal}</option>
+            <option value="aggregator">{L.aggregator}</option>
+            <option value="social">{L.social}</option>
+            <option value="ads">{L.ads}</option>
+            <option value="video">{L.video}</option>
           </select>
 
+          {/* Method filter */}
           <select
             value={filterMethod}
             onChange={(e) => setFilterMethod(e.target.value)}
             className="bg-surface border border-stroke rounded-lg px-2 py-1 text-xs text-muted"
           >
-            <option value="all">All Methods</option>
-            <option value="api_feed">API Feed</option>
-            <option value="playwright">Playwright</option>
-            <option value="manual">Manual</option>
-            <option value="connector">Connector</option>
+            <option value="all">{L.allMethods}</option>
+            <option value="api_feed">{L.apiFeed}</option>
+            <option value="playwright">{L.playwright}</option>
+            <option value="manual">{L.manual}</option>
+            <option value="connector">{L.connector}</option>
           </select>
 
+          {/* Refresh */}
           <button
             onClick={fetchPortals}
             className="p-2 rounded-lg hover:bg-white/5 text-muted hover:text-white transition-colors"
+            aria-label="רענון"
           >
             <RefreshCw size={16} />
           </button>
         </div>
       </div>
 
-      {/* Portal Cards Grid */}
+      {/* ── Portal Cards Grid ──────────────────────────────────── */}
       {filtered.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map((portal) => {
             const isSelected = selectedPortalId === portal.id;
             const methodStyle =
-              METHOD_STYLES[portal.integration_method] ?? METHOD_STYLES.manual;
+              METHOD_STYLES[portal.integration_method] ??
+              METHOD_STYLES.manual;
 
             return (
               <button
@@ -249,12 +325,13 @@ export function PortalsManagementSection() {
                 onClick={() =>
                   setSelectedPortalId(isSelected ? null : portal.id)
                 }
-                className={`rounded-2xl border bg-surface p-5 text-left transition-colors ${
+                className={`rounded-2xl border bg-surface p-5 text-right transition-colors ${
                   isSelected
                     ? "border-[#4E85BF]/50 ring-1 ring-[#4E85BF]/30"
                     : "border-stroke hover:border-[#4E85BF]/25"
                 }`}
               >
+                {/* Name + status dot */}
                 <div className="flex items-center justify-between mb-2">
                   <span className="font-display text-sm font-bold truncate">
                     {portal.name}
@@ -268,7 +345,8 @@ export function PortalsManagementSection() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 mb-3">
+                {/* Tier + method badges */}
+                <div className="flex items-center gap-2 mb-3 flex-wrap">
                   <TierBadge tier={portal.tier} />
                   <span
                     className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-semibold ${methodStyle}`}
@@ -276,16 +354,27 @@ export function PortalsManagementSection() {
                     {METHOD_LABELS[portal.integration_method] ??
                       portal.integration_method}
                   </span>
+                  {portal.portal_type && (
+                    <span className="text-[10px] text-muted">
+                      {TYPE_LABELS[portal.portal_type] ??
+                        portal.portal_type.replace(/_/g, " ")}
+                    </span>
+                  )}
                 </div>
 
-                {portal.listing_fee_usd != null && portal.listing_fee_usd > 0 && (
-                  <p className="text-[10px] text-muted mb-1">
-                    Fee: ${portal.listing_fee_usd}/listing
-                  </p>
-                )}
+                {/* Fee */}
+                {portal.listing_fee_usd != null &&
+                  portal.listing_fee_usd > 0 && (
+                    <p className="text-[10px] text-muted mb-1">
+                      {L.fee}: ${portal.listing_fee_usd}
+                    </p>
+                  )}
 
+                {/* Notes */}
                 {portal.notes && (
-                  <p className="text-[10px] text-muted truncate">{portal.notes}</p>
+                  <p className="text-[10px] text-muted truncate">
+                    {portal.notes}
+                  </p>
                 )}
               </button>
             );
@@ -294,13 +383,11 @@ export function PortalsManagementSection() {
       ) : (
         <div className="bg-surface rounded-2xl border border-stroke p-12 text-center">
           <WifiOff size={40} className="mx-auto mb-4 text-muted/30" />
-          <p className="text-muted">
-            No portals match the current filters.
-          </p>
+          <p className="text-muted">{L.noMatch}</p>
         </div>
       )}
 
-      {/* Detail Panel */}
+      {/* ── Detail Panel ───────────────────────────────────────── */}
       {selectedPortal && (
         <div className="rounded-2xl border border-stroke bg-surface p-5 space-y-5">
           {/* Header */}
@@ -311,58 +398,72 @@ export function PortalsManagementSection() {
                 {selectedPortal.name}
               </h3>
               <StatusBadge
-                status={selectedPortal.is_active ? "configured" : "inactive"}
+                status={
+                  selectedPortal.is_active ? "configured" : "inactive"
+                }
                 type="portal"
+                label={
+                  selectedPortal.is_active
+                    ? L.configured
+                    : L.notConfigured
+                }
               />
             </div>
             <button
               onClick={() => setSelectedPortalId(null)}
               className="rounded-lg border border-stroke px-3 py-1.5 text-xs font-medium text-muted hover:text-text-primary hover:bg-surface"
+              aria-label={L.close}
             >
               <X size={14} />
             </button>
           </div>
 
-          {/* Portal Info */}
+          {/* Portal Info Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
-              <p className="text-[9px] text-muted uppercase">Slug</p>
-              <p className="text-xs font-bold mt-0.5">{selectedPortal.slug}</p>
+              <p className="text-[9px] text-muted">{L.slug}</p>
+              <p className="text-xs font-bold mt-0.5 font-mono">
+                {selectedPortal.slug}
+              </p>
             </div>
             <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
-              <p className="text-[9px] text-muted uppercase">Tier</p>
+              <p className="text-[9px] text-muted">{L.tier}</p>
               <p className="text-xs font-bold mt-0.5 flex items-center gap-1.5">
                 <TierBadge tier={selectedPortal.tier} />
               </p>
             </div>
             <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
-              <p className="text-[9px] text-muted uppercase">Type</p>
+              <p className="text-[9px] text-muted">{L.type}</p>
               <p className="text-xs font-bold mt-0.5">
-                {selectedPortal.portal_type.replace(/_/g, " ")}
+                {TYPE_LABELS[selectedPortal.portal_type] ??
+                  selectedPortal.portal_type.replace(/_/g, " ")}
               </p>
             </div>
             <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
-              <p className="text-[9px] text-muted uppercase">Method</p>
+              <p className="text-[9px] text-muted">{L.method}</p>
               <p className="text-xs font-bold mt-0.5">
                 {METHOD_LABELS[selectedPortal.integration_method] ??
                   selectedPortal.integration_method}
               </p>
             </div>
             <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
-              <p className="text-[9px] text-muted uppercase">Fee</p>
+              <p className="text-[9px] text-muted">{L.fee}</p>
               <p className="text-xs font-bold mt-0.5">
                 {selectedPortal.listing_fee_usd != null &&
                 selectedPortal.listing_fee_usd > 0
                   ? `$${selectedPortal.listing_fee_usd}`
-                  : "Free"}
+                  : L.free}
               </p>
             </div>
             <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
-              <p className="text-[9px] text-muted uppercase">Listings</p>
+              <p className="text-[9px] text-muted">{L.listings}</p>
               <p className="text-xs font-bold mt-0.5 flex items-center gap-1">
                 <List size={12} className="text-muted" />
                 {listingsLoading ? (
-                  <Loader2 size={12} className="animate-spin text-muted" />
+                  <Loader2
+                    size={12}
+                    className="animate-spin text-muted"
+                  />
                 ) : (
                   listings.length
                 )}
@@ -373,7 +474,7 @@ export function PortalsManagementSection() {
           {/* Notes */}
           {selectedPortal.notes && (
             <div className="rounded-lg bg-white/5 border border-stroke px-4 py-3">
-              <p className="text-[9px] text-muted uppercase mb-1">Notes</p>
+              <p className="text-[9px] text-muted mb-1">{L.notes}</p>
               <p className="text-xs text-text-primary leading-relaxed">
                 {selectedPortal.notes}
               </p>
@@ -392,7 +493,7 @@ export function PortalsManagementSection() {
               ) : (
                 <PlugZap size={14} />
               )}
-              {testing ? "Testing..." : "Test Connection"}
+              {testing ? L.testing : L.testConnection}
             </button>
 
             <button
@@ -411,7 +512,7 @@ export function PortalsManagementSection() {
               ) : (
                 <Power size={14} />
               )}
-              {selectedPortal.is_active ? "Deactivate" : "Activate"}
+              {selectedPortal.is_active ? L.deactivate : L.activate}
             </button>
           </div>
 
@@ -421,44 +522,64 @@ export function PortalsManagementSection() {
               <div className="flex items-center justify-between">
                 <h4 className="text-sm font-semibold flex items-center gap-2">
                   <PlugZap size={14} className="text-[#89AACC]" />
-                  Connection Status
+                  {L.connectionStatus}
                 </h4>
                 <StatusBadge
-                  status={testResult.configured ? "configured" : "not_configured"}
+                  status={
+                    testResult.configured
+                      ? "configured"
+                      : "not_configured"
+                  }
                   type="portal"
+                  label={
+                    testResult.configured
+                      ? L.configured
+                      : L.notConfigured
+                  }
                 />
               </div>
 
+              {/* Env var status grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {Object.entries(testResult.envVars).map(([key, present]) => (
-                  <div
-                    key={key}
-                    className="flex items-center justify-between rounded-lg border border-stroke bg-white/[0.02] px-3 py-2"
-                  >
-                    <span className="text-xs text-muted font-mono truncate">
-                      {key}
-                    </span>
-                    {present ? (
-                      <CheckCircle
-                        size={14}
-                        className="text-emerald-400 shrink-0"
-                      />
-                    ) : (
-                      <XCircle size={14} className="text-red-400 shrink-0" />
-                    )}
-                  </div>
-                ))}
+                {Object.entries(testResult.envVars).map(
+                  ([key, present]) => (
+                    <div
+                      key={key}
+                      className="flex items-center justify-between rounded-lg border border-stroke bg-white/[0.02] px-3 py-2"
+                    >
+                      <span
+                        className="text-xs text-muted font-mono truncate"
+                        dir="ltr"
+                      >
+                        {key}
+                      </span>
+                      {present ? (
+                        <CheckCircle
+                          size={14}
+                          className="text-emerald-400 shrink-0"
+                        />
+                      ) : (
+                        <XCircle
+                          size={14}
+                          className="text-red-400 shrink-0"
+                        />
+                      )}
+                    </div>
+                  ),
+                )}
               </div>
 
-              <div className="flex items-center gap-3 text-xs text-muted">
+              {/* Integration + automation info */}
+              <div className="flex items-center gap-4 text-xs text-muted flex-wrap">
                 <span>
-                  Integration:{" "}
+                  {L.integration}:{" "}
                   <span className="font-semibold text-text-primary">
-                    {testResult.integrationMethod}
+                    {METHOD_LABELS[testResult.integrationMethod] ??
+                      testResult.integrationMethod}
                   </span>
                 </span>
                 <span>
-                  Automation:{" "}
+                  {L.automation}:{" "}
                   <span
                     className={`font-semibold ${
                       testResult.automationAvailable
@@ -467,8 +588,8 @@ export function PortalsManagementSection() {
                     }`}
                   >
                     {testResult.automationAvailable
-                      ? "Available"
-                      : "Not available"}
+                      ? L.available
+                      : L.notAvailable}
                   </span>
                 </span>
               </div>
@@ -480,16 +601,16 @@ export function PortalsManagementSection() {
             <div className="rounded-xl border border-stroke overflow-hidden">
               <div className="px-4 py-3 border-b border-stroke">
                 <h4 className="text-sm font-semibold">
-                  Listings ({listings.length})
+                  {L.listings} ({listings.length})
                 </h4>
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-stroke text-left text-xs text-muted">
-                      <th className="px-4 py-2">Property</th>
-                      <th className="px-4 py-2">Status</th>
-                      <th className="px-4 py-2">Created</th>
+                    <tr className="border-b border-stroke text-right text-xs text-muted">
+                      <th className="px-4 py-2">{L.property}</th>
+                      <th className="px-4 py-2">{L.status}</th>
+                      <th className="px-4 py-2">{L.created}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -508,10 +629,13 @@ export function PortalsManagementSection() {
                           />
                         </td>
                         <td className="px-4 py-2 text-xs text-muted">
-                          {new Date(listing.created_at).toLocaleDateString(
-                            "en-US",
-                            { month: "short", day: "numeric", year: "numeric" }
-                          )}
+                          {new Date(
+                            listing.created_at,
+                          ).toLocaleDateString("he-IL", {
+                            month: "short",
+                            day: "numeric",
+                            year: "numeric",
+                          })}
                         </td>
                       </tr>
                     ))}

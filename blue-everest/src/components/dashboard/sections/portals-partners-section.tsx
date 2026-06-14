@@ -8,6 +8,86 @@ import {
 } from "lucide-react";
 import { StatusBadge } from "../cards/status-badge";
 
+// --- Hebrew Labels ---
+
+const L = {
+  title: "שותפי הפצה",
+  subtitle: "מלונות, ריזורטים, ברוקרים ועורכי דין שמפנים לידים תמורת עמלה",
+  addPartner: "הוסף שותף",
+  workflow: "הוסף שותף → צור QR → שלח הצעת שותפות → עקוב אחרי הפניות",
+  allTypes: "כל הסוגים",
+  allStatuses: "כל הסטטוסים",
+  allCountries: "כל המדינות",
+  noPartners: "עדיין אין שותפים.",
+  noPartnersHint: "הוסף את השותף הראשון שלך - מלון, ריזורט או ברוקר בבוהול.",
+  contact: "פרטי קשר",
+  email: "אימייל",
+  phone: "טלפון",
+  whatsapp: "וואטסאפ",
+  agreement: "הסכם",
+  commission: "עמלה",
+  referrals: "הפניות",
+  conversions: "המרות",
+  notes: "הערות",
+  generateQR: "צור QR",
+  generateProposal: "צור הצעת שותפות (AI)",
+  delete: "מחק",
+  deleteConfirm: "למחוק את השותף הזה? לא ניתן לבטל.",
+  trackingUrl: "קישור מעקב",
+  copied: "הועתק!",
+  copy: "העתק",
+  aiProposal: "הצעת שותפות (AI)",
+  cost: "עלות",
+  referralHistory: "היסטוריית הפניות",
+  noReferrals: "עדיין אין הפניות.",
+  // Form
+  formTitle: "הוסף שותף חדש",
+  partnerName: "שם השותף *",
+  partnerType: "סוג שותף *",
+  country: "מדינה",
+  commissionPct: "אחוז עמלה",
+  saving: "שומר...",
+  save: "שמור",
+  cancel: "ביטול",
+  notSet: "לא הוגדר",
+  na: "לא זמין",
+  unknownLead: "ליד לא ידוע",
+  via: "דרך",
+  // Partner types
+  types: {
+    hotel: "מלון",
+    resort: "ריזורט",
+    dive_shop: "חנות צלילה",
+    transport: "הסעות VIP",
+    concierge: "קונסיירז'",
+    lawyer: 'עורך דין מקרקעין',
+    accountant: "רואה חשבון",
+    wealth_advisor: "יועץ פיננסי",
+    immigration_consultant: "יועץ הגירה",
+    property_management: "ניהול נכסים",
+    broker: "ברוקר נדל\"ן",
+    referral_individual: "מפנה פרטי",
+    remittance_center: "מרכז העברות כספים",
+    business_association: "התאחדות עסקית",
+    ofw_community: "קהילת OFW",
+  } as Record<string, string>,
+  // Agreement statuses
+  statuses: {
+    prospect: "פוטנציאלי",
+    contacted: "נוצר קשר",
+    negotiating: "במו\"מ",
+    active: "פעיל",
+    paused: "מושהה",
+    terminated: "הסתיים",
+  } as Record<string, string>,
+  // Referral statuses
+  refStatuses: {
+    converted: "הומר",
+    pending: "ממתין",
+    lost: "אבד",
+  } as Record<string, string>,
+};
+
 // --- Types ---
 
 interface Partner {
@@ -97,10 +177,6 @@ const EMPTY_FORM: PartnerForm = {
   phone: "", whatsapp: "", commission_pct: "", notes: "",
 };
 
-function formatType(type: string): string {
-  return type.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-}
-
 // --- Add Partner Modal ---
 
 function AddPartnerModal({
@@ -138,14 +214,14 @@ function AddPartnerModal({
       });
       const data = await res.json();
       if (!res.ok) {
-        setError(data.error || "Failed to create partner");
+        setError(data.error || "שגיאה ביצירת שותף");
         setSaving(false);
         return;
       }
       onAdded();
       onClose();
     } catch {
-      setError("Network error");
+      setError("שגיאת רשת");
     }
     setSaving(false);
   };
@@ -156,12 +232,13 @@ function AddPartnerModal({
       onClick={onClose}
     >
       <div
+        dir="rtl"
         className="bg-[#1a1a2e] border border-stroke rounded-2xl w-full max-w-lg mx-4 max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between p-4 border-b border-stroke">
           <h3 className="text-sm font-bold flex items-center gap-2">
-            <Plus size={16} className="text-emerald-400" /> Add Partner
+            <Plus size={16} className="text-emerald-400" /> {L.formTitle}
           </h3>
           <button onClick={onClose} className="p-1 rounded hover:bg-white/10">
             <X size={16} className="text-muted" />
@@ -176,7 +253,7 @@ function AddPartnerModal({
 
         <div className="p-4 space-y-3">
           <input
-            placeholder="Partner Name *"
+            placeholder={L.partnerName}
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
             className="w-full bg-black/30 border border-stroke rounded-lg px-3 py-2 text-sm text-white placeholder:text-muted/50 focus:outline-none focus:border-[#4E85BF]/50"
@@ -189,12 +266,12 @@ function AddPartnerModal({
               className="bg-black/30 border border-stroke rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#4E85BF]/50"
             >
               {PARTNER_TYPES.map((t) => (
-                <option key={t} value={t}>{formatType(t)}</option>
+                <option key={t} value={t}>{L.types[t] || t}</option>
               ))}
             </select>
 
             <input
-              placeholder="Country"
+              placeholder={L.country}
               value={form.country}
               onChange={(e) => setForm({ ...form, country: e.target.value })}
               className="bg-black/30 border border-stroke rounded-lg px-3 py-2 text-sm text-white placeholder:text-muted/50 focus:outline-none focus:border-[#4E85BF]/50"
@@ -203,13 +280,13 @@ function AddPartnerModal({
 
           <div className="grid grid-cols-2 gap-3">
             <input
-              placeholder="Email"
+              placeholder={L.email}
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               className="bg-black/30 border border-stroke rounded-lg px-3 py-2 text-sm text-white placeholder:text-muted/50 focus:outline-none focus:border-[#4E85BF]/50"
             />
             <input
-              placeholder="Phone"
+              placeholder={L.phone}
               value={form.phone}
               onChange={(e) => setForm({ ...form, phone: e.target.value })}
               className="bg-black/30 border border-stroke rounded-lg px-3 py-2 text-sm text-white placeholder:text-muted/50 focus:outline-none focus:border-[#4E85BF]/50"
@@ -218,13 +295,13 @@ function AddPartnerModal({
 
           <div className="grid grid-cols-2 gap-3">
             <input
-              placeholder="WhatsApp"
+              placeholder={L.whatsapp}
               value={form.whatsapp}
               onChange={(e) => setForm({ ...form, whatsapp: e.target.value })}
               className="bg-black/30 border border-stroke rounded-lg px-3 py-2 text-sm text-white placeholder:text-muted/50 focus:outline-none focus:border-[#4E85BF]/50"
             />
             <input
-              placeholder="Commission %"
+              placeholder={L.commissionPct}
               type="number"
               min="0"
               max="100"
@@ -236,7 +313,7 @@ function AddPartnerModal({
           </div>
 
           <textarea
-            placeholder="Notes"
+            placeholder={L.notes}
             rows={3}
             value={form.notes}
             onChange={(e) => setForm({ ...form, notes: e.target.value })}
@@ -250,13 +327,13 @@ function AddPartnerModal({
               className="flex-1 rounded-lg bg-[#4E85BF] px-4 py-2 text-sm font-medium text-white hover:bg-[#3d6fa3] disabled:opacity-50 flex items-center justify-center gap-2 transition-colors"
             >
               {saving ? <Loader2 size={14} className="animate-spin" /> : <Plus size={14} />}
-              {saving ? "Saving..." : "Add Partner"}
+              {saving ? L.saving : L.save}
             </button>
             <button
               onClick={onClose}
               className="rounded-lg border border-stroke px-3 py-1.5 text-xs font-medium text-muted hover:text-text-primary hover:bg-surface transition-colors"
             >
-              Cancel
+              {L.cancel}
             </button>
           </div>
         </div>
@@ -351,7 +428,7 @@ export function PortalsPartnersSection() {
   };
 
   const handleDelete = async (partnerId: string) => {
-    if (!confirm("Delete this partner? This cannot be undone.")) return;
+    if (!confirm(L.deleteConfirm)) return;
     setDeleteLoading(partnerId);
     try {
       await fetch(`/api/marketing/partners/${partnerId}`, { method: "DELETE" });
@@ -379,11 +456,11 @@ export function PortalsPartnersSection() {
   }
 
   return (
-    <section className="space-y-6">
+    <section dir="rtl" className="space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between flex-wrap gap-3">
         <h2 className="font-display text-lg font-semibold flex items-center gap-2">
-          <Handshake size={18} className="text-[#89AACC]" /> Partners
+          <Handshake size={18} className="text-[#89AACC]" /> {L.title}
         </h2>
         <div className="flex items-center gap-2 flex-wrap">
           <select
@@ -391,9 +468,9 @@ export function PortalsPartnersSection() {
             onChange={(e) => setFilterType(e.target.value)}
             className="bg-surface border border-stroke rounded-lg px-2 py-1 text-xs text-muted"
           >
-            <option value="">All Types</option>
+            <option value="">{L.allTypes}</option>
             {PARTNER_TYPES.map((t) => (
-              <option key={t} value={t}>{formatType(t)}</option>
+              <option key={t} value={t}>{L.types[t] || t}</option>
             ))}
           </select>
 
@@ -402,9 +479,9 @@ export function PortalsPartnersSection() {
             onChange={(e) => setFilterStatus(e.target.value)}
             className="bg-surface border border-stroke rounded-lg px-2 py-1 text-xs text-muted"
           >
-            <option value="">All Statuses</option>
+            <option value="">{L.allStatuses}</option>
             {AGREEMENT_STATUSES.map((s) => (
-              <option key={s} value={s}>{formatType(s)}</option>
+              <option key={s} value={s}>{L.statuses[s] || s}</option>
             ))}
           </select>
 
@@ -413,7 +490,7 @@ export function PortalsPartnersSection() {
             onChange={(e) => setFilterCountry(e.target.value)}
             className="bg-surface border border-stroke rounded-lg px-2 py-1 text-xs text-muted"
           >
-            <option value="">All Countries</option>
+            <option value="">{L.allCountries}</option>
             {countries.map((c) => (
               <option key={c} value={c}>{c}</option>
             ))}
@@ -423,7 +500,7 @@ export function PortalsPartnersSection() {
             onClick={() => setShowAddModal(true)}
             className="rounded-lg bg-[#4E85BF] px-4 py-2 text-sm font-medium text-white hover:bg-[#3d6fa3] flex items-center gap-1.5 transition-colors"
           >
-            <Plus size={14} /> Add Partner
+            <Plus size={14} /> {L.addPartner}
           </button>
 
           <button
@@ -432,6 +509,28 @@ export function PortalsPartnersSection() {
           >
             <RefreshCw size={16} />
           </button>
+        </div>
+      </div>
+
+      {/* Workflow Explanation Card */}
+      <div className="rounded-2xl border border-[#4E85BF]/20 bg-[#4E85BF]/5 p-5">
+        <p className="text-sm font-semibold text-text-primary">{L.subtitle}</p>
+        <div className="flex flex-wrap items-center gap-2 mt-3 text-xs text-muted">
+          <span className="rounded-full bg-[#4E85BF]/20 px-2.5 py-0.5 text-[11px] font-semibold text-[#89AACC]">
+            {L.addPartner}
+          </span>
+          <span>&#8592;</span>
+          <span className="rounded-full bg-emerald-500/20 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-400">
+            {L.generateQR}
+          </span>
+          <span>&#8592;</span>
+          <span className="rounded-full bg-purple-500/20 px-2.5 py-0.5 text-[11px] font-semibold text-purple-400">
+            שלח הצעה
+          </span>
+          <span>&#8592;</span>
+          <span className="rounded-full bg-amber-500/20 px-2.5 py-0.5 text-[11px] font-semibold text-amber-400">
+            עקוב אחרי הפניות
+          </span>
         </div>
       </div>
 
@@ -447,14 +546,14 @@ export function PortalsPartnersSection() {
                 <button
                   key={partner.id}
                   onClick={() => handleExpand(partner.id)}
-                  className={`rounded-2xl border bg-surface p-5 text-left transition-colors ${
+                  className={`rounded-2xl border bg-surface p-5 text-right transition-colors ${
                     expandedId === partner.id
                       ? "border-[#4E85BF]/50"
                       : "border-stroke hover:border-[#4E85BF]/30"
                   }`}
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <h4 className="font-display text-sm font-bold truncate pr-2">
+                    <h4 className="font-display text-sm font-bold truncate pl-2">
                       {partner.name}
                     </h4>
                     {expandedId === partner.id ? (
@@ -466,7 +565,7 @@ export function PortalsPartnersSection() {
 
                   <div className="flex items-center gap-2 mb-3 flex-wrap">
                     <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-semibold ${typeColor}`}>
-                      {formatType(partner.partner_type)}
+                      {L.types[partner.partner_type] || partner.partner_type}
                     </span>
                     {partner.country && (
                       <span className="flex items-center gap-1 text-[11px] text-muted">
@@ -479,7 +578,7 @@ export function PortalsPartnersSection() {
                     <StatusBadge
                       status={portalStatus}
                       type="portal"
-                      label={formatType(partner.agreement_status)}
+                      label={L.statuses[partner.agreement_status] || partner.agreement_status}
                     />
                     <div className="flex items-center gap-3 text-[11px] text-muted">
                       <span className="flex items-center gap-1">
@@ -510,7 +609,7 @@ export function PortalsPartnersSection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                     {partner.contact_name && (
                       <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
-                        <p className="text-[9px] text-muted uppercase">Contact</p>
+                        <p className="text-[9px] text-muted uppercase">{L.contact}</p>
                         <p className="text-sm font-semibold">{partner.contact_name}</p>
                       </div>
                     )}
@@ -518,7 +617,7 @@ export function PortalsPartnersSection() {
                       <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2 flex items-center gap-2">
                         <Mail size={12} className="text-muted shrink-0" />
                         <div className="min-w-0">
-                          <p className="text-[9px] text-muted uppercase">Email</p>
+                          <p className="text-[9px] text-muted uppercase">{L.email}</p>
                           <p className="text-sm truncate">{partner.email}</p>
                         </div>
                       </div>
@@ -527,7 +626,7 @@ export function PortalsPartnersSection() {
                       <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2 flex items-center gap-2">
                         <Phone size={12} className="text-muted shrink-0" />
                         <div>
-                          <p className="text-[9px] text-muted uppercase">Phone</p>
+                          <p className="text-[9px] text-muted uppercase">{L.phone}</p>
                           <p className="text-sm">{partner.phone}</p>
                         </div>
                       </div>
@@ -536,7 +635,7 @@ export function PortalsPartnersSection() {
                       <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2 flex items-center gap-2">
                         <MessageCircle size={12} className="text-emerald-400 shrink-0" />
                         <div>
-                          <p className="text-[9px] text-muted uppercase">WhatsApp</p>
+                          <p className="text-[9px] text-muted uppercase">{L.whatsapp}</p>
                           <p className="text-sm">{partner.whatsapp}</p>
                         </div>
                       </div>
@@ -547,26 +646,26 @@ export function PortalsPartnersSection() {
                 {/* Agreement Details */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
-                    <p className="text-[9px] text-muted uppercase">Agreement</p>
-                    <p className="text-sm font-semibold">{partner.agreement_type || "Not set"}</p>
+                    <p className="text-[9px] text-muted uppercase">{L.agreement}</p>
+                    <p className="text-sm font-semibold">{partner.agreement_type || L.notSet}</p>
                   </div>
                   <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
-                    <p className="text-[9px] text-muted uppercase">Commission</p>
-                    <p className="text-sm font-semibold">{partner.commission_pct != null ? `${partner.commission_pct}%` : "N/A"}</p>
+                    <p className="text-[9px] text-muted uppercase">{L.commission}</p>
+                    <p className="text-sm font-semibold">{partner.commission_pct != null ? `${partner.commission_pct}%` : L.na}</p>
                   </div>
                   <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
-                    <p className="text-[9px] text-muted uppercase">Referrals</p>
+                    <p className="text-[9px] text-muted uppercase">{L.referrals}</p>
                     <p className="text-sm font-semibold">{partner.total_referrals ?? 0}</p>
                   </div>
                   <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
-                    <p className="text-[9px] text-muted uppercase">Conversions</p>
+                    <p className="text-[9px] text-muted uppercase">{L.conversions}</p>
                     <p className="text-sm font-semibold">{partner.total_conversions ?? 0}</p>
                   </div>
                 </div>
 
                 {partner.notes && (
                   <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
-                    <p className="text-[9px] text-muted uppercase">Notes</p>
+                    <p className="text-[9px] text-muted uppercase">{L.notes}</p>
                     <p className="text-sm text-text-primary mt-1">{partner.notes}</p>
                   </div>
                 )}
@@ -583,7 +682,7 @@ export function PortalsPartnersSection() {
                     ) : (
                       <QrCode size={12} />
                     )}
-                    Generate QR
+                    {L.generateQR}
                   </button>
 
                   <button
@@ -596,20 +695,20 @@ export function PortalsPartnersSection() {
                     ) : (
                       <Sparkles size={12} />
                     )}
-                    Generate AI Proposal
+                    {L.generateProposal}
                   </button>
 
                   <button
                     onClick={() => handleDelete(partner.id)}
                     disabled={deleteLoading === partner.id}
-                    className="rounded-lg border border-red-500/30 px-3 py-1.5 text-xs font-medium text-red-400 hover:bg-red-500/10 flex items-center gap-1.5 transition-colors ml-auto"
+                    className="rounded-lg border border-red-500/30 px-3 py-1.5 text-xs font-medium text-red-400 hover:bg-red-500/10 flex items-center gap-1.5 transition-colors mr-auto"
                   >
                     {deleteLoading === partner.id ? (
                       <Loader2 size={12} className="animate-spin" />
                     ) : (
                       <Trash2 size={12} />
                     )}
-                    Delete
+                    {L.delete}
                   </button>
                 </div>
 
@@ -617,10 +716,10 @@ export function PortalsPartnersSection() {
                 {qrResult && (
                   <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-4 space-y-3">
                     <label className="text-[10px] font-semibold text-emerald-300 uppercase tracking-wider">
-                      Tracking QR Code
+                      {L.trackingUrl}
                     </label>
                     <div className="flex items-center gap-2">
-                      <code className="flex-1 bg-black/20 border border-stroke rounded-lg px-3 py-2 text-xs text-text-primary truncate">
+                      <code dir="ltr" className="flex-1 bg-black/20 border border-stroke rounded-lg px-3 py-2 text-xs text-text-primary truncate text-left">
                         {qrResult.trackingUrl}
                       </code>
                       <button
@@ -628,7 +727,7 @@ export function PortalsPartnersSection() {
                         className="rounded-lg border border-stroke px-3 py-1.5 text-xs font-medium text-muted hover:text-text-primary hover:bg-surface flex items-center gap-1.5 transition-colors shrink-0"
                       >
                         {copiedUrl ? <Check size={12} className="text-emerald-400" /> : <Copy size={12} />}
-                        {copiedUrl ? "Copied" : "Copy"}
+                        {copiedUrl ? L.copied : L.copy}
                       </button>
                     </div>
                     {qrResult.qrDataUrl && (
@@ -649,11 +748,11 @@ export function PortalsPartnersSection() {
                   <div className="rounded-xl border border-purple-500/20 bg-purple-500/5 p-4 space-y-3">
                     <div className="flex items-center justify-between">
                       <label className="text-[10px] font-semibold text-purple-300 uppercase tracking-wider">
-                        AI-Generated Proposal
+                        {L.aiProposal}
                       </label>
                       {proposalCost != null && (
                         <span className="text-[10px] text-muted">
-                          Cost: ${proposalCost.toFixed(4)}
+                          {L.cost}: ${proposalCost.toFixed(4)}
                         </span>
                       )}
                     </div>
@@ -666,7 +765,7 @@ export function PortalsPartnersSection() {
                 {/* Referral History */}
                 <div>
                   <label className="text-[10px] font-semibold text-muted uppercase tracking-wider">
-                    Referral History
+                    {L.referralHistory}
                   </label>
                   {referralsLoading ? (
                     <div className="flex items-center justify-center py-6">
@@ -681,10 +780,10 @@ export function PortalsPartnersSection() {
                         >
                           <div className="flex items-center gap-2">
                             <span className="text-text-primary font-medium">
-                              {ref.leads?.full_name || "Unknown Lead"}
+                              {ref.leads?.full_name || L.unknownLead}
                             </span>
                             {ref.referral_source && (
-                              <span className="text-muted">via {ref.referral_source}</span>
+                              <span className="text-muted">{L.via} {ref.referral_source}</span>
                             )}
                           </div>
                           <div className="flex items-center gap-2">
@@ -695,17 +794,17 @@ export function PortalsPartnersSection() {
                                 ? "bg-amber-500/10 text-amber-400"
                                 : "bg-zinc-500/10 text-zinc-400"
                             }`}>
-                              {ref.status}
+                              {L.refStatuses[ref.status] || ref.status}
                             </span>
                             <span className="text-muted">
-                              {new Date(ref.created_at).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+                              {new Date(ref.created_at).toLocaleDateString("he-IL", { month: "short", day: "numeric" })}
                             </span>
                           </div>
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <p className="text-xs text-muted mt-2">No referrals recorded yet.</p>
+                    <p className="text-xs text-muted mt-2">{L.noReferrals}</p>
                   )}
                 </div>
               </div>
@@ -715,12 +814,13 @@ export function PortalsPartnersSection() {
       ) : (
         <div className="bg-surface rounded-2xl border border-stroke p-12 text-center">
           <Handshake size={40} className="mx-auto mb-4 text-muted/30" />
-          <p className="text-muted">No partners yet. Add your first partner to start tracking referrals.</p>
+          <p className="text-muted font-semibold mb-1">{L.noPartners}</p>
+          <p className="text-xs text-muted/70">{L.noPartnersHint}</p>
           <button
             onClick={() => setShowAddModal(true)}
             className="mt-4 rounded-lg bg-[#4E85BF] px-4 py-2 text-sm font-medium text-white hover:bg-[#3d6fa3] inline-flex items-center gap-1.5 transition-colors"
           >
-            <Plus size={14} /> Add Partner
+            <Plus size={14} /> {L.addPartner}
           </button>
         </div>
       )}
