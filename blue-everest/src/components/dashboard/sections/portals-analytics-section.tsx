@@ -3,49 +3,86 @@
 import { useState, useEffect } from "react";
 import {
   Eye, MessageSquare, Users, TrendingUp, Loader2, RefreshCw, BarChart3,
-  LayoutList, ArrowLeft,
+  LayoutList, ArrowLeft, ArrowRight,
 } from "lucide-react";
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, PieChart, Pie, Cell, Legend,
 } from "recharts";
 import { StatusBadge } from "../cards/status-badge";
+import { useTranslation } from "@/lib/i18n";
 
-// --- Hebrew Labels ---
+// --- Bilingual Labels ---
 
-const L = {
-  title: "אנליטיקס פורטלים",
-  totalViews: 'סה"כ צפיות',
-  totalInquiries: 'סה"כ פניות',
-  totalLeads: 'סה"כ לידים',
-  conversionRate: "יחס המרה",
-  portalPerformance: "ביצועי פורטלים",
-  noPerformance: "אין נתוני ביצועים עדיין.",
-  leadSources: "מקורות לידים",
-  noLeadData: "אין נתוני לידים.",
-  costAnalysis: "ניתוח עלויות",
-  noCostData: "אין נתוני עלות.",
-  portal: "פורטל",
-  fee: "עלות",
-  leads: "לידים",
-  cpl: "עלות לליד",
-  listingPerformance: "ביצועי מודעות",
-  property: "נכס",
-  views: "צפיות",
-  inquiries: "פניות",
-  convRate: "יחס המרה",
-  status: "סטטוס",
-  noListings: "אין מודעות עדיין.",
-  emptyTitle: "האנליטיקס ריקה כרגע",
-  emptyText: "כדי לראות נתונים כאן, צריך קודם לפרסם מודעות בפורטלים.",
-  step1: "1. התאם מודעות",
-  step2: "2. פרסם בפורטלים",
-  step3: "3. צפה בנתונים כאן",
-  na: "לא זמין",
-  unknown: "לא ידוע",
-  barViews: "צפיות",
-  barInquiries: "פניות",
-  barLeads: "לידים",
+const LABELS = {
+  he: {
+    title: "אנליטיקס פורטלים",
+    totalViews: 'סה"כ צפיות',
+    totalInquiries: 'סה"כ פניות',
+    totalLeads: 'סה"כ לידים',
+    conversionRate: "יחס המרה",
+    portalPerformance: "ביצועי פורטלים",
+    noPerformance: "אין נתוני ביצועים עדיין.",
+    leadSources: "מקורות לידים",
+    noLeadData: "אין נתוני לידים.",
+    costAnalysis: "ניתוח עלויות",
+    noCostData: "אין נתוני עלות.",
+    portal: "פורטל",
+    fee: "עלות",
+    leads: "לידים",
+    cpl: "עלות לליד",
+    listingPerformance: "ביצועי מודעות",
+    property: "נכס",
+    views: "צפיות",
+    inquiries: "פניות",
+    convRate: "יחס המרה",
+    status: "סטטוס",
+    noListings: "אין מודעות עדיין.",
+    emptyTitle: "האנליטיקס ריקה כרגע",
+    emptyText: "כדי לראות נתונים כאן, צריך קודם לפרסם מודעות בפורטלים.",
+    step1: "1. התאם מודעות",
+    step2: "2. פרסם בפורטלים",
+    step3: "3. צפה בנתונים כאן",
+    na: "לא זמין",
+    unknown: "לא ידוע",
+    barViews: "צפיות",
+    barInquiries: "פניות",
+    barLeads: "לידים",
+  },
+  en: {
+    title: "Portal Analytics",
+    totalViews: "Total Views",
+    totalInquiries: "Total Inquiries",
+    totalLeads: "Total Leads",
+    conversionRate: "Conversion Rate",
+    portalPerformance: "Portal Performance",
+    noPerformance: "No performance data yet.",
+    leadSources: "Lead Sources",
+    noLeadData: "No lead data.",
+    costAnalysis: "Cost Analysis",
+    noCostData: "No cost data.",
+    portal: "Portal",
+    fee: "Fee",
+    leads: "Leads",
+    cpl: "Cost Per Lead",
+    listingPerformance: "Listing Performance",
+    property: "Property",
+    views: "Views",
+    inquiries: "Inquiries",
+    convRate: "Conv. Rate",
+    status: "Status",
+    noListings: "No listings yet.",
+    emptyTitle: "Analytics is empty",
+    emptyText: "To see data here, publish listings to portals first.",
+    step1: "1. Adapt listings",
+    step2: "2. Publish to portals",
+    step3: "3. See data here",
+    na: "N/A",
+    unknown: "Unknown",
+    barViews: "Views",
+    barInquiries: "Inquiries",
+    barLeads: "Leads",
+  },
 };
 
 // --- Types ---
@@ -105,6 +142,12 @@ const GRID_STROKE = "hsl(0 0% 12%)";
 // --- Component ---
 
 export function PortalsAnalyticsSection() {
+  const { locale } = useTranslation();
+  const L = LABELS[locale === "he" ? "he" : "en"];
+  const dir = locale === "he" ? "rtl" : "ltr";
+  const numLocale = locale === "he" ? "he-IL" : "en-US";
+  const StepArrow = dir === "rtl" ? ArrowLeft : ArrowRight;
+
   const [overview, setOverview] = useState<OverviewData>(EMPTY_OVERVIEW);
   const [performance, setPerformance] = useState<PerformanceRow[]>([]);
   const [listings, setListings] = useState<PortalListing[]>([]);
@@ -184,7 +227,7 @@ export function PortalsAnalyticsSection() {
   );
 
   return (
-    <section dir="rtl" className="space-y-6">
+    <section dir={dir} className="space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
         <h2 className="font-display text-lg font-semibold flex items-center gap-2">
@@ -211,12 +254,12 @@ export function PortalsAnalyticsSection() {
               <LayoutList size={14} className="text-[#89AACC]" />
               <span className="text-xs font-semibold text-[#89AACC]">{L.step1}</span>
             </div>
-            <ArrowLeft size={14} className="text-muted/40" />
+            <StepArrow size={14} className="text-muted/40" />
             <div className="flex items-center gap-2 rounded-xl border border-emerald-500/20 bg-emerald-500/5 px-4 py-2.5">
               <Eye size={14} className="text-emerald-400" />
               <span className="text-xs font-semibold text-emerald-400">{L.step2}</span>
             </div>
-            <ArrowLeft size={14} className="text-muted/40" />
+            <StepArrow size={14} className="text-muted/40" />
             <div className="flex items-center gap-2 rounded-xl border border-amber-500/20 bg-amber-500/5 px-4 py-2.5">
               <BarChart3 size={14} className="text-amber-400" />
               <span className="text-xs font-semibold text-amber-400">{L.step3}</span>
@@ -228,9 +271,9 @@ export function PortalsAnalyticsSection() {
           {/* Summary KPI Row */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { label: L.totalViews, value: totalViews.toLocaleString("he-IL"), icon: Eye, color: "text-blue-400" },
-              { label: L.totalInquiries, value: totalInquiries.toLocaleString("he-IL"), icon: MessageSquare, color: "text-amber-400" },
-              { label: L.totalLeads, value: totalLeads.toLocaleString("he-IL"), icon: Users, color: "text-emerald-400" },
+              { label: L.totalViews, value: totalViews.toLocaleString(numLocale), icon: Eye, color: "text-blue-400" },
+              { label: L.totalInquiries, value: totalInquiries.toLocaleString(numLocale), icon: MessageSquare, color: "text-amber-400" },
+              { label: L.totalLeads, value: totalLeads.toLocaleString(numLocale), icon: Users, color: "text-emerald-400" },
               { label: L.conversionRate, value: `${conversionRate}%`, icon: TrendingUp, color: "text-purple-400" },
             ].map((kpi) => {
               const Icon = kpi.icon;
@@ -331,11 +374,11 @@ export function PortalsAnalyticsSection() {
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-stroke text-right">
+                      <tr className={`border-b border-stroke ${dir === "rtl" ? "text-right" : "text-left"}`}>
                         <th className="pb-2 text-xs font-semibold text-muted uppercase tracking-wider">{L.portal}</th>
-                        <th className="pb-2 text-xs font-semibold text-muted uppercase tracking-wider text-left">{L.fee}</th>
-                        <th className="pb-2 text-xs font-semibold text-muted uppercase tracking-wider text-left">{L.leads}</th>
-                        <th className="pb-2 text-xs font-semibold text-muted uppercase tracking-wider text-left">{L.cpl}</th>
+                        <th className={`pb-2 text-xs font-semibold text-muted uppercase tracking-wider ${dir === "rtl" ? "text-left" : "text-right"}`}>{L.fee}</th>
+                        <th className={`pb-2 text-xs font-semibold text-muted uppercase tracking-wider ${dir === "rtl" ? "text-left" : "text-right"}`}>{L.leads}</th>
+                        <th className={`pb-2 text-xs font-semibold text-muted uppercase tracking-wider ${dir === "rtl" ? "text-left" : "text-right"}`}>{L.cpl}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -344,9 +387,9 @@ export function PortalsAnalyticsSection() {
                         return (
                           <tr key={row.slug} className="border-t border-stroke hover:bg-surface/50">
                             <td className="py-2 text-text-primary text-xs">{row.name}</td>
-                            <td className="py-2 text-left text-xs text-muted">${row.fee}</td>
-                            <td className="py-2 text-left text-xs font-semibold">{row.leads}</td>
-                            <td className="py-2 text-left text-xs">
+                            <td className={`py-2 text-xs text-muted ${dir === "rtl" ? "text-left" : "text-right"}`}>${row.fee}</td>
+                            <td className={`py-2 text-xs font-semibold ${dir === "rtl" ? "text-left" : "text-right"}`}>{row.leads}</td>
+                            <td className={`py-2 text-xs ${dir === "rtl" ? "text-left" : "text-right"}`}>
                               {cpl ? (
                                 <span className={parseFloat(cpl) > 50 ? "text-red-400" : "text-emerald-400"}>
                                   ${cpl}
@@ -380,13 +423,13 @@ export function PortalsAnalyticsSection() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-stroke text-right">
+                    <tr className={`border-b border-stroke ${dir === "rtl" ? "text-right" : "text-left"}`}>
                       <th className="px-6 py-3 text-xs font-semibold text-muted uppercase tracking-wider">{L.property}</th>
                       <th className="px-6 py-3 text-xs font-semibold text-muted uppercase tracking-wider">{L.portal}</th>
-                      <th className="px-6 py-3 text-xs font-semibold text-muted uppercase tracking-wider text-left">{L.views}</th>
-                      <th className="px-6 py-3 text-xs font-semibold text-muted uppercase tracking-wider text-left">{L.inquiries}</th>
-                      <th className="px-6 py-3 text-xs font-semibold text-muted uppercase tracking-wider text-left">{L.leads}</th>
-                      <th className="px-6 py-3 text-xs font-semibold text-muted uppercase tracking-wider text-left">{L.convRate}</th>
+                      <th className={`px-6 py-3 text-xs font-semibold text-muted uppercase tracking-wider ${dir === "rtl" ? "text-left" : "text-right"}`}>{L.views}</th>
+                      <th className={`px-6 py-3 text-xs font-semibold text-muted uppercase tracking-wider ${dir === "rtl" ? "text-left" : "text-right"}`}>{L.inquiries}</th>
+                      <th className={`px-6 py-3 text-xs font-semibold text-muted uppercase tracking-wider ${dir === "rtl" ? "text-left" : "text-right"}`}>{L.leads}</th>
+                      <th className={`px-6 py-3 text-xs font-semibold text-muted uppercase tracking-wider ${dir === "rtl" ? "text-left" : "text-right"}`}>{L.convRate}</th>
                       <th className="px-6 py-3 text-xs font-semibold text-muted uppercase tracking-wider">{L.status}</th>
                     </tr>
                   </thead>
@@ -405,10 +448,10 @@ export function PortalsAnalyticsSection() {
                           <td className="px-6 py-3 text-muted">
                             {listing.portals?.name || L.unknown}
                           </td>
-                          <td className="px-6 py-3 text-left">{views.toLocaleString("he-IL")}</td>
-                          <td className="px-6 py-3 text-left">{inquiries.toLocaleString("he-IL")}</td>
-                          <td className="px-6 py-3 text-left font-semibold">{leads.toLocaleString("he-IL")}</td>
-                          <td className="px-6 py-3 text-left">{convRate}%</td>
+                          <td className={`px-6 py-3 ${dir === "rtl" ? "text-left" : "text-right"}`}>{views.toLocaleString(numLocale)}</td>
+                          <td className={`px-6 py-3 ${dir === "rtl" ? "text-left" : "text-right"}`}>{inquiries.toLocaleString(numLocale)}</td>
+                          <td className={`px-6 py-3 font-semibold ${dir === "rtl" ? "text-left" : "text-right"}`}>{leads.toLocaleString(numLocale)}</td>
+                          <td className={`px-6 py-3 ${dir === "rtl" ? "text-left" : "text-right"}`}>{convRate}%</td>
                           <td className="px-6 py-3">
                             <StatusBadge status={listing.status} type="listing" />
                           </td>

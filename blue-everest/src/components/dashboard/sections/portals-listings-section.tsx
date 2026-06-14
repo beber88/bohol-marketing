@@ -14,62 +14,146 @@ import {
   XCircle,
   AlertTriangle,
   Image as ImageIcon,
+  Copy,
+  Check,
 } from "lucide-react";
 import { StatusBadge } from "../cards/status-badge";
+import { useTranslation } from "@/lib/i18n";
 
 /* ------------------------------------------------------------------ */
-/*  Hebrew labels                                                      */
+/*  Bilingual labels                                                   */
 /* ------------------------------------------------------------------ */
 
-const L = {
-  title: "מודעות פורטלים",
-  subtitle: "ניהול מודעות נכסים בכל הפורטלים",
-  distributeAll: "הפצה לכולם",
-  selectProperty: "בחר נכס להפצה",
-  allPortals: "כל הפורטלים",
-  allProperties: "כל הנכסים",
-  allStatuses: "כל הסטטוסים",
-  total: 'סה"כ',
-  active: "מפורסמות",
-  pending: "ממתינות",
-  errors: "שגיאות",
-  property: "נכס",
-  portal: "פורטל",
-  status: "סטטוס",
-  titleCol: "כותרת",
-  views: "צפיות",
-  inquiries: "פניות",
-  leads: "לידים",
-  updated: "עודכן",
-  images: "תמונות הנכס",
-  adaptedTitle: "כותרת מותאמת",
-  adaptedDesc: "תיאור מותאם",
-  notAdapted: 'טרם הותאם - לחץ "התאם" ליצירת תוכן',
-  brandGuard: "שומר מותג",
-  notChecked: "לא נבדק",
-  passed: "עבר",
-  failed: "נכשל",
-  lastError: "שגיאה אחרונה",
-  adapt: "התאם",
-  submit: "פרסם",
-  refresh: "רענן",
-  viewOnPortal: "צפה בפורטל",
-  noListings: "אין מודעות שתואמות למסנן.",
-  noListingsHint: "נסה לשנות את המסנן או הפץ נכס ליצירת מודעות.",
-  distributing: "מפיץ...",
-  distributionDone: "ההפצה הושלמה",
-  cancel: "ביטול",
-  close: "סגור",
-  succeeded: "הצליחו",
-  failedCount: "נכשלו",
-  readyGroup: "מוכנות לפרסום",
-  pendingGroup: "ממתינות לבדיקה",
-  activeGroup: "מפורסמות",
-  errorGroup: "שגיאות",
-  created: "נוצר",
-  submitted: "הוגש",
-  published: "פורסם",
+const LABELS = {
+  he: {
+    title: "מודעות פורטלים",
+    subtitle: "ניהול מודעות נכסים בכל הפורטלים",
+    distributeAll: "הפצה לכולם",
+    selectProperty: "בחר נכס להפצה",
+    allPortals: "כל הפורטלים",
+    allProperties: "כל הנכסים",
+    allStatuses: "כל הסטטוסים",
+    total: 'סה"כ',
+    active: "מפורסמות",
+    pending: "ממתינות",
+    errors: "שגיאות",
+    property: "נכס",
+    portal: "פורטל",
+    status: "סטטוס",
+    titleCol: "כותרת",
+    views: "צפיות",
+    inquiries: "פניות",
+    leads: "לידים",
+    updated: "עודכן",
+    images: "תמונות הנכס",
+    adaptedTitle: "כותרת מותאמת",
+    adaptedDesc: "תיאור מותאם",
+    notAdapted: 'טרם הותאם - לחץ "התאם" ליצירת תוכן',
+    brandGuard: "שומר מותג",
+    notChecked: "לא נבדק",
+    passed: "עבר",
+    failed: "נכשל",
+    lastError: "שגיאה אחרונה",
+    adapt: "התאם",
+    submit: "פרסם",
+    refresh: "רענן",
+    viewOnPortal: "צפה בפורטל",
+    copyContent: "העתק תוכן",
+    copied: "הועתק!",
+    openSubmitPage: "פתח דף פרסום",
+    noListings: "אין מודעות שתואמות למסנן.",
+    noListingsHint: "נסה לשנות את המסנן או הפץ נכס ליצירת מודעות.",
+    distributing: "מפיץ...",
+    distributionDone: "ההפצה הושלמה",
+    cancel: "ביטול",
+    close: "סגור",
+    succeeded: "הצליחו",
+    failedCount: "נכשלו",
+    readyGroup: "מוכנות לפרסום",
+    pendingGroup: "ממתינות לבדיקה",
+    activeGroup: "מפורסמות",
+    errorGroup: "שגיאות",
+    created: "נוצר",
+    submitted: "הוגש",
+    published: "פורסם",
+    loadError: "טעינת המודעות נכשלה",
+    loadFailed: "טעינת הנתונים נכשלה",
+    now: "עכשיו",
+    minsAgo: (n: number) => `לפני ${n} דק'`,
+    hoursAgo: (n: number) => `לפני ${n} שע'`,
+    daysAgo: (n: number) => `לפני ${n} ימים`,
+    tierPremium: "פרימיום",
+    tierStandard: "רגיל",
+    tierFree: "חינם",
+    tierLevel: (n: number) => `רמה ${n}`,
+    other: "אחר",
+  },
+  en: {
+    title: "Portal Listings",
+    subtitle: "Manage property listings across all portals",
+    distributeAll: "Distribute All",
+    selectProperty: "Select a property to distribute",
+    allPortals: "All Portals",
+    allProperties: "All Properties",
+    allStatuses: "All Statuses",
+    total: "Total",
+    active: "Active",
+    pending: "Pending",
+    errors: "Errors",
+    property: "Property",
+    portal: "Portal",
+    status: "Status",
+    titleCol: "Title",
+    views: "Views",
+    inquiries: "Inquiries",
+    leads: "Leads",
+    updated: "Updated",
+    images: "Property Images",
+    adaptedTitle: "Adapted Title",
+    adaptedDesc: "Adapted Description",
+    notAdapted: "Not adapted yet - click Adapt to generate content",
+    brandGuard: "Brand Guard",
+    notChecked: "Not checked",
+    passed: "Passed",
+    failed: "Failed",
+    lastError: "Last Error",
+    adapt: "Adapt",
+    submit: "Publish",
+    refresh: "Refresh",
+    viewOnPortal: "View on Portal",
+    copyContent: "Copy Content",
+    copied: "Copied!",
+    openSubmitPage: "Open Submission Page",
+    noListings: "No listings match the current filters.",
+    noListingsHint: "Try changing the filter or distribute a property to create listings.",
+    distributing: "Distributing...",
+    distributionDone: "Distribution Complete",
+    cancel: "Cancel",
+    close: "Close",
+    succeeded: "succeeded",
+    failedCount: "failed",
+    readyGroup: "Ready to Publish",
+    pendingGroup: "Pending Review",
+    activeGroup: "Published",
+    errorGroup: "Errors",
+    created: "Created",
+    submitted: "Submitted",
+    published: "Published",
+    loadError: "Failed to load listings",
+    loadFailed: "Failed to load data",
+    now: "just now",
+    minsAgo: (n: number) => `${n}m ago`,
+    hoursAgo: (n: number) => `${n}h ago`,
+    daysAgo: (n: number) => `${n}d ago`,
+    tierPremium: "Premium",
+    tierStandard: "Standard",
+    tierFree: "Free",
+    tierLevel: (n: number) => `Tier ${n}`,
+    other: "Other",
+  },
 };
+
+type Labels = typeof LABELS.en;
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -99,7 +183,7 @@ interface PortalListing {
   created_at: string;
   updated_at: string;
   properties: { internal_name: string; slug: string; image_urls?: string[] } | null;
-  portals: { name: string; slug: string; tier: number } | null;
+  portals: { name: string; slug: string; tier: number; submit_url?: string; website_url?: string } | null;
 }
 
 interface Property {
@@ -131,32 +215,34 @@ interface StatusGroup {
   color: string;
 }
 
-const STATUS_GROUPS: StatusGroup[] = [
-  {
-    key: "ready",
-    label: L.readyGroup,
-    match: (l) => l.status === "brand_guard_passed",
-    color: "text-blue-400",
-  },
-  {
-    key: "pending",
-    label: L.pendingGroup,
-    match: (l) => l.status === "pending_review" || l.status === "draft" || l.status === "submitting",
-    color: "text-amber-400",
-  },
-  {
-    key: "active",
-    label: L.activeGroup,
-    match: (l) => l.status === "active",
-    color: "text-emerald-400",
-  },
-  {
-    key: "error",
-    label: L.errorGroup,
-    match: (l) => l.status === "error" || l.status === "rejected",
-    color: "text-red-400",
-  },
-];
+function buildStatusGroups(L: Labels): StatusGroup[] {
+  return [
+    {
+      key: "ready",
+      label: L.readyGroup,
+      match: (l) => l.status === "brand_guard_passed",
+      color: "text-blue-400",
+    },
+    {
+      key: "pending",
+      label: L.pendingGroup,
+      match: (l) => l.status === "pending_review" || l.status === "draft" || l.status === "submitting",
+      color: "text-amber-400",
+    },
+    {
+      key: "active",
+      label: L.activeGroup,
+      match: (l) => l.status === "active",
+      color: "text-emerald-400",
+    },
+    {
+      key: "error",
+      label: L.errorGroup,
+      match: (l) => l.status === "error" || l.status === "rejected",
+      color: "text-red-400",
+    },
+  ];
+}
 
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
@@ -168,15 +254,14 @@ const TIER_COLORS: Record<number, string> = {
   3: "border-zinc-500/30 bg-zinc-500/10 text-zinc-400",
 };
 
-const TIER_LABELS: Record<number, string> = {
-  1: "פרימיום",
-  2: "רגיל",
-  3: "חינם",
-};
-
-function tierBadge(tier: number) {
+function tierBadge(tier: number, L: Labels) {
   const style = TIER_COLORS[tier] || TIER_COLORS[2];
-  const label = TIER_LABELS[tier] || `רמה ${tier}`;
+  const labelMap: Record<number, string> = {
+    1: L.tierPremium,
+    2: L.tierStandard,
+    3: L.tierFree,
+  };
+  const label = labelMap[tier] || L.tierLevel(tier);
   return (
     <span
       className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-bold tracking-wider ${style}`}
@@ -186,16 +271,16 @@ function tierBadge(tier: number) {
   );
 }
 
-function relativeTime(dateStr: string | null): string {
+function relativeTime(dateStr: string | null, L: Labels): string {
   if (!dateStr) return "-";
   const diff = Date.now() - new Date(dateStr).getTime();
   const mins = Math.floor(diff / 60000);
-  if (mins < 1) return "עכשיו";
-  if (mins < 60) return `לפני ${mins} דק'`;
+  if (mins < 1) return L.now;
+  if (mins < 60) return L.minsAgo(mins);
   const hours = Math.floor(mins / 60);
-  if (hours < 24) return `לפני ${hours} שע'`;
+  if (hours < 24) return L.hoursAgo(hours);
   const days = Math.floor(hours / 24);
-  return `לפני ${days} ימים`;
+  return L.daysAgo(days);
 }
 
 /* ------------------------------------------------------------------ */
@@ -203,6 +288,9 @@ function relativeTime(dateStr: string | null): string {
 /* ------------------------------------------------------------------ */
 
 export function PortalsListingsSection() {
+  const { locale } = useTranslation();
+  const L: Labels = LABELS[locale === "he" ? "he" : "en"];
+
   /* --- data state --- */
   const [listings, setListings] = useState<PortalListing[]>([]);
   const [properties, setProperties] = useState<Property[]>([]);
@@ -218,6 +306,7 @@ export function PortalsListingsSection() {
   /* --- interaction state --- */
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [actionLoading, setActionLoading] = useState<Record<string, string>>({});
+  const [copied, setCopied] = useState<string | null>(null);
 
   /* --- SSE distribution state --- */
   const [distributing, setDistributing] = useState<{
@@ -243,7 +332,7 @@ export function PortalsListingsSection() {
         fetch("/api/marketing/portals"),
       ]);
 
-      if (!listingsRes.ok) throw new Error("טעינת המודעות נכשלה");
+      if (!listingsRes.ok) throw new Error("load_error");
 
       const [listingsData, propertiesData, portalsData] = await Promise.all([
         listingsRes.json(),
@@ -252,10 +341,16 @@ export function PortalsListingsSection() {
       ]);
 
       setListings(listingsData.listings || []);
-      setProperties(propertiesData.properties || []);
+      const loadedProperties: Property[] = propertiesData.properties || [];
+      setProperties(loadedProperties);
       setPortals(portalsData.portals || []);
+
+      // Auto-select first property if none selected (enables Distribute button)
+      if (loadedProperties.length > 0) {
+        setFilterProperty((prev) => (prev === "all" ? loadedProperties[0].id : prev));
+      }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "טעינת הנתונים נכשלה");
+      setError(err instanceof Error && err.message === "load_error" ? "load_error" : "load_failed");
     } finally {
       setLoading(false);
     }
@@ -280,11 +375,13 @@ export function PortalsListingsSection() {
   /*  Grouped listings by status                                       */
   /* ---------------------------------------------------------------- */
 
+  const statusGroups = buildStatusGroups(L);
+
   function groupListings(items: PortalListing[]) {
     const grouped: { group: StatusGroup; items: PortalListing[] }[] = [];
     const assigned = new Set<string>();
 
-    for (const group of STATUS_GROUPS) {
+    for (const group of statusGroups) {
       const matching = items.filter((l) => group.match(l) && !assigned.has(l.id));
       if (matching.length > 0) {
         matching.forEach((l) => assigned.add(l.id));
@@ -296,7 +393,7 @@ export function PortalsListingsSection() {
     const remaining = items.filter((l) => !assigned.has(l.id));
     if (remaining.length > 0) {
       grouped.push({
-        group: { key: "other", label: "אחר", match: () => true, color: "text-muted" },
+        group: { key: "other", label: L.other, match: () => true, color: "text-muted" },
         items: remaining,
       });
     }
@@ -377,6 +474,17 @@ export function PortalsListingsSection() {
         delete n[listingId];
         return n;
       });
+    }
+  };
+
+  const handleCopy = async (listing: PortalListing) => {
+    const text = [listing.adapted_title, "", listing.adapted_description].filter(Boolean).join("\n");
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(listing.id);
+      setTimeout(() => setCopied(null), 2000);
+    } catch {
+      // Clipboard API may fail in insecure contexts; silently ignore
     }
   };
 
@@ -487,6 +595,12 @@ export function PortalsListingsSection() {
   const uniqueStatuses = Array.from(new Set(listings.map((l) => l.status)));
 
   /* ---------------------------------------------------------------- */
+  /*  Date formatting helper                                           */
+  /* ---------------------------------------------------------------- */
+
+  const dateFmt = locale === "he" ? "he-IL" : "en-US";
+
+  /* ---------------------------------------------------------------- */
   /*  Render                                                           */
   /* ---------------------------------------------------------------- */
 
@@ -501,7 +615,7 @@ export function PortalsListingsSection() {
   }
 
   return (
-    <section dir="rtl" className="space-y-6">
+    <section dir={locale === "he" ? "rtl" : "ltr"} className="space-y-6">
       {/* ---- Header ---- */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
@@ -597,7 +711,9 @@ export function PortalsListingsSection() {
             <p className="text-sm font-semibold text-red-400">
               {L.lastError}
             </p>
-            <p className="text-xs text-red-300/70 mt-1">{error}</p>
+            <p className="text-xs text-red-300/70 mt-1">
+              {error === "load_error" ? L.loadError : L.loadFailed}
+            </p>
           </div>
         </div>
       )}
@@ -695,7 +811,7 @@ export function PortalsListingsSection() {
                             <span className="text-sm text-text-primary truncate">
                               {listing.portals?.name || "-"}
                             </span>
-                            {listing.portals && tierBadge(listing.portals.tier)}
+                            {listing.portals && tierBadge(listing.portals.tier, L)}
                           </span>
 
                           {/* Status */}
@@ -726,7 +842,7 @@ export function PortalsListingsSection() {
                           {/* Updated */}
                           <span className="flex items-center justify-start gap-1">
                             <span className="text-xs text-muted">
-                              {relativeTime(listing.updated_at || listing.published_at || listing.created_at)}
+                              {relativeTime(listing.updated_at || listing.published_at || listing.created_at, L)}
                             </span>
                             {isExpanded ? (
                               <ChevronUp size={14} className="text-muted shrink-0" />
@@ -761,7 +877,7 @@ export function PortalsListingsSection() {
                             <span className="text-xs text-muted">
                               {listing.portals?.name || "-"}
                             </span>
-                            {listing.portals && tierBadge(listing.portals.tier)}
+                            {listing.portals && tierBadge(listing.portals.tier, L)}
                           </div>
                           <div className="flex items-center gap-4 text-[11px] text-muted">
                             <span>{listing.views} {L.views}</span>
@@ -861,14 +977,14 @@ export function PortalsListingsSection() {
                             <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
                               <p className="text-[9px] text-muted">{L.created}</p>
                               <p className="text-xs font-medium text-text-primary">
-                                {new Date(listing.created_at).toLocaleDateString("he-IL")}
+                                {new Date(listing.created_at).toLocaleDateString(dateFmt)}
                               </p>
                             </div>
                             <div className="rounded-lg bg-white/5 border border-stroke px-3 py-2">
                               <p className="text-[9px] text-muted">{L.submitted}</p>
                               <p className="text-xs font-medium text-text-primary">
                                 {listing.submitted_at
-                                  ? new Date(listing.submitted_at).toLocaleDateString("he-IL")
+                                  ? new Date(listing.submitted_at).toLocaleDateString(dateFmt)
                                   : "-"}
                               </p>
                             </div>
@@ -876,7 +992,7 @@ export function PortalsListingsSection() {
                               <p className="text-[9px] text-muted">{L.published}</p>
                               <p className="text-xs font-medium text-text-primary">
                                 {listing.published_at
-                                  ? new Date(listing.published_at).toLocaleDateString("he-IL")
+                                  ? new Date(listing.published_at).toLocaleDateString(dateFmt)
                                   : "-"}
                               </p>
                             </div>
@@ -928,6 +1044,23 @@ export function PortalsListingsSection() {
                               {L.submit}
                             </button>
 
+                            {/* Copy Content */}
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleCopy(listing);
+                              }}
+                              disabled={!listing.adapted_title && !listing.adapted_description}
+                              className="rounded-lg border border-stroke px-3 py-1.5 text-xs font-medium text-muted hover:text-text-primary hover:bg-surface disabled:opacity-40 transition-colors flex items-center gap-1.5"
+                            >
+                              {copied === listing.id ? (
+                                <Check size={14} className="text-emerald-400" />
+                              ) : (
+                                <Copy size={14} />
+                              )}
+                              {copied === listing.id ? L.copied : L.copyContent}
+                            </button>
+
                             {/* Refresh */}
                             <button
                               onClick={(e) => {
@@ -958,6 +1091,20 @@ export function PortalsListingsSection() {
                                 {L.viewOnPortal}
                               </a>
                             )}
+
+                            {/* Open Submission Page */}
+                            {(listing.portals?.submit_url || listing.portals?.website_url) && (
+                              <a
+                                href={listing.portals.submit_url || listing.portals.website_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="rounded-lg border border-indigo-500/30 bg-indigo-500/10 px-3 py-1.5 text-xs font-medium text-indigo-400 hover:bg-indigo-500/20 transition-colors flex items-center gap-1.5"
+                              >
+                                <ExternalLink size={14} />
+                                {L.openSubmitPage}
+                              </a>
+                            )}
                           </div>
                         </div>
                       )}
@@ -978,7 +1125,7 @@ export function PortalsListingsSection() {
 
       {/* ---- Distribution overlay (fixed bottom panel) ---- */}
       {distributing && (
-        <div dir="rtl" className="fixed bottom-0 left-0 right-0 z-50 border-t border-stroke bg-[#0d0d1a]/95 backdrop-blur-sm shadow-2xl">
+        <div dir={locale === "he" ? "rtl" : "ltr"} className="fixed bottom-0 left-0 right-0 z-50 border-t border-stroke bg-[#0d0d1a]/95 backdrop-blur-sm shadow-2xl">
           <div className="mx-auto max-w-5xl px-6 py-4 space-y-3">
             {/* Header */}
             <div className="flex items-center justify-between">

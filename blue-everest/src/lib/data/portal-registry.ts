@@ -22,6 +22,10 @@ export interface PortalDefinition {
   listingFeeUsd: number;
   refreshIntervalDays: number;
   notes?: string;
+  dashboardUrl?: string;
+  submitUrl?: string;
+  signupUrl?: string;
+  websiteUrl?: string;
 }
 
 // ============================================================
@@ -61,6 +65,10 @@ const LAMUDI_PH: PortalDefinition = {
   listingFeeUsd: 0,
   refreshIntervalDays: 30,
   notes: 'Largest PH property portal. Supports RESO-style XML feeds and manual dashboard.',
+  websiteUrl: 'https://www.lamudi.com.ph',
+  dashboardUrl: 'https://www.lamudi.com.ph/agent/',
+  submitUrl: 'https://www.lamudi.com.ph/agent/listing/create',
+  signupUrl: 'https://www.lamudi.com.ph/agent/register',
 };
 
 const DOT_PROPERTY_PH: PortalDefinition = {
@@ -90,6 +98,10 @@ const DOT_PROPERTY_PH: PortalDefinition = {
   listingFeeUsd: 0,
   refreshIntervalDays: 30,
   notes: 'Southeast Asian portal. No API - Playwright form fill only.',
+  websiteUrl: 'https://www.dotproperty.com.ph',
+  dashboardUrl: 'https://www.dotproperty.com.ph/en/agent',
+  submitUrl: 'https://www.dotproperty.com.ph/en/post-listing',
+  signupUrl: 'https://www.dotproperty.com.ph/en/register',
 };
 
 const FAZWAZ_PH: PortalDefinition = {
@@ -120,6 +132,10 @@ const FAZWAZ_PH: PortalDefinition = {
   listingFeeUsd: 0,
   refreshIntervalDays: 30,
   notes: 'Strong with foreign investor audience. Playwright automation.',
+  websiteUrl: 'https://www.fazwaz.com.ph',
+  dashboardUrl: 'https://www.fazwaz.com.ph/agent',
+  submitUrl: 'https://www.fazwaz.com.ph/listing/create',
+  signupUrl: 'https://www.fazwaz.com.ph/agent/register',
 };
 
 const REAL_PH: PortalDefinition = {
@@ -148,6 +164,9 @@ const REAL_PH: PortalDefinition = {
   listingFeeUsd: 0,
   refreshIntervalDays: 30,
   notes: 'Smaller PH portal. Low priority.',
+  websiteUrl: 'https://www.real.ph',
+  submitUrl: 'https://www.real.ph/post',
+  signupUrl: 'https://www.real.ph/register',
 };
 
 const CAROUSELL_PROPERTY: PortalDefinition = {
@@ -177,6 +196,9 @@ const CAROUSELL_PROPERTY: PortalDefinition = {
   listingFeeUsd: 0,
   refreshIntervalDays: 14,
   notes: 'Marketplace with property section. Property24 legacy. Playwright only.',
+  websiteUrl: 'https://www.carousell.ph',
+  submitUrl: 'https://www.carousell.ph/sell/property',
+  signupUrl: 'https://www.carousell.ph/register',
 };
 
 // ============================================================
@@ -213,6 +235,10 @@ const JAMESEDITION: PortalDefinition = {
   listingFeeUsd: 99,
   refreshIntervalDays: 60,
   notes: 'Premier luxury marketplace. 50+ countries. REST API for dealers. High-quality leads.',
+  websiteUrl: 'https://www.jamesedition.com',
+  dashboardUrl: 'https://www.jamesedition.com/dealers/dashboard',
+  submitUrl: 'https://www.jamesedition.com/dealers/listings/new',
+  signupUrl: 'https://www.jamesedition.com/dealers/signup',
 };
 
 const PROPERSTAR: PortalDefinition = {
@@ -244,6 +270,9 @@ const PROPERSTAR: PortalDefinition = {
   listingFeeUsd: 0,
   refreshIntervalDays: 30,
   notes: 'Global aggregator with millions of listings. XML/JSON feed format.',
+  websiteUrl: 'https://www.properstar.com',
+  dashboardUrl: 'https://www.properstar.com/agents/dashboard',
+  signupUrl: 'https://www.properstar.com/agents/register',
 };
 
 const LISTGLOBALLY: PortalDefinition = {
@@ -277,6 +306,9 @@ const LISTGLOBALLY: PortalDefinition = {
   listingFeeUsd: 49,
   refreshIntervalDays: 30,
   notes: 'KEY MULTIPLIER: one integration syndicates to 100+ portals worldwide including Realtor.com and Realestate.com.au.',
+  websiteUrl: 'https://www.listglobally.com',
+  dashboardUrl: 'https://www.listglobally.com/dashboard',
+  signupUrl: 'https://www.listglobally.com/signup',
 };
 
 const MANSION_GLOBAL: PortalDefinition = {
@@ -301,6 +333,8 @@ const MANSION_GLOBAL: PortalDefinition = {
   listingFeeUsd: 200,
   refreshIntervalDays: 60,
   notes: 'Dow Jones luxury property content platform. Requires editorial submission. Generate listing and submit manually.',
+  websiteUrl: 'https://www.mansionglobal.com',
+  submitUrl: 'https://www.mansionglobal.com/listing',
 };
 
 const LUXURY_ESTATE: PortalDefinition = {
@@ -326,6 +360,9 @@ const LUXURY_ESTATE: PortalDefinition = {
   listingFeeUsd: 50,
   refreshIntervalDays: 45,
   notes: 'European luxury portal. Manual initially, can negotiate feed access for agencies.',
+  websiteUrl: 'https://www.luxuryestate.com',
+  dashboardUrl: 'https://www.luxuryestate.com/agents',
+  signupUrl: 'https://www.luxuryestate.com/agents/register',
 };
 
 const SOTHEBYS: PortalDefinition = {
@@ -349,6 +386,7 @@ const SOTHEBYS: PortalDefinition = {
   listingFeeUsd: 0,
   refreshIntervalDays: 90,
   notes: 'Access via local partner agent only. Generate materials, partner submits.',
+  websiteUrl: 'https://www.sothebysrealty.com',
 };
 
 const CHRISTIES: PortalDefinition = {
@@ -372,6 +410,7 @@ const CHRISTIES: PortalDefinition = {
   listingFeeUsd: 0,
   refreshIntervalDays: 90,
   notes: 'Access via local partner only. Generate materials, partner submits.',
+  websiteUrl: 'https://www.christiesrealestate.com',
 };
 
 // ============================================================
@@ -400,6 +439,8 @@ const LINKEDIN: PortalDefinition = {
   listingFeeUsd: 0,
   refreshIntervalDays: 7,
   notes: 'Professional network. Organic posts + InMail + Ads. Rate-limited on messaging.',
+  websiteUrl: 'https://www.linkedin.com',
+  dashboardUrl: 'https://www.linkedin.com/feed/',
 };
 
 const GOOGLE_SEARCH_ADS: PortalDefinition = {
@@ -423,6 +464,8 @@ const GOOGLE_SEARCH_ADS: PortalDefinition = {
   listingFeeUsd: 0,
   refreshIntervalDays: 7,
   notes: 'Captures high-intent searchers. Keywords: luxury villa Bohol, Panglao villa for sale, etc.',
+  websiteUrl: 'https://ads.google.com',
+  dashboardUrl: 'https://ads.google.com/aw/overview',
 };
 
 const YOUTUBE: PortalDefinition = {
@@ -448,6 +491,8 @@ const YOUTUBE: PortalDefinition = {
   listingFeeUsd: 0,
   refreshIntervalDays: 0,
   notes: 'Great for foreign buyers researching. Video content management and analytics.',
+  websiteUrl: 'https://www.youtube.com',
+  dashboardUrl: 'https://studio.youtube.com',
 };
 
 // ============================================================

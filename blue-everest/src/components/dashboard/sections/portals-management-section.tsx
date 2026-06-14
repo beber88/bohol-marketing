@@ -4,76 +4,137 @@ import { useState, useEffect, useCallback } from "react";
 import {
   Settings2, Loader2, RefreshCw, Wifi, WifiOff,
   CheckCircle, XCircle, List, Power, PowerOff, X,
-  PlugZap,
+  PlugZap, ExternalLink, UserPlus, LayoutDashboard, Link2,
 } from "lucide-react";
 import { StatusBadge } from "../cards/status-badge";
+import { useTranslation } from "@/lib/i18n";
 
 /* ------------------------------------------------------------------ */
-/*  Hebrew labels — every user-facing string lives here               */
+/*  Bilingual labels (HE / EN)                                        */
 /* ------------------------------------------------------------------ */
-const L = {
-  title: "ניהול פורטלים",
-  allTiers: "כל הדרגות",
-  tier1: "דרגה 1 - פיליפינים",
-  tier2: "דרגה 2 - יוקרה בינלאומית",
-  tier3: "דרגה 3+",
-  allTypes: "כל הסוגים",
-  propertyPortal: 'פורטל נדל"ן',
-  aggregator: "מאגד",
-  social: "רשתות חברתיות",
-  ads: "פרסומות",
-  video: "וידאו",
-  allMethods: "כל השיטות",
-  apiFeed: "הזנת API",
-  playwright: "אוטומציה",
-  manual: "ידני",
-  connector: "מחבר",
-  noMatch: "אין פורטלים שתואמים למסנן.",
-  testConnection: "בדוק חיבור",
-  testing: "בודק...",
-  activate: "הפעל",
-  deactivate: "השבת",
-  connectionStatus: "סטטוס חיבור",
-  configured: "מוגדר",
-  notConfigured: "לא מוגדר",
-  integration: "אינטגרציה",
-  automation: "אוטומציה",
-  available: "זמין",
-  notAvailable: "לא זמין",
-  slug: "מזהה",
-  tier: "דרגה",
-  type: "סוג",
-  method: "שיטה",
-  fee: "עלות",
-  free: "חינם",
-  notes: "הערות",
-  listings: "מודעות",
-  property: "נכס",
-  status: "סטטוס",
-  created: "נוצר",
-  close: "סגור",
+const LABELS = {
+  he: {
+    title: "ניהול פורטלים",
+    allTiers: "כל הדרגות",
+    tier1: "דרגה 1 - פיליפינים",
+    tier2: "דרגה 2 - יוקרה בינלאומית",
+    tier3: "דרגה 3+",
+    allTypes: "כל הסוגים",
+    propertyPortal: 'פורטל נדל"ן',
+    aggregator: "מאגד",
+    social: "רשתות חברתיות",
+    ads: "פרסומות",
+    video: "וידאו",
+    allMethods: "כל השיטות",
+    apiFeed: "הזנת API",
+    playwright: "אוטומציה",
+    manual: "ידני",
+    connector: "מחבר",
+    noMatch: "אין פורטלים שתואמים למסנן.",
+    testConnection: "בדוק חיבור",
+    testing: "בודק...",
+    activate: "הפעל",
+    deactivate: "השבת",
+    connectionStatus: "סטטוס חיבור",
+    configured: "מוגדר",
+    notConfigured: "לא מוגדר",
+    integration: "אינטגרציה",
+    automation: "אוטומציה",
+    available: "זמין",
+    notAvailable: "לא זמין",
+    slug: "מזהה",
+    tier: "דרגה",
+    type: "סוג",
+    method: "שיטה",
+    fee: "עלות",
+    free: "חינם",
+    notes: "הערות",
+    listings: "מודעות",
+    property: "נכס",
+    status: "סטטוס",
+    created: "נוצר",
+    close: "סגור",
+    openPortal: "פתח פורטל",
+    signUp: "צור חשבון",
+    dashboard: "דשבורד",
+    quickLinks: "קישורים מהירים",
+    refresh: "רענון",
+  },
+  en: {
+    title: "Portal Management",
+    allTiers: "All Tiers",
+    tier1: "Tier 1 - Philippines",
+    tier2: "Tier 2 - International Luxury",
+    tier3: "Tier 3+",
+    allTypes: "All Types",
+    propertyPortal: "Property Portal",
+    aggregator: "Aggregator",
+    social: "Social",
+    ads: "Ads",
+    video: "Video",
+    allMethods: "All Methods",
+    apiFeed: "API Feed",
+    playwright: "Automation",
+    manual: "Manual",
+    connector: "Connector",
+    noMatch: "No portals match the current filter.",
+    testConnection: "Test Connection",
+    testing: "Testing...",
+    activate: "Activate",
+    deactivate: "Deactivate",
+    connectionStatus: "Connection Status",
+    configured: "Configured",
+    notConfigured: "Not Configured",
+    integration: "Integration",
+    automation: "Automation",
+    available: "Available",
+    notAvailable: "Not Available",
+    slug: "Slug",
+    tier: "Tier",
+    type: "Type",
+    method: "Method",
+    fee: "Fee",
+    free: "Free",
+    notes: "Notes",
+    listings: "Listings",
+    property: "Property",
+    status: "Status",
+    created: "Created",
+    close: "Close",
+    openPortal: "Open Portal",
+    signUp: "Sign Up",
+    dashboard: "Dashboard",
+    quickLinks: "Quick Links",
+    refresh: "Refresh",
+  },
 };
 
-const METHOD_LABELS: Record<string, string> = {
-  api_feed: L.apiFeed,
-  playwright: L.playwright,
-  manual: L.manual,
-  connector: L.connector,
-};
+type Labels = (typeof LABELS)["en"];
+
+function getMethodLabels(L: Labels): Record<string, string> {
+  return {
+    api_feed: L.apiFeed,
+    playwright: L.playwright,
+    manual: L.manual,
+    connector: L.connector,
+  };
+}
+
+function getTypeLabels(L: Labels): Record<string, string> {
+  return {
+    property_portal: L.propertyPortal,
+    aggregator: L.aggregator,
+    social: L.social,
+    ads: L.ads,
+    video: L.video,
+  };
+}
 
 const METHOD_STYLES: Record<string, string> = {
   api_feed: "border-emerald-500/30 bg-emerald-500/10 text-emerald-400",
   playwright: "border-amber-500/30 bg-amber-500/10 text-amber-400",
   manual: "border-zinc-500/30 bg-zinc-500/10 text-zinc-400",
   connector: "border-blue-500/30 bg-blue-500/10 text-blue-400",
-};
-
-const TYPE_LABELS: Record<string, string> = {
-  property_portal: L.propertyPortal,
-  aggregator: L.aggregator,
-  social: L.social,
-  ads: L.ads,
-  video: L.video,
 };
 
 /* ------------------------------------------------------------------ */
@@ -89,6 +150,10 @@ interface Portal {
   is_active: boolean;
   listing_fee_usd: number | null;
   notes: string | null;
+  website_url?: string | null;
+  dashboard_url?: string | null;
+  submit_url?: string | null;
+  signup_url?: string | null;
 }
 
 interface ConnectionTestResult {
@@ -131,6 +196,11 @@ function TierBadge({ tier }: { tier: number }) {
 /*  Main component                                                    */
 /* ------------------------------------------------------------------ */
 export function PortalsManagementSection() {
+  const { locale } = useTranslation();
+  const L = LABELS[locale === "he" ? "he" : "en"];
+  const METHOD_LABELS = getMethodLabels(L);
+  const TYPE_LABELS = getTypeLabels(L);
+
   const [portals, setPortals] = useState<Portal[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedPortalId, setSelectedPortalId] = useState<string | null>(
@@ -151,7 +221,9 @@ export function PortalsManagementSection() {
   const [listings, setListings] = useState<PortalListing[]>([]);
   const [listingsLoading, setListingsLoading] = useState(false);
 
-  /* ── Data fetching ──────────────────────────────────────────── */
+  const localeTag = locale === "he" ? "he-IL" : "en-US";
+
+  /* -- Data fetching ------------------------------------------------ */
   const fetchPortals = useCallback(async () => {
     setLoading(true);
     try {
@@ -193,7 +265,7 @@ export function PortalsManagementSection() {
   const selectedPortal =
     portals.find((p) => p.id === selectedPortalId) ?? null;
 
-  /* ── Actions ────────────────────────────────────────────────── */
+  /* -- Actions ------------------------------------------------------ */
   const testConnection = async () => {
     if (!selectedPortalId) return;
     setTesting(true);
@@ -233,7 +305,7 @@ export function PortalsManagementSection() {
     setToggling(false);
   };
 
-  /* ── Filtering ──────────────────────────────────────────────── */
+  /* -- Filtering ---------------------------------------------------- */
   const filtered = portals.filter((p) => {
     if (filterTier !== "all" && p.tier !== Number(filterTier)) return false;
     if (filterType !== "all" && p.portal_type !== filterType) return false;
@@ -242,7 +314,11 @@ export function PortalsManagementSection() {
     return true;
   });
 
-  /* ── Loading state ──────────────────────────────────────────── */
+  /* -- Check if portal has any quick links -------------------------- */
+  const hasQuickLinks = (portal: Portal) =>
+    portal.website_url || portal.signup_url || portal.dashboard_url;
+
+  /* -- Loading state ------------------------------------------------ */
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
@@ -252,8 +328,8 @@ export function PortalsManagementSection() {
   }
 
   return (
-    <section dir="rtl" className="space-y-6">
-      {/* ── Header with filters ────────────────────────────────── */}
+    <section dir={locale === "he" ? "rtl" : "ltr"} className="space-y-6">
+      {/* -- Header with filters ------------------------------------- */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h2 className="font-display text-lg font-semibold flex items-center gap-2">
           <Settings2 size={18} className="text-[#89AACC]" />
@@ -303,14 +379,14 @@ export function PortalsManagementSection() {
           <button
             onClick={fetchPortals}
             className="p-2 rounded-lg hover:bg-white/5 text-muted hover:text-white transition-colors"
-            aria-label="רענון"
+            aria-label={L.refresh}
           >
             <RefreshCw size={16} />
           </button>
         </div>
       </div>
 
-      {/* ── Portal Cards Grid ──────────────────────────────────── */}
+      {/* -- Portal Cards Grid --------------------------------------- */}
       {filtered.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map((portal) => {
@@ -325,7 +401,7 @@ export function PortalsManagementSection() {
                 onClick={() =>
                   setSelectedPortalId(isSelected ? null : portal.id)
                 }
-                className={`rounded-2xl border bg-surface p-5 text-right transition-colors ${
+                className={`rounded-2xl border bg-surface p-5 text-${locale === "he" ? "right" : "left"} transition-colors ${
                   isSelected
                     ? "border-[#4E85BF]/50 ring-1 ring-[#4E85BF]/30"
                     : "border-stroke hover:border-[#4E85BF]/25"
@@ -387,7 +463,7 @@ export function PortalsManagementSection() {
         </div>
       )}
 
-      {/* ── Detail Panel ───────────────────────────────────────── */}
+      {/* -- Detail Panel -------------------------------------------- */}
       {selectedPortal && (
         <div className="rounded-2xl border border-stroke bg-surface p-5 space-y-5">
           {/* Header */}
@@ -478,6 +554,51 @@ export function PortalsManagementSection() {
               <p className="text-xs text-text-primary leading-relaxed">
                 {selectedPortal.notes}
               </p>
+            </div>
+          )}
+
+          {/* Quick Links */}
+          {hasQuickLinks(selectedPortal) && (
+            <div className="rounded-lg bg-white/5 border border-stroke px-4 py-3 space-y-3">
+              <h4 className="text-sm font-semibold flex items-center gap-2">
+                <Link2 size={14} className="text-[#89AACC]" />
+                {L.quickLinks}
+              </h4>
+              <div className="flex flex-wrap items-center gap-2">
+                {selectedPortal.website_url && (
+                  <a
+                    href={selectedPortal.website_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-stroke bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-text-primary hover:bg-white/[0.06] hover:border-[#4E85BF]/30 transition-colors"
+                  >
+                    <ExternalLink size={12} />
+                    {L.openPortal}
+                  </a>
+                )}
+                {selectedPortal.signup_url && (
+                  <a
+                    href={selectedPortal.signup_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-stroke bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-text-primary hover:bg-white/[0.06] hover:border-emerald-500/30 transition-colors"
+                  >
+                    <UserPlus size={12} />
+                    {L.signUp}
+                  </a>
+                )}
+                {selectedPortal.dashboard_url && (
+                  <a
+                    href={selectedPortal.dashboard_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-stroke bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-text-primary hover:bg-white/[0.06] hover:border-amber-500/30 transition-colors"
+                  >
+                    <LayoutDashboard size={12} />
+                    {L.dashboard}
+                  </a>
+                )}
+              </div>
             </div>
           )}
 
@@ -607,7 +728,7 @@ export function PortalsManagementSection() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-stroke text-right text-xs text-muted">
+                    <tr className={`border-b border-stroke text-${locale === "he" ? "right" : "left"} text-xs text-muted`}>
                       <th className="px-4 py-2">{L.property}</th>
                       <th className="px-4 py-2">{L.status}</th>
                       <th className="px-4 py-2">{L.created}</th>
@@ -631,7 +752,7 @@ export function PortalsManagementSection() {
                         <td className="px-4 py-2 text-xs text-muted">
                           {new Date(
                             listing.created_at,
-                          ).toLocaleDateString("he-IL", {
+                          ).toLocaleDateString(localeTag, {
                             month: "short",
                             day: "numeric",
                             year: "numeric",

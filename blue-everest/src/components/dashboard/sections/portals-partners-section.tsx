@@ -7,85 +7,165 @@ import {
   MessageCircle, Users, TrendingUp, Trash2, Copy, Check,
 } from "lucide-react";
 import { StatusBadge } from "../cards/status-badge";
+import { useTranslation } from "@/lib/i18n";
 
-// --- Hebrew Labels ---
+// --- Bilingual Labels ---
 
-const L = {
-  title: "שותפי הפצה",
-  subtitle: "מלונות, ריזורטים, ברוקרים ועורכי דין שמפנים לידים תמורת עמלה",
-  addPartner: "הוסף שותף",
-  workflow: "הוסף שותף → צור QR → שלח הצעת שותפות → עקוב אחרי הפניות",
-  allTypes: "כל הסוגים",
-  allStatuses: "כל הסטטוסים",
-  allCountries: "כל המדינות",
-  noPartners: "עדיין אין שותפים.",
-  noPartnersHint: "הוסף את השותף הראשון שלך - מלון, ריזורט או ברוקר בבוהול.",
-  contact: "פרטי קשר",
-  email: "אימייל",
-  phone: "טלפון",
-  whatsapp: "וואטסאפ",
-  agreement: "הסכם",
-  commission: "עמלה",
-  referrals: "הפניות",
-  conversions: "המרות",
-  notes: "הערות",
-  generateQR: "צור QR",
-  generateProposal: "צור הצעת שותפות (AI)",
-  delete: "מחק",
-  deleteConfirm: "למחוק את השותף הזה? לא ניתן לבטל.",
-  trackingUrl: "קישור מעקב",
-  copied: "הועתק!",
-  copy: "העתק",
-  aiProposal: "הצעת שותפות (AI)",
-  cost: "עלות",
-  referralHistory: "היסטוריית הפניות",
-  noReferrals: "עדיין אין הפניות.",
-  // Form
-  formTitle: "הוסף שותף חדש",
-  partnerName: "שם השותף *",
-  partnerType: "סוג שותף *",
-  country: "מדינה",
-  commissionPct: "אחוז עמלה",
-  saving: "שומר...",
-  save: "שמור",
-  cancel: "ביטול",
-  notSet: "לא הוגדר",
-  na: "לא זמין",
-  unknownLead: "ליד לא ידוע",
-  via: "דרך",
-  // Partner types
-  types: {
-    hotel: "מלון",
-    resort: "ריזורט",
-    dive_shop: "חנות צלילה",
-    transport: "הסעות VIP",
-    concierge: "קונסיירז'",
-    lawyer: 'עורך דין מקרקעין',
-    accountant: "רואה חשבון",
-    wealth_advisor: "יועץ פיננסי",
-    immigration_consultant: "יועץ הגירה",
-    property_management: "ניהול נכסים",
-    broker: "ברוקר נדל\"ן",
-    referral_individual: "מפנה פרטי",
-    remittance_center: "מרכז העברות כספים",
-    business_association: "התאחדות עסקית",
-    ofw_community: "קהילת OFW",
-  } as Record<string, string>,
-  // Agreement statuses
-  statuses: {
-    prospect: "פוטנציאלי",
-    contacted: "נוצר קשר",
-    negotiating: "במו\"מ",
-    active: "פעיל",
-    paused: "מושהה",
-    terminated: "הסתיים",
-  } as Record<string, string>,
-  // Referral statuses
-  refStatuses: {
-    converted: "הומר",
-    pending: "ממתין",
-    lost: "אבד",
-  } as Record<string, string>,
+const LABELS = {
+  he: {
+    title: "שותפי הפצה",
+    subtitle: "מלונות, ריזורטים, ברוקרים ועורכי דין שמפנים לידים תמורת עמלה",
+    addPartner: "הוסף שותף",
+    workflow: "הוסף שותף → צור QR → שלח הצעת שותפות → עקוב אחרי הפניות",
+    allTypes: "כל הסוגים",
+    allStatuses: "כל הסטטוסים",
+    allCountries: "כל המדינות",
+    noPartners: "עדיין אין שותפים.",
+    noPartnersHint: "הוסף את השותף הראשון שלך - מלון, ריזורט או ברוקר בבוהול.",
+    contact: "פרטי קשר",
+    email: "אימייל",
+    phone: "טלפון",
+    whatsapp: "וואטסאפ",
+    agreement: "הסכם",
+    commission: "עמלה",
+    referrals: "הפניות",
+    conversions: "המרות",
+    notes: "הערות",
+    generateQR: "צור QR",
+    generateProposal: "צור הצעת שותפות (AI)",
+    delete: "מחק",
+    deleteConfirm: "למחוק את השותף הזה? לא ניתן לבטל.",
+    trackingUrl: "קישור מעקב",
+    copied: "הועתק!",
+    copy: "העתק",
+    aiProposal: "הצעת שותפות (AI)",
+    cost: "עלות",
+    referralHistory: "היסטוריית הפניות",
+    noReferrals: "עדיין אין הפניות.",
+    formTitle: "הוסף שותף חדש",
+    partnerName: "שם השותף *",
+    partnerType: "סוג שותף *",
+    country: "מדינה",
+    commissionPct: "אחוז עמלה",
+    saving: "שומר...",
+    save: "שמור",
+    cancel: "ביטול",
+    notSet: "לא הוגדר",
+    na: "לא זמין",
+    unknownLead: "ליד לא ידוע",
+    via: "דרך",
+    errorCreate: "שגיאה ביצירת שותף",
+    errorNetwork: "שגיאת רשת",
+    workflowSendProposal: "שלח הצעה",
+    workflowTrackReferrals: "עקוב אחרי הפניות",
+    types: {
+      hotel: "מלון",
+      resort: "ריזורט",
+      dive_shop: "חנות צלילה",
+      transport: "הסעות VIP",
+      concierge: "קונסיירז'",
+      lawyer: 'עורך דין מקרקעין',
+      accountant: "רואה חשבון",
+      wealth_advisor: "יועץ פיננסי",
+      immigration_consultant: "יועץ הגירה",
+      property_management: "ניהול נכסים",
+      broker: "ברוקר נדל\"ן",
+      referral_individual: "מפנה פרטי",
+      remittance_center: "מרכז העברות כספים",
+      business_association: "התאחדות עסקית",
+      ofw_community: "קהילת OFW",
+    } as Record<string, string>,
+    statuses: {
+      prospect: "פוטנציאלי",
+      contacted: "נוצר קשר",
+      negotiating: "במו\"מ",
+      active: "פעיל",
+      paused: "מושהה",
+      terminated: "הסתיים",
+    } as Record<string, string>,
+    refStatuses: {
+      converted: "הומר",
+      pending: "ממתין",
+      lost: "אבד",
+    } as Record<string, string>,
+  },
+  en: {
+    title: "Distribution Partners",
+    subtitle: "Hotels, resorts, brokers and lawyers who refer leads for commission",
+    addPartner: "Add Partner",
+    workflow: "Add Partner → Create QR → Send Proposal → Track Referrals",
+    allTypes: "All Types",
+    allStatuses: "All Statuses",
+    allCountries: "All Countries",
+    noPartners: "No partners yet.",
+    noPartnersHint: "Add your first partner - a hotel, resort, or broker in Bohol.",
+    contact: "Contact",
+    email: "Email",
+    phone: "Phone",
+    whatsapp: "WhatsApp",
+    agreement: "Agreement",
+    commission: "Commission",
+    referrals: "Referrals",
+    conversions: "Conversions",
+    notes: "Notes",
+    generateQR: "Generate QR",
+    generateProposal: "Generate AI Proposal",
+    delete: "Delete",
+    deleteConfirm: "Delete this partner? This cannot be undone.",
+    trackingUrl: "Tracking URL",
+    copied: "Copied!",
+    copy: "Copy",
+    aiProposal: "AI Proposal",
+    cost: "Cost",
+    referralHistory: "Referral History",
+    noReferrals: "No referrals yet.",
+    formTitle: "Add New Partner",
+    partnerName: "Partner Name *",
+    partnerType: "Partner Type *",
+    country: "Country",
+    commissionPct: "Commission %",
+    saving: "Saving...",
+    save: "Save",
+    cancel: "Cancel",
+    notSet: "Not set",
+    na: "N/A",
+    unknownLead: "Unknown lead",
+    via: "via",
+    errorCreate: "Error creating partner",
+    errorNetwork: "Network error",
+    workflowSendProposal: "Send Proposal",
+    workflowTrackReferrals: "Track Referrals",
+    types: {
+      hotel: "Hotel",
+      resort: "Resort",
+      dive_shop: "Dive Shop",
+      transport: "VIP Transport",
+      concierge: "Concierge",
+      lawyer: "Real Estate Lawyer",
+      accountant: "Accountant",
+      wealth_advisor: "Wealth Advisor",
+      immigration_consultant: "Immigration Consultant",
+      property_management: "Property Management",
+      broker: "Real Estate Broker",
+      referral_individual: "Individual Referrer",
+      remittance_center: "Remittance Center",
+      business_association: "Business Association",
+      ofw_community: "OFW Community",
+    } as Record<string, string>,
+    statuses: {
+      prospect: "Prospect",
+      contacted: "Contacted",
+      negotiating: "Negotiating",
+      active: "Active",
+      paused: "Paused",
+      terminated: "Terminated",
+    } as Record<string, string>,
+    refStatuses: {
+      converted: "Converted",
+      pending: "Pending",
+      lost: "Lost",
+    } as Record<string, string>,
+  },
 };
 
 // --- Types ---
@@ -182,9 +262,13 @@ const EMPTY_FORM: PartnerForm = {
 function AddPartnerModal({
   onClose,
   onAdded,
+  L,
+  dir,
 }: {
   onClose: () => void;
   onAdded: () => void;
+  L: typeof LABELS.he;
+  dir: "rtl" | "ltr";
 }) {
   const [form, setForm] = useState<PartnerForm>({ ...EMPTY_FORM });
   const [saving, setSaving] = useState(false);
@@ -214,14 +298,14 @@ function AddPartnerModal({
       });
       const data = await res.json();
       if (!res.ok) {
-        setError(data.error || "שגיאה ביצירת שותף");
+        setError(data.error || L.errorCreate);
         setSaving(false);
         return;
       }
       onAdded();
       onClose();
     } catch {
-      setError("שגיאת רשת");
+      setError(L.errorNetwork);
     }
     setSaving(false);
   };
@@ -232,7 +316,7 @@ function AddPartnerModal({
       onClick={onClose}
     >
       <div
-        dir="rtl"
+        dir={dir}
         className="bg-[#1a1a2e] border border-stroke rounded-2xl w-full max-w-lg mx-4 max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
@@ -345,6 +429,11 @@ function AddPartnerModal({
 // --- Main Component ---
 
 export function PortalsPartnersSection() {
+  const { locale } = useTranslation();
+  const L = LABELS[locale === "he" ? "he" : "en"];
+  const dir = locale === "he" ? "rtl" : "ltr";
+  const dateLocale = locale === "he" ? "he-IL" : "en-US";
+
   const [partners, setPartners] = useState<Partner[]>([]);
   const [loading, setLoading] = useState(true);
   const [showAddModal, setShowAddModal] = useState(false);
@@ -456,7 +545,7 @@ export function PortalsPartnersSection() {
   }
 
   return (
-    <section dir="rtl" className="space-y-6">
+    <section dir={dir} className="space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between flex-wrap gap-3">
         <h2 className="font-display text-lg font-semibold flex items-center gap-2">
@@ -519,17 +608,17 @@ export function PortalsPartnersSection() {
           <span className="rounded-full bg-[#4E85BF]/20 px-2.5 py-0.5 text-[11px] font-semibold text-[#89AACC]">
             {L.addPartner}
           </span>
-          <span>&#8592;</span>
+          <span>{dir === "rtl" ? "\u2190" : "\u2192"}</span>
           <span className="rounded-full bg-emerald-500/20 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-400">
             {L.generateQR}
           </span>
-          <span>&#8592;</span>
+          <span>{dir === "rtl" ? "\u2190" : "\u2192"}</span>
           <span className="rounded-full bg-purple-500/20 px-2.5 py-0.5 text-[11px] font-semibold text-purple-400">
-            שלח הצעה
+            {L.workflowSendProposal}
           </span>
-          <span>&#8592;</span>
+          <span>{dir === "rtl" ? "\u2190" : "\u2192"}</span>
           <span className="rounded-full bg-amber-500/20 px-2.5 py-0.5 text-[11px] font-semibold text-amber-400">
-            עקוב אחרי הפניות
+            {L.workflowTrackReferrals}
           </span>
         </div>
       </div>
@@ -546,14 +635,14 @@ export function PortalsPartnersSection() {
                 <button
                   key={partner.id}
                   onClick={() => handleExpand(partner.id)}
-                  className={`rounded-2xl border bg-surface p-5 text-right transition-colors ${
+                  className={`rounded-2xl border bg-surface p-5 ${dir === "rtl" ? "text-right" : "text-left"} transition-colors ${
                     expandedId === partner.id
                       ? "border-[#4E85BF]/50"
                       : "border-stroke hover:border-[#4E85BF]/30"
                   }`}
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <h4 className="font-display text-sm font-bold truncate pl-2">
+                    <h4 className={`font-display text-sm font-bold truncate ${dir === "rtl" ? "pl-2" : "pr-2"}`}>
                       {partner.name}
                     </h4>
                     {expandedId === partner.id ? (
@@ -701,7 +790,7 @@ export function PortalsPartnersSection() {
                   <button
                     onClick={() => handleDelete(partner.id)}
                     disabled={deleteLoading === partner.id}
-                    className="rounded-lg border border-red-500/30 px-3 py-1.5 text-xs font-medium text-red-400 hover:bg-red-500/10 flex items-center gap-1.5 transition-colors mr-auto"
+                    className={`rounded-lg border border-red-500/30 px-3 py-1.5 text-xs font-medium text-red-400 hover:bg-red-500/10 flex items-center gap-1.5 transition-colors ${dir === "rtl" ? "mr-auto" : "ml-auto"}`}
                   >
                     {deleteLoading === partner.id ? (
                       <Loader2 size={12} className="animate-spin" />
@@ -797,7 +886,7 @@ export function PortalsPartnersSection() {
                               {L.refStatuses[ref.status] || ref.status}
                             </span>
                             <span className="text-muted">
-                              {new Date(ref.created_at).toLocaleDateString("he-IL", { month: "short", day: "numeric" })}
+                              {new Date(ref.created_at).toLocaleDateString(dateLocale, { month: "short", day: "numeric" })}
                             </span>
                           </div>
                         </div>
@@ -830,6 +919,8 @@ export function PortalsPartnersSection() {
         <AddPartnerModal
           onClose={() => setShowAddModal(false)}
           onAdded={fetchPartners}
+          L={L}
+          dir={dir}
         />
       )}
     </section>

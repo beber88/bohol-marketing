@@ -224,6 +224,12 @@ export async function POST() {
         created_at TIMESTAMPTZ NOT NULL DEFAULT now()
       );
 
+      -- Add URL columns to portals if they don't exist
+      ALTER TABLE portals ADD COLUMN IF NOT EXISTS dashboard_url TEXT;
+      ALTER TABLE portals ADD COLUMN IF NOT EXISTS submit_url TEXT;
+      ALTER TABLE portals ADD COLUMN IF NOT EXISTS signup_url TEXT;
+      ALTER TABLE portals ADD COLUMN IF NOT EXISTS website_url TEXT;
+
       -- Add columns to leads if they don't exist
       DO $$ BEGIN
         ALTER TABLE leads ADD COLUMN IF NOT EXISTS portal_listing_id UUID;
@@ -316,6 +322,10 @@ export async function POST() {
         listing_fee_usd: p.listingFeeUsd,
         refresh_interval_days: p.refreshIntervalDays,
         notes: p.notes ?? null,
+        dashboard_url: p.dashboardUrl ?? null,
+        submit_url: p.submitUrl ?? null,
+        signup_url: p.signupUrl ?? null,
+        website_url: p.websiteUrl ?? null,
       }, { onConflict: 'slug' });
 
       if (!error) portalCount++;

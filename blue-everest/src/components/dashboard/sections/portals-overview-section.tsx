@@ -10,49 +10,90 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   ResponsiveContainer,
 } from "recharts";
+import { useTranslation } from "@/lib/i18n";
 
 /* ------------------------------------------------------------------ */
-/*  Hebrew labels — every user-facing string lives here               */
+/*  Bilingual labels (HE / EN)                                        */
 /* ------------------------------------------------------------------ */
-const L = {
-  title: "סקירת פורטלים",
-  totalListings: 'סה"כ מודעות',
-  published: "מפורסמות",
-  pendingReview: "ממתינות לבדיקה",
-  views: "צפיות",
-  inquiries: "פניות",
-  leads: "לידים",
-  portalStatus: "סטטוס פורטלים",
-  bestPerforming: "פורטלים מובילים",
-  noPortals: "אין פורטלים מוגדרים.",
-  noPerformance:
-    "אין נתוני ביצועים עדיין. הנתונים יופיעו ברגע שמודעות יקבלו צפיות.",
-  active: "פעיל",
-  inactive: "לא פעיל",
-  activeListings: "מודעות פעילות",
-  pipelineTitle: "צינור פרסום",
-  pipelineAdapted: "מותאמות",
-  pipelineReady: "מוכנות",
-  pipelinePublished: "מפורסמות",
-  pipelineLeads: "לידים",
-  nextSteps: "מה לעשות עכשיו",
-  step1: "התחבר לפורטלים - הגדר API keys בניהול פורטלים",
-  step2: "אשר מודעות - עבור למודעות ואשר את המודעות שעברו Brand Guard",
-  step3: "פרסם - שלח מודעות מאושרות לפורטלים",
-  tier: "דרגה",
-  method: "שיטת חיבור",
-  apiFeed: "הזנת API",
-  playwright: "אוטומציה",
-  manual: "ידני",
-  connector: "מחבר",
+const LABELS = {
+  he: {
+    title: "סקירת פורטלים",
+    totalListings: 'סה"כ מודעות',
+    published: "מפורסמות",
+    pendingReview: "ממתינות לבדיקה",
+    views: "צפיות",
+    inquiries: "פניות",
+    leads: "לידים",
+    portalStatus: "סטטוס פורטלים",
+    bestPerforming: "פורטלים מובילים",
+    noPortals: "אין פורטלים מוגדרים.",
+    noPerformance:
+      "אין נתוני ביצועים עדיין. הנתונים יופיעו ברגע שמודעות יקבלו צפיות.",
+    active: "פעיל",
+    inactive: "לא פעיל",
+    activeListings: "מודעות פעילות",
+    pipelineTitle: "צינור פרסום",
+    pipelineAdapted: "מותאמות",
+    pipelineReady: "מוכנות",
+    pipelinePublished: "מפורסמות",
+    pipelineLeads: "לידים",
+    nextSteps: "מה לעשות עכשיו",
+    step1: "התחבר לפורטלים - הגדר API keys בניהול פורטלים",
+    step2: "אשר מודעות - עבור למודעות ואשר את המודעות שעברו Brand Guard",
+    step3: "פרסם - שלח מודעות מאושרות לפורטלים",
+    tier: "דרגה",
+    method: "שיטת חיבור",
+    apiFeed: "הזנת API",
+    playwright: "אוטומציה",
+    manual: "ידני",
+    connector: "מחבר",
+    refresh: "רענון",
+  },
+  en: {
+    title: "Portal Overview",
+    totalListings: "Total Listings",
+    published: "Published",
+    pendingReview: "Pending Review",
+    views: "Views",
+    inquiries: "Inquiries",
+    leads: "Leads",
+    portalStatus: "Portal Status",
+    bestPerforming: "Top Performing Portals",
+    noPortals: "No portals configured.",
+    noPerformance:
+      "No performance data yet. Data will appear once listings receive views.",
+    active: "Active",
+    inactive: "Inactive",
+    activeListings: "Active Listings",
+    pipelineTitle: "Publishing Pipeline",
+    pipelineAdapted: "Adapted",
+    pipelineReady: "Ready",
+    pipelinePublished: "Published",
+    pipelineLeads: "Leads",
+    nextSteps: "What to do now",
+    step1: "Connect to portals - configure API keys in Portal Management",
+    step2: "Approve listings - review listings that passed Brand Guard",
+    step3: "Publish - submit approved listings to portals",
+    tier: "Tier",
+    method: "Method",
+    apiFeed: "API Feed",
+    playwright: "Automation",
+    manual: "Manual",
+    connector: "Connector",
+    refresh: "Refresh",
+  },
 };
 
-const METHOD_LABELS: Record<string, string> = {
-  api_feed: L.apiFeed,
-  playwright: L.playwright,
-  manual: L.manual,
-  connector: L.connector,
-};
+type Labels = (typeof LABELS)["en"];
+
+function getMethodLabels(L: Labels): Record<string, string> {
+  return {
+    api_feed: L.apiFeed,
+    playwright: L.playwright,
+    manual: L.manual,
+    connector: L.connector,
+  };
+}
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                             */
@@ -153,6 +194,10 @@ function PipelineStep({
 /*  Main component                                                    */
 /* ------------------------------------------------------------------ */
 export function PortalsOverviewSection() {
+  const { locale } = useTranslation();
+  const L = LABELS[locale === "he" ? "he" : "en"];
+  const METHOD_LABELS = getMethodLabels(L);
+
   const [overview, setOverview] = useState<OverviewData>(EMPTY_OVERVIEW);
   const [portals, setPortals] = useState<Portal[]>([]);
   const [performance, setPerformance] = useState<PerformanceRow[]>([]);
@@ -213,6 +258,8 @@ export function PortalsOverviewSection() {
   const brandGuardPassed =
     overview.listings.byStatus?.brand_guard_passed ?? 0;
 
+  const localeTag = locale === "he" ? "he-IL" : "en-US";
+
   const kpis = [
     {
       label: L.totalListings,
@@ -258,8 +305,8 @@ export function PortalsOverviewSection() {
     .slice(0, 10);
 
   return (
-    <section dir="rtl" className="space-y-6">
-      {/* ── Header ─────────────────────────────────────────────── */}
+    <section dir={locale === "he" ? "rtl" : "ltr"} className="space-y-6">
+      {/* -- Header -------------------------------------------------- */}
       <div className="flex items-center justify-between">
         <h2 className="font-display text-lg font-semibold flex items-center gap-2">
           <Globe2 size={18} className="text-[#89AACC]" />
@@ -268,13 +315,13 @@ export function PortalsOverviewSection() {
         <button
           onClick={fetchAll}
           className="p-2 rounded-lg hover:bg-white/5 text-muted hover:text-white transition-colors"
-          aria-label="רענון"
+          aria-label={L.refresh}
         >
           <RefreshCw size={16} />
         </button>
       </div>
 
-      {/* ── KPI Row ────────────────────────────────────────────── */}
+      {/* -- KPI Row ------------------------------------------------- */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {kpis.map((kpi) => {
           const Icon = kpi.icon;
@@ -285,7 +332,7 @@ export function PortalsOverviewSection() {
             >
               <Icon size={16} className={`mx-auto mb-2 ${kpi.color}`} />
               <p className="font-display text-3xl font-bold">
-                {kpi.value.toLocaleString("he-IL")}
+                {kpi.value.toLocaleString(localeTag)}
               </p>
               <p className="text-xs text-muted mt-1">{kpi.label}</p>
             </div>
@@ -293,7 +340,7 @@ export function PortalsOverviewSection() {
         })}
       </div>
 
-      {/* ── Pipeline Card ──────────────────────────────────────── */}
+      {/* -- Pipeline Card ------------------------------------------- */}
       <div className="rounded-2xl border border-stroke bg-surface p-5">
         <h3 className="font-display text-sm font-semibold mb-5 flex items-center gap-2">
           <BarChart3 size={16} className="text-[#89AACC]" />
@@ -326,7 +373,7 @@ export function PortalsOverviewSection() {
         </div>
       </div>
 
-      {/* ── Next Steps (shown when no leads yet) ───────────────── */}
+      {/* -- Next Steps (shown when no leads yet) -------------------- */}
       {overview.listings.totalLeads === 0 && (
         <div className="rounded-2xl border-2 border-blue-500/30 bg-blue-500/5 p-5">
           <h3 className="font-display text-sm font-semibold mb-4 flex items-center gap-2 text-blue-400">
@@ -341,7 +388,7 @@ export function PortalsOverviewSection() {
         </div>
       )}
 
-      {/* ── Portal Status Grid ─────────────────────────────────── */}
+      {/* -- Portal Status Grid -------------------------------------- */}
       {portals.length > 0 ? (
         <div>
           <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-4">
@@ -415,7 +462,7 @@ export function PortalsOverviewSection() {
         </div>
       )}
 
-      {/* ── Best Performing Portals Chart ──────────────────────── */}
+      {/* -- Best Performing Portals Chart --------------------------- */}
       {chartData.length > 0 ? (
         <div className="rounded-2xl border border-stroke bg-surface p-5">
           <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-4">

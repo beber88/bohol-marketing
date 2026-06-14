@@ -13,7 +13,7 @@ export async function GET(request: Request) {
     const portalId = searchParams.get('portalId');
     const status = searchParams.get('status');
 
-    let query = supabase.from('portal_listings').select('*, properties(internal_name, slug, image_urls), portals(name, slug, tier)').order('created_at', { ascending: false });
+    let query = supabase.from('portal_listings').select('*, properties(internal_name, slug, image_urls), portals(name, slug, tier, submit_url, website_url)').order('created_at', { ascending: false });
     if (propertyId) query = query.eq('property_id', propertyId);
     if (portalId) query = query.eq('portal_id', portalId);
     if (status) query = query.eq('status', status);
