@@ -18,6 +18,11 @@ import { CommunityAgentSection } from "./sections/community-agent-section";
 import { LeadRecoverySection } from "./sections/lead-recovery-section";
 import { AutoposterSection } from "./sections/autoposter-section";
 import { FinancialsSection } from "./sections/financials-section";
+import { PortalsOverviewSection } from "./sections/portals-overview-section";
+import { PortalsManagementSection } from "./sections/portals-management-section";
+import { PortalsListingsSection } from "./sections/portals-listings-section";
+import { PortalsPartnersSection } from "./sections/portals-partners-section";
+import { PortalsAnalyticsSection } from "./sections/portals-analytics-section";
 import { DashboardSectionBoundary } from "./dashboard-section-boundary";
 
 export function DashboardShell() {
@@ -51,6 +56,11 @@ export function DashboardShell() {
       case "communityAgent": return <CommunityAgentSection />;
       case "autoposter": return <AutoposterSection />;
       case "financials": return <FinancialsSection />;
+      case "portalOverview": return <PortalsOverviewSection />;
+      case "portalManagement": return <PortalsManagementSection />;
+      case "portalListings": return <PortalsListingsSection />;
+      case "portalPartners": return <PortalsPartnersSection />;
+      case "portalAnalytics": return <PortalsAnalyticsSection />;
       case "settings": return <SettingsSection />;
       default: return <OverviewSection />;
     }

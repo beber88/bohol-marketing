@@ -3,11 +3,11 @@
 import {
   LayoutDashboard, Megaphone, FileText, Users, Users2,
   Wallet, Settings, Bot, BookOpen, MessageSquare,
-  Share2, DollarSign,
+  Share2, DollarSign, Globe2, Building2, List, Handshake, BarChart3,
 } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
 
-type GroupId = "dashboard" | "marketing" | "sales" | "system";
+type GroupId = "dashboard" | "marketing" | "sales" | "portals" | "system";
 
 interface NavGroup {
   group: GroupId;
@@ -35,6 +35,16 @@ const GROUPED_SECTIONS: NavGroup[] = [
     items: [
       { id: "leadPipeline", icon: Users },
       { id: "conversations", icon: MessageSquare },
+    ],
+  },
+  {
+    group: "portals",
+    items: [
+      { id: "portalOverview", icon: Globe2 },
+      { id: "portalManagement", icon: Building2 },
+      { id: "portalListings", icon: List },
+      { id: "portalPartners", icon: Handshake },
+      { id: "portalAnalytics", icon: BarChart3 },
     ],
   },
   {

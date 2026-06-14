@@ -275,6 +275,7 @@ export const he: Translations = {
       dashboard: "לוח בקרה",
       marketing: "שיווק",
       sales: "מכירות",
+      portals: "פורטלים",
       system: "מערכת",
     },
     tabs: {
@@ -308,6 +309,11 @@ export const he: Translations = {
       content: "תוכן ופרסום",
       conversations: "שיחות",
       financials: "פיננסים",
+      portalOverview: "סקירת פורטלים",
+      portalManagement: "ניהול פורטלים",
+      portalListings: "מודעות",
+      portalPartners: "שותפים",
+      portalAnalytics: "אנליטיקס פורטלים",
     },
     overview: {
       campaignDay: "יום קמפיין",

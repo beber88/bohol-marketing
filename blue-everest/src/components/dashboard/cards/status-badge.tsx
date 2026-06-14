@@ -31,9 +31,28 @@ const MARKET_STYLES = {
   BOTH: "border-amber-500/30 bg-amber-500/10 text-amber-400",
 };
 
+const PORTAL_STYLES: Record<string, string> = {
+  configured: "border-emerald-500/30 bg-emerald-500/10 text-emerald-400",
+  partial: "border-amber-500/30 bg-amber-500/10 text-amber-400",
+  not_configured: "border-red-500/30 bg-red-500/10 text-red-400",
+  inactive: "border-zinc-500/30 bg-zinc-500/10 text-zinc-400",
+};
+
+const LISTING_STYLES: Record<string, string> = {
+  draft: "border-zinc-500/30 bg-zinc-500/10 text-zinc-400",
+  pending_review: "border-amber-500/30 bg-amber-500/10 text-amber-400",
+  brand_guard_passed: "border-blue-500/30 bg-blue-500/10 text-blue-400",
+  submitting: "border-purple-500/30 bg-purple-500/10 text-purple-400",
+  active: "border-emerald-500/30 bg-emerald-500/10 text-emerald-400",
+  manual_needed: "border-amber-500/30 bg-amber-500/10 text-amber-400",
+  error: "border-red-500/30 bg-red-500/10 text-red-400",
+  expired: "border-zinc-500/30 bg-zinc-500/10 text-zinc-400",
+  rejected: "border-red-500/30 bg-red-500/10 text-red-400",
+};
+
 interface StatusBadgeProps {
   status: string;
-  type?: "campaign" | "post" | "platform" | "market";
+  type?: "campaign" | "post" | "platform" | "market" | "portal" | "listing";
   label?: string;
 }
 
@@ -48,6 +67,12 @@ export function StatusBadge({ status, type = "campaign", label }: StatusBadgePro
       break;
     case "market":
       style = MARKET_STYLES[status as keyof typeof MARKET_STYLES] || MARKET_STYLES.BOTH;
+      break;
+    case "portal":
+      style = PORTAL_STYLES[status] || PORTAL_STYLES.not_configured;
+      break;
+    case "listing":
+      style = LISTING_STYLES[status] || LISTING_STYLES.draft;
       break;
     default:
       style = CAMPAIGN_STYLES[status as CampaignStatus] || CAMPAIGN_STYLES.planned;

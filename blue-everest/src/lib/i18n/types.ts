@@ -179,6 +179,7 @@ export interface Translations {
       dashboard: string;
       marketing: string;
       sales: string;
+      portals: string;
       system: string;
     };
     tabs: {
@@ -212,6 +213,11 @@ export interface Translations {
       content: string;
       conversations: string;
       financials: string;
+      portalOverview: string;
+      portalManagement: string;
+      portalListings: string;
+      portalPartners: string;
+      portalAnalytics: string;
     };
     overview: {
       campaignDay: string;
